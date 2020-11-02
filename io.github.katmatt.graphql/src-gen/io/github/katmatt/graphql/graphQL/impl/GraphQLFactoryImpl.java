@@ -93,6 +93,9 @@ public class GraphQLFactoryImpl extends EFactoryImpl implements GraphQLFactory
       case GraphQLPackage.OBJECT_FIELD: return createObjectField();
       case GraphQLPackage.CONST_VALUE: return createConstValue();
       case GraphQLPackage.LIST_VALUE: return createListValue();
+      case GraphQLPackage.DIRECTIVE_DEFINITION: return createDirectiveDefinition();
+      case GraphQLPackage.ARGUMENTS_DEFINITION: return createArgumentsDefinition();
+      case GraphQLPackage.DIRECTIVE_LOCATIONS: return createDirectiveLocations();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -108,6 +111,8 @@ public class GraphQLFactoryImpl extends EFactoryImpl implements GraphQLFactory
   {
     switch (eDataType.getClassifierID())
     {
+      case GraphQLPackage.DIRECTIVE_LOCATION:
+        return createDirectiveLocationFromString(eDataType, initialValue);
       case GraphQLPackage.OPERATION_TYPE:
         return createOperationTypeFromString(eDataType, initialValue);
       default:
@@ -125,6 +130,8 @@ public class GraphQLFactoryImpl extends EFactoryImpl implements GraphQLFactory
   {
     switch (eDataType.getClassifierID())
     {
+      case GraphQLPackage.DIRECTIVE_LOCATION:
+        return convertDirectiveLocationToString(eDataType, instanceValue);
       case GraphQLPackage.OPERATION_TYPE:
         return convertOperationTypeToString(eDataType, instanceValue);
       default:
@@ -454,6 +461,64 @@ public class GraphQLFactoryImpl extends EFactoryImpl implements GraphQLFactory
   {
     ListValueImpl listValue = new ListValueImpl();
     return listValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DirectiveDefinition createDirectiveDefinition()
+  {
+    DirectiveDefinitionImpl directiveDefinition = new DirectiveDefinitionImpl();
+    return directiveDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ArgumentsDefinition createArgumentsDefinition()
+  {
+    ArgumentsDefinitionImpl argumentsDefinition = new ArgumentsDefinitionImpl();
+    return argumentsDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DirectiveLocations createDirectiveLocations()
+  {
+    DirectiveLocationsImpl directiveLocations = new DirectiveLocationsImpl();
+    return directiveLocations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DirectiveLocation createDirectiveLocationFromString(EDataType eDataType, String initialValue)
+  {
+    DirectiveLocation result = DirectiveLocation.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertDirectiveLocationToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

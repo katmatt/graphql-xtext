@@ -7,6 +7,8 @@
         eType="#//SchemaDefinition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeDefinitions" upperBound="-1"
         eType="#//TypeDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="directiveDefinitions" upperBound="-1"
+        eType="#//DirectiveDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SchemaDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//StringValue"
@@ -111,6 +113,45 @@
   <eClassifiers xsi:type="ecore:EClass" name="ListValue" eSuperTypes="#//ConstValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
         eType="#//ConstValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectiveDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//StringValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentDefinitions" eType="#//ArgumentsDefinition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeatable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="directiveLocations" upperBound="-1"
+        eType="#//DirectiveLocations" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentsDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+        eType="#//InputValueDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectiveLocations">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="directiveLocations" unique="false"
+        upperBound="-1" eType="#//DirectiveLocation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DirectiveLocation">
+    <eLiterals name="QUERY" literal="QUERY"/>
+    <eLiterals name="MUTATION" value="1" literal="MUTATION"/>
+    <eLiterals name="SUBSCRIPTION" value="2" literal="SUBSCRIPTION"/>
+    <eLiterals name="FIELD" value="3" literal="FIELD"/>
+    <eLiterals name="FRAGMENT_DEFINITION" value="4" literal="FRAGMENT_DEFINITION"/>
+    <eLiterals name="FRAGMENT_SPREAD" value="5" literal="FRAGMENT_SPREAD"/>
+    <eLiterals name="INLINE_FRAGMENT" value="6" literal="INLINE_FRAGMENT"/>
+    <eLiterals name="VARIABLE_DEFINITION" value="7" literal="VARIABLE_DEFINITION"/>
+    <eLiterals name="SCHEMA" value="8" literal="SCHEMA"/>
+    <eLiterals name="SCALAR" value="9" literal="SCALAR"/>
+    <eLiterals name="OBJECT" value="10" literal="OBJECT"/>
+    <eLiterals name="FIELD_DEFINITION" value="11" literal="FIELD_DEFINITION"/>
+    <eLiterals name="ARGUMENT_DEFINITION" value="12" literal="ARGUMENT_DEFINITION"/>
+    <eLiterals name="INTERFACE" value="13" literal="INTERFACE"/>
+    <eLiterals name="UNION" value="14" literal="UNION"/>
+    <eLiterals name="ENUM" value="15" literal="ENUM"/>
+    <eLiterals name="ENUM_VALUE" value="16" literal="ENUM_VALUE"/>
+    <eLiterals name="INPUT_OBJECT" value="17" literal="INPUT_OBJECT"/>
+    <eLiterals name="INPUT_FIELD_DEFINITION" value="18" literal="INPUT_FIELD_DEFINITION"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="OperationType">
     <eLiterals name="QUERY" literal="query"/>

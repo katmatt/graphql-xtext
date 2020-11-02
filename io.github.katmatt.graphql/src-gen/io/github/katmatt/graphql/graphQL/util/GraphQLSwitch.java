@@ -277,6 +277,27 @@ public class GraphQLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GraphQLPackage.DIRECTIVE_DEFINITION:
+      {
+        DirectiveDefinition directiveDefinition = (DirectiveDefinition)theEObject;
+        T result = caseDirectiveDefinition(directiveDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.ARGUMENTS_DEFINITION:
+      {
+        ArgumentsDefinition argumentsDefinition = (ArgumentsDefinition)theEObject;
+        T result = caseArgumentsDefinition(argumentsDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.DIRECTIVE_LOCATIONS:
+      {
+        DirectiveLocations directiveLocations = (DirectiveLocations)theEObject;
+        T result = caseDirectiveLocations(directiveLocations);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -709,6 +730,54 @@ public class GraphQLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseListValue(ListValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Directive Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Directive Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDirectiveDefinition(DirectiveDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Arguments Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Arguments Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArgumentsDefinition(ArgumentsDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Directive Locations</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Directive Locations</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDirectiveLocations(DirectiveLocations object)
   {
     return null;
   }

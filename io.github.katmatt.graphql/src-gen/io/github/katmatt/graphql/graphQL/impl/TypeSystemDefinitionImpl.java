@@ -3,6 +3,7 @@
  */
 package io.github.katmatt.graphql.graphQL.impl;
 
+import io.github.katmatt.graphql.graphQL.DirectiveDefinition;
 import io.github.katmatt.graphql.graphQL.GraphQLPackage;
 import io.github.katmatt.graphql.graphQL.SchemaDefinition;
 import io.github.katmatt.graphql.graphQL.TypeDefinition;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.TypeSystemDefinitionImpl#getSchemaDefinitions <em>Schema Definitions</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.TypeSystemDefinitionImpl#getTypeDefinitions <em>Type Definitions</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.impl.TypeSystemDefinitionImpl#getDirectiveDefinitions <em>Directive Definitions</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,6 +59,16 @@ public class TypeSystemDefinitionImpl extends MinimalEObjectImpl.Container imple
    * @ordered
    */
   protected EList<TypeDefinition> typeDefinitions;
+
+  /**
+   * The cached value of the '{@link #getDirectiveDefinitions() <em>Directive Definitions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirectiveDefinitions()
+   * @generated
+   * @ordered
+   */
+  protected EList<DirectiveDefinition> directiveDefinitions;
 
   /**
    * <!-- begin-user-doc -->
@@ -115,6 +127,21 @@ public class TypeSystemDefinitionImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
+  public EList<DirectiveDefinition> getDirectiveDefinitions()
+  {
+    if (directiveDefinitions == null)
+    {
+      directiveDefinitions = new EObjectContainmentEList<DirectiveDefinition>(DirectiveDefinition.class, this, GraphQLPackage.TYPE_SYSTEM_DEFINITION__DIRECTIVE_DEFINITIONS);
+    }
+    return directiveDefinitions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -123,6 +150,8 @@ public class TypeSystemDefinitionImpl extends MinimalEObjectImpl.Container imple
         return ((InternalEList<?>)getSchemaDefinitions()).basicRemove(otherEnd, msgs);
       case GraphQLPackage.TYPE_SYSTEM_DEFINITION__TYPE_DEFINITIONS:
         return ((InternalEList<?>)getTypeDefinitions()).basicRemove(otherEnd, msgs);
+      case GraphQLPackage.TYPE_SYSTEM_DEFINITION__DIRECTIVE_DEFINITIONS:
+        return ((InternalEList<?>)getDirectiveDefinitions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -141,6 +170,8 @@ public class TypeSystemDefinitionImpl extends MinimalEObjectImpl.Container imple
         return getSchemaDefinitions();
       case GraphQLPackage.TYPE_SYSTEM_DEFINITION__TYPE_DEFINITIONS:
         return getTypeDefinitions();
+      case GraphQLPackage.TYPE_SYSTEM_DEFINITION__DIRECTIVE_DEFINITIONS:
+        return getDirectiveDefinitions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -164,6 +195,10 @@ public class TypeSystemDefinitionImpl extends MinimalEObjectImpl.Container imple
         getTypeDefinitions().clear();
         getTypeDefinitions().addAll((Collection<? extends TypeDefinition>)newValue);
         return;
+      case GraphQLPackage.TYPE_SYSTEM_DEFINITION__DIRECTIVE_DEFINITIONS:
+        getDirectiveDefinitions().clear();
+        getDirectiveDefinitions().addAll((Collection<? extends DirectiveDefinition>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -184,6 +219,9 @@ public class TypeSystemDefinitionImpl extends MinimalEObjectImpl.Container imple
       case GraphQLPackage.TYPE_SYSTEM_DEFINITION__TYPE_DEFINITIONS:
         getTypeDefinitions().clear();
         return;
+      case GraphQLPackage.TYPE_SYSTEM_DEFINITION__DIRECTIVE_DEFINITIONS:
+        getDirectiveDefinitions().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -202,6 +240,8 @@ public class TypeSystemDefinitionImpl extends MinimalEObjectImpl.Container imple
         return schemaDefinitions != null && !schemaDefinitions.isEmpty();
       case GraphQLPackage.TYPE_SYSTEM_DEFINITION__TYPE_DEFINITIONS:
         return typeDefinitions != null && !typeDefinitions.isEmpty();
+      case GraphQLPackage.TYPE_SYSTEM_DEFINITION__DIRECTIVE_DEFINITIONS:
+        return directiveDefinitions != null && !directiveDefinitions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

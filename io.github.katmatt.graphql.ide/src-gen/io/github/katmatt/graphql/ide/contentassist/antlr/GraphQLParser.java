@@ -37,6 +37,7 @@ public class GraphQLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getStringValueAccess().getValueAlternatives_0(), "rule__StringValue__ValueAlternatives_0");
 			builder.put(grammarAccess.getBooleanValueAccess().getValueAlternatives_0(), "rule__BooleanValue__ValueAlternatives_0");
 			builder.put(grammarAccess.getConstValueAccess().getAlternatives(), "rule__ConstValue__Alternatives");
+			builder.put(grammarAccess.getDirectiveLocationAccess().getAlternatives(), "rule__DirectiveLocation__Alternatives");
 			builder.put(grammarAccess.getOperationTypeAccess().getAlternatives(), "rule__OperationType__Alternatives");
 			builder.put(grammarAccess.getSchemaDefinitionAccess().getGroup(), "rule__SchemaDefinition__Group__0");
 			builder.put(grammarAccess.getRootOperationTypeDefinitionAccess().getGroup(), "rule__RootOperationTypeDefinition__Group__0");
@@ -50,7 +51,7 @@ public class GraphQLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFieldDefinitionAccess().getGroup(), "rule__FieldDefinition__Group__0");
 			builder.put(grammarAccess.getUnionTypeDefinitionAccess().getGroup(), "rule__UnionTypeDefinition__Group__0");
 			builder.put(grammarAccess.getUnionTypeDefinitionAccess().getGroup_3(), "rule__UnionTypeDefinition__Group_3__0");
-			builder.put(grammarAccess.getUnionTypeDefinitionAccess().getGroup_3_2(), "rule__UnionTypeDefinition__Group_3_2__0");
+			builder.put(grammarAccess.getUnionTypeDefinitionAccess().getGroup_3_3(), "rule__UnionTypeDefinition__Group_3_3__0");
 			builder.put(grammarAccess.getEnumTypeDefinitionAccess().getGroup(), "rule__EnumTypeDefinition__Group__0");
 			builder.put(grammarAccess.getEnumTypeDefinitionAccess().getGroup_3(), "rule__EnumTypeDefinition__Group_3__0");
 			builder.put(grammarAccess.getEnumValueDefinitionAccess().getGroup(), "rule__EnumValueDefinition__Group__0");
@@ -59,14 +60,19 @@ public class GraphQLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getInputValueDefinitionAccess().getGroup(), "rule__InputValueDefinition__Group__0");
 			builder.put(grammarAccess.getInputValueDefinitionAccess().getGroup_4(), "rule__InputValueDefinition__Group_4__0");
 			builder.put(grammarAccess.getIntersectionTypeAccess().getGroup(), "rule__IntersectionType__Group__0");
-			builder.put(grammarAccess.getIntersectionTypeAccess().getGroup_1(), "rule__IntersectionType__Group_1__0");
+			builder.put(grammarAccess.getIntersectionTypeAccess().getGroup_2(), "rule__IntersectionType__Group_2__0");
 			builder.put(grammarAccess.getNamedTypeAccess().getGroup(), "rule__NamedType__Group__0");
 			builder.put(grammarAccess.getListTypeAccess().getGroup(), "rule__ListType__Group__0");
 			builder.put(grammarAccess.getObjectValueAccess().getGroup(), "rule__ObjectValue__Group__0");
 			builder.put(grammarAccess.getObjectFieldAccess().getGroup(), "rule__ObjectField__Group__0");
 			builder.put(grammarAccess.getListValueAccess().getGroup(), "rule__ListValue__Group__0");
+			builder.put(grammarAccess.getDirectiveDefinitionAccess().getGroup(), "rule__DirectiveDefinition__Group__0");
+			builder.put(grammarAccess.getArgumentsDefinitionAccess().getGroup(), "rule__ArgumentsDefinition__Group__0");
+			builder.put(grammarAccess.getDirectiveLocationsAccess().getGroup(), "rule__DirectiveLocations__Group__0");
+			builder.put(grammarAccess.getDirectiveLocationsAccess().getGroup_2(), "rule__DirectiveLocations__Group_2__0");
 			builder.put(grammarAccess.getTypeSystemDefinitionAccess().getSchemaDefinitionsAssignment_0(), "rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0");
 			builder.put(grammarAccess.getTypeSystemDefinitionAccess().getTypeDefinitionsAssignment_1(), "rule__TypeSystemDefinition__TypeDefinitionsAssignment_1");
+			builder.put(grammarAccess.getTypeSystemDefinitionAccess().getDirectiveDefinitionsAssignment_2(), "rule__TypeSystemDefinition__DirectiveDefinitionsAssignment_2");
 			builder.put(grammarAccess.getSchemaDefinitionAccess().getDescriptionAssignment_0(), "rule__SchemaDefinition__DescriptionAssignment_0");
 			builder.put(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsAssignment_3(), "rule__SchemaDefinition__TypeDefinitionsAssignment_3");
 			builder.put(grammarAccess.getRootOperationTypeDefinitionAccess().getOperationTypeAssignment_0(), "rule__RootOperationTypeDefinition__OperationTypeAssignment_0");
@@ -86,8 +92,8 @@ public class GraphQLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFieldDefinitionAccess().getTypeAssignment_3(), "rule__FieldDefinition__TypeAssignment_3");
 			builder.put(grammarAccess.getUnionTypeDefinitionAccess().getDescriptionAssignment_0(), "rule__UnionTypeDefinition__DescriptionAssignment_0");
 			builder.put(grammarAccess.getUnionTypeDefinitionAccess().getNameAssignment_2(), "rule__UnionTypeDefinition__NameAssignment_2");
-			builder.put(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesAssignment_3_1(), "rule__UnionTypeDefinition__MemberTypesAssignment_3_1");
-			builder.put(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesAssignment_3_2_1(), "rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1");
+			builder.put(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesAssignment_3_2(), "rule__UnionTypeDefinition__MemberTypesAssignment_3_2");
+			builder.put(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesAssignment_3_3_1(), "rule__UnionTypeDefinition__MemberTypesAssignment_3_3_1");
 			builder.put(grammarAccess.getEnumTypeDefinitionAccess().getDescriptionAssignment_0(), "rule__EnumTypeDefinition__DescriptionAssignment_0");
 			builder.put(grammarAccess.getEnumTypeDefinitionAccess().getNameAssignment_2(), "rule__EnumTypeDefinition__NameAssignment_2");
 			builder.put(grammarAccess.getEnumTypeDefinitionAccess().getValueDefinitionsAssignment_3_1(), "rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1");
@@ -100,8 +106,8 @@ public class GraphQLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getInputValueDefinitionAccess().getNameAssignment_1(), "rule__InputValueDefinition__NameAssignment_1");
 			builder.put(grammarAccess.getInputValueDefinitionAccess().getTypeAssignment_3(), "rule__InputValueDefinition__TypeAssignment_3");
 			builder.put(grammarAccess.getInputValueDefinitionAccess().getDefaultValueAssignment_4_1(), "rule__InputValueDefinition__DefaultValueAssignment_4_1");
-			builder.put(grammarAccess.getIntersectionTypeAccess().getMemberTypesAssignment_0(), "rule__IntersectionType__MemberTypesAssignment_0");
-			builder.put(grammarAccess.getIntersectionTypeAccess().getMemberTypesAssignment_1_1(), "rule__IntersectionType__MemberTypesAssignment_1_1");
+			builder.put(grammarAccess.getIntersectionTypeAccess().getMemberTypesAssignment_1(), "rule__IntersectionType__MemberTypesAssignment_1");
+			builder.put(grammarAccess.getIntersectionTypeAccess().getMemberTypesAssignment_2_1(), "rule__IntersectionType__MemberTypesAssignment_2_1");
 			builder.put(grammarAccess.getNamedTypeAccess().getTypeDefinitionAssignment_0(), "rule__NamedType__TypeDefinitionAssignment_0");
 			builder.put(grammarAccess.getNamedTypeAccess().getNonNullAssignment_1(), "rule__NamedType__NonNullAssignment_1");
 			builder.put(grammarAccess.getListTypeAccess().getTypeAssignment_1(), "rule__ListType__TypeAssignment_1");
@@ -116,6 +122,14 @@ public class GraphQLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getObjectFieldAccess().getNameAssignment_0(), "rule__ObjectField__NameAssignment_0");
 			builder.put(grammarAccess.getObjectFieldAccess().getValueAssignment_2(), "rule__ObjectField__ValueAssignment_2");
 			builder.put(grammarAccess.getListValueAccess().getValuesAssignment_2(), "rule__ListValue__ValuesAssignment_2");
+			builder.put(grammarAccess.getDirectiveDefinitionAccess().getDescriptionAssignment_0(), "rule__DirectiveDefinition__DescriptionAssignment_0");
+			builder.put(grammarAccess.getDirectiveDefinitionAccess().getNameAssignment_2(), "rule__DirectiveDefinition__NameAssignment_2");
+			builder.put(grammarAccess.getDirectiveDefinitionAccess().getArgumentDefinitionsAssignment_3(), "rule__DirectiveDefinition__ArgumentDefinitionsAssignment_3");
+			builder.put(grammarAccess.getDirectiveDefinitionAccess().getRepeatableAssignment_4(), "rule__DirectiveDefinition__RepeatableAssignment_4");
+			builder.put(grammarAccess.getDirectiveDefinitionAccess().getDirectiveLocationsAssignment_6(), "rule__DirectiveDefinition__DirectiveLocationsAssignment_6");
+			builder.put(grammarAccess.getArgumentsDefinitionAccess().getArgumentsAssignment_2(), "rule__ArgumentsDefinition__ArgumentsAssignment_2");
+			builder.put(grammarAccess.getDirectiveLocationsAccess().getDirectiveLocationsAssignment_1(), "rule__DirectiveLocations__DirectiveLocationsAssignment_1");
+			builder.put(grammarAccess.getDirectiveLocationsAccess().getDirectiveLocationsAssignment_2_1(), "rule__DirectiveLocations__DirectiveLocationsAssignment_2_1");
 		}
 	}
 	

@@ -6,6 +6,27 @@
     complianceLevel="8.0" copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="GraphQL" basePackage="io.github.katmatt.graphql" disposableProviderFactory="true"
       fileExtensions="graphql" ecorePackage="GraphQL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="GraphQL.ecore#//DirectiveLocation">
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/QUERY"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/MUTATION"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/SUBSCRIPTION"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/FIELD"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/FRAGMENT_DEFINITION"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/FRAGMENT_SPREAD"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/INLINE_FRAGMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/VARIABLE_DEFINITION"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/SCHEMA"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/SCALAR"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/OBJECT"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/FIELD_DEFINITION"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/ARGUMENT_DEFINITION"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/INTERFACE"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/UNION"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/ENUM"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/ENUM_VALUE"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/INPUT_OBJECT"/>
+      <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//DirectiveLocation/INPUT_FIELD_DEFINITION"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="GraphQL.ecore#//OperationType">
       <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//OperationType/QUERY"/>
       <genEnumLiterals ecoreEnumLiteral="GraphQL.ecore#//OperationType/MUTATION"/>
@@ -14,6 +35,7 @@
     <genClasses ecoreClass="GraphQL.ecore#//TypeSystemDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphQL.ecore#//TypeSystemDefinition/schemaDefinitions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphQL.ecore#//TypeSystemDefinition/typeDefinitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphQL.ecore#//TypeSystemDefinition/directiveDefinitions"/>
     </genClasses>
     <genClasses ecoreClass="GraphQL.ecore#//SchemaDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphQL.ecore#//SchemaDefinition/description"/>
@@ -100,6 +122,19 @@
     <genClasses ecoreClass="GraphQL.ecore#//ConstValue"/>
     <genClasses ecoreClass="GraphQL.ecore#//ListValue">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphQL.ecore#//ListValue/values"/>
+    </genClasses>
+    <genClasses ecoreClass="GraphQL.ecore#//DirectiveDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphQL.ecore#//DirectiveDefinition/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphQL.ecore#//DirectiveDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphQL.ecore#//DirectiveDefinition/argumentDefinitions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphQL.ecore#//DirectiveDefinition/repeatable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphQL.ecore#//DirectiveDefinition/directiveLocations"/>
+    </genClasses>
+    <genClasses ecoreClass="GraphQL.ecore#//ArgumentsDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphQL.ecore#//ArgumentsDefinition/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="GraphQL.ecore#//DirectiveLocations">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphQL.ecore#//DirectiveLocations/directiveLocations"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -267,6 +267,33 @@ public interface GraphQLFactory extends EFactory
   ListValue createListValue();
 
   /**
+   * Returns a new object of class '<em>Directive Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Directive Definition</em>'.
+   * @generated
+   */
+  DirectiveDefinition createDirectiveDefinition();
+
+  /**
+   * Returns a new object of class '<em>Arguments Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Arguments Definition</em>'.
+   * @generated
+   */
+  ArgumentsDefinition createArgumentsDefinition();
+
+  /**
+   * Returns a new object of class '<em>Directive Locations</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Directive Locations</em>'.
+   * @generated
+   */
+  DirectiveLocations createDirectiveLocations();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

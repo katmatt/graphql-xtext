@@ -21,16 +21,22 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class GraphQLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected GraphQLGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_DirectiveLocations_VerticalLineKeyword_0_q;
 	protected AbstractElementAlias match_InputObjectTypeDefinition___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
 	protected AbstractElementAlias match_InterfaceDefinition___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
+	protected AbstractElementAlias match_IntersectionType_AmpersandKeyword_0_q;
 	protected AbstractElementAlias match_ObjectTypeDefinition___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
+	protected AbstractElementAlias match_UnionTypeDefinition_VerticalLineKeyword_3_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (GraphQLGrammarAccess) access;
+		match_DirectiveLocations_VerticalLineKeyword_0_q = new TokenAlias(false, true, grammarAccess.getDirectiveLocationsAccess().getVerticalLineKeyword_0());
 		match_InputObjectTypeDefinition___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getInputObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getInputObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_3_2()));
 		match_InterfaceDefinition___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getInterfaceDefinitionAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getInterfaceDefinitionAccess().getRightCurlyBracketKeyword_4_2()));
+		match_IntersectionType_AmpersandKeyword_0_q = new TokenAlias(false, true, grammarAccess.getIntersectionTypeAccess().getAmpersandKeyword_0());
 		match_ObjectTypeDefinition___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_4_2()));
+		match_UnionTypeDefinition_VerticalLineKeyword_3_1_q = new TokenAlias(false, true, grammarAccess.getUnionTypeDefinitionAccess().getVerticalLineKeyword_3_1());
 	}
 	
 	@Override
@@ -45,16 +51,33 @@ public class GraphQLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_InputObjectTypeDefinition___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
+			if (match_DirectiveLocations_VerticalLineKeyword_0_q.equals(syntax))
+				emit_DirectiveLocations_VerticalLineKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_InputObjectTypeDefinition___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
 				emit_InputObjectTypeDefinition___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_InterfaceDefinition___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
 				emit_InterfaceDefinition___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_IntersectionType_AmpersandKeyword_0_q.equals(syntax))
+				emit_IntersectionType_AmpersandKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ObjectTypeDefinition___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
 				emit_ObjectTypeDefinition___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_UnionTypeDefinition_VerticalLineKeyword_3_1_q.equals(syntax))
+				emit_UnionTypeDefinition_VerticalLineKeyword_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     '|'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) directiveLocations+=DirectiveLocation
+	 */
+	protected void emit_DirectiveLocations_VerticalLineKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     ('{' '}')?
@@ -80,6 +103,17 @@ public class GraphQLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
+	 *     '&'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) memberTypes+=Type
+	 */
+	protected void emit_IntersectionType_AmpersandKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
@@ -87,6 +121,17 @@ public class GraphQLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=NAME (ambiguity) (rule end)
 	 */
 	protected void emit_ObjectTypeDefinition___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '|'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=NAME '=' (ambiguity) memberTypes+=Type
+	 */
+	protected void emit_UnionTypeDefinition_VerticalLineKeyword_3_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

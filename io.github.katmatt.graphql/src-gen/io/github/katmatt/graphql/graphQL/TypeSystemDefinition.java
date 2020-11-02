@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link io.github.katmatt.graphql.graphQL.TypeSystemDefinition#getSchemaDefinitions <em>Schema Definitions</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.TypeSystemDefinition#getTypeDefinitions <em>Type Definitions</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.TypeSystemDefinition#getDirectiveDefinitions <em>Directive Definitions</em>}</li>
  * </ul>
  *
  * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getTypeSystemDefinition()
@@ -49,5 +50,17 @@ public interface TypeSystemDefinition extends EObject
    * @generated
    */
   EList<TypeDefinition> getTypeDefinitions();
+
+  /**
+   * Returns the value of the '<em><b>Directive Definitions</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.DirectiveDefinition}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Directive Definitions</em>' containment reference list.
+   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getTypeSystemDefinition_DirectiveDefinitions()
+   * @model containment="true"
+   * @generated
+   */
+  EList<DirectiveDefinition> getDirectiveDefinitions();
 
 } // TypeSystemDefinition

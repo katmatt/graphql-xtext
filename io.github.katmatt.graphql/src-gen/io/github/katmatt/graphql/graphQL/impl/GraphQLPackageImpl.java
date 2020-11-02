@@ -3,8 +3,12 @@
  */
 package io.github.katmatt.graphql.graphQL.impl;
 
+import io.github.katmatt.graphql.graphQL.ArgumentsDefinition;
 import io.github.katmatt.graphql.graphQL.BooleanValue;
 import io.github.katmatt.graphql.graphQL.ConstValue;
+import io.github.katmatt.graphql.graphQL.DirectiveDefinition;
+import io.github.katmatt.graphql.graphQL.DirectiveLocation;
+import io.github.katmatt.graphql.graphQL.DirectiveLocations;
 import io.github.katmatt.graphql.graphQL.EnumTypeDefinition;
 import io.github.katmatt.graphql.graphQL.EnumValue;
 import io.github.katmatt.graphql.graphQL.EnumValueDefinition;
@@ -244,6 +248,34 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass directiveDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass argumentsDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass directiveLocationsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum directiveLocationEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EEnum operationTypeEEnum = null;
 
   /**
@@ -340,6 +372,17 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
   public EReference getTypeSystemDefinition_TypeDefinitions()
   {
     return (EReference)typeSystemDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTypeSystemDefinition_DirectiveDefinitions()
+  {
+    return (EReference)typeSystemDefinitionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1030,6 +1073,127 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
+  public EClass getDirectiveDefinition()
+  {
+    return directiveDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirectiveDefinition_Description()
+  {
+    return (EReference)directiveDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDirectiveDefinition_Name()
+  {
+    return (EAttribute)directiveDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirectiveDefinition_ArgumentDefinitions()
+  {
+    return (EReference)directiveDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDirectiveDefinition_Repeatable()
+  {
+    return (EAttribute)directiveDefinitionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirectiveDefinition_DirectiveLocations()
+  {
+    return (EReference)directiveDefinitionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getArgumentsDefinition()
+  {
+    return argumentsDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getArgumentsDefinition_Arguments()
+  {
+    return (EReference)argumentsDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDirectiveLocations()
+  {
+    return directiveLocationsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDirectiveLocations_DirectiveLocations()
+  {
+    return (EAttribute)directiveLocationsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getDirectiveLocation()
+  {
+    return directiveLocationEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EEnum getOperationType()
   {
     return operationTypeEEnum;
@@ -1069,6 +1233,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     typeSystemDefinitionEClass = createEClass(TYPE_SYSTEM_DEFINITION);
     createEReference(typeSystemDefinitionEClass, TYPE_SYSTEM_DEFINITION__SCHEMA_DEFINITIONS);
     createEReference(typeSystemDefinitionEClass, TYPE_SYSTEM_DEFINITION__TYPE_DEFINITIONS);
+    createEReference(typeSystemDefinitionEClass, TYPE_SYSTEM_DEFINITION__DIRECTIVE_DEFINITIONS);
 
     schemaDefinitionEClass = createEClass(SCHEMA_DEFINITION);
     createEReference(schemaDefinitionEClass, SCHEMA_DEFINITION__DESCRIPTION);
@@ -1158,7 +1323,21 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     listValueEClass = createEClass(LIST_VALUE);
     createEReference(listValueEClass, LIST_VALUE__VALUES);
 
+    directiveDefinitionEClass = createEClass(DIRECTIVE_DEFINITION);
+    createEReference(directiveDefinitionEClass, DIRECTIVE_DEFINITION__DESCRIPTION);
+    createEAttribute(directiveDefinitionEClass, DIRECTIVE_DEFINITION__NAME);
+    createEReference(directiveDefinitionEClass, DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS);
+    createEAttribute(directiveDefinitionEClass, DIRECTIVE_DEFINITION__REPEATABLE);
+    createEReference(directiveDefinitionEClass, DIRECTIVE_DEFINITION__DIRECTIVE_LOCATIONS);
+
+    argumentsDefinitionEClass = createEClass(ARGUMENTS_DEFINITION);
+    createEReference(argumentsDefinitionEClass, ARGUMENTS_DEFINITION__ARGUMENTS);
+
+    directiveLocationsEClass = createEClass(DIRECTIVE_LOCATIONS);
+    createEAttribute(directiveLocationsEClass, DIRECTIVE_LOCATIONS__DIRECTIVE_LOCATIONS);
+
     // Create enums
+    directiveLocationEEnum = createEEnum(DIRECTIVE_LOCATION);
     operationTypeEEnum = createEEnum(OPERATION_TYPE);
   }
 
@@ -1211,6 +1390,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     initEClass(typeSystemDefinitionEClass, TypeSystemDefinition.class, "TypeSystemDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTypeSystemDefinition_SchemaDefinitions(), this.getSchemaDefinition(), null, "schemaDefinitions", null, 0, -1, TypeSystemDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeSystemDefinition_TypeDefinitions(), this.getTypeDefinition(), null, "typeDefinitions", null, 0, -1, TypeSystemDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeSystemDefinition_DirectiveDefinitions(), this.getDirectiveDefinition(), null, "directiveDefinitions", null, 0, -1, TypeSystemDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(schemaDefinitionEClass, SchemaDefinition.class, "SchemaDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSchemaDefinition_Description(), this.getStringValue(), null, "description", null, 0, 1, SchemaDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1300,7 +1480,41 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     initEClass(listValueEClass, ListValue.class, "ListValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getListValue_Values(), this.getConstValue(), null, "values", null, 0, -1, ListValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(directiveDefinitionEClass, DirectiveDefinition.class, "DirectiveDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDirectiveDefinition_Description(), this.getStringValue(), null, "description", null, 0, 1, DirectiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDirectiveDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, DirectiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirectiveDefinition_ArgumentDefinitions(), this.getArgumentsDefinition(), null, "argumentDefinitions", null, 0, 1, DirectiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDirectiveDefinition_Repeatable(), ecorePackage.getEBoolean(), "repeatable", null, 0, 1, DirectiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirectiveDefinition_DirectiveLocations(), this.getDirectiveLocations(), null, "directiveLocations", null, 0, -1, DirectiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(argumentsDefinitionEClass, ArgumentsDefinition.class, "ArgumentsDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getArgumentsDefinition_Arguments(), this.getInputValueDefinition(), null, "arguments", null, 0, -1, ArgumentsDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(directiveLocationsEClass, DirectiveLocations.class, "DirectiveLocations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDirectiveLocations_DirectiveLocations(), this.getDirectiveLocation(), "directiveLocations", null, 0, -1, DirectiveLocations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     // Initialize enums and add enum literals
+    initEEnum(directiveLocationEEnum, DirectiveLocation.class, "DirectiveLocation");
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.QUERY);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.MUTATION);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.SUBSCRIPTION);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.FIELD);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.FRAGMENT_DEFINITION);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.FRAGMENT_SPREAD);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.INLINE_FRAGMENT);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.VARIABLE_DEFINITION);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.SCHEMA);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.SCALAR);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.OBJECT);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.FIELD_DEFINITION);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.ARGUMENT_DEFINITION);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.INTERFACE);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.UNION);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.ENUM);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.ENUM_VALUE);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.INPUT_OBJECT);
+    addEEnumLiteral(directiveLocationEEnum, DirectiveLocation.INPUT_FIELD_DEFINITION);
+
     initEEnum(operationTypeEEnum, OperationType.class, "OperationType");
     addEEnumLiteral(operationTypeEEnum, OperationType.QUERY);
     addEEnumLiteral(operationTypeEEnum, OperationType.MUTATION);

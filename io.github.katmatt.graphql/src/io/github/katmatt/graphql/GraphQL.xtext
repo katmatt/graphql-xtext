@@ -6,7 +6,11 @@ import 'http://www.eclipse.org/emf/2002/Ecore'
 generate graphQL "http://www.github.io/katmatt/graphql/GraphQL"
 
 TypeSystemDefinition :
-	(schemaDefinitions+=SchemaDefinition | typeDefinitions+=TypeDefinition)*;
+	(
+		schemaDefinitions+=SchemaDefinition | 
+		typeDefinitions+=TypeDefinition |
+		directiveDefinitions+=DirectiveDefinition		
+	)*;
 	
 SchemaDefinition : 
 	description=StringValue? "schema" "{" typeDefinitions+=RootOperationTypeDefinition+ "}"
@@ -46,7 +50,7 @@ FieldDefinition:
 ;
 
 UnionTypeDefinition: 
-	description=StringValue? "union" name=NAME ("=" memberTypes+=Type ("|" memberTypes+=Type)*)?
+	description=StringValue? "union" name=NAME ("=" "|"? memberTypes+=Type ("|" memberTypes+=Type)*)?
 ;
 
 EnumTypeDefinition: 
@@ -66,7 +70,7 @@ InputValueDefinition:
 ;
 
 IntersectionType: 
-	memberTypes+=Type ('&' memberTypes+=Type)*
+	'&'? memberTypes+=Type ('&' memberTypes+=Type)*
 ;
 
 Type: 
@@ -128,11 +132,49 @@ ListValue:
 	{ListValue} '[' values+=ConstValue* ']'
 ;
 
+DirectiveDefinition:
+	description=StringValue? 'directive' name=DIRECTIVE_NAME 
+		argumentDefinitions=ArgumentsDefinition? 
+	repeatable?='repeatable'? 'on' directiveLocations+=DirectiveLocations
+;
+
+ArgumentsDefinition:
+	{ArgumentsDefinition} '(' arguments+=InputValueDefinition* ')'
+;
+
+DirectiveLocations:
+	'|'? directiveLocations+=DirectiveLocation ('|' directiveLocations+=DirectiveLocation)*
+;
+
+enum DirectiveLocation: 
+	QUERY |
+	MUTATION |
+	SUBSCRIPTION |
+	FIELD |
+	FRAGMENT_DEFINITION |
+	FRAGMENT_SPREAD |
+	INLINE_FRAGMENT |
+	VARIABLE_DEFINITION |
+	SCHEMA |
+	SCALAR |
+	OBJECT |
+	FIELD_DEFINITION |
+	ARGUMENT_DEFINITION  |
+	INTERFACE |
+	UNION |
+	ENUM |
+	ENUM_VALUE |
+	INPUT_OBJECT |
+	INPUT_FIELD_DEFINITION
+;
+
 enum OperationType : 
 	QUERY = "query" | 
 	MUTATION = "mutation" | 
 	SUBSCRIPTION = "subscription"
 ;
+
+terminal DIRECTIVE_NAME returns EString: '@' NAME;
 
 terminal NAME returns EString: ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal INT_VALUE returns EString: '-'? ('1'..'9')('0'..'9')*;

@@ -211,6 +211,21 @@ public class GraphQLAdapterFactory extends AdapterFactoryImpl
         return createListValueAdapter();
       }
       @Override
+      public Adapter caseDirectiveDefinition(DirectiveDefinition object)
+      {
+        return createDirectiveDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseArgumentsDefinition(ArgumentsDefinition object)
+      {
+        return createArgumentsDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseDirectiveLocations(DirectiveLocations object)
+      {
+        return createDirectiveLocationsAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -633,6 +648,51 @@ public class GraphQLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createListValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition <em>Directive Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.DirectiveDefinition
+   * @generated
+   */
+  public Adapter createDirectiveDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.ArgumentsDefinition <em>Arguments Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.ArgumentsDefinition
+   * @generated
+   */
+  public Adapter createArgumentsDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.DirectiveLocations <em>Directive Locations</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.DirectiveLocations
+   * @generated
+   */
+  public Adapter createDirectiveLocationsAdapter()
   {
     return null;
   }

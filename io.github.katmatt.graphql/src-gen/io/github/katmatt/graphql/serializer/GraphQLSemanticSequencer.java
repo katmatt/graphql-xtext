@@ -4,7 +4,10 @@
 package io.github.katmatt.graphql.serializer;
 
 import com.google.inject.Inject;
+import io.github.katmatt.graphql.graphQL.ArgumentsDefinition;
 import io.github.katmatt.graphql.graphQL.BooleanValue;
+import io.github.katmatt.graphql.graphQL.DirectiveDefinition;
+import io.github.katmatt.graphql.graphQL.DirectiveLocations;
 import io.github.katmatt.graphql.graphQL.EnumTypeDefinition;
 import io.github.katmatt.graphql.graphQL.EnumValue;
 import io.github.katmatt.graphql.graphQL.EnumValueDefinition;
@@ -55,8 +58,17 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == GraphQLPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case GraphQLPackage.ARGUMENTS_DEFINITION:
+				sequence_ArgumentsDefinition(context, (ArgumentsDefinition) semanticObject); 
+				return; 
 			case GraphQLPackage.BOOLEAN_VALUE:
 				sequence_BooleanValue(context, (BooleanValue) semanticObject); 
+				return; 
+			case GraphQLPackage.DIRECTIVE_DEFINITION:
+				sequence_DirectiveDefinition(context, (DirectiveDefinition) semanticObject); 
+				return; 
+			case GraphQLPackage.DIRECTIVE_LOCATIONS:
+				sequence_DirectiveLocations(context, (DirectiveLocations) semanticObject); 
 				return; 
 			case GraphQLPackage.ENUM_TYPE_DEFINITION:
 				sequence_EnumTypeDefinition(context, (EnumTypeDefinition) semanticObject); 
@@ -134,6 +146,18 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     ArgumentsDefinition returns ArgumentsDefinition
+	 *
+	 * Constraint:
+	 *     arguments+=InputValueDefinition*
+	 */
+	protected void sequence_ArgumentsDefinition(ISerializationContext context, ArgumentsDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     BooleanValue returns BooleanValue
 	 *     ConstValue returns BooleanValue
 	 *
@@ -141,6 +165,36 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (value='true' | value='false')
 	 */
 	protected void sequence_BooleanValue(ISerializationContext context, BooleanValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DirectiveDefinition returns DirectiveDefinition
+	 *
+	 * Constraint:
+	 *     (
+	 *         description=StringValue? 
+	 *         name=DIRECTIVE_NAME 
+	 *         argumentDefinitions=ArgumentsDefinition? 
+	 *         repeatable?='repeatable'? 
+	 *         directiveLocations+=DirectiveLocations
+	 *     )
+	 */
+	protected void sequence_DirectiveDefinition(ISerializationContext context, DirectiveDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DirectiveLocations returns DirectiveLocations
+	 *
+	 * Constraint:
+	 *     (directiveLocations+=DirectiveLocation directiveLocations+=DirectiveLocation*)
+	 */
+	protected void sequence_DirectiveLocations(ISerializationContext context, DirectiveLocations semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -457,7 +511,7 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeSystemDefinition returns TypeSystemDefinition
 	 *
 	 * Constraint:
-	 *     (schemaDefinitions+=SchemaDefinition | typeDefinitions+=TypeDefinition)+
+	 *     (schemaDefinitions+=SchemaDefinition | typeDefinitions+=TypeDefinition | directiveDefinitions+=DirectiveDefinition)+
 	 */
 	protected void sequence_TypeSystemDefinition(ISerializationContext context, TypeSystemDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
