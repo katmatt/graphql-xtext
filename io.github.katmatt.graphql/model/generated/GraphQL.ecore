@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphQL" nsURI="http://www.github.io/katmatt/graphql/GraphQL"
+    nsPrefix="graphQL">
+  <eClassifiers xsi:type="ecore:EClass" name="TypeSystemDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schemaDefinitions" upperBound="-1"
+        eType="#//SchemaDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeDefinitions" upperBound="-1"
+        eType="#//TypeDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SchemaDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeDefinitions" upperBound="-1"
+        eType="#//RootOperationTypeDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RootOperationTypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationType" eType="#//OperationType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScalarTypeDefinition" eSuperTypes="#//TypeDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectTypeDefinition" eSuperTypes="#//TypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fieldDefinitions" upperBound="-1"
+        eType="#//FieldDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceDefinition" eSuperTypes="#//TypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fieldDefinitions" upperBound="-1"
+        eType="#//FieldDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnionTypeDefinition" eSuperTypes="#//TypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memberTypes" unique="false"
+        upperBound="-1" eType="#//TypeDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumTypeDefinition" eSuperTypes="#//TypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueDefinitions" upperBound="-1"
+        eType="#//EnumValueDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumValueDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputObjectTypeDefinition" eSuperTypes="#//TypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fieldDefinitions" upperBound="-1"
+        eType="#//FieldDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperationType">
+    <eLiterals name="QUERY" literal="query"/>
+    <eLiterals name="MUTATION" value="1" literal="mutation"/>
+    <eLiterals name="SUBSCRIPTION" value="2" literal="subscription"/>
+  </eClassifiers>
+</ecore:EPackage>

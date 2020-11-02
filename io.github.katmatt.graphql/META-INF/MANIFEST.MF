@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: io.github.katmatt.graphql
+Bundle-ManifestVersion: 2
+Bundle-Name: io.github.katmatt.graphql
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: io.github.katmatt.graphql; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: io.github.katmatt.graphql.graphQL,
+ io.github.katmatt.graphql.validation,
+ io.github.katmatt.graphql.scoping,
+ io.github.katmatt.graphql.services,
+ io.github.katmatt.graphql.serializer,
+ io.github.katmatt.graphql.graphQL.util,
+ io.github.katmatt.graphql.parser.antlr.internal,
+ io.github.katmatt.graphql.parser.antlr,
+ io.github.katmatt.graphql.graphQL.impl,
+ io.github.katmatt.graphql,
+ io.github.katmatt.graphql.generator
+Import-Package: org.apache.log4j

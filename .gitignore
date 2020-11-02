@@ -1,0 +1,9 @@
+out
+/.m2/
+bin/
+build/
+.gradle/
+target/
+*._trace
+*.xtendbin
+.DS_Store

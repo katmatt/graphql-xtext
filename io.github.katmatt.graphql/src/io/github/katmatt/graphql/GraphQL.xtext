@@ -1,0 +1,50 @@
+grammar io.github.katmatt.graphql.GraphQL
+
+hidden(WS, SL_COMMENT, COMMA)
+
+import 'http://www.eclipse.org/emf/2002/Ecore'
+generate graphQL "http://www.github.io/katmatt/graphql/GraphQL"
+
+TypeSystemDefinition :
+	(schemaDefinitions+=SchemaDefinition | typeDefinitions+=TypeDefinition)*;
+	
+SchemaDefinition : "schema" "{" typeDefinitions+=RootOperationTypeDefinition+ "}";
+
+
+RootOperationTypeDefinition : operationType=OperationType ":" type=[TypeDefinition|NAME];
+
+TypeDefinition: 
+	ScalarTypeDefinition |
+	ObjectTypeDefinition |
+	InterfaceDefinition |
+	UnionTypeDefinition |
+	EnumTypeDefinition |
+	InputObjectTypeDefinition
+;
+
+ScalarTypeDefinition: "scalar" name=NAME;
+
+ObjectTypeDefinition: "type" name=NAME ("{" fieldDefinitions+=FieldDefinition* "}")?;
+
+InterfaceDefinition: "interface" name=NAME ("{" fieldDefinitions+=FieldDefinition* "}")?;
+
+FieldDefinition: name=NAME ":" type=[TypeDefinition|NAME];
+
+UnionTypeDefinition: "union" name=NAME ("=" memberTypes+=[TypeDefinition|NAME] ("|" memberTypes+=[TypeDefinition|NAME])*)?;
+
+EnumTypeDefinition: "enum" name=NAME ("{" valueDefinitions+=EnumValueDefinition "}")?;
+
+EnumValueDefinition: name=NAME;
+
+InputObjectTypeDefinition: "input" name=NAME ("{" fieldDefinitions+=FieldDefinition* "}")?;
+
+enum OperationType : 
+	QUERY = "query" | 
+	MUTATION = "mutation" | 
+	SUBSCRIPTION = "subscription"
+;
+
+terminal NAME returns EString: ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal WS: (' '|'\t'|'\r'|'\n')+;
+terminal SL_COMMENT: '#' !('\n'|'\r')* ('\r'? '\n')?;
+terminal COMMA: ',';
