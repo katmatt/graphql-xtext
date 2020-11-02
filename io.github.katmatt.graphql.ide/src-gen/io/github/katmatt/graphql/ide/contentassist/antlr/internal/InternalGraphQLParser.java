@@ -22,26 +22,39 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_NAME", "RULE_WS", "RULE_SL_COMMENT", "RULE_COMMA", "'query'", "'mutation'", "'subscription'", "'schema'", "'{'", "'}'", "':'", "'scalar'", "'type'", "'interface'", "'union'", "'='", "'|'", "'enum'", "'input'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SL_STRING_VALUE", "RULE_ML_STRING_VALUE", "RULE_NAME", "RULE_INT_VALUE", "RULE_FLOAT_VALUE", "RULE_WS", "RULE_SL_COMMENT", "RULE_COMMA", "RULE_STRING_CHARACTER", "'true'", "'false'", "'query'", "'mutation'", "'subscription'", "'schema'", "'{'", "'}'", "':'", "'scalar'", "'type'", "'implements'", "'interface'", "'union'", "'='", "'|'", "'enum'", "'input'", "'&'", "'['", "']'", "'!'", "'null'"
     };
-    public static final int RULE_NAME=4;
-    public static final int RULE_SL_COMMENT=6;
+    public static final int RULE_FLOAT_VALUE=8;
+    public static final int RULE_STRING_CHARACTER=12;
+    public static final int RULE_NAME=6;
+    public static final int RULE_SL_COMMENT=10;
     public static final int T__19=19;
+    public static final int RULE_SL_STRING_VALUE=4;
+    public static final int RULE_INT_VALUE=7;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int T__11=11;
-    public static final int T__12=12;
+    public static final int T__33=33;
+    public static final int T__34=34;
     public static final int T__13=13;
+    public static final int T__35=35;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int T__10=10;
-    public static final int T__9=9;
-    public static final int T__8=8;
-    public static final int RULE_WS=5;
-    public static final int RULE_COMMA=7;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_WS=9;
+    public static final int RULE_COMMA=11;
+    public static final int RULE_ML_STRING_VALUE=5;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int T__29=29;
     public static final int T__22=22;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -130,7 +143,7 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==11||(LA1_0>=15 && LA1_0<=18)||(LA1_0>=21 && LA1_0<=22)) ) {
+                if ( ((LA1_0>=RULE_SL_STRING_VALUE && LA1_0<=RULE_ML_STRING_VALUE)||LA1_0==18||(LA1_0>=22 && LA1_0<=23)||(LA1_0>=25 && LA1_0<=26)||(LA1_0>=29 && LA1_0<=30)) ) {
                     alt1=1;
                 }
 
@@ -899,31 +912,31 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleEnumValueDefinition"
-    // InternalGraphQL.g:312:1: ruleEnumValueDefinition : ( ( rule__EnumValueDefinition__NameAssignment ) ) ;
+    // InternalGraphQL.g:312:1: ruleEnumValueDefinition : ( ( rule__EnumValueDefinition__Group__0 ) ) ;
     public final void ruleEnumValueDefinition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:316:2: ( ( ( rule__EnumValueDefinition__NameAssignment ) ) )
-            // InternalGraphQL.g:317:2: ( ( rule__EnumValueDefinition__NameAssignment ) )
+            // InternalGraphQL.g:316:2: ( ( ( rule__EnumValueDefinition__Group__0 ) ) )
+            // InternalGraphQL.g:317:2: ( ( rule__EnumValueDefinition__Group__0 ) )
             {
-            // InternalGraphQL.g:317:2: ( ( rule__EnumValueDefinition__NameAssignment ) )
-            // InternalGraphQL.g:318:3: ( rule__EnumValueDefinition__NameAssignment )
+            // InternalGraphQL.g:317:2: ( ( rule__EnumValueDefinition__Group__0 ) )
+            // InternalGraphQL.g:318:3: ( rule__EnumValueDefinition__Group__0 )
             {
-             before(grammarAccess.getEnumValueDefinitionAccess().getNameAssignment()); 
-            // InternalGraphQL.g:319:3: ( rule__EnumValueDefinition__NameAssignment )
-            // InternalGraphQL.g:319:4: rule__EnumValueDefinition__NameAssignment
+             before(grammarAccess.getEnumValueDefinitionAccess().getGroup()); 
+            // InternalGraphQL.g:319:3: ( rule__EnumValueDefinition__Group__0 )
+            // InternalGraphQL.g:319:4: rule__EnumValueDefinition__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__EnumValueDefinition__NameAssignment();
+            rule__EnumValueDefinition__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEnumValueDefinitionAccess().getNameAssignment()); 
+             after(grammarAccess.getEnumValueDefinitionAccess().getGroup()); 
 
             }
 
@@ -1022,22 +1035,1177 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleInputObjectTypeDefinition"
 
 
+    // $ANTLR start "entryRuleInputValueDefinition"
+    // InternalGraphQL.g:353:1: entryRuleInputValueDefinition : ruleInputValueDefinition EOF ;
+    public final void entryRuleInputValueDefinition() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:354:1: ( ruleInputValueDefinition EOF )
+            // InternalGraphQL.g:355:1: ruleInputValueDefinition EOF
+            {
+             before(grammarAccess.getInputValueDefinitionRule()); 
+            pushFollow(FOLLOW_1);
+            ruleInputValueDefinition();
+
+            state._fsp--;
+
+             after(grammarAccess.getInputValueDefinitionRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleInputValueDefinition"
+
+
+    // $ANTLR start "ruleInputValueDefinition"
+    // InternalGraphQL.g:362:1: ruleInputValueDefinition : ( ( rule__InputValueDefinition__Group__0 ) ) ;
+    public final void ruleInputValueDefinition() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:366:2: ( ( ( rule__InputValueDefinition__Group__0 ) ) )
+            // InternalGraphQL.g:367:2: ( ( rule__InputValueDefinition__Group__0 ) )
+            {
+            // InternalGraphQL.g:367:2: ( ( rule__InputValueDefinition__Group__0 ) )
+            // InternalGraphQL.g:368:3: ( rule__InputValueDefinition__Group__0 )
+            {
+             before(grammarAccess.getInputValueDefinitionAccess().getGroup()); 
+            // InternalGraphQL.g:369:3: ( rule__InputValueDefinition__Group__0 )
+            // InternalGraphQL.g:369:4: rule__InputValueDefinition__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__InputValueDefinition__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInputValueDefinitionAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleInputValueDefinition"
+
+
+    // $ANTLR start "entryRuleIntersectionType"
+    // InternalGraphQL.g:378:1: entryRuleIntersectionType : ruleIntersectionType EOF ;
+    public final void entryRuleIntersectionType() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:379:1: ( ruleIntersectionType EOF )
+            // InternalGraphQL.g:380:1: ruleIntersectionType EOF
+            {
+             before(grammarAccess.getIntersectionTypeRule()); 
+            pushFollow(FOLLOW_1);
+            ruleIntersectionType();
+
+            state._fsp--;
+
+             after(grammarAccess.getIntersectionTypeRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleIntersectionType"
+
+
+    // $ANTLR start "ruleIntersectionType"
+    // InternalGraphQL.g:387:1: ruleIntersectionType : ( ( rule__IntersectionType__Group__0 ) ) ;
+    public final void ruleIntersectionType() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:391:2: ( ( ( rule__IntersectionType__Group__0 ) ) )
+            // InternalGraphQL.g:392:2: ( ( rule__IntersectionType__Group__0 ) )
+            {
+            // InternalGraphQL.g:392:2: ( ( rule__IntersectionType__Group__0 ) )
+            // InternalGraphQL.g:393:3: ( rule__IntersectionType__Group__0 )
+            {
+             before(grammarAccess.getIntersectionTypeAccess().getGroup()); 
+            // InternalGraphQL.g:394:3: ( rule__IntersectionType__Group__0 )
+            // InternalGraphQL.g:394:4: rule__IntersectionType__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__IntersectionType__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIntersectionTypeAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleIntersectionType"
+
+
+    // $ANTLR start "entryRuleType"
+    // InternalGraphQL.g:403:1: entryRuleType : ruleType EOF ;
+    public final void entryRuleType() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:404:1: ( ruleType EOF )
+            // InternalGraphQL.g:405:1: ruleType EOF
+            {
+             before(grammarAccess.getTypeRule()); 
+            pushFollow(FOLLOW_1);
+            ruleType();
+
+            state._fsp--;
+
+             after(grammarAccess.getTypeRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleType"
+
+
+    // $ANTLR start "ruleType"
+    // InternalGraphQL.g:412:1: ruleType : ( ( rule__Type__Alternatives ) ) ;
+    public final void ruleType() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:416:2: ( ( ( rule__Type__Alternatives ) ) )
+            // InternalGraphQL.g:417:2: ( ( rule__Type__Alternatives ) )
+            {
+            // InternalGraphQL.g:417:2: ( ( rule__Type__Alternatives ) )
+            // InternalGraphQL.g:418:3: ( rule__Type__Alternatives )
+            {
+             before(grammarAccess.getTypeAccess().getAlternatives()); 
+            // InternalGraphQL.g:419:3: ( rule__Type__Alternatives )
+            // InternalGraphQL.g:419:4: rule__Type__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__Type__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTypeAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleType"
+
+
+    // $ANTLR start "entryRuleNamedType"
+    // InternalGraphQL.g:428:1: entryRuleNamedType : ruleNamedType EOF ;
+    public final void entryRuleNamedType() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:429:1: ( ruleNamedType EOF )
+            // InternalGraphQL.g:430:1: ruleNamedType EOF
+            {
+             before(grammarAccess.getNamedTypeRule()); 
+            pushFollow(FOLLOW_1);
+            ruleNamedType();
+
+            state._fsp--;
+
+             after(grammarAccess.getNamedTypeRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleNamedType"
+
+
+    // $ANTLR start "ruleNamedType"
+    // InternalGraphQL.g:437:1: ruleNamedType : ( ( rule__NamedType__Group__0 ) ) ;
+    public final void ruleNamedType() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:441:2: ( ( ( rule__NamedType__Group__0 ) ) )
+            // InternalGraphQL.g:442:2: ( ( rule__NamedType__Group__0 ) )
+            {
+            // InternalGraphQL.g:442:2: ( ( rule__NamedType__Group__0 ) )
+            // InternalGraphQL.g:443:3: ( rule__NamedType__Group__0 )
+            {
+             before(grammarAccess.getNamedTypeAccess().getGroup()); 
+            // InternalGraphQL.g:444:3: ( rule__NamedType__Group__0 )
+            // InternalGraphQL.g:444:4: rule__NamedType__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__NamedType__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNamedTypeAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleNamedType"
+
+
+    // $ANTLR start "entryRuleListType"
+    // InternalGraphQL.g:453:1: entryRuleListType : ruleListType EOF ;
+    public final void entryRuleListType() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:454:1: ( ruleListType EOF )
+            // InternalGraphQL.g:455:1: ruleListType EOF
+            {
+             before(grammarAccess.getListTypeRule()); 
+            pushFollow(FOLLOW_1);
+            ruleListType();
+
+            state._fsp--;
+
+             after(grammarAccess.getListTypeRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleListType"
+
+
+    // $ANTLR start "ruleListType"
+    // InternalGraphQL.g:462:1: ruleListType : ( ( rule__ListType__Group__0 ) ) ;
+    public final void ruleListType() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:466:2: ( ( ( rule__ListType__Group__0 ) ) )
+            // InternalGraphQL.g:467:2: ( ( rule__ListType__Group__0 ) )
+            {
+            // InternalGraphQL.g:467:2: ( ( rule__ListType__Group__0 ) )
+            // InternalGraphQL.g:468:3: ( rule__ListType__Group__0 )
+            {
+             before(grammarAccess.getListTypeAccess().getGroup()); 
+            // InternalGraphQL.g:469:3: ( rule__ListType__Group__0 )
+            // InternalGraphQL.g:469:4: rule__ListType__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__ListType__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getListTypeAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleListType"
+
+
+    // $ANTLR start "entryRuleIntValue"
+    // InternalGraphQL.g:478:1: entryRuleIntValue : ruleIntValue EOF ;
+    public final void entryRuleIntValue() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:479:1: ( ruleIntValue EOF )
+            // InternalGraphQL.g:480:1: ruleIntValue EOF
+            {
+             before(grammarAccess.getIntValueRule()); 
+            pushFollow(FOLLOW_1);
+            ruleIntValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getIntValueRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleIntValue"
+
+
+    // $ANTLR start "ruleIntValue"
+    // InternalGraphQL.g:487:1: ruleIntValue : ( ( rule__IntValue__ValueAssignment ) ) ;
+    public final void ruleIntValue() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:491:2: ( ( ( rule__IntValue__ValueAssignment ) ) )
+            // InternalGraphQL.g:492:2: ( ( rule__IntValue__ValueAssignment ) )
+            {
+            // InternalGraphQL.g:492:2: ( ( rule__IntValue__ValueAssignment ) )
+            // InternalGraphQL.g:493:3: ( rule__IntValue__ValueAssignment )
+            {
+             before(grammarAccess.getIntValueAccess().getValueAssignment()); 
+            // InternalGraphQL.g:494:3: ( rule__IntValue__ValueAssignment )
+            // InternalGraphQL.g:494:4: rule__IntValue__ValueAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__IntValue__ValueAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIntValueAccess().getValueAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleIntValue"
+
+
+    // $ANTLR start "entryRuleFloatValue"
+    // InternalGraphQL.g:503:1: entryRuleFloatValue : ruleFloatValue EOF ;
+    public final void entryRuleFloatValue() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:504:1: ( ruleFloatValue EOF )
+            // InternalGraphQL.g:505:1: ruleFloatValue EOF
+            {
+             before(grammarAccess.getFloatValueRule()); 
+            pushFollow(FOLLOW_1);
+            ruleFloatValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getFloatValueRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleFloatValue"
+
+
+    // $ANTLR start "ruleFloatValue"
+    // InternalGraphQL.g:512:1: ruleFloatValue : ( ( rule__FloatValue__ValueAssignment ) ) ;
+    public final void ruleFloatValue() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:516:2: ( ( ( rule__FloatValue__ValueAssignment ) ) )
+            // InternalGraphQL.g:517:2: ( ( rule__FloatValue__ValueAssignment ) )
+            {
+            // InternalGraphQL.g:517:2: ( ( rule__FloatValue__ValueAssignment ) )
+            // InternalGraphQL.g:518:3: ( rule__FloatValue__ValueAssignment )
+            {
+             before(grammarAccess.getFloatValueAccess().getValueAssignment()); 
+            // InternalGraphQL.g:519:3: ( rule__FloatValue__ValueAssignment )
+            // InternalGraphQL.g:519:4: rule__FloatValue__ValueAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__FloatValue__ValueAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFloatValueAccess().getValueAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleFloatValue"
+
+
+    // $ANTLR start "entryRuleNullValue"
+    // InternalGraphQL.g:528:1: entryRuleNullValue : ruleNullValue EOF ;
+    public final void entryRuleNullValue() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:529:1: ( ruleNullValue EOF )
+            // InternalGraphQL.g:530:1: ruleNullValue EOF
+            {
+             before(grammarAccess.getNullValueRule()); 
+            pushFollow(FOLLOW_1);
+            ruleNullValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getNullValueRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleNullValue"
+
+
+    // $ANTLR start "ruleNullValue"
+    // InternalGraphQL.g:537:1: ruleNullValue : ( ( rule__NullValue__ValueAssignment ) ) ;
+    public final void ruleNullValue() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:541:2: ( ( ( rule__NullValue__ValueAssignment ) ) )
+            // InternalGraphQL.g:542:2: ( ( rule__NullValue__ValueAssignment ) )
+            {
+            // InternalGraphQL.g:542:2: ( ( rule__NullValue__ValueAssignment ) )
+            // InternalGraphQL.g:543:3: ( rule__NullValue__ValueAssignment )
+            {
+             before(grammarAccess.getNullValueAccess().getValueAssignment()); 
+            // InternalGraphQL.g:544:3: ( rule__NullValue__ValueAssignment )
+            // InternalGraphQL.g:544:4: rule__NullValue__ValueAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__NullValue__ValueAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNullValueAccess().getValueAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleNullValue"
+
+
+    // $ANTLR start "entryRuleStringValue"
+    // InternalGraphQL.g:553:1: entryRuleStringValue : ruleStringValue EOF ;
+    public final void entryRuleStringValue() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:554:1: ( ruleStringValue EOF )
+            // InternalGraphQL.g:555:1: ruleStringValue EOF
+            {
+             before(grammarAccess.getStringValueRule()); 
+            pushFollow(FOLLOW_1);
+            ruleStringValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getStringValueRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleStringValue"
+
+
+    // $ANTLR start "ruleStringValue"
+    // InternalGraphQL.g:562:1: ruleStringValue : ( ( rule__StringValue__ValueAssignment ) ) ;
+    public final void ruleStringValue() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:566:2: ( ( ( rule__StringValue__ValueAssignment ) ) )
+            // InternalGraphQL.g:567:2: ( ( rule__StringValue__ValueAssignment ) )
+            {
+            // InternalGraphQL.g:567:2: ( ( rule__StringValue__ValueAssignment ) )
+            // InternalGraphQL.g:568:3: ( rule__StringValue__ValueAssignment )
+            {
+             before(grammarAccess.getStringValueAccess().getValueAssignment()); 
+            // InternalGraphQL.g:569:3: ( rule__StringValue__ValueAssignment )
+            // InternalGraphQL.g:569:4: rule__StringValue__ValueAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__StringValue__ValueAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getStringValueAccess().getValueAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleStringValue"
+
+
+    // $ANTLR start "entryRuleBooleanValue"
+    // InternalGraphQL.g:578:1: entryRuleBooleanValue : ruleBooleanValue EOF ;
+    public final void entryRuleBooleanValue() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:579:1: ( ruleBooleanValue EOF )
+            // InternalGraphQL.g:580:1: ruleBooleanValue EOF
+            {
+             before(grammarAccess.getBooleanValueRule()); 
+            pushFollow(FOLLOW_1);
+            ruleBooleanValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getBooleanValueRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleBooleanValue"
+
+
+    // $ANTLR start "ruleBooleanValue"
+    // InternalGraphQL.g:587:1: ruleBooleanValue : ( ( rule__BooleanValue__ValueAssignment ) ) ;
+    public final void ruleBooleanValue() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:591:2: ( ( ( rule__BooleanValue__ValueAssignment ) ) )
+            // InternalGraphQL.g:592:2: ( ( rule__BooleanValue__ValueAssignment ) )
+            {
+            // InternalGraphQL.g:592:2: ( ( rule__BooleanValue__ValueAssignment ) )
+            // InternalGraphQL.g:593:3: ( rule__BooleanValue__ValueAssignment )
+            {
+             before(grammarAccess.getBooleanValueAccess().getValueAssignment()); 
+            // InternalGraphQL.g:594:3: ( rule__BooleanValue__ValueAssignment )
+            // InternalGraphQL.g:594:4: rule__BooleanValue__ValueAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__BooleanValue__ValueAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getBooleanValueAccess().getValueAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleBooleanValue"
+
+
+    // $ANTLR start "entryRuleEnumValue"
+    // InternalGraphQL.g:603:1: entryRuleEnumValue : ruleEnumValue EOF ;
+    public final void entryRuleEnumValue() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:604:1: ( ruleEnumValue EOF )
+            // InternalGraphQL.g:605:1: ruleEnumValue EOF
+            {
+             before(grammarAccess.getEnumValueRule()); 
+            pushFollow(FOLLOW_1);
+            ruleEnumValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getEnumValueRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleEnumValue"
+
+
+    // $ANTLR start "ruleEnumValue"
+    // InternalGraphQL.g:612:1: ruleEnumValue : ( ( rule__EnumValue__ValueAssignment ) ) ;
+    public final void ruleEnumValue() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:616:2: ( ( ( rule__EnumValue__ValueAssignment ) ) )
+            // InternalGraphQL.g:617:2: ( ( rule__EnumValue__ValueAssignment ) )
+            {
+            // InternalGraphQL.g:617:2: ( ( rule__EnumValue__ValueAssignment ) )
+            // InternalGraphQL.g:618:3: ( rule__EnumValue__ValueAssignment )
+            {
+             before(grammarAccess.getEnumValueAccess().getValueAssignment()); 
+            // InternalGraphQL.g:619:3: ( rule__EnumValue__ValueAssignment )
+            // InternalGraphQL.g:619:4: rule__EnumValue__ValueAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__EnumValue__ValueAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEnumValueAccess().getValueAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleEnumValue"
+
+
+    // $ANTLR start "entryRuleObjectValue"
+    // InternalGraphQL.g:628:1: entryRuleObjectValue : ruleObjectValue EOF ;
+    public final void entryRuleObjectValue() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:629:1: ( ruleObjectValue EOF )
+            // InternalGraphQL.g:630:1: ruleObjectValue EOF
+            {
+             before(grammarAccess.getObjectValueRule()); 
+            pushFollow(FOLLOW_1);
+            ruleObjectValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getObjectValueRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleObjectValue"
+
+
+    // $ANTLR start "ruleObjectValue"
+    // InternalGraphQL.g:637:1: ruleObjectValue : ( ( rule__ObjectValue__Group__0 ) ) ;
+    public final void ruleObjectValue() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:641:2: ( ( ( rule__ObjectValue__Group__0 ) ) )
+            // InternalGraphQL.g:642:2: ( ( rule__ObjectValue__Group__0 ) )
+            {
+            // InternalGraphQL.g:642:2: ( ( rule__ObjectValue__Group__0 ) )
+            // InternalGraphQL.g:643:3: ( rule__ObjectValue__Group__0 )
+            {
+             before(grammarAccess.getObjectValueAccess().getGroup()); 
+            // InternalGraphQL.g:644:3: ( rule__ObjectValue__Group__0 )
+            // InternalGraphQL.g:644:4: rule__ObjectValue__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__ObjectValue__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getObjectValueAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleObjectValue"
+
+
+    // $ANTLR start "entryRuleObjectField"
+    // InternalGraphQL.g:653:1: entryRuleObjectField : ruleObjectField EOF ;
+    public final void entryRuleObjectField() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:654:1: ( ruleObjectField EOF )
+            // InternalGraphQL.g:655:1: ruleObjectField EOF
+            {
+             before(grammarAccess.getObjectFieldRule()); 
+            pushFollow(FOLLOW_1);
+            ruleObjectField();
+
+            state._fsp--;
+
+             after(grammarAccess.getObjectFieldRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleObjectField"
+
+
+    // $ANTLR start "ruleObjectField"
+    // InternalGraphQL.g:662:1: ruleObjectField : ( ( rule__ObjectField__Group__0 ) ) ;
+    public final void ruleObjectField() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:666:2: ( ( ( rule__ObjectField__Group__0 ) ) )
+            // InternalGraphQL.g:667:2: ( ( rule__ObjectField__Group__0 ) )
+            {
+            // InternalGraphQL.g:667:2: ( ( rule__ObjectField__Group__0 ) )
+            // InternalGraphQL.g:668:3: ( rule__ObjectField__Group__0 )
+            {
+             before(grammarAccess.getObjectFieldAccess().getGroup()); 
+            // InternalGraphQL.g:669:3: ( rule__ObjectField__Group__0 )
+            // InternalGraphQL.g:669:4: rule__ObjectField__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__ObjectField__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getObjectFieldAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleObjectField"
+
+
+    // $ANTLR start "entryRuleConstValue"
+    // InternalGraphQL.g:678:1: entryRuleConstValue : ruleConstValue EOF ;
+    public final void entryRuleConstValue() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:679:1: ( ruleConstValue EOF )
+            // InternalGraphQL.g:680:1: ruleConstValue EOF
+            {
+             before(grammarAccess.getConstValueRule()); 
+            pushFollow(FOLLOW_1);
+            ruleConstValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getConstValueRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleConstValue"
+
+
+    // $ANTLR start "ruleConstValue"
+    // InternalGraphQL.g:687:1: ruleConstValue : ( ( rule__ConstValue__Alternatives ) ) ;
+    public final void ruleConstValue() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:691:2: ( ( ( rule__ConstValue__Alternatives ) ) )
+            // InternalGraphQL.g:692:2: ( ( rule__ConstValue__Alternatives ) )
+            {
+            // InternalGraphQL.g:692:2: ( ( rule__ConstValue__Alternatives ) )
+            // InternalGraphQL.g:693:3: ( rule__ConstValue__Alternatives )
+            {
+             before(grammarAccess.getConstValueAccess().getAlternatives()); 
+            // InternalGraphQL.g:694:3: ( rule__ConstValue__Alternatives )
+            // InternalGraphQL.g:694:4: rule__ConstValue__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__ConstValue__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getConstValueAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleConstValue"
+
+
+    // $ANTLR start "entryRuleListValue"
+    // InternalGraphQL.g:703:1: entryRuleListValue : ruleListValue EOF ;
+    public final void entryRuleListValue() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:704:1: ( ruleListValue EOF )
+            // InternalGraphQL.g:705:1: ruleListValue EOF
+            {
+             before(grammarAccess.getListValueRule()); 
+            pushFollow(FOLLOW_1);
+            ruleListValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getListValueRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleListValue"
+
+
+    // $ANTLR start "ruleListValue"
+    // InternalGraphQL.g:712:1: ruleListValue : ( ( rule__ListValue__Group__0 ) ) ;
+    public final void ruleListValue() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:716:2: ( ( ( rule__ListValue__Group__0 ) ) )
+            // InternalGraphQL.g:717:2: ( ( rule__ListValue__Group__0 ) )
+            {
+            // InternalGraphQL.g:717:2: ( ( rule__ListValue__Group__0 ) )
+            // InternalGraphQL.g:718:3: ( rule__ListValue__Group__0 )
+            {
+             before(grammarAccess.getListValueAccess().getGroup()); 
+            // InternalGraphQL.g:719:3: ( rule__ListValue__Group__0 )
+            // InternalGraphQL.g:719:4: rule__ListValue__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__ListValue__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getListValueAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleListValue"
+
+
     // $ANTLR start "ruleOperationType"
-    // InternalGraphQL.g:353:1: ruleOperationType : ( ( rule__OperationType__Alternatives ) ) ;
+    // InternalGraphQL.g:728:1: ruleOperationType : ( ( rule__OperationType__Alternatives ) ) ;
     public final void ruleOperationType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:357:1: ( ( ( rule__OperationType__Alternatives ) ) )
-            // InternalGraphQL.g:358:2: ( ( rule__OperationType__Alternatives ) )
+            // InternalGraphQL.g:732:1: ( ( ( rule__OperationType__Alternatives ) ) )
+            // InternalGraphQL.g:733:2: ( ( rule__OperationType__Alternatives ) )
             {
-            // InternalGraphQL.g:358:2: ( ( rule__OperationType__Alternatives ) )
-            // InternalGraphQL.g:359:3: ( rule__OperationType__Alternatives )
+            // InternalGraphQL.g:733:2: ( ( rule__OperationType__Alternatives ) )
+            // InternalGraphQL.g:734:3: ( rule__OperationType__Alternatives )
             {
              before(grammarAccess.getOperationTypeAccess().getAlternatives()); 
-            // InternalGraphQL.g:360:3: ( rule__OperationType__Alternatives )
-            // InternalGraphQL.g:360:4: rule__OperationType__Alternatives
+            // InternalGraphQL.g:735:3: ( rule__OperationType__Alternatives )
+            // InternalGraphQL.g:735:4: rule__OperationType__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__OperationType__Alternatives();
@@ -1070,38 +2238,83 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TypeSystemDefinition__Alternatives"
-    // InternalGraphQL.g:368:1: rule__TypeSystemDefinition__Alternatives : ( ( ( rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 ) ) | ( ( rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 ) ) );
+    // InternalGraphQL.g:743:1: rule__TypeSystemDefinition__Alternatives : ( ( ( rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 ) ) | ( ( rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 ) ) );
     public final void rule__TypeSystemDefinition__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:372:1: ( ( ( rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 ) ) | ( ( rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 ) ) )
+            // InternalGraphQL.g:747:1: ( ( ( rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 ) ) | ( ( rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 ) ) )
             int alt2=2;
-            int LA2_0 = input.LA(1);
+            switch ( input.LA(1) ) {
+            case RULE_SL_STRING_VALUE:
+                {
+                int LA2_1 = input.LA(2);
 
-            if ( (LA2_0==11) ) {
+                if ( ((LA2_1>=22 && LA2_1<=23)||(LA2_1>=25 && LA2_1<=26)||(LA2_1>=29 && LA2_1<=30)) ) {
+                    alt2=2;
+                }
+                else if ( (LA2_1==18) ) {
+                    alt2=1;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 2, 1, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case RULE_ML_STRING_VALUE:
+                {
+                int LA2_2 = input.LA(2);
+
+                if ( ((LA2_2>=22 && LA2_2<=23)||(LA2_2>=25 && LA2_2<=26)||(LA2_2>=29 && LA2_2<=30)) ) {
+                    alt2=2;
+                }
+                else if ( (LA2_2==18) ) {
+                    alt2=1;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 2, 2, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case 18:
+                {
                 alt2=1;
-            }
-            else if ( ((LA2_0>=15 && LA2_0<=18)||(LA2_0>=21 && LA2_0<=22)) ) {
+                }
+                break;
+            case 22:
+            case 23:
+            case 25:
+            case 26:
+            case 29:
+            case 30:
+                {
                 alt2=2;
-            }
-            else {
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
+
             switch (alt2) {
                 case 1 :
-                    // InternalGraphQL.g:373:2: ( ( rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 ) )
+                    // InternalGraphQL.g:748:2: ( ( rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 ) )
                     {
-                    // InternalGraphQL.g:373:2: ( ( rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 ) )
-                    // InternalGraphQL.g:374:3: ( rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 )
+                    // InternalGraphQL.g:748:2: ( ( rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 ) )
+                    // InternalGraphQL.g:749:3: ( rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 )
                     {
                      before(grammarAccess.getTypeSystemDefinitionAccess().getSchemaDefinitionsAssignment_0()); 
-                    // InternalGraphQL.g:375:3: ( rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 )
-                    // InternalGraphQL.g:375:4: rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0
+                    // InternalGraphQL.g:750:3: ( rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 )
+                    // InternalGraphQL.g:750:4: rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0();
@@ -1119,14 +2332,14 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGraphQL.g:379:2: ( ( rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 ) )
+                    // InternalGraphQL.g:754:2: ( ( rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 ) )
                     {
-                    // InternalGraphQL.g:379:2: ( ( rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 ) )
-                    // InternalGraphQL.g:380:3: ( rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 )
+                    // InternalGraphQL.g:754:2: ( ( rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 ) )
+                    // InternalGraphQL.g:755:3: ( rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 )
                     {
                      before(grammarAccess.getTypeSystemDefinitionAccess().getTypeDefinitionsAssignment_1()); 
-                    // InternalGraphQL.g:381:3: ( rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 )
-                    // InternalGraphQL.g:381:4: rule__TypeSystemDefinition__TypeDefinitionsAssignment_1
+                    // InternalGraphQL.g:756:3: ( rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 )
+                    // InternalGraphQL.g:756:4: rule__TypeSystemDefinition__TypeDefinitionsAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__TypeSystemDefinition__TypeDefinitionsAssignment_1();
@@ -1161,41 +2374,125 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TypeDefinition__Alternatives"
-    // InternalGraphQL.g:389:1: rule__TypeDefinition__Alternatives : ( ( ruleScalarTypeDefinition ) | ( ruleObjectTypeDefinition ) | ( ruleInterfaceDefinition ) | ( ruleUnionTypeDefinition ) | ( ruleEnumTypeDefinition ) | ( ruleInputObjectTypeDefinition ) );
+    // InternalGraphQL.g:764:1: rule__TypeDefinition__Alternatives : ( ( ruleScalarTypeDefinition ) | ( ruleObjectTypeDefinition ) | ( ruleInterfaceDefinition ) | ( ruleUnionTypeDefinition ) | ( ruleEnumTypeDefinition ) | ( ruleInputObjectTypeDefinition ) );
     public final void rule__TypeDefinition__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:393:1: ( ( ruleScalarTypeDefinition ) | ( ruleObjectTypeDefinition ) | ( ruleInterfaceDefinition ) | ( ruleUnionTypeDefinition ) | ( ruleEnumTypeDefinition ) | ( ruleInputObjectTypeDefinition ) )
+            // InternalGraphQL.g:768:1: ( ( ruleScalarTypeDefinition ) | ( ruleObjectTypeDefinition ) | ( ruleInterfaceDefinition ) | ( ruleUnionTypeDefinition ) | ( ruleEnumTypeDefinition ) | ( ruleInputObjectTypeDefinition ) )
             int alt3=6;
             switch ( input.LA(1) ) {
-            case 15:
+            case RULE_SL_STRING_VALUE:
+                {
+                switch ( input.LA(2) ) {
+                case 22:
+                    {
+                    alt3=1;
+                    }
+                    break;
+                case 26:
+                    {
+                    alt3=4;
+                    }
+                    break;
+                case 25:
+                    {
+                    alt3=3;
+                    }
+                    break;
+                case 30:
+                    {
+                    alt3=6;
+                    }
+                    break;
+                case 29:
+                    {
+                    alt3=5;
+                    }
+                    break;
+                case 23:
+                    {
+                    alt3=2;
+                    }
+                    break;
+                default:
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 3, 1, input);
+
+                    throw nvae;
+                }
+
+                }
+                break;
+            case RULE_ML_STRING_VALUE:
+                {
+                switch ( input.LA(2) ) {
+                case 23:
+                    {
+                    alt3=2;
+                    }
+                    break;
+                case 22:
+                    {
+                    alt3=1;
+                    }
+                    break;
+                case 26:
+                    {
+                    alt3=4;
+                    }
+                    break;
+                case 25:
+                    {
+                    alt3=3;
+                    }
+                    break;
+                case 30:
+                    {
+                    alt3=6;
+                    }
+                    break;
+                case 29:
+                    {
+                    alt3=5;
+                    }
+                    break;
+                default:
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 3, 2, input);
+
+                    throw nvae;
+                }
+
+                }
+                break;
+            case 22:
                 {
                 alt3=1;
                 }
                 break;
-            case 16:
+            case 23:
                 {
                 alt3=2;
                 }
                 break;
-            case 17:
+            case 25:
                 {
                 alt3=3;
                 }
                 break;
-            case 18:
+            case 26:
                 {
                 alt3=4;
                 }
                 break;
-            case 21:
+            case 29:
                 {
                 alt3=5;
                 }
                 break;
-            case 22:
+            case 30:
                 {
                 alt3=6;
                 }
@@ -1209,10 +2506,10 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
             switch (alt3) {
                 case 1 :
-                    // InternalGraphQL.g:394:2: ( ruleScalarTypeDefinition )
+                    // InternalGraphQL.g:769:2: ( ruleScalarTypeDefinition )
                     {
-                    // InternalGraphQL.g:394:2: ( ruleScalarTypeDefinition )
-                    // InternalGraphQL.g:395:3: ruleScalarTypeDefinition
+                    // InternalGraphQL.g:769:2: ( ruleScalarTypeDefinition )
+                    // InternalGraphQL.g:770:3: ruleScalarTypeDefinition
                     {
                      before(grammarAccess.getTypeDefinitionAccess().getScalarTypeDefinitionParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1228,10 +2525,10 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGraphQL.g:400:2: ( ruleObjectTypeDefinition )
+                    // InternalGraphQL.g:775:2: ( ruleObjectTypeDefinition )
                     {
-                    // InternalGraphQL.g:400:2: ( ruleObjectTypeDefinition )
-                    // InternalGraphQL.g:401:3: ruleObjectTypeDefinition
+                    // InternalGraphQL.g:775:2: ( ruleObjectTypeDefinition )
+                    // InternalGraphQL.g:776:3: ruleObjectTypeDefinition
                     {
                      before(grammarAccess.getTypeDefinitionAccess().getObjectTypeDefinitionParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1247,10 +2544,10 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalGraphQL.g:406:2: ( ruleInterfaceDefinition )
+                    // InternalGraphQL.g:781:2: ( ruleInterfaceDefinition )
                     {
-                    // InternalGraphQL.g:406:2: ( ruleInterfaceDefinition )
-                    // InternalGraphQL.g:407:3: ruleInterfaceDefinition
+                    // InternalGraphQL.g:781:2: ( ruleInterfaceDefinition )
+                    // InternalGraphQL.g:782:3: ruleInterfaceDefinition
                     {
                      before(grammarAccess.getTypeDefinitionAccess().getInterfaceDefinitionParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -1266,10 +2563,10 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalGraphQL.g:412:2: ( ruleUnionTypeDefinition )
+                    // InternalGraphQL.g:787:2: ( ruleUnionTypeDefinition )
                     {
-                    // InternalGraphQL.g:412:2: ( ruleUnionTypeDefinition )
-                    // InternalGraphQL.g:413:3: ruleUnionTypeDefinition
+                    // InternalGraphQL.g:787:2: ( ruleUnionTypeDefinition )
+                    // InternalGraphQL.g:788:3: ruleUnionTypeDefinition
                     {
                      before(grammarAccess.getTypeDefinitionAccess().getUnionTypeDefinitionParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -1285,10 +2582,10 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalGraphQL.g:418:2: ( ruleEnumTypeDefinition )
+                    // InternalGraphQL.g:793:2: ( ruleEnumTypeDefinition )
                     {
-                    // InternalGraphQL.g:418:2: ( ruleEnumTypeDefinition )
-                    // InternalGraphQL.g:419:3: ruleEnumTypeDefinition
+                    // InternalGraphQL.g:793:2: ( ruleEnumTypeDefinition )
+                    // InternalGraphQL.g:794:3: ruleEnumTypeDefinition
                     {
                      before(grammarAccess.getTypeDefinitionAccess().getEnumTypeDefinitionParserRuleCall_4()); 
                     pushFollow(FOLLOW_2);
@@ -1304,10 +2601,10 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalGraphQL.g:424:2: ( ruleInputObjectTypeDefinition )
+                    // InternalGraphQL.g:799:2: ( ruleInputObjectTypeDefinition )
                     {
-                    // InternalGraphQL.g:424:2: ( ruleInputObjectTypeDefinition )
-                    // InternalGraphQL.g:425:3: ruleInputObjectTypeDefinition
+                    // InternalGraphQL.g:799:2: ( ruleInputObjectTypeDefinition )
+                    // InternalGraphQL.g:800:3: ruleInputObjectTypeDefinition
                     {
                      before(grammarAccess.getTypeDefinitionAccess().getInputObjectTypeDefinitionParserRuleCall_5()); 
                     pushFollow(FOLLOW_2);
@@ -1339,50 +2636,475 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__TypeDefinition__Alternatives"
 
 
-    // $ANTLR start "rule__OperationType__Alternatives"
-    // InternalGraphQL.g:434:1: rule__OperationType__Alternatives : ( ( ( 'query' ) ) | ( ( 'mutation' ) ) | ( ( 'subscription' ) ) );
-    public final void rule__OperationType__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__Type__Alternatives"
+    // InternalGraphQL.g:809:1: rule__Type__Alternatives : ( ( ruleNamedType ) | ( ruleListType ) );
+    public final void rule__Type__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:438:1: ( ( ( 'query' ) ) | ( ( 'mutation' ) ) | ( ( 'subscription' ) ) )
-            int alt4=3;
-            switch ( input.LA(1) ) {
-            case 8:
-                {
+            // InternalGraphQL.g:813:1: ( ( ruleNamedType ) | ( ruleListType ) )
+            int alt4=2;
+            int LA4_0 = input.LA(1);
+
+            if ( (LA4_0==RULE_NAME) ) {
                 alt4=1;
-                }
-                break;
-            case 9:
-                {
+            }
+            else if ( (LA4_0==32) ) {
                 alt4=2;
-                }
-                break;
-            case 10:
-                {
-                alt4=3;
-                }
-                break;
-            default:
+            }
+            else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
-
             switch (alt4) {
                 case 1 :
-                    // InternalGraphQL.g:439:2: ( ( 'query' ) )
+                    // InternalGraphQL.g:814:2: ( ruleNamedType )
                     {
-                    // InternalGraphQL.g:439:2: ( ( 'query' ) )
-                    // InternalGraphQL.g:440:3: ( 'query' )
+                    // InternalGraphQL.g:814:2: ( ruleNamedType )
+                    // InternalGraphQL.g:815:3: ruleNamedType
+                    {
+                     before(grammarAccess.getTypeAccess().getNamedTypeParserRuleCall_0()); 
+                    pushFollow(FOLLOW_2);
+                    ruleNamedType();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getTypeAccess().getNamedTypeParserRuleCall_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalGraphQL.g:820:2: ( ruleListType )
+                    {
+                    // InternalGraphQL.g:820:2: ( ruleListType )
+                    // InternalGraphQL.g:821:3: ruleListType
+                    {
+                     before(grammarAccess.getTypeAccess().getListTypeParserRuleCall_1()); 
+                    pushFollow(FOLLOW_2);
+                    ruleListType();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getTypeAccess().getListTypeParserRuleCall_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Type__Alternatives"
+
+
+    // $ANTLR start "rule__StringValue__ValueAlternatives_0"
+    // InternalGraphQL.g:830:1: rule__StringValue__ValueAlternatives_0 : ( ( RULE_SL_STRING_VALUE ) | ( RULE_ML_STRING_VALUE ) );
+    public final void rule__StringValue__ValueAlternatives_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:834:1: ( ( RULE_SL_STRING_VALUE ) | ( RULE_ML_STRING_VALUE ) )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==RULE_SL_STRING_VALUE) ) {
+                alt5=1;
+            }
+            else if ( (LA5_0==RULE_ML_STRING_VALUE) ) {
+                alt5=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 5, 0, input);
+
+                throw nvae;
+            }
+            switch (alt5) {
+                case 1 :
+                    // InternalGraphQL.g:835:2: ( RULE_SL_STRING_VALUE )
+                    {
+                    // InternalGraphQL.g:835:2: ( RULE_SL_STRING_VALUE )
+                    // InternalGraphQL.g:836:3: RULE_SL_STRING_VALUE
+                    {
+                     before(grammarAccess.getStringValueAccess().getValueSL_STRING_VALUETerminalRuleCall_0_0()); 
+                    match(input,RULE_SL_STRING_VALUE,FOLLOW_2); 
+                     after(grammarAccess.getStringValueAccess().getValueSL_STRING_VALUETerminalRuleCall_0_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalGraphQL.g:841:2: ( RULE_ML_STRING_VALUE )
+                    {
+                    // InternalGraphQL.g:841:2: ( RULE_ML_STRING_VALUE )
+                    // InternalGraphQL.g:842:3: RULE_ML_STRING_VALUE
+                    {
+                     before(grammarAccess.getStringValueAccess().getValueML_STRING_VALUETerminalRuleCall_0_1()); 
+                    match(input,RULE_ML_STRING_VALUE,FOLLOW_2); 
+                     after(grammarAccess.getStringValueAccess().getValueML_STRING_VALUETerminalRuleCall_0_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__StringValue__ValueAlternatives_0"
+
+
+    // $ANTLR start "rule__BooleanValue__ValueAlternatives_0"
+    // InternalGraphQL.g:851:1: rule__BooleanValue__ValueAlternatives_0 : ( ( 'true' ) | ( 'false' ) );
+    public final void rule__BooleanValue__ValueAlternatives_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:855:1: ( ( 'true' ) | ( 'false' ) )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==13) ) {
+                alt6=1;
+            }
+            else if ( (LA6_0==14) ) {
+                alt6=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+            switch (alt6) {
+                case 1 :
+                    // InternalGraphQL.g:856:2: ( 'true' )
+                    {
+                    // InternalGraphQL.g:856:2: ( 'true' )
+                    // InternalGraphQL.g:857:3: 'true'
+                    {
+                     before(grammarAccess.getBooleanValueAccess().getValueTrueKeyword_0_0()); 
+                    match(input,13,FOLLOW_2); 
+                     after(grammarAccess.getBooleanValueAccess().getValueTrueKeyword_0_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalGraphQL.g:862:2: ( 'false' )
+                    {
+                    // InternalGraphQL.g:862:2: ( 'false' )
+                    // InternalGraphQL.g:863:3: 'false'
+                    {
+                     before(grammarAccess.getBooleanValueAccess().getValueFalseKeyword_0_1()); 
+                    match(input,14,FOLLOW_2); 
+                     after(grammarAccess.getBooleanValueAccess().getValueFalseKeyword_0_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BooleanValue__ValueAlternatives_0"
+
+
+    // $ANTLR start "rule__ConstValue__Alternatives"
+    // InternalGraphQL.g:872:1: rule__ConstValue__Alternatives : ( ( ruleIntValue ) | ( ruleFloatValue ) | ( ruleBooleanValue ) | ( ruleNullValue ) | ( ruleEnumValue ) | ( ruleListValue ) | ( ruleObjectValue ) );
+    public final void rule__ConstValue__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:876:1: ( ( ruleIntValue ) | ( ruleFloatValue ) | ( ruleBooleanValue ) | ( ruleNullValue ) | ( ruleEnumValue ) | ( ruleListValue ) | ( ruleObjectValue ) )
+            int alt7=7;
+            switch ( input.LA(1) ) {
+            case RULE_INT_VALUE:
+                {
+                alt7=1;
+                }
+                break;
+            case RULE_FLOAT_VALUE:
+                {
+                alt7=2;
+                }
+                break;
+            case 13:
+            case 14:
+                {
+                alt7=3;
+                }
+                break;
+            case 35:
+                {
+                alt7=4;
+                }
+                break;
+            case RULE_NAME:
+                {
+                alt7=5;
+                }
+                break;
+            case 32:
+                {
+                alt7=6;
+                }
+                break;
+            case 19:
+                {
+                alt7=7;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt7) {
+                case 1 :
+                    // InternalGraphQL.g:877:2: ( ruleIntValue )
+                    {
+                    // InternalGraphQL.g:877:2: ( ruleIntValue )
+                    // InternalGraphQL.g:878:3: ruleIntValue
+                    {
+                     before(grammarAccess.getConstValueAccess().getIntValueParserRuleCall_0()); 
+                    pushFollow(FOLLOW_2);
+                    ruleIntValue();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getConstValueAccess().getIntValueParserRuleCall_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalGraphQL.g:883:2: ( ruleFloatValue )
+                    {
+                    // InternalGraphQL.g:883:2: ( ruleFloatValue )
+                    // InternalGraphQL.g:884:3: ruleFloatValue
+                    {
+                     before(grammarAccess.getConstValueAccess().getFloatValueParserRuleCall_1()); 
+                    pushFollow(FOLLOW_2);
+                    ruleFloatValue();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getConstValueAccess().getFloatValueParserRuleCall_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalGraphQL.g:889:2: ( ruleBooleanValue )
+                    {
+                    // InternalGraphQL.g:889:2: ( ruleBooleanValue )
+                    // InternalGraphQL.g:890:3: ruleBooleanValue
+                    {
+                     before(grammarAccess.getConstValueAccess().getBooleanValueParserRuleCall_2()); 
+                    pushFollow(FOLLOW_2);
+                    ruleBooleanValue();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getConstValueAccess().getBooleanValueParserRuleCall_2()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalGraphQL.g:895:2: ( ruleNullValue )
+                    {
+                    // InternalGraphQL.g:895:2: ( ruleNullValue )
+                    // InternalGraphQL.g:896:3: ruleNullValue
+                    {
+                     before(grammarAccess.getConstValueAccess().getNullValueParserRuleCall_3()); 
+                    pushFollow(FOLLOW_2);
+                    ruleNullValue();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getConstValueAccess().getNullValueParserRuleCall_3()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalGraphQL.g:901:2: ( ruleEnumValue )
+                    {
+                    // InternalGraphQL.g:901:2: ( ruleEnumValue )
+                    // InternalGraphQL.g:902:3: ruleEnumValue
+                    {
+                     before(grammarAccess.getConstValueAccess().getEnumValueParserRuleCall_4()); 
+                    pushFollow(FOLLOW_2);
+                    ruleEnumValue();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getConstValueAccess().getEnumValueParserRuleCall_4()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // InternalGraphQL.g:907:2: ( ruleListValue )
+                    {
+                    // InternalGraphQL.g:907:2: ( ruleListValue )
+                    // InternalGraphQL.g:908:3: ruleListValue
+                    {
+                     before(grammarAccess.getConstValueAccess().getListValueParserRuleCall_5()); 
+                    pushFollow(FOLLOW_2);
+                    ruleListValue();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getConstValueAccess().getListValueParserRuleCall_5()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // InternalGraphQL.g:913:2: ( ruleObjectValue )
+                    {
+                    // InternalGraphQL.g:913:2: ( ruleObjectValue )
+                    // InternalGraphQL.g:914:3: ruleObjectValue
+                    {
+                     before(grammarAccess.getConstValueAccess().getObjectValueParserRuleCall_6()); 
+                    pushFollow(FOLLOW_2);
+                    ruleObjectValue();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getConstValueAccess().getObjectValueParserRuleCall_6()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ConstValue__Alternatives"
+
+
+    // $ANTLR start "rule__OperationType__Alternatives"
+    // InternalGraphQL.g:923:1: rule__OperationType__Alternatives : ( ( ( 'query' ) ) | ( ( 'mutation' ) ) | ( ( 'subscription' ) ) );
+    public final void rule__OperationType__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:927:1: ( ( ( 'query' ) ) | ( ( 'mutation' ) ) | ( ( 'subscription' ) ) )
+            int alt8=3;
+            switch ( input.LA(1) ) {
+            case 15:
+                {
+                alt8=1;
+                }
+                break;
+            case 16:
+                {
+                alt8=2;
+                }
+                break;
+            case 17:
+                {
+                alt8=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 8, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt8) {
+                case 1 :
+                    // InternalGraphQL.g:928:2: ( ( 'query' ) )
+                    {
+                    // InternalGraphQL.g:928:2: ( ( 'query' ) )
+                    // InternalGraphQL.g:929:3: ( 'query' )
                     {
                      before(grammarAccess.getOperationTypeAccess().getQUERYEnumLiteralDeclaration_0()); 
-                    // InternalGraphQL.g:441:3: ( 'query' )
-                    // InternalGraphQL.g:441:4: 'query'
+                    // InternalGraphQL.g:930:3: ( 'query' )
+                    // InternalGraphQL.g:930:4: 'query'
                     {
-                    match(input,8,FOLLOW_2); 
+                    match(input,15,FOLLOW_2); 
 
                     }
 
@@ -1394,16 +3116,16 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGraphQL.g:445:2: ( ( 'mutation' ) )
+                    // InternalGraphQL.g:934:2: ( ( 'mutation' ) )
                     {
-                    // InternalGraphQL.g:445:2: ( ( 'mutation' ) )
-                    // InternalGraphQL.g:446:3: ( 'mutation' )
+                    // InternalGraphQL.g:934:2: ( ( 'mutation' ) )
+                    // InternalGraphQL.g:935:3: ( 'mutation' )
                     {
                      before(grammarAccess.getOperationTypeAccess().getMUTATIONEnumLiteralDeclaration_1()); 
-                    // InternalGraphQL.g:447:3: ( 'mutation' )
-                    // InternalGraphQL.g:447:4: 'mutation'
+                    // InternalGraphQL.g:936:3: ( 'mutation' )
+                    // InternalGraphQL.g:936:4: 'mutation'
                     {
-                    match(input,9,FOLLOW_2); 
+                    match(input,16,FOLLOW_2); 
 
                     }
 
@@ -1415,16 +3137,16 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalGraphQL.g:451:2: ( ( 'subscription' ) )
+                    // InternalGraphQL.g:940:2: ( ( 'subscription' ) )
                     {
-                    // InternalGraphQL.g:451:2: ( ( 'subscription' ) )
-                    // InternalGraphQL.g:452:3: ( 'subscription' )
+                    // InternalGraphQL.g:940:2: ( ( 'subscription' ) )
+                    // InternalGraphQL.g:941:3: ( 'subscription' )
                     {
                      before(grammarAccess.getOperationTypeAccess().getSUBSCRIPTIONEnumLiteralDeclaration_2()); 
-                    // InternalGraphQL.g:453:3: ( 'subscription' )
-                    // InternalGraphQL.g:453:4: 'subscription'
+                    // InternalGraphQL.g:942:3: ( 'subscription' )
+                    // InternalGraphQL.g:942:4: 'subscription'
                     {
-                    match(input,10,FOLLOW_2); 
+                    match(input,17,FOLLOW_2); 
 
                     }
 
@@ -1453,14 +3175,14 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SchemaDefinition__Group__0"
-    // InternalGraphQL.g:461:1: rule__SchemaDefinition__Group__0 : rule__SchemaDefinition__Group__0__Impl rule__SchemaDefinition__Group__1 ;
+    // InternalGraphQL.g:950:1: rule__SchemaDefinition__Group__0 : rule__SchemaDefinition__Group__0__Impl rule__SchemaDefinition__Group__1 ;
     public final void rule__SchemaDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:465:1: ( rule__SchemaDefinition__Group__0__Impl rule__SchemaDefinition__Group__1 )
-            // InternalGraphQL.g:466:2: rule__SchemaDefinition__Group__0__Impl rule__SchemaDefinition__Group__1
+            // InternalGraphQL.g:954:1: ( rule__SchemaDefinition__Group__0__Impl rule__SchemaDefinition__Group__1 )
+            // InternalGraphQL.g:955:2: rule__SchemaDefinition__Group__0__Impl rule__SchemaDefinition__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__SchemaDefinition__Group__0__Impl();
@@ -1491,21 +3213,42 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SchemaDefinition__Group__0__Impl"
-    // InternalGraphQL.g:473:1: rule__SchemaDefinition__Group__0__Impl : ( 'schema' ) ;
+    // InternalGraphQL.g:962:1: rule__SchemaDefinition__Group__0__Impl : ( ( rule__SchemaDefinition__DescriptionAssignment_0 )? ) ;
     public final void rule__SchemaDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:477:1: ( ( 'schema' ) )
-            // InternalGraphQL.g:478:1: ( 'schema' )
+            // InternalGraphQL.g:966:1: ( ( ( rule__SchemaDefinition__DescriptionAssignment_0 )? ) )
+            // InternalGraphQL.g:967:1: ( ( rule__SchemaDefinition__DescriptionAssignment_0 )? )
             {
-            // InternalGraphQL.g:478:1: ( 'schema' )
-            // InternalGraphQL.g:479:2: 'schema'
+            // InternalGraphQL.g:967:1: ( ( rule__SchemaDefinition__DescriptionAssignment_0 )? )
+            // InternalGraphQL.g:968:2: ( rule__SchemaDefinition__DescriptionAssignment_0 )?
             {
-             before(grammarAccess.getSchemaDefinitionAccess().getSchemaKeyword_0()); 
-            match(input,11,FOLLOW_2); 
-             after(grammarAccess.getSchemaDefinitionAccess().getSchemaKeyword_0()); 
+             before(grammarAccess.getSchemaDefinitionAccess().getDescriptionAssignment_0()); 
+            // InternalGraphQL.g:969:2: ( rule__SchemaDefinition__DescriptionAssignment_0 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( ((LA9_0>=RULE_SL_STRING_VALUE && LA9_0<=RULE_ML_STRING_VALUE)) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
+                    // InternalGraphQL.g:969:3: rule__SchemaDefinition__DescriptionAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__SchemaDefinition__DescriptionAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getSchemaDefinitionAccess().getDescriptionAssignment_0()); 
 
             }
 
@@ -1528,14 +3271,14 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SchemaDefinition__Group__1"
-    // InternalGraphQL.g:488:1: rule__SchemaDefinition__Group__1 : rule__SchemaDefinition__Group__1__Impl rule__SchemaDefinition__Group__2 ;
+    // InternalGraphQL.g:977:1: rule__SchemaDefinition__Group__1 : rule__SchemaDefinition__Group__1__Impl rule__SchemaDefinition__Group__2 ;
     public final void rule__SchemaDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:492:1: ( rule__SchemaDefinition__Group__1__Impl rule__SchemaDefinition__Group__2 )
-            // InternalGraphQL.g:493:2: rule__SchemaDefinition__Group__1__Impl rule__SchemaDefinition__Group__2
+            // InternalGraphQL.g:981:1: ( rule__SchemaDefinition__Group__1__Impl rule__SchemaDefinition__Group__2 )
+            // InternalGraphQL.g:982:2: rule__SchemaDefinition__Group__1__Impl rule__SchemaDefinition__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__SchemaDefinition__Group__1__Impl();
@@ -1566,21 +3309,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SchemaDefinition__Group__1__Impl"
-    // InternalGraphQL.g:500:1: rule__SchemaDefinition__Group__1__Impl : ( '{' ) ;
+    // InternalGraphQL.g:989:1: rule__SchemaDefinition__Group__1__Impl : ( 'schema' ) ;
     public final void rule__SchemaDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:504:1: ( ( '{' ) )
-            // InternalGraphQL.g:505:1: ( '{' )
+            // InternalGraphQL.g:993:1: ( ( 'schema' ) )
+            // InternalGraphQL.g:994:1: ( 'schema' )
             {
-            // InternalGraphQL.g:505:1: ( '{' )
-            // InternalGraphQL.g:506:2: '{'
+            // InternalGraphQL.g:994:1: ( 'schema' )
+            // InternalGraphQL.g:995:2: 'schema'
             {
-             before(grammarAccess.getSchemaDefinitionAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getSchemaDefinitionAccess().getLeftCurlyBracketKeyword_1()); 
+             before(grammarAccess.getSchemaDefinitionAccess().getSchemaKeyword_1()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getSchemaDefinitionAccess().getSchemaKeyword_1()); 
 
             }
 
@@ -1603,14 +3346,14 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SchemaDefinition__Group__2"
-    // InternalGraphQL.g:515:1: rule__SchemaDefinition__Group__2 : rule__SchemaDefinition__Group__2__Impl rule__SchemaDefinition__Group__3 ;
+    // InternalGraphQL.g:1004:1: rule__SchemaDefinition__Group__2 : rule__SchemaDefinition__Group__2__Impl rule__SchemaDefinition__Group__3 ;
     public final void rule__SchemaDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:519:1: ( rule__SchemaDefinition__Group__2__Impl rule__SchemaDefinition__Group__3 )
-            // InternalGraphQL.g:520:2: rule__SchemaDefinition__Group__2__Impl rule__SchemaDefinition__Group__3
+            // InternalGraphQL.g:1008:1: ( rule__SchemaDefinition__Group__2__Impl rule__SchemaDefinition__Group__3 )
+            // InternalGraphQL.g:1009:2: rule__SchemaDefinition__Group__2__Impl rule__SchemaDefinition__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__SchemaDefinition__Group__2__Impl();
@@ -1641,74 +3384,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SchemaDefinition__Group__2__Impl"
-    // InternalGraphQL.g:527:1: rule__SchemaDefinition__Group__2__Impl : ( ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 ) ) ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 )* ) ) ;
+    // InternalGraphQL.g:1016:1: rule__SchemaDefinition__Group__2__Impl : ( '{' ) ;
     public final void rule__SchemaDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:531:1: ( ( ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 ) ) ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 )* ) ) )
-            // InternalGraphQL.g:532:1: ( ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 ) ) ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 )* ) )
+            // InternalGraphQL.g:1020:1: ( ( '{' ) )
+            // InternalGraphQL.g:1021:1: ( '{' )
             {
-            // InternalGraphQL.g:532:1: ( ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 ) ) ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 )* ) )
-            // InternalGraphQL.g:533:2: ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 ) ) ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 )* )
+            // InternalGraphQL.g:1021:1: ( '{' )
+            // InternalGraphQL.g:1022:2: '{'
             {
-            // InternalGraphQL.g:533:2: ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 ) )
-            // InternalGraphQL.g:534:3: ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 )
-            {
-             before(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsAssignment_2()); 
-            // InternalGraphQL.g:535:3: ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 )
-            // InternalGraphQL.g:535:4: rule__SchemaDefinition__TypeDefinitionsAssignment_2
-            {
-            pushFollow(FOLLOW_7);
-            rule__SchemaDefinition__TypeDefinitionsAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsAssignment_2()); 
-
-            }
-
-            // InternalGraphQL.g:538:2: ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 )* )
-            // InternalGraphQL.g:539:3: ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 )*
-            {
-             before(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsAssignment_2()); 
-            // InternalGraphQL.g:540:3: ( rule__SchemaDefinition__TypeDefinitionsAssignment_2 )*
-            loop5:
-            do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
-
-                if ( ((LA5_0>=8 && LA5_0<=10)) ) {
-                    alt5=1;
-                }
-
-
-                switch (alt5) {
-            	case 1 :
-            	    // InternalGraphQL.g:540:4: rule__SchemaDefinition__TypeDefinitionsAssignment_2
-            	    {
-            	    pushFollow(FOLLOW_7);
-            	    rule__SchemaDefinition__TypeDefinitionsAssignment_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop5;
-                }
-            } while (true);
-
-             after(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsAssignment_2()); 
-
-            }
-
+             before(grammarAccess.getSchemaDefinitionAccess().getLeftCurlyBracketKeyword_2()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getSchemaDefinitionAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
 
@@ -1731,17 +3421,22 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SchemaDefinition__Group__3"
-    // InternalGraphQL.g:549:1: rule__SchemaDefinition__Group__3 : rule__SchemaDefinition__Group__3__Impl ;
+    // InternalGraphQL.g:1031:1: rule__SchemaDefinition__Group__3 : rule__SchemaDefinition__Group__3__Impl rule__SchemaDefinition__Group__4 ;
     public final void rule__SchemaDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:553:1: ( rule__SchemaDefinition__Group__3__Impl )
-            // InternalGraphQL.g:554:2: rule__SchemaDefinition__Group__3__Impl
+            // InternalGraphQL.g:1035:1: ( rule__SchemaDefinition__Group__3__Impl rule__SchemaDefinition__Group__4 )
+            // InternalGraphQL.g:1036:2: rule__SchemaDefinition__Group__3__Impl rule__SchemaDefinition__Group__4
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_7);
             rule__SchemaDefinition__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SchemaDefinition__Group__4();
 
             state._fsp--;
 
@@ -1764,21 +3459,74 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SchemaDefinition__Group__3__Impl"
-    // InternalGraphQL.g:560:1: rule__SchemaDefinition__Group__3__Impl : ( '}' ) ;
+    // InternalGraphQL.g:1043:1: rule__SchemaDefinition__Group__3__Impl : ( ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 ) ) ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 )* ) ) ;
     public final void rule__SchemaDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:564:1: ( ( '}' ) )
-            // InternalGraphQL.g:565:1: ( '}' )
+            // InternalGraphQL.g:1047:1: ( ( ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 ) ) ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 )* ) ) )
+            // InternalGraphQL.g:1048:1: ( ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 ) ) ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 )* ) )
             {
-            // InternalGraphQL.g:565:1: ( '}' )
-            // InternalGraphQL.g:566:2: '}'
+            // InternalGraphQL.g:1048:1: ( ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 ) ) ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 )* ) )
+            // InternalGraphQL.g:1049:2: ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 ) ) ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 )* )
             {
-             before(grammarAccess.getSchemaDefinitionAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getSchemaDefinitionAccess().getRightCurlyBracketKeyword_3()); 
+            // InternalGraphQL.g:1049:2: ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 ) )
+            // InternalGraphQL.g:1050:3: ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 )
+            {
+             before(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsAssignment_3()); 
+            // InternalGraphQL.g:1051:3: ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 )
+            // InternalGraphQL.g:1051:4: rule__SchemaDefinition__TypeDefinitionsAssignment_3
+            {
+            pushFollow(FOLLOW_8);
+            rule__SchemaDefinition__TypeDefinitionsAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsAssignment_3()); 
+
+            }
+
+            // InternalGraphQL.g:1054:2: ( ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 )* )
+            // InternalGraphQL.g:1055:3: ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 )*
+            {
+             before(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsAssignment_3()); 
+            // InternalGraphQL.g:1056:3: ( rule__SchemaDefinition__TypeDefinitionsAssignment_3 )*
+            loop10:
+            do {
+                int alt10=2;
+                int LA10_0 = input.LA(1);
+
+                if ( ((LA10_0>=15 && LA10_0<=17)) ) {
+                    alt10=1;
+                }
+
+
+                switch (alt10) {
+            	case 1 :
+            	    // InternalGraphQL.g:1056:4: rule__SchemaDefinition__TypeDefinitionsAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_8);
+            	    rule__SchemaDefinition__TypeDefinitionsAssignment_3();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop10;
+                }
+            } while (true);
+
+             after(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsAssignment_3()); 
+
+            }
+
 
             }
 
@@ -1800,17 +3548,87 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__SchemaDefinition__Group__3__Impl"
 
 
+    // $ANTLR start "rule__SchemaDefinition__Group__4"
+    // InternalGraphQL.g:1065:1: rule__SchemaDefinition__Group__4 : rule__SchemaDefinition__Group__4__Impl ;
+    public final void rule__SchemaDefinition__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1069:1: ( rule__SchemaDefinition__Group__4__Impl )
+            // InternalGraphQL.g:1070:2: rule__SchemaDefinition__Group__4__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__SchemaDefinition__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SchemaDefinition__Group__4"
+
+
+    // $ANTLR start "rule__SchemaDefinition__Group__4__Impl"
+    // InternalGraphQL.g:1076:1: rule__SchemaDefinition__Group__4__Impl : ( '}' ) ;
+    public final void rule__SchemaDefinition__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1080:1: ( ( '}' ) )
+            // InternalGraphQL.g:1081:1: ( '}' )
+            {
+            // InternalGraphQL.g:1081:1: ( '}' )
+            // InternalGraphQL.g:1082:2: '}'
+            {
+             before(grammarAccess.getSchemaDefinitionAccess().getRightCurlyBracketKeyword_4()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getSchemaDefinitionAccess().getRightCurlyBracketKeyword_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SchemaDefinition__Group__4__Impl"
+
+
     // $ANTLR start "rule__RootOperationTypeDefinition__Group__0"
-    // InternalGraphQL.g:576:1: rule__RootOperationTypeDefinition__Group__0 : rule__RootOperationTypeDefinition__Group__0__Impl rule__RootOperationTypeDefinition__Group__1 ;
+    // InternalGraphQL.g:1092:1: rule__RootOperationTypeDefinition__Group__0 : rule__RootOperationTypeDefinition__Group__0__Impl rule__RootOperationTypeDefinition__Group__1 ;
     public final void rule__RootOperationTypeDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:580:1: ( rule__RootOperationTypeDefinition__Group__0__Impl rule__RootOperationTypeDefinition__Group__1 )
-            // InternalGraphQL.g:581:2: rule__RootOperationTypeDefinition__Group__0__Impl rule__RootOperationTypeDefinition__Group__1
+            // InternalGraphQL.g:1096:1: ( rule__RootOperationTypeDefinition__Group__0__Impl rule__RootOperationTypeDefinition__Group__1 )
+            // InternalGraphQL.g:1097:2: rule__RootOperationTypeDefinition__Group__0__Impl rule__RootOperationTypeDefinition__Group__1
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_9);
             rule__RootOperationTypeDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -1839,21 +3657,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RootOperationTypeDefinition__Group__0__Impl"
-    // InternalGraphQL.g:588:1: rule__RootOperationTypeDefinition__Group__0__Impl : ( ( rule__RootOperationTypeDefinition__OperationTypeAssignment_0 ) ) ;
+    // InternalGraphQL.g:1104:1: rule__RootOperationTypeDefinition__Group__0__Impl : ( ( rule__RootOperationTypeDefinition__OperationTypeAssignment_0 ) ) ;
     public final void rule__RootOperationTypeDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:592:1: ( ( ( rule__RootOperationTypeDefinition__OperationTypeAssignment_0 ) ) )
-            // InternalGraphQL.g:593:1: ( ( rule__RootOperationTypeDefinition__OperationTypeAssignment_0 ) )
+            // InternalGraphQL.g:1108:1: ( ( ( rule__RootOperationTypeDefinition__OperationTypeAssignment_0 ) ) )
+            // InternalGraphQL.g:1109:1: ( ( rule__RootOperationTypeDefinition__OperationTypeAssignment_0 ) )
             {
-            // InternalGraphQL.g:593:1: ( ( rule__RootOperationTypeDefinition__OperationTypeAssignment_0 ) )
-            // InternalGraphQL.g:594:2: ( rule__RootOperationTypeDefinition__OperationTypeAssignment_0 )
+            // InternalGraphQL.g:1109:1: ( ( rule__RootOperationTypeDefinition__OperationTypeAssignment_0 ) )
+            // InternalGraphQL.g:1110:2: ( rule__RootOperationTypeDefinition__OperationTypeAssignment_0 )
             {
              before(grammarAccess.getRootOperationTypeDefinitionAccess().getOperationTypeAssignment_0()); 
-            // InternalGraphQL.g:595:2: ( rule__RootOperationTypeDefinition__OperationTypeAssignment_0 )
-            // InternalGraphQL.g:595:3: rule__RootOperationTypeDefinition__OperationTypeAssignment_0
+            // InternalGraphQL.g:1111:2: ( rule__RootOperationTypeDefinition__OperationTypeAssignment_0 )
+            // InternalGraphQL.g:1111:3: rule__RootOperationTypeDefinition__OperationTypeAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__RootOperationTypeDefinition__OperationTypeAssignment_0();
@@ -1886,16 +3704,16 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RootOperationTypeDefinition__Group__1"
-    // InternalGraphQL.g:603:1: rule__RootOperationTypeDefinition__Group__1 : rule__RootOperationTypeDefinition__Group__1__Impl rule__RootOperationTypeDefinition__Group__2 ;
+    // InternalGraphQL.g:1119:1: rule__RootOperationTypeDefinition__Group__1 : rule__RootOperationTypeDefinition__Group__1__Impl rule__RootOperationTypeDefinition__Group__2 ;
     public final void rule__RootOperationTypeDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:607:1: ( rule__RootOperationTypeDefinition__Group__1__Impl rule__RootOperationTypeDefinition__Group__2 )
-            // InternalGraphQL.g:608:2: rule__RootOperationTypeDefinition__Group__1__Impl rule__RootOperationTypeDefinition__Group__2
+            // InternalGraphQL.g:1123:1: ( rule__RootOperationTypeDefinition__Group__1__Impl rule__RootOperationTypeDefinition__Group__2 )
+            // InternalGraphQL.g:1124:2: rule__RootOperationTypeDefinition__Group__1__Impl rule__RootOperationTypeDefinition__Group__2
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_10);
             rule__RootOperationTypeDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -1924,20 +3742,20 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RootOperationTypeDefinition__Group__1__Impl"
-    // InternalGraphQL.g:615:1: rule__RootOperationTypeDefinition__Group__1__Impl : ( ':' ) ;
+    // InternalGraphQL.g:1131:1: rule__RootOperationTypeDefinition__Group__1__Impl : ( ':' ) ;
     public final void rule__RootOperationTypeDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:619:1: ( ( ':' ) )
-            // InternalGraphQL.g:620:1: ( ':' )
+            // InternalGraphQL.g:1135:1: ( ( ':' ) )
+            // InternalGraphQL.g:1136:1: ( ':' )
             {
-            // InternalGraphQL.g:620:1: ( ':' )
-            // InternalGraphQL.g:621:2: ':'
+            // InternalGraphQL.g:1136:1: ( ':' )
+            // InternalGraphQL.g:1137:2: ':'
             {
              before(grammarAccess.getRootOperationTypeDefinitionAccess().getColonKeyword_1()); 
-            match(input,14,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getRootOperationTypeDefinitionAccess().getColonKeyword_1()); 
 
             }
@@ -1961,14 +3779,14 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RootOperationTypeDefinition__Group__2"
-    // InternalGraphQL.g:630:1: rule__RootOperationTypeDefinition__Group__2 : rule__RootOperationTypeDefinition__Group__2__Impl ;
+    // InternalGraphQL.g:1146:1: rule__RootOperationTypeDefinition__Group__2 : rule__RootOperationTypeDefinition__Group__2__Impl ;
     public final void rule__RootOperationTypeDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:634:1: ( rule__RootOperationTypeDefinition__Group__2__Impl )
-            // InternalGraphQL.g:635:2: rule__RootOperationTypeDefinition__Group__2__Impl
+            // InternalGraphQL.g:1150:1: ( rule__RootOperationTypeDefinition__Group__2__Impl )
+            // InternalGraphQL.g:1151:2: rule__RootOperationTypeDefinition__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RootOperationTypeDefinition__Group__2__Impl();
@@ -1994,21 +3812,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RootOperationTypeDefinition__Group__2__Impl"
-    // InternalGraphQL.g:641:1: rule__RootOperationTypeDefinition__Group__2__Impl : ( ( rule__RootOperationTypeDefinition__TypeAssignment_2 ) ) ;
+    // InternalGraphQL.g:1157:1: rule__RootOperationTypeDefinition__Group__2__Impl : ( ( rule__RootOperationTypeDefinition__TypeAssignment_2 ) ) ;
     public final void rule__RootOperationTypeDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:645:1: ( ( ( rule__RootOperationTypeDefinition__TypeAssignment_2 ) ) )
-            // InternalGraphQL.g:646:1: ( ( rule__RootOperationTypeDefinition__TypeAssignment_2 ) )
+            // InternalGraphQL.g:1161:1: ( ( ( rule__RootOperationTypeDefinition__TypeAssignment_2 ) ) )
+            // InternalGraphQL.g:1162:1: ( ( rule__RootOperationTypeDefinition__TypeAssignment_2 ) )
             {
-            // InternalGraphQL.g:646:1: ( ( rule__RootOperationTypeDefinition__TypeAssignment_2 ) )
-            // InternalGraphQL.g:647:2: ( rule__RootOperationTypeDefinition__TypeAssignment_2 )
+            // InternalGraphQL.g:1162:1: ( ( rule__RootOperationTypeDefinition__TypeAssignment_2 ) )
+            // InternalGraphQL.g:1163:2: ( rule__RootOperationTypeDefinition__TypeAssignment_2 )
             {
              before(grammarAccess.getRootOperationTypeDefinitionAccess().getTypeAssignment_2()); 
-            // InternalGraphQL.g:648:2: ( rule__RootOperationTypeDefinition__TypeAssignment_2 )
-            // InternalGraphQL.g:648:3: rule__RootOperationTypeDefinition__TypeAssignment_2
+            // InternalGraphQL.g:1164:2: ( rule__RootOperationTypeDefinition__TypeAssignment_2 )
+            // InternalGraphQL.g:1164:3: rule__RootOperationTypeDefinition__TypeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__RootOperationTypeDefinition__TypeAssignment_2();
@@ -2041,16 +3859,16 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ScalarTypeDefinition__Group__0"
-    // InternalGraphQL.g:657:1: rule__ScalarTypeDefinition__Group__0 : rule__ScalarTypeDefinition__Group__0__Impl rule__ScalarTypeDefinition__Group__1 ;
+    // InternalGraphQL.g:1173:1: rule__ScalarTypeDefinition__Group__0 : rule__ScalarTypeDefinition__Group__0__Impl rule__ScalarTypeDefinition__Group__1 ;
     public final void rule__ScalarTypeDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:661:1: ( rule__ScalarTypeDefinition__Group__0__Impl rule__ScalarTypeDefinition__Group__1 )
-            // InternalGraphQL.g:662:2: rule__ScalarTypeDefinition__Group__0__Impl rule__ScalarTypeDefinition__Group__1
+            // InternalGraphQL.g:1177:1: ( rule__ScalarTypeDefinition__Group__0__Impl rule__ScalarTypeDefinition__Group__1 )
+            // InternalGraphQL.g:1178:2: rule__ScalarTypeDefinition__Group__0__Impl rule__ScalarTypeDefinition__Group__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_11);
             rule__ScalarTypeDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -2079,21 +3897,42 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ScalarTypeDefinition__Group__0__Impl"
-    // InternalGraphQL.g:669:1: rule__ScalarTypeDefinition__Group__0__Impl : ( 'scalar' ) ;
+    // InternalGraphQL.g:1185:1: rule__ScalarTypeDefinition__Group__0__Impl : ( ( rule__ScalarTypeDefinition__DescriptionAssignment_0 )? ) ;
     public final void rule__ScalarTypeDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:673:1: ( ( 'scalar' ) )
-            // InternalGraphQL.g:674:1: ( 'scalar' )
+            // InternalGraphQL.g:1189:1: ( ( ( rule__ScalarTypeDefinition__DescriptionAssignment_0 )? ) )
+            // InternalGraphQL.g:1190:1: ( ( rule__ScalarTypeDefinition__DescriptionAssignment_0 )? )
             {
-            // InternalGraphQL.g:674:1: ( 'scalar' )
-            // InternalGraphQL.g:675:2: 'scalar'
+            // InternalGraphQL.g:1190:1: ( ( rule__ScalarTypeDefinition__DescriptionAssignment_0 )? )
+            // InternalGraphQL.g:1191:2: ( rule__ScalarTypeDefinition__DescriptionAssignment_0 )?
             {
-             before(grammarAccess.getScalarTypeDefinitionAccess().getScalarKeyword_0()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getScalarTypeDefinitionAccess().getScalarKeyword_0()); 
+             before(grammarAccess.getScalarTypeDefinitionAccess().getDescriptionAssignment_0()); 
+            // InternalGraphQL.g:1192:2: ( rule__ScalarTypeDefinition__DescriptionAssignment_0 )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
+
+            if ( ((LA11_0>=RULE_SL_STRING_VALUE && LA11_0<=RULE_ML_STRING_VALUE)) ) {
+                alt11=1;
+            }
+            switch (alt11) {
+                case 1 :
+                    // InternalGraphQL.g:1192:3: rule__ScalarTypeDefinition__DescriptionAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ScalarTypeDefinition__DescriptionAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getScalarTypeDefinitionAccess().getDescriptionAssignment_0()); 
 
             }
 
@@ -2116,17 +3955,22 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ScalarTypeDefinition__Group__1"
-    // InternalGraphQL.g:684:1: rule__ScalarTypeDefinition__Group__1 : rule__ScalarTypeDefinition__Group__1__Impl ;
+    // InternalGraphQL.g:1200:1: rule__ScalarTypeDefinition__Group__1 : rule__ScalarTypeDefinition__Group__1__Impl rule__ScalarTypeDefinition__Group__2 ;
     public final void rule__ScalarTypeDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:688:1: ( rule__ScalarTypeDefinition__Group__1__Impl )
-            // InternalGraphQL.g:689:2: rule__ScalarTypeDefinition__Group__1__Impl
+            // InternalGraphQL.g:1204:1: ( rule__ScalarTypeDefinition__Group__1__Impl rule__ScalarTypeDefinition__Group__2 )
+            // InternalGraphQL.g:1205:2: rule__ScalarTypeDefinition__Group__1__Impl rule__ScalarTypeDefinition__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_10);
             rule__ScalarTypeDefinition__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ScalarTypeDefinition__Group__2();
 
             state._fsp--;
 
@@ -2149,31 +3993,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ScalarTypeDefinition__Group__1__Impl"
-    // InternalGraphQL.g:695:1: rule__ScalarTypeDefinition__Group__1__Impl : ( ( rule__ScalarTypeDefinition__NameAssignment_1 ) ) ;
+    // InternalGraphQL.g:1212:1: rule__ScalarTypeDefinition__Group__1__Impl : ( 'scalar' ) ;
     public final void rule__ScalarTypeDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:699:1: ( ( ( rule__ScalarTypeDefinition__NameAssignment_1 ) ) )
-            // InternalGraphQL.g:700:1: ( ( rule__ScalarTypeDefinition__NameAssignment_1 ) )
+            // InternalGraphQL.g:1216:1: ( ( 'scalar' ) )
+            // InternalGraphQL.g:1217:1: ( 'scalar' )
             {
-            // InternalGraphQL.g:700:1: ( ( rule__ScalarTypeDefinition__NameAssignment_1 ) )
-            // InternalGraphQL.g:701:2: ( rule__ScalarTypeDefinition__NameAssignment_1 )
+            // InternalGraphQL.g:1217:1: ( 'scalar' )
+            // InternalGraphQL.g:1218:2: 'scalar'
             {
-             before(grammarAccess.getScalarTypeDefinitionAccess().getNameAssignment_1()); 
-            // InternalGraphQL.g:702:2: ( rule__ScalarTypeDefinition__NameAssignment_1 )
-            // InternalGraphQL.g:702:3: rule__ScalarTypeDefinition__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ScalarTypeDefinition__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getScalarTypeDefinitionAccess().getNameAssignment_1()); 
+             before(grammarAccess.getScalarTypeDefinitionAccess().getScalarKeyword_1()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getScalarTypeDefinitionAccess().getScalarKeyword_1()); 
 
             }
 
@@ -2195,17 +4029,97 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ScalarTypeDefinition__Group__1__Impl"
 
 
+    // $ANTLR start "rule__ScalarTypeDefinition__Group__2"
+    // InternalGraphQL.g:1227:1: rule__ScalarTypeDefinition__Group__2 : rule__ScalarTypeDefinition__Group__2__Impl ;
+    public final void rule__ScalarTypeDefinition__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1231:1: ( rule__ScalarTypeDefinition__Group__2__Impl )
+            // InternalGraphQL.g:1232:2: rule__ScalarTypeDefinition__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ScalarTypeDefinition__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ScalarTypeDefinition__Group__2"
+
+
+    // $ANTLR start "rule__ScalarTypeDefinition__Group__2__Impl"
+    // InternalGraphQL.g:1238:1: rule__ScalarTypeDefinition__Group__2__Impl : ( ( rule__ScalarTypeDefinition__NameAssignment_2 ) ) ;
+    public final void rule__ScalarTypeDefinition__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1242:1: ( ( ( rule__ScalarTypeDefinition__NameAssignment_2 ) ) )
+            // InternalGraphQL.g:1243:1: ( ( rule__ScalarTypeDefinition__NameAssignment_2 ) )
+            {
+            // InternalGraphQL.g:1243:1: ( ( rule__ScalarTypeDefinition__NameAssignment_2 ) )
+            // InternalGraphQL.g:1244:2: ( rule__ScalarTypeDefinition__NameAssignment_2 )
+            {
+             before(grammarAccess.getScalarTypeDefinitionAccess().getNameAssignment_2()); 
+            // InternalGraphQL.g:1245:2: ( rule__ScalarTypeDefinition__NameAssignment_2 )
+            // InternalGraphQL.g:1245:3: rule__ScalarTypeDefinition__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__ScalarTypeDefinition__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getScalarTypeDefinitionAccess().getNameAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ScalarTypeDefinition__Group__2__Impl"
+
+
     // $ANTLR start "rule__ObjectTypeDefinition__Group__0"
-    // InternalGraphQL.g:711:1: rule__ObjectTypeDefinition__Group__0 : rule__ObjectTypeDefinition__Group__0__Impl rule__ObjectTypeDefinition__Group__1 ;
+    // InternalGraphQL.g:1254:1: rule__ObjectTypeDefinition__Group__0 : rule__ObjectTypeDefinition__Group__0__Impl rule__ObjectTypeDefinition__Group__1 ;
     public final void rule__ObjectTypeDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:715:1: ( rule__ObjectTypeDefinition__Group__0__Impl rule__ObjectTypeDefinition__Group__1 )
-            // InternalGraphQL.g:716:2: rule__ObjectTypeDefinition__Group__0__Impl rule__ObjectTypeDefinition__Group__1
+            // InternalGraphQL.g:1258:1: ( rule__ObjectTypeDefinition__Group__0__Impl rule__ObjectTypeDefinition__Group__1 )
+            // InternalGraphQL.g:1259:2: rule__ObjectTypeDefinition__Group__0__Impl rule__ObjectTypeDefinition__Group__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_12);
             rule__ObjectTypeDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -2234,21 +4148,42 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectTypeDefinition__Group__0__Impl"
-    // InternalGraphQL.g:723:1: rule__ObjectTypeDefinition__Group__0__Impl : ( 'type' ) ;
+    // InternalGraphQL.g:1266:1: rule__ObjectTypeDefinition__Group__0__Impl : ( ( rule__ObjectTypeDefinition__DescriptionAssignment_0 )? ) ;
     public final void rule__ObjectTypeDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:727:1: ( ( 'type' ) )
-            // InternalGraphQL.g:728:1: ( 'type' )
+            // InternalGraphQL.g:1270:1: ( ( ( rule__ObjectTypeDefinition__DescriptionAssignment_0 )? ) )
+            // InternalGraphQL.g:1271:1: ( ( rule__ObjectTypeDefinition__DescriptionAssignment_0 )? )
             {
-            // InternalGraphQL.g:728:1: ( 'type' )
-            // InternalGraphQL.g:729:2: 'type'
+            // InternalGraphQL.g:1271:1: ( ( rule__ObjectTypeDefinition__DescriptionAssignment_0 )? )
+            // InternalGraphQL.g:1272:2: ( rule__ObjectTypeDefinition__DescriptionAssignment_0 )?
             {
-             before(grammarAccess.getObjectTypeDefinitionAccess().getTypeKeyword_0()); 
-            match(input,16,FOLLOW_2); 
-             after(grammarAccess.getObjectTypeDefinitionAccess().getTypeKeyword_0()); 
+             before(grammarAccess.getObjectTypeDefinitionAccess().getDescriptionAssignment_0()); 
+            // InternalGraphQL.g:1273:2: ( rule__ObjectTypeDefinition__DescriptionAssignment_0 )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( ((LA12_0>=RULE_SL_STRING_VALUE && LA12_0<=RULE_ML_STRING_VALUE)) ) {
+                alt12=1;
+            }
+            switch (alt12) {
+                case 1 :
+                    // InternalGraphQL.g:1273:3: rule__ObjectTypeDefinition__DescriptionAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ObjectTypeDefinition__DescriptionAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getObjectTypeDefinitionAccess().getDescriptionAssignment_0()); 
 
             }
 
@@ -2271,16 +4206,16 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectTypeDefinition__Group__1"
-    // InternalGraphQL.g:738:1: rule__ObjectTypeDefinition__Group__1 : rule__ObjectTypeDefinition__Group__1__Impl rule__ObjectTypeDefinition__Group__2 ;
+    // InternalGraphQL.g:1281:1: rule__ObjectTypeDefinition__Group__1 : rule__ObjectTypeDefinition__Group__1__Impl rule__ObjectTypeDefinition__Group__2 ;
     public final void rule__ObjectTypeDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:742:1: ( rule__ObjectTypeDefinition__Group__1__Impl rule__ObjectTypeDefinition__Group__2 )
-            // InternalGraphQL.g:743:2: rule__ObjectTypeDefinition__Group__1__Impl rule__ObjectTypeDefinition__Group__2
+            // InternalGraphQL.g:1285:1: ( rule__ObjectTypeDefinition__Group__1__Impl rule__ObjectTypeDefinition__Group__2 )
+            // InternalGraphQL.g:1286:2: rule__ObjectTypeDefinition__Group__1__Impl rule__ObjectTypeDefinition__Group__2
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_10);
             rule__ObjectTypeDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -2309,31 +4244,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectTypeDefinition__Group__1__Impl"
-    // InternalGraphQL.g:750:1: rule__ObjectTypeDefinition__Group__1__Impl : ( ( rule__ObjectTypeDefinition__NameAssignment_1 ) ) ;
+    // InternalGraphQL.g:1293:1: rule__ObjectTypeDefinition__Group__1__Impl : ( 'type' ) ;
     public final void rule__ObjectTypeDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:754:1: ( ( ( rule__ObjectTypeDefinition__NameAssignment_1 ) ) )
-            // InternalGraphQL.g:755:1: ( ( rule__ObjectTypeDefinition__NameAssignment_1 ) )
+            // InternalGraphQL.g:1297:1: ( ( 'type' ) )
+            // InternalGraphQL.g:1298:1: ( 'type' )
             {
-            // InternalGraphQL.g:755:1: ( ( rule__ObjectTypeDefinition__NameAssignment_1 ) )
-            // InternalGraphQL.g:756:2: ( rule__ObjectTypeDefinition__NameAssignment_1 )
+            // InternalGraphQL.g:1298:1: ( 'type' )
+            // InternalGraphQL.g:1299:2: 'type'
             {
-             before(grammarAccess.getObjectTypeDefinitionAccess().getNameAssignment_1()); 
-            // InternalGraphQL.g:757:2: ( rule__ObjectTypeDefinition__NameAssignment_1 )
-            // InternalGraphQL.g:757:3: rule__ObjectTypeDefinition__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ObjectTypeDefinition__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getObjectTypeDefinitionAccess().getNameAssignment_1()); 
+             before(grammarAccess.getObjectTypeDefinitionAccess().getTypeKeyword_1()); 
+            match(input,23,FOLLOW_2); 
+             after(grammarAccess.getObjectTypeDefinitionAccess().getTypeKeyword_1()); 
 
             }
 
@@ -2356,17 +4281,22 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectTypeDefinition__Group__2"
-    // InternalGraphQL.g:765:1: rule__ObjectTypeDefinition__Group__2 : rule__ObjectTypeDefinition__Group__2__Impl ;
+    // InternalGraphQL.g:1308:1: rule__ObjectTypeDefinition__Group__2 : rule__ObjectTypeDefinition__Group__2__Impl rule__ObjectTypeDefinition__Group__3 ;
     public final void rule__ObjectTypeDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:769:1: ( rule__ObjectTypeDefinition__Group__2__Impl )
-            // InternalGraphQL.g:770:2: rule__ObjectTypeDefinition__Group__2__Impl
+            // InternalGraphQL.g:1312:1: ( rule__ObjectTypeDefinition__Group__2__Impl rule__ObjectTypeDefinition__Group__3 )
+            // InternalGraphQL.g:1313:2: rule__ObjectTypeDefinition__Group__2__Impl rule__ObjectTypeDefinition__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_13);
             rule__ObjectTypeDefinition__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ObjectTypeDefinition__Group__3();
 
             state._fsp--;
 
@@ -2389,42 +4319,31 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectTypeDefinition__Group__2__Impl"
-    // InternalGraphQL.g:776:1: rule__ObjectTypeDefinition__Group__2__Impl : ( ( rule__ObjectTypeDefinition__Group_2__0 )? ) ;
+    // InternalGraphQL.g:1320:1: rule__ObjectTypeDefinition__Group__2__Impl : ( ( rule__ObjectTypeDefinition__NameAssignment_2 ) ) ;
     public final void rule__ObjectTypeDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:780:1: ( ( ( rule__ObjectTypeDefinition__Group_2__0 )? ) )
-            // InternalGraphQL.g:781:1: ( ( rule__ObjectTypeDefinition__Group_2__0 )? )
+            // InternalGraphQL.g:1324:1: ( ( ( rule__ObjectTypeDefinition__NameAssignment_2 ) ) )
+            // InternalGraphQL.g:1325:1: ( ( rule__ObjectTypeDefinition__NameAssignment_2 ) )
             {
-            // InternalGraphQL.g:781:1: ( ( rule__ObjectTypeDefinition__Group_2__0 )? )
-            // InternalGraphQL.g:782:2: ( rule__ObjectTypeDefinition__Group_2__0 )?
+            // InternalGraphQL.g:1325:1: ( ( rule__ObjectTypeDefinition__NameAssignment_2 ) )
+            // InternalGraphQL.g:1326:2: ( rule__ObjectTypeDefinition__NameAssignment_2 )
             {
-             before(grammarAccess.getObjectTypeDefinitionAccess().getGroup_2()); 
-            // InternalGraphQL.g:783:2: ( rule__ObjectTypeDefinition__Group_2__0 )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+             before(grammarAccess.getObjectTypeDefinitionAccess().getNameAssignment_2()); 
+            // InternalGraphQL.g:1327:2: ( rule__ObjectTypeDefinition__NameAssignment_2 )
+            // InternalGraphQL.g:1327:3: rule__ObjectTypeDefinition__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__ObjectTypeDefinition__NameAssignment_2();
 
-            if ( (LA6_0==12) ) {
-                alt6=1;
-            }
-            switch (alt6) {
-                case 1 :
-                    // InternalGraphQL.g:783:3: rule__ObjectTypeDefinition__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ObjectTypeDefinition__Group_2__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getObjectTypeDefinitionAccess().getGroup_2()); 
+             after(grammarAccess.getObjectTypeDefinitionAccess().getNameAssignment_2()); 
 
             }
 
@@ -2446,23 +4365,23 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ObjectTypeDefinition__Group__2__Impl"
 
 
-    // $ANTLR start "rule__ObjectTypeDefinition__Group_2__0"
-    // InternalGraphQL.g:792:1: rule__ObjectTypeDefinition__Group_2__0 : rule__ObjectTypeDefinition__Group_2__0__Impl rule__ObjectTypeDefinition__Group_2__1 ;
-    public final void rule__ObjectTypeDefinition__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__ObjectTypeDefinition__Group__3"
+    // InternalGraphQL.g:1335:1: rule__ObjectTypeDefinition__Group__3 : rule__ObjectTypeDefinition__Group__3__Impl rule__ObjectTypeDefinition__Group__4 ;
+    public final void rule__ObjectTypeDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:796:1: ( rule__ObjectTypeDefinition__Group_2__0__Impl rule__ObjectTypeDefinition__Group_2__1 )
-            // InternalGraphQL.g:797:2: rule__ObjectTypeDefinition__Group_2__0__Impl rule__ObjectTypeDefinition__Group_2__1
+            // InternalGraphQL.g:1339:1: ( rule__ObjectTypeDefinition__Group__3__Impl rule__ObjectTypeDefinition__Group__4 )
+            // InternalGraphQL.g:1340:2: rule__ObjectTypeDefinition__Group__3__Impl rule__ObjectTypeDefinition__Group__4
             {
-            pushFollow(FOLLOW_10);
-            rule__ObjectTypeDefinition__Group_2__0__Impl();
+            pushFollow(FOLLOW_13);
+            rule__ObjectTypeDefinition__Group__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ObjectTypeDefinition__Group_2__1();
+            rule__ObjectTypeDefinition__Group__4();
 
             state._fsp--;
 
@@ -2481,25 +4400,46 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ObjectTypeDefinition__Group_2__0"
+    // $ANTLR end "rule__ObjectTypeDefinition__Group__3"
 
 
-    // $ANTLR start "rule__ObjectTypeDefinition__Group_2__0__Impl"
-    // InternalGraphQL.g:804:1: rule__ObjectTypeDefinition__Group_2__0__Impl : ( '{' ) ;
-    public final void rule__ObjectTypeDefinition__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ObjectTypeDefinition__Group__3__Impl"
+    // InternalGraphQL.g:1347:1: rule__ObjectTypeDefinition__Group__3__Impl : ( ( rule__ObjectTypeDefinition__Group_3__0 )? ) ;
+    public final void rule__ObjectTypeDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:808:1: ( ( '{' ) )
-            // InternalGraphQL.g:809:1: ( '{' )
+            // InternalGraphQL.g:1351:1: ( ( ( rule__ObjectTypeDefinition__Group_3__0 )? ) )
+            // InternalGraphQL.g:1352:1: ( ( rule__ObjectTypeDefinition__Group_3__0 )? )
             {
-            // InternalGraphQL.g:809:1: ( '{' )
-            // InternalGraphQL.g:810:2: '{'
+            // InternalGraphQL.g:1352:1: ( ( rule__ObjectTypeDefinition__Group_3__0 )? )
+            // InternalGraphQL.g:1353:2: ( rule__ObjectTypeDefinition__Group_3__0 )?
             {
-             before(grammarAccess.getObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_2_0()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_2_0()); 
+             before(grammarAccess.getObjectTypeDefinitionAccess().getGroup_3()); 
+            // InternalGraphQL.g:1354:2: ( rule__ObjectTypeDefinition__Group_3__0 )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
+
+            if ( (LA13_0==24) ) {
+                alt13=1;
+            }
+            switch (alt13) {
+                case 1 :
+                    // InternalGraphQL.g:1354:3: rule__ObjectTypeDefinition__Group_3__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ObjectTypeDefinition__Group_3__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getObjectTypeDefinitionAccess().getGroup_3()); 
 
             }
 
@@ -2518,26 +4458,117 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ObjectTypeDefinition__Group_2__0__Impl"
+    // $ANTLR end "rule__ObjectTypeDefinition__Group__3__Impl"
 
 
-    // $ANTLR start "rule__ObjectTypeDefinition__Group_2__1"
-    // InternalGraphQL.g:819:1: rule__ObjectTypeDefinition__Group_2__1 : rule__ObjectTypeDefinition__Group_2__1__Impl rule__ObjectTypeDefinition__Group_2__2 ;
-    public final void rule__ObjectTypeDefinition__Group_2__1() throws RecognitionException {
+    // $ANTLR start "rule__ObjectTypeDefinition__Group__4"
+    // InternalGraphQL.g:1362:1: rule__ObjectTypeDefinition__Group__4 : rule__ObjectTypeDefinition__Group__4__Impl ;
+    public final void rule__ObjectTypeDefinition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:823:1: ( rule__ObjectTypeDefinition__Group_2__1__Impl rule__ObjectTypeDefinition__Group_2__2 )
-            // InternalGraphQL.g:824:2: rule__ObjectTypeDefinition__Group_2__1__Impl rule__ObjectTypeDefinition__Group_2__2
+            // InternalGraphQL.g:1366:1: ( rule__ObjectTypeDefinition__Group__4__Impl )
+            // InternalGraphQL.g:1367:2: rule__ObjectTypeDefinition__Group__4__Impl
             {
-            pushFollow(FOLLOW_10);
-            rule__ObjectTypeDefinition__Group_2__1__Impl();
+            pushFollow(FOLLOW_2);
+            rule__ObjectTypeDefinition__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectTypeDefinition__Group__4"
+
+
+    // $ANTLR start "rule__ObjectTypeDefinition__Group__4__Impl"
+    // InternalGraphQL.g:1373:1: rule__ObjectTypeDefinition__Group__4__Impl : ( ( rule__ObjectTypeDefinition__Group_4__0 )? ) ;
+    public final void rule__ObjectTypeDefinition__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1377:1: ( ( ( rule__ObjectTypeDefinition__Group_4__0 )? ) )
+            // InternalGraphQL.g:1378:1: ( ( rule__ObjectTypeDefinition__Group_4__0 )? )
+            {
+            // InternalGraphQL.g:1378:1: ( ( rule__ObjectTypeDefinition__Group_4__0 )? )
+            // InternalGraphQL.g:1379:2: ( rule__ObjectTypeDefinition__Group_4__0 )?
+            {
+             before(grammarAccess.getObjectTypeDefinitionAccess().getGroup_4()); 
+            // InternalGraphQL.g:1380:2: ( rule__ObjectTypeDefinition__Group_4__0 )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
+
+            if ( (LA14_0==19) ) {
+                alt14=1;
+            }
+            switch (alt14) {
+                case 1 :
+                    // InternalGraphQL.g:1380:3: rule__ObjectTypeDefinition__Group_4__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ObjectTypeDefinition__Group_4__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getObjectTypeDefinitionAccess().getGroup_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectTypeDefinition__Group__4__Impl"
+
+
+    // $ANTLR start "rule__ObjectTypeDefinition__Group_3__0"
+    // InternalGraphQL.g:1389:1: rule__ObjectTypeDefinition__Group_3__0 : rule__ObjectTypeDefinition__Group_3__0__Impl rule__ObjectTypeDefinition__Group_3__1 ;
+    public final void rule__ObjectTypeDefinition__Group_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1393:1: ( rule__ObjectTypeDefinition__Group_3__0__Impl rule__ObjectTypeDefinition__Group_3__1 )
+            // InternalGraphQL.g:1394:2: rule__ObjectTypeDefinition__Group_3__0__Impl rule__ObjectTypeDefinition__Group_3__1
+            {
+            pushFollow(FOLLOW_14);
+            rule__ObjectTypeDefinition__Group_3__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ObjectTypeDefinition__Group_2__2();
+            rule__ObjectTypeDefinition__Group_3__1();
 
             state._fsp--;
 
@@ -2556,40 +4587,270 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ObjectTypeDefinition__Group_2__1"
+    // $ANTLR end "rule__ObjectTypeDefinition__Group_3__0"
 
 
-    // $ANTLR start "rule__ObjectTypeDefinition__Group_2__1__Impl"
-    // InternalGraphQL.g:831:1: rule__ObjectTypeDefinition__Group_2__1__Impl : ( ( rule__ObjectTypeDefinition__FieldDefinitionsAssignment_2_1 )* ) ;
-    public final void rule__ObjectTypeDefinition__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ObjectTypeDefinition__Group_3__0__Impl"
+    // InternalGraphQL.g:1401:1: rule__ObjectTypeDefinition__Group_3__0__Impl : ( 'implements' ) ;
+    public final void rule__ObjectTypeDefinition__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:835:1: ( ( ( rule__ObjectTypeDefinition__FieldDefinitionsAssignment_2_1 )* ) )
-            // InternalGraphQL.g:836:1: ( ( rule__ObjectTypeDefinition__FieldDefinitionsAssignment_2_1 )* )
+            // InternalGraphQL.g:1405:1: ( ( 'implements' ) )
+            // InternalGraphQL.g:1406:1: ( 'implements' )
             {
-            // InternalGraphQL.g:836:1: ( ( rule__ObjectTypeDefinition__FieldDefinitionsAssignment_2_1 )* )
-            // InternalGraphQL.g:837:2: ( rule__ObjectTypeDefinition__FieldDefinitionsAssignment_2_1 )*
+            // InternalGraphQL.g:1406:1: ( 'implements' )
+            // InternalGraphQL.g:1407:2: 'implements'
             {
-             before(grammarAccess.getObjectTypeDefinitionAccess().getFieldDefinitionsAssignment_2_1()); 
-            // InternalGraphQL.g:838:2: ( rule__ObjectTypeDefinition__FieldDefinitionsAssignment_2_1 )*
-            loop7:
+             before(grammarAccess.getObjectTypeDefinitionAccess().getImplementsKeyword_3_0()); 
+            match(input,24,FOLLOW_2); 
+             after(grammarAccess.getObjectTypeDefinitionAccess().getImplementsKeyword_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectTypeDefinition__Group_3__0__Impl"
+
+
+    // $ANTLR start "rule__ObjectTypeDefinition__Group_3__1"
+    // InternalGraphQL.g:1416:1: rule__ObjectTypeDefinition__Group_3__1 : rule__ObjectTypeDefinition__Group_3__1__Impl ;
+    public final void rule__ObjectTypeDefinition__Group_3__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1420:1: ( rule__ObjectTypeDefinition__Group_3__1__Impl )
+            // InternalGraphQL.g:1421:2: rule__ObjectTypeDefinition__Group_3__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ObjectTypeDefinition__Group_3__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectTypeDefinition__Group_3__1"
+
+
+    // $ANTLR start "rule__ObjectTypeDefinition__Group_3__1__Impl"
+    // InternalGraphQL.g:1427:1: rule__ObjectTypeDefinition__Group_3__1__Impl : ( ( rule__ObjectTypeDefinition__ImplementsAssignment_3_1 ) ) ;
+    public final void rule__ObjectTypeDefinition__Group_3__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1431:1: ( ( ( rule__ObjectTypeDefinition__ImplementsAssignment_3_1 ) ) )
+            // InternalGraphQL.g:1432:1: ( ( rule__ObjectTypeDefinition__ImplementsAssignment_3_1 ) )
+            {
+            // InternalGraphQL.g:1432:1: ( ( rule__ObjectTypeDefinition__ImplementsAssignment_3_1 ) )
+            // InternalGraphQL.g:1433:2: ( rule__ObjectTypeDefinition__ImplementsAssignment_3_1 )
+            {
+             before(grammarAccess.getObjectTypeDefinitionAccess().getImplementsAssignment_3_1()); 
+            // InternalGraphQL.g:1434:2: ( rule__ObjectTypeDefinition__ImplementsAssignment_3_1 )
+            // InternalGraphQL.g:1434:3: rule__ObjectTypeDefinition__ImplementsAssignment_3_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__ObjectTypeDefinition__ImplementsAssignment_3_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getObjectTypeDefinitionAccess().getImplementsAssignment_3_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectTypeDefinition__Group_3__1__Impl"
+
+
+    // $ANTLR start "rule__ObjectTypeDefinition__Group_4__0"
+    // InternalGraphQL.g:1443:1: rule__ObjectTypeDefinition__Group_4__0 : rule__ObjectTypeDefinition__Group_4__0__Impl rule__ObjectTypeDefinition__Group_4__1 ;
+    public final void rule__ObjectTypeDefinition__Group_4__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1447:1: ( rule__ObjectTypeDefinition__Group_4__0__Impl rule__ObjectTypeDefinition__Group_4__1 )
+            // InternalGraphQL.g:1448:2: rule__ObjectTypeDefinition__Group_4__0__Impl rule__ObjectTypeDefinition__Group_4__1
+            {
+            pushFollow(FOLLOW_15);
+            rule__ObjectTypeDefinition__Group_4__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ObjectTypeDefinition__Group_4__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectTypeDefinition__Group_4__0"
+
+
+    // $ANTLR start "rule__ObjectTypeDefinition__Group_4__0__Impl"
+    // InternalGraphQL.g:1455:1: rule__ObjectTypeDefinition__Group_4__0__Impl : ( '{' ) ;
+    public final void rule__ObjectTypeDefinition__Group_4__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1459:1: ( ( '{' ) )
+            // InternalGraphQL.g:1460:1: ( '{' )
+            {
+            // InternalGraphQL.g:1460:1: ( '{' )
+            // InternalGraphQL.g:1461:2: '{'
+            {
+             before(grammarAccess.getObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_4_0()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectTypeDefinition__Group_4__0__Impl"
+
+
+    // $ANTLR start "rule__ObjectTypeDefinition__Group_4__1"
+    // InternalGraphQL.g:1470:1: rule__ObjectTypeDefinition__Group_4__1 : rule__ObjectTypeDefinition__Group_4__1__Impl rule__ObjectTypeDefinition__Group_4__2 ;
+    public final void rule__ObjectTypeDefinition__Group_4__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1474:1: ( rule__ObjectTypeDefinition__Group_4__1__Impl rule__ObjectTypeDefinition__Group_4__2 )
+            // InternalGraphQL.g:1475:2: rule__ObjectTypeDefinition__Group_4__1__Impl rule__ObjectTypeDefinition__Group_4__2
+            {
+            pushFollow(FOLLOW_15);
+            rule__ObjectTypeDefinition__Group_4__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ObjectTypeDefinition__Group_4__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectTypeDefinition__Group_4__1"
+
+
+    // $ANTLR start "rule__ObjectTypeDefinition__Group_4__1__Impl"
+    // InternalGraphQL.g:1482:1: rule__ObjectTypeDefinition__Group_4__1__Impl : ( ( rule__ObjectTypeDefinition__FieldDefinitionsAssignment_4_1 )* ) ;
+    public final void rule__ObjectTypeDefinition__Group_4__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1486:1: ( ( ( rule__ObjectTypeDefinition__FieldDefinitionsAssignment_4_1 )* ) )
+            // InternalGraphQL.g:1487:1: ( ( rule__ObjectTypeDefinition__FieldDefinitionsAssignment_4_1 )* )
+            {
+            // InternalGraphQL.g:1487:1: ( ( rule__ObjectTypeDefinition__FieldDefinitionsAssignment_4_1 )* )
+            // InternalGraphQL.g:1488:2: ( rule__ObjectTypeDefinition__FieldDefinitionsAssignment_4_1 )*
+            {
+             before(grammarAccess.getObjectTypeDefinitionAccess().getFieldDefinitionsAssignment_4_1()); 
+            // InternalGraphQL.g:1489:2: ( rule__ObjectTypeDefinition__FieldDefinitionsAssignment_4_1 )*
+            loop15:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( (LA7_0==RULE_NAME) ) {
-                    alt7=1;
+                if ( ((LA15_0>=RULE_SL_STRING_VALUE && LA15_0<=RULE_NAME)) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt15) {
             	case 1 :
-            	    // InternalGraphQL.g:838:3: rule__ObjectTypeDefinition__FieldDefinitionsAssignment_2_1
+            	    // InternalGraphQL.g:1489:3: rule__ObjectTypeDefinition__FieldDefinitionsAssignment_4_1
             	    {
-            	    pushFollow(FOLLOW_11);
-            	    rule__ObjectTypeDefinition__FieldDefinitionsAssignment_2_1();
+            	    pushFollow(FOLLOW_16);
+            	    rule__ObjectTypeDefinition__FieldDefinitionsAssignment_4_1();
 
             	    state._fsp--;
 
@@ -2598,11 +4859,11 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop15;
                 }
             } while (true);
 
-             after(grammarAccess.getObjectTypeDefinitionAccess().getFieldDefinitionsAssignment_2_1()); 
+             after(grammarAccess.getObjectTypeDefinitionAccess().getFieldDefinitionsAssignment_4_1()); 
 
             }
 
@@ -2621,21 +4882,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ObjectTypeDefinition__Group_2__1__Impl"
+    // $ANTLR end "rule__ObjectTypeDefinition__Group_4__1__Impl"
 
 
-    // $ANTLR start "rule__ObjectTypeDefinition__Group_2__2"
-    // InternalGraphQL.g:846:1: rule__ObjectTypeDefinition__Group_2__2 : rule__ObjectTypeDefinition__Group_2__2__Impl ;
-    public final void rule__ObjectTypeDefinition__Group_2__2() throws RecognitionException {
+    // $ANTLR start "rule__ObjectTypeDefinition__Group_4__2"
+    // InternalGraphQL.g:1497:1: rule__ObjectTypeDefinition__Group_4__2 : rule__ObjectTypeDefinition__Group_4__2__Impl ;
+    public final void rule__ObjectTypeDefinition__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:850:1: ( rule__ObjectTypeDefinition__Group_2__2__Impl )
-            // InternalGraphQL.g:851:2: rule__ObjectTypeDefinition__Group_2__2__Impl
+            // InternalGraphQL.g:1501:1: ( rule__ObjectTypeDefinition__Group_4__2__Impl )
+            // InternalGraphQL.g:1502:2: rule__ObjectTypeDefinition__Group_4__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ObjectTypeDefinition__Group_2__2__Impl();
+            rule__ObjectTypeDefinition__Group_4__2__Impl();
 
             state._fsp--;
 
@@ -2654,25 +4915,25 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ObjectTypeDefinition__Group_2__2"
+    // $ANTLR end "rule__ObjectTypeDefinition__Group_4__2"
 
 
-    // $ANTLR start "rule__ObjectTypeDefinition__Group_2__2__Impl"
-    // InternalGraphQL.g:857:1: rule__ObjectTypeDefinition__Group_2__2__Impl : ( '}' ) ;
-    public final void rule__ObjectTypeDefinition__Group_2__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ObjectTypeDefinition__Group_4__2__Impl"
+    // InternalGraphQL.g:1508:1: rule__ObjectTypeDefinition__Group_4__2__Impl : ( '}' ) ;
+    public final void rule__ObjectTypeDefinition__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:861:1: ( ( '}' ) )
-            // InternalGraphQL.g:862:1: ( '}' )
+            // InternalGraphQL.g:1512:1: ( ( '}' ) )
+            // InternalGraphQL.g:1513:1: ( '}' )
             {
-            // InternalGraphQL.g:862:1: ( '}' )
-            // InternalGraphQL.g:863:2: '}'
+            // InternalGraphQL.g:1513:1: ( '}' )
+            // InternalGraphQL.g:1514:2: '}'
             {
-             before(grammarAccess.getObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_2_2()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_2_2()); 
+             before(grammarAccess.getObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_4_2()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_4_2()); 
 
             }
 
@@ -2691,20 +4952,20 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ObjectTypeDefinition__Group_2__2__Impl"
+    // $ANTLR end "rule__ObjectTypeDefinition__Group_4__2__Impl"
 
 
     // $ANTLR start "rule__InterfaceDefinition__Group__0"
-    // InternalGraphQL.g:873:1: rule__InterfaceDefinition__Group__0 : rule__InterfaceDefinition__Group__0__Impl rule__InterfaceDefinition__Group__1 ;
+    // InternalGraphQL.g:1524:1: rule__InterfaceDefinition__Group__0 : rule__InterfaceDefinition__Group__0__Impl rule__InterfaceDefinition__Group__1 ;
     public final void rule__InterfaceDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:877:1: ( rule__InterfaceDefinition__Group__0__Impl rule__InterfaceDefinition__Group__1 )
-            // InternalGraphQL.g:878:2: rule__InterfaceDefinition__Group__0__Impl rule__InterfaceDefinition__Group__1
+            // InternalGraphQL.g:1528:1: ( rule__InterfaceDefinition__Group__0__Impl rule__InterfaceDefinition__Group__1 )
+            // InternalGraphQL.g:1529:2: rule__InterfaceDefinition__Group__0__Impl rule__InterfaceDefinition__Group__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_17);
             rule__InterfaceDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -2733,21 +4994,42 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InterfaceDefinition__Group__0__Impl"
-    // InternalGraphQL.g:885:1: rule__InterfaceDefinition__Group__0__Impl : ( 'interface' ) ;
+    // InternalGraphQL.g:1536:1: rule__InterfaceDefinition__Group__0__Impl : ( ( rule__InterfaceDefinition__DescriptionAssignment_0 )? ) ;
     public final void rule__InterfaceDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:889:1: ( ( 'interface' ) )
-            // InternalGraphQL.g:890:1: ( 'interface' )
+            // InternalGraphQL.g:1540:1: ( ( ( rule__InterfaceDefinition__DescriptionAssignment_0 )? ) )
+            // InternalGraphQL.g:1541:1: ( ( rule__InterfaceDefinition__DescriptionAssignment_0 )? )
             {
-            // InternalGraphQL.g:890:1: ( 'interface' )
-            // InternalGraphQL.g:891:2: 'interface'
+            // InternalGraphQL.g:1541:1: ( ( rule__InterfaceDefinition__DescriptionAssignment_0 )? )
+            // InternalGraphQL.g:1542:2: ( rule__InterfaceDefinition__DescriptionAssignment_0 )?
             {
-             before(grammarAccess.getInterfaceDefinitionAccess().getInterfaceKeyword_0()); 
-            match(input,17,FOLLOW_2); 
-             after(grammarAccess.getInterfaceDefinitionAccess().getInterfaceKeyword_0()); 
+             before(grammarAccess.getInterfaceDefinitionAccess().getDescriptionAssignment_0()); 
+            // InternalGraphQL.g:1543:2: ( rule__InterfaceDefinition__DescriptionAssignment_0 )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
+
+            if ( ((LA16_0>=RULE_SL_STRING_VALUE && LA16_0<=RULE_ML_STRING_VALUE)) ) {
+                alt16=1;
+            }
+            switch (alt16) {
+                case 1 :
+                    // InternalGraphQL.g:1543:3: rule__InterfaceDefinition__DescriptionAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__InterfaceDefinition__DescriptionAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getInterfaceDefinitionAccess().getDescriptionAssignment_0()); 
 
             }
 
@@ -2770,16 +5052,16 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InterfaceDefinition__Group__1"
-    // InternalGraphQL.g:900:1: rule__InterfaceDefinition__Group__1 : rule__InterfaceDefinition__Group__1__Impl rule__InterfaceDefinition__Group__2 ;
+    // InternalGraphQL.g:1551:1: rule__InterfaceDefinition__Group__1 : rule__InterfaceDefinition__Group__1__Impl rule__InterfaceDefinition__Group__2 ;
     public final void rule__InterfaceDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:904:1: ( rule__InterfaceDefinition__Group__1__Impl rule__InterfaceDefinition__Group__2 )
-            // InternalGraphQL.g:905:2: rule__InterfaceDefinition__Group__1__Impl rule__InterfaceDefinition__Group__2
+            // InternalGraphQL.g:1555:1: ( rule__InterfaceDefinition__Group__1__Impl rule__InterfaceDefinition__Group__2 )
+            // InternalGraphQL.g:1556:2: rule__InterfaceDefinition__Group__1__Impl rule__InterfaceDefinition__Group__2
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_10);
             rule__InterfaceDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -2808,31 +5090,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InterfaceDefinition__Group__1__Impl"
-    // InternalGraphQL.g:912:1: rule__InterfaceDefinition__Group__1__Impl : ( ( rule__InterfaceDefinition__NameAssignment_1 ) ) ;
+    // InternalGraphQL.g:1563:1: rule__InterfaceDefinition__Group__1__Impl : ( 'interface' ) ;
     public final void rule__InterfaceDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:916:1: ( ( ( rule__InterfaceDefinition__NameAssignment_1 ) ) )
-            // InternalGraphQL.g:917:1: ( ( rule__InterfaceDefinition__NameAssignment_1 ) )
+            // InternalGraphQL.g:1567:1: ( ( 'interface' ) )
+            // InternalGraphQL.g:1568:1: ( 'interface' )
             {
-            // InternalGraphQL.g:917:1: ( ( rule__InterfaceDefinition__NameAssignment_1 ) )
-            // InternalGraphQL.g:918:2: ( rule__InterfaceDefinition__NameAssignment_1 )
+            // InternalGraphQL.g:1568:1: ( 'interface' )
+            // InternalGraphQL.g:1569:2: 'interface'
             {
-             before(grammarAccess.getInterfaceDefinitionAccess().getNameAssignment_1()); 
-            // InternalGraphQL.g:919:2: ( rule__InterfaceDefinition__NameAssignment_1 )
-            // InternalGraphQL.g:919:3: rule__InterfaceDefinition__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__InterfaceDefinition__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getInterfaceDefinitionAccess().getNameAssignment_1()); 
+             before(grammarAccess.getInterfaceDefinitionAccess().getInterfaceKeyword_1()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getInterfaceDefinitionAccess().getInterfaceKeyword_1()); 
 
             }
 
@@ -2855,17 +5127,22 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InterfaceDefinition__Group__2"
-    // InternalGraphQL.g:927:1: rule__InterfaceDefinition__Group__2 : rule__InterfaceDefinition__Group__2__Impl ;
+    // InternalGraphQL.g:1578:1: rule__InterfaceDefinition__Group__2 : rule__InterfaceDefinition__Group__2__Impl rule__InterfaceDefinition__Group__3 ;
     public final void rule__InterfaceDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:931:1: ( rule__InterfaceDefinition__Group__2__Impl )
-            // InternalGraphQL.g:932:2: rule__InterfaceDefinition__Group__2__Impl
+            // InternalGraphQL.g:1582:1: ( rule__InterfaceDefinition__Group__2__Impl rule__InterfaceDefinition__Group__3 )
+            // InternalGraphQL.g:1583:2: rule__InterfaceDefinition__Group__2__Impl rule__InterfaceDefinition__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_13);
             rule__InterfaceDefinition__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InterfaceDefinition__Group__3();
 
             state._fsp--;
 
@@ -2888,42 +5165,31 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InterfaceDefinition__Group__2__Impl"
-    // InternalGraphQL.g:938:1: rule__InterfaceDefinition__Group__2__Impl : ( ( rule__InterfaceDefinition__Group_2__0 )? ) ;
+    // InternalGraphQL.g:1590:1: rule__InterfaceDefinition__Group__2__Impl : ( ( rule__InterfaceDefinition__NameAssignment_2 ) ) ;
     public final void rule__InterfaceDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:942:1: ( ( ( rule__InterfaceDefinition__Group_2__0 )? ) )
-            // InternalGraphQL.g:943:1: ( ( rule__InterfaceDefinition__Group_2__0 )? )
+            // InternalGraphQL.g:1594:1: ( ( ( rule__InterfaceDefinition__NameAssignment_2 ) ) )
+            // InternalGraphQL.g:1595:1: ( ( rule__InterfaceDefinition__NameAssignment_2 ) )
             {
-            // InternalGraphQL.g:943:1: ( ( rule__InterfaceDefinition__Group_2__0 )? )
-            // InternalGraphQL.g:944:2: ( rule__InterfaceDefinition__Group_2__0 )?
+            // InternalGraphQL.g:1595:1: ( ( rule__InterfaceDefinition__NameAssignment_2 ) )
+            // InternalGraphQL.g:1596:2: ( rule__InterfaceDefinition__NameAssignment_2 )
             {
-             before(grammarAccess.getInterfaceDefinitionAccess().getGroup_2()); 
-            // InternalGraphQL.g:945:2: ( rule__InterfaceDefinition__Group_2__0 )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+             before(grammarAccess.getInterfaceDefinitionAccess().getNameAssignment_2()); 
+            // InternalGraphQL.g:1597:2: ( rule__InterfaceDefinition__NameAssignment_2 )
+            // InternalGraphQL.g:1597:3: rule__InterfaceDefinition__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__InterfaceDefinition__NameAssignment_2();
 
-            if ( (LA8_0==12) ) {
-                alt8=1;
-            }
-            switch (alt8) {
-                case 1 :
-                    // InternalGraphQL.g:945:3: rule__InterfaceDefinition__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__InterfaceDefinition__Group_2__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getInterfaceDefinitionAccess().getGroup_2()); 
+             after(grammarAccess.getInterfaceDefinitionAccess().getNameAssignment_2()); 
 
             }
 
@@ -2945,23 +5211,23 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__InterfaceDefinition__Group__2__Impl"
 
 
-    // $ANTLR start "rule__InterfaceDefinition__Group_2__0"
-    // InternalGraphQL.g:954:1: rule__InterfaceDefinition__Group_2__0 : rule__InterfaceDefinition__Group_2__0__Impl rule__InterfaceDefinition__Group_2__1 ;
-    public final void rule__InterfaceDefinition__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__InterfaceDefinition__Group__3"
+    // InternalGraphQL.g:1605:1: rule__InterfaceDefinition__Group__3 : rule__InterfaceDefinition__Group__3__Impl rule__InterfaceDefinition__Group__4 ;
+    public final void rule__InterfaceDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:958:1: ( rule__InterfaceDefinition__Group_2__0__Impl rule__InterfaceDefinition__Group_2__1 )
-            // InternalGraphQL.g:959:2: rule__InterfaceDefinition__Group_2__0__Impl rule__InterfaceDefinition__Group_2__1
+            // InternalGraphQL.g:1609:1: ( rule__InterfaceDefinition__Group__3__Impl rule__InterfaceDefinition__Group__4 )
+            // InternalGraphQL.g:1610:2: rule__InterfaceDefinition__Group__3__Impl rule__InterfaceDefinition__Group__4
             {
-            pushFollow(FOLLOW_10);
-            rule__InterfaceDefinition__Group_2__0__Impl();
+            pushFollow(FOLLOW_13);
+            rule__InterfaceDefinition__Group__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__InterfaceDefinition__Group_2__1();
+            rule__InterfaceDefinition__Group__4();
 
             state._fsp--;
 
@@ -2980,25 +5246,46 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InterfaceDefinition__Group_2__0"
+    // $ANTLR end "rule__InterfaceDefinition__Group__3"
 
 
-    // $ANTLR start "rule__InterfaceDefinition__Group_2__0__Impl"
-    // InternalGraphQL.g:966:1: rule__InterfaceDefinition__Group_2__0__Impl : ( '{' ) ;
-    public final void rule__InterfaceDefinition__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__InterfaceDefinition__Group__3__Impl"
+    // InternalGraphQL.g:1617:1: rule__InterfaceDefinition__Group__3__Impl : ( ( rule__InterfaceDefinition__Group_3__0 )? ) ;
+    public final void rule__InterfaceDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:970:1: ( ( '{' ) )
-            // InternalGraphQL.g:971:1: ( '{' )
+            // InternalGraphQL.g:1621:1: ( ( ( rule__InterfaceDefinition__Group_3__0 )? ) )
+            // InternalGraphQL.g:1622:1: ( ( rule__InterfaceDefinition__Group_3__0 )? )
             {
-            // InternalGraphQL.g:971:1: ( '{' )
-            // InternalGraphQL.g:972:2: '{'
+            // InternalGraphQL.g:1622:1: ( ( rule__InterfaceDefinition__Group_3__0 )? )
+            // InternalGraphQL.g:1623:2: ( rule__InterfaceDefinition__Group_3__0 )?
             {
-             before(grammarAccess.getInterfaceDefinitionAccess().getLeftCurlyBracketKeyword_2_0()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getInterfaceDefinitionAccess().getLeftCurlyBracketKeyword_2_0()); 
+             before(grammarAccess.getInterfaceDefinitionAccess().getGroup_3()); 
+            // InternalGraphQL.g:1624:2: ( rule__InterfaceDefinition__Group_3__0 )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
+
+            if ( (LA17_0==24) ) {
+                alt17=1;
+            }
+            switch (alt17) {
+                case 1 :
+                    // InternalGraphQL.g:1624:3: rule__InterfaceDefinition__Group_3__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__InterfaceDefinition__Group_3__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getInterfaceDefinitionAccess().getGroup_3()); 
 
             }
 
@@ -3017,26 +5304,117 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InterfaceDefinition__Group_2__0__Impl"
+    // $ANTLR end "rule__InterfaceDefinition__Group__3__Impl"
 
 
-    // $ANTLR start "rule__InterfaceDefinition__Group_2__1"
-    // InternalGraphQL.g:981:1: rule__InterfaceDefinition__Group_2__1 : rule__InterfaceDefinition__Group_2__1__Impl rule__InterfaceDefinition__Group_2__2 ;
-    public final void rule__InterfaceDefinition__Group_2__1() throws RecognitionException {
+    // $ANTLR start "rule__InterfaceDefinition__Group__4"
+    // InternalGraphQL.g:1632:1: rule__InterfaceDefinition__Group__4 : rule__InterfaceDefinition__Group__4__Impl ;
+    public final void rule__InterfaceDefinition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:985:1: ( rule__InterfaceDefinition__Group_2__1__Impl rule__InterfaceDefinition__Group_2__2 )
-            // InternalGraphQL.g:986:2: rule__InterfaceDefinition__Group_2__1__Impl rule__InterfaceDefinition__Group_2__2
+            // InternalGraphQL.g:1636:1: ( rule__InterfaceDefinition__Group__4__Impl )
+            // InternalGraphQL.g:1637:2: rule__InterfaceDefinition__Group__4__Impl
             {
-            pushFollow(FOLLOW_10);
-            rule__InterfaceDefinition__Group_2__1__Impl();
+            pushFollow(FOLLOW_2);
+            rule__InterfaceDefinition__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InterfaceDefinition__Group__4"
+
+
+    // $ANTLR start "rule__InterfaceDefinition__Group__4__Impl"
+    // InternalGraphQL.g:1643:1: rule__InterfaceDefinition__Group__4__Impl : ( ( rule__InterfaceDefinition__Group_4__0 )? ) ;
+    public final void rule__InterfaceDefinition__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1647:1: ( ( ( rule__InterfaceDefinition__Group_4__0 )? ) )
+            // InternalGraphQL.g:1648:1: ( ( rule__InterfaceDefinition__Group_4__0 )? )
+            {
+            // InternalGraphQL.g:1648:1: ( ( rule__InterfaceDefinition__Group_4__0 )? )
+            // InternalGraphQL.g:1649:2: ( rule__InterfaceDefinition__Group_4__0 )?
+            {
+             before(grammarAccess.getInterfaceDefinitionAccess().getGroup_4()); 
+            // InternalGraphQL.g:1650:2: ( rule__InterfaceDefinition__Group_4__0 )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
+
+            if ( (LA18_0==19) ) {
+                alt18=1;
+            }
+            switch (alt18) {
+                case 1 :
+                    // InternalGraphQL.g:1650:3: rule__InterfaceDefinition__Group_4__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__InterfaceDefinition__Group_4__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getInterfaceDefinitionAccess().getGroup_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InterfaceDefinition__Group__4__Impl"
+
+
+    // $ANTLR start "rule__InterfaceDefinition__Group_3__0"
+    // InternalGraphQL.g:1659:1: rule__InterfaceDefinition__Group_3__0 : rule__InterfaceDefinition__Group_3__0__Impl rule__InterfaceDefinition__Group_3__1 ;
+    public final void rule__InterfaceDefinition__Group_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1663:1: ( rule__InterfaceDefinition__Group_3__0__Impl rule__InterfaceDefinition__Group_3__1 )
+            // InternalGraphQL.g:1664:2: rule__InterfaceDefinition__Group_3__0__Impl rule__InterfaceDefinition__Group_3__1
+            {
+            pushFollow(FOLLOW_14);
+            rule__InterfaceDefinition__Group_3__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__InterfaceDefinition__Group_2__2();
+            rule__InterfaceDefinition__Group_3__1();
 
             state._fsp--;
 
@@ -3055,40 +5433,270 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InterfaceDefinition__Group_2__1"
+    // $ANTLR end "rule__InterfaceDefinition__Group_3__0"
 
 
-    // $ANTLR start "rule__InterfaceDefinition__Group_2__1__Impl"
-    // InternalGraphQL.g:993:1: rule__InterfaceDefinition__Group_2__1__Impl : ( ( rule__InterfaceDefinition__FieldDefinitionsAssignment_2_1 )* ) ;
-    public final void rule__InterfaceDefinition__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__InterfaceDefinition__Group_3__0__Impl"
+    // InternalGraphQL.g:1671:1: rule__InterfaceDefinition__Group_3__0__Impl : ( 'implements' ) ;
+    public final void rule__InterfaceDefinition__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:997:1: ( ( ( rule__InterfaceDefinition__FieldDefinitionsAssignment_2_1 )* ) )
-            // InternalGraphQL.g:998:1: ( ( rule__InterfaceDefinition__FieldDefinitionsAssignment_2_1 )* )
+            // InternalGraphQL.g:1675:1: ( ( 'implements' ) )
+            // InternalGraphQL.g:1676:1: ( 'implements' )
             {
-            // InternalGraphQL.g:998:1: ( ( rule__InterfaceDefinition__FieldDefinitionsAssignment_2_1 )* )
-            // InternalGraphQL.g:999:2: ( rule__InterfaceDefinition__FieldDefinitionsAssignment_2_1 )*
+            // InternalGraphQL.g:1676:1: ( 'implements' )
+            // InternalGraphQL.g:1677:2: 'implements'
             {
-             before(grammarAccess.getInterfaceDefinitionAccess().getFieldDefinitionsAssignment_2_1()); 
-            // InternalGraphQL.g:1000:2: ( rule__InterfaceDefinition__FieldDefinitionsAssignment_2_1 )*
-            loop9:
+             before(grammarAccess.getInterfaceDefinitionAccess().getImplementsKeyword_3_0()); 
+            match(input,24,FOLLOW_2); 
+             after(grammarAccess.getInterfaceDefinitionAccess().getImplementsKeyword_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InterfaceDefinition__Group_3__0__Impl"
+
+
+    // $ANTLR start "rule__InterfaceDefinition__Group_3__1"
+    // InternalGraphQL.g:1686:1: rule__InterfaceDefinition__Group_3__1 : rule__InterfaceDefinition__Group_3__1__Impl ;
+    public final void rule__InterfaceDefinition__Group_3__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1690:1: ( rule__InterfaceDefinition__Group_3__1__Impl )
+            // InternalGraphQL.g:1691:2: rule__InterfaceDefinition__Group_3__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__InterfaceDefinition__Group_3__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InterfaceDefinition__Group_3__1"
+
+
+    // $ANTLR start "rule__InterfaceDefinition__Group_3__1__Impl"
+    // InternalGraphQL.g:1697:1: rule__InterfaceDefinition__Group_3__1__Impl : ( ( rule__InterfaceDefinition__ImplementsAssignment_3_1 ) ) ;
+    public final void rule__InterfaceDefinition__Group_3__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1701:1: ( ( ( rule__InterfaceDefinition__ImplementsAssignment_3_1 ) ) )
+            // InternalGraphQL.g:1702:1: ( ( rule__InterfaceDefinition__ImplementsAssignment_3_1 ) )
+            {
+            // InternalGraphQL.g:1702:1: ( ( rule__InterfaceDefinition__ImplementsAssignment_3_1 ) )
+            // InternalGraphQL.g:1703:2: ( rule__InterfaceDefinition__ImplementsAssignment_3_1 )
+            {
+             before(grammarAccess.getInterfaceDefinitionAccess().getImplementsAssignment_3_1()); 
+            // InternalGraphQL.g:1704:2: ( rule__InterfaceDefinition__ImplementsAssignment_3_1 )
+            // InternalGraphQL.g:1704:3: rule__InterfaceDefinition__ImplementsAssignment_3_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__InterfaceDefinition__ImplementsAssignment_3_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInterfaceDefinitionAccess().getImplementsAssignment_3_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InterfaceDefinition__Group_3__1__Impl"
+
+
+    // $ANTLR start "rule__InterfaceDefinition__Group_4__0"
+    // InternalGraphQL.g:1713:1: rule__InterfaceDefinition__Group_4__0 : rule__InterfaceDefinition__Group_4__0__Impl rule__InterfaceDefinition__Group_4__1 ;
+    public final void rule__InterfaceDefinition__Group_4__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1717:1: ( rule__InterfaceDefinition__Group_4__0__Impl rule__InterfaceDefinition__Group_4__1 )
+            // InternalGraphQL.g:1718:2: rule__InterfaceDefinition__Group_4__0__Impl rule__InterfaceDefinition__Group_4__1
+            {
+            pushFollow(FOLLOW_15);
+            rule__InterfaceDefinition__Group_4__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InterfaceDefinition__Group_4__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InterfaceDefinition__Group_4__0"
+
+
+    // $ANTLR start "rule__InterfaceDefinition__Group_4__0__Impl"
+    // InternalGraphQL.g:1725:1: rule__InterfaceDefinition__Group_4__0__Impl : ( '{' ) ;
+    public final void rule__InterfaceDefinition__Group_4__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1729:1: ( ( '{' ) )
+            // InternalGraphQL.g:1730:1: ( '{' )
+            {
+            // InternalGraphQL.g:1730:1: ( '{' )
+            // InternalGraphQL.g:1731:2: '{'
+            {
+             before(grammarAccess.getInterfaceDefinitionAccess().getLeftCurlyBracketKeyword_4_0()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getInterfaceDefinitionAccess().getLeftCurlyBracketKeyword_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InterfaceDefinition__Group_4__0__Impl"
+
+
+    // $ANTLR start "rule__InterfaceDefinition__Group_4__1"
+    // InternalGraphQL.g:1740:1: rule__InterfaceDefinition__Group_4__1 : rule__InterfaceDefinition__Group_4__1__Impl rule__InterfaceDefinition__Group_4__2 ;
+    public final void rule__InterfaceDefinition__Group_4__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1744:1: ( rule__InterfaceDefinition__Group_4__1__Impl rule__InterfaceDefinition__Group_4__2 )
+            // InternalGraphQL.g:1745:2: rule__InterfaceDefinition__Group_4__1__Impl rule__InterfaceDefinition__Group_4__2
+            {
+            pushFollow(FOLLOW_15);
+            rule__InterfaceDefinition__Group_4__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InterfaceDefinition__Group_4__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InterfaceDefinition__Group_4__1"
+
+
+    // $ANTLR start "rule__InterfaceDefinition__Group_4__1__Impl"
+    // InternalGraphQL.g:1752:1: rule__InterfaceDefinition__Group_4__1__Impl : ( ( rule__InterfaceDefinition__FieldDefinitionsAssignment_4_1 )* ) ;
+    public final void rule__InterfaceDefinition__Group_4__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1756:1: ( ( ( rule__InterfaceDefinition__FieldDefinitionsAssignment_4_1 )* ) )
+            // InternalGraphQL.g:1757:1: ( ( rule__InterfaceDefinition__FieldDefinitionsAssignment_4_1 )* )
+            {
+            // InternalGraphQL.g:1757:1: ( ( rule__InterfaceDefinition__FieldDefinitionsAssignment_4_1 )* )
+            // InternalGraphQL.g:1758:2: ( rule__InterfaceDefinition__FieldDefinitionsAssignment_4_1 )*
+            {
+             before(grammarAccess.getInterfaceDefinitionAccess().getFieldDefinitionsAssignment_4_1()); 
+            // InternalGraphQL.g:1759:2: ( rule__InterfaceDefinition__FieldDefinitionsAssignment_4_1 )*
+            loop19:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA9_0==RULE_NAME) ) {
-                    alt9=1;
+                if ( ((LA19_0>=RULE_SL_STRING_VALUE && LA19_0<=RULE_NAME)) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt19) {
             	case 1 :
-            	    // InternalGraphQL.g:1000:3: rule__InterfaceDefinition__FieldDefinitionsAssignment_2_1
+            	    // InternalGraphQL.g:1759:3: rule__InterfaceDefinition__FieldDefinitionsAssignment_4_1
             	    {
-            	    pushFollow(FOLLOW_11);
-            	    rule__InterfaceDefinition__FieldDefinitionsAssignment_2_1();
+            	    pushFollow(FOLLOW_16);
+            	    rule__InterfaceDefinition__FieldDefinitionsAssignment_4_1();
 
             	    state._fsp--;
 
@@ -3097,11 +5705,11 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop19;
                 }
             } while (true);
 
-             after(grammarAccess.getInterfaceDefinitionAccess().getFieldDefinitionsAssignment_2_1()); 
+             after(grammarAccess.getInterfaceDefinitionAccess().getFieldDefinitionsAssignment_4_1()); 
 
             }
 
@@ -3120,21 +5728,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InterfaceDefinition__Group_2__1__Impl"
+    // $ANTLR end "rule__InterfaceDefinition__Group_4__1__Impl"
 
 
-    // $ANTLR start "rule__InterfaceDefinition__Group_2__2"
-    // InternalGraphQL.g:1008:1: rule__InterfaceDefinition__Group_2__2 : rule__InterfaceDefinition__Group_2__2__Impl ;
-    public final void rule__InterfaceDefinition__Group_2__2() throws RecognitionException {
+    // $ANTLR start "rule__InterfaceDefinition__Group_4__2"
+    // InternalGraphQL.g:1767:1: rule__InterfaceDefinition__Group_4__2 : rule__InterfaceDefinition__Group_4__2__Impl ;
+    public final void rule__InterfaceDefinition__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1012:1: ( rule__InterfaceDefinition__Group_2__2__Impl )
-            // InternalGraphQL.g:1013:2: rule__InterfaceDefinition__Group_2__2__Impl
+            // InternalGraphQL.g:1771:1: ( rule__InterfaceDefinition__Group_4__2__Impl )
+            // InternalGraphQL.g:1772:2: rule__InterfaceDefinition__Group_4__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__InterfaceDefinition__Group_2__2__Impl();
+            rule__InterfaceDefinition__Group_4__2__Impl();
 
             state._fsp--;
 
@@ -3153,25 +5761,25 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InterfaceDefinition__Group_2__2"
+    // $ANTLR end "rule__InterfaceDefinition__Group_4__2"
 
 
-    // $ANTLR start "rule__InterfaceDefinition__Group_2__2__Impl"
-    // InternalGraphQL.g:1019:1: rule__InterfaceDefinition__Group_2__2__Impl : ( '}' ) ;
-    public final void rule__InterfaceDefinition__Group_2__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__InterfaceDefinition__Group_4__2__Impl"
+    // InternalGraphQL.g:1778:1: rule__InterfaceDefinition__Group_4__2__Impl : ( '}' ) ;
+    public final void rule__InterfaceDefinition__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1023:1: ( ( '}' ) )
-            // InternalGraphQL.g:1024:1: ( '}' )
+            // InternalGraphQL.g:1782:1: ( ( '}' ) )
+            // InternalGraphQL.g:1783:1: ( '}' )
             {
-            // InternalGraphQL.g:1024:1: ( '}' )
-            // InternalGraphQL.g:1025:2: '}'
+            // InternalGraphQL.g:1783:1: ( '}' )
+            // InternalGraphQL.g:1784:2: '}'
             {
-             before(grammarAccess.getInterfaceDefinitionAccess().getRightCurlyBracketKeyword_2_2()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getInterfaceDefinitionAccess().getRightCurlyBracketKeyword_2_2()); 
+             before(grammarAccess.getInterfaceDefinitionAccess().getRightCurlyBracketKeyword_4_2()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getInterfaceDefinitionAccess().getRightCurlyBracketKeyword_4_2()); 
 
             }
 
@@ -3190,20 +5798,20 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InterfaceDefinition__Group_2__2__Impl"
+    // $ANTLR end "rule__InterfaceDefinition__Group_4__2__Impl"
 
 
     // $ANTLR start "rule__FieldDefinition__Group__0"
-    // InternalGraphQL.g:1035:1: rule__FieldDefinition__Group__0 : rule__FieldDefinition__Group__0__Impl rule__FieldDefinition__Group__1 ;
+    // InternalGraphQL.g:1794:1: rule__FieldDefinition__Group__0 : rule__FieldDefinition__Group__0__Impl rule__FieldDefinition__Group__1 ;
     public final void rule__FieldDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1039:1: ( rule__FieldDefinition__Group__0__Impl rule__FieldDefinition__Group__1 )
-            // InternalGraphQL.g:1040:2: rule__FieldDefinition__Group__0__Impl rule__FieldDefinition__Group__1
+            // InternalGraphQL.g:1798:1: ( rule__FieldDefinition__Group__0__Impl rule__FieldDefinition__Group__1 )
+            // InternalGraphQL.g:1799:2: rule__FieldDefinition__Group__0__Impl rule__FieldDefinition__Group__1
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_18);
             rule__FieldDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -3232,31 +5840,42 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FieldDefinition__Group__0__Impl"
-    // InternalGraphQL.g:1047:1: rule__FieldDefinition__Group__0__Impl : ( ( rule__FieldDefinition__NameAssignment_0 ) ) ;
+    // InternalGraphQL.g:1806:1: rule__FieldDefinition__Group__0__Impl : ( ( rule__FieldDefinition__DescriptionAssignment_0 )? ) ;
     public final void rule__FieldDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1051:1: ( ( ( rule__FieldDefinition__NameAssignment_0 ) ) )
-            // InternalGraphQL.g:1052:1: ( ( rule__FieldDefinition__NameAssignment_0 ) )
+            // InternalGraphQL.g:1810:1: ( ( ( rule__FieldDefinition__DescriptionAssignment_0 )? ) )
+            // InternalGraphQL.g:1811:1: ( ( rule__FieldDefinition__DescriptionAssignment_0 )? )
             {
-            // InternalGraphQL.g:1052:1: ( ( rule__FieldDefinition__NameAssignment_0 ) )
-            // InternalGraphQL.g:1053:2: ( rule__FieldDefinition__NameAssignment_0 )
+            // InternalGraphQL.g:1811:1: ( ( rule__FieldDefinition__DescriptionAssignment_0 )? )
+            // InternalGraphQL.g:1812:2: ( rule__FieldDefinition__DescriptionAssignment_0 )?
             {
-             before(grammarAccess.getFieldDefinitionAccess().getNameAssignment_0()); 
-            // InternalGraphQL.g:1054:2: ( rule__FieldDefinition__NameAssignment_0 )
-            // InternalGraphQL.g:1054:3: rule__FieldDefinition__NameAssignment_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__FieldDefinition__NameAssignment_0();
+             before(grammarAccess.getFieldDefinitionAccess().getDescriptionAssignment_0()); 
+            // InternalGraphQL.g:1813:2: ( rule__FieldDefinition__DescriptionAssignment_0 )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            state._fsp--;
+            if ( ((LA20_0>=RULE_SL_STRING_VALUE && LA20_0<=RULE_ML_STRING_VALUE)) ) {
+                alt20=1;
+            }
+            switch (alt20) {
+                case 1 :
+                    // InternalGraphQL.g:1813:3: rule__FieldDefinition__DescriptionAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__FieldDefinition__DescriptionAssignment_0();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
-             after(grammarAccess.getFieldDefinitionAccess().getNameAssignment_0()); 
+             after(grammarAccess.getFieldDefinitionAccess().getDescriptionAssignment_0()); 
 
             }
 
@@ -3279,14 +5898,14 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FieldDefinition__Group__1"
-    // InternalGraphQL.g:1062:1: rule__FieldDefinition__Group__1 : rule__FieldDefinition__Group__1__Impl rule__FieldDefinition__Group__2 ;
+    // InternalGraphQL.g:1821:1: rule__FieldDefinition__Group__1 : rule__FieldDefinition__Group__1__Impl rule__FieldDefinition__Group__2 ;
     public final void rule__FieldDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1066:1: ( rule__FieldDefinition__Group__1__Impl rule__FieldDefinition__Group__2 )
-            // InternalGraphQL.g:1067:2: rule__FieldDefinition__Group__1__Impl rule__FieldDefinition__Group__2
+            // InternalGraphQL.g:1825:1: ( rule__FieldDefinition__Group__1__Impl rule__FieldDefinition__Group__2 )
+            // InternalGraphQL.g:1826:2: rule__FieldDefinition__Group__1__Impl rule__FieldDefinition__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__FieldDefinition__Group__1__Impl();
@@ -3317,21 +5936,31 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FieldDefinition__Group__1__Impl"
-    // InternalGraphQL.g:1074:1: rule__FieldDefinition__Group__1__Impl : ( ':' ) ;
+    // InternalGraphQL.g:1833:1: rule__FieldDefinition__Group__1__Impl : ( ( rule__FieldDefinition__NameAssignment_1 ) ) ;
     public final void rule__FieldDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1078:1: ( ( ':' ) )
-            // InternalGraphQL.g:1079:1: ( ':' )
+            // InternalGraphQL.g:1837:1: ( ( ( rule__FieldDefinition__NameAssignment_1 ) ) )
+            // InternalGraphQL.g:1838:1: ( ( rule__FieldDefinition__NameAssignment_1 ) )
             {
-            // InternalGraphQL.g:1079:1: ( ':' )
-            // InternalGraphQL.g:1080:2: ':'
+            // InternalGraphQL.g:1838:1: ( ( rule__FieldDefinition__NameAssignment_1 ) )
+            // InternalGraphQL.g:1839:2: ( rule__FieldDefinition__NameAssignment_1 )
             {
-             before(grammarAccess.getFieldDefinitionAccess().getColonKeyword_1()); 
-            match(input,14,FOLLOW_2); 
-             after(grammarAccess.getFieldDefinitionAccess().getColonKeyword_1()); 
+             before(grammarAccess.getFieldDefinitionAccess().getNameAssignment_1()); 
+            // InternalGraphQL.g:1840:2: ( rule__FieldDefinition__NameAssignment_1 )
+            // InternalGraphQL.g:1840:3: rule__FieldDefinition__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__FieldDefinition__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFieldDefinitionAccess().getNameAssignment_1()); 
 
             }
 
@@ -3354,17 +5983,22 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FieldDefinition__Group__2"
-    // InternalGraphQL.g:1089:1: rule__FieldDefinition__Group__2 : rule__FieldDefinition__Group__2__Impl ;
+    // InternalGraphQL.g:1848:1: rule__FieldDefinition__Group__2 : rule__FieldDefinition__Group__2__Impl rule__FieldDefinition__Group__3 ;
     public final void rule__FieldDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1093:1: ( rule__FieldDefinition__Group__2__Impl )
-            // InternalGraphQL.g:1094:2: rule__FieldDefinition__Group__2__Impl
+            // InternalGraphQL.g:1852:1: ( rule__FieldDefinition__Group__2__Impl rule__FieldDefinition__Group__3 )
+            // InternalGraphQL.g:1853:2: rule__FieldDefinition__Group__2__Impl rule__FieldDefinition__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_14);
             rule__FieldDefinition__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__FieldDefinition__Group__3();
 
             state._fsp--;
 
@@ -3387,31 +6021,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FieldDefinition__Group__2__Impl"
-    // InternalGraphQL.g:1100:1: rule__FieldDefinition__Group__2__Impl : ( ( rule__FieldDefinition__TypeAssignment_2 ) ) ;
+    // InternalGraphQL.g:1860:1: rule__FieldDefinition__Group__2__Impl : ( ':' ) ;
     public final void rule__FieldDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1104:1: ( ( ( rule__FieldDefinition__TypeAssignment_2 ) ) )
-            // InternalGraphQL.g:1105:1: ( ( rule__FieldDefinition__TypeAssignment_2 ) )
+            // InternalGraphQL.g:1864:1: ( ( ':' ) )
+            // InternalGraphQL.g:1865:1: ( ':' )
             {
-            // InternalGraphQL.g:1105:1: ( ( rule__FieldDefinition__TypeAssignment_2 ) )
-            // InternalGraphQL.g:1106:2: ( rule__FieldDefinition__TypeAssignment_2 )
+            // InternalGraphQL.g:1865:1: ( ':' )
+            // InternalGraphQL.g:1866:2: ':'
             {
-             before(grammarAccess.getFieldDefinitionAccess().getTypeAssignment_2()); 
-            // InternalGraphQL.g:1107:2: ( rule__FieldDefinition__TypeAssignment_2 )
-            // InternalGraphQL.g:1107:3: rule__FieldDefinition__TypeAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__FieldDefinition__TypeAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getFieldDefinitionAccess().getTypeAssignment_2()); 
+             before(grammarAccess.getFieldDefinitionAccess().getColonKeyword_2()); 
+            match(input,21,FOLLOW_2); 
+             after(grammarAccess.getFieldDefinitionAccess().getColonKeyword_2()); 
 
             }
 
@@ -3433,17 +6057,97 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__FieldDefinition__Group__2__Impl"
 
 
+    // $ANTLR start "rule__FieldDefinition__Group__3"
+    // InternalGraphQL.g:1875:1: rule__FieldDefinition__Group__3 : rule__FieldDefinition__Group__3__Impl ;
+    public final void rule__FieldDefinition__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1879:1: ( rule__FieldDefinition__Group__3__Impl )
+            // InternalGraphQL.g:1880:2: rule__FieldDefinition__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__FieldDefinition__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FieldDefinition__Group__3"
+
+
+    // $ANTLR start "rule__FieldDefinition__Group__3__Impl"
+    // InternalGraphQL.g:1886:1: rule__FieldDefinition__Group__3__Impl : ( ( rule__FieldDefinition__TypeAssignment_3 ) ) ;
+    public final void rule__FieldDefinition__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1890:1: ( ( ( rule__FieldDefinition__TypeAssignment_3 ) ) )
+            // InternalGraphQL.g:1891:1: ( ( rule__FieldDefinition__TypeAssignment_3 ) )
+            {
+            // InternalGraphQL.g:1891:1: ( ( rule__FieldDefinition__TypeAssignment_3 ) )
+            // InternalGraphQL.g:1892:2: ( rule__FieldDefinition__TypeAssignment_3 )
+            {
+             before(grammarAccess.getFieldDefinitionAccess().getTypeAssignment_3()); 
+            // InternalGraphQL.g:1893:2: ( rule__FieldDefinition__TypeAssignment_3 )
+            // InternalGraphQL.g:1893:3: rule__FieldDefinition__TypeAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__FieldDefinition__TypeAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFieldDefinitionAccess().getTypeAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FieldDefinition__Group__3__Impl"
+
+
     // $ANTLR start "rule__UnionTypeDefinition__Group__0"
-    // InternalGraphQL.g:1116:1: rule__UnionTypeDefinition__Group__0 : rule__UnionTypeDefinition__Group__0__Impl rule__UnionTypeDefinition__Group__1 ;
+    // InternalGraphQL.g:1902:1: rule__UnionTypeDefinition__Group__0 : rule__UnionTypeDefinition__Group__0__Impl rule__UnionTypeDefinition__Group__1 ;
     public final void rule__UnionTypeDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1120:1: ( rule__UnionTypeDefinition__Group__0__Impl rule__UnionTypeDefinition__Group__1 )
-            // InternalGraphQL.g:1121:2: rule__UnionTypeDefinition__Group__0__Impl rule__UnionTypeDefinition__Group__1
+            // InternalGraphQL.g:1906:1: ( rule__UnionTypeDefinition__Group__0__Impl rule__UnionTypeDefinition__Group__1 )
+            // InternalGraphQL.g:1907:2: rule__UnionTypeDefinition__Group__0__Impl rule__UnionTypeDefinition__Group__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_19);
             rule__UnionTypeDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -3472,21 +6176,42 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnionTypeDefinition__Group__0__Impl"
-    // InternalGraphQL.g:1128:1: rule__UnionTypeDefinition__Group__0__Impl : ( 'union' ) ;
+    // InternalGraphQL.g:1914:1: rule__UnionTypeDefinition__Group__0__Impl : ( ( rule__UnionTypeDefinition__DescriptionAssignment_0 )? ) ;
     public final void rule__UnionTypeDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1132:1: ( ( 'union' ) )
-            // InternalGraphQL.g:1133:1: ( 'union' )
+            // InternalGraphQL.g:1918:1: ( ( ( rule__UnionTypeDefinition__DescriptionAssignment_0 )? ) )
+            // InternalGraphQL.g:1919:1: ( ( rule__UnionTypeDefinition__DescriptionAssignment_0 )? )
             {
-            // InternalGraphQL.g:1133:1: ( 'union' )
-            // InternalGraphQL.g:1134:2: 'union'
+            // InternalGraphQL.g:1919:1: ( ( rule__UnionTypeDefinition__DescriptionAssignment_0 )? )
+            // InternalGraphQL.g:1920:2: ( rule__UnionTypeDefinition__DescriptionAssignment_0 )?
             {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getUnionKeyword_0()); 
-            match(input,18,FOLLOW_2); 
-             after(grammarAccess.getUnionTypeDefinitionAccess().getUnionKeyword_0()); 
+             before(grammarAccess.getUnionTypeDefinitionAccess().getDescriptionAssignment_0()); 
+            // InternalGraphQL.g:1921:2: ( rule__UnionTypeDefinition__DescriptionAssignment_0 )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
+
+            if ( ((LA21_0>=RULE_SL_STRING_VALUE && LA21_0<=RULE_ML_STRING_VALUE)) ) {
+                alt21=1;
+            }
+            switch (alt21) {
+                case 1 :
+                    // InternalGraphQL.g:1921:3: rule__UnionTypeDefinition__DescriptionAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__UnionTypeDefinition__DescriptionAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getUnionTypeDefinitionAccess().getDescriptionAssignment_0()); 
 
             }
 
@@ -3509,16 +6234,16 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnionTypeDefinition__Group__1"
-    // InternalGraphQL.g:1143:1: rule__UnionTypeDefinition__Group__1 : rule__UnionTypeDefinition__Group__1__Impl rule__UnionTypeDefinition__Group__2 ;
+    // InternalGraphQL.g:1929:1: rule__UnionTypeDefinition__Group__1 : rule__UnionTypeDefinition__Group__1__Impl rule__UnionTypeDefinition__Group__2 ;
     public final void rule__UnionTypeDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1147:1: ( rule__UnionTypeDefinition__Group__1__Impl rule__UnionTypeDefinition__Group__2 )
-            // InternalGraphQL.g:1148:2: rule__UnionTypeDefinition__Group__1__Impl rule__UnionTypeDefinition__Group__2
+            // InternalGraphQL.g:1933:1: ( rule__UnionTypeDefinition__Group__1__Impl rule__UnionTypeDefinition__Group__2 )
+            // InternalGraphQL.g:1934:2: rule__UnionTypeDefinition__Group__1__Impl rule__UnionTypeDefinition__Group__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_10);
             rule__UnionTypeDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -3547,31 +6272,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnionTypeDefinition__Group__1__Impl"
-    // InternalGraphQL.g:1155:1: rule__UnionTypeDefinition__Group__1__Impl : ( ( rule__UnionTypeDefinition__NameAssignment_1 ) ) ;
+    // InternalGraphQL.g:1941:1: rule__UnionTypeDefinition__Group__1__Impl : ( 'union' ) ;
     public final void rule__UnionTypeDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1159:1: ( ( ( rule__UnionTypeDefinition__NameAssignment_1 ) ) )
-            // InternalGraphQL.g:1160:1: ( ( rule__UnionTypeDefinition__NameAssignment_1 ) )
+            // InternalGraphQL.g:1945:1: ( ( 'union' ) )
+            // InternalGraphQL.g:1946:1: ( 'union' )
             {
-            // InternalGraphQL.g:1160:1: ( ( rule__UnionTypeDefinition__NameAssignment_1 ) )
-            // InternalGraphQL.g:1161:2: ( rule__UnionTypeDefinition__NameAssignment_1 )
+            // InternalGraphQL.g:1946:1: ( 'union' )
+            // InternalGraphQL.g:1947:2: 'union'
             {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getNameAssignment_1()); 
-            // InternalGraphQL.g:1162:2: ( rule__UnionTypeDefinition__NameAssignment_1 )
-            // InternalGraphQL.g:1162:3: rule__UnionTypeDefinition__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__UnionTypeDefinition__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getUnionTypeDefinitionAccess().getNameAssignment_1()); 
+             before(grammarAccess.getUnionTypeDefinitionAccess().getUnionKeyword_1()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getUnionTypeDefinitionAccess().getUnionKeyword_1()); 
 
             }
 
@@ -3594,17 +6309,22 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnionTypeDefinition__Group__2"
-    // InternalGraphQL.g:1170:1: rule__UnionTypeDefinition__Group__2 : rule__UnionTypeDefinition__Group__2__Impl ;
+    // InternalGraphQL.g:1956:1: rule__UnionTypeDefinition__Group__2 : rule__UnionTypeDefinition__Group__2__Impl rule__UnionTypeDefinition__Group__3 ;
     public final void rule__UnionTypeDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1174:1: ( rule__UnionTypeDefinition__Group__2__Impl )
-            // InternalGraphQL.g:1175:2: rule__UnionTypeDefinition__Group__2__Impl
+            // InternalGraphQL.g:1960:1: ( rule__UnionTypeDefinition__Group__2__Impl rule__UnionTypeDefinition__Group__3 )
+            // InternalGraphQL.g:1961:2: rule__UnionTypeDefinition__Group__2__Impl rule__UnionTypeDefinition__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_20);
             rule__UnionTypeDefinition__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__UnionTypeDefinition__Group__3();
 
             state._fsp--;
 
@@ -3627,42 +6347,31 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnionTypeDefinition__Group__2__Impl"
-    // InternalGraphQL.g:1181:1: rule__UnionTypeDefinition__Group__2__Impl : ( ( rule__UnionTypeDefinition__Group_2__0 )? ) ;
+    // InternalGraphQL.g:1968:1: rule__UnionTypeDefinition__Group__2__Impl : ( ( rule__UnionTypeDefinition__NameAssignment_2 ) ) ;
     public final void rule__UnionTypeDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1185:1: ( ( ( rule__UnionTypeDefinition__Group_2__0 )? ) )
-            // InternalGraphQL.g:1186:1: ( ( rule__UnionTypeDefinition__Group_2__0 )? )
+            // InternalGraphQL.g:1972:1: ( ( ( rule__UnionTypeDefinition__NameAssignment_2 ) ) )
+            // InternalGraphQL.g:1973:1: ( ( rule__UnionTypeDefinition__NameAssignment_2 ) )
             {
-            // InternalGraphQL.g:1186:1: ( ( rule__UnionTypeDefinition__Group_2__0 )? )
-            // InternalGraphQL.g:1187:2: ( rule__UnionTypeDefinition__Group_2__0 )?
+            // InternalGraphQL.g:1973:1: ( ( rule__UnionTypeDefinition__NameAssignment_2 ) )
+            // InternalGraphQL.g:1974:2: ( rule__UnionTypeDefinition__NameAssignment_2 )
             {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getGroup_2()); 
-            // InternalGraphQL.g:1188:2: ( rule__UnionTypeDefinition__Group_2__0 )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+             before(grammarAccess.getUnionTypeDefinitionAccess().getNameAssignment_2()); 
+            // InternalGraphQL.g:1975:2: ( rule__UnionTypeDefinition__NameAssignment_2 )
+            // InternalGraphQL.g:1975:3: rule__UnionTypeDefinition__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__UnionTypeDefinition__NameAssignment_2();
 
-            if ( (LA10_0==19) ) {
-                alt10=1;
-            }
-            switch (alt10) {
-                case 1 :
-                    // InternalGraphQL.g:1188:3: rule__UnionTypeDefinition__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__UnionTypeDefinition__Group_2__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getUnionTypeDefinitionAccess().getGroup_2()); 
+             after(grammarAccess.getUnionTypeDefinitionAccess().getNameAssignment_2()); 
 
             }
 
@@ -3684,23 +6393,114 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__UnionTypeDefinition__Group__2__Impl"
 
 
-    // $ANTLR start "rule__UnionTypeDefinition__Group_2__0"
-    // InternalGraphQL.g:1197:1: rule__UnionTypeDefinition__Group_2__0 : rule__UnionTypeDefinition__Group_2__0__Impl rule__UnionTypeDefinition__Group_2__1 ;
-    public final void rule__UnionTypeDefinition__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__UnionTypeDefinition__Group__3"
+    // InternalGraphQL.g:1983:1: rule__UnionTypeDefinition__Group__3 : rule__UnionTypeDefinition__Group__3__Impl ;
+    public final void rule__UnionTypeDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1201:1: ( rule__UnionTypeDefinition__Group_2__0__Impl rule__UnionTypeDefinition__Group_2__1 )
-            // InternalGraphQL.g:1202:2: rule__UnionTypeDefinition__Group_2__0__Impl rule__UnionTypeDefinition__Group_2__1
+            // InternalGraphQL.g:1987:1: ( rule__UnionTypeDefinition__Group__3__Impl )
+            // InternalGraphQL.g:1988:2: rule__UnionTypeDefinition__Group__3__Impl
             {
-            pushFollow(FOLLOW_9);
-            rule__UnionTypeDefinition__Group_2__0__Impl();
+            pushFollow(FOLLOW_2);
+            rule__UnionTypeDefinition__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UnionTypeDefinition__Group__3"
+
+
+    // $ANTLR start "rule__UnionTypeDefinition__Group__3__Impl"
+    // InternalGraphQL.g:1994:1: rule__UnionTypeDefinition__Group__3__Impl : ( ( rule__UnionTypeDefinition__Group_3__0 )? ) ;
+    public final void rule__UnionTypeDefinition__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:1998:1: ( ( ( rule__UnionTypeDefinition__Group_3__0 )? ) )
+            // InternalGraphQL.g:1999:1: ( ( rule__UnionTypeDefinition__Group_3__0 )? )
+            {
+            // InternalGraphQL.g:1999:1: ( ( rule__UnionTypeDefinition__Group_3__0 )? )
+            // InternalGraphQL.g:2000:2: ( rule__UnionTypeDefinition__Group_3__0 )?
+            {
+             before(grammarAccess.getUnionTypeDefinitionAccess().getGroup_3()); 
+            // InternalGraphQL.g:2001:2: ( rule__UnionTypeDefinition__Group_3__0 )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
+
+            if ( (LA22_0==27) ) {
+                alt22=1;
+            }
+            switch (alt22) {
+                case 1 :
+                    // InternalGraphQL.g:2001:3: rule__UnionTypeDefinition__Group_3__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__UnionTypeDefinition__Group_3__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getUnionTypeDefinitionAccess().getGroup_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UnionTypeDefinition__Group__3__Impl"
+
+
+    // $ANTLR start "rule__UnionTypeDefinition__Group_3__0"
+    // InternalGraphQL.g:2010:1: rule__UnionTypeDefinition__Group_3__0 : rule__UnionTypeDefinition__Group_3__0__Impl rule__UnionTypeDefinition__Group_3__1 ;
+    public final void rule__UnionTypeDefinition__Group_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2014:1: ( rule__UnionTypeDefinition__Group_3__0__Impl rule__UnionTypeDefinition__Group_3__1 )
+            // InternalGraphQL.g:2015:2: rule__UnionTypeDefinition__Group_3__0__Impl rule__UnionTypeDefinition__Group_3__1
+            {
+            pushFollow(FOLLOW_14);
+            rule__UnionTypeDefinition__Group_3__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UnionTypeDefinition__Group_2__1();
+            rule__UnionTypeDefinition__Group_3__1();
 
             state._fsp--;
 
@@ -3719,25 +6519,25 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UnionTypeDefinition__Group_2__0"
+    // $ANTLR end "rule__UnionTypeDefinition__Group_3__0"
 
 
-    // $ANTLR start "rule__UnionTypeDefinition__Group_2__0__Impl"
-    // InternalGraphQL.g:1209:1: rule__UnionTypeDefinition__Group_2__0__Impl : ( '=' ) ;
-    public final void rule__UnionTypeDefinition__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__UnionTypeDefinition__Group_3__0__Impl"
+    // InternalGraphQL.g:2022:1: rule__UnionTypeDefinition__Group_3__0__Impl : ( '=' ) ;
+    public final void rule__UnionTypeDefinition__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1213:1: ( ( '=' ) )
-            // InternalGraphQL.g:1214:1: ( '=' )
+            // InternalGraphQL.g:2026:1: ( ( '=' ) )
+            // InternalGraphQL.g:2027:1: ( '=' )
             {
-            // InternalGraphQL.g:1214:1: ( '=' )
-            // InternalGraphQL.g:1215:2: '='
+            // InternalGraphQL.g:2027:1: ( '=' )
+            // InternalGraphQL.g:2028:2: '='
             {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getEqualsSignKeyword_2_0()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getUnionTypeDefinitionAccess().getEqualsSignKeyword_2_0()); 
+             before(grammarAccess.getUnionTypeDefinitionAccess().getEqualsSignKeyword_3_0()); 
+            match(input,27,FOLLOW_2); 
+             after(grammarAccess.getUnionTypeDefinitionAccess().getEqualsSignKeyword_3_0()); 
 
             }
 
@@ -3756,26 +6556,26 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UnionTypeDefinition__Group_2__0__Impl"
+    // $ANTLR end "rule__UnionTypeDefinition__Group_3__0__Impl"
 
 
-    // $ANTLR start "rule__UnionTypeDefinition__Group_2__1"
-    // InternalGraphQL.g:1224:1: rule__UnionTypeDefinition__Group_2__1 : rule__UnionTypeDefinition__Group_2__1__Impl rule__UnionTypeDefinition__Group_2__2 ;
-    public final void rule__UnionTypeDefinition__Group_2__1() throws RecognitionException {
+    // $ANTLR start "rule__UnionTypeDefinition__Group_3__1"
+    // InternalGraphQL.g:2037:1: rule__UnionTypeDefinition__Group_3__1 : rule__UnionTypeDefinition__Group_3__1__Impl rule__UnionTypeDefinition__Group_3__2 ;
+    public final void rule__UnionTypeDefinition__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1228:1: ( rule__UnionTypeDefinition__Group_2__1__Impl rule__UnionTypeDefinition__Group_2__2 )
-            // InternalGraphQL.g:1229:2: rule__UnionTypeDefinition__Group_2__1__Impl rule__UnionTypeDefinition__Group_2__2
+            // InternalGraphQL.g:2041:1: ( rule__UnionTypeDefinition__Group_3__1__Impl rule__UnionTypeDefinition__Group_3__2 )
+            // InternalGraphQL.g:2042:2: rule__UnionTypeDefinition__Group_3__1__Impl rule__UnionTypeDefinition__Group_3__2
             {
-            pushFollow(FOLLOW_13);
-            rule__UnionTypeDefinition__Group_2__1__Impl();
+            pushFollow(FOLLOW_21);
+            rule__UnionTypeDefinition__Group_3__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UnionTypeDefinition__Group_2__2();
+            rule__UnionTypeDefinition__Group_3__2();
 
             state._fsp--;
 
@@ -3794,35 +6594,35 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UnionTypeDefinition__Group_2__1"
+    // $ANTLR end "rule__UnionTypeDefinition__Group_3__1"
 
 
-    // $ANTLR start "rule__UnionTypeDefinition__Group_2__1__Impl"
-    // InternalGraphQL.g:1236:1: rule__UnionTypeDefinition__Group_2__1__Impl : ( ( rule__UnionTypeDefinition__MemberTypesAssignment_2_1 ) ) ;
-    public final void rule__UnionTypeDefinition__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__UnionTypeDefinition__Group_3__1__Impl"
+    // InternalGraphQL.g:2049:1: rule__UnionTypeDefinition__Group_3__1__Impl : ( ( rule__UnionTypeDefinition__MemberTypesAssignment_3_1 ) ) ;
+    public final void rule__UnionTypeDefinition__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1240:1: ( ( ( rule__UnionTypeDefinition__MemberTypesAssignment_2_1 ) ) )
-            // InternalGraphQL.g:1241:1: ( ( rule__UnionTypeDefinition__MemberTypesAssignment_2_1 ) )
+            // InternalGraphQL.g:2053:1: ( ( ( rule__UnionTypeDefinition__MemberTypesAssignment_3_1 ) ) )
+            // InternalGraphQL.g:2054:1: ( ( rule__UnionTypeDefinition__MemberTypesAssignment_3_1 ) )
             {
-            // InternalGraphQL.g:1241:1: ( ( rule__UnionTypeDefinition__MemberTypesAssignment_2_1 ) )
-            // InternalGraphQL.g:1242:2: ( rule__UnionTypeDefinition__MemberTypesAssignment_2_1 )
+            // InternalGraphQL.g:2054:1: ( ( rule__UnionTypeDefinition__MemberTypesAssignment_3_1 ) )
+            // InternalGraphQL.g:2055:2: ( rule__UnionTypeDefinition__MemberTypesAssignment_3_1 )
             {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesAssignment_2_1()); 
-            // InternalGraphQL.g:1243:2: ( rule__UnionTypeDefinition__MemberTypesAssignment_2_1 )
-            // InternalGraphQL.g:1243:3: rule__UnionTypeDefinition__MemberTypesAssignment_2_1
+             before(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesAssignment_3_1()); 
+            // InternalGraphQL.g:2056:2: ( rule__UnionTypeDefinition__MemberTypesAssignment_3_1 )
+            // InternalGraphQL.g:2056:3: rule__UnionTypeDefinition__MemberTypesAssignment_3_1
             {
             pushFollow(FOLLOW_2);
-            rule__UnionTypeDefinition__MemberTypesAssignment_2_1();
+            rule__UnionTypeDefinition__MemberTypesAssignment_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesAssignment_2_1()); 
+             after(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesAssignment_3_1()); 
 
             }
 
@@ -3841,21 +6641,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UnionTypeDefinition__Group_2__1__Impl"
+    // $ANTLR end "rule__UnionTypeDefinition__Group_3__1__Impl"
 
 
-    // $ANTLR start "rule__UnionTypeDefinition__Group_2__2"
-    // InternalGraphQL.g:1251:1: rule__UnionTypeDefinition__Group_2__2 : rule__UnionTypeDefinition__Group_2__2__Impl ;
-    public final void rule__UnionTypeDefinition__Group_2__2() throws RecognitionException {
+    // $ANTLR start "rule__UnionTypeDefinition__Group_3__2"
+    // InternalGraphQL.g:2064:1: rule__UnionTypeDefinition__Group_3__2 : rule__UnionTypeDefinition__Group_3__2__Impl ;
+    public final void rule__UnionTypeDefinition__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1255:1: ( rule__UnionTypeDefinition__Group_2__2__Impl )
-            // InternalGraphQL.g:1256:2: rule__UnionTypeDefinition__Group_2__2__Impl
+            // InternalGraphQL.g:2068:1: ( rule__UnionTypeDefinition__Group_3__2__Impl )
+            // InternalGraphQL.g:2069:2: rule__UnionTypeDefinition__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__UnionTypeDefinition__Group_2__2__Impl();
+            rule__UnionTypeDefinition__Group_3__2__Impl();
 
             state._fsp--;
 
@@ -3874,40 +6674,40 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UnionTypeDefinition__Group_2__2"
+    // $ANTLR end "rule__UnionTypeDefinition__Group_3__2"
 
 
-    // $ANTLR start "rule__UnionTypeDefinition__Group_2__2__Impl"
-    // InternalGraphQL.g:1262:1: rule__UnionTypeDefinition__Group_2__2__Impl : ( ( rule__UnionTypeDefinition__Group_2_2__0 )* ) ;
-    public final void rule__UnionTypeDefinition__Group_2__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__UnionTypeDefinition__Group_3__2__Impl"
+    // InternalGraphQL.g:2075:1: rule__UnionTypeDefinition__Group_3__2__Impl : ( ( rule__UnionTypeDefinition__Group_3_2__0 )* ) ;
+    public final void rule__UnionTypeDefinition__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1266:1: ( ( ( rule__UnionTypeDefinition__Group_2_2__0 )* ) )
-            // InternalGraphQL.g:1267:1: ( ( rule__UnionTypeDefinition__Group_2_2__0 )* )
+            // InternalGraphQL.g:2079:1: ( ( ( rule__UnionTypeDefinition__Group_3_2__0 )* ) )
+            // InternalGraphQL.g:2080:1: ( ( rule__UnionTypeDefinition__Group_3_2__0 )* )
             {
-            // InternalGraphQL.g:1267:1: ( ( rule__UnionTypeDefinition__Group_2_2__0 )* )
-            // InternalGraphQL.g:1268:2: ( rule__UnionTypeDefinition__Group_2_2__0 )*
+            // InternalGraphQL.g:2080:1: ( ( rule__UnionTypeDefinition__Group_3_2__0 )* )
+            // InternalGraphQL.g:2081:2: ( rule__UnionTypeDefinition__Group_3_2__0 )*
             {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getGroup_2_2()); 
-            // InternalGraphQL.g:1269:2: ( rule__UnionTypeDefinition__Group_2_2__0 )*
-            loop11:
+             before(grammarAccess.getUnionTypeDefinitionAccess().getGroup_3_2()); 
+            // InternalGraphQL.g:2082:2: ( rule__UnionTypeDefinition__Group_3_2__0 )*
+            loop23:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( (LA11_0==20) ) {
-                    alt11=1;
+                if ( (LA23_0==28) ) {
+                    alt23=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt23) {
             	case 1 :
-            	    // InternalGraphQL.g:1269:3: rule__UnionTypeDefinition__Group_2_2__0
+            	    // InternalGraphQL.g:2082:3: rule__UnionTypeDefinition__Group_3_2__0
             	    {
-            	    pushFollow(FOLLOW_14);
-            	    rule__UnionTypeDefinition__Group_2_2__0();
+            	    pushFollow(FOLLOW_22);
+            	    rule__UnionTypeDefinition__Group_3_2__0();
 
             	    state._fsp--;
 
@@ -3916,11 +6716,11 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop23;
                 }
             } while (true);
 
-             after(grammarAccess.getUnionTypeDefinitionAccess().getGroup_2_2()); 
+             after(grammarAccess.getUnionTypeDefinitionAccess().getGroup_3_2()); 
 
             }
 
@@ -3939,26 +6739,26 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UnionTypeDefinition__Group_2__2__Impl"
+    // $ANTLR end "rule__UnionTypeDefinition__Group_3__2__Impl"
 
 
-    // $ANTLR start "rule__UnionTypeDefinition__Group_2_2__0"
-    // InternalGraphQL.g:1278:1: rule__UnionTypeDefinition__Group_2_2__0 : rule__UnionTypeDefinition__Group_2_2__0__Impl rule__UnionTypeDefinition__Group_2_2__1 ;
-    public final void rule__UnionTypeDefinition__Group_2_2__0() throws RecognitionException {
+    // $ANTLR start "rule__UnionTypeDefinition__Group_3_2__0"
+    // InternalGraphQL.g:2091:1: rule__UnionTypeDefinition__Group_3_2__0 : rule__UnionTypeDefinition__Group_3_2__0__Impl rule__UnionTypeDefinition__Group_3_2__1 ;
+    public final void rule__UnionTypeDefinition__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1282:1: ( rule__UnionTypeDefinition__Group_2_2__0__Impl rule__UnionTypeDefinition__Group_2_2__1 )
-            // InternalGraphQL.g:1283:2: rule__UnionTypeDefinition__Group_2_2__0__Impl rule__UnionTypeDefinition__Group_2_2__1
+            // InternalGraphQL.g:2095:1: ( rule__UnionTypeDefinition__Group_3_2__0__Impl rule__UnionTypeDefinition__Group_3_2__1 )
+            // InternalGraphQL.g:2096:2: rule__UnionTypeDefinition__Group_3_2__0__Impl rule__UnionTypeDefinition__Group_3_2__1
             {
-            pushFollow(FOLLOW_9);
-            rule__UnionTypeDefinition__Group_2_2__0__Impl();
+            pushFollow(FOLLOW_14);
+            rule__UnionTypeDefinition__Group_3_2__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UnionTypeDefinition__Group_2_2__1();
+            rule__UnionTypeDefinition__Group_3_2__1();
 
             state._fsp--;
 
@@ -3977,25 +6777,25 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UnionTypeDefinition__Group_2_2__0"
+    // $ANTLR end "rule__UnionTypeDefinition__Group_3_2__0"
 
 
-    // $ANTLR start "rule__UnionTypeDefinition__Group_2_2__0__Impl"
-    // InternalGraphQL.g:1290:1: rule__UnionTypeDefinition__Group_2_2__0__Impl : ( '|' ) ;
-    public final void rule__UnionTypeDefinition__Group_2_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__UnionTypeDefinition__Group_3_2__0__Impl"
+    // InternalGraphQL.g:2103:1: rule__UnionTypeDefinition__Group_3_2__0__Impl : ( '|' ) ;
+    public final void rule__UnionTypeDefinition__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1294:1: ( ( '|' ) )
-            // InternalGraphQL.g:1295:1: ( '|' )
+            // InternalGraphQL.g:2107:1: ( ( '|' ) )
+            // InternalGraphQL.g:2108:1: ( '|' )
             {
-            // InternalGraphQL.g:1295:1: ( '|' )
-            // InternalGraphQL.g:1296:2: '|'
+            // InternalGraphQL.g:2108:1: ( '|' )
+            // InternalGraphQL.g:2109:2: '|'
             {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getVerticalLineKeyword_2_2_0()); 
-            match(input,20,FOLLOW_2); 
-             after(grammarAccess.getUnionTypeDefinitionAccess().getVerticalLineKeyword_2_2_0()); 
+             before(grammarAccess.getUnionTypeDefinitionAccess().getVerticalLineKeyword_3_2_0()); 
+            match(input,28,FOLLOW_2); 
+             after(grammarAccess.getUnionTypeDefinitionAccess().getVerticalLineKeyword_3_2_0()); 
 
             }
 
@@ -4014,21 +6814,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UnionTypeDefinition__Group_2_2__0__Impl"
+    // $ANTLR end "rule__UnionTypeDefinition__Group_3_2__0__Impl"
 
 
-    // $ANTLR start "rule__UnionTypeDefinition__Group_2_2__1"
-    // InternalGraphQL.g:1305:1: rule__UnionTypeDefinition__Group_2_2__1 : rule__UnionTypeDefinition__Group_2_2__1__Impl ;
-    public final void rule__UnionTypeDefinition__Group_2_2__1() throws RecognitionException {
+    // $ANTLR start "rule__UnionTypeDefinition__Group_3_2__1"
+    // InternalGraphQL.g:2118:1: rule__UnionTypeDefinition__Group_3_2__1 : rule__UnionTypeDefinition__Group_3_2__1__Impl ;
+    public final void rule__UnionTypeDefinition__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1309:1: ( rule__UnionTypeDefinition__Group_2_2__1__Impl )
-            // InternalGraphQL.g:1310:2: rule__UnionTypeDefinition__Group_2_2__1__Impl
+            // InternalGraphQL.g:2122:1: ( rule__UnionTypeDefinition__Group_3_2__1__Impl )
+            // InternalGraphQL.g:2123:2: rule__UnionTypeDefinition__Group_3_2__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__UnionTypeDefinition__Group_2_2__1__Impl();
+            rule__UnionTypeDefinition__Group_3_2__1__Impl();
 
             state._fsp--;
 
@@ -4047,35 +6847,35 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UnionTypeDefinition__Group_2_2__1"
+    // $ANTLR end "rule__UnionTypeDefinition__Group_3_2__1"
 
 
-    // $ANTLR start "rule__UnionTypeDefinition__Group_2_2__1__Impl"
-    // InternalGraphQL.g:1316:1: rule__UnionTypeDefinition__Group_2_2__1__Impl : ( ( rule__UnionTypeDefinition__MemberTypesAssignment_2_2_1 ) ) ;
-    public final void rule__UnionTypeDefinition__Group_2_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__UnionTypeDefinition__Group_3_2__1__Impl"
+    // InternalGraphQL.g:2129:1: rule__UnionTypeDefinition__Group_3_2__1__Impl : ( ( rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1 ) ) ;
+    public final void rule__UnionTypeDefinition__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1320:1: ( ( ( rule__UnionTypeDefinition__MemberTypesAssignment_2_2_1 ) ) )
-            // InternalGraphQL.g:1321:1: ( ( rule__UnionTypeDefinition__MemberTypesAssignment_2_2_1 ) )
+            // InternalGraphQL.g:2133:1: ( ( ( rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1 ) ) )
+            // InternalGraphQL.g:2134:1: ( ( rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1 ) )
             {
-            // InternalGraphQL.g:1321:1: ( ( rule__UnionTypeDefinition__MemberTypesAssignment_2_2_1 ) )
-            // InternalGraphQL.g:1322:2: ( rule__UnionTypeDefinition__MemberTypesAssignment_2_2_1 )
+            // InternalGraphQL.g:2134:1: ( ( rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1 ) )
+            // InternalGraphQL.g:2135:2: ( rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1 )
             {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesAssignment_2_2_1()); 
-            // InternalGraphQL.g:1323:2: ( rule__UnionTypeDefinition__MemberTypesAssignment_2_2_1 )
-            // InternalGraphQL.g:1323:3: rule__UnionTypeDefinition__MemberTypesAssignment_2_2_1
+             before(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesAssignment_3_2_1()); 
+            // InternalGraphQL.g:2136:2: ( rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1 )
+            // InternalGraphQL.g:2136:3: rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1
             {
             pushFollow(FOLLOW_2);
-            rule__UnionTypeDefinition__MemberTypesAssignment_2_2_1();
+            rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesAssignment_2_2_1()); 
+             after(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesAssignment_3_2_1()); 
 
             }
 
@@ -4094,20 +6894,20 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UnionTypeDefinition__Group_2_2__1__Impl"
+    // $ANTLR end "rule__UnionTypeDefinition__Group_3_2__1__Impl"
 
 
     // $ANTLR start "rule__EnumTypeDefinition__Group__0"
-    // InternalGraphQL.g:1332:1: rule__EnumTypeDefinition__Group__0 : rule__EnumTypeDefinition__Group__0__Impl rule__EnumTypeDefinition__Group__1 ;
+    // InternalGraphQL.g:2145:1: rule__EnumTypeDefinition__Group__0 : rule__EnumTypeDefinition__Group__0__Impl rule__EnumTypeDefinition__Group__1 ;
     public final void rule__EnumTypeDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1336:1: ( rule__EnumTypeDefinition__Group__0__Impl rule__EnumTypeDefinition__Group__1 )
-            // InternalGraphQL.g:1337:2: rule__EnumTypeDefinition__Group__0__Impl rule__EnumTypeDefinition__Group__1
+            // InternalGraphQL.g:2149:1: ( rule__EnumTypeDefinition__Group__0__Impl rule__EnumTypeDefinition__Group__1 )
+            // InternalGraphQL.g:2150:2: rule__EnumTypeDefinition__Group__0__Impl rule__EnumTypeDefinition__Group__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_23);
             rule__EnumTypeDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -4136,21 +6936,42 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumTypeDefinition__Group__0__Impl"
-    // InternalGraphQL.g:1344:1: rule__EnumTypeDefinition__Group__0__Impl : ( 'enum' ) ;
+    // InternalGraphQL.g:2157:1: rule__EnumTypeDefinition__Group__0__Impl : ( ( rule__EnumTypeDefinition__DescriptionAssignment_0 )? ) ;
     public final void rule__EnumTypeDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1348:1: ( ( 'enum' ) )
-            // InternalGraphQL.g:1349:1: ( 'enum' )
+            // InternalGraphQL.g:2161:1: ( ( ( rule__EnumTypeDefinition__DescriptionAssignment_0 )? ) )
+            // InternalGraphQL.g:2162:1: ( ( rule__EnumTypeDefinition__DescriptionAssignment_0 )? )
             {
-            // InternalGraphQL.g:1349:1: ( 'enum' )
-            // InternalGraphQL.g:1350:2: 'enum'
+            // InternalGraphQL.g:2162:1: ( ( rule__EnumTypeDefinition__DescriptionAssignment_0 )? )
+            // InternalGraphQL.g:2163:2: ( rule__EnumTypeDefinition__DescriptionAssignment_0 )?
             {
-             before(grammarAccess.getEnumTypeDefinitionAccess().getEnumKeyword_0()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getEnumTypeDefinitionAccess().getEnumKeyword_0()); 
+             before(grammarAccess.getEnumTypeDefinitionAccess().getDescriptionAssignment_0()); 
+            // InternalGraphQL.g:2164:2: ( rule__EnumTypeDefinition__DescriptionAssignment_0 )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
+
+            if ( ((LA24_0>=RULE_SL_STRING_VALUE && LA24_0<=RULE_ML_STRING_VALUE)) ) {
+                alt24=1;
+            }
+            switch (alt24) {
+                case 1 :
+                    // InternalGraphQL.g:2164:3: rule__EnumTypeDefinition__DescriptionAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__EnumTypeDefinition__DescriptionAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getEnumTypeDefinitionAccess().getDescriptionAssignment_0()); 
 
             }
 
@@ -4173,16 +6994,16 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumTypeDefinition__Group__1"
-    // InternalGraphQL.g:1359:1: rule__EnumTypeDefinition__Group__1 : rule__EnumTypeDefinition__Group__1__Impl rule__EnumTypeDefinition__Group__2 ;
+    // InternalGraphQL.g:2172:1: rule__EnumTypeDefinition__Group__1 : rule__EnumTypeDefinition__Group__1__Impl rule__EnumTypeDefinition__Group__2 ;
     public final void rule__EnumTypeDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1363:1: ( rule__EnumTypeDefinition__Group__1__Impl rule__EnumTypeDefinition__Group__2 )
-            // InternalGraphQL.g:1364:2: rule__EnumTypeDefinition__Group__1__Impl rule__EnumTypeDefinition__Group__2
+            // InternalGraphQL.g:2176:1: ( rule__EnumTypeDefinition__Group__1__Impl rule__EnumTypeDefinition__Group__2 )
+            // InternalGraphQL.g:2177:2: rule__EnumTypeDefinition__Group__1__Impl rule__EnumTypeDefinition__Group__2
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_10);
             rule__EnumTypeDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -4211,31 +7032,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumTypeDefinition__Group__1__Impl"
-    // InternalGraphQL.g:1371:1: rule__EnumTypeDefinition__Group__1__Impl : ( ( rule__EnumTypeDefinition__NameAssignment_1 ) ) ;
+    // InternalGraphQL.g:2184:1: rule__EnumTypeDefinition__Group__1__Impl : ( 'enum' ) ;
     public final void rule__EnumTypeDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1375:1: ( ( ( rule__EnumTypeDefinition__NameAssignment_1 ) ) )
-            // InternalGraphQL.g:1376:1: ( ( rule__EnumTypeDefinition__NameAssignment_1 ) )
+            // InternalGraphQL.g:2188:1: ( ( 'enum' ) )
+            // InternalGraphQL.g:2189:1: ( 'enum' )
             {
-            // InternalGraphQL.g:1376:1: ( ( rule__EnumTypeDefinition__NameAssignment_1 ) )
-            // InternalGraphQL.g:1377:2: ( rule__EnumTypeDefinition__NameAssignment_1 )
+            // InternalGraphQL.g:2189:1: ( 'enum' )
+            // InternalGraphQL.g:2190:2: 'enum'
             {
-             before(grammarAccess.getEnumTypeDefinitionAccess().getNameAssignment_1()); 
-            // InternalGraphQL.g:1378:2: ( rule__EnumTypeDefinition__NameAssignment_1 )
-            // InternalGraphQL.g:1378:3: rule__EnumTypeDefinition__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__EnumTypeDefinition__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEnumTypeDefinitionAccess().getNameAssignment_1()); 
+             before(grammarAccess.getEnumTypeDefinitionAccess().getEnumKeyword_1()); 
+            match(input,29,FOLLOW_2); 
+             after(grammarAccess.getEnumTypeDefinitionAccess().getEnumKeyword_1()); 
 
             }
 
@@ -4258,17 +7069,22 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumTypeDefinition__Group__2"
-    // InternalGraphQL.g:1386:1: rule__EnumTypeDefinition__Group__2 : rule__EnumTypeDefinition__Group__2__Impl ;
+    // InternalGraphQL.g:2199:1: rule__EnumTypeDefinition__Group__2 : rule__EnumTypeDefinition__Group__2__Impl rule__EnumTypeDefinition__Group__3 ;
     public final void rule__EnumTypeDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1390:1: ( rule__EnumTypeDefinition__Group__2__Impl )
-            // InternalGraphQL.g:1391:2: rule__EnumTypeDefinition__Group__2__Impl
+            // InternalGraphQL.g:2203:1: ( rule__EnumTypeDefinition__Group__2__Impl rule__EnumTypeDefinition__Group__3 )
+            // InternalGraphQL.g:2204:2: rule__EnumTypeDefinition__Group__2__Impl rule__EnumTypeDefinition__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_5);
             rule__EnumTypeDefinition__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__EnumTypeDefinition__Group__3();
 
             state._fsp--;
 
@@ -4291,42 +7107,31 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumTypeDefinition__Group__2__Impl"
-    // InternalGraphQL.g:1397:1: rule__EnumTypeDefinition__Group__2__Impl : ( ( rule__EnumTypeDefinition__Group_2__0 )? ) ;
+    // InternalGraphQL.g:2211:1: rule__EnumTypeDefinition__Group__2__Impl : ( ( rule__EnumTypeDefinition__NameAssignment_2 ) ) ;
     public final void rule__EnumTypeDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1401:1: ( ( ( rule__EnumTypeDefinition__Group_2__0 )? ) )
-            // InternalGraphQL.g:1402:1: ( ( rule__EnumTypeDefinition__Group_2__0 )? )
+            // InternalGraphQL.g:2215:1: ( ( ( rule__EnumTypeDefinition__NameAssignment_2 ) ) )
+            // InternalGraphQL.g:2216:1: ( ( rule__EnumTypeDefinition__NameAssignment_2 ) )
             {
-            // InternalGraphQL.g:1402:1: ( ( rule__EnumTypeDefinition__Group_2__0 )? )
-            // InternalGraphQL.g:1403:2: ( rule__EnumTypeDefinition__Group_2__0 )?
+            // InternalGraphQL.g:2216:1: ( ( rule__EnumTypeDefinition__NameAssignment_2 ) )
+            // InternalGraphQL.g:2217:2: ( rule__EnumTypeDefinition__NameAssignment_2 )
             {
-             before(grammarAccess.getEnumTypeDefinitionAccess().getGroup_2()); 
-            // InternalGraphQL.g:1404:2: ( rule__EnumTypeDefinition__Group_2__0 )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+             before(grammarAccess.getEnumTypeDefinitionAccess().getNameAssignment_2()); 
+            // InternalGraphQL.g:2218:2: ( rule__EnumTypeDefinition__NameAssignment_2 )
+            // InternalGraphQL.g:2218:3: rule__EnumTypeDefinition__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__EnumTypeDefinition__NameAssignment_2();
 
-            if ( (LA12_0==12) ) {
-                alt12=1;
-            }
-            switch (alt12) {
-                case 1 :
-                    // InternalGraphQL.g:1404:3: rule__EnumTypeDefinition__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__EnumTypeDefinition__Group_2__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getEnumTypeDefinitionAccess().getGroup_2()); 
+             after(grammarAccess.getEnumTypeDefinitionAccess().getNameAssignment_2()); 
 
             }
 
@@ -4348,23 +7153,114 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__EnumTypeDefinition__Group__2__Impl"
 
 
-    // $ANTLR start "rule__EnumTypeDefinition__Group_2__0"
-    // InternalGraphQL.g:1413:1: rule__EnumTypeDefinition__Group_2__0 : rule__EnumTypeDefinition__Group_2__0__Impl rule__EnumTypeDefinition__Group_2__1 ;
-    public final void rule__EnumTypeDefinition__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__EnumTypeDefinition__Group__3"
+    // InternalGraphQL.g:2226:1: rule__EnumTypeDefinition__Group__3 : rule__EnumTypeDefinition__Group__3__Impl ;
+    public final void rule__EnumTypeDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1417:1: ( rule__EnumTypeDefinition__Group_2__0__Impl rule__EnumTypeDefinition__Group_2__1 )
-            // InternalGraphQL.g:1418:2: rule__EnumTypeDefinition__Group_2__0__Impl rule__EnumTypeDefinition__Group_2__1
+            // InternalGraphQL.g:2230:1: ( rule__EnumTypeDefinition__Group__3__Impl )
+            // InternalGraphQL.g:2231:2: rule__EnumTypeDefinition__Group__3__Impl
             {
-            pushFollow(FOLLOW_9);
-            rule__EnumTypeDefinition__Group_2__0__Impl();
+            pushFollow(FOLLOW_2);
+            rule__EnumTypeDefinition__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EnumTypeDefinition__Group__3"
+
+
+    // $ANTLR start "rule__EnumTypeDefinition__Group__3__Impl"
+    // InternalGraphQL.g:2237:1: rule__EnumTypeDefinition__Group__3__Impl : ( ( rule__EnumTypeDefinition__Group_3__0 )? ) ;
+    public final void rule__EnumTypeDefinition__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2241:1: ( ( ( rule__EnumTypeDefinition__Group_3__0 )? ) )
+            // InternalGraphQL.g:2242:1: ( ( rule__EnumTypeDefinition__Group_3__0 )? )
+            {
+            // InternalGraphQL.g:2242:1: ( ( rule__EnumTypeDefinition__Group_3__0 )? )
+            // InternalGraphQL.g:2243:2: ( rule__EnumTypeDefinition__Group_3__0 )?
+            {
+             before(grammarAccess.getEnumTypeDefinitionAccess().getGroup_3()); 
+            // InternalGraphQL.g:2244:2: ( rule__EnumTypeDefinition__Group_3__0 )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
+
+            if ( (LA25_0==19) ) {
+                alt25=1;
+            }
+            switch (alt25) {
+                case 1 :
+                    // InternalGraphQL.g:2244:3: rule__EnumTypeDefinition__Group_3__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__EnumTypeDefinition__Group_3__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getEnumTypeDefinitionAccess().getGroup_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EnumTypeDefinition__Group__3__Impl"
+
+
+    // $ANTLR start "rule__EnumTypeDefinition__Group_3__0"
+    // InternalGraphQL.g:2253:1: rule__EnumTypeDefinition__Group_3__0 : rule__EnumTypeDefinition__Group_3__0__Impl rule__EnumTypeDefinition__Group_3__1 ;
+    public final void rule__EnumTypeDefinition__Group_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2257:1: ( rule__EnumTypeDefinition__Group_3__0__Impl rule__EnumTypeDefinition__Group_3__1 )
+            // InternalGraphQL.g:2258:2: rule__EnumTypeDefinition__Group_3__0__Impl rule__EnumTypeDefinition__Group_3__1
+            {
+            pushFollow(FOLLOW_18);
+            rule__EnumTypeDefinition__Group_3__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__EnumTypeDefinition__Group_2__1();
+            rule__EnumTypeDefinition__Group_3__1();
 
             state._fsp--;
 
@@ -4383,25 +7279,25 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumTypeDefinition__Group_2__0"
+    // $ANTLR end "rule__EnumTypeDefinition__Group_3__0"
 
 
-    // $ANTLR start "rule__EnumTypeDefinition__Group_2__0__Impl"
-    // InternalGraphQL.g:1425:1: rule__EnumTypeDefinition__Group_2__0__Impl : ( '{' ) ;
-    public final void rule__EnumTypeDefinition__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EnumTypeDefinition__Group_3__0__Impl"
+    // InternalGraphQL.g:2265:1: rule__EnumTypeDefinition__Group_3__0__Impl : ( '{' ) ;
+    public final void rule__EnumTypeDefinition__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1429:1: ( ( '{' ) )
-            // InternalGraphQL.g:1430:1: ( '{' )
+            // InternalGraphQL.g:2269:1: ( ( '{' ) )
+            // InternalGraphQL.g:2270:1: ( '{' )
             {
-            // InternalGraphQL.g:1430:1: ( '{' )
-            // InternalGraphQL.g:1431:2: '{'
+            // InternalGraphQL.g:2270:1: ( '{' )
+            // InternalGraphQL.g:2271:2: '{'
             {
-             before(grammarAccess.getEnumTypeDefinitionAccess().getLeftCurlyBracketKeyword_2_0()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getEnumTypeDefinitionAccess().getLeftCurlyBracketKeyword_2_0()); 
+             before(grammarAccess.getEnumTypeDefinitionAccess().getLeftCurlyBracketKeyword_3_0()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getEnumTypeDefinitionAccess().getLeftCurlyBracketKeyword_3_0()); 
 
             }
 
@@ -4420,26 +7316,26 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumTypeDefinition__Group_2__0__Impl"
+    // $ANTLR end "rule__EnumTypeDefinition__Group_3__0__Impl"
 
 
-    // $ANTLR start "rule__EnumTypeDefinition__Group_2__1"
-    // InternalGraphQL.g:1440:1: rule__EnumTypeDefinition__Group_2__1 : rule__EnumTypeDefinition__Group_2__1__Impl rule__EnumTypeDefinition__Group_2__2 ;
-    public final void rule__EnumTypeDefinition__Group_2__1() throws RecognitionException {
+    // $ANTLR start "rule__EnumTypeDefinition__Group_3__1"
+    // InternalGraphQL.g:2280:1: rule__EnumTypeDefinition__Group_3__1 : rule__EnumTypeDefinition__Group_3__1__Impl rule__EnumTypeDefinition__Group_3__2 ;
+    public final void rule__EnumTypeDefinition__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1444:1: ( rule__EnumTypeDefinition__Group_2__1__Impl rule__EnumTypeDefinition__Group_2__2 )
-            // InternalGraphQL.g:1445:2: rule__EnumTypeDefinition__Group_2__1__Impl rule__EnumTypeDefinition__Group_2__2
+            // InternalGraphQL.g:2284:1: ( rule__EnumTypeDefinition__Group_3__1__Impl rule__EnumTypeDefinition__Group_3__2 )
+            // InternalGraphQL.g:2285:2: rule__EnumTypeDefinition__Group_3__1__Impl rule__EnumTypeDefinition__Group_3__2
             {
-            pushFollow(FOLLOW_6);
-            rule__EnumTypeDefinition__Group_2__1__Impl();
+            pushFollow(FOLLOW_7);
+            rule__EnumTypeDefinition__Group_3__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__EnumTypeDefinition__Group_2__2();
+            rule__EnumTypeDefinition__Group_3__2();
 
             state._fsp--;
 
@@ -4458,35 +7354,35 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumTypeDefinition__Group_2__1"
+    // $ANTLR end "rule__EnumTypeDefinition__Group_3__1"
 
 
-    // $ANTLR start "rule__EnumTypeDefinition__Group_2__1__Impl"
-    // InternalGraphQL.g:1452:1: rule__EnumTypeDefinition__Group_2__1__Impl : ( ( rule__EnumTypeDefinition__ValueDefinitionsAssignment_2_1 ) ) ;
-    public final void rule__EnumTypeDefinition__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EnumTypeDefinition__Group_3__1__Impl"
+    // InternalGraphQL.g:2292:1: rule__EnumTypeDefinition__Group_3__1__Impl : ( ( rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1 ) ) ;
+    public final void rule__EnumTypeDefinition__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1456:1: ( ( ( rule__EnumTypeDefinition__ValueDefinitionsAssignment_2_1 ) ) )
-            // InternalGraphQL.g:1457:1: ( ( rule__EnumTypeDefinition__ValueDefinitionsAssignment_2_1 ) )
+            // InternalGraphQL.g:2296:1: ( ( ( rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1 ) ) )
+            // InternalGraphQL.g:2297:1: ( ( rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1 ) )
             {
-            // InternalGraphQL.g:1457:1: ( ( rule__EnumTypeDefinition__ValueDefinitionsAssignment_2_1 ) )
-            // InternalGraphQL.g:1458:2: ( rule__EnumTypeDefinition__ValueDefinitionsAssignment_2_1 )
+            // InternalGraphQL.g:2297:1: ( ( rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1 ) )
+            // InternalGraphQL.g:2298:2: ( rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1 )
             {
-             before(grammarAccess.getEnumTypeDefinitionAccess().getValueDefinitionsAssignment_2_1()); 
-            // InternalGraphQL.g:1459:2: ( rule__EnumTypeDefinition__ValueDefinitionsAssignment_2_1 )
-            // InternalGraphQL.g:1459:3: rule__EnumTypeDefinition__ValueDefinitionsAssignment_2_1
+             before(grammarAccess.getEnumTypeDefinitionAccess().getValueDefinitionsAssignment_3_1()); 
+            // InternalGraphQL.g:2299:2: ( rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1 )
+            // InternalGraphQL.g:2299:3: rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1
             {
             pushFollow(FOLLOW_2);
-            rule__EnumTypeDefinition__ValueDefinitionsAssignment_2_1();
+            rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEnumTypeDefinitionAccess().getValueDefinitionsAssignment_2_1()); 
+             after(grammarAccess.getEnumTypeDefinitionAccess().getValueDefinitionsAssignment_3_1()); 
 
             }
 
@@ -4505,21 +7401,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumTypeDefinition__Group_2__1__Impl"
+    // $ANTLR end "rule__EnumTypeDefinition__Group_3__1__Impl"
 
 
-    // $ANTLR start "rule__EnumTypeDefinition__Group_2__2"
-    // InternalGraphQL.g:1467:1: rule__EnumTypeDefinition__Group_2__2 : rule__EnumTypeDefinition__Group_2__2__Impl ;
-    public final void rule__EnumTypeDefinition__Group_2__2() throws RecognitionException {
+    // $ANTLR start "rule__EnumTypeDefinition__Group_3__2"
+    // InternalGraphQL.g:2307:1: rule__EnumTypeDefinition__Group_3__2 : rule__EnumTypeDefinition__Group_3__2__Impl ;
+    public final void rule__EnumTypeDefinition__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1471:1: ( rule__EnumTypeDefinition__Group_2__2__Impl )
-            // InternalGraphQL.g:1472:2: rule__EnumTypeDefinition__Group_2__2__Impl
+            // InternalGraphQL.g:2311:1: ( rule__EnumTypeDefinition__Group_3__2__Impl )
+            // InternalGraphQL.g:2312:2: rule__EnumTypeDefinition__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__EnumTypeDefinition__Group_2__2__Impl();
+            rule__EnumTypeDefinition__Group_3__2__Impl();
 
             state._fsp--;
 
@@ -4538,25 +7434,25 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumTypeDefinition__Group_2__2"
+    // $ANTLR end "rule__EnumTypeDefinition__Group_3__2"
 
 
-    // $ANTLR start "rule__EnumTypeDefinition__Group_2__2__Impl"
-    // InternalGraphQL.g:1478:1: rule__EnumTypeDefinition__Group_2__2__Impl : ( '}' ) ;
-    public final void rule__EnumTypeDefinition__Group_2__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EnumTypeDefinition__Group_3__2__Impl"
+    // InternalGraphQL.g:2318:1: rule__EnumTypeDefinition__Group_3__2__Impl : ( '}' ) ;
+    public final void rule__EnumTypeDefinition__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1482:1: ( ( '}' ) )
-            // InternalGraphQL.g:1483:1: ( '}' )
+            // InternalGraphQL.g:2322:1: ( ( '}' ) )
+            // InternalGraphQL.g:2323:1: ( '}' )
             {
-            // InternalGraphQL.g:1483:1: ( '}' )
-            // InternalGraphQL.g:1484:2: '}'
+            // InternalGraphQL.g:2323:1: ( '}' )
+            // InternalGraphQL.g:2324:2: '}'
             {
-             before(grammarAccess.getEnumTypeDefinitionAccess().getRightCurlyBracketKeyword_2_2()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getEnumTypeDefinitionAccess().getRightCurlyBracketKeyword_2_2()); 
+             before(grammarAccess.getEnumTypeDefinitionAccess().getRightCurlyBracketKeyword_3_2()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getEnumTypeDefinitionAccess().getRightCurlyBracketKeyword_3_2()); 
 
             }
 
@@ -4575,20 +7471,196 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumTypeDefinition__Group_2__2__Impl"
+    // $ANTLR end "rule__EnumTypeDefinition__Group_3__2__Impl"
+
+
+    // $ANTLR start "rule__EnumValueDefinition__Group__0"
+    // InternalGraphQL.g:2334:1: rule__EnumValueDefinition__Group__0 : rule__EnumValueDefinition__Group__0__Impl rule__EnumValueDefinition__Group__1 ;
+    public final void rule__EnumValueDefinition__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2338:1: ( rule__EnumValueDefinition__Group__0__Impl rule__EnumValueDefinition__Group__1 )
+            // InternalGraphQL.g:2339:2: rule__EnumValueDefinition__Group__0__Impl rule__EnumValueDefinition__Group__1
+            {
+            pushFollow(FOLLOW_18);
+            rule__EnumValueDefinition__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__EnumValueDefinition__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EnumValueDefinition__Group__0"
+
+
+    // $ANTLR start "rule__EnumValueDefinition__Group__0__Impl"
+    // InternalGraphQL.g:2346:1: rule__EnumValueDefinition__Group__0__Impl : ( ( rule__EnumValueDefinition__DescriptionAssignment_0 )? ) ;
+    public final void rule__EnumValueDefinition__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2350:1: ( ( ( rule__EnumValueDefinition__DescriptionAssignment_0 )? ) )
+            // InternalGraphQL.g:2351:1: ( ( rule__EnumValueDefinition__DescriptionAssignment_0 )? )
+            {
+            // InternalGraphQL.g:2351:1: ( ( rule__EnumValueDefinition__DescriptionAssignment_0 )? )
+            // InternalGraphQL.g:2352:2: ( rule__EnumValueDefinition__DescriptionAssignment_0 )?
+            {
+             before(grammarAccess.getEnumValueDefinitionAccess().getDescriptionAssignment_0()); 
+            // InternalGraphQL.g:2353:2: ( rule__EnumValueDefinition__DescriptionAssignment_0 )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
+
+            if ( ((LA26_0>=RULE_SL_STRING_VALUE && LA26_0<=RULE_ML_STRING_VALUE)) ) {
+                alt26=1;
+            }
+            switch (alt26) {
+                case 1 :
+                    // InternalGraphQL.g:2353:3: rule__EnumValueDefinition__DescriptionAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__EnumValueDefinition__DescriptionAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getEnumValueDefinitionAccess().getDescriptionAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EnumValueDefinition__Group__0__Impl"
+
+
+    // $ANTLR start "rule__EnumValueDefinition__Group__1"
+    // InternalGraphQL.g:2361:1: rule__EnumValueDefinition__Group__1 : rule__EnumValueDefinition__Group__1__Impl ;
+    public final void rule__EnumValueDefinition__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2365:1: ( rule__EnumValueDefinition__Group__1__Impl )
+            // InternalGraphQL.g:2366:2: rule__EnumValueDefinition__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__EnumValueDefinition__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EnumValueDefinition__Group__1"
+
+
+    // $ANTLR start "rule__EnumValueDefinition__Group__1__Impl"
+    // InternalGraphQL.g:2372:1: rule__EnumValueDefinition__Group__1__Impl : ( ( rule__EnumValueDefinition__NameAssignment_1 ) ) ;
+    public final void rule__EnumValueDefinition__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2376:1: ( ( ( rule__EnumValueDefinition__NameAssignment_1 ) ) )
+            // InternalGraphQL.g:2377:1: ( ( rule__EnumValueDefinition__NameAssignment_1 ) )
+            {
+            // InternalGraphQL.g:2377:1: ( ( rule__EnumValueDefinition__NameAssignment_1 ) )
+            // InternalGraphQL.g:2378:2: ( rule__EnumValueDefinition__NameAssignment_1 )
+            {
+             before(grammarAccess.getEnumValueDefinitionAccess().getNameAssignment_1()); 
+            // InternalGraphQL.g:2379:2: ( rule__EnumValueDefinition__NameAssignment_1 )
+            // InternalGraphQL.g:2379:3: rule__EnumValueDefinition__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__EnumValueDefinition__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEnumValueDefinitionAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EnumValueDefinition__Group__1__Impl"
 
 
     // $ANTLR start "rule__InputObjectTypeDefinition__Group__0"
-    // InternalGraphQL.g:1494:1: rule__InputObjectTypeDefinition__Group__0 : rule__InputObjectTypeDefinition__Group__0__Impl rule__InputObjectTypeDefinition__Group__1 ;
+    // InternalGraphQL.g:2388:1: rule__InputObjectTypeDefinition__Group__0 : rule__InputObjectTypeDefinition__Group__0__Impl rule__InputObjectTypeDefinition__Group__1 ;
     public final void rule__InputObjectTypeDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1498:1: ( rule__InputObjectTypeDefinition__Group__0__Impl rule__InputObjectTypeDefinition__Group__1 )
-            // InternalGraphQL.g:1499:2: rule__InputObjectTypeDefinition__Group__0__Impl rule__InputObjectTypeDefinition__Group__1
+            // InternalGraphQL.g:2392:1: ( rule__InputObjectTypeDefinition__Group__0__Impl rule__InputObjectTypeDefinition__Group__1 )
+            // InternalGraphQL.g:2393:2: rule__InputObjectTypeDefinition__Group__0__Impl rule__InputObjectTypeDefinition__Group__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_24);
             rule__InputObjectTypeDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -4617,21 +7689,42 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputObjectTypeDefinition__Group__0__Impl"
-    // InternalGraphQL.g:1506:1: rule__InputObjectTypeDefinition__Group__0__Impl : ( 'input' ) ;
+    // InternalGraphQL.g:2400:1: rule__InputObjectTypeDefinition__Group__0__Impl : ( ( rule__InputObjectTypeDefinition__DescriptionAssignment_0 )? ) ;
     public final void rule__InputObjectTypeDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1510:1: ( ( 'input' ) )
-            // InternalGraphQL.g:1511:1: ( 'input' )
+            // InternalGraphQL.g:2404:1: ( ( ( rule__InputObjectTypeDefinition__DescriptionAssignment_0 )? ) )
+            // InternalGraphQL.g:2405:1: ( ( rule__InputObjectTypeDefinition__DescriptionAssignment_0 )? )
             {
-            // InternalGraphQL.g:1511:1: ( 'input' )
-            // InternalGraphQL.g:1512:2: 'input'
+            // InternalGraphQL.g:2405:1: ( ( rule__InputObjectTypeDefinition__DescriptionAssignment_0 )? )
+            // InternalGraphQL.g:2406:2: ( rule__InputObjectTypeDefinition__DescriptionAssignment_0 )?
             {
-             before(grammarAccess.getInputObjectTypeDefinitionAccess().getInputKeyword_0()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getInputObjectTypeDefinitionAccess().getInputKeyword_0()); 
+             before(grammarAccess.getInputObjectTypeDefinitionAccess().getDescriptionAssignment_0()); 
+            // InternalGraphQL.g:2407:2: ( rule__InputObjectTypeDefinition__DescriptionAssignment_0 )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
+
+            if ( ((LA27_0>=RULE_SL_STRING_VALUE && LA27_0<=RULE_ML_STRING_VALUE)) ) {
+                alt27=1;
+            }
+            switch (alt27) {
+                case 1 :
+                    // InternalGraphQL.g:2407:3: rule__InputObjectTypeDefinition__DescriptionAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__InputObjectTypeDefinition__DescriptionAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getInputObjectTypeDefinitionAccess().getDescriptionAssignment_0()); 
 
             }
 
@@ -4654,16 +7747,16 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputObjectTypeDefinition__Group__1"
-    // InternalGraphQL.g:1521:1: rule__InputObjectTypeDefinition__Group__1 : rule__InputObjectTypeDefinition__Group__1__Impl rule__InputObjectTypeDefinition__Group__2 ;
+    // InternalGraphQL.g:2415:1: rule__InputObjectTypeDefinition__Group__1 : rule__InputObjectTypeDefinition__Group__1__Impl rule__InputObjectTypeDefinition__Group__2 ;
     public final void rule__InputObjectTypeDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1525:1: ( rule__InputObjectTypeDefinition__Group__1__Impl rule__InputObjectTypeDefinition__Group__2 )
-            // InternalGraphQL.g:1526:2: rule__InputObjectTypeDefinition__Group__1__Impl rule__InputObjectTypeDefinition__Group__2
+            // InternalGraphQL.g:2419:1: ( rule__InputObjectTypeDefinition__Group__1__Impl rule__InputObjectTypeDefinition__Group__2 )
+            // InternalGraphQL.g:2420:2: rule__InputObjectTypeDefinition__Group__1__Impl rule__InputObjectTypeDefinition__Group__2
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_10);
             rule__InputObjectTypeDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -4692,31 +7785,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputObjectTypeDefinition__Group__1__Impl"
-    // InternalGraphQL.g:1533:1: rule__InputObjectTypeDefinition__Group__1__Impl : ( ( rule__InputObjectTypeDefinition__NameAssignment_1 ) ) ;
+    // InternalGraphQL.g:2427:1: rule__InputObjectTypeDefinition__Group__1__Impl : ( 'input' ) ;
     public final void rule__InputObjectTypeDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1537:1: ( ( ( rule__InputObjectTypeDefinition__NameAssignment_1 ) ) )
-            // InternalGraphQL.g:1538:1: ( ( rule__InputObjectTypeDefinition__NameAssignment_1 ) )
+            // InternalGraphQL.g:2431:1: ( ( 'input' ) )
+            // InternalGraphQL.g:2432:1: ( 'input' )
             {
-            // InternalGraphQL.g:1538:1: ( ( rule__InputObjectTypeDefinition__NameAssignment_1 ) )
-            // InternalGraphQL.g:1539:2: ( rule__InputObjectTypeDefinition__NameAssignment_1 )
+            // InternalGraphQL.g:2432:1: ( 'input' )
+            // InternalGraphQL.g:2433:2: 'input'
             {
-             before(grammarAccess.getInputObjectTypeDefinitionAccess().getNameAssignment_1()); 
-            // InternalGraphQL.g:1540:2: ( rule__InputObjectTypeDefinition__NameAssignment_1 )
-            // InternalGraphQL.g:1540:3: rule__InputObjectTypeDefinition__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__InputObjectTypeDefinition__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getInputObjectTypeDefinitionAccess().getNameAssignment_1()); 
+             before(grammarAccess.getInputObjectTypeDefinitionAccess().getInputKeyword_1()); 
+            match(input,30,FOLLOW_2); 
+             after(grammarAccess.getInputObjectTypeDefinitionAccess().getInputKeyword_1()); 
 
             }
 
@@ -4739,17 +7822,22 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputObjectTypeDefinition__Group__2"
-    // InternalGraphQL.g:1548:1: rule__InputObjectTypeDefinition__Group__2 : rule__InputObjectTypeDefinition__Group__2__Impl ;
+    // InternalGraphQL.g:2442:1: rule__InputObjectTypeDefinition__Group__2 : rule__InputObjectTypeDefinition__Group__2__Impl rule__InputObjectTypeDefinition__Group__3 ;
     public final void rule__InputObjectTypeDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1552:1: ( rule__InputObjectTypeDefinition__Group__2__Impl )
-            // InternalGraphQL.g:1553:2: rule__InputObjectTypeDefinition__Group__2__Impl
+            // InternalGraphQL.g:2446:1: ( rule__InputObjectTypeDefinition__Group__2__Impl rule__InputObjectTypeDefinition__Group__3 )
+            // InternalGraphQL.g:2447:2: rule__InputObjectTypeDefinition__Group__2__Impl rule__InputObjectTypeDefinition__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_5);
             rule__InputObjectTypeDefinition__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InputObjectTypeDefinition__Group__3();
 
             state._fsp--;
 
@@ -4772,42 +7860,31 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputObjectTypeDefinition__Group__2__Impl"
-    // InternalGraphQL.g:1559:1: rule__InputObjectTypeDefinition__Group__2__Impl : ( ( rule__InputObjectTypeDefinition__Group_2__0 )? ) ;
+    // InternalGraphQL.g:2454:1: rule__InputObjectTypeDefinition__Group__2__Impl : ( ( rule__InputObjectTypeDefinition__NameAssignment_2 ) ) ;
     public final void rule__InputObjectTypeDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1563:1: ( ( ( rule__InputObjectTypeDefinition__Group_2__0 )? ) )
-            // InternalGraphQL.g:1564:1: ( ( rule__InputObjectTypeDefinition__Group_2__0 )? )
+            // InternalGraphQL.g:2458:1: ( ( ( rule__InputObjectTypeDefinition__NameAssignment_2 ) ) )
+            // InternalGraphQL.g:2459:1: ( ( rule__InputObjectTypeDefinition__NameAssignment_2 ) )
             {
-            // InternalGraphQL.g:1564:1: ( ( rule__InputObjectTypeDefinition__Group_2__0 )? )
-            // InternalGraphQL.g:1565:2: ( rule__InputObjectTypeDefinition__Group_2__0 )?
+            // InternalGraphQL.g:2459:1: ( ( rule__InputObjectTypeDefinition__NameAssignment_2 ) )
+            // InternalGraphQL.g:2460:2: ( rule__InputObjectTypeDefinition__NameAssignment_2 )
             {
-             before(grammarAccess.getInputObjectTypeDefinitionAccess().getGroup_2()); 
-            // InternalGraphQL.g:1566:2: ( rule__InputObjectTypeDefinition__Group_2__0 )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+             before(grammarAccess.getInputObjectTypeDefinitionAccess().getNameAssignment_2()); 
+            // InternalGraphQL.g:2461:2: ( rule__InputObjectTypeDefinition__NameAssignment_2 )
+            // InternalGraphQL.g:2461:3: rule__InputObjectTypeDefinition__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__InputObjectTypeDefinition__NameAssignment_2();
 
-            if ( (LA13_0==12) ) {
-                alt13=1;
-            }
-            switch (alt13) {
-                case 1 :
-                    // InternalGraphQL.g:1566:3: rule__InputObjectTypeDefinition__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__InputObjectTypeDefinition__Group_2__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getInputObjectTypeDefinitionAccess().getGroup_2()); 
+             after(grammarAccess.getInputObjectTypeDefinitionAccess().getNameAssignment_2()); 
 
             }
 
@@ -4829,23 +7906,114 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__InputObjectTypeDefinition__Group__2__Impl"
 
 
-    // $ANTLR start "rule__InputObjectTypeDefinition__Group_2__0"
-    // InternalGraphQL.g:1575:1: rule__InputObjectTypeDefinition__Group_2__0 : rule__InputObjectTypeDefinition__Group_2__0__Impl rule__InputObjectTypeDefinition__Group_2__1 ;
-    public final void rule__InputObjectTypeDefinition__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__InputObjectTypeDefinition__Group__3"
+    // InternalGraphQL.g:2469:1: rule__InputObjectTypeDefinition__Group__3 : rule__InputObjectTypeDefinition__Group__3__Impl ;
+    public final void rule__InputObjectTypeDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1579:1: ( rule__InputObjectTypeDefinition__Group_2__0__Impl rule__InputObjectTypeDefinition__Group_2__1 )
-            // InternalGraphQL.g:1580:2: rule__InputObjectTypeDefinition__Group_2__0__Impl rule__InputObjectTypeDefinition__Group_2__1
+            // InternalGraphQL.g:2473:1: ( rule__InputObjectTypeDefinition__Group__3__Impl )
+            // InternalGraphQL.g:2474:2: rule__InputObjectTypeDefinition__Group__3__Impl
             {
-            pushFollow(FOLLOW_10);
-            rule__InputObjectTypeDefinition__Group_2__0__Impl();
+            pushFollow(FOLLOW_2);
+            rule__InputObjectTypeDefinition__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputObjectTypeDefinition__Group__3"
+
+
+    // $ANTLR start "rule__InputObjectTypeDefinition__Group__3__Impl"
+    // InternalGraphQL.g:2480:1: rule__InputObjectTypeDefinition__Group__3__Impl : ( ( rule__InputObjectTypeDefinition__Group_3__0 )? ) ;
+    public final void rule__InputObjectTypeDefinition__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2484:1: ( ( ( rule__InputObjectTypeDefinition__Group_3__0 )? ) )
+            // InternalGraphQL.g:2485:1: ( ( rule__InputObjectTypeDefinition__Group_3__0 )? )
+            {
+            // InternalGraphQL.g:2485:1: ( ( rule__InputObjectTypeDefinition__Group_3__0 )? )
+            // InternalGraphQL.g:2486:2: ( rule__InputObjectTypeDefinition__Group_3__0 )?
+            {
+             before(grammarAccess.getInputObjectTypeDefinitionAccess().getGroup_3()); 
+            // InternalGraphQL.g:2487:2: ( rule__InputObjectTypeDefinition__Group_3__0 )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
+
+            if ( (LA28_0==19) ) {
+                alt28=1;
+            }
+            switch (alt28) {
+                case 1 :
+                    // InternalGraphQL.g:2487:3: rule__InputObjectTypeDefinition__Group_3__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__InputObjectTypeDefinition__Group_3__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getInputObjectTypeDefinitionAccess().getGroup_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputObjectTypeDefinition__Group__3__Impl"
+
+
+    // $ANTLR start "rule__InputObjectTypeDefinition__Group_3__0"
+    // InternalGraphQL.g:2496:1: rule__InputObjectTypeDefinition__Group_3__0 : rule__InputObjectTypeDefinition__Group_3__0__Impl rule__InputObjectTypeDefinition__Group_3__1 ;
+    public final void rule__InputObjectTypeDefinition__Group_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2500:1: ( rule__InputObjectTypeDefinition__Group_3__0__Impl rule__InputObjectTypeDefinition__Group_3__1 )
+            // InternalGraphQL.g:2501:2: rule__InputObjectTypeDefinition__Group_3__0__Impl rule__InputObjectTypeDefinition__Group_3__1
+            {
+            pushFollow(FOLLOW_15);
+            rule__InputObjectTypeDefinition__Group_3__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__InputObjectTypeDefinition__Group_2__1();
+            rule__InputObjectTypeDefinition__Group_3__1();
 
             state._fsp--;
 
@@ -4864,25 +8032,25 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InputObjectTypeDefinition__Group_2__0"
+    // $ANTLR end "rule__InputObjectTypeDefinition__Group_3__0"
 
 
-    // $ANTLR start "rule__InputObjectTypeDefinition__Group_2__0__Impl"
-    // InternalGraphQL.g:1587:1: rule__InputObjectTypeDefinition__Group_2__0__Impl : ( '{' ) ;
-    public final void rule__InputObjectTypeDefinition__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__InputObjectTypeDefinition__Group_3__0__Impl"
+    // InternalGraphQL.g:2508:1: rule__InputObjectTypeDefinition__Group_3__0__Impl : ( '{' ) ;
+    public final void rule__InputObjectTypeDefinition__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1591:1: ( ( '{' ) )
-            // InternalGraphQL.g:1592:1: ( '{' )
+            // InternalGraphQL.g:2512:1: ( ( '{' ) )
+            // InternalGraphQL.g:2513:1: ( '{' )
             {
-            // InternalGraphQL.g:1592:1: ( '{' )
-            // InternalGraphQL.g:1593:2: '{'
+            // InternalGraphQL.g:2513:1: ( '{' )
+            // InternalGraphQL.g:2514:2: '{'
             {
-             before(grammarAccess.getInputObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_2_0()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getInputObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_2_0()); 
+             before(grammarAccess.getInputObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_3_0()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getInputObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_3_0()); 
 
             }
 
@@ -4901,26 +8069,26 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InputObjectTypeDefinition__Group_2__0__Impl"
+    // $ANTLR end "rule__InputObjectTypeDefinition__Group_3__0__Impl"
 
 
-    // $ANTLR start "rule__InputObjectTypeDefinition__Group_2__1"
-    // InternalGraphQL.g:1602:1: rule__InputObjectTypeDefinition__Group_2__1 : rule__InputObjectTypeDefinition__Group_2__1__Impl rule__InputObjectTypeDefinition__Group_2__2 ;
-    public final void rule__InputObjectTypeDefinition__Group_2__1() throws RecognitionException {
+    // $ANTLR start "rule__InputObjectTypeDefinition__Group_3__1"
+    // InternalGraphQL.g:2523:1: rule__InputObjectTypeDefinition__Group_3__1 : rule__InputObjectTypeDefinition__Group_3__1__Impl rule__InputObjectTypeDefinition__Group_3__2 ;
+    public final void rule__InputObjectTypeDefinition__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1606:1: ( rule__InputObjectTypeDefinition__Group_2__1__Impl rule__InputObjectTypeDefinition__Group_2__2 )
-            // InternalGraphQL.g:1607:2: rule__InputObjectTypeDefinition__Group_2__1__Impl rule__InputObjectTypeDefinition__Group_2__2
+            // InternalGraphQL.g:2527:1: ( rule__InputObjectTypeDefinition__Group_3__1__Impl rule__InputObjectTypeDefinition__Group_3__2 )
+            // InternalGraphQL.g:2528:2: rule__InputObjectTypeDefinition__Group_3__1__Impl rule__InputObjectTypeDefinition__Group_3__2
             {
-            pushFollow(FOLLOW_10);
-            rule__InputObjectTypeDefinition__Group_2__1__Impl();
+            pushFollow(FOLLOW_15);
+            rule__InputObjectTypeDefinition__Group_3__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__InputObjectTypeDefinition__Group_2__2();
+            rule__InputObjectTypeDefinition__Group_3__2();
 
             state._fsp--;
 
@@ -4939,40 +8107,40 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InputObjectTypeDefinition__Group_2__1"
+    // $ANTLR end "rule__InputObjectTypeDefinition__Group_3__1"
 
 
-    // $ANTLR start "rule__InputObjectTypeDefinition__Group_2__1__Impl"
-    // InternalGraphQL.g:1614:1: rule__InputObjectTypeDefinition__Group_2__1__Impl : ( ( rule__InputObjectTypeDefinition__FieldDefinitionsAssignment_2_1 )* ) ;
-    public final void rule__InputObjectTypeDefinition__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__InputObjectTypeDefinition__Group_3__1__Impl"
+    // InternalGraphQL.g:2535:1: rule__InputObjectTypeDefinition__Group_3__1__Impl : ( ( rule__InputObjectTypeDefinition__InputsFieldDefinitionsAssignment_3_1 )* ) ;
+    public final void rule__InputObjectTypeDefinition__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1618:1: ( ( ( rule__InputObjectTypeDefinition__FieldDefinitionsAssignment_2_1 )* ) )
-            // InternalGraphQL.g:1619:1: ( ( rule__InputObjectTypeDefinition__FieldDefinitionsAssignment_2_1 )* )
+            // InternalGraphQL.g:2539:1: ( ( ( rule__InputObjectTypeDefinition__InputsFieldDefinitionsAssignment_3_1 )* ) )
+            // InternalGraphQL.g:2540:1: ( ( rule__InputObjectTypeDefinition__InputsFieldDefinitionsAssignment_3_1 )* )
             {
-            // InternalGraphQL.g:1619:1: ( ( rule__InputObjectTypeDefinition__FieldDefinitionsAssignment_2_1 )* )
-            // InternalGraphQL.g:1620:2: ( rule__InputObjectTypeDefinition__FieldDefinitionsAssignment_2_1 )*
+            // InternalGraphQL.g:2540:1: ( ( rule__InputObjectTypeDefinition__InputsFieldDefinitionsAssignment_3_1 )* )
+            // InternalGraphQL.g:2541:2: ( rule__InputObjectTypeDefinition__InputsFieldDefinitionsAssignment_3_1 )*
             {
-             before(grammarAccess.getInputObjectTypeDefinitionAccess().getFieldDefinitionsAssignment_2_1()); 
-            // InternalGraphQL.g:1621:2: ( rule__InputObjectTypeDefinition__FieldDefinitionsAssignment_2_1 )*
-            loop14:
+             before(grammarAccess.getInputObjectTypeDefinitionAccess().getInputsFieldDefinitionsAssignment_3_1()); 
+            // InternalGraphQL.g:2542:2: ( rule__InputObjectTypeDefinition__InputsFieldDefinitionsAssignment_3_1 )*
+            loop29:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( (LA14_0==RULE_NAME) ) {
-                    alt14=1;
+                if ( ((LA29_0>=RULE_SL_STRING_VALUE && LA29_0<=RULE_NAME)) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt29) {
             	case 1 :
-            	    // InternalGraphQL.g:1621:3: rule__InputObjectTypeDefinition__FieldDefinitionsAssignment_2_1
+            	    // InternalGraphQL.g:2542:3: rule__InputObjectTypeDefinition__InputsFieldDefinitionsAssignment_3_1
             	    {
-            	    pushFollow(FOLLOW_11);
-            	    rule__InputObjectTypeDefinition__FieldDefinitionsAssignment_2_1();
+            	    pushFollow(FOLLOW_16);
+            	    rule__InputObjectTypeDefinition__InputsFieldDefinitionsAssignment_3_1();
 
             	    state._fsp--;
 
@@ -4981,11 +8149,11 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop29;
                 }
             } while (true);
 
-             after(grammarAccess.getInputObjectTypeDefinitionAccess().getFieldDefinitionsAssignment_2_1()); 
+             after(grammarAccess.getInputObjectTypeDefinitionAccess().getInputsFieldDefinitionsAssignment_3_1()); 
 
             }
 
@@ -5004,21 +8172,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InputObjectTypeDefinition__Group_2__1__Impl"
+    // $ANTLR end "rule__InputObjectTypeDefinition__Group_3__1__Impl"
 
 
-    // $ANTLR start "rule__InputObjectTypeDefinition__Group_2__2"
-    // InternalGraphQL.g:1629:1: rule__InputObjectTypeDefinition__Group_2__2 : rule__InputObjectTypeDefinition__Group_2__2__Impl ;
-    public final void rule__InputObjectTypeDefinition__Group_2__2() throws RecognitionException {
+    // $ANTLR start "rule__InputObjectTypeDefinition__Group_3__2"
+    // InternalGraphQL.g:2550:1: rule__InputObjectTypeDefinition__Group_3__2 : rule__InputObjectTypeDefinition__Group_3__2__Impl ;
+    public final void rule__InputObjectTypeDefinition__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1633:1: ( rule__InputObjectTypeDefinition__Group_2__2__Impl )
-            // InternalGraphQL.g:1634:2: rule__InputObjectTypeDefinition__Group_2__2__Impl
+            // InternalGraphQL.g:2554:1: ( rule__InputObjectTypeDefinition__Group_3__2__Impl )
+            // InternalGraphQL.g:2555:2: rule__InputObjectTypeDefinition__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__InputObjectTypeDefinition__Group_2__2__Impl();
+            rule__InputObjectTypeDefinition__Group_3__2__Impl();
 
             state._fsp--;
 
@@ -5037,25 +8205,25 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InputObjectTypeDefinition__Group_2__2"
+    // $ANTLR end "rule__InputObjectTypeDefinition__Group_3__2"
 
 
-    // $ANTLR start "rule__InputObjectTypeDefinition__Group_2__2__Impl"
-    // InternalGraphQL.g:1640:1: rule__InputObjectTypeDefinition__Group_2__2__Impl : ( '}' ) ;
-    public final void rule__InputObjectTypeDefinition__Group_2__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__InputObjectTypeDefinition__Group_3__2__Impl"
+    // InternalGraphQL.g:2561:1: rule__InputObjectTypeDefinition__Group_3__2__Impl : ( '}' ) ;
+    public final void rule__InputObjectTypeDefinition__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1644:1: ( ( '}' ) )
-            // InternalGraphQL.g:1645:1: ( '}' )
+            // InternalGraphQL.g:2565:1: ( ( '}' ) )
+            // InternalGraphQL.g:2566:1: ( '}' )
             {
-            // InternalGraphQL.g:1645:1: ( '}' )
-            // InternalGraphQL.g:1646:2: '}'
+            // InternalGraphQL.g:2566:1: ( '}' )
+            // InternalGraphQL.g:2567:2: '}'
             {
-             before(grammarAccess.getInputObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_2_2()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getInputObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_2_2()); 
+             before(grammarAccess.getInputObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_3_2()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getInputObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_3_2()); 
 
             }
 
@@ -5074,21 +8242,2334 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InputObjectTypeDefinition__Group_2__2__Impl"
+    // $ANTLR end "rule__InputObjectTypeDefinition__Group_3__2__Impl"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group__0"
+    // InternalGraphQL.g:2577:1: rule__InputValueDefinition__Group__0 : rule__InputValueDefinition__Group__0__Impl rule__InputValueDefinition__Group__1 ;
+    public final void rule__InputValueDefinition__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2581:1: ( rule__InputValueDefinition__Group__0__Impl rule__InputValueDefinition__Group__1 )
+            // InternalGraphQL.g:2582:2: rule__InputValueDefinition__Group__0__Impl rule__InputValueDefinition__Group__1
+            {
+            pushFollow(FOLLOW_18);
+            rule__InputValueDefinition__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InputValueDefinition__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group__0"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group__0__Impl"
+    // InternalGraphQL.g:2589:1: rule__InputValueDefinition__Group__0__Impl : ( ( rule__InputValueDefinition__DescriptionAssignment_0 )? ) ;
+    public final void rule__InputValueDefinition__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2593:1: ( ( ( rule__InputValueDefinition__DescriptionAssignment_0 )? ) )
+            // InternalGraphQL.g:2594:1: ( ( rule__InputValueDefinition__DescriptionAssignment_0 )? )
+            {
+            // InternalGraphQL.g:2594:1: ( ( rule__InputValueDefinition__DescriptionAssignment_0 )? )
+            // InternalGraphQL.g:2595:2: ( rule__InputValueDefinition__DescriptionAssignment_0 )?
+            {
+             before(grammarAccess.getInputValueDefinitionAccess().getDescriptionAssignment_0()); 
+            // InternalGraphQL.g:2596:2: ( rule__InputValueDefinition__DescriptionAssignment_0 )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
+
+            if ( ((LA30_0>=RULE_SL_STRING_VALUE && LA30_0<=RULE_ML_STRING_VALUE)) ) {
+                alt30=1;
+            }
+            switch (alt30) {
+                case 1 :
+                    // InternalGraphQL.g:2596:3: rule__InputValueDefinition__DescriptionAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__InputValueDefinition__DescriptionAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getInputValueDefinitionAccess().getDescriptionAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group__0__Impl"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group__1"
+    // InternalGraphQL.g:2604:1: rule__InputValueDefinition__Group__1 : rule__InputValueDefinition__Group__1__Impl rule__InputValueDefinition__Group__2 ;
+    public final void rule__InputValueDefinition__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2608:1: ( rule__InputValueDefinition__Group__1__Impl rule__InputValueDefinition__Group__2 )
+            // InternalGraphQL.g:2609:2: rule__InputValueDefinition__Group__1__Impl rule__InputValueDefinition__Group__2
+            {
+            pushFollow(FOLLOW_9);
+            rule__InputValueDefinition__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InputValueDefinition__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group__1"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group__1__Impl"
+    // InternalGraphQL.g:2616:1: rule__InputValueDefinition__Group__1__Impl : ( ( rule__InputValueDefinition__NameAssignment_1 ) ) ;
+    public final void rule__InputValueDefinition__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2620:1: ( ( ( rule__InputValueDefinition__NameAssignment_1 ) ) )
+            // InternalGraphQL.g:2621:1: ( ( rule__InputValueDefinition__NameAssignment_1 ) )
+            {
+            // InternalGraphQL.g:2621:1: ( ( rule__InputValueDefinition__NameAssignment_1 ) )
+            // InternalGraphQL.g:2622:2: ( rule__InputValueDefinition__NameAssignment_1 )
+            {
+             before(grammarAccess.getInputValueDefinitionAccess().getNameAssignment_1()); 
+            // InternalGraphQL.g:2623:2: ( rule__InputValueDefinition__NameAssignment_1 )
+            // InternalGraphQL.g:2623:3: rule__InputValueDefinition__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__InputValueDefinition__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInputValueDefinitionAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group__1__Impl"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group__2"
+    // InternalGraphQL.g:2631:1: rule__InputValueDefinition__Group__2 : rule__InputValueDefinition__Group__2__Impl rule__InputValueDefinition__Group__3 ;
+    public final void rule__InputValueDefinition__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2635:1: ( rule__InputValueDefinition__Group__2__Impl rule__InputValueDefinition__Group__3 )
+            // InternalGraphQL.g:2636:2: rule__InputValueDefinition__Group__2__Impl rule__InputValueDefinition__Group__3
+            {
+            pushFollow(FOLLOW_14);
+            rule__InputValueDefinition__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InputValueDefinition__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group__2"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group__2__Impl"
+    // InternalGraphQL.g:2643:1: rule__InputValueDefinition__Group__2__Impl : ( ':' ) ;
+    public final void rule__InputValueDefinition__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2647:1: ( ( ':' ) )
+            // InternalGraphQL.g:2648:1: ( ':' )
+            {
+            // InternalGraphQL.g:2648:1: ( ':' )
+            // InternalGraphQL.g:2649:2: ':'
+            {
+             before(grammarAccess.getInputValueDefinitionAccess().getColonKeyword_2()); 
+            match(input,21,FOLLOW_2); 
+             after(grammarAccess.getInputValueDefinitionAccess().getColonKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group__2__Impl"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group__3"
+    // InternalGraphQL.g:2658:1: rule__InputValueDefinition__Group__3 : rule__InputValueDefinition__Group__3__Impl rule__InputValueDefinition__Group__4 ;
+    public final void rule__InputValueDefinition__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2662:1: ( rule__InputValueDefinition__Group__3__Impl rule__InputValueDefinition__Group__4 )
+            // InternalGraphQL.g:2663:2: rule__InputValueDefinition__Group__3__Impl rule__InputValueDefinition__Group__4
+            {
+            pushFollow(FOLLOW_20);
+            rule__InputValueDefinition__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InputValueDefinition__Group__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group__3"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group__3__Impl"
+    // InternalGraphQL.g:2670:1: rule__InputValueDefinition__Group__3__Impl : ( ( rule__InputValueDefinition__TypeAssignment_3 ) ) ;
+    public final void rule__InputValueDefinition__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2674:1: ( ( ( rule__InputValueDefinition__TypeAssignment_3 ) ) )
+            // InternalGraphQL.g:2675:1: ( ( rule__InputValueDefinition__TypeAssignment_3 ) )
+            {
+            // InternalGraphQL.g:2675:1: ( ( rule__InputValueDefinition__TypeAssignment_3 ) )
+            // InternalGraphQL.g:2676:2: ( rule__InputValueDefinition__TypeAssignment_3 )
+            {
+             before(grammarAccess.getInputValueDefinitionAccess().getTypeAssignment_3()); 
+            // InternalGraphQL.g:2677:2: ( rule__InputValueDefinition__TypeAssignment_3 )
+            // InternalGraphQL.g:2677:3: rule__InputValueDefinition__TypeAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__InputValueDefinition__TypeAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInputValueDefinitionAccess().getTypeAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group__3__Impl"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group__4"
+    // InternalGraphQL.g:2685:1: rule__InputValueDefinition__Group__4 : rule__InputValueDefinition__Group__4__Impl ;
+    public final void rule__InputValueDefinition__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2689:1: ( rule__InputValueDefinition__Group__4__Impl )
+            // InternalGraphQL.g:2690:2: rule__InputValueDefinition__Group__4__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__InputValueDefinition__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group__4"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group__4__Impl"
+    // InternalGraphQL.g:2696:1: rule__InputValueDefinition__Group__4__Impl : ( ( rule__InputValueDefinition__Group_4__0 )? ) ;
+    public final void rule__InputValueDefinition__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2700:1: ( ( ( rule__InputValueDefinition__Group_4__0 )? ) )
+            // InternalGraphQL.g:2701:1: ( ( rule__InputValueDefinition__Group_4__0 )? )
+            {
+            // InternalGraphQL.g:2701:1: ( ( rule__InputValueDefinition__Group_4__0 )? )
+            // InternalGraphQL.g:2702:2: ( rule__InputValueDefinition__Group_4__0 )?
+            {
+             before(grammarAccess.getInputValueDefinitionAccess().getGroup_4()); 
+            // InternalGraphQL.g:2703:2: ( rule__InputValueDefinition__Group_4__0 )?
+            int alt31=2;
+            int LA31_0 = input.LA(1);
+
+            if ( (LA31_0==27) ) {
+                alt31=1;
+            }
+            switch (alt31) {
+                case 1 :
+                    // InternalGraphQL.g:2703:3: rule__InputValueDefinition__Group_4__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__InputValueDefinition__Group_4__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getInputValueDefinitionAccess().getGroup_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group__4__Impl"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group_4__0"
+    // InternalGraphQL.g:2712:1: rule__InputValueDefinition__Group_4__0 : rule__InputValueDefinition__Group_4__0__Impl rule__InputValueDefinition__Group_4__1 ;
+    public final void rule__InputValueDefinition__Group_4__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2716:1: ( rule__InputValueDefinition__Group_4__0__Impl rule__InputValueDefinition__Group_4__1 )
+            // InternalGraphQL.g:2717:2: rule__InputValueDefinition__Group_4__0__Impl rule__InputValueDefinition__Group_4__1
+            {
+            pushFollow(FOLLOW_25);
+            rule__InputValueDefinition__Group_4__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InputValueDefinition__Group_4__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group_4__0"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group_4__0__Impl"
+    // InternalGraphQL.g:2724:1: rule__InputValueDefinition__Group_4__0__Impl : ( '=' ) ;
+    public final void rule__InputValueDefinition__Group_4__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2728:1: ( ( '=' ) )
+            // InternalGraphQL.g:2729:1: ( '=' )
+            {
+            // InternalGraphQL.g:2729:1: ( '=' )
+            // InternalGraphQL.g:2730:2: '='
+            {
+             before(grammarAccess.getInputValueDefinitionAccess().getEqualsSignKeyword_4_0()); 
+            match(input,27,FOLLOW_2); 
+             after(grammarAccess.getInputValueDefinitionAccess().getEqualsSignKeyword_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group_4__0__Impl"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group_4__1"
+    // InternalGraphQL.g:2739:1: rule__InputValueDefinition__Group_4__1 : rule__InputValueDefinition__Group_4__1__Impl ;
+    public final void rule__InputValueDefinition__Group_4__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2743:1: ( rule__InputValueDefinition__Group_4__1__Impl )
+            // InternalGraphQL.g:2744:2: rule__InputValueDefinition__Group_4__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__InputValueDefinition__Group_4__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group_4__1"
+
+
+    // $ANTLR start "rule__InputValueDefinition__Group_4__1__Impl"
+    // InternalGraphQL.g:2750:1: rule__InputValueDefinition__Group_4__1__Impl : ( ( rule__InputValueDefinition__DefaultValueAssignment_4_1 ) ) ;
+    public final void rule__InputValueDefinition__Group_4__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2754:1: ( ( ( rule__InputValueDefinition__DefaultValueAssignment_4_1 ) ) )
+            // InternalGraphQL.g:2755:1: ( ( rule__InputValueDefinition__DefaultValueAssignment_4_1 ) )
+            {
+            // InternalGraphQL.g:2755:1: ( ( rule__InputValueDefinition__DefaultValueAssignment_4_1 ) )
+            // InternalGraphQL.g:2756:2: ( rule__InputValueDefinition__DefaultValueAssignment_4_1 )
+            {
+             before(grammarAccess.getInputValueDefinitionAccess().getDefaultValueAssignment_4_1()); 
+            // InternalGraphQL.g:2757:2: ( rule__InputValueDefinition__DefaultValueAssignment_4_1 )
+            // InternalGraphQL.g:2757:3: rule__InputValueDefinition__DefaultValueAssignment_4_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__InputValueDefinition__DefaultValueAssignment_4_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInputValueDefinitionAccess().getDefaultValueAssignment_4_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__Group_4__1__Impl"
+
+
+    // $ANTLR start "rule__IntersectionType__Group__0"
+    // InternalGraphQL.g:2766:1: rule__IntersectionType__Group__0 : rule__IntersectionType__Group__0__Impl rule__IntersectionType__Group__1 ;
+    public final void rule__IntersectionType__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2770:1: ( rule__IntersectionType__Group__0__Impl rule__IntersectionType__Group__1 )
+            // InternalGraphQL.g:2771:2: rule__IntersectionType__Group__0__Impl rule__IntersectionType__Group__1
+            {
+            pushFollow(FOLLOW_26);
+            rule__IntersectionType__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__IntersectionType__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IntersectionType__Group__0"
+
+
+    // $ANTLR start "rule__IntersectionType__Group__0__Impl"
+    // InternalGraphQL.g:2778:1: rule__IntersectionType__Group__0__Impl : ( ( rule__IntersectionType__MemberTypesAssignment_0 ) ) ;
+    public final void rule__IntersectionType__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2782:1: ( ( ( rule__IntersectionType__MemberTypesAssignment_0 ) ) )
+            // InternalGraphQL.g:2783:1: ( ( rule__IntersectionType__MemberTypesAssignment_0 ) )
+            {
+            // InternalGraphQL.g:2783:1: ( ( rule__IntersectionType__MemberTypesAssignment_0 ) )
+            // InternalGraphQL.g:2784:2: ( rule__IntersectionType__MemberTypesAssignment_0 )
+            {
+             before(grammarAccess.getIntersectionTypeAccess().getMemberTypesAssignment_0()); 
+            // InternalGraphQL.g:2785:2: ( rule__IntersectionType__MemberTypesAssignment_0 )
+            // InternalGraphQL.g:2785:3: rule__IntersectionType__MemberTypesAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__IntersectionType__MemberTypesAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIntersectionTypeAccess().getMemberTypesAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IntersectionType__Group__0__Impl"
+
+
+    // $ANTLR start "rule__IntersectionType__Group__1"
+    // InternalGraphQL.g:2793:1: rule__IntersectionType__Group__1 : rule__IntersectionType__Group__1__Impl ;
+    public final void rule__IntersectionType__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2797:1: ( rule__IntersectionType__Group__1__Impl )
+            // InternalGraphQL.g:2798:2: rule__IntersectionType__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__IntersectionType__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IntersectionType__Group__1"
+
+
+    // $ANTLR start "rule__IntersectionType__Group__1__Impl"
+    // InternalGraphQL.g:2804:1: rule__IntersectionType__Group__1__Impl : ( ( rule__IntersectionType__Group_1__0 )* ) ;
+    public final void rule__IntersectionType__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2808:1: ( ( ( rule__IntersectionType__Group_1__0 )* ) )
+            // InternalGraphQL.g:2809:1: ( ( rule__IntersectionType__Group_1__0 )* )
+            {
+            // InternalGraphQL.g:2809:1: ( ( rule__IntersectionType__Group_1__0 )* )
+            // InternalGraphQL.g:2810:2: ( rule__IntersectionType__Group_1__0 )*
+            {
+             before(grammarAccess.getIntersectionTypeAccess().getGroup_1()); 
+            // InternalGraphQL.g:2811:2: ( rule__IntersectionType__Group_1__0 )*
+            loop32:
+            do {
+                int alt32=2;
+                int LA32_0 = input.LA(1);
+
+                if ( (LA32_0==31) ) {
+                    alt32=1;
+                }
+
+
+                switch (alt32) {
+            	case 1 :
+            	    // InternalGraphQL.g:2811:3: rule__IntersectionType__Group_1__0
+            	    {
+            	    pushFollow(FOLLOW_27);
+            	    rule__IntersectionType__Group_1__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop32;
+                }
+            } while (true);
+
+             after(grammarAccess.getIntersectionTypeAccess().getGroup_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IntersectionType__Group__1__Impl"
+
+
+    // $ANTLR start "rule__IntersectionType__Group_1__0"
+    // InternalGraphQL.g:2820:1: rule__IntersectionType__Group_1__0 : rule__IntersectionType__Group_1__0__Impl rule__IntersectionType__Group_1__1 ;
+    public final void rule__IntersectionType__Group_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2824:1: ( rule__IntersectionType__Group_1__0__Impl rule__IntersectionType__Group_1__1 )
+            // InternalGraphQL.g:2825:2: rule__IntersectionType__Group_1__0__Impl rule__IntersectionType__Group_1__1
+            {
+            pushFollow(FOLLOW_14);
+            rule__IntersectionType__Group_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__IntersectionType__Group_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IntersectionType__Group_1__0"
+
+
+    // $ANTLR start "rule__IntersectionType__Group_1__0__Impl"
+    // InternalGraphQL.g:2832:1: rule__IntersectionType__Group_1__0__Impl : ( '&' ) ;
+    public final void rule__IntersectionType__Group_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2836:1: ( ( '&' ) )
+            // InternalGraphQL.g:2837:1: ( '&' )
+            {
+            // InternalGraphQL.g:2837:1: ( '&' )
+            // InternalGraphQL.g:2838:2: '&'
+            {
+             before(grammarAccess.getIntersectionTypeAccess().getAmpersandKeyword_1_0()); 
+            match(input,31,FOLLOW_2); 
+             after(grammarAccess.getIntersectionTypeAccess().getAmpersandKeyword_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IntersectionType__Group_1__0__Impl"
+
+
+    // $ANTLR start "rule__IntersectionType__Group_1__1"
+    // InternalGraphQL.g:2847:1: rule__IntersectionType__Group_1__1 : rule__IntersectionType__Group_1__1__Impl ;
+    public final void rule__IntersectionType__Group_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2851:1: ( rule__IntersectionType__Group_1__1__Impl )
+            // InternalGraphQL.g:2852:2: rule__IntersectionType__Group_1__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__IntersectionType__Group_1__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IntersectionType__Group_1__1"
+
+
+    // $ANTLR start "rule__IntersectionType__Group_1__1__Impl"
+    // InternalGraphQL.g:2858:1: rule__IntersectionType__Group_1__1__Impl : ( ( rule__IntersectionType__MemberTypesAssignment_1_1 ) ) ;
+    public final void rule__IntersectionType__Group_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2862:1: ( ( ( rule__IntersectionType__MemberTypesAssignment_1_1 ) ) )
+            // InternalGraphQL.g:2863:1: ( ( rule__IntersectionType__MemberTypesAssignment_1_1 ) )
+            {
+            // InternalGraphQL.g:2863:1: ( ( rule__IntersectionType__MemberTypesAssignment_1_1 ) )
+            // InternalGraphQL.g:2864:2: ( rule__IntersectionType__MemberTypesAssignment_1_1 )
+            {
+             before(grammarAccess.getIntersectionTypeAccess().getMemberTypesAssignment_1_1()); 
+            // InternalGraphQL.g:2865:2: ( rule__IntersectionType__MemberTypesAssignment_1_1 )
+            // InternalGraphQL.g:2865:3: rule__IntersectionType__MemberTypesAssignment_1_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__IntersectionType__MemberTypesAssignment_1_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIntersectionTypeAccess().getMemberTypesAssignment_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IntersectionType__Group_1__1__Impl"
+
+
+    // $ANTLR start "rule__NamedType__Group__0"
+    // InternalGraphQL.g:2874:1: rule__NamedType__Group__0 : rule__NamedType__Group__0__Impl rule__NamedType__Group__1 ;
+    public final void rule__NamedType__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2878:1: ( rule__NamedType__Group__0__Impl rule__NamedType__Group__1 )
+            // InternalGraphQL.g:2879:2: rule__NamedType__Group__0__Impl rule__NamedType__Group__1
+            {
+            pushFollow(FOLLOW_28);
+            rule__NamedType__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__NamedType__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NamedType__Group__0"
+
+
+    // $ANTLR start "rule__NamedType__Group__0__Impl"
+    // InternalGraphQL.g:2886:1: rule__NamedType__Group__0__Impl : ( ( rule__NamedType__TypeDefinitionAssignment_0 ) ) ;
+    public final void rule__NamedType__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2890:1: ( ( ( rule__NamedType__TypeDefinitionAssignment_0 ) ) )
+            // InternalGraphQL.g:2891:1: ( ( rule__NamedType__TypeDefinitionAssignment_0 ) )
+            {
+            // InternalGraphQL.g:2891:1: ( ( rule__NamedType__TypeDefinitionAssignment_0 ) )
+            // InternalGraphQL.g:2892:2: ( rule__NamedType__TypeDefinitionAssignment_0 )
+            {
+             before(grammarAccess.getNamedTypeAccess().getTypeDefinitionAssignment_0()); 
+            // InternalGraphQL.g:2893:2: ( rule__NamedType__TypeDefinitionAssignment_0 )
+            // InternalGraphQL.g:2893:3: rule__NamedType__TypeDefinitionAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__NamedType__TypeDefinitionAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNamedTypeAccess().getTypeDefinitionAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NamedType__Group__0__Impl"
+
+
+    // $ANTLR start "rule__NamedType__Group__1"
+    // InternalGraphQL.g:2901:1: rule__NamedType__Group__1 : rule__NamedType__Group__1__Impl ;
+    public final void rule__NamedType__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2905:1: ( rule__NamedType__Group__1__Impl )
+            // InternalGraphQL.g:2906:2: rule__NamedType__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__NamedType__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NamedType__Group__1"
+
+
+    // $ANTLR start "rule__NamedType__Group__1__Impl"
+    // InternalGraphQL.g:2912:1: rule__NamedType__Group__1__Impl : ( ( rule__NamedType__NonNullAssignment_1 )? ) ;
+    public final void rule__NamedType__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2916:1: ( ( ( rule__NamedType__NonNullAssignment_1 )? ) )
+            // InternalGraphQL.g:2917:1: ( ( rule__NamedType__NonNullAssignment_1 )? )
+            {
+            // InternalGraphQL.g:2917:1: ( ( rule__NamedType__NonNullAssignment_1 )? )
+            // InternalGraphQL.g:2918:2: ( rule__NamedType__NonNullAssignment_1 )?
+            {
+             before(grammarAccess.getNamedTypeAccess().getNonNullAssignment_1()); 
+            // InternalGraphQL.g:2919:2: ( rule__NamedType__NonNullAssignment_1 )?
+            int alt33=2;
+            int LA33_0 = input.LA(1);
+
+            if ( (LA33_0==34) ) {
+                alt33=1;
+            }
+            switch (alt33) {
+                case 1 :
+                    // InternalGraphQL.g:2919:3: rule__NamedType__NonNullAssignment_1
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__NamedType__NonNullAssignment_1();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getNamedTypeAccess().getNonNullAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NamedType__Group__1__Impl"
+
+
+    // $ANTLR start "rule__ListType__Group__0"
+    // InternalGraphQL.g:2928:1: rule__ListType__Group__0 : rule__ListType__Group__0__Impl rule__ListType__Group__1 ;
+    public final void rule__ListType__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2932:1: ( rule__ListType__Group__0__Impl rule__ListType__Group__1 )
+            // InternalGraphQL.g:2933:2: rule__ListType__Group__0__Impl rule__ListType__Group__1
+            {
+            pushFollow(FOLLOW_14);
+            rule__ListType__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ListType__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListType__Group__0"
+
+
+    // $ANTLR start "rule__ListType__Group__0__Impl"
+    // InternalGraphQL.g:2940:1: rule__ListType__Group__0__Impl : ( '[' ) ;
+    public final void rule__ListType__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2944:1: ( ( '[' ) )
+            // InternalGraphQL.g:2945:1: ( '[' )
+            {
+            // InternalGraphQL.g:2945:1: ( '[' )
+            // InternalGraphQL.g:2946:2: '['
+            {
+             before(grammarAccess.getListTypeAccess().getLeftSquareBracketKeyword_0()); 
+            match(input,32,FOLLOW_2); 
+             after(grammarAccess.getListTypeAccess().getLeftSquareBracketKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListType__Group__0__Impl"
+
+
+    // $ANTLR start "rule__ListType__Group__1"
+    // InternalGraphQL.g:2955:1: rule__ListType__Group__1 : rule__ListType__Group__1__Impl rule__ListType__Group__2 ;
+    public final void rule__ListType__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2959:1: ( rule__ListType__Group__1__Impl rule__ListType__Group__2 )
+            // InternalGraphQL.g:2960:2: rule__ListType__Group__1__Impl rule__ListType__Group__2
+            {
+            pushFollow(FOLLOW_29);
+            rule__ListType__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ListType__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListType__Group__1"
+
+
+    // $ANTLR start "rule__ListType__Group__1__Impl"
+    // InternalGraphQL.g:2967:1: rule__ListType__Group__1__Impl : ( ( rule__ListType__TypeAssignment_1 ) ) ;
+    public final void rule__ListType__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2971:1: ( ( ( rule__ListType__TypeAssignment_1 ) ) )
+            // InternalGraphQL.g:2972:1: ( ( rule__ListType__TypeAssignment_1 ) )
+            {
+            // InternalGraphQL.g:2972:1: ( ( rule__ListType__TypeAssignment_1 ) )
+            // InternalGraphQL.g:2973:2: ( rule__ListType__TypeAssignment_1 )
+            {
+             before(grammarAccess.getListTypeAccess().getTypeAssignment_1()); 
+            // InternalGraphQL.g:2974:2: ( rule__ListType__TypeAssignment_1 )
+            // InternalGraphQL.g:2974:3: rule__ListType__TypeAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__ListType__TypeAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getListTypeAccess().getTypeAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListType__Group__1__Impl"
+
+
+    // $ANTLR start "rule__ListType__Group__2"
+    // InternalGraphQL.g:2982:1: rule__ListType__Group__2 : rule__ListType__Group__2__Impl rule__ListType__Group__3 ;
+    public final void rule__ListType__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2986:1: ( rule__ListType__Group__2__Impl rule__ListType__Group__3 )
+            // InternalGraphQL.g:2987:2: rule__ListType__Group__2__Impl rule__ListType__Group__3
+            {
+            pushFollow(FOLLOW_28);
+            rule__ListType__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ListType__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListType__Group__2"
+
+
+    // $ANTLR start "rule__ListType__Group__2__Impl"
+    // InternalGraphQL.g:2994:1: rule__ListType__Group__2__Impl : ( ']' ) ;
+    public final void rule__ListType__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:2998:1: ( ( ']' ) )
+            // InternalGraphQL.g:2999:1: ( ']' )
+            {
+            // InternalGraphQL.g:2999:1: ( ']' )
+            // InternalGraphQL.g:3000:2: ']'
+            {
+             before(grammarAccess.getListTypeAccess().getRightSquareBracketKeyword_2()); 
+            match(input,33,FOLLOW_2); 
+             after(grammarAccess.getListTypeAccess().getRightSquareBracketKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListType__Group__2__Impl"
+
+
+    // $ANTLR start "rule__ListType__Group__3"
+    // InternalGraphQL.g:3009:1: rule__ListType__Group__3 : rule__ListType__Group__3__Impl ;
+    public final void rule__ListType__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3013:1: ( rule__ListType__Group__3__Impl )
+            // InternalGraphQL.g:3014:2: rule__ListType__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ListType__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListType__Group__3"
+
+
+    // $ANTLR start "rule__ListType__Group__3__Impl"
+    // InternalGraphQL.g:3020:1: rule__ListType__Group__3__Impl : ( ( rule__ListType__NonNullAssignment_3 )? ) ;
+    public final void rule__ListType__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3024:1: ( ( ( rule__ListType__NonNullAssignment_3 )? ) )
+            // InternalGraphQL.g:3025:1: ( ( rule__ListType__NonNullAssignment_3 )? )
+            {
+            // InternalGraphQL.g:3025:1: ( ( rule__ListType__NonNullAssignment_3 )? )
+            // InternalGraphQL.g:3026:2: ( rule__ListType__NonNullAssignment_3 )?
+            {
+             before(grammarAccess.getListTypeAccess().getNonNullAssignment_3()); 
+            // InternalGraphQL.g:3027:2: ( rule__ListType__NonNullAssignment_3 )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
+
+            if ( (LA34_0==34) ) {
+                alt34=1;
+            }
+            switch (alt34) {
+                case 1 :
+                    // InternalGraphQL.g:3027:3: rule__ListType__NonNullAssignment_3
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ListType__NonNullAssignment_3();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getListTypeAccess().getNonNullAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListType__Group__3__Impl"
+
+
+    // $ANTLR start "rule__ObjectValue__Group__0"
+    // InternalGraphQL.g:3036:1: rule__ObjectValue__Group__0 : rule__ObjectValue__Group__0__Impl rule__ObjectValue__Group__1 ;
+    public final void rule__ObjectValue__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3040:1: ( rule__ObjectValue__Group__0__Impl rule__ObjectValue__Group__1 )
+            // InternalGraphQL.g:3041:2: rule__ObjectValue__Group__0__Impl rule__ObjectValue__Group__1
+            {
+            pushFollow(FOLLOW_25);
+            rule__ObjectValue__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ObjectValue__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectValue__Group__0"
+
+
+    // $ANTLR start "rule__ObjectValue__Group__0__Impl"
+    // InternalGraphQL.g:3048:1: rule__ObjectValue__Group__0__Impl : ( () ) ;
+    public final void rule__ObjectValue__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3052:1: ( ( () ) )
+            // InternalGraphQL.g:3053:1: ( () )
+            {
+            // InternalGraphQL.g:3053:1: ( () )
+            // InternalGraphQL.g:3054:2: ()
+            {
+             before(grammarAccess.getObjectValueAccess().getObjectValueAction_0()); 
+            // InternalGraphQL.g:3055:2: ()
+            // InternalGraphQL.g:3055:3: 
+            {
+            }
+
+             after(grammarAccess.getObjectValueAccess().getObjectValueAction_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectValue__Group__0__Impl"
+
+
+    // $ANTLR start "rule__ObjectValue__Group__1"
+    // InternalGraphQL.g:3063:1: rule__ObjectValue__Group__1 : rule__ObjectValue__Group__1__Impl rule__ObjectValue__Group__2 ;
+    public final void rule__ObjectValue__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3067:1: ( rule__ObjectValue__Group__1__Impl rule__ObjectValue__Group__2 )
+            // InternalGraphQL.g:3068:2: rule__ObjectValue__Group__1__Impl rule__ObjectValue__Group__2
+            {
+            pushFollow(FOLLOW_30);
+            rule__ObjectValue__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ObjectValue__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectValue__Group__1"
+
+
+    // $ANTLR start "rule__ObjectValue__Group__1__Impl"
+    // InternalGraphQL.g:3075:1: rule__ObjectValue__Group__1__Impl : ( '{' ) ;
+    public final void rule__ObjectValue__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3079:1: ( ( '{' ) )
+            // InternalGraphQL.g:3080:1: ( '{' )
+            {
+            // InternalGraphQL.g:3080:1: ( '{' )
+            // InternalGraphQL.g:3081:2: '{'
+            {
+             before(grammarAccess.getObjectValueAccess().getLeftCurlyBracketKeyword_1()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getObjectValueAccess().getLeftCurlyBracketKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectValue__Group__1__Impl"
+
+
+    // $ANTLR start "rule__ObjectValue__Group__2"
+    // InternalGraphQL.g:3090:1: rule__ObjectValue__Group__2 : rule__ObjectValue__Group__2__Impl rule__ObjectValue__Group__3 ;
+    public final void rule__ObjectValue__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3094:1: ( rule__ObjectValue__Group__2__Impl rule__ObjectValue__Group__3 )
+            // InternalGraphQL.g:3095:2: rule__ObjectValue__Group__2__Impl rule__ObjectValue__Group__3
+            {
+            pushFollow(FOLLOW_30);
+            rule__ObjectValue__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ObjectValue__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectValue__Group__2"
+
+
+    // $ANTLR start "rule__ObjectValue__Group__2__Impl"
+    // InternalGraphQL.g:3102:1: rule__ObjectValue__Group__2__Impl : ( ( rule__ObjectValue__FieldsAssignment_2 )* ) ;
+    public final void rule__ObjectValue__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3106:1: ( ( ( rule__ObjectValue__FieldsAssignment_2 )* ) )
+            // InternalGraphQL.g:3107:1: ( ( rule__ObjectValue__FieldsAssignment_2 )* )
+            {
+            // InternalGraphQL.g:3107:1: ( ( rule__ObjectValue__FieldsAssignment_2 )* )
+            // InternalGraphQL.g:3108:2: ( rule__ObjectValue__FieldsAssignment_2 )*
+            {
+             before(grammarAccess.getObjectValueAccess().getFieldsAssignment_2()); 
+            // InternalGraphQL.g:3109:2: ( rule__ObjectValue__FieldsAssignment_2 )*
+            loop35:
+            do {
+                int alt35=2;
+                int LA35_0 = input.LA(1);
+
+                if ( (LA35_0==RULE_NAME) ) {
+                    alt35=1;
+                }
+
+
+                switch (alt35) {
+            	case 1 :
+            	    // InternalGraphQL.g:3109:3: rule__ObjectValue__FieldsAssignment_2
+            	    {
+            	    pushFollow(FOLLOW_31);
+            	    rule__ObjectValue__FieldsAssignment_2();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop35;
+                }
+            } while (true);
+
+             after(grammarAccess.getObjectValueAccess().getFieldsAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectValue__Group__2__Impl"
+
+
+    // $ANTLR start "rule__ObjectValue__Group__3"
+    // InternalGraphQL.g:3117:1: rule__ObjectValue__Group__3 : rule__ObjectValue__Group__3__Impl ;
+    public final void rule__ObjectValue__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3121:1: ( rule__ObjectValue__Group__3__Impl )
+            // InternalGraphQL.g:3122:2: rule__ObjectValue__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ObjectValue__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectValue__Group__3"
+
+
+    // $ANTLR start "rule__ObjectValue__Group__3__Impl"
+    // InternalGraphQL.g:3128:1: rule__ObjectValue__Group__3__Impl : ( '}' ) ;
+    public final void rule__ObjectValue__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3132:1: ( ( '}' ) )
+            // InternalGraphQL.g:3133:1: ( '}' )
+            {
+            // InternalGraphQL.g:3133:1: ( '}' )
+            // InternalGraphQL.g:3134:2: '}'
+            {
+             before(grammarAccess.getObjectValueAccess().getRightCurlyBracketKeyword_3()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getObjectValueAccess().getRightCurlyBracketKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectValue__Group__3__Impl"
+
+
+    // $ANTLR start "rule__ObjectField__Group__0"
+    // InternalGraphQL.g:3144:1: rule__ObjectField__Group__0 : rule__ObjectField__Group__0__Impl rule__ObjectField__Group__1 ;
+    public final void rule__ObjectField__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3148:1: ( rule__ObjectField__Group__0__Impl rule__ObjectField__Group__1 )
+            // InternalGraphQL.g:3149:2: rule__ObjectField__Group__0__Impl rule__ObjectField__Group__1
+            {
+            pushFollow(FOLLOW_9);
+            rule__ObjectField__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ObjectField__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectField__Group__0"
+
+
+    // $ANTLR start "rule__ObjectField__Group__0__Impl"
+    // InternalGraphQL.g:3156:1: rule__ObjectField__Group__0__Impl : ( ( rule__ObjectField__NameAssignment_0 ) ) ;
+    public final void rule__ObjectField__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3160:1: ( ( ( rule__ObjectField__NameAssignment_0 ) ) )
+            // InternalGraphQL.g:3161:1: ( ( rule__ObjectField__NameAssignment_0 ) )
+            {
+            // InternalGraphQL.g:3161:1: ( ( rule__ObjectField__NameAssignment_0 ) )
+            // InternalGraphQL.g:3162:2: ( rule__ObjectField__NameAssignment_0 )
+            {
+             before(grammarAccess.getObjectFieldAccess().getNameAssignment_0()); 
+            // InternalGraphQL.g:3163:2: ( rule__ObjectField__NameAssignment_0 )
+            // InternalGraphQL.g:3163:3: rule__ObjectField__NameAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__ObjectField__NameAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getObjectFieldAccess().getNameAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectField__Group__0__Impl"
+
+
+    // $ANTLR start "rule__ObjectField__Group__1"
+    // InternalGraphQL.g:3171:1: rule__ObjectField__Group__1 : rule__ObjectField__Group__1__Impl rule__ObjectField__Group__2 ;
+    public final void rule__ObjectField__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3175:1: ( rule__ObjectField__Group__1__Impl rule__ObjectField__Group__2 )
+            // InternalGraphQL.g:3176:2: rule__ObjectField__Group__1__Impl rule__ObjectField__Group__2
+            {
+            pushFollow(FOLLOW_25);
+            rule__ObjectField__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ObjectField__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectField__Group__1"
+
+
+    // $ANTLR start "rule__ObjectField__Group__1__Impl"
+    // InternalGraphQL.g:3183:1: rule__ObjectField__Group__1__Impl : ( ':' ) ;
+    public final void rule__ObjectField__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3187:1: ( ( ':' ) )
+            // InternalGraphQL.g:3188:1: ( ':' )
+            {
+            // InternalGraphQL.g:3188:1: ( ':' )
+            // InternalGraphQL.g:3189:2: ':'
+            {
+             before(grammarAccess.getObjectFieldAccess().getColonKeyword_1()); 
+            match(input,21,FOLLOW_2); 
+             after(grammarAccess.getObjectFieldAccess().getColonKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectField__Group__1__Impl"
+
+
+    // $ANTLR start "rule__ObjectField__Group__2"
+    // InternalGraphQL.g:3198:1: rule__ObjectField__Group__2 : rule__ObjectField__Group__2__Impl ;
+    public final void rule__ObjectField__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3202:1: ( rule__ObjectField__Group__2__Impl )
+            // InternalGraphQL.g:3203:2: rule__ObjectField__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ObjectField__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectField__Group__2"
+
+
+    // $ANTLR start "rule__ObjectField__Group__2__Impl"
+    // InternalGraphQL.g:3209:1: rule__ObjectField__Group__2__Impl : ( ( rule__ObjectField__ValueAssignment_2 ) ) ;
+    public final void rule__ObjectField__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3213:1: ( ( ( rule__ObjectField__ValueAssignment_2 ) ) )
+            // InternalGraphQL.g:3214:1: ( ( rule__ObjectField__ValueAssignment_2 ) )
+            {
+            // InternalGraphQL.g:3214:1: ( ( rule__ObjectField__ValueAssignment_2 ) )
+            // InternalGraphQL.g:3215:2: ( rule__ObjectField__ValueAssignment_2 )
+            {
+             before(grammarAccess.getObjectFieldAccess().getValueAssignment_2()); 
+            // InternalGraphQL.g:3216:2: ( rule__ObjectField__ValueAssignment_2 )
+            // InternalGraphQL.g:3216:3: rule__ObjectField__ValueAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__ObjectField__ValueAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getObjectFieldAccess().getValueAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectField__Group__2__Impl"
+
+
+    // $ANTLR start "rule__ListValue__Group__0"
+    // InternalGraphQL.g:3225:1: rule__ListValue__Group__0 : rule__ListValue__Group__0__Impl rule__ListValue__Group__1 ;
+    public final void rule__ListValue__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3229:1: ( rule__ListValue__Group__0__Impl rule__ListValue__Group__1 )
+            // InternalGraphQL.g:3230:2: rule__ListValue__Group__0__Impl rule__ListValue__Group__1
+            {
+            pushFollow(FOLLOW_32);
+            rule__ListValue__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ListValue__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListValue__Group__0"
+
+
+    // $ANTLR start "rule__ListValue__Group__0__Impl"
+    // InternalGraphQL.g:3237:1: rule__ListValue__Group__0__Impl : ( () ) ;
+    public final void rule__ListValue__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3241:1: ( ( () ) )
+            // InternalGraphQL.g:3242:1: ( () )
+            {
+            // InternalGraphQL.g:3242:1: ( () )
+            // InternalGraphQL.g:3243:2: ()
+            {
+             before(grammarAccess.getListValueAccess().getListValueAction_0()); 
+            // InternalGraphQL.g:3244:2: ()
+            // InternalGraphQL.g:3244:3: 
+            {
+            }
+
+             after(grammarAccess.getListValueAccess().getListValueAction_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListValue__Group__0__Impl"
+
+
+    // $ANTLR start "rule__ListValue__Group__1"
+    // InternalGraphQL.g:3252:1: rule__ListValue__Group__1 : rule__ListValue__Group__1__Impl rule__ListValue__Group__2 ;
+    public final void rule__ListValue__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3256:1: ( rule__ListValue__Group__1__Impl rule__ListValue__Group__2 )
+            // InternalGraphQL.g:3257:2: rule__ListValue__Group__1__Impl rule__ListValue__Group__2
+            {
+            pushFollow(FOLLOW_33);
+            rule__ListValue__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ListValue__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListValue__Group__1"
+
+
+    // $ANTLR start "rule__ListValue__Group__1__Impl"
+    // InternalGraphQL.g:3264:1: rule__ListValue__Group__1__Impl : ( '[' ) ;
+    public final void rule__ListValue__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3268:1: ( ( '[' ) )
+            // InternalGraphQL.g:3269:1: ( '[' )
+            {
+            // InternalGraphQL.g:3269:1: ( '[' )
+            // InternalGraphQL.g:3270:2: '['
+            {
+             before(grammarAccess.getListValueAccess().getLeftSquareBracketKeyword_1()); 
+            match(input,32,FOLLOW_2); 
+             after(grammarAccess.getListValueAccess().getLeftSquareBracketKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListValue__Group__1__Impl"
+
+
+    // $ANTLR start "rule__ListValue__Group__2"
+    // InternalGraphQL.g:3279:1: rule__ListValue__Group__2 : rule__ListValue__Group__2__Impl rule__ListValue__Group__3 ;
+    public final void rule__ListValue__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3283:1: ( rule__ListValue__Group__2__Impl rule__ListValue__Group__3 )
+            // InternalGraphQL.g:3284:2: rule__ListValue__Group__2__Impl rule__ListValue__Group__3
+            {
+            pushFollow(FOLLOW_33);
+            rule__ListValue__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ListValue__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListValue__Group__2"
+
+
+    // $ANTLR start "rule__ListValue__Group__2__Impl"
+    // InternalGraphQL.g:3291:1: rule__ListValue__Group__2__Impl : ( ( rule__ListValue__ValuesAssignment_2 )* ) ;
+    public final void rule__ListValue__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3295:1: ( ( ( rule__ListValue__ValuesAssignment_2 )* ) )
+            // InternalGraphQL.g:3296:1: ( ( rule__ListValue__ValuesAssignment_2 )* )
+            {
+            // InternalGraphQL.g:3296:1: ( ( rule__ListValue__ValuesAssignment_2 )* )
+            // InternalGraphQL.g:3297:2: ( rule__ListValue__ValuesAssignment_2 )*
+            {
+             before(grammarAccess.getListValueAccess().getValuesAssignment_2()); 
+            // InternalGraphQL.g:3298:2: ( rule__ListValue__ValuesAssignment_2 )*
+            loop36:
+            do {
+                int alt36=2;
+                int LA36_0 = input.LA(1);
+
+                if ( ((LA36_0>=RULE_NAME && LA36_0<=RULE_FLOAT_VALUE)||(LA36_0>=13 && LA36_0<=14)||LA36_0==19||LA36_0==32||LA36_0==35) ) {
+                    alt36=1;
+                }
+
+
+                switch (alt36) {
+            	case 1 :
+            	    // InternalGraphQL.g:3298:3: rule__ListValue__ValuesAssignment_2
+            	    {
+            	    pushFollow(FOLLOW_34);
+            	    rule__ListValue__ValuesAssignment_2();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop36;
+                }
+            } while (true);
+
+             after(grammarAccess.getListValueAccess().getValuesAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListValue__Group__2__Impl"
+
+
+    // $ANTLR start "rule__ListValue__Group__3"
+    // InternalGraphQL.g:3306:1: rule__ListValue__Group__3 : rule__ListValue__Group__3__Impl ;
+    public final void rule__ListValue__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3310:1: ( rule__ListValue__Group__3__Impl )
+            // InternalGraphQL.g:3311:2: rule__ListValue__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ListValue__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListValue__Group__3"
+
+
+    // $ANTLR start "rule__ListValue__Group__3__Impl"
+    // InternalGraphQL.g:3317:1: rule__ListValue__Group__3__Impl : ( ']' ) ;
+    public final void rule__ListValue__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3321:1: ( ( ']' ) )
+            // InternalGraphQL.g:3322:1: ( ']' )
+            {
+            // InternalGraphQL.g:3322:1: ( ']' )
+            // InternalGraphQL.g:3323:2: ']'
+            {
+             before(grammarAccess.getListValueAccess().getRightSquareBracketKeyword_3()); 
+            match(input,33,FOLLOW_2); 
+             after(grammarAccess.getListValueAccess().getRightSquareBracketKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListValue__Group__3__Impl"
 
 
     // $ANTLR start "rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0"
-    // InternalGraphQL.g:1656:1: rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 : ( ruleSchemaDefinition ) ;
+    // InternalGraphQL.g:3333:1: rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0 : ( ruleSchemaDefinition ) ;
     public final void rule__TypeSystemDefinition__SchemaDefinitionsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1660:1: ( ( ruleSchemaDefinition ) )
-            // InternalGraphQL.g:1661:2: ( ruleSchemaDefinition )
+            // InternalGraphQL.g:3337:1: ( ( ruleSchemaDefinition ) )
+            // InternalGraphQL.g:3338:2: ( ruleSchemaDefinition )
             {
-            // InternalGraphQL.g:1661:2: ( ruleSchemaDefinition )
-            // InternalGraphQL.g:1662:3: ruleSchemaDefinition
+            // InternalGraphQL.g:3338:2: ( ruleSchemaDefinition )
+            // InternalGraphQL.g:3339:3: ruleSchemaDefinition
             {
              before(grammarAccess.getTypeSystemDefinitionAccess().getSchemaDefinitionsSchemaDefinitionParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -5119,17 +10600,17 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TypeSystemDefinition__TypeDefinitionsAssignment_1"
-    // InternalGraphQL.g:1671:1: rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 : ( ruleTypeDefinition ) ;
+    // InternalGraphQL.g:3348:1: rule__TypeSystemDefinition__TypeDefinitionsAssignment_1 : ( ruleTypeDefinition ) ;
     public final void rule__TypeSystemDefinition__TypeDefinitionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1675:1: ( ( ruleTypeDefinition ) )
-            // InternalGraphQL.g:1676:2: ( ruleTypeDefinition )
+            // InternalGraphQL.g:3352:1: ( ( ruleTypeDefinition ) )
+            // InternalGraphQL.g:3353:2: ( ruleTypeDefinition )
             {
-            // InternalGraphQL.g:1676:2: ( ruleTypeDefinition )
-            // InternalGraphQL.g:1677:3: ruleTypeDefinition
+            // InternalGraphQL.g:3353:2: ( ruleTypeDefinition )
+            // InternalGraphQL.g:3354:3: ruleTypeDefinition
             {
              before(grammarAccess.getTypeSystemDefinitionAccess().getTypeDefinitionsTypeDefinitionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5159,26 +10640,26 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__TypeSystemDefinition__TypeDefinitionsAssignment_1"
 
 
-    // $ANTLR start "rule__SchemaDefinition__TypeDefinitionsAssignment_2"
-    // InternalGraphQL.g:1686:1: rule__SchemaDefinition__TypeDefinitionsAssignment_2 : ( ruleRootOperationTypeDefinition ) ;
-    public final void rule__SchemaDefinition__TypeDefinitionsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__SchemaDefinition__DescriptionAssignment_0"
+    // InternalGraphQL.g:3363:1: rule__SchemaDefinition__DescriptionAssignment_0 : ( ruleStringValue ) ;
+    public final void rule__SchemaDefinition__DescriptionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1690:1: ( ( ruleRootOperationTypeDefinition ) )
-            // InternalGraphQL.g:1691:2: ( ruleRootOperationTypeDefinition )
+            // InternalGraphQL.g:3367:1: ( ( ruleStringValue ) )
+            // InternalGraphQL.g:3368:2: ( ruleStringValue )
             {
-            // InternalGraphQL.g:1691:2: ( ruleRootOperationTypeDefinition )
-            // InternalGraphQL.g:1692:3: ruleRootOperationTypeDefinition
+            // InternalGraphQL.g:3368:2: ( ruleStringValue )
+            // InternalGraphQL.g:3369:3: ruleStringValue
             {
-             before(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsRootOperationTypeDefinitionParserRuleCall_2_0()); 
+             before(grammarAccess.getSchemaDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
-            ruleRootOperationTypeDefinition();
+            ruleStringValue();
 
             state._fsp--;
 
-             after(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsRootOperationTypeDefinitionParserRuleCall_2_0()); 
+             after(grammarAccess.getSchemaDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
 
             }
 
@@ -5197,21 +10678,62 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SchemaDefinition__TypeDefinitionsAssignment_2"
+    // $ANTLR end "rule__SchemaDefinition__DescriptionAssignment_0"
+
+
+    // $ANTLR start "rule__SchemaDefinition__TypeDefinitionsAssignment_3"
+    // InternalGraphQL.g:3378:1: rule__SchemaDefinition__TypeDefinitionsAssignment_3 : ( ruleRootOperationTypeDefinition ) ;
+    public final void rule__SchemaDefinition__TypeDefinitionsAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3382:1: ( ( ruleRootOperationTypeDefinition ) )
+            // InternalGraphQL.g:3383:2: ( ruleRootOperationTypeDefinition )
+            {
+            // InternalGraphQL.g:3383:2: ( ruleRootOperationTypeDefinition )
+            // InternalGraphQL.g:3384:3: ruleRootOperationTypeDefinition
+            {
+             before(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsRootOperationTypeDefinitionParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_2);
+            ruleRootOperationTypeDefinition();
+
+            state._fsp--;
+
+             after(grammarAccess.getSchemaDefinitionAccess().getTypeDefinitionsRootOperationTypeDefinitionParserRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SchemaDefinition__TypeDefinitionsAssignment_3"
 
 
     // $ANTLR start "rule__RootOperationTypeDefinition__OperationTypeAssignment_0"
-    // InternalGraphQL.g:1701:1: rule__RootOperationTypeDefinition__OperationTypeAssignment_0 : ( ruleOperationType ) ;
+    // InternalGraphQL.g:3393:1: rule__RootOperationTypeDefinition__OperationTypeAssignment_0 : ( ruleOperationType ) ;
     public final void rule__RootOperationTypeDefinition__OperationTypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1705:1: ( ( ruleOperationType ) )
-            // InternalGraphQL.g:1706:2: ( ruleOperationType )
+            // InternalGraphQL.g:3397:1: ( ( ruleOperationType ) )
+            // InternalGraphQL.g:3398:2: ( ruleOperationType )
             {
-            // InternalGraphQL.g:1706:2: ( ruleOperationType )
-            // InternalGraphQL.g:1707:3: ruleOperationType
+            // InternalGraphQL.g:3398:2: ( ruleOperationType )
+            // InternalGraphQL.g:3399:3: ruleOperationType
             {
              before(grammarAccess.getRootOperationTypeDefinitionAccess().getOperationTypeOperationTypeEnumRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -5242,21 +10764,21 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RootOperationTypeDefinition__TypeAssignment_2"
-    // InternalGraphQL.g:1716:1: rule__RootOperationTypeDefinition__TypeAssignment_2 : ( ( RULE_NAME ) ) ;
+    // InternalGraphQL.g:3408:1: rule__RootOperationTypeDefinition__TypeAssignment_2 : ( ( RULE_NAME ) ) ;
     public final void rule__RootOperationTypeDefinition__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1720:1: ( ( ( RULE_NAME ) ) )
-            // InternalGraphQL.g:1721:2: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3412:1: ( ( ( RULE_NAME ) ) )
+            // InternalGraphQL.g:3413:2: ( ( RULE_NAME ) )
             {
-            // InternalGraphQL.g:1721:2: ( ( RULE_NAME ) )
-            // InternalGraphQL.g:1722:3: ( RULE_NAME )
+            // InternalGraphQL.g:3413:2: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3414:3: ( RULE_NAME )
             {
              before(grammarAccess.getRootOperationTypeDefinitionAccess().getTypeTypeDefinitionCrossReference_2_0()); 
-            // InternalGraphQL.g:1723:3: ( RULE_NAME )
-            // InternalGraphQL.g:1724:4: RULE_NAME
+            // InternalGraphQL.g:3415:3: ( RULE_NAME )
+            // InternalGraphQL.g:3416:4: RULE_NAME
             {
              before(grammarAccess.getRootOperationTypeDefinitionAccess().getTypeTypeDefinitionNAMETerminalRuleCall_2_0_1()); 
             match(input,RULE_NAME,FOLLOW_2); 
@@ -5286,22 +10808,26 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__RootOperationTypeDefinition__TypeAssignment_2"
 
 
-    // $ANTLR start "rule__ScalarTypeDefinition__NameAssignment_1"
-    // InternalGraphQL.g:1735:1: rule__ScalarTypeDefinition__NameAssignment_1 : ( RULE_NAME ) ;
-    public final void rule__ScalarTypeDefinition__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ScalarTypeDefinition__DescriptionAssignment_0"
+    // InternalGraphQL.g:3427:1: rule__ScalarTypeDefinition__DescriptionAssignment_0 : ( ruleStringValue ) ;
+    public final void rule__ScalarTypeDefinition__DescriptionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1739:1: ( ( RULE_NAME ) )
-            // InternalGraphQL.g:1740:2: ( RULE_NAME )
+            // InternalGraphQL.g:3431:1: ( ( ruleStringValue ) )
+            // InternalGraphQL.g:3432:2: ( ruleStringValue )
             {
-            // InternalGraphQL.g:1740:2: ( RULE_NAME )
-            // InternalGraphQL.g:1741:3: RULE_NAME
+            // InternalGraphQL.g:3432:2: ( ruleStringValue )
+            // InternalGraphQL.g:3433:3: ruleStringValue
             {
-             before(grammarAccess.getScalarTypeDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
-            match(input,RULE_NAME,FOLLOW_2); 
-             after(grammarAccess.getScalarTypeDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
+             before(grammarAccess.getScalarTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleStringValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getScalarTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
 
             }
 
@@ -5320,25 +10846,25 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ScalarTypeDefinition__NameAssignment_1"
+    // $ANTLR end "rule__ScalarTypeDefinition__DescriptionAssignment_0"
 
 
-    // $ANTLR start "rule__ObjectTypeDefinition__NameAssignment_1"
-    // InternalGraphQL.g:1750:1: rule__ObjectTypeDefinition__NameAssignment_1 : ( RULE_NAME ) ;
-    public final void rule__ObjectTypeDefinition__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ScalarTypeDefinition__NameAssignment_2"
+    // InternalGraphQL.g:3442:1: rule__ScalarTypeDefinition__NameAssignment_2 : ( RULE_NAME ) ;
+    public final void rule__ScalarTypeDefinition__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1754:1: ( ( RULE_NAME ) )
-            // InternalGraphQL.g:1755:2: ( RULE_NAME )
+            // InternalGraphQL.g:3446:1: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3447:2: ( RULE_NAME )
             {
-            // InternalGraphQL.g:1755:2: ( RULE_NAME )
-            // InternalGraphQL.g:1756:3: RULE_NAME
+            // InternalGraphQL.g:3447:2: ( RULE_NAME )
+            // InternalGraphQL.g:3448:3: RULE_NAME
             {
-             before(grammarAccess.getObjectTypeDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
+             before(grammarAccess.getScalarTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0()); 
             match(input,RULE_NAME,FOLLOW_2); 
-             after(grammarAccess.getObjectTypeDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
+             after(grammarAccess.getScalarTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0()); 
 
             }
 
@@ -5357,29 +10883,148 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ObjectTypeDefinition__NameAssignment_1"
+    // $ANTLR end "rule__ScalarTypeDefinition__NameAssignment_2"
 
 
-    // $ANTLR start "rule__ObjectTypeDefinition__FieldDefinitionsAssignment_2_1"
-    // InternalGraphQL.g:1765:1: rule__ObjectTypeDefinition__FieldDefinitionsAssignment_2_1 : ( ruleFieldDefinition ) ;
-    public final void rule__ObjectTypeDefinition__FieldDefinitionsAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__ObjectTypeDefinition__DescriptionAssignment_0"
+    // InternalGraphQL.g:3457:1: rule__ObjectTypeDefinition__DescriptionAssignment_0 : ( ruleStringValue ) ;
+    public final void rule__ObjectTypeDefinition__DescriptionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1769:1: ( ( ruleFieldDefinition ) )
-            // InternalGraphQL.g:1770:2: ( ruleFieldDefinition )
+            // InternalGraphQL.g:3461:1: ( ( ruleStringValue ) )
+            // InternalGraphQL.g:3462:2: ( ruleStringValue )
             {
-            // InternalGraphQL.g:1770:2: ( ruleFieldDefinition )
-            // InternalGraphQL.g:1771:3: ruleFieldDefinition
+            // InternalGraphQL.g:3462:2: ( ruleStringValue )
+            // InternalGraphQL.g:3463:3: ruleStringValue
             {
-             before(grammarAccess.getObjectTypeDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_2_1_0()); 
+             before(grammarAccess.getObjectTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleStringValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getObjectTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectTypeDefinition__DescriptionAssignment_0"
+
+
+    // $ANTLR start "rule__ObjectTypeDefinition__NameAssignment_2"
+    // InternalGraphQL.g:3472:1: rule__ObjectTypeDefinition__NameAssignment_2 : ( RULE_NAME ) ;
+    public final void rule__ObjectTypeDefinition__NameAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3476:1: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3477:2: ( RULE_NAME )
+            {
+            // InternalGraphQL.g:3477:2: ( RULE_NAME )
+            // InternalGraphQL.g:3478:3: RULE_NAME
+            {
+             before(grammarAccess.getObjectTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0()); 
+            match(input,RULE_NAME,FOLLOW_2); 
+             after(grammarAccess.getObjectTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectTypeDefinition__NameAssignment_2"
+
+
+    // $ANTLR start "rule__ObjectTypeDefinition__ImplementsAssignment_3_1"
+    // InternalGraphQL.g:3487:1: rule__ObjectTypeDefinition__ImplementsAssignment_3_1 : ( ruleIntersectionType ) ;
+    public final void rule__ObjectTypeDefinition__ImplementsAssignment_3_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3491:1: ( ( ruleIntersectionType ) )
+            // InternalGraphQL.g:3492:2: ( ruleIntersectionType )
+            {
+            // InternalGraphQL.g:3492:2: ( ruleIntersectionType )
+            // InternalGraphQL.g:3493:3: ruleIntersectionType
+            {
+             before(grammarAccess.getObjectTypeDefinitionAccess().getImplementsIntersectionTypeParserRuleCall_3_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleIntersectionType();
+
+            state._fsp--;
+
+             after(grammarAccess.getObjectTypeDefinitionAccess().getImplementsIntersectionTypeParserRuleCall_3_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectTypeDefinition__ImplementsAssignment_3_1"
+
+
+    // $ANTLR start "rule__ObjectTypeDefinition__FieldDefinitionsAssignment_4_1"
+    // InternalGraphQL.g:3502:1: rule__ObjectTypeDefinition__FieldDefinitionsAssignment_4_1 : ( ruleFieldDefinition ) ;
+    public final void rule__ObjectTypeDefinition__FieldDefinitionsAssignment_4_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3506:1: ( ( ruleFieldDefinition ) )
+            // InternalGraphQL.g:3507:2: ( ruleFieldDefinition )
+            {
+            // InternalGraphQL.g:3507:2: ( ruleFieldDefinition )
+            // InternalGraphQL.g:3508:3: ruleFieldDefinition
+            {
+             before(grammarAccess.getObjectTypeDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
             ruleFieldDefinition();
 
             state._fsp--;
 
-             after(grammarAccess.getObjectTypeDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_2_1_0()); 
+             after(grammarAccess.getObjectTypeDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_4_1_0()); 
 
             }
 
@@ -5398,25 +11043,66 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ObjectTypeDefinition__FieldDefinitionsAssignment_2_1"
+    // $ANTLR end "rule__ObjectTypeDefinition__FieldDefinitionsAssignment_4_1"
 
 
-    // $ANTLR start "rule__InterfaceDefinition__NameAssignment_1"
-    // InternalGraphQL.g:1780:1: rule__InterfaceDefinition__NameAssignment_1 : ( RULE_NAME ) ;
-    public final void rule__InterfaceDefinition__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__InterfaceDefinition__DescriptionAssignment_0"
+    // InternalGraphQL.g:3517:1: rule__InterfaceDefinition__DescriptionAssignment_0 : ( ruleStringValue ) ;
+    public final void rule__InterfaceDefinition__DescriptionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1784:1: ( ( RULE_NAME ) )
-            // InternalGraphQL.g:1785:2: ( RULE_NAME )
+            // InternalGraphQL.g:3521:1: ( ( ruleStringValue ) )
+            // InternalGraphQL.g:3522:2: ( ruleStringValue )
             {
-            // InternalGraphQL.g:1785:2: ( RULE_NAME )
-            // InternalGraphQL.g:1786:3: RULE_NAME
+            // InternalGraphQL.g:3522:2: ( ruleStringValue )
+            // InternalGraphQL.g:3523:3: ruleStringValue
             {
-             before(grammarAccess.getInterfaceDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
+             before(grammarAccess.getInterfaceDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleStringValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getInterfaceDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InterfaceDefinition__DescriptionAssignment_0"
+
+
+    // $ANTLR start "rule__InterfaceDefinition__NameAssignment_2"
+    // InternalGraphQL.g:3532:1: rule__InterfaceDefinition__NameAssignment_2 : ( RULE_NAME ) ;
+    public final void rule__InterfaceDefinition__NameAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3536:1: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3537:2: ( RULE_NAME )
+            {
+            // InternalGraphQL.g:3537:2: ( RULE_NAME )
+            // InternalGraphQL.g:3538:3: RULE_NAME
+            {
+             before(grammarAccess.getInterfaceDefinitionAccess().getNameNAMETerminalRuleCall_2_0()); 
             match(input,RULE_NAME,FOLLOW_2); 
-             after(grammarAccess.getInterfaceDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
+             after(grammarAccess.getInterfaceDefinitionAccess().getNameNAMETerminalRuleCall_2_0()); 
 
             }
 
@@ -5435,29 +11121,70 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InterfaceDefinition__NameAssignment_1"
+    // $ANTLR end "rule__InterfaceDefinition__NameAssignment_2"
 
 
-    // $ANTLR start "rule__InterfaceDefinition__FieldDefinitionsAssignment_2_1"
-    // InternalGraphQL.g:1795:1: rule__InterfaceDefinition__FieldDefinitionsAssignment_2_1 : ( ruleFieldDefinition ) ;
-    public final void rule__InterfaceDefinition__FieldDefinitionsAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__InterfaceDefinition__ImplementsAssignment_3_1"
+    // InternalGraphQL.g:3547:1: rule__InterfaceDefinition__ImplementsAssignment_3_1 : ( ruleIntersectionType ) ;
+    public final void rule__InterfaceDefinition__ImplementsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1799:1: ( ( ruleFieldDefinition ) )
-            // InternalGraphQL.g:1800:2: ( ruleFieldDefinition )
+            // InternalGraphQL.g:3551:1: ( ( ruleIntersectionType ) )
+            // InternalGraphQL.g:3552:2: ( ruleIntersectionType )
             {
-            // InternalGraphQL.g:1800:2: ( ruleFieldDefinition )
-            // InternalGraphQL.g:1801:3: ruleFieldDefinition
+            // InternalGraphQL.g:3552:2: ( ruleIntersectionType )
+            // InternalGraphQL.g:3553:3: ruleIntersectionType
             {
-             before(grammarAccess.getInterfaceDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_2_1_0()); 
+             before(grammarAccess.getInterfaceDefinitionAccess().getImplementsIntersectionTypeParserRuleCall_3_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleIntersectionType();
+
+            state._fsp--;
+
+             after(grammarAccess.getInterfaceDefinitionAccess().getImplementsIntersectionTypeParserRuleCall_3_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InterfaceDefinition__ImplementsAssignment_3_1"
+
+
+    // $ANTLR start "rule__InterfaceDefinition__FieldDefinitionsAssignment_4_1"
+    // InternalGraphQL.g:3562:1: rule__InterfaceDefinition__FieldDefinitionsAssignment_4_1 : ( ruleFieldDefinition ) ;
+    public final void rule__InterfaceDefinition__FieldDefinitionsAssignment_4_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3566:1: ( ( ruleFieldDefinition ) )
+            // InternalGraphQL.g:3567:2: ( ruleFieldDefinition )
+            {
+            // InternalGraphQL.g:3567:2: ( ruleFieldDefinition )
+            // InternalGraphQL.g:3568:3: ruleFieldDefinition
+            {
+             before(grammarAccess.getInterfaceDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
             ruleFieldDefinition();
 
             state._fsp--;
 
-             after(grammarAccess.getInterfaceDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_2_1_0()); 
+             after(grammarAccess.getInterfaceDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_4_1_0()); 
 
             }
 
@@ -5476,25 +11203,66 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InterfaceDefinition__FieldDefinitionsAssignment_2_1"
+    // $ANTLR end "rule__InterfaceDefinition__FieldDefinitionsAssignment_4_1"
 
 
-    // $ANTLR start "rule__FieldDefinition__NameAssignment_0"
-    // InternalGraphQL.g:1810:1: rule__FieldDefinition__NameAssignment_0 : ( RULE_NAME ) ;
-    public final void rule__FieldDefinition__NameAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__FieldDefinition__DescriptionAssignment_0"
+    // InternalGraphQL.g:3577:1: rule__FieldDefinition__DescriptionAssignment_0 : ( ruleStringValue ) ;
+    public final void rule__FieldDefinition__DescriptionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1814:1: ( ( RULE_NAME ) )
-            // InternalGraphQL.g:1815:2: ( RULE_NAME )
+            // InternalGraphQL.g:3581:1: ( ( ruleStringValue ) )
+            // InternalGraphQL.g:3582:2: ( ruleStringValue )
             {
-            // InternalGraphQL.g:1815:2: ( RULE_NAME )
-            // InternalGraphQL.g:1816:3: RULE_NAME
+            // InternalGraphQL.g:3582:2: ( ruleStringValue )
+            // InternalGraphQL.g:3583:3: ruleStringValue
             {
-             before(grammarAccess.getFieldDefinitionAccess().getNameNAMETerminalRuleCall_0_0()); 
+             before(grammarAccess.getFieldDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleStringValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getFieldDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FieldDefinition__DescriptionAssignment_0"
+
+
+    // $ANTLR start "rule__FieldDefinition__NameAssignment_1"
+    // InternalGraphQL.g:3592:1: rule__FieldDefinition__NameAssignment_1 : ( RULE_NAME ) ;
+    public final void rule__FieldDefinition__NameAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3596:1: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3597:2: ( RULE_NAME )
+            {
+            // InternalGraphQL.g:3597:2: ( RULE_NAME )
+            // InternalGraphQL.g:3598:3: RULE_NAME
+            {
+             before(grammarAccess.getFieldDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
             match(input,RULE_NAME,FOLLOW_2); 
-             after(grammarAccess.getFieldDefinitionAccess().getNameNAMETerminalRuleCall_0_0()); 
+             after(grammarAccess.getFieldDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
 
             }
 
@@ -5513,33 +11281,107 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FieldDefinition__NameAssignment_0"
+    // $ANTLR end "rule__FieldDefinition__NameAssignment_1"
 
 
-    // $ANTLR start "rule__FieldDefinition__TypeAssignment_2"
-    // InternalGraphQL.g:1825:1: rule__FieldDefinition__TypeAssignment_2 : ( ( RULE_NAME ) ) ;
-    public final void rule__FieldDefinition__TypeAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__FieldDefinition__TypeAssignment_3"
+    // InternalGraphQL.g:3607:1: rule__FieldDefinition__TypeAssignment_3 : ( ruleType ) ;
+    public final void rule__FieldDefinition__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1829:1: ( ( ( RULE_NAME ) ) )
-            // InternalGraphQL.g:1830:2: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3611:1: ( ( ruleType ) )
+            // InternalGraphQL.g:3612:2: ( ruleType )
             {
-            // InternalGraphQL.g:1830:2: ( ( RULE_NAME ) )
-            // InternalGraphQL.g:1831:3: ( RULE_NAME )
+            // InternalGraphQL.g:3612:2: ( ruleType )
+            // InternalGraphQL.g:3613:3: ruleType
             {
-             before(grammarAccess.getFieldDefinitionAccess().getTypeTypeDefinitionCrossReference_2_0()); 
-            // InternalGraphQL.g:1832:3: ( RULE_NAME )
-            // InternalGraphQL.g:1833:4: RULE_NAME
+             before(grammarAccess.getFieldDefinitionAccess().getTypeTypeParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_2);
+            ruleType();
+
+            state._fsp--;
+
+             after(grammarAccess.getFieldDefinitionAccess().getTypeTypeParserRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FieldDefinition__TypeAssignment_3"
+
+
+    // $ANTLR start "rule__UnionTypeDefinition__DescriptionAssignment_0"
+    // InternalGraphQL.g:3622:1: rule__UnionTypeDefinition__DescriptionAssignment_0 : ( ruleStringValue ) ;
+    public final void rule__UnionTypeDefinition__DescriptionAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3626:1: ( ( ruleStringValue ) )
+            // InternalGraphQL.g:3627:2: ( ruleStringValue )
             {
-             before(grammarAccess.getFieldDefinitionAccess().getTypeTypeDefinitionNAMETerminalRuleCall_2_0_1()); 
+            // InternalGraphQL.g:3627:2: ( ruleStringValue )
+            // InternalGraphQL.g:3628:3: ruleStringValue
+            {
+             before(grammarAccess.getUnionTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleStringValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getUnionTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UnionTypeDefinition__DescriptionAssignment_0"
+
+
+    // $ANTLR start "rule__UnionTypeDefinition__NameAssignment_2"
+    // InternalGraphQL.g:3637:1: rule__UnionTypeDefinition__NameAssignment_2 : ( RULE_NAME ) ;
+    public final void rule__UnionTypeDefinition__NameAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3641:1: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3642:2: ( RULE_NAME )
+            {
+            // InternalGraphQL.g:3642:2: ( RULE_NAME )
+            // InternalGraphQL.g:3643:3: RULE_NAME
+            {
+             before(grammarAccess.getUnionTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0()); 
             match(input,RULE_NAME,FOLLOW_2); 
-             after(grammarAccess.getFieldDefinitionAccess().getTypeTypeDefinitionNAMETerminalRuleCall_2_0_1()); 
-
-            }
-
-             after(grammarAccess.getFieldDefinitionAccess().getTypeTypeDefinitionCrossReference_2_0()); 
+             after(grammarAccess.getUnionTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0()); 
 
             }
 
@@ -5558,25 +11400,148 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FieldDefinition__TypeAssignment_2"
+    // $ANTLR end "rule__UnionTypeDefinition__NameAssignment_2"
 
 
-    // $ANTLR start "rule__UnionTypeDefinition__NameAssignment_1"
-    // InternalGraphQL.g:1844:1: rule__UnionTypeDefinition__NameAssignment_1 : ( RULE_NAME ) ;
-    public final void rule__UnionTypeDefinition__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__UnionTypeDefinition__MemberTypesAssignment_3_1"
+    // InternalGraphQL.g:3652:1: rule__UnionTypeDefinition__MemberTypesAssignment_3_1 : ( ruleType ) ;
+    public final void rule__UnionTypeDefinition__MemberTypesAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1848:1: ( ( RULE_NAME ) )
-            // InternalGraphQL.g:1849:2: ( RULE_NAME )
+            // InternalGraphQL.g:3656:1: ( ( ruleType ) )
+            // InternalGraphQL.g:3657:2: ( ruleType )
             {
-            // InternalGraphQL.g:1849:2: ( RULE_NAME )
-            // InternalGraphQL.g:1850:3: RULE_NAME
+            // InternalGraphQL.g:3657:2: ( ruleType )
+            // InternalGraphQL.g:3658:3: ruleType
             {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
+             before(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeParserRuleCall_3_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleType();
+
+            state._fsp--;
+
+             after(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeParserRuleCall_3_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UnionTypeDefinition__MemberTypesAssignment_3_1"
+
+
+    // $ANTLR start "rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1"
+    // InternalGraphQL.g:3667:1: rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1 : ( ruleType ) ;
+    public final void rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3671:1: ( ( ruleType ) )
+            // InternalGraphQL.g:3672:2: ( ruleType )
+            {
+            // InternalGraphQL.g:3672:2: ( ruleType )
+            // InternalGraphQL.g:3673:3: ruleType
+            {
+             before(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeParserRuleCall_3_2_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleType();
+
+            state._fsp--;
+
+             after(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeParserRuleCall_3_2_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UnionTypeDefinition__MemberTypesAssignment_3_2_1"
+
+
+    // $ANTLR start "rule__EnumTypeDefinition__DescriptionAssignment_0"
+    // InternalGraphQL.g:3682:1: rule__EnumTypeDefinition__DescriptionAssignment_0 : ( ruleStringValue ) ;
+    public final void rule__EnumTypeDefinition__DescriptionAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3686:1: ( ( ruleStringValue ) )
+            // InternalGraphQL.g:3687:2: ( ruleStringValue )
+            {
+            // InternalGraphQL.g:3687:2: ( ruleStringValue )
+            // InternalGraphQL.g:3688:3: ruleStringValue
+            {
+             before(grammarAccess.getEnumTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleStringValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getEnumTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EnumTypeDefinition__DescriptionAssignment_0"
+
+
+    // $ANTLR start "rule__EnumTypeDefinition__NameAssignment_2"
+    // InternalGraphQL.g:3697:1: rule__EnumTypeDefinition__NameAssignment_2 : ( RULE_NAME ) ;
+    public final void rule__EnumTypeDefinition__NameAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3701:1: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3702:2: ( RULE_NAME )
+            {
+            // InternalGraphQL.g:3702:2: ( RULE_NAME )
+            // InternalGraphQL.g:3703:3: RULE_NAME
+            {
+             before(grammarAccess.getEnumTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0()); 
             match(input,RULE_NAME,FOLLOW_2); 
-             after(grammarAccess.getUnionTypeDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
+             after(grammarAccess.getEnumTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0()); 
 
             }
 
@@ -5595,156 +11560,29 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UnionTypeDefinition__NameAssignment_1"
+    // $ANTLR end "rule__EnumTypeDefinition__NameAssignment_2"
 
 
-    // $ANTLR start "rule__UnionTypeDefinition__MemberTypesAssignment_2_1"
-    // InternalGraphQL.g:1859:1: rule__UnionTypeDefinition__MemberTypesAssignment_2_1 : ( ( RULE_NAME ) ) ;
-    public final void rule__UnionTypeDefinition__MemberTypesAssignment_2_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGraphQL.g:1863:1: ( ( ( RULE_NAME ) ) )
-            // InternalGraphQL.g:1864:2: ( ( RULE_NAME ) )
-            {
-            // InternalGraphQL.g:1864:2: ( ( RULE_NAME ) )
-            // InternalGraphQL.g:1865:3: ( RULE_NAME )
-            {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeDefinitionCrossReference_2_1_0()); 
-            // InternalGraphQL.g:1866:3: ( RULE_NAME )
-            // InternalGraphQL.g:1867:4: RULE_NAME
-            {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeDefinitionNAMETerminalRuleCall_2_1_0_1()); 
-            match(input,RULE_NAME,FOLLOW_2); 
-             after(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeDefinitionNAMETerminalRuleCall_2_1_0_1()); 
-
-            }
-
-             after(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeDefinitionCrossReference_2_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UnionTypeDefinition__MemberTypesAssignment_2_1"
-
-
-    // $ANTLR start "rule__UnionTypeDefinition__MemberTypesAssignment_2_2_1"
-    // InternalGraphQL.g:1878:1: rule__UnionTypeDefinition__MemberTypesAssignment_2_2_1 : ( ( RULE_NAME ) ) ;
-    public final void rule__UnionTypeDefinition__MemberTypesAssignment_2_2_1() throws RecognitionException {
+    // $ANTLR start "rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1"
+    // InternalGraphQL.g:3712:1: rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1 : ( ruleEnumValueDefinition ) ;
+    public final void rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1882:1: ( ( ( RULE_NAME ) ) )
-            // InternalGraphQL.g:1883:2: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3716:1: ( ( ruleEnumValueDefinition ) )
+            // InternalGraphQL.g:3717:2: ( ruleEnumValueDefinition )
             {
-            // InternalGraphQL.g:1883:2: ( ( RULE_NAME ) )
-            // InternalGraphQL.g:1884:3: ( RULE_NAME )
+            // InternalGraphQL.g:3717:2: ( ruleEnumValueDefinition )
+            // InternalGraphQL.g:3718:3: ruleEnumValueDefinition
             {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeDefinitionCrossReference_2_2_1_0()); 
-            // InternalGraphQL.g:1885:3: ( RULE_NAME )
-            // InternalGraphQL.g:1886:4: RULE_NAME
-            {
-             before(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeDefinitionNAMETerminalRuleCall_2_2_1_0_1()); 
-            match(input,RULE_NAME,FOLLOW_2); 
-             after(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeDefinitionNAMETerminalRuleCall_2_2_1_0_1()); 
-
-            }
-
-             after(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeDefinitionCrossReference_2_2_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UnionTypeDefinition__MemberTypesAssignment_2_2_1"
-
-
-    // $ANTLR start "rule__EnumTypeDefinition__NameAssignment_1"
-    // InternalGraphQL.g:1897:1: rule__EnumTypeDefinition__NameAssignment_1 : ( RULE_NAME ) ;
-    public final void rule__EnumTypeDefinition__NameAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGraphQL.g:1901:1: ( ( RULE_NAME ) )
-            // InternalGraphQL.g:1902:2: ( RULE_NAME )
-            {
-            // InternalGraphQL.g:1902:2: ( RULE_NAME )
-            // InternalGraphQL.g:1903:3: RULE_NAME
-            {
-             before(grammarAccess.getEnumTypeDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
-            match(input,RULE_NAME,FOLLOW_2); 
-             after(grammarAccess.getEnumTypeDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EnumTypeDefinition__NameAssignment_1"
-
-
-    // $ANTLR start "rule__EnumTypeDefinition__ValueDefinitionsAssignment_2_1"
-    // InternalGraphQL.g:1912:1: rule__EnumTypeDefinition__ValueDefinitionsAssignment_2_1 : ( ruleEnumValueDefinition ) ;
-    public final void rule__EnumTypeDefinition__ValueDefinitionsAssignment_2_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGraphQL.g:1916:1: ( ( ruleEnumValueDefinition ) )
-            // InternalGraphQL.g:1917:2: ( ruleEnumValueDefinition )
-            {
-            // InternalGraphQL.g:1917:2: ( ruleEnumValueDefinition )
-            // InternalGraphQL.g:1918:3: ruleEnumValueDefinition
-            {
-             before(grammarAccess.getEnumTypeDefinitionAccess().getValueDefinitionsEnumValueDefinitionParserRuleCall_2_1_0()); 
+             before(grammarAccess.getEnumTypeDefinitionAccess().getValueDefinitionsEnumValueDefinitionParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
             ruleEnumValueDefinition();
 
             state._fsp--;
 
-             after(grammarAccess.getEnumTypeDefinitionAccess().getValueDefinitionsEnumValueDefinitionParserRuleCall_2_1_0()); 
+             after(grammarAccess.getEnumTypeDefinitionAccess().getValueDefinitionsEnumValueDefinitionParserRuleCall_3_1_0()); 
 
             }
 
@@ -5763,103 +11601,29 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumTypeDefinition__ValueDefinitionsAssignment_2_1"
+    // $ANTLR end "rule__EnumTypeDefinition__ValueDefinitionsAssignment_3_1"
 
 
-    // $ANTLR start "rule__EnumValueDefinition__NameAssignment"
-    // InternalGraphQL.g:1927:1: rule__EnumValueDefinition__NameAssignment : ( RULE_NAME ) ;
-    public final void rule__EnumValueDefinition__NameAssignment() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGraphQL.g:1931:1: ( ( RULE_NAME ) )
-            // InternalGraphQL.g:1932:2: ( RULE_NAME )
-            {
-            // InternalGraphQL.g:1932:2: ( RULE_NAME )
-            // InternalGraphQL.g:1933:3: RULE_NAME
-            {
-             before(grammarAccess.getEnumValueDefinitionAccess().getNameNAMETerminalRuleCall_0()); 
-            match(input,RULE_NAME,FOLLOW_2); 
-             after(grammarAccess.getEnumValueDefinitionAccess().getNameNAMETerminalRuleCall_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EnumValueDefinition__NameAssignment"
-
-
-    // $ANTLR start "rule__InputObjectTypeDefinition__NameAssignment_1"
-    // InternalGraphQL.g:1942:1: rule__InputObjectTypeDefinition__NameAssignment_1 : ( RULE_NAME ) ;
-    public final void rule__InputObjectTypeDefinition__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__EnumValueDefinition__DescriptionAssignment_0"
+    // InternalGraphQL.g:3727:1: rule__EnumValueDefinition__DescriptionAssignment_0 : ( ruleStringValue ) ;
+    public final void rule__EnumValueDefinition__DescriptionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGraphQL.g:1946:1: ( ( RULE_NAME ) )
-            // InternalGraphQL.g:1947:2: ( RULE_NAME )
+            // InternalGraphQL.g:3731:1: ( ( ruleStringValue ) )
+            // InternalGraphQL.g:3732:2: ( ruleStringValue )
             {
-            // InternalGraphQL.g:1947:2: ( RULE_NAME )
-            // InternalGraphQL.g:1948:3: RULE_NAME
+            // InternalGraphQL.g:3732:2: ( ruleStringValue )
+            // InternalGraphQL.g:3733:3: ruleStringValue
             {
-             before(grammarAccess.getInputObjectTypeDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
-            match(input,RULE_NAME,FOLLOW_2); 
-             after(grammarAccess.getInputObjectTypeDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__InputObjectTypeDefinition__NameAssignment_1"
-
-
-    // $ANTLR start "rule__InputObjectTypeDefinition__FieldDefinitionsAssignment_2_1"
-    // InternalGraphQL.g:1957:1: rule__InputObjectTypeDefinition__FieldDefinitionsAssignment_2_1 : ( ruleFieldDefinition ) ;
-    public final void rule__InputObjectTypeDefinition__FieldDefinitionsAssignment_2_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGraphQL.g:1961:1: ( ( ruleFieldDefinition ) )
-            // InternalGraphQL.g:1962:2: ( ruleFieldDefinition )
-            {
-            // InternalGraphQL.g:1962:2: ( ruleFieldDefinition )
-            // InternalGraphQL.g:1963:3: ruleFieldDefinition
-            {
-             before(grammarAccess.getInputObjectTypeDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_2_1_0()); 
+             before(grammarAccess.getEnumValueDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
-            ruleFieldDefinition();
+            ruleStringValue();
 
             state._fsp--;
 
-             after(grammarAccess.getInputObjectTypeDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_2_1_0()); 
+             after(grammarAccess.getEnumValueDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
 
             }
 
@@ -5878,7 +11642,1007 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InputObjectTypeDefinition__FieldDefinitionsAssignment_2_1"
+    // $ANTLR end "rule__EnumValueDefinition__DescriptionAssignment_0"
+
+
+    // $ANTLR start "rule__EnumValueDefinition__NameAssignment_1"
+    // InternalGraphQL.g:3742:1: rule__EnumValueDefinition__NameAssignment_1 : ( RULE_NAME ) ;
+    public final void rule__EnumValueDefinition__NameAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3746:1: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3747:2: ( RULE_NAME )
+            {
+            // InternalGraphQL.g:3747:2: ( RULE_NAME )
+            // InternalGraphQL.g:3748:3: RULE_NAME
+            {
+             before(grammarAccess.getEnumValueDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
+            match(input,RULE_NAME,FOLLOW_2); 
+             after(grammarAccess.getEnumValueDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EnumValueDefinition__NameAssignment_1"
+
+
+    // $ANTLR start "rule__InputObjectTypeDefinition__DescriptionAssignment_0"
+    // InternalGraphQL.g:3757:1: rule__InputObjectTypeDefinition__DescriptionAssignment_0 : ( ruleStringValue ) ;
+    public final void rule__InputObjectTypeDefinition__DescriptionAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3761:1: ( ( ruleStringValue ) )
+            // InternalGraphQL.g:3762:2: ( ruleStringValue )
+            {
+            // InternalGraphQL.g:3762:2: ( ruleStringValue )
+            // InternalGraphQL.g:3763:3: ruleStringValue
+            {
+             before(grammarAccess.getInputObjectTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleStringValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getInputObjectTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputObjectTypeDefinition__DescriptionAssignment_0"
+
+
+    // $ANTLR start "rule__InputObjectTypeDefinition__NameAssignment_2"
+    // InternalGraphQL.g:3772:1: rule__InputObjectTypeDefinition__NameAssignment_2 : ( RULE_NAME ) ;
+    public final void rule__InputObjectTypeDefinition__NameAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3776:1: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3777:2: ( RULE_NAME )
+            {
+            // InternalGraphQL.g:3777:2: ( RULE_NAME )
+            // InternalGraphQL.g:3778:3: RULE_NAME
+            {
+             before(grammarAccess.getInputObjectTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0()); 
+            match(input,RULE_NAME,FOLLOW_2); 
+             after(grammarAccess.getInputObjectTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputObjectTypeDefinition__NameAssignment_2"
+
+
+    // $ANTLR start "rule__InputObjectTypeDefinition__InputsFieldDefinitionsAssignment_3_1"
+    // InternalGraphQL.g:3787:1: rule__InputObjectTypeDefinition__InputsFieldDefinitionsAssignment_3_1 : ( ruleInputValueDefinition ) ;
+    public final void rule__InputObjectTypeDefinition__InputsFieldDefinitionsAssignment_3_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3791:1: ( ( ruleInputValueDefinition ) )
+            // InternalGraphQL.g:3792:2: ( ruleInputValueDefinition )
+            {
+            // InternalGraphQL.g:3792:2: ( ruleInputValueDefinition )
+            // InternalGraphQL.g:3793:3: ruleInputValueDefinition
+            {
+             before(grammarAccess.getInputObjectTypeDefinitionAccess().getInputsFieldDefinitionsInputValueDefinitionParserRuleCall_3_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleInputValueDefinition();
+
+            state._fsp--;
+
+             after(grammarAccess.getInputObjectTypeDefinitionAccess().getInputsFieldDefinitionsInputValueDefinitionParserRuleCall_3_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputObjectTypeDefinition__InputsFieldDefinitionsAssignment_3_1"
+
+
+    // $ANTLR start "rule__InputValueDefinition__DescriptionAssignment_0"
+    // InternalGraphQL.g:3802:1: rule__InputValueDefinition__DescriptionAssignment_0 : ( ruleStringValue ) ;
+    public final void rule__InputValueDefinition__DescriptionAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3806:1: ( ( ruleStringValue ) )
+            // InternalGraphQL.g:3807:2: ( ruleStringValue )
+            {
+            // InternalGraphQL.g:3807:2: ( ruleStringValue )
+            // InternalGraphQL.g:3808:3: ruleStringValue
+            {
+             before(grammarAccess.getInputValueDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleStringValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getInputValueDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__DescriptionAssignment_0"
+
+
+    // $ANTLR start "rule__InputValueDefinition__NameAssignment_1"
+    // InternalGraphQL.g:3817:1: rule__InputValueDefinition__NameAssignment_1 : ( RULE_NAME ) ;
+    public final void rule__InputValueDefinition__NameAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3821:1: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3822:2: ( RULE_NAME )
+            {
+            // InternalGraphQL.g:3822:2: ( RULE_NAME )
+            // InternalGraphQL.g:3823:3: RULE_NAME
+            {
+             before(grammarAccess.getInputValueDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
+            match(input,RULE_NAME,FOLLOW_2); 
+             after(grammarAccess.getInputValueDefinitionAccess().getNameNAMETerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__NameAssignment_1"
+
+
+    // $ANTLR start "rule__InputValueDefinition__TypeAssignment_3"
+    // InternalGraphQL.g:3832:1: rule__InputValueDefinition__TypeAssignment_3 : ( ruleType ) ;
+    public final void rule__InputValueDefinition__TypeAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3836:1: ( ( ruleType ) )
+            // InternalGraphQL.g:3837:2: ( ruleType )
+            {
+            // InternalGraphQL.g:3837:2: ( ruleType )
+            // InternalGraphQL.g:3838:3: ruleType
+            {
+             before(grammarAccess.getInputValueDefinitionAccess().getTypeTypeParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_2);
+            ruleType();
+
+            state._fsp--;
+
+             after(grammarAccess.getInputValueDefinitionAccess().getTypeTypeParserRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__TypeAssignment_3"
+
+
+    // $ANTLR start "rule__InputValueDefinition__DefaultValueAssignment_4_1"
+    // InternalGraphQL.g:3847:1: rule__InputValueDefinition__DefaultValueAssignment_4_1 : ( ruleConstValue ) ;
+    public final void rule__InputValueDefinition__DefaultValueAssignment_4_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3851:1: ( ( ruleConstValue ) )
+            // InternalGraphQL.g:3852:2: ( ruleConstValue )
+            {
+            // InternalGraphQL.g:3852:2: ( ruleConstValue )
+            // InternalGraphQL.g:3853:3: ruleConstValue
+            {
+             before(grammarAccess.getInputValueDefinitionAccess().getDefaultValueConstValueParserRuleCall_4_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleConstValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getInputValueDefinitionAccess().getDefaultValueConstValueParserRuleCall_4_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InputValueDefinition__DefaultValueAssignment_4_1"
+
+
+    // $ANTLR start "rule__IntersectionType__MemberTypesAssignment_0"
+    // InternalGraphQL.g:3862:1: rule__IntersectionType__MemberTypesAssignment_0 : ( ruleType ) ;
+    public final void rule__IntersectionType__MemberTypesAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3866:1: ( ( ruleType ) )
+            // InternalGraphQL.g:3867:2: ( ruleType )
+            {
+            // InternalGraphQL.g:3867:2: ( ruleType )
+            // InternalGraphQL.g:3868:3: ruleType
+            {
+             before(grammarAccess.getIntersectionTypeAccess().getMemberTypesTypeParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleType();
+
+            state._fsp--;
+
+             after(grammarAccess.getIntersectionTypeAccess().getMemberTypesTypeParserRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IntersectionType__MemberTypesAssignment_0"
+
+
+    // $ANTLR start "rule__IntersectionType__MemberTypesAssignment_1_1"
+    // InternalGraphQL.g:3877:1: rule__IntersectionType__MemberTypesAssignment_1_1 : ( ruleType ) ;
+    public final void rule__IntersectionType__MemberTypesAssignment_1_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3881:1: ( ( ruleType ) )
+            // InternalGraphQL.g:3882:2: ( ruleType )
+            {
+            // InternalGraphQL.g:3882:2: ( ruleType )
+            // InternalGraphQL.g:3883:3: ruleType
+            {
+             before(grammarAccess.getIntersectionTypeAccess().getMemberTypesTypeParserRuleCall_1_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleType();
+
+            state._fsp--;
+
+             after(grammarAccess.getIntersectionTypeAccess().getMemberTypesTypeParserRuleCall_1_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IntersectionType__MemberTypesAssignment_1_1"
+
+
+    // $ANTLR start "rule__NamedType__TypeDefinitionAssignment_0"
+    // InternalGraphQL.g:3892:1: rule__NamedType__TypeDefinitionAssignment_0 : ( ( RULE_NAME ) ) ;
+    public final void rule__NamedType__TypeDefinitionAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3896:1: ( ( ( RULE_NAME ) ) )
+            // InternalGraphQL.g:3897:2: ( ( RULE_NAME ) )
+            {
+            // InternalGraphQL.g:3897:2: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:3898:3: ( RULE_NAME )
+            {
+             before(grammarAccess.getNamedTypeAccess().getTypeDefinitionTypeDefinitionCrossReference_0_0()); 
+            // InternalGraphQL.g:3899:3: ( RULE_NAME )
+            // InternalGraphQL.g:3900:4: RULE_NAME
+            {
+             before(grammarAccess.getNamedTypeAccess().getTypeDefinitionTypeDefinitionNAMETerminalRuleCall_0_0_1()); 
+            match(input,RULE_NAME,FOLLOW_2); 
+             after(grammarAccess.getNamedTypeAccess().getTypeDefinitionTypeDefinitionNAMETerminalRuleCall_0_0_1()); 
+
+            }
+
+             after(grammarAccess.getNamedTypeAccess().getTypeDefinitionTypeDefinitionCrossReference_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NamedType__TypeDefinitionAssignment_0"
+
+
+    // $ANTLR start "rule__NamedType__NonNullAssignment_1"
+    // InternalGraphQL.g:3911:1: rule__NamedType__NonNullAssignment_1 : ( ( '!' ) ) ;
+    public final void rule__NamedType__NonNullAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3915:1: ( ( ( '!' ) ) )
+            // InternalGraphQL.g:3916:2: ( ( '!' ) )
+            {
+            // InternalGraphQL.g:3916:2: ( ( '!' ) )
+            // InternalGraphQL.g:3917:3: ( '!' )
+            {
+             before(grammarAccess.getNamedTypeAccess().getNonNullExclamationMarkKeyword_1_0()); 
+            // InternalGraphQL.g:3918:3: ( '!' )
+            // InternalGraphQL.g:3919:4: '!'
+            {
+             before(grammarAccess.getNamedTypeAccess().getNonNullExclamationMarkKeyword_1_0()); 
+            match(input,34,FOLLOW_2); 
+             after(grammarAccess.getNamedTypeAccess().getNonNullExclamationMarkKeyword_1_0()); 
+
+            }
+
+             after(grammarAccess.getNamedTypeAccess().getNonNullExclamationMarkKeyword_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NamedType__NonNullAssignment_1"
+
+
+    // $ANTLR start "rule__ListType__TypeAssignment_1"
+    // InternalGraphQL.g:3930:1: rule__ListType__TypeAssignment_1 : ( ruleType ) ;
+    public final void rule__ListType__TypeAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3934:1: ( ( ruleType ) )
+            // InternalGraphQL.g:3935:2: ( ruleType )
+            {
+            // InternalGraphQL.g:3935:2: ( ruleType )
+            // InternalGraphQL.g:3936:3: ruleType
+            {
+             before(grammarAccess.getListTypeAccess().getTypeTypeParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleType();
+
+            state._fsp--;
+
+             after(grammarAccess.getListTypeAccess().getTypeTypeParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListType__TypeAssignment_1"
+
+
+    // $ANTLR start "rule__ListType__NonNullAssignment_3"
+    // InternalGraphQL.g:3945:1: rule__ListType__NonNullAssignment_3 : ( ( '!' ) ) ;
+    public final void rule__ListType__NonNullAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3949:1: ( ( ( '!' ) ) )
+            // InternalGraphQL.g:3950:2: ( ( '!' ) )
+            {
+            // InternalGraphQL.g:3950:2: ( ( '!' ) )
+            // InternalGraphQL.g:3951:3: ( '!' )
+            {
+             before(grammarAccess.getListTypeAccess().getNonNullExclamationMarkKeyword_3_0()); 
+            // InternalGraphQL.g:3952:3: ( '!' )
+            // InternalGraphQL.g:3953:4: '!'
+            {
+             before(grammarAccess.getListTypeAccess().getNonNullExclamationMarkKeyword_3_0()); 
+            match(input,34,FOLLOW_2); 
+             after(grammarAccess.getListTypeAccess().getNonNullExclamationMarkKeyword_3_0()); 
+
+            }
+
+             after(grammarAccess.getListTypeAccess().getNonNullExclamationMarkKeyword_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListType__NonNullAssignment_3"
+
+
+    // $ANTLR start "rule__IntValue__ValueAssignment"
+    // InternalGraphQL.g:3964:1: rule__IntValue__ValueAssignment : ( RULE_INT_VALUE ) ;
+    public final void rule__IntValue__ValueAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3968:1: ( ( RULE_INT_VALUE ) )
+            // InternalGraphQL.g:3969:2: ( RULE_INT_VALUE )
+            {
+            // InternalGraphQL.g:3969:2: ( RULE_INT_VALUE )
+            // InternalGraphQL.g:3970:3: RULE_INT_VALUE
+            {
+             before(grammarAccess.getIntValueAccess().getValueINT_VALUETerminalRuleCall_0()); 
+            match(input,RULE_INT_VALUE,FOLLOW_2); 
+             after(grammarAccess.getIntValueAccess().getValueINT_VALUETerminalRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IntValue__ValueAssignment"
+
+
+    // $ANTLR start "rule__FloatValue__ValueAssignment"
+    // InternalGraphQL.g:3979:1: rule__FloatValue__ValueAssignment : ( RULE_FLOAT_VALUE ) ;
+    public final void rule__FloatValue__ValueAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3983:1: ( ( RULE_FLOAT_VALUE ) )
+            // InternalGraphQL.g:3984:2: ( RULE_FLOAT_VALUE )
+            {
+            // InternalGraphQL.g:3984:2: ( RULE_FLOAT_VALUE )
+            // InternalGraphQL.g:3985:3: RULE_FLOAT_VALUE
+            {
+             before(grammarAccess.getFloatValueAccess().getValueFLOAT_VALUETerminalRuleCall_0()); 
+            match(input,RULE_FLOAT_VALUE,FOLLOW_2); 
+             after(grammarAccess.getFloatValueAccess().getValueFLOAT_VALUETerminalRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FloatValue__ValueAssignment"
+
+
+    // $ANTLR start "rule__NullValue__ValueAssignment"
+    // InternalGraphQL.g:3994:1: rule__NullValue__ValueAssignment : ( ( 'null' ) ) ;
+    public final void rule__NullValue__ValueAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:3998:1: ( ( ( 'null' ) ) )
+            // InternalGraphQL.g:3999:2: ( ( 'null' ) )
+            {
+            // InternalGraphQL.g:3999:2: ( ( 'null' ) )
+            // InternalGraphQL.g:4000:3: ( 'null' )
+            {
+             before(grammarAccess.getNullValueAccess().getValueNullKeyword_0()); 
+            // InternalGraphQL.g:4001:3: ( 'null' )
+            // InternalGraphQL.g:4002:4: 'null'
+            {
+             before(grammarAccess.getNullValueAccess().getValueNullKeyword_0()); 
+            match(input,35,FOLLOW_2); 
+             after(grammarAccess.getNullValueAccess().getValueNullKeyword_0()); 
+
+            }
+
+             after(grammarAccess.getNullValueAccess().getValueNullKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NullValue__ValueAssignment"
+
+
+    // $ANTLR start "rule__StringValue__ValueAssignment"
+    // InternalGraphQL.g:4013:1: rule__StringValue__ValueAssignment : ( ( rule__StringValue__ValueAlternatives_0 ) ) ;
+    public final void rule__StringValue__ValueAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:4017:1: ( ( ( rule__StringValue__ValueAlternatives_0 ) ) )
+            // InternalGraphQL.g:4018:2: ( ( rule__StringValue__ValueAlternatives_0 ) )
+            {
+            // InternalGraphQL.g:4018:2: ( ( rule__StringValue__ValueAlternatives_0 ) )
+            // InternalGraphQL.g:4019:3: ( rule__StringValue__ValueAlternatives_0 )
+            {
+             before(grammarAccess.getStringValueAccess().getValueAlternatives_0()); 
+            // InternalGraphQL.g:4020:3: ( rule__StringValue__ValueAlternatives_0 )
+            // InternalGraphQL.g:4020:4: rule__StringValue__ValueAlternatives_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__StringValue__ValueAlternatives_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getStringValueAccess().getValueAlternatives_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__StringValue__ValueAssignment"
+
+
+    // $ANTLR start "rule__BooleanValue__ValueAssignment"
+    // InternalGraphQL.g:4028:1: rule__BooleanValue__ValueAssignment : ( ( rule__BooleanValue__ValueAlternatives_0 ) ) ;
+    public final void rule__BooleanValue__ValueAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:4032:1: ( ( ( rule__BooleanValue__ValueAlternatives_0 ) ) )
+            // InternalGraphQL.g:4033:2: ( ( rule__BooleanValue__ValueAlternatives_0 ) )
+            {
+            // InternalGraphQL.g:4033:2: ( ( rule__BooleanValue__ValueAlternatives_0 ) )
+            // InternalGraphQL.g:4034:3: ( rule__BooleanValue__ValueAlternatives_0 )
+            {
+             before(grammarAccess.getBooleanValueAccess().getValueAlternatives_0()); 
+            // InternalGraphQL.g:4035:3: ( rule__BooleanValue__ValueAlternatives_0 )
+            // InternalGraphQL.g:4035:4: rule__BooleanValue__ValueAlternatives_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__BooleanValue__ValueAlternatives_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getBooleanValueAccess().getValueAlternatives_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BooleanValue__ValueAssignment"
+
+
+    // $ANTLR start "rule__EnumValue__ValueAssignment"
+    // InternalGraphQL.g:4043:1: rule__EnumValue__ValueAssignment : ( ( RULE_NAME ) ) ;
+    public final void rule__EnumValue__ValueAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:4047:1: ( ( ( RULE_NAME ) ) )
+            // InternalGraphQL.g:4048:2: ( ( RULE_NAME ) )
+            {
+            // InternalGraphQL.g:4048:2: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:4049:3: ( RULE_NAME )
+            {
+             before(grammarAccess.getEnumValueAccess().getValueEnumValueDefinitionCrossReference_0()); 
+            // InternalGraphQL.g:4050:3: ( RULE_NAME )
+            // InternalGraphQL.g:4051:4: RULE_NAME
+            {
+             before(grammarAccess.getEnumValueAccess().getValueEnumValueDefinitionNAMETerminalRuleCall_0_1()); 
+            match(input,RULE_NAME,FOLLOW_2); 
+             after(grammarAccess.getEnumValueAccess().getValueEnumValueDefinitionNAMETerminalRuleCall_0_1()); 
+
+            }
+
+             after(grammarAccess.getEnumValueAccess().getValueEnumValueDefinitionCrossReference_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EnumValue__ValueAssignment"
+
+
+    // $ANTLR start "rule__ObjectValue__FieldsAssignment_2"
+    // InternalGraphQL.g:4062:1: rule__ObjectValue__FieldsAssignment_2 : ( ruleObjectField ) ;
+    public final void rule__ObjectValue__FieldsAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:4066:1: ( ( ruleObjectField ) )
+            // InternalGraphQL.g:4067:2: ( ruleObjectField )
+            {
+            // InternalGraphQL.g:4067:2: ( ruleObjectField )
+            // InternalGraphQL.g:4068:3: ruleObjectField
+            {
+             before(grammarAccess.getObjectValueAccess().getFieldsObjectFieldParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleObjectField();
+
+            state._fsp--;
+
+             after(grammarAccess.getObjectValueAccess().getFieldsObjectFieldParserRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectValue__FieldsAssignment_2"
+
+
+    // $ANTLR start "rule__ObjectField__NameAssignment_0"
+    // InternalGraphQL.g:4077:1: rule__ObjectField__NameAssignment_0 : ( ( RULE_NAME ) ) ;
+    public final void rule__ObjectField__NameAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:4081:1: ( ( ( RULE_NAME ) ) )
+            // InternalGraphQL.g:4082:2: ( ( RULE_NAME ) )
+            {
+            // InternalGraphQL.g:4082:2: ( ( RULE_NAME ) )
+            // InternalGraphQL.g:4083:3: ( RULE_NAME )
+            {
+             before(grammarAccess.getObjectFieldAccess().getNameFieldDefinitionCrossReference_0_0()); 
+            // InternalGraphQL.g:4084:3: ( RULE_NAME )
+            // InternalGraphQL.g:4085:4: RULE_NAME
+            {
+             before(grammarAccess.getObjectFieldAccess().getNameFieldDefinitionNAMETerminalRuleCall_0_0_1()); 
+            match(input,RULE_NAME,FOLLOW_2); 
+             after(grammarAccess.getObjectFieldAccess().getNameFieldDefinitionNAMETerminalRuleCall_0_0_1()); 
+
+            }
+
+             after(grammarAccess.getObjectFieldAccess().getNameFieldDefinitionCrossReference_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectField__NameAssignment_0"
+
+
+    // $ANTLR start "rule__ObjectField__ValueAssignment_2"
+    // InternalGraphQL.g:4096:1: rule__ObjectField__ValueAssignment_2 : ( ruleConstValue ) ;
+    public final void rule__ObjectField__ValueAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:4100:1: ( ( ruleConstValue ) )
+            // InternalGraphQL.g:4101:2: ( ruleConstValue )
+            {
+            // InternalGraphQL.g:4101:2: ( ruleConstValue )
+            // InternalGraphQL.g:4102:3: ruleConstValue
+            {
+             before(grammarAccess.getObjectFieldAccess().getValueConstValueParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleConstValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getObjectFieldAccess().getValueConstValueParserRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ObjectField__ValueAssignment_2"
+
+
+    // $ANTLR start "rule__ListValue__ValuesAssignment_2"
+    // InternalGraphQL.g:4111:1: rule__ListValue__ValuesAssignment_2 : ( ruleConstValue ) ;
+    public final void rule__ListValue__ValuesAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGraphQL.g:4115:1: ( ( ruleConstValue ) )
+            // InternalGraphQL.g:4116:2: ( ruleConstValue )
+            {
+            // InternalGraphQL.g:4116:2: ( ruleConstValue )
+            // InternalGraphQL.g:4117:3: ruleConstValue
+            {
+             before(grammarAccess.getListValueAccess().getValuesConstValueParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleConstValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getListValueAccess().getValuesConstValueParserRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListValue__ValuesAssignment_2"
 
     // Delegated rules
 
@@ -5887,17 +12651,37 @@ public class InternalGraphQLParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000678802L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000700L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000702L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000002010L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000066C40032L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000040030L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000038000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000038002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000400030L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000800030L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000001080000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000100000040L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100070L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000072L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000002000030L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000070L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004000030L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000020000030L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000066C40030L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x00000009000861C0L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000100040L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000B000861C0L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x00000009000861C2L});
 
 }

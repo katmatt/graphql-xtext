@@ -12,24 +12,37 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalGraphQLLexer extends Lexer {
-    public static final int RULE_NAME=4;
-    public static final int RULE_SL_COMMENT=6;
+    public static final int RULE_FLOAT_VALUE=8;
+    public static final int RULE_STRING_CHARACTER=12;
+    public static final int RULE_NAME=6;
+    public static final int RULE_SL_COMMENT=10;
     public static final int T__19=19;
+    public static final int RULE_SL_STRING_VALUE=4;
+    public static final int RULE_INT_VALUE=7;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int T__11=11;
-    public static final int T__12=12;
+    public static final int T__33=33;
+    public static final int T__34=34;
     public static final int T__13=13;
+    public static final int T__35=35;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int T__10=10;
-    public static final int T__9=9;
-    public static final int T__8=8;
-    public static final int RULE_WS=5;
-    public static final int RULE_COMMA=7;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_WS=9;
+    public static final int RULE_COMMA=11;
+    public static final int RULE_ML_STRING_VALUE=5;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int T__29=29;
     public static final int T__22=22;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -46,119 +59,16 @@ public class InternalGraphQLLexer extends Lexer {
     }
     public String getGrammarFileName() { return "InternalGraphQL.g"; }
 
-    // $ANTLR start "T__8"
-    public final void mT__8() throws RecognitionException {
-        try {
-            int _type = T__8;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:11:6: ( 'query' )
-            // InternalGraphQL.g:11:8: 'query'
-            {
-            match("query"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__8"
-
-    // $ANTLR start "T__9"
-    public final void mT__9() throws RecognitionException {
-        try {
-            int _type = T__9;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:12:6: ( 'mutation' )
-            // InternalGraphQL.g:12:8: 'mutation'
-            {
-            match("mutation"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__9"
-
-    // $ANTLR start "T__10"
-    public final void mT__10() throws RecognitionException {
-        try {
-            int _type = T__10;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:13:7: ( 'subscription' )
-            // InternalGraphQL.g:13:9: 'subscription'
-            {
-            match("subscription"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__10"
-
-    // $ANTLR start "T__11"
-    public final void mT__11() throws RecognitionException {
-        try {
-            int _type = T__11;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:14:7: ( 'schema' )
-            // InternalGraphQL.g:14:9: 'schema'
-            {
-            match("schema"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__11"
-
-    // $ANTLR start "T__12"
-    public final void mT__12() throws RecognitionException {
-        try {
-            int _type = T__12;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:15:7: ( '{' )
-            // InternalGraphQL.g:15:9: '{'
-            {
-            match('{'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__12"
-
     // $ANTLR start "T__13"
     public final void mT__13() throws RecognitionException {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:16:7: ( '}' )
-            // InternalGraphQL.g:16:9: '}'
+            // InternalGraphQL.g:11:7: ( 'true' )
+            // InternalGraphQL.g:11:9: 'true'
             {
-            match('}'); 
+            match("true"); 
+
 
             }
 
@@ -175,10 +85,11 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:17:7: ( ':' )
-            // InternalGraphQL.g:17:9: ':'
+            // InternalGraphQL.g:12:7: ( 'false' )
+            // InternalGraphQL.g:12:9: 'false'
             {
-            match(':'); 
+            match("false"); 
+
 
             }
 
@@ -195,10 +106,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:18:7: ( 'scalar' )
-            // InternalGraphQL.g:18:9: 'scalar'
+            // InternalGraphQL.g:13:7: ( 'query' )
+            // InternalGraphQL.g:13:9: 'query'
             {
-            match("scalar"); 
+            match("query"); 
 
 
             }
@@ -216,10 +127,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:19:7: ( 'type' )
-            // InternalGraphQL.g:19:9: 'type'
+            // InternalGraphQL.g:14:7: ( 'mutation' )
+            // InternalGraphQL.g:14:9: 'mutation'
             {
-            match("type"); 
+            match("mutation"); 
 
 
             }
@@ -237,10 +148,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:20:7: ( 'interface' )
-            // InternalGraphQL.g:20:9: 'interface'
+            // InternalGraphQL.g:15:7: ( 'subscription' )
+            // InternalGraphQL.g:15:9: 'subscription'
             {
-            match("interface"); 
+            match("subscription"); 
 
 
             }
@@ -258,10 +169,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:21:7: ( 'union' )
-            // InternalGraphQL.g:21:9: 'union'
+            // InternalGraphQL.g:16:7: ( 'schema' )
+            // InternalGraphQL.g:16:9: 'schema'
             {
-            match("union"); 
+            match("schema"); 
 
 
             }
@@ -279,10 +190,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:22:7: ( '=' )
-            // InternalGraphQL.g:22:9: '='
+            // InternalGraphQL.g:17:7: ( '{' )
+            // InternalGraphQL.g:17:9: '{'
             {
-            match('='); 
+            match('{'); 
 
             }
 
@@ -299,10 +210,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:23:7: ( '|' )
-            // InternalGraphQL.g:23:9: '|'
+            // InternalGraphQL.g:18:7: ( '}' )
+            // InternalGraphQL.g:18:9: '}'
             {
-            match('|'); 
+            match('}'); 
 
             }
 
@@ -319,11 +230,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:24:7: ( 'enum' )
-            // InternalGraphQL.g:24:9: 'enum'
+            // InternalGraphQL.g:19:7: ( ':' )
+            // InternalGraphQL.g:19:9: ':'
             {
-            match("enum"); 
-
+            match(':'); 
 
             }
 
@@ -340,10 +250,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:25:7: ( 'input' )
-            // InternalGraphQL.g:25:9: 'input'
+            // InternalGraphQL.g:20:7: ( 'scalar' )
+            // InternalGraphQL.g:20:9: 'scalar'
             {
-            match("input"); 
+            match("scalar"); 
 
 
             }
@@ -356,13 +266,280 @@ public class InternalGraphQLLexer extends Lexer {
     }
     // $ANTLR end "T__22"
 
+    // $ANTLR start "T__23"
+    public final void mT__23() throws RecognitionException {
+        try {
+            int _type = T__23;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:21:7: ( 'type' )
+            // InternalGraphQL.g:21:9: 'type'
+            {
+            match("type"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__23"
+
+    // $ANTLR start "T__24"
+    public final void mT__24() throws RecognitionException {
+        try {
+            int _type = T__24;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:22:7: ( 'implements' )
+            // InternalGraphQL.g:22:9: 'implements'
+            {
+            match("implements"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__24"
+
+    // $ANTLR start "T__25"
+    public final void mT__25() throws RecognitionException {
+        try {
+            int _type = T__25;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:23:7: ( 'interface' )
+            // InternalGraphQL.g:23:9: 'interface'
+            {
+            match("interface"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__25"
+
+    // $ANTLR start "T__26"
+    public final void mT__26() throws RecognitionException {
+        try {
+            int _type = T__26;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:24:7: ( 'union' )
+            // InternalGraphQL.g:24:9: 'union'
+            {
+            match("union"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__26"
+
+    // $ANTLR start "T__27"
+    public final void mT__27() throws RecognitionException {
+        try {
+            int _type = T__27;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:25:7: ( '=' )
+            // InternalGraphQL.g:25:9: '='
+            {
+            match('='); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__27"
+
+    // $ANTLR start "T__28"
+    public final void mT__28() throws RecognitionException {
+        try {
+            int _type = T__28;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:26:7: ( '|' )
+            // InternalGraphQL.g:26:9: '|'
+            {
+            match('|'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__28"
+
+    // $ANTLR start "T__29"
+    public final void mT__29() throws RecognitionException {
+        try {
+            int _type = T__29;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:27:7: ( 'enum' )
+            // InternalGraphQL.g:27:9: 'enum'
+            {
+            match("enum"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__29"
+
+    // $ANTLR start "T__30"
+    public final void mT__30() throws RecognitionException {
+        try {
+            int _type = T__30;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:28:7: ( 'input' )
+            // InternalGraphQL.g:28:9: 'input'
+            {
+            match("input"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__30"
+
+    // $ANTLR start "T__31"
+    public final void mT__31() throws RecognitionException {
+        try {
+            int _type = T__31;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:29:7: ( '&' )
+            // InternalGraphQL.g:29:9: '&'
+            {
+            match('&'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__31"
+
+    // $ANTLR start "T__32"
+    public final void mT__32() throws RecognitionException {
+        try {
+            int _type = T__32;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:30:7: ( '[' )
+            // InternalGraphQL.g:30:9: '['
+            {
+            match('['); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__32"
+
+    // $ANTLR start "T__33"
+    public final void mT__33() throws RecognitionException {
+        try {
+            int _type = T__33;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:31:7: ( ']' )
+            // InternalGraphQL.g:31:9: ']'
+            {
+            match(']'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__33"
+
+    // $ANTLR start "T__34"
+    public final void mT__34() throws RecognitionException {
+        try {
+            int _type = T__34;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:32:7: ( '!' )
+            // InternalGraphQL.g:32:9: '!'
+            {
+            match('!'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__34"
+
+    // $ANTLR start "T__35"
+    public final void mT__35() throws RecognitionException {
+        try {
+            int _type = T__35;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:33:7: ( 'null' )
+            // InternalGraphQL.g:33:9: 'null'
+            {
+            match("null"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__35"
+
     // $ANTLR start "RULE_NAME"
     public final void mRULE_NAME() throws RecognitionException {
         try {
             int _type = RULE_NAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:1972:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalGraphQL.g:1972:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalGraphQL.g:4126:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalGraphQL.g:4126:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -373,7 +550,7 @@ public class InternalGraphQLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalGraphQL.g:1972:37: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalGraphQL.g:4126:37: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -417,27 +594,271 @@ public class InternalGraphQLLexer extends Lexer {
     }
     // $ANTLR end "RULE_NAME"
 
+    // $ANTLR start "RULE_INT_VALUE"
+    public final void mRULE_INT_VALUE() throws RecognitionException {
+        try {
+            int _type = RULE_INT_VALUE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:4128:16: ( ( '-' )? '1' .. '9' ( '0' .. '9' )* )
+            // InternalGraphQL.g:4128:18: ( '-' )? '1' .. '9' ( '0' .. '9' )*
+            {
+            // InternalGraphQL.g:4128:18: ( '-' )?
+            int alt2=2;
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0=='-') ) {
+                alt2=1;
+            }
+            switch (alt2) {
+                case 1 :
+                    // InternalGraphQL.g:4128:18: '-'
+                    {
+                    match('-'); 
+
+                    }
+                    break;
+
+            }
+
+            matchRange('1','9'); 
+            // InternalGraphQL.g:4128:32: ( '0' .. '9' )*
+            loop3:
+            do {
+                int alt3=2;
+                int LA3_0 = input.LA(1);
+
+                if ( ((LA3_0>='0' && LA3_0<='9')) ) {
+                    alt3=1;
+                }
+
+
+                switch (alt3) {
+            	case 1 :
+            	    // InternalGraphQL.g:4128:33: '0' .. '9'
+            	    {
+            	    matchRange('0','9'); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop3;
+                }
+            } while (true);
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_INT_VALUE"
+
+    // $ANTLR start "RULE_FLOAT_VALUE"
+    public final void mRULE_FLOAT_VALUE() throws RecognitionException {
+        try {
+            int _type = RULE_FLOAT_VALUE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:4130:18: ( ( '-' )? ( '0' | ( '1' .. '9' )* ) '.' ( '0' .. '9' )* ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )* )
+            // InternalGraphQL.g:4130:20: ( '-' )? ( '0' | ( '1' .. '9' )* ) '.' ( '0' .. '9' )* ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )*
+            {
+            // InternalGraphQL.g:4130:20: ( '-' )?
+            int alt4=2;
+            int LA4_0 = input.LA(1);
+
+            if ( (LA4_0=='-') ) {
+                alt4=1;
+            }
+            switch (alt4) {
+                case 1 :
+                    // InternalGraphQL.g:4130:20: '-'
+                    {
+                    match('-'); 
+
+                    }
+                    break;
+
+            }
+
+            // InternalGraphQL.g:4130:25: ( '0' | ( '1' .. '9' )* )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0=='0') ) {
+                alt6=1;
+            }
+            else if ( (LA6_0=='.'||(LA6_0>='1' && LA6_0<='9')) ) {
+                alt6=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+            switch (alt6) {
+                case 1 :
+                    // InternalGraphQL.g:4130:26: '0'
+                    {
+                    match('0'); 
+
+                    }
+                    break;
+                case 2 :
+                    // InternalGraphQL.g:4130:30: ( '1' .. '9' )*
+                    {
+                    // InternalGraphQL.g:4130:30: ( '1' .. '9' )*
+                    loop5:
+                    do {
+                        int alt5=2;
+                        int LA5_0 = input.LA(1);
+
+                        if ( ((LA5_0>='1' && LA5_0<='9')) ) {
+                            alt5=1;
+                        }
+
+
+                        switch (alt5) {
+                    	case 1 :
+                    	    // InternalGraphQL.g:4130:31: '1' .. '9'
+                    	    {
+                    	    matchRange('1','9'); 
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop5;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+
+            match('.'); 
+            // InternalGraphQL.g:4130:47: ( '0' .. '9' )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( ((LA7_0>='0' && LA7_0<='9')) ) {
+                    alt7=1;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // InternalGraphQL.g:4130:48: '0' .. '9'
+            	    {
+            	    matchRange('0','9'); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+            if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+            // InternalGraphQL.g:4130:69: ( '+' | '-' )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
+
+            if ( (LA8_0=='+'||LA8_0=='-') ) {
+                alt8=1;
+            }
+            switch (alt8) {
+                case 1 :
+                    // InternalGraphQL.g:
+                    {
+                    if ( input.LA(1)=='+'||input.LA(1)=='-' ) {
+                        input.consume();
+
+                    }
+                    else {
+                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                        recover(mse);
+                        throw mse;}
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalGraphQL.g:4130:80: ( '0' .. '9' )*
+            loop9:
+            do {
+                int alt9=2;
+                int LA9_0 = input.LA(1);
+
+                if ( ((LA9_0>='0' && LA9_0<='9')) ) {
+                    alt9=1;
+                }
+
+
+                switch (alt9) {
+            	case 1 :
+            	    // InternalGraphQL.g:4130:81: '0' .. '9'
+            	    {
+            	    matchRange('0','9'); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop9;
+                }
+            } while (true);
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_FLOAT_VALUE"
+
     // $ANTLR start "RULE_WS"
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:1974:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalGraphQL.g:1974:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalGraphQL.g:4132:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalGraphQL.g:4132:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalGraphQL.g:1974:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
-            int cnt2=0;
-            loop2:
+            // InternalGraphQL.g:4132:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            int cnt10=0;
+            loop10:
             do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( ((LA2_0>='\t' && LA2_0<='\n')||LA2_0=='\r'||LA2_0==' ') ) {
-                    alt2=1;
+                if ( ((LA10_0>='\t' && LA10_0<='\n')||LA10_0=='\r'||LA10_0==' ') ) {
+                    alt10=1;
                 }
 
 
-                switch (alt2) {
+                switch (alt10) {
             	case 1 :
             	    // InternalGraphQL.g:
             	    {
@@ -455,12 +876,12 @@ public class InternalGraphQLLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt2 >= 1 ) break loop2;
+            	    if ( cnt10 >= 1 ) break loop10;
                         EarlyExitException eee =
-                            new EarlyExitException(2, input);
+                            new EarlyExitException(10, input);
                         throw eee;
                 }
-                cnt2++;
+                cnt10++;
             } while (true);
 
 
@@ -479,24 +900,24 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:1976:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalGraphQL.g:1976:19: '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalGraphQL.g:4134:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalGraphQL.g:4134:19: '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match('#'); 
-            // InternalGraphQL.g:1976:23: (~ ( ( '\\n' | '\\r' ) ) )*
-            loop3:
+            // InternalGraphQL.g:4134:23: (~ ( ( '\\n' | '\\r' ) ) )*
+            loop11:
             do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( ((LA3_0>='\u0000' && LA3_0<='\t')||(LA3_0>='\u000B' && LA3_0<='\f')||(LA3_0>='\u000E' && LA3_0<='\uFFFF')) ) {
-                    alt3=1;
+                if ( ((LA11_0>='\u0000' && LA11_0<='\t')||(LA11_0>='\u000B' && LA11_0<='\f')||(LA11_0>='\u000E' && LA11_0<='\uFFFF')) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt3) {
+                switch (alt11) {
             	case 1 :
-            	    // InternalGraphQL.g:1976:23: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalGraphQL.g:4134:23: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -512,31 +933,31 @@ public class InternalGraphQLLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop3;
+            	    break loop11;
                 }
             } while (true);
 
-            // InternalGraphQL.g:1976:39: ( ( '\\r' )? '\\n' )?
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            // InternalGraphQL.g:4134:39: ( ( '\\r' )? '\\n' )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA5_0=='\n'||LA5_0=='\r') ) {
-                alt5=1;
+            if ( (LA13_0=='\n'||LA13_0=='\r') ) {
+                alt13=1;
             }
-            switch (alt5) {
+            switch (alt13) {
                 case 1 :
-                    // InternalGraphQL.g:1976:40: ( '\\r' )? '\\n'
+                    // InternalGraphQL.g:4134:40: ( '\\r' )? '\\n'
                     {
-                    // InternalGraphQL.g:1976:40: ( '\\r' )?
-                    int alt4=2;
-                    int LA4_0 = input.LA(1);
+                    // InternalGraphQL.g:4134:40: ( '\\r' )?
+                    int alt12=2;
+                    int LA12_0 = input.LA(1);
 
-                    if ( (LA4_0=='\r') ) {
-                        alt4=1;
+                    if ( (LA12_0=='\r') ) {
+                        alt12=1;
                     }
-                    switch (alt4) {
+                    switch (alt12) {
                         case 1 :
-                            // InternalGraphQL.g:1976:40: '\\r'
+                            // InternalGraphQL.g:4134:40: '\\r'
                             {
                             match('\r'); 
 
@@ -568,8 +989,8 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:1978:12: ( ',' )
-            // InternalGraphQL.g:1978:14: ','
+            // InternalGraphQL.g:4136:12: ( ',' )
+            // InternalGraphQL.g:4136:14: ','
             {
             match(','); 
 
@@ -583,141 +1004,364 @@ public class InternalGraphQLLexer extends Lexer {
     }
     // $ANTLR end "RULE_COMMA"
 
+    // $ANTLR start "RULE_SL_STRING_VALUE"
+    public final void mRULE_SL_STRING_VALUE() throws RecognitionException {
+        try {
+            int _type = RULE_SL_STRING_VALUE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:4138:22: ( '\"' ( RULE_STRING_CHARACTER )* '\"' )
+            // InternalGraphQL.g:4138:24: '\"' ( RULE_STRING_CHARACTER )* '\"'
+            {
+            match('\"'); 
+            // InternalGraphQL.g:4138:28: ( RULE_STRING_CHARACTER )*
+            loop14:
+            do {
+                int alt14=2;
+                int LA14_0 = input.LA(1);
+
+                if ( ((LA14_0>='\u0000' && LA14_0<='\t')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='!')||(LA14_0>='#' && LA14_0<='[')||(LA14_0>=']' && LA14_0<='\uFFFF')) ) {
+                    alt14=1;
+                }
+
+
+                switch (alt14) {
+            	case 1 :
+            	    // InternalGraphQL.g:4138:28: RULE_STRING_CHARACTER
+            	    {
+            	    mRULE_STRING_CHARACTER(); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop14;
+                }
+            } while (true);
+
+            match('\"'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_SL_STRING_VALUE"
+
+    // $ANTLR start "RULE_ML_STRING_VALUE"
+    public final void mRULE_ML_STRING_VALUE() throws RecognitionException {
+        try {
+            int _type = RULE_ML_STRING_VALUE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalGraphQL.g:4140:22: ( '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"' )
+            // InternalGraphQL.g:4140:24: '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"'
+            {
+            match("\"\"\""); 
+
+            // InternalGraphQL.g:4140:30: ( options {greedy=false; } : . )*
+            loop15:
+            do {
+                int alt15=2;
+                int LA15_0 = input.LA(1);
+
+                if ( (LA15_0=='\"') ) {
+                    int LA15_1 = input.LA(2);
+
+                    if ( (LA15_1=='\"') ) {
+                        int LA15_3 = input.LA(3);
+
+                        if ( (LA15_3=='\"') ) {
+                            alt15=2;
+                        }
+                        else if ( ((LA15_3>='\u0000' && LA15_3<='!')||(LA15_3>='#' && LA15_3<='\uFFFF')) ) {
+                            alt15=1;
+                        }
+
+
+                    }
+                    else if ( ((LA15_1>='\u0000' && LA15_1<='!')||(LA15_1>='#' && LA15_1<='\uFFFF')) ) {
+                        alt15=1;
+                    }
+
+
+                }
+                else if ( ((LA15_0>='\u0000' && LA15_0<='!')||(LA15_0>='#' && LA15_0<='\uFFFF')) ) {
+                    alt15=1;
+                }
+
+
+                switch (alt15) {
+            	case 1 :
+            	    // InternalGraphQL.g:4140:58: .
+            	    {
+            	    matchAny(); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop15;
+                }
+            } while (true);
+
+            match("\"\"\""); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_ML_STRING_VALUE"
+
+    // $ANTLR start "RULE_STRING_CHARACTER"
+    public final void mRULE_STRING_CHARACTER() throws RecognitionException {
+        try {
+            // InternalGraphQL.g:4142:32: (~ ( ( '\\n' | '\\r' | '\"' | '\\\\' ) ) )
+            // InternalGraphQL.g:4142:34: ~ ( ( '\\n' | '\\r' | '\"' | '\\\\' ) )
+            {
+            if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_STRING_CHARACTER"
+
     public void mTokens() throws RecognitionException {
-        // InternalGraphQL.g:1:8: ( T__8 | T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | RULE_NAME | RULE_WS | RULE_SL_COMMENT | RULE_COMMA )
-        int alt6=19;
-        alt6 = dfa6.predict(input);
-        switch (alt6) {
+        // InternalGraphQL.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | RULE_NAME | RULE_INT_VALUE | RULE_FLOAT_VALUE | RULE_WS | RULE_SL_COMMENT | RULE_COMMA | RULE_SL_STRING_VALUE | RULE_ML_STRING_VALUE )
+        int alt16=31;
+        alt16 = dfa16.predict(input);
+        switch (alt16) {
             case 1 :
-                // InternalGraphQL.g:1:10: T__8
-                {
-                mT__8(); 
-
-                }
-                break;
-            case 2 :
-                // InternalGraphQL.g:1:15: T__9
-                {
-                mT__9(); 
-
-                }
-                break;
-            case 3 :
-                // InternalGraphQL.g:1:20: T__10
-                {
-                mT__10(); 
-
-                }
-                break;
-            case 4 :
-                // InternalGraphQL.g:1:26: T__11
-                {
-                mT__11(); 
-
-                }
-                break;
-            case 5 :
-                // InternalGraphQL.g:1:32: T__12
-                {
-                mT__12(); 
-
-                }
-                break;
-            case 6 :
-                // InternalGraphQL.g:1:38: T__13
+                // InternalGraphQL.g:1:10: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
-            case 7 :
-                // InternalGraphQL.g:1:44: T__14
+            case 2 :
+                // InternalGraphQL.g:1:16: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
-            case 8 :
-                // InternalGraphQL.g:1:50: T__15
+            case 3 :
+                // InternalGraphQL.g:1:22: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
-            case 9 :
-                // InternalGraphQL.g:1:56: T__16
+            case 4 :
+                // InternalGraphQL.g:1:28: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
-            case 10 :
-                // InternalGraphQL.g:1:62: T__17
+            case 5 :
+                // InternalGraphQL.g:1:34: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
-            case 11 :
-                // InternalGraphQL.g:1:68: T__18
+            case 6 :
+                // InternalGraphQL.g:1:40: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
-            case 12 :
-                // InternalGraphQL.g:1:74: T__19
+            case 7 :
+                // InternalGraphQL.g:1:46: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
-            case 13 :
-                // InternalGraphQL.g:1:80: T__20
+            case 8 :
+                // InternalGraphQL.g:1:52: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
-            case 14 :
-                // InternalGraphQL.g:1:86: T__21
+            case 9 :
+                // InternalGraphQL.g:1:58: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
-            case 15 :
-                // InternalGraphQL.g:1:92: T__22
+            case 10 :
+                // InternalGraphQL.g:1:64: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
+            case 11 :
+                // InternalGraphQL.g:1:70: T__23
+                {
+                mT__23(); 
+
+                }
+                break;
+            case 12 :
+                // InternalGraphQL.g:1:76: T__24
+                {
+                mT__24(); 
+
+                }
+                break;
+            case 13 :
+                // InternalGraphQL.g:1:82: T__25
+                {
+                mT__25(); 
+
+                }
+                break;
+            case 14 :
+                // InternalGraphQL.g:1:88: T__26
+                {
+                mT__26(); 
+
+                }
+                break;
+            case 15 :
+                // InternalGraphQL.g:1:94: T__27
+                {
+                mT__27(); 
+
+                }
+                break;
             case 16 :
-                // InternalGraphQL.g:1:98: RULE_NAME
+                // InternalGraphQL.g:1:100: T__28
+                {
+                mT__28(); 
+
+                }
+                break;
+            case 17 :
+                // InternalGraphQL.g:1:106: T__29
+                {
+                mT__29(); 
+
+                }
+                break;
+            case 18 :
+                // InternalGraphQL.g:1:112: T__30
+                {
+                mT__30(); 
+
+                }
+                break;
+            case 19 :
+                // InternalGraphQL.g:1:118: T__31
+                {
+                mT__31(); 
+
+                }
+                break;
+            case 20 :
+                // InternalGraphQL.g:1:124: T__32
+                {
+                mT__32(); 
+
+                }
+                break;
+            case 21 :
+                // InternalGraphQL.g:1:130: T__33
+                {
+                mT__33(); 
+
+                }
+                break;
+            case 22 :
+                // InternalGraphQL.g:1:136: T__34
+                {
+                mT__34(); 
+
+                }
+                break;
+            case 23 :
+                // InternalGraphQL.g:1:142: T__35
+                {
+                mT__35(); 
+
+                }
+                break;
+            case 24 :
+                // InternalGraphQL.g:1:148: RULE_NAME
                 {
                 mRULE_NAME(); 
 
                 }
                 break;
-            case 17 :
-                // InternalGraphQL.g:1:108: RULE_WS
+            case 25 :
+                // InternalGraphQL.g:1:158: RULE_INT_VALUE
+                {
+                mRULE_INT_VALUE(); 
+
+                }
+                break;
+            case 26 :
+                // InternalGraphQL.g:1:173: RULE_FLOAT_VALUE
+                {
+                mRULE_FLOAT_VALUE(); 
+
+                }
+                break;
+            case 27 :
+                // InternalGraphQL.g:1:190: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 18 :
-                // InternalGraphQL.g:1:116: RULE_SL_COMMENT
+            case 28 :
+                // InternalGraphQL.g:1:198: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 19 :
-                // InternalGraphQL.g:1:132: RULE_COMMA
+            case 29 :
+                // InternalGraphQL.g:1:214: RULE_COMMA
                 {
                 mRULE_COMMA(); 
+
+                }
+                break;
+            case 30 :
+                // InternalGraphQL.g:1:225: RULE_SL_STRING_VALUE
+                {
+                mRULE_SL_STRING_VALUE(); 
+
+                }
+                break;
+            case 31 :
+                // InternalGraphQL.g:1:246: RULE_ML_STRING_VALUE
+                {
+                mRULE_ML_STRING_VALUE(); 
 
                 }
                 break;
@@ -727,132 +1371,190 @@ public class InternalGraphQLLexer extends Lexer {
     }
 
 
-    protected DFA6 dfa6 = new DFA6(this);
-    static final String DFA6_eotS =
-        "\1\uffff\3\15\3\uffff\3\15\2\uffff\1\15\4\uffff\27\15\1\62\3\15\1\66\1\67\4\15\1\uffff\1\15\1\75\1\76\2\uffff\2\15\1\101\1\102\1\15\2\uffff\2\15\2\uffff\1\15\1\107\2\15\1\uffff\1\15\1\113\1\15\1\uffff\1\15\1\116\1\uffff";
-    static final String DFA6_eofS =
-        "\117\uffff";
-    static final String DFA6_minS =
-        "\1\11\2\165\1\143\3\uffff\1\171\2\156\2\uffff\1\156\4\uffff\1\145\1\164\1\142\1\141\2\160\1\151\1\165\1\162\1\141\1\163\1\145\1\154\2\145\1\165\1\157\1\155\1\171\1\164\1\143\1\155\1\141\1\60\1\162\1\164\1\156\2\60\1\151\1\162\1\141\1\162\1\uffff\1\146\2\60\2\uffff\1\157\1\151\2\60\1\141\2\uffff\1\156\1\160\2\uffff\1\143\1\60\1\164\1\145\1\uffff\1\151\1\60\1\157\1\uffff\1\156\1\60\1\uffff";
-    static final String DFA6_maxS =
-        "\1\175\3\165\3\uffff\1\171\2\156\2\uffff\1\156\4\uffff\1\145\1\164\1\142\1\150\1\160\1\164\1\151\1\165\1\162\1\141\1\163\1\145\1\154\2\145\1\165\1\157\1\155\1\171\1\164\1\143\1\155\1\141\1\172\1\162\1\164\1\156\2\172\1\151\1\162\1\141\1\162\1\uffff\1\146\2\172\2\uffff\1\157\1\151\2\172\1\141\2\uffff\1\156\1\160\2\uffff\1\143\1\172\1\164\1\145\1\uffff\1\151\1\172\1\157\1\uffff\1\156\1\172\1\uffff";
-    static final String DFA6_acceptS =
-        "\4\uffff\1\5\1\6\1\7\3\uffff\1\14\1\15\1\uffff\1\20\1\21\1\22\1\23\41\uffff\1\11\3\uffff\1\16\1\1\5\uffff\1\17\1\13\2\uffff\1\4\1\10\4\uffff\1\2\3\uffff\1\12\2\uffff\1\3";
-    static final String DFA6_specialS =
-        "\117\uffff}>";
-    static final String[] DFA6_transitionS = {
-            "\2\16\2\uffff\1\16\22\uffff\1\16\2\uffff\1\17\10\uffff\1\20\15\uffff\1\6\2\uffff\1\12\3\uffff\32\15\4\uffff\1\15\1\uffff\4\15\1\14\3\15\1\10\3\15\1\2\3\15\1\1\1\15\1\3\1\7\1\11\5\15\1\4\1\13\1\5",
-            "\1\21",
-            "\1\22",
-            "\1\24\21\uffff\1\23",
-            "",
-            "",
-            "",
-            "\1\25",
-            "\1\26",
-            "\1\27",
-            "",
-            "",
-            "\1\30",
-            "",
-            "",
-            "",
-            "",
-            "\1\31",
-            "\1\32",
-            "\1\33",
-            "\1\35\6\uffff\1\34",
+    protected DFA16 dfa16 = new DFA16(this);
+    static final String DFA16_eotS =
+        "\1\uffff\5\23\3\uffff\2\23\2\uffff\1\23\4\uffff\1\23\2\uffff\1\50\5\uffff\14\23\1\50\1\uffff\1\52\1\uffff\16\23\1\uffff\1\110\1\111\12\23\1\124\1\125\2\uffff\1\126\1\127\6\23\1\136\1\137\4\uffff\2\23\1\142\1\143\2\23\2\uffff\2\23\2\uffff\2\23\1\152\3\23\1\uffff\2\23\1\160\1\23\1\162\1\uffff\1\23\1\uffff\1\164\1\uffff";
+    static final String DFA16_eofS =
+        "\165\uffff";
+    static final String DFA16_minS =
+        "\1\11\1\162\1\141\2\165\1\143\3\uffff\1\155\1\156\2\uffff\1\156\4\uffff\1\165\1\uffff\2\56\4\uffff\1\0\1\165\1\160\1\154\1\145\1\164\1\142\1\141\2\160\1\151\1\165\1\154\1\56\1\uffff\1\42\1\uffff\2\145\1\163\1\162\1\141\1\163\1\145\2\154\1\145\1\165\1\157\1\155\1\154\1\uffff\2\60\1\145\1\171\1\164\1\143\1\155\1\141\1\145\1\162\1\164\1\156\2\60\2\uffff\2\60\1\151\1\162\1\141\1\162\1\155\1\146\2\60\4\uffff\1\157\1\151\2\60\1\145\1\141\2\uffff\1\156\1\160\2\uffff\1\156\1\143\1\60\2\164\1\145\1\uffff\1\151\1\163\1\60\1\157\1\60\1\uffff\1\156\1\uffff\1\60\1\uffff";
+    static final String DFA16_maxS =
+        "\1\175\1\171\1\141\3\165\3\uffff\2\156\2\uffff\1\156\4\uffff\1\165\1\uffff\2\71\4\uffff\1\uffff\1\165\1\160\1\154\1\145\1\164\1\142\1\150\1\160\1\164\1\151\1\165\1\154\1\71\1\uffff\1\42\1\uffff\2\145\1\163\1\162\1\141\1\163\1\145\2\154\1\145\1\165\1\157\1\155\1\154\1\uffff\2\172\1\145\1\171\1\164\1\143\1\155\1\141\1\145\1\162\1\164\1\156\2\172\2\uffff\2\172\1\151\1\162\1\141\1\162\1\155\1\146\2\172\4\uffff\1\157\1\151\2\172\1\145\1\141\2\uffff\1\156\1\160\2\uffff\1\156\1\143\1\172\2\164\1\145\1\uffff\1\151\1\163\1\172\1\157\1\172\1\uffff\1\156\1\uffff\1\172\1\uffff";
+    static final String DFA16_acceptS =
+        "\6\uffff\1\7\1\10\1\11\2\uffff\1\17\1\20\1\uffff\1\23\1\24\1\25\1\26\1\uffff\1\30\2\uffff\1\32\1\33\1\34\1\35\16\uffff\1\31\1\uffff\1\36\16\uffff\1\37\16\uffff\1\1\1\13\12\uffff\1\21\1\27\1\2\1\3\6\uffff\1\22\1\16\2\uffff\1\6\1\12\6\uffff\1\4\5\uffff\1\15\1\uffff\1\14\1\uffff\1\5";
+    static final String DFA16_specialS =
+        "\32\uffff\1\0\132\uffff}>";
+    static final String[] DFA16_transitionS = {
+            "\2\27\2\uffff\1\27\22\uffff\1\27\1\21\1\32\1\30\2\uffff\1\16\5\uffff\1\31\1\24\1\26\1\uffff\1\26\11\25\1\10\2\uffff\1\13\3\uffff\32\23\1\17\1\uffff\1\20\1\uffff\1\23\1\uffff\4\23\1\15\1\2\2\23\1\11\3\23\1\4\1\22\2\23\1\3\1\23\1\5\1\1\1\12\5\23\1\6\1\14\1\7",
+            "\1\33\6\uffff\1\34",
+            "\1\35",
             "\1\36",
-            "\1\40\3\uffff\1\37",
-            "\1\41",
-            "\1\42",
-            "\1\43",
+            "\1\37",
+            "\1\41\21\uffff\1\40",
+            "",
+            "",
+            "",
+            "\1\42\1\43",
             "\1\44",
+            "",
+            "",
             "\1\45",
+            "",
+            "",
+            "",
+            "",
             "\1\46",
-            "\1\47",
-            "\1\50",
-            "\1\51",
-            "\1\52",
+            "",
+            "\1\26\1\uffff\1\26\11\25",
+            "\1\26\2\uffff\11\47",
+            "",
+            "",
+            "",
+            "",
+            "\12\52\1\uffff\2\52\1\uffff\24\52\1\51\71\52\1\uffff\uffa3\52",
             "\1\53",
             "\1\54",
             "\1\55",
             "\1\56",
             "\1\57",
             "\1\60",
-            "\1\61",
-            "\12\15\7\uffff\32\15\4\uffff\1\15\1\uffff\32\15",
+            "\1\62\6\uffff\1\61",
             "\1\63",
-            "\1\64",
-            "\1\65",
-            "\12\15\7\uffff\32\15\4\uffff\1\15\1\uffff\32\15",
-            "\12\15\7\uffff\32\15\4\uffff\1\15\1\uffff\32\15",
+            "\1\65\3\uffff\1\64",
+            "\1\66",
+            "\1\67",
             "\1\70",
+            "\1\26\2\uffff\11\47",
+            "",
             "\1\71",
+            "",
             "\1\72",
             "\1\73",
-            "",
             "\1\74",
-            "\12\15\7\uffff\32\15\4\uffff\1\15\1\uffff\32\15",
-            "\12\15\7\uffff\32\15\4\uffff\1\15\1\uffff\32\15",
-            "",
-            "",
+            "\1\75",
+            "\1\76",
             "\1\77",
             "\1\100",
-            "\12\15\7\uffff\32\15\4\uffff\1\15\1\uffff\32\15",
-            "\12\15\7\uffff\32\15\4\uffff\1\15\1\uffff\32\15",
+            "\1\101",
+            "\1\102",
             "\1\103",
-            "",
-            "",
             "\1\104",
             "\1\105",
-            "",
-            "",
             "\1\106",
-            "\12\15\7\uffff\32\15\4\uffff\1\15\1\uffff\32\15",
-            "\1\110",
-            "\1\111",
+            "\1\107",
             "",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
             "\1\112",
-            "\12\15\7\uffff\32\15\4\uffff\1\15\1\uffff\32\15",
+            "\1\113",
             "\1\114",
-            "",
             "\1\115",
-            "\12\15\7\uffff\32\15\4\uffff\1\15\1\uffff\32\15",
+            "\1\116",
+            "\1\117",
+            "\1\120",
+            "\1\121",
+            "\1\122",
+            "\1\123",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "",
+            "",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\130",
+            "\1\131",
+            "\1\132",
+            "\1\133",
+            "\1\134",
+            "\1\135",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "",
+            "",
+            "",
+            "",
+            "\1\140",
+            "\1\141",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\144",
+            "\1\145",
+            "",
+            "",
+            "\1\146",
+            "\1\147",
+            "",
+            "",
+            "\1\150",
+            "\1\151",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\153",
+            "\1\154",
+            "\1\155",
+            "",
+            "\1\156",
+            "\1\157",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\161",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "",
+            "\1\163",
+            "",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
             ""
     };
 
-    static final short[] DFA6_eot = DFA.unpackEncodedString(DFA6_eotS);
-    static final short[] DFA6_eof = DFA.unpackEncodedString(DFA6_eofS);
-    static final char[] DFA6_min = DFA.unpackEncodedStringToUnsignedChars(DFA6_minS);
-    static final char[] DFA6_max = DFA.unpackEncodedStringToUnsignedChars(DFA6_maxS);
-    static final short[] DFA6_accept = DFA.unpackEncodedString(DFA6_acceptS);
-    static final short[] DFA6_special = DFA.unpackEncodedString(DFA6_specialS);
-    static final short[][] DFA6_transition;
+    static final short[] DFA16_eot = DFA.unpackEncodedString(DFA16_eotS);
+    static final short[] DFA16_eof = DFA.unpackEncodedString(DFA16_eofS);
+    static final char[] DFA16_min = DFA.unpackEncodedStringToUnsignedChars(DFA16_minS);
+    static final char[] DFA16_max = DFA.unpackEncodedStringToUnsignedChars(DFA16_maxS);
+    static final short[] DFA16_accept = DFA.unpackEncodedString(DFA16_acceptS);
+    static final short[] DFA16_special = DFA.unpackEncodedString(DFA16_specialS);
+    static final short[][] DFA16_transition;
 
     static {
-        int numStates = DFA6_transitionS.length;
-        DFA6_transition = new short[numStates][];
+        int numStates = DFA16_transitionS.length;
+        DFA16_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA6_transition[i] = DFA.unpackEncodedString(DFA6_transitionS[i]);
+            DFA16_transition[i] = DFA.unpackEncodedString(DFA16_transitionS[i]);
         }
     }
 
-    class DFA6 extends DFA {
+    class DFA16 extends DFA {
 
-        public DFA6(BaseRecognizer recognizer) {
+        public DFA16(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 6;
-            this.eot = DFA6_eot;
-            this.eof = DFA6_eof;
-            this.min = DFA6_min;
-            this.max = DFA6_max;
-            this.accept = DFA6_accept;
-            this.special = DFA6_special;
-            this.transition = DFA6_transition;
+            this.decisionNumber = 16;
+            this.eot = DFA16_eot;
+            this.eof = DFA16_eof;
+            this.min = DFA16_min;
+            this.max = DFA16_max;
+            this.accept = DFA16_accept;
+            this.special = DFA16_special;
+            this.transition = DFA16_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__8 | T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | RULE_NAME | RULE_WS | RULE_SL_COMMENT | RULE_COMMA );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | RULE_NAME | RULE_INT_VALUE | RULE_FLOAT_VALUE | RULE_WS | RULE_SL_COMMENT | RULE_COMMA | RULE_SL_STRING_VALUE | RULE_ML_STRING_VALUE );";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            IntStream input = _input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA16_26 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA16_26=='\"') ) {s = 41;}
+
+                        else if ( ((LA16_26>='\u0000' && LA16_26<='\t')||(LA16_26>='\u000B' && LA16_26<='\f')||(LA16_26>='\u000E' && LA16_26<='!')||(LA16_26>='#' && LA16_26<='[')||(LA16_26>=']' && LA16_26<='\uFFFF')) ) {s = 42;}
+
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 16, _s, input);
+            error(nvae);
+            throw nvae;
         }
     }
  

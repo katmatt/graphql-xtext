@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.SchemaDefinition#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.SchemaDefinition#getTypeDefinitions <em>Type Definitions</em>}</li>
  * </ul>
  *
@@ -25,6 +26,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface SchemaDefinition extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Description</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Description</em>' containment reference.
+   * @see #setDescription(StringValue)
+   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getSchemaDefinition_Description()
+   * @model containment="true"
+   * @generated
+   */
+  StringValue getDescription();
+
+  /**
+   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.SchemaDefinition#getDescription <em>Description</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Description</em>' containment reference.
+   * @see #getDescription()
+   * @generated
+   */
+  void setDescription(StringValue value);
+
   /**
    * Returns the value of the '<em><b>Type Definitions</b></em>' containment reference list.
    * The list contents are of type {@link io.github.katmatt.graphql.graphQL.RootOperationTypeDefinition}.

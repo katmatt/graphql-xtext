@@ -24,15 +24,15 @@ import org.eclipse.emf.common.util.EList;
 public interface UnionTypeDefinition extends TypeDefinition
 {
   /**
-   * Returns the value of the '<em><b>Member Types</b></em>' reference list.
-   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.TypeDefinition}.
+   * Returns the value of the '<em><b>Member Types</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.Type}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Member Types</em>' reference list.
+   * @return the value of the '<em>Member Types</em>' containment reference list.
    * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getUnionTypeDefinition_MemberTypes()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  EList<TypeDefinition> getMemberTypes();
+  EList<Type> getMemberTypes();
 
 } // UnionTypeDefinition

@@ -5,9 +5,11 @@ package io.github.katmatt.graphql.graphQL.impl;
 
 import io.github.katmatt.graphql.graphQL.FieldDefinition;
 import io.github.katmatt.graphql.graphQL.GraphQLPackage;
-import io.github.katmatt.graphql.graphQL.TypeDefinition;
+import io.github.katmatt.graphql.graphQL.StringValue;
+import io.github.katmatt.graphql.graphQL.Type;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.impl.FieldDefinitionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.FieldDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.FieldDefinitionImpl#getType <em>Type</em>}</li>
  * </ul>
@@ -31,6 +34,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements FieldDefinition
 {
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected StringValue description;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -52,14 +65,14 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected TypeDefinition type;
+  protected Type type;
 
   /**
    * <!-- begin-user-doc -->
@@ -80,6 +93,56 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
   protected EClass eStaticClass()
   {
     return GraphQLPackage.Literals.FIELD_DEFINITION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StringValue getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDescription(StringValue newDescription, NotificationChain msgs)
+  {
+    StringValue oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphQLPackage.FIELD_DEFINITION__DESCRIPTION, oldDescription, newDescription);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDescription(StringValue newDescription)
+  {
+    if (newDescription != description)
+    {
+      NotificationChain msgs = null;
+      if (description != null)
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.FIELD_DEFINITION__DESCRIPTION, null, msgs);
+      if (newDescription != null)
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.FIELD_DEFINITION__DESCRIPTION, null, msgs);
+      msgs = basicSetDescription(newDescription, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GraphQLPackage.FIELD_DEFINITION__DESCRIPTION, newDescription, newDescription));
   }
 
   /**
@@ -113,18 +176,8 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public TypeDefinition getType()
+  public Type getType()
   {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (TypeDefinition)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, GraphQLPackage.FIELD_DEFINITION__TYPE, oldType, type));
-      }
-    }
     return type;
   }
 
@@ -133,9 +186,16 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeDefinition basicGetType()
+  public NotificationChain basicSetType(Type newType, NotificationChain msgs)
   {
-    return type;
+    Type oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphQLPackage.FIELD_DEFINITION__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -144,12 +204,38 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public void setType(TypeDefinition newType)
+  public void setType(Type newType)
   {
-    TypeDefinition oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GraphQLPackage.FIELD_DEFINITION__TYPE, oldType, type));
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.FIELD_DEFINITION__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.FIELD_DEFINITION__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GraphQLPackage.FIELD_DEFINITION__TYPE, newType, newType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case GraphQLPackage.FIELD_DEFINITION__DESCRIPTION:
+        return basicSetDescription(null, msgs);
+      case GraphQLPackage.FIELD_DEFINITION__TYPE:
+        return basicSetType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -162,11 +248,12 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case GraphQLPackage.FIELD_DEFINITION__DESCRIPTION:
+        return getDescription();
       case GraphQLPackage.FIELD_DEFINITION__NAME:
         return getName();
       case GraphQLPackage.FIELD_DEFINITION__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -181,11 +268,14 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case GraphQLPackage.FIELD_DEFINITION__DESCRIPTION:
+        setDescription((StringValue)newValue);
+        return;
       case GraphQLPackage.FIELD_DEFINITION__NAME:
         setName((String)newValue);
         return;
       case GraphQLPackage.FIELD_DEFINITION__TYPE:
-        setType((TypeDefinition)newValue);
+        setType((Type)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -201,11 +291,14 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case GraphQLPackage.FIELD_DEFINITION__DESCRIPTION:
+        setDescription((StringValue)null);
+        return;
       case GraphQLPackage.FIELD_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
       case GraphQLPackage.FIELD_DEFINITION__TYPE:
-        setType((TypeDefinition)null);
+        setType((Type)null);
         return;
     }
     super.eUnset(featureID);
@@ -221,6 +314,8 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case GraphQLPackage.FIELD_DEFINITION__DESCRIPTION:
+        return description != null;
       case GraphQLPackage.FIELD_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case GraphQLPackage.FIELD_DEFINITION__TYPE:

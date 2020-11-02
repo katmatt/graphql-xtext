@@ -78,6 +78,21 @@ public class GraphQLFactoryImpl extends EFactoryImpl implements GraphQLFactory
       case GraphQLPackage.ENUM_TYPE_DEFINITION: return createEnumTypeDefinition();
       case GraphQLPackage.ENUM_VALUE_DEFINITION: return createEnumValueDefinition();
       case GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION: return createInputObjectTypeDefinition();
+      case GraphQLPackage.INPUT_VALUE_DEFINITION: return createInputValueDefinition();
+      case GraphQLPackage.INTERSECTION_TYPE: return createIntersectionType();
+      case GraphQLPackage.TYPE: return createType();
+      case GraphQLPackage.NAMED_TYPE: return createNamedType();
+      case GraphQLPackage.LIST_TYPE: return createListType();
+      case GraphQLPackage.INT_VALUE: return createIntValue();
+      case GraphQLPackage.FLOAT_VALUE: return createFloatValue();
+      case GraphQLPackage.NULL_VALUE: return createNullValue();
+      case GraphQLPackage.STRING_VALUE: return createStringValue();
+      case GraphQLPackage.BOOLEAN_VALUE: return createBooleanValue();
+      case GraphQLPackage.ENUM_VALUE: return createEnumValue();
+      case GraphQLPackage.OBJECT_VALUE: return createObjectValue();
+      case GraphQLPackage.OBJECT_FIELD: return createObjectField();
+      case GraphQLPackage.CONST_VALUE: return createConstValue();
+      case GraphQLPackage.LIST_VALUE: return createListValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -259,6 +274,186 @@ public class GraphQLFactoryImpl extends EFactoryImpl implements GraphQLFactory
   {
     InputObjectTypeDefinitionImpl inputObjectTypeDefinition = new InputObjectTypeDefinitionImpl();
     return inputObjectTypeDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InputValueDefinition createInputValueDefinition()
+  {
+    InputValueDefinitionImpl inputValueDefinition = new InputValueDefinitionImpl();
+    return inputValueDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IntersectionType createIntersectionType()
+  {
+    IntersectionTypeImpl intersectionType = new IntersectionTypeImpl();
+    return intersectionType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Type createType()
+  {
+    TypeImpl type = new TypeImpl();
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NamedType createNamedType()
+  {
+    NamedTypeImpl namedType = new NamedTypeImpl();
+    return namedType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ListType createListType()
+  {
+    ListTypeImpl listType = new ListTypeImpl();
+    return listType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IntValue createIntValue()
+  {
+    IntValueImpl intValue = new IntValueImpl();
+    return intValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FloatValue createFloatValue()
+  {
+    FloatValueImpl floatValue = new FloatValueImpl();
+    return floatValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NullValue createNullValue()
+  {
+    NullValueImpl nullValue = new NullValueImpl();
+    return nullValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StringValue createStringValue()
+  {
+    StringValueImpl stringValue = new StringValueImpl();
+    return stringValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BooleanValue createBooleanValue()
+  {
+    BooleanValueImpl booleanValue = new BooleanValueImpl();
+    return booleanValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EnumValue createEnumValue()
+  {
+    EnumValueImpl enumValue = new EnumValueImpl();
+    return enumValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ObjectValue createObjectValue()
+  {
+    ObjectValueImpl objectValue = new ObjectValueImpl();
+    return objectValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ObjectField createObjectField()
+  {
+    ObjectFieldImpl objectField = new ObjectFieldImpl();
+    return objectField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConstValue createConstValue()
+  {
+    ConstValueImpl constValue = new ConstValueImpl();
+    return constValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ListValue createListValue()
+  {
+    ListValueImpl listValue = new ListValueImpl();
+    return listValue;
   }
 
   /**

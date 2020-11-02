@@ -163,6 +163,120 @@ public class GraphQLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GraphQLPackage.INPUT_VALUE_DEFINITION:
+      {
+        InputValueDefinition inputValueDefinition = (InputValueDefinition)theEObject;
+        T result = caseInputValueDefinition(inputValueDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.INTERSECTION_TYPE:
+      {
+        IntersectionType intersectionType = (IntersectionType)theEObject;
+        T result = caseIntersectionType(intersectionType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.TYPE:
+      {
+        Type type = (Type)theEObject;
+        T result = caseType(type);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.NAMED_TYPE:
+      {
+        NamedType namedType = (NamedType)theEObject;
+        T result = caseNamedType(namedType);
+        if (result == null) result = caseType(namedType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.LIST_TYPE:
+      {
+        ListType listType = (ListType)theEObject;
+        T result = caseListType(listType);
+        if (result == null) result = caseType(listType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.INT_VALUE:
+      {
+        IntValue intValue = (IntValue)theEObject;
+        T result = caseIntValue(intValue);
+        if (result == null) result = caseConstValue(intValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.FLOAT_VALUE:
+      {
+        FloatValue floatValue = (FloatValue)theEObject;
+        T result = caseFloatValue(floatValue);
+        if (result == null) result = caseConstValue(floatValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.NULL_VALUE:
+      {
+        NullValue nullValue = (NullValue)theEObject;
+        T result = caseNullValue(nullValue);
+        if (result == null) result = caseConstValue(nullValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.STRING_VALUE:
+      {
+        StringValue stringValue = (StringValue)theEObject;
+        T result = caseStringValue(stringValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.BOOLEAN_VALUE:
+      {
+        BooleanValue booleanValue = (BooleanValue)theEObject;
+        T result = caseBooleanValue(booleanValue);
+        if (result == null) result = caseConstValue(booleanValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.ENUM_VALUE:
+      {
+        EnumValue enumValue = (EnumValue)theEObject;
+        T result = caseEnumValue(enumValue);
+        if (result == null) result = caseConstValue(enumValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.OBJECT_VALUE:
+      {
+        ObjectValue objectValue = (ObjectValue)theEObject;
+        T result = caseObjectValue(objectValue);
+        if (result == null) result = caseConstValue(objectValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.OBJECT_FIELD:
+      {
+        ObjectField objectField = (ObjectField)theEObject;
+        T result = caseObjectField(objectField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.CONST_VALUE:
+      {
+        ConstValue constValue = (ConstValue)theEObject;
+        T result = caseConstValue(constValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GraphQLPackage.LIST_VALUE:
+      {
+        ListValue listValue = (ListValue)theEObject;
+        T result = caseListValue(listValue);
+        if (result == null) result = caseConstValue(listValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -355,6 +469,246 @@ public class GraphQLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseInputObjectTypeDefinition(InputObjectTypeDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Input Value Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Input Value Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInputValueDefinition(InputValueDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Intersection Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Intersection Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntersectionType(IntersectionType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseType(Type object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Named Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Named Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNamedType(NamedType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseListType(ListType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Int Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Int Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntValue(IntValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Float Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Float Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFloatValue(FloatValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Null Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Null Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNullValue(NullValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringValue(StringValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanValue(BooleanValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enum Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enum Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumValue(EnumValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Object Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Object Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseObjectValue(ObjectValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Object Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Object Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseObjectField(ObjectField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Const Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Const Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConstValue(ConstValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseListValue(ListValue object)
   {
     return null;
   }

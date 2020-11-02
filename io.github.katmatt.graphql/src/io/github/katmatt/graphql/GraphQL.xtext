@@ -8,10 +8,13 @@ generate graphQL "http://www.github.io/katmatt/graphql/GraphQL"
 TypeSystemDefinition :
 	(schemaDefinitions+=SchemaDefinition | typeDefinitions+=TypeDefinition)*;
 	
-SchemaDefinition : "schema" "{" typeDefinitions+=RootOperationTypeDefinition+ "}";
+SchemaDefinition : 
+	description=StringValue? "schema" "{" typeDefinitions+=RootOperationTypeDefinition+ "}"
+;
 
-
-RootOperationTypeDefinition : operationType=OperationType ":" type=[TypeDefinition|NAME];
+RootOperationTypeDefinition : 
+	operationType=OperationType ":" type=[TypeDefinition|NAME]
+;
 
 TypeDefinition: 
 	ScalarTypeDefinition |
@@ -22,21 +25,108 @@ TypeDefinition:
 	InputObjectTypeDefinition
 ;
 
-ScalarTypeDefinition: "scalar" name=NAME;
+ScalarTypeDefinition: 
+	description=StringValue? "scalar" name=NAME
+;
 
-ObjectTypeDefinition: "type" name=NAME ("{" fieldDefinitions+=FieldDefinition* "}")?;
+ObjectTypeDefinition: 
+	description=StringValue? "type" name=NAME 
+		('implements' implements=IntersectionType)? 
+	("{" fieldDefinitions+=FieldDefinition* "}")?
+;
 
-InterfaceDefinition: "interface" name=NAME ("{" fieldDefinitions+=FieldDefinition* "}")?;
+InterfaceDefinition: 
+	description=StringValue? "interface" name=NAME
+		('implements' implements=IntersectionType)?
+	("{" fieldDefinitions+=FieldDefinition* "}")?
+;
 
-FieldDefinition: name=NAME ":" type=[TypeDefinition|NAME];
+FieldDefinition: 
+	description=StringValue? name=NAME ":" type=Type
+;
 
-UnionTypeDefinition: "union" name=NAME ("=" memberTypes+=[TypeDefinition|NAME] ("|" memberTypes+=[TypeDefinition|NAME])*)?;
+UnionTypeDefinition: 
+	description=StringValue? "union" name=NAME ("=" memberTypes+=Type ("|" memberTypes+=Type)*)?
+;
 
-EnumTypeDefinition: "enum" name=NAME ("{" valueDefinitions+=EnumValueDefinition "}")?;
+EnumTypeDefinition: 
+	description=StringValue? "enum" name=NAME ("{" valueDefinitions+=EnumValueDefinition "}")?
+;
 
-EnumValueDefinition: name=NAME;
+EnumValueDefinition: 
+	description=StringValue? name=NAME
+;
 
-InputObjectTypeDefinition: "input" name=NAME ("{" fieldDefinitions+=FieldDefinition* "}")?;
+InputObjectTypeDefinition: 
+	description=StringValue? "input" name=NAME ("{" inputsFieldDefinitions+=InputValueDefinition* "}")?
+;
+
+InputValueDefinition:
+	description=StringValue? name=NAME ":" type=Type ('=' defaultValue=ConstValue)?
+;
+
+IntersectionType: 
+	memberTypes+=Type ('&' memberTypes+=Type)*
+;
+
+Type: 
+	NamedType | 
+	ListType
+;
+
+NamedType: 
+	typeDefinition=[TypeDefinition|NAME] nonNull?='!'?
+;
+
+ListType: 
+	'[' type=Type ']' nonNull?='!'?
+;
+
+IntValue:
+	value=INT_VALUE
+;
+
+FloatValue:
+	value=FLOAT_VALUE
+;
+
+NullValue:
+	value='null'
+;
+
+StringValue: 
+	value=(SL_STRING_VALUE | ML_STRING_VALUE)
+;
+
+BooleanValue:
+	value=('true' | 'false')
+;
+
+EnumValue:
+	value=[EnumValueDefinition|NAME]
+;
+
+ObjectValue:
+	{ObjectValue} '{' fields+=ObjectField* '}'
+;
+
+ObjectField:
+	name=[FieldDefinition|NAME] ':' value=ConstValue	
+;
+
+ConstValue:
+		IntValue | 
+		FloatValue |
+		BooleanValue | 
+		NullValue | 
+		EnumValue | 
+		ListValue | 
+		ObjectValue
+;
+
+ListValue:
+	{ListValue} '[' values+=ConstValue* ']'
+;
 
 enum OperationType : 
 	QUERY = "query" | 
@@ -45,6 +135,15 @@ enum OperationType :
 ;
 
 terminal NAME returns EString: ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal INT_VALUE returns EString: '-'? ('1'..'9')('0'..'9')*;
+terminal FLOAT_VALUE returns EString: '-'? ('0'|('1'..'9')*)'.'('0'..'9')*(('e'|'E')('+'|'-')?('0'..'9')*);
 terminal WS: (' '|'\t'|'\r'|'\n')+;
 terminal SL_COMMENT: '#' !('\n'|'\r')* ('\r'? '\n')?;
+
 terminal COMMA: ',';
+
+terminal SL_STRING_VALUE returns EString: ('"' STRING_CHARACTER* '"');
+terminal ML_STRING_VALUE returns EString: '"""' -> '"""';
+terminal STRING_CHARACTER returns EString: !('\n'|'\r'|'"'|'\\');
+
+

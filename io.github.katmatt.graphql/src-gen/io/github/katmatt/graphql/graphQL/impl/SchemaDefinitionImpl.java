@@ -6,9 +6,11 @@ package io.github.katmatt.graphql.graphQL.impl;
 import io.github.katmatt.graphql.graphQL.GraphQLPackage;
 import io.github.katmatt.graphql.graphQL.RootOperationTypeDefinition;
 import io.github.katmatt.graphql.graphQL.SchemaDefinition;
+import io.github.katmatt.graphql.graphQL.StringValue;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.impl.SchemaDefinitionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.SchemaDefinitionImpl#getTypeDefinitions <em>Type Definitions</em>}</li>
  * </ul>
  *
@@ -36,6 +40,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SchemaDefinitionImpl extends MinimalEObjectImpl.Container implements SchemaDefinition
 {
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected StringValue description;
+
   /**
    * The cached value of the '{@link #getTypeDefinitions() <em>Type Definitions</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -73,6 +87,56 @@ public class SchemaDefinitionImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
+  public StringValue getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDescription(StringValue newDescription, NotificationChain msgs)
+  {
+    StringValue oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphQLPackage.SCHEMA_DEFINITION__DESCRIPTION, oldDescription, newDescription);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDescription(StringValue newDescription)
+  {
+    if (newDescription != description)
+    {
+      NotificationChain msgs = null;
+      if (description != null)
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.SCHEMA_DEFINITION__DESCRIPTION, null, msgs);
+      if (newDescription != null)
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.SCHEMA_DEFINITION__DESCRIPTION, null, msgs);
+      msgs = basicSetDescription(newDescription, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GraphQLPackage.SCHEMA_DEFINITION__DESCRIPTION, newDescription, newDescription));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<RootOperationTypeDefinition> getTypeDefinitions()
   {
     if (typeDefinitions == null)
@@ -92,6 +156,8 @@ public class SchemaDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case GraphQLPackage.SCHEMA_DEFINITION__DESCRIPTION:
+        return basicSetDescription(null, msgs);
       case GraphQLPackage.SCHEMA_DEFINITION__TYPE_DEFINITIONS:
         return ((InternalEList<?>)getTypeDefinitions()).basicRemove(otherEnd, msgs);
     }
@@ -108,6 +174,8 @@ public class SchemaDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case GraphQLPackage.SCHEMA_DEFINITION__DESCRIPTION:
+        return getDescription();
       case GraphQLPackage.SCHEMA_DEFINITION__TYPE_DEFINITIONS:
         return getTypeDefinitions();
     }
@@ -125,6 +193,9 @@ public class SchemaDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case GraphQLPackage.SCHEMA_DEFINITION__DESCRIPTION:
+        setDescription((StringValue)newValue);
+        return;
       case GraphQLPackage.SCHEMA_DEFINITION__TYPE_DEFINITIONS:
         getTypeDefinitions().clear();
         getTypeDefinitions().addAll((Collection<? extends RootOperationTypeDefinition>)newValue);
@@ -143,6 +214,9 @@ public class SchemaDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case GraphQLPackage.SCHEMA_DEFINITION__DESCRIPTION:
+        setDescription((StringValue)null);
+        return;
       case GraphQLPackage.SCHEMA_DEFINITION__TYPE_DEFINITIONS:
         getTypeDefinitions().clear();
         return;
@@ -160,6 +234,8 @@ public class SchemaDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case GraphQLPackage.SCHEMA_DEFINITION__DESCRIPTION:
+        return description != null;
       case GraphQLPackage.SCHEMA_DEFINITION__TYPE_DEFINITIONS:
         return typeDefinitions != null && !typeDefinitions.isEmpty();
     }

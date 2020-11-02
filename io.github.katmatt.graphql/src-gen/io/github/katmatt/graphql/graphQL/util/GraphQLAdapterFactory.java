@@ -136,6 +136,81 @@ public class GraphQLAdapterFactory extends AdapterFactoryImpl
         return createInputObjectTypeDefinitionAdapter();
       }
       @Override
+      public Adapter caseInputValueDefinition(InputValueDefinition object)
+      {
+        return createInputValueDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseIntersectionType(IntersectionType object)
+      {
+        return createIntersectionTypeAdapter();
+      }
+      @Override
+      public Adapter caseType(Type object)
+      {
+        return createTypeAdapter();
+      }
+      @Override
+      public Adapter caseNamedType(NamedType object)
+      {
+        return createNamedTypeAdapter();
+      }
+      @Override
+      public Adapter caseListType(ListType object)
+      {
+        return createListTypeAdapter();
+      }
+      @Override
+      public Adapter caseIntValue(IntValue object)
+      {
+        return createIntValueAdapter();
+      }
+      @Override
+      public Adapter caseFloatValue(FloatValue object)
+      {
+        return createFloatValueAdapter();
+      }
+      @Override
+      public Adapter caseNullValue(NullValue object)
+      {
+        return createNullValueAdapter();
+      }
+      @Override
+      public Adapter caseStringValue(StringValue object)
+      {
+        return createStringValueAdapter();
+      }
+      @Override
+      public Adapter caseBooleanValue(BooleanValue object)
+      {
+        return createBooleanValueAdapter();
+      }
+      @Override
+      public Adapter caseEnumValue(EnumValue object)
+      {
+        return createEnumValueAdapter();
+      }
+      @Override
+      public Adapter caseObjectValue(ObjectValue object)
+      {
+        return createObjectValueAdapter();
+      }
+      @Override
+      public Adapter caseObjectField(ObjectField object)
+      {
+        return createObjectFieldAdapter();
+      }
+      @Override
+      public Adapter caseConstValue(ConstValue object)
+      {
+        return createConstValueAdapter();
+      }
+      @Override
+      public Adapter caseListValue(ListValue object)
+      {
+        return createListValueAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -333,6 +408,231 @@ public class GraphQLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInputObjectTypeDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.InputValueDefinition <em>Input Value Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.InputValueDefinition
+   * @generated
+   */
+  public Adapter createInputValueDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.IntersectionType <em>Intersection Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.IntersectionType
+   * @generated
+   */
+  public Adapter createIntersectionTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.Type <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.Type
+   * @generated
+   */
+  public Adapter createTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.NamedType <em>Named Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.NamedType
+   * @generated
+   */
+  public Adapter createNamedTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.ListType <em>List Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.ListType
+   * @generated
+   */
+  public Adapter createListTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.IntValue <em>Int Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.IntValue
+   * @generated
+   */
+  public Adapter createIntValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.FloatValue <em>Float Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.FloatValue
+   * @generated
+   */
+  public Adapter createFloatValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.NullValue <em>Null Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.NullValue
+   * @generated
+   */
+  public Adapter createNullValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.StringValue <em>String Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.StringValue
+   * @generated
+   */
+  public Adapter createStringValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.BooleanValue <em>Boolean Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.BooleanValue
+   * @generated
+   */
+  public Adapter createBooleanValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.EnumValue <em>Enum Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.EnumValue
+   * @generated
+   */
+  public Adapter createEnumValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.ObjectValue <em>Object Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.ObjectValue
+   * @generated
+   */
+  public Adapter createObjectValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.ObjectField <em>Object Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.ObjectField
+   * @generated
+   */
+  public Adapter createObjectFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.ConstValue <em>Const Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.ConstValue
+   * @generated
+   */
+  public Adapter createConstValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.ListValue <em>List Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.ListValue
+   * @generated
+   */
+  public Adapter createListValueAdapter()
   {
     return null;
   }

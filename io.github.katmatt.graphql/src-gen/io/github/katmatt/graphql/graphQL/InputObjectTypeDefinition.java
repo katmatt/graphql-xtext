@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link io.github.katmatt.graphql.graphQL.InputObjectTypeDefinition#getFieldDefinitions <em>Field Definitions</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.InputObjectTypeDefinition#getInputsFieldDefinitions <em>Inputs Field Definitions</em>}</li>
  * </ul>
  *
  * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getInputObjectTypeDefinition()
@@ -24,15 +24,15 @@ import org.eclipse.emf.common.util.EList;
 public interface InputObjectTypeDefinition extends TypeDefinition
 {
   /**
-   * Returns the value of the '<em><b>Field Definitions</b></em>' containment reference list.
-   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.FieldDefinition}.
+   * Returns the value of the '<em><b>Inputs Field Definitions</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.InputValueDefinition}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Field Definitions</em>' containment reference list.
-   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getInputObjectTypeDefinition_FieldDefinitions()
+   * @return the value of the '<em>Inputs Field Definitions</em>' containment reference list.
+   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getInputObjectTypeDefinition_InputsFieldDefinitions()
    * @model containment="true"
    * @generated
    */
-  EList<FieldDefinition> getFieldDefinitions();
+  EList<InputValueDefinition> getInputsFieldDefinitions();
 
 } // InputObjectTypeDefinition

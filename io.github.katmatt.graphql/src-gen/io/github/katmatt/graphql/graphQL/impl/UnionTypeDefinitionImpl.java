@@ -4,16 +4,20 @@
 package io.github.katmatt.graphql.graphQL.impl;
 
 import io.github.katmatt.graphql.graphQL.GraphQLPackage;
-import io.github.katmatt.graphql.graphQL.TypeDefinition;
+import io.github.katmatt.graphql.graphQL.Type;
 import io.github.katmatt.graphql.graphQL.UnionTypeDefinition;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,14 +35,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 public class UnionTypeDefinitionImpl extends TypeDefinitionImpl implements UnionTypeDefinition
 {
   /**
-   * The cached value of the '{@link #getMemberTypes() <em>Member Types</em>}' reference list.
+   * The cached value of the '{@link #getMemberTypes() <em>Member Types</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMemberTypes()
    * @generated
    * @ordered
    */
-  protected EList<TypeDefinition> memberTypes;
+  protected EList<Type> memberTypes;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,13 +71,29 @@ public class UnionTypeDefinitionImpl extends TypeDefinitionImpl implements Union
    * @generated
    */
   @Override
-  public EList<TypeDefinition> getMemberTypes()
+  public EList<Type> getMemberTypes()
   {
     if (memberTypes == null)
     {
-      memberTypes = new EObjectResolvingEList<TypeDefinition>(TypeDefinition.class, this, GraphQLPackage.UNION_TYPE_DEFINITION__MEMBER_TYPES);
+      memberTypes = new EObjectContainmentEList<Type>(Type.class, this, GraphQLPackage.UNION_TYPE_DEFINITION__MEMBER_TYPES);
     }
     return memberTypes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case GraphQLPackage.UNION_TYPE_DEFINITION__MEMBER_TYPES:
+        return ((InternalEList<?>)getMemberTypes()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -105,7 +125,7 @@ public class UnionTypeDefinitionImpl extends TypeDefinitionImpl implements Union
     {
       case GraphQLPackage.UNION_TYPE_DEFINITION__MEMBER_TYPES:
         getMemberTypes().clear();
-        getMemberTypes().addAll((Collection<? extends TypeDefinition>)newValue);
+        getMemberTypes().addAll((Collection<? extends Type>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

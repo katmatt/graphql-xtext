@@ -3,18 +3,33 @@
  */
 package io.github.katmatt.graphql.graphQL.impl;
 
+import io.github.katmatt.graphql.graphQL.BooleanValue;
+import io.github.katmatt.graphql.graphQL.ConstValue;
 import io.github.katmatt.graphql.graphQL.EnumTypeDefinition;
+import io.github.katmatt.graphql.graphQL.EnumValue;
 import io.github.katmatt.graphql.graphQL.EnumValueDefinition;
 import io.github.katmatt.graphql.graphQL.FieldDefinition;
+import io.github.katmatt.graphql.graphQL.FloatValue;
 import io.github.katmatt.graphql.graphQL.GraphQLFactory;
 import io.github.katmatt.graphql.graphQL.GraphQLPackage;
 import io.github.katmatt.graphql.graphQL.InputObjectTypeDefinition;
+import io.github.katmatt.graphql.graphQL.InputValueDefinition;
+import io.github.katmatt.graphql.graphQL.IntValue;
 import io.github.katmatt.graphql.graphQL.InterfaceDefinition;
+import io.github.katmatt.graphql.graphQL.IntersectionType;
+import io.github.katmatt.graphql.graphQL.ListType;
+import io.github.katmatt.graphql.graphQL.ListValue;
+import io.github.katmatt.graphql.graphQL.NamedType;
+import io.github.katmatt.graphql.graphQL.NullValue;
+import io.github.katmatt.graphql.graphQL.ObjectField;
 import io.github.katmatt.graphql.graphQL.ObjectTypeDefinition;
+import io.github.katmatt.graphql.graphQL.ObjectValue;
 import io.github.katmatt.graphql.graphQL.OperationType;
 import io.github.katmatt.graphql.graphQL.RootOperationTypeDefinition;
 import io.github.katmatt.graphql.graphQL.ScalarTypeDefinition;
 import io.github.katmatt.graphql.graphQL.SchemaDefinition;
+import io.github.katmatt.graphql.graphQL.StringValue;
+import io.github.katmatt.graphql.graphQL.Type;
 import io.github.katmatt.graphql.graphQL.TypeDefinition;
 import io.github.katmatt.graphql.graphQL.TypeSystemDefinition;
 import io.github.katmatt.graphql.graphQL.UnionTypeDefinition;
@@ -118,6 +133,111 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   private EClass inputObjectTypeDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass inputValueDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass intersectionTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass namedTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass intValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass floatValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nullValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enumValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass objectValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass objectFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass constValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -239,9 +359,20 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getSchemaDefinition_TypeDefinitions()
+  public EReference getSchemaDefinition_Description()
   {
     return (EReference)schemaDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSchemaDefinition_TypeDefinitions()
+  {
+    return (EReference)schemaDefinitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -294,9 +425,20 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
+  public EReference getTypeDefinition_Description()
+  {
+    return (EReference)typeDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getTypeDefinition_Name()
   {
-    return (EAttribute)typeDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)typeDefinitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -327,9 +469,20 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getObjectTypeDefinition_FieldDefinitions()
+  public EReference getObjectTypeDefinition_Implements()
   {
     return (EReference)objectTypeDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getObjectTypeDefinition_FieldDefinitions()
+  {
+    return (EReference)objectTypeDefinitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -349,9 +502,20 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getInterfaceDefinition_FieldDefinitions()
+  public EReference getInterfaceDefinition_Implements()
   {
     return (EReference)interfaceDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInterfaceDefinition_FieldDefinitions()
+  {
+    return (EReference)interfaceDefinitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -371,9 +535,20 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
+  public EReference getFieldDefinition_Description()
+  {
+    return (EReference)fieldDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getFieldDefinition_Name()
   {
-    return (EAttribute)fieldDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)fieldDefinitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -384,7 +559,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
   @Override
   public EReference getFieldDefinition_Type()
   {
-    return (EReference)fieldDefinitionEClass.getEStructuralFeatures().get(1);
+    return (EReference)fieldDefinitionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -448,9 +623,20 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
+  public EReference getEnumValueDefinition_Description()
+  {
+    return (EReference)enumValueDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getEnumValueDefinition_Name()
   {
-    return (EAttribute)enumValueDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)enumValueDefinitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -470,9 +656,372 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getInputObjectTypeDefinition_FieldDefinitions()
+  public EReference getInputObjectTypeDefinition_InputsFieldDefinitions()
   {
     return (EReference)inputObjectTypeDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInputValueDefinition()
+  {
+    return inputValueDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInputValueDefinition_Description()
+  {
+    return (EReference)inputValueDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getInputValueDefinition_Name()
+  {
+    return (EAttribute)inputValueDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInputValueDefinition_Type()
+  {
+    return (EReference)inputValueDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInputValueDefinition_DefaultValue()
+  {
+    return (EReference)inputValueDefinitionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getIntersectionType()
+  {
+    return intersectionTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIntersectionType_MemberTypes()
+  {
+    return (EReference)intersectionTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getType()
+  {
+    return typeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getType_NonNull()
+  {
+    return (EAttribute)typeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNamedType()
+  {
+    return namedTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNamedType_TypeDefinition()
+  {
+    return (EReference)namedTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getListType()
+  {
+    return listTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getListType_Type()
+  {
+    return (EReference)listTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getIntValue()
+  {
+    return intValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getIntValue_Value()
+  {
+    return (EAttribute)intValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFloatValue()
+  {
+    return floatValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFloatValue_Value()
+  {
+    return (EAttribute)floatValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNullValue()
+  {
+    return nullValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNullValue_Value()
+  {
+    return (EAttribute)nullValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStringValue()
+  {
+    return stringValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStringValue_Value()
+  {
+    return (EAttribute)stringValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBooleanValue()
+  {
+    return booleanValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBooleanValue_Value()
+  {
+    return (EAttribute)booleanValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEnumValue()
+  {
+    return enumValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEnumValue_Value()
+  {
+    return (EReference)enumValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getObjectValue()
+  {
+    return objectValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getObjectValue_Fields()
+  {
+    return (EReference)objectValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getObjectField()
+  {
+    return objectFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getObjectField_Name()
+  {
+    return (EReference)objectFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getObjectField_Value()
+  {
+    return (EReference)objectFieldEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConstValue()
+  {
+    return constValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getListValue()
+  {
+    return listValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getListValue_Values()
+  {
+    return (EReference)listValueEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -522,6 +1071,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     createEReference(typeSystemDefinitionEClass, TYPE_SYSTEM_DEFINITION__TYPE_DEFINITIONS);
 
     schemaDefinitionEClass = createEClass(SCHEMA_DEFINITION);
+    createEReference(schemaDefinitionEClass, SCHEMA_DEFINITION__DESCRIPTION);
     createEReference(schemaDefinitionEClass, SCHEMA_DEFINITION__TYPE_DEFINITIONS);
 
     rootOperationTypeDefinitionEClass = createEClass(ROOT_OPERATION_TYPE_DEFINITION);
@@ -529,17 +1079,21 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     createEReference(rootOperationTypeDefinitionEClass, ROOT_OPERATION_TYPE_DEFINITION__TYPE);
 
     typeDefinitionEClass = createEClass(TYPE_DEFINITION);
+    createEReference(typeDefinitionEClass, TYPE_DEFINITION__DESCRIPTION);
     createEAttribute(typeDefinitionEClass, TYPE_DEFINITION__NAME);
 
     scalarTypeDefinitionEClass = createEClass(SCALAR_TYPE_DEFINITION);
 
     objectTypeDefinitionEClass = createEClass(OBJECT_TYPE_DEFINITION);
+    createEReference(objectTypeDefinitionEClass, OBJECT_TYPE_DEFINITION__IMPLEMENTS);
     createEReference(objectTypeDefinitionEClass, OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS);
 
     interfaceDefinitionEClass = createEClass(INTERFACE_DEFINITION);
+    createEReference(interfaceDefinitionEClass, INTERFACE_DEFINITION__IMPLEMENTS);
     createEReference(interfaceDefinitionEClass, INTERFACE_DEFINITION__FIELD_DEFINITIONS);
 
     fieldDefinitionEClass = createEClass(FIELD_DEFINITION);
+    createEReference(fieldDefinitionEClass, FIELD_DEFINITION__DESCRIPTION);
     createEAttribute(fieldDefinitionEClass, FIELD_DEFINITION__NAME);
     createEReference(fieldDefinitionEClass, FIELD_DEFINITION__TYPE);
 
@@ -550,10 +1104,59 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     createEReference(enumTypeDefinitionEClass, ENUM_TYPE_DEFINITION__VALUE_DEFINITIONS);
 
     enumValueDefinitionEClass = createEClass(ENUM_VALUE_DEFINITION);
+    createEReference(enumValueDefinitionEClass, ENUM_VALUE_DEFINITION__DESCRIPTION);
     createEAttribute(enumValueDefinitionEClass, ENUM_VALUE_DEFINITION__NAME);
 
     inputObjectTypeDefinitionEClass = createEClass(INPUT_OBJECT_TYPE_DEFINITION);
-    createEReference(inputObjectTypeDefinitionEClass, INPUT_OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS);
+    createEReference(inputObjectTypeDefinitionEClass, INPUT_OBJECT_TYPE_DEFINITION__INPUTS_FIELD_DEFINITIONS);
+
+    inputValueDefinitionEClass = createEClass(INPUT_VALUE_DEFINITION);
+    createEReference(inputValueDefinitionEClass, INPUT_VALUE_DEFINITION__DESCRIPTION);
+    createEAttribute(inputValueDefinitionEClass, INPUT_VALUE_DEFINITION__NAME);
+    createEReference(inputValueDefinitionEClass, INPUT_VALUE_DEFINITION__TYPE);
+    createEReference(inputValueDefinitionEClass, INPUT_VALUE_DEFINITION__DEFAULT_VALUE);
+
+    intersectionTypeEClass = createEClass(INTERSECTION_TYPE);
+    createEReference(intersectionTypeEClass, INTERSECTION_TYPE__MEMBER_TYPES);
+
+    typeEClass = createEClass(TYPE);
+    createEAttribute(typeEClass, TYPE__NON_NULL);
+
+    namedTypeEClass = createEClass(NAMED_TYPE);
+    createEReference(namedTypeEClass, NAMED_TYPE__TYPE_DEFINITION);
+
+    listTypeEClass = createEClass(LIST_TYPE);
+    createEReference(listTypeEClass, LIST_TYPE__TYPE);
+
+    intValueEClass = createEClass(INT_VALUE);
+    createEAttribute(intValueEClass, INT_VALUE__VALUE);
+
+    floatValueEClass = createEClass(FLOAT_VALUE);
+    createEAttribute(floatValueEClass, FLOAT_VALUE__VALUE);
+
+    nullValueEClass = createEClass(NULL_VALUE);
+    createEAttribute(nullValueEClass, NULL_VALUE__VALUE);
+
+    stringValueEClass = createEClass(STRING_VALUE);
+    createEAttribute(stringValueEClass, STRING_VALUE__VALUE);
+
+    booleanValueEClass = createEClass(BOOLEAN_VALUE);
+    createEAttribute(booleanValueEClass, BOOLEAN_VALUE__VALUE);
+
+    enumValueEClass = createEClass(ENUM_VALUE);
+    createEReference(enumValueEClass, ENUM_VALUE__VALUE);
+
+    objectValueEClass = createEClass(OBJECT_VALUE);
+    createEReference(objectValueEClass, OBJECT_VALUE__FIELDS);
+
+    objectFieldEClass = createEClass(OBJECT_FIELD);
+    createEReference(objectFieldEClass, OBJECT_FIELD__NAME);
+    createEReference(objectFieldEClass, OBJECT_FIELD__VALUE);
+
+    constValueEClass = createEClass(CONST_VALUE);
+
+    listValueEClass = createEClass(LIST_VALUE);
+    createEReference(listValueEClass, LIST_VALUE__VALUES);
 
     // Create enums
     operationTypeEEnum = createEEnum(OPERATION_TYPE);
@@ -594,6 +1197,15 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     unionTypeDefinitionEClass.getESuperTypes().add(this.getTypeDefinition());
     enumTypeDefinitionEClass.getESuperTypes().add(this.getTypeDefinition());
     inputObjectTypeDefinitionEClass.getESuperTypes().add(this.getTypeDefinition());
+    namedTypeEClass.getESuperTypes().add(this.getType());
+    listTypeEClass.getESuperTypes().add(this.getType());
+    intValueEClass.getESuperTypes().add(this.getConstValue());
+    floatValueEClass.getESuperTypes().add(this.getConstValue());
+    nullValueEClass.getESuperTypes().add(this.getConstValue());
+    booleanValueEClass.getESuperTypes().add(this.getConstValue());
+    enumValueEClass.getESuperTypes().add(this.getConstValue());
+    objectValueEClass.getESuperTypes().add(this.getConstValue());
+    listValueEClass.getESuperTypes().add(this.getConstValue());
 
     // Initialize classes and features; add operations and parameters
     initEClass(typeSystemDefinitionEClass, TypeSystemDefinition.class, "TypeSystemDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -601,6 +1213,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     initEReference(getTypeSystemDefinition_TypeDefinitions(), this.getTypeDefinition(), null, "typeDefinitions", null, 0, -1, TypeSystemDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(schemaDefinitionEClass, SchemaDefinition.class, "SchemaDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSchemaDefinition_Description(), this.getStringValue(), null, "description", null, 0, 1, SchemaDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSchemaDefinition_TypeDefinitions(), this.getRootOperationTypeDefinition(), null, "typeDefinitions", null, 0, -1, SchemaDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rootOperationTypeDefinitionEClass, RootOperationTypeDefinition.class, "RootOperationTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -608,31 +1221,84 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     initEReference(getRootOperationTypeDefinition_Type(), this.getTypeDefinition(), null, "type", null, 0, 1, RootOperationTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeDefinitionEClass, TypeDefinition.class, "TypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTypeDefinition_Description(), this.getStringValue(), null, "description", null, 0, 1, TypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTypeDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, TypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scalarTypeDefinitionEClass, ScalarTypeDefinition.class, "ScalarTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(objectTypeDefinitionEClass, ObjectTypeDefinition.class, "ObjectTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getObjectTypeDefinition_Implements(), this.getIntersectionType(), null, "implements", null, 0, 1, ObjectTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getObjectTypeDefinition_FieldDefinitions(), this.getFieldDefinition(), null, "fieldDefinitions", null, 0, -1, ObjectTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(interfaceDefinitionEClass, InterfaceDefinition.class, "InterfaceDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInterfaceDefinition_Implements(), this.getIntersectionType(), null, "implements", null, 0, 1, InterfaceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInterfaceDefinition_FieldDefinitions(), this.getFieldDefinition(), null, "fieldDefinitions", null, 0, -1, InterfaceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fieldDefinitionEClass, FieldDefinition.class, "FieldDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFieldDefinition_Description(), this.getStringValue(), null, "description", null, 0, 1, FieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFieldDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, FieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFieldDefinition_Type(), this.getTypeDefinition(), null, "type", null, 0, 1, FieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFieldDefinition_Type(), this.getType(), null, "type", null, 0, 1, FieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unionTypeDefinitionEClass, UnionTypeDefinition.class, "UnionTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUnionTypeDefinition_MemberTypes(), this.getTypeDefinition(), null, "memberTypes", null, 0, -1, UnionTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnionTypeDefinition_MemberTypes(), this.getType(), null, "memberTypes", null, 0, -1, UnionTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(enumTypeDefinitionEClass, EnumTypeDefinition.class, "EnumTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEnumTypeDefinition_ValueDefinitions(), this.getEnumValueDefinition(), null, "valueDefinitions", null, 0, -1, EnumTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(enumValueDefinitionEClass, EnumValueDefinition.class, "EnumValueDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEnumValueDefinition_Description(), this.getStringValue(), null, "description", null, 0, 1, EnumValueDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEnumValueDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumValueDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inputObjectTypeDefinitionEClass, InputObjectTypeDefinition.class, "InputObjectTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInputObjectTypeDefinition_FieldDefinitions(), this.getFieldDefinition(), null, "fieldDefinitions", null, 0, -1, InputObjectTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInputObjectTypeDefinition_InputsFieldDefinitions(), this.getInputValueDefinition(), null, "inputsFieldDefinitions", null, 0, -1, InputObjectTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(inputValueDefinitionEClass, InputValueDefinition.class, "InputValueDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInputValueDefinition_Description(), this.getStringValue(), null, "description", null, 0, 1, InputValueDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInputValueDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, InputValueDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInputValueDefinition_Type(), this.getType(), null, "type", null, 0, 1, InputValueDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInputValueDefinition_DefaultValue(), this.getConstValue(), null, "defaultValue", null, 0, 1, InputValueDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(intersectionTypeEClass, IntersectionType.class, "IntersectionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIntersectionType_MemberTypes(), this.getType(), null, "memberTypes", null, 0, -1, IntersectionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getType_NonNull(), ecorePackage.getEBoolean(), "nonNull", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(namedTypeEClass, NamedType.class, "NamedType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNamedType_TypeDefinition(), this.getTypeDefinition(), null, "typeDefinition", null, 0, 1, NamedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listTypeEClass, ListType.class, "ListType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getListType_Type(), this.getType(), null, "type", null, 0, 1, ListType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(intValueEClass, IntValue.class, "IntValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIntValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, IntValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(floatValueEClass, FloatValue.class, "FloatValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFloatValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, FloatValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nullValueEClass, NullValue.class, "NullValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNullValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, NullValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringValueEClass, StringValue.class, "StringValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(booleanValueEClass, BooleanValue.class, "BooleanValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBooleanValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, BooleanValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(enumValueEClass, EnumValue.class, "EnumValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEnumValue_Value(), this.getEnumValueDefinition(), null, "value", null, 0, 1, EnumValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(objectValueEClass, ObjectValue.class, "ObjectValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getObjectValue_Fields(), this.getObjectField(), null, "fields", null, 0, -1, ObjectValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(objectFieldEClass, ObjectField.class, "ObjectField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getObjectField_Name(), this.getFieldDefinition(), null, "name", null, 0, 1, ObjectField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObjectField_Value(), this.getConstValue(), null, "value", null, 0, 1, ObjectField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(constValueEClass, ConstValue.class, "ConstValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(listValueEClass, ListValue.class, "ListValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getListValue_Values(), this.getConstValue(), null, "values", null, 0, -1, ListValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(operationTypeEEnum, OperationType.class, "OperationType");

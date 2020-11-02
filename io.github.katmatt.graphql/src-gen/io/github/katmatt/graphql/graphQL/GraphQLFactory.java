@@ -132,6 +132,141 @@ public interface GraphQLFactory extends EFactory
   InputObjectTypeDefinition createInputObjectTypeDefinition();
 
   /**
+   * Returns a new object of class '<em>Input Value Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Input Value Definition</em>'.
+   * @generated
+   */
+  InputValueDefinition createInputValueDefinition();
+
+  /**
+   * Returns a new object of class '<em>Intersection Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Intersection Type</em>'.
+   * @generated
+   */
+  IntersectionType createIntersectionType();
+
+  /**
+   * Returns a new object of class '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type</em>'.
+   * @generated
+   */
+  Type createType();
+
+  /**
+   * Returns a new object of class '<em>Named Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Named Type</em>'.
+   * @generated
+   */
+  NamedType createNamedType();
+
+  /**
+   * Returns a new object of class '<em>List Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List Type</em>'.
+   * @generated
+   */
+  ListType createListType();
+
+  /**
+   * Returns a new object of class '<em>Int Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Int Value</em>'.
+   * @generated
+   */
+  IntValue createIntValue();
+
+  /**
+   * Returns a new object of class '<em>Float Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Float Value</em>'.
+   * @generated
+   */
+  FloatValue createFloatValue();
+
+  /**
+   * Returns a new object of class '<em>Null Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Null Value</em>'.
+   * @generated
+   */
+  NullValue createNullValue();
+
+  /**
+   * Returns a new object of class '<em>String Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Value</em>'.
+   * @generated
+   */
+  StringValue createStringValue();
+
+  /**
+   * Returns a new object of class '<em>Boolean Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Value</em>'.
+   * @generated
+   */
+  BooleanValue createBooleanValue();
+
+  /**
+   * Returns a new object of class '<em>Enum Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enum Value</em>'.
+   * @generated
+   */
+  EnumValue createEnumValue();
+
+  /**
+   * Returns a new object of class '<em>Object Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Object Value</em>'.
+   * @generated
+   */
+  ObjectValue createObjectValue();
+
+  /**
+   * Returns a new object of class '<em>Object Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Object Field</em>'.
+   * @generated
+   */
+  ObjectField createObjectField();
+
+  /**
+   * Returns a new object of class '<em>Const Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Const Value</em>'.
+   * @generated
+   */
+  ConstValue createConstValue();
+
+  /**
+   * Returns a new object of class '<em>List Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List Value</em>'.
+   * @generated
+   */
+  ListValue createListValue();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

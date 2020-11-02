@@ -3,9 +3,9 @@
  */
 package io.github.katmatt.graphql.graphQL.impl;
 
-import io.github.katmatt.graphql.graphQL.FieldDefinition;
 import io.github.katmatt.graphql.graphQL.GraphQLPackage;
 import io.github.katmatt.graphql.graphQL.InputObjectTypeDefinition;
+import io.github.katmatt.graphql.graphQL.InputValueDefinition;
 
 import java.util.Collection;
 
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link io.github.katmatt.graphql.graphQL.impl.InputObjectTypeDefinitionImpl#getFieldDefinitions <em>Field Definitions</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.impl.InputObjectTypeDefinitionImpl#getInputsFieldDefinitions <em>Inputs Field Definitions</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +35,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class InputObjectTypeDefinitionImpl extends TypeDefinitionImpl implements InputObjectTypeDefinition
 {
   /**
-   * The cached value of the '{@link #getFieldDefinitions() <em>Field Definitions</em>}' containment reference list.
+   * The cached value of the '{@link #getInputsFieldDefinitions() <em>Inputs Field Definitions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFieldDefinitions()
+   * @see #getInputsFieldDefinitions()
    * @generated
    * @ordered
    */
-  protected EList<FieldDefinition> fieldDefinitions;
+  protected EList<InputValueDefinition> inputsFieldDefinitions;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +71,13 @@ public class InputObjectTypeDefinitionImpl extends TypeDefinitionImpl implements
    * @generated
    */
   @Override
-  public EList<FieldDefinition> getFieldDefinitions()
+  public EList<InputValueDefinition> getInputsFieldDefinitions()
   {
-    if (fieldDefinitions == null)
+    if (inputsFieldDefinitions == null)
     {
-      fieldDefinitions = new EObjectContainmentEList<FieldDefinition>(FieldDefinition.class, this, GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS);
+      inputsFieldDefinitions = new EObjectContainmentEList<InputValueDefinition>(InputValueDefinition.class, this, GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION__INPUTS_FIELD_DEFINITIONS);
     }
-    return fieldDefinitions;
+    return inputsFieldDefinitions;
   }
 
   /**
@@ -90,8 +90,8 @@ public class InputObjectTypeDefinitionImpl extends TypeDefinitionImpl implements
   {
     switch (featureID)
     {
-      case GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
-        return ((InternalEList<?>)getFieldDefinitions()).basicRemove(otherEnd, msgs);
+      case GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION__INPUTS_FIELD_DEFINITIONS:
+        return ((InternalEList<?>)getInputsFieldDefinitions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class InputObjectTypeDefinitionImpl extends TypeDefinitionImpl implements
   {
     switch (featureID)
     {
-      case GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
-        return getFieldDefinitions();
+      case GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION__INPUTS_FIELD_DEFINITIONS:
+        return getInputsFieldDefinitions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class InputObjectTypeDefinitionImpl extends TypeDefinitionImpl implements
   {
     switch (featureID)
     {
-      case GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
-        getFieldDefinitions().clear();
-        getFieldDefinitions().addAll((Collection<? extends FieldDefinition>)newValue);
+      case GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION__INPUTS_FIELD_DEFINITIONS:
+        getInputsFieldDefinitions().clear();
+        getInputsFieldDefinitions().addAll((Collection<? extends InputValueDefinition>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class InputObjectTypeDefinitionImpl extends TypeDefinitionImpl implements
   {
     switch (featureID)
     {
-      case GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
-        getFieldDefinitions().clear();
+      case GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION__INPUTS_FIELD_DEFINITIONS:
+        getInputsFieldDefinitions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +158,8 @@ public class InputObjectTypeDefinitionImpl extends TypeDefinitionImpl implements
   {
     switch (featureID)
     {
-      case GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
-        return fieldDefinitions != null && !fieldDefinitions.isEmpty();
+      case GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION__INPUTS_FIELD_DEFINITIONS:
+        return inputsFieldDefinitions != null && !inputsFieldDefinitions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

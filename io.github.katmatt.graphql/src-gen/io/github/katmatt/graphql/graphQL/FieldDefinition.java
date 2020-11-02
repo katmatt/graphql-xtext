@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getName <em>Name</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getType <em>Type</em>}</li>
  * </ul>
@@ -24,6 +25,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface FieldDefinition extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Description</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Description</em>' containment reference.
+   * @see #setDescription(StringValue)
+   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getFieldDefinition_Description()
+   * @model containment="true"
+   * @generated
+   */
+  StringValue getDescription();
+
+  /**
+   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getDescription <em>Description</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Description</em>' containment reference.
+   * @see #getDescription()
+   * @generated
+   */
+  void setDescription(StringValue value);
+
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -47,25 +70,25 @@ public interface FieldDefinition extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Type</b></em>' reference.
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(TypeDefinition)
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(Type)
    * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getFieldDefinition_Type()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  TypeDefinition getType();
+  Type getType();
 
   /**
-   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getType <em>Type</em>}' reference.
+   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' reference.
+   * @param value the new value of the '<em>Type</em>' containment reference.
    * @see #getType()
    * @generated
    */
-  void setType(TypeDefinition value);
+  void setType(Type value);
 
 } // FieldDefinition
