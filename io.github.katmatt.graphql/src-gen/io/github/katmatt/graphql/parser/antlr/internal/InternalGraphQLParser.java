@@ -213,9 +213,9 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                 case RULE_ML_STRING_VALUE:
                     {
                     switch ( input.LA(2) ) {
-                    case 34:
+                    case 14:
                         {
-                        alt1=3;
+                        alt1=1;
                         }
                         break;
                     case 18:
@@ -228,9 +228,9 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                         alt1=2;
                         }
                         break;
-                    case 14:
+                    case 34:
                         {
-                        alt1=1;
+                        alt1=3;
                         }
                         break;
 
@@ -788,6 +788,11 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
             case RULE_SL_STRING_VALUE:
                 {
                 switch ( input.LA(2) ) {
+                case 18:
+                    {
+                    alt4=1;
+                    }
+                    break;
                 case 21:
                     {
                     alt4=3;
@@ -798,19 +803,14 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     alt4=2;
                     }
                     break;
-                case 18:
+                case 22:
                     {
-                    alt4=1;
+                    alt4=4;
                     }
                     break;
                 case 26:
                     {
                     alt4=6;
-                    }
-                    break;
-                case 22:
-                    {
-                    alt4=4;
                     }
                     break;
                 case 25:
@@ -830,9 +830,9 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
             case RULE_ML_STRING_VALUE:
                 {
                 switch ( input.LA(2) ) {
-                case 26:
+                case 19:
                     {
-                    alt4=6;
+                    alt4=2;
                     }
                     break;
                 case 22:
@@ -840,24 +840,24 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     alt4=4;
                     }
                     break;
+                case 26:
+                    {
+                    alt4=6;
+                    }
+                    break;
                 case 25:
                     {
                     alt4=5;
                     }
                     break;
-                case 21:
-                    {
-                    alt4=3;
-                    }
-                    break;
-                case 19:
-                    {
-                    alt4=2;
-                    }
-                    break;
                 case 18:
                     {
                     alt4=1;
+                    }
+                    break;
+                case 21:
+                    {
+                    alt4=3;
                     }
                     break;
                 default:
@@ -1224,31 +1224,33 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleObjectTypeDefinition"
-    // InternalGraphQL.g:406:1: ruleObjectTypeDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'type' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )? ) ;
+    // InternalGraphQL.g:406:1: ruleObjectTypeDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'type' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? ( (lv_directives_5_0= ruleDirective ) )* (otherlv_6= '{' ( (lv_fieldDefinitions_7_0= ruleFieldDefinition ) )* otherlv_8= '}' )? ) ;
     public final EObject ruleObjectTypeDefinition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token lv_name_2_0=null;
         Token otherlv_3=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
+        Token otherlv_6=null;
+        Token otherlv_8=null;
         EObject lv_description_0_0 = null;
 
         EObject lv_implements_4_0 = null;
 
-        EObject lv_fieldDefinitions_6_0 = null;
+        EObject lv_directives_5_0 = null;
+
+        EObject lv_fieldDefinitions_7_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalGraphQL.g:412:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'type' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )? ) )
-            // InternalGraphQL.g:413:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'type' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )? )
+            // InternalGraphQL.g:412:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'type' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? ( (lv_directives_5_0= ruleDirective ) )* (otherlv_6= '{' ( (lv_fieldDefinitions_7_0= ruleFieldDefinition ) )* otherlv_8= '}' )? ) )
+            // InternalGraphQL.g:413:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'type' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? ( (lv_directives_5_0= ruleDirective ) )* (otherlv_6= '{' ( (lv_fieldDefinitions_7_0= ruleFieldDefinition ) )* otherlv_8= '}' )? )
             {
-            // InternalGraphQL.g:413:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'type' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )? )
-            // InternalGraphQL.g:414:3: ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'type' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )?
+            // InternalGraphQL.g:413:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'type' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? ( (lv_directives_5_0= ruleDirective ) )* (otherlv_6= '{' ( (lv_fieldDefinitions_7_0= ruleFieldDefinition ) )* otherlv_8= '}' )? )
+            // InternalGraphQL.g:414:3: ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'type' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? ( (lv_directives_5_0= ruleDirective ) )* (otherlv_6= '{' ( (lv_fieldDefinitions_7_0= ruleFieldDefinition ) )* otherlv_8= '}' )?
             {
             // InternalGraphQL.g:414:3: ( (lv_description_0_0= ruleStringValue ) )?
             int alt6=2;
@@ -1374,44 +1376,93 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:480:3: (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // InternalGraphQL.g:480:3: ( (lv_directives_5_0= ruleDirective ) )*
+            loop8:
+            do {
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-            if ( (LA9_0==15) ) {
-                alt9=1;
+                if ( (LA8_0==RULE_DIRECTIVE_NAME) ) {
+                    alt8=1;
+                }
+
+
+                switch (alt8) {
+            	case 1 :
+            	    // InternalGraphQL.g:481:4: (lv_directives_5_0= ruleDirective )
+            	    {
+            	    // InternalGraphQL.g:481:4: (lv_directives_5_0= ruleDirective )
+            	    // InternalGraphQL.g:482:5: lv_directives_5_0= ruleDirective
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getObjectTypeDefinitionAccess().getDirectivesDirectiveParserRuleCall_4_0());
+            	    				
+            	    pushFollow(FOLLOW_14);
+            	    lv_directives_5_0=ruleDirective();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getObjectTypeDefinitionRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"directives",
+            	    						lv_directives_5_0,
+            	    						"io.github.katmatt.graphql.GraphQL.Directive");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop8;
+                }
+            } while (true);
+
+            // InternalGraphQL.g:499:3: (otherlv_6= '{' ( (lv_fieldDefinitions_7_0= ruleFieldDefinition ) )* otherlv_8= '}' )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
+
+            if ( (LA10_0==15) ) {
+                alt10=1;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // InternalGraphQL.g:481:4: otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}'
+                    // InternalGraphQL.g:500:4: otherlv_6= '{' ( (lv_fieldDefinitions_7_0= ruleFieldDefinition ) )* otherlv_8= '}'
                     {
-                    otherlv_5=(Token)match(input,15,FOLLOW_15); 
+                    otherlv_6=(Token)match(input,15,FOLLOW_15); 
 
-                    				newLeafNode(otherlv_5, grammarAccess.getObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_4_0());
+                    				newLeafNode(otherlv_6, grammarAccess.getObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_5_0());
                     			
-                    // InternalGraphQL.g:485:4: ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )*
-                    loop8:
+                    // InternalGraphQL.g:504:4: ( (lv_fieldDefinitions_7_0= ruleFieldDefinition ) )*
+                    loop9:
                     do {
-                        int alt8=2;
-                        int LA8_0 = input.LA(1);
+                        int alt9=2;
+                        int LA9_0 = input.LA(1);
 
-                        if ( (LA8_0==RULE_NAME||(LA8_0>=RULE_SL_STRING_VALUE && LA8_0<=RULE_ML_STRING_VALUE)) ) {
-                            alt8=1;
+                        if ( (LA9_0==RULE_NAME||(LA9_0>=RULE_SL_STRING_VALUE && LA9_0<=RULE_ML_STRING_VALUE)) ) {
+                            alt9=1;
                         }
 
 
-                        switch (alt8) {
+                        switch (alt9) {
                     	case 1 :
-                    	    // InternalGraphQL.g:486:5: (lv_fieldDefinitions_6_0= ruleFieldDefinition )
+                    	    // InternalGraphQL.g:505:5: (lv_fieldDefinitions_7_0= ruleFieldDefinition )
                     	    {
-                    	    // InternalGraphQL.g:486:5: (lv_fieldDefinitions_6_0= ruleFieldDefinition )
-                    	    // InternalGraphQL.g:487:6: lv_fieldDefinitions_6_0= ruleFieldDefinition
+                    	    // InternalGraphQL.g:505:5: (lv_fieldDefinitions_7_0= ruleFieldDefinition )
+                    	    // InternalGraphQL.g:506:6: lv_fieldDefinitions_7_0= ruleFieldDefinition
                     	    {
 
-                    	    						newCompositeNode(grammarAccess.getObjectTypeDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_4_1_0());
+                    	    						newCompositeNode(grammarAccess.getObjectTypeDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_5_1_0());
                     	    					
                     	    pushFollow(FOLLOW_15);
-                    	    lv_fieldDefinitions_6_0=ruleFieldDefinition();
+                    	    lv_fieldDefinitions_7_0=ruleFieldDefinition();
 
                     	    state._fsp--;
 
@@ -1422,7 +1473,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     	    						add(
                     	    							current,
                     	    							"fieldDefinitions",
-                    	    							lv_fieldDefinitions_6_0,
+                    	    							lv_fieldDefinitions_7_0,
                     	    							"io.github.katmatt.graphql.GraphQL.FieldDefinition");
                     	    						afterParserOrEnumRuleCall();
                     	    					
@@ -1434,13 +1485,13 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop8;
+                    	    break loop9;
                         }
                     } while (true);
 
-                    otherlv_7=(Token)match(input,16,FOLLOW_2); 
+                    otherlv_8=(Token)match(input,16,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_7, grammarAccess.getObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_4_2());
+                    				newLeafNode(otherlv_8, grammarAccess.getObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_5_2());
                     			
 
                     }
@@ -1471,7 +1522,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInterfaceDefinition"
-    // InternalGraphQL.g:513:1: entryRuleInterfaceDefinition returns [EObject current=null] : iv_ruleInterfaceDefinition= ruleInterfaceDefinition EOF ;
+    // InternalGraphQL.g:532:1: entryRuleInterfaceDefinition returns [EObject current=null] : iv_ruleInterfaceDefinition= ruleInterfaceDefinition EOF ;
     public final EObject entryRuleInterfaceDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -1479,8 +1530,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:513:60: (iv_ruleInterfaceDefinition= ruleInterfaceDefinition EOF )
-            // InternalGraphQL.g:514:2: iv_ruleInterfaceDefinition= ruleInterfaceDefinition EOF
+            // InternalGraphQL.g:532:60: (iv_ruleInterfaceDefinition= ruleInterfaceDefinition EOF )
+            // InternalGraphQL.g:533:2: iv_ruleInterfaceDefinition= ruleInterfaceDefinition EOF
             {
              newCompositeNode(grammarAccess.getInterfaceDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -1507,7 +1558,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInterfaceDefinition"
-    // InternalGraphQL.g:520:1: ruleInterfaceDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'interface' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )? ) ;
+    // InternalGraphQL.g:539:1: ruleInterfaceDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'interface' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )? ) ;
     public final EObject ruleInterfaceDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -1527,25 +1578,25 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:526:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'interface' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )? ) )
-            // InternalGraphQL.g:527:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'interface' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )? )
+            // InternalGraphQL.g:545:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'interface' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )? ) )
+            // InternalGraphQL.g:546:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'interface' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )? )
             {
-            // InternalGraphQL.g:527:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'interface' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )? )
-            // InternalGraphQL.g:528:3: ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'interface' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )?
+            // InternalGraphQL.g:546:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'interface' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )? )
+            // InternalGraphQL.g:547:3: ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'interface' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )? (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )?
             {
-            // InternalGraphQL.g:528:3: ( (lv_description_0_0= ruleStringValue ) )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // InternalGraphQL.g:547:3: ( (lv_description_0_0= ruleStringValue ) )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( ((LA10_0>=RULE_SL_STRING_VALUE && LA10_0<=RULE_ML_STRING_VALUE)) ) {
-                alt10=1;
+            if ( ((LA11_0>=RULE_SL_STRING_VALUE && LA11_0<=RULE_ML_STRING_VALUE)) ) {
+                alt11=1;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // InternalGraphQL.g:529:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:548:4: (lv_description_0_0= ruleStringValue )
                     {
-                    // InternalGraphQL.g:529:4: (lv_description_0_0= ruleStringValue )
-                    // InternalGraphQL.g:530:5: lv_description_0_0= ruleStringValue
+                    // InternalGraphQL.g:548:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:549:5: lv_description_0_0= ruleStringValue
                     {
 
                     					newCompositeNode(grammarAccess.getInterfaceDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0());
@@ -1579,13 +1630,13 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getInterfaceDefinitionAccess().getInterfaceKeyword_1());
             		
-            // InternalGraphQL.g:551:3: ( (lv_name_2_0= RULE_NAME ) )
-            // InternalGraphQL.g:552:4: (lv_name_2_0= RULE_NAME )
+            // InternalGraphQL.g:570:3: ( (lv_name_2_0= RULE_NAME ) )
+            // InternalGraphQL.g:571:4: (lv_name_2_0= RULE_NAME )
             {
-            // InternalGraphQL.g:552:4: (lv_name_2_0= RULE_NAME )
-            // InternalGraphQL.g:553:5: lv_name_2_0= RULE_NAME
+            // InternalGraphQL.g:571:4: (lv_name_2_0= RULE_NAME )
+            // InternalGraphQL.g:572:5: lv_name_2_0= RULE_NAME
             {
-            lv_name_2_0=(Token)match(input,RULE_NAME,FOLLOW_12); 
+            lv_name_2_0=(Token)match(input,RULE_NAME,FOLLOW_17); 
 
             					newLeafNode(lv_name_2_0, grammarAccess.getInterfaceDefinitionAccess().getNameNAMETerminalRuleCall_2_0());
             				
@@ -1605,31 +1656,31 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:569:3: (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // InternalGraphQL.g:588:3: (otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) ) )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA11_0==20) ) {
-                alt11=1;
+            if ( (LA12_0==20) ) {
+                alt12=1;
             }
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
-                    // InternalGraphQL.g:570:4: otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) )
+                    // InternalGraphQL.g:589:4: otherlv_3= 'implements' ( (lv_implements_4_0= ruleIntersectionType ) )
                     {
                     otherlv_3=(Token)match(input,20,FOLLOW_13); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getInterfaceDefinitionAccess().getImplementsKeyword_3_0());
                     			
-                    // InternalGraphQL.g:574:4: ( (lv_implements_4_0= ruleIntersectionType ) )
-                    // InternalGraphQL.g:575:5: (lv_implements_4_0= ruleIntersectionType )
+                    // InternalGraphQL.g:593:4: ( (lv_implements_4_0= ruleIntersectionType ) )
+                    // InternalGraphQL.g:594:5: (lv_implements_4_0= ruleIntersectionType )
                     {
-                    // InternalGraphQL.g:575:5: (lv_implements_4_0= ruleIntersectionType )
-                    // InternalGraphQL.g:576:6: lv_implements_4_0= ruleIntersectionType
+                    // InternalGraphQL.g:594:5: (lv_implements_4_0= ruleIntersectionType )
+                    // InternalGraphQL.g:595:6: lv_implements_4_0= ruleIntersectionType
                     {
 
                     						newCompositeNode(grammarAccess.getInterfaceDefinitionAccess().getImplementsIntersectionTypeParserRuleCall_3_1_0());
                     					
-                    pushFollow(FOLLOW_14);
+                    pushFollow(FOLLOW_18);
                     lv_implements_4_0=ruleIntersectionType();
 
                     state._fsp--;
@@ -1657,38 +1708,38 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:594:3: (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalGraphQL.g:613:3: (otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}' )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA13_0==15) ) {
-                alt13=1;
+            if ( (LA14_0==15) ) {
+                alt14=1;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // InternalGraphQL.g:595:4: otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}'
+                    // InternalGraphQL.g:614:4: otherlv_5= '{' ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )* otherlv_7= '}'
                     {
                     otherlv_5=(Token)match(input,15,FOLLOW_15); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getInterfaceDefinitionAccess().getLeftCurlyBracketKeyword_4_0());
                     			
-                    // InternalGraphQL.g:599:4: ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )*
-                    loop12:
+                    // InternalGraphQL.g:618:4: ( (lv_fieldDefinitions_6_0= ruleFieldDefinition ) )*
+                    loop13:
                     do {
-                        int alt12=2;
-                        int LA12_0 = input.LA(1);
+                        int alt13=2;
+                        int LA13_0 = input.LA(1);
 
-                        if ( (LA12_0==RULE_NAME||(LA12_0>=RULE_SL_STRING_VALUE && LA12_0<=RULE_ML_STRING_VALUE)) ) {
-                            alt12=1;
+                        if ( (LA13_0==RULE_NAME||(LA13_0>=RULE_SL_STRING_VALUE && LA13_0<=RULE_ML_STRING_VALUE)) ) {
+                            alt13=1;
                         }
 
 
-                        switch (alt12) {
+                        switch (alt13) {
                     	case 1 :
-                    	    // InternalGraphQL.g:600:5: (lv_fieldDefinitions_6_0= ruleFieldDefinition )
+                    	    // InternalGraphQL.g:619:5: (lv_fieldDefinitions_6_0= ruleFieldDefinition )
                     	    {
-                    	    // InternalGraphQL.g:600:5: (lv_fieldDefinitions_6_0= ruleFieldDefinition )
-                    	    // InternalGraphQL.g:601:6: lv_fieldDefinitions_6_0= ruleFieldDefinition
+                    	    // InternalGraphQL.g:619:5: (lv_fieldDefinitions_6_0= ruleFieldDefinition )
+                    	    // InternalGraphQL.g:620:6: lv_fieldDefinitions_6_0= ruleFieldDefinition
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getInterfaceDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_4_1_0());
@@ -1717,7 +1768,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop12;
+                    	    break loop13;
                         }
                     } while (true);
 
@@ -1754,7 +1805,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFieldDefinition"
-    // InternalGraphQL.g:627:1: entryRuleFieldDefinition returns [EObject current=null] : iv_ruleFieldDefinition= ruleFieldDefinition EOF ;
+    // InternalGraphQL.g:646:1: entryRuleFieldDefinition returns [EObject current=null] : iv_ruleFieldDefinition= ruleFieldDefinition EOF ;
     public final EObject entryRuleFieldDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -1762,8 +1813,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:627:56: (iv_ruleFieldDefinition= ruleFieldDefinition EOF )
-            // InternalGraphQL.g:628:2: iv_ruleFieldDefinition= ruleFieldDefinition EOF
+            // InternalGraphQL.g:646:56: (iv_ruleFieldDefinition= ruleFieldDefinition EOF )
+            // InternalGraphQL.g:647:2: iv_ruleFieldDefinition= ruleFieldDefinition EOF
             {
              newCompositeNode(grammarAccess.getFieldDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -1790,40 +1841,42 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFieldDefinition"
-    // InternalGraphQL.g:634:1: ruleFieldDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) ) ;
+    // InternalGraphQL.g:653:1: ruleFieldDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) ( (lv_arguments_2_0= ruleArgumentsDefinition ) )? otherlv_3= ':' ( (lv_type_4_0= ruleType ) ) ) ;
     public final EObject ruleFieldDefinition() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_1_0=null;
-        Token otherlv_2=null;
+        Token otherlv_3=null;
         EObject lv_description_0_0 = null;
 
-        EObject lv_type_3_0 = null;
+        EObject lv_arguments_2_0 = null;
+
+        EObject lv_type_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalGraphQL.g:640:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) ) )
-            // InternalGraphQL.g:641:2: ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) )
+            // InternalGraphQL.g:659:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) ( (lv_arguments_2_0= ruleArgumentsDefinition ) )? otherlv_3= ':' ( (lv_type_4_0= ruleType ) ) ) )
+            // InternalGraphQL.g:660:2: ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) ( (lv_arguments_2_0= ruleArgumentsDefinition ) )? otherlv_3= ':' ( (lv_type_4_0= ruleType ) ) )
             {
-            // InternalGraphQL.g:641:2: ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) )
-            // InternalGraphQL.g:642:3: ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) )
+            // InternalGraphQL.g:660:2: ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) ( (lv_arguments_2_0= ruleArgumentsDefinition ) )? otherlv_3= ':' ( (lv_type_4_0= ruleType ) ) )
+            // InternalGraphQL.g:661:3: ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) ( (lv_arguments_2_0= ruleArgumentsDefinition ) )? otherlv_3= ':' ( (lv_type_4_0= ruleType ) )
             {
-            // InternalGraphQL.g:642:3: ( (lv_description_0_0= ruleStringValue ) )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // InternalGraphQL.g:661:3: ( (lv_description_0_0= ruleStringValue ) )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( ((LA14_0>=RULE_SL_STRING_VALUE && LA14_0<=RULE_ML_STRING_VALUE)) ) {
-                alt14=1;
+            if ( ((LA15_0>=RULE_SL_STRING_VALUE && LA15_0<=RULE_ML_STRING_VALUE)) ) {
+                alt15=1;
             }
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
-                    // InternalGraphQL.g:643:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:662:4: (lv_description_0_0= ruleStringValue )
                     {
-                    // InternalGraphQL.g:643:4: (lv_description_0_0= ruleStringValue )
-                    // InternalGraphQL.g:644:5: lv_description_0_0= ruleStringValue
+                    // InternalGraphQL.g:662:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:663:5: lv_description_0_0= ruleStringValue
                     {
 
                     					newCompositeNode(grammarAccess.getFieldDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0());
@@ -1853,13 +1906,13 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:661:3: ( (lv_name_1_0= RULE_NAME ) )
-            // InternalGraphQL.g:662:4: (lv_name_1_0= RULE_NAME )
+            // InternalGraphQL.g:680:3: ( (lv_name_1_0= RULE_NAME ) )
+            // InternalGraphQL.g:681:4: (lv_name_1_0= RULE_NAME )
             {
-            // InternalGraphQL.g:662:4: (lv_name_1_0= RULE_NAME )
-            // InternalGraphQL.g:663:5: lv_name_1_0= RULE_NAME
+            // InternalGraphQL.g:681:4: (lv_name_1_0= RULE_NAME )
+            // InternalGraphQL.g:682:5: lv_name_1_0= RULE_NAME
             {
-            lv_name_1_0=(Token)match(input,RULE_NAME,FOLLOW_8); 
+            lv_name_1_0=(Token)match(input,RULE_NAME,FOLLOW_19); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getFieldDefinitionAccess().getNameNAMETerminalRuleCall_1_0());
             				
@@ -1879,21 +1932,63 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_13); 
+            // InternalGraphQL.g:698:3: ( (lv_arguments_2_0= ruleArgumentsDefinition ) )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            			newLeafNode(otherlv_2, grammarAccess.getFieldDefinitionAccess().getColonKeyword_2());
+            if ( (LA16_0==37) ) {
+                alt16=1;
+            }
+            switch (alt16) {
+                case 1 :
+                    // InternalGraphQL.g:699:4: (lv_arguments_2_0= ruleArgumentsDefinition )
+                    {
+                    // InternalGraphQL.g:699:4: (lv_arguments_2_0= ruleArgumentsDefinition )
+                    // InternalGraphQL.g:700:5: lv_arguments_2_0= ruleArgumentsDefinition
+                    {
+
+                    					newCompositeNode(grammarAccess.getFieldDefinitionAccess().getArgumentsArgumentsDefinitionParserRuleCall_2_0());
+                    				
+                    pushFollow(FOLLOW_8);
+                    lv_arguments_2_0=ruleArgumentsDefinition();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getFieldDefinitionRule());
+                    					}
+                    					set(
+                    						current,
+                    						"arguments",
+                    						lv_arguments_2_0,
+                    						"io.github.katmatt.graphql.GraphQL.ArgumentsDefinition");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_3=(Token)match(input,17,FOLLOW_13); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getFieldDefinitionAccess().getColonKeyword_3());
             		
-            // InternalGraphQL.g:683:3: ( (lv_type_3_0= ruleType ) )
-            // InternalGraphQL.g:684:4: (lv_type_3_0= ruleType )
+            // InternalGraphQL.g:721:3: ( (lv_type_4_0= ruleType ) )
+            // InternalGraphQL.g:722:4: (lv_type_4_0= ruleType )
             {
-            // InternalGraphQL.g:684:4: (lv_type_3_0= ruleType )
-            // InternalGraphQL.g:685:5: lv_type_3_0= ruleType
+            // InternalGraphQL.g:722:4: (lv_type_4_0= ruleType )
+            // InternalGraphQL.g:723:5: lv_type_4_0= ruleType
             {
 
-            					newCompositeNode(grammarAccess.getFieldDefinitionAccess().getTypeTypeParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getFieldDefinitionAccess().getTypeTypeParserRuleCall_4_0());
             				
             pushFollow(FOLLOW_2);
-            lv_type_3_0=ruleType();
+            lv_type_4_0=ruleType();
 
             state._fsp--;
 
@@ -1904,7 +1999,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"type",
-            						lv_type_3_0,
+            						lv_type_4_0,
             						"io.github.katmatt.graphql.GraphQL.Type");
             					afterParserOrEnumRuleCall();
             				
@@ -1937,7 +2032,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnionTypeDefinition"
-    // InternalGraphQL.g:706:1: entryRuleUnionTypeDefinition returns [EObject current=null] : iv_ruleUnionTypeDefinition= ruleUnionTypeDefinition EOF ;
+    // InternalGraphQL.g:744:1: entryRuleUnionTypeDefinition returns [EObject current=null] : iv_ruleUnionTypeDefinition= ruleUnionTypeDefinition EOF ;
     public final EObject entryRuleUnionTypeDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -1945,8 +2040,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:706:60: (iv_ruleUnionTypeDefinition= ruleUnionTypeDefinition EOF )
-            // InternalGraphQL.g:707:2: iv_ruleUnionTypeDefinition= ruleUnionTypeDefinition EOF
+            // InternalGraphQL.g:744:60: (iv_ruleUnionTypeDefinition= ruleUnionTypeDefinition EOF )
+            // InternalGraphQL.g:745:2: iv_ruleUnionTypeDefinition= ruleUnionTypeDefinition EOF
             {
              newCompositeNode(grammarAccess.getUnionTypeDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -1973,7 +2068,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnionTypeDefinition"
-    // InternalGraphQL.g:713:1: ruleUnionTypeDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'union' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )* )? ) ;
+    // InternalGraphQL.g:751:1: ruleUnionTypeDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'union' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )* )? ) ;
     public final EObject ruleUnionTypeDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -1993,30 +2088,30 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:719:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'union' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )* )? ) )
-            // InternalGraphQL.g:720:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'union' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )* )? )
+            // InternalGraphQL.g:757:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'union' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )* )? ) )
+            // InternalGraphQL.g:758:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'union' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )* )? )
             {
-            // InternalGraphQL.g:720:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'union' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )* )? )
-            // InternalGraphQL.g:721:3: ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'union' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )* )?
+            // InternalGraphQL.g:758:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'union' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )* )? )
+            // InternalGraphQL.g:759:3: ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'union' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )* )?
             {
-            // InternalGraphQL.g:721:3: ( (lv_description_0_0= ruleStringValue ) )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // InternalGraphQL.g:759:3: ( (lv_description_0_0= ruleStringValue ) )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( ((LA15_0>=RULE_SL_STRING_VALUE && LA15_0<=RULE_ML_STRING_VALUE)) ) {
-                alt15=1;
+            if ( ((LA17_0>=RULE_SL_STRING_VALUE && LA17_0<=RULE_ML_STRING_VALUE)) ) {
+                alt17=1;
             }
-            switch (alt15) {
+            switch (alt17) {
                 case 1 :
-                    // InternalGraphQL.g:722:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:760:4: (lv_description_0_0= ruleStringValue )
                     {
-                    // InternalGraphQL.g:722:4: (lv_description_0_0= ruleStringValue )
-                    // InternalGraphQL.g:723:5: lv_description_0_0= ruleStringValue
+                    // InternalGraphQL.g:760:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:761:5: lv_description_0_0= ruleStringValue
                     {
 
                     					newCompositeNode(grammarAccess.getUnionTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0());
                     				
-                    pushFollow(FOLLOW_17);
+                    pushFollow(FOLLOW_20);
                     lv_description_0_0=ruleStringValue();
 
                     state._fsp--;
@@ -2045,13 +2140,13 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getUnionTypeDefinitionAccess().getUnionKeyword_1());
             		
-            // InternalGraphQL.g:744:3: ( (lv_name_2_0= RULE_NAME ) )
-            // InternalGraphQL.g:745:4: (lv_name_2_0= RULE_NAME )
+            // InternalGraphQL.g:782:3: ( (lv_name_2_0= RULE_NAME ) )
+            // InternalGraphQL.g:783:4: (lv_name_2_0= RULE_NAME )
             {
-            // InternalGraphQL.g:745:4: (lv_name_2_0= RULE_NAME )
-            // InternalGraphQL.g:746:5: lv_name_2_0= RULE_NAME
+            // InternalGraphQL.g:783:4: (lv_name_2_0= RULE_NAME )
+            // InternalGraphQL.g:784:5: lv_name_2_0= RULE_NAME
             {
-            lv_name_2_0=(Token)match(input,RULE_NAME,FOLLOW_18); 
+            lv_name_2_0=(Token)match(input,RULE_NAME,FOLLOW_21); 
 
             					newLeafNode(lv_name_2_0, grammarAccess.getUnionTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0());
             				
@@ -2071,31 +2166,31 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:762:3: (otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )* )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalGraphQL.g:800:3: (otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )* )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA18_0==23) ) {
-                alt18=1;
+            if ( (LA20_0==23) ) {
+                alt20=1;
             }
-            switch (alt18) {
+            switch (alt20) {
                 case 1 :
-                    // InternalGraphQL.g:763:4: otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )*
+                    // InternalGraphQL.g:801:4: otherlv_3= '=' (otherlv_4= '|' )? ( (lv_memberTypes_5_0= ruleType ) ) (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )*
                     {
-                    otherlv_3=(Token)match(input,23,FOLLOW_19); 
+                    otherlv_3=(Token)match(input,23,FOLLOW_22); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getUnionTypeDefinitionAccess().getEqualsSignKeyword_3_0());
                     			
-                    // InternalGraphQL.g:767:4: (otherlv_4= '|' )?
-                    int alt16=2;
-                    int LA16_0 = input.LA(1);
+                    // InternalGraphQL.g:805:4: (otherlv_4= '|' )?
+                    int alt18=2;
+                    int LA18_0 = input.LA(1);
 
-                    if ( (LA16_0==24) ) {
-                        alt16=1;
+                    if ( (LA18_0==24) ) {
+                        alt18=1;
                     }
-                    switch (alt16) {
+                    switch (alt18) {
                         case 1 :
-                            // InternalGraphQL.g:768:5: otherlv_4= '|'
+                            // InternalGraphQL.g:806:5: otherlv_4= '|'
                             {
                             otherlv_4=(Token)match(input,24,FOLLOW_13); 
 
@@ -2107,16 +2202,16 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalGraphQL.g:773:4: ( (lv_memberTypes_5_0= ruleType ) )
-                    // InternalGraphQL.g:774:5: (lv_memberTypes_5_0= ruleType )
+                    // InternalGraphQL.g:811:4: ( (lv_memberTypes_5_0= ruleType ) )
+                    // InternalGraphQL.g:812:5: (lv_memberTypes_5_0= ruleType )
                     {
-                    // InternalGraphQL.g:774:5: (lv_memberTypes_5_0= ruleType )
-                    // InternalGraphQL.g:775:6: lv_memberTypes_5_0= ruleType
+                    // InternalGraphQL.g:812:5: (lv_memberTypes_5_0= ruleType )
+                    // InternalGraphQL.g:813:6: lv_memberTypes_5_0= ruleType
                     {
 
                     						newCompositeNode(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeParserRuleCall_3_2_0());
                     					
-                    pushFollow(FOLLOW_20);
+                    pushFollow(FOLLOW_23);
                     lv_memberTypes_5_0=ruleType();
 
                     state._fsp--;
@@ -2138,35 +2233,35 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalGraphQL.g:792:4: (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )*
-                    loop17:
+                    // InternalGraphQL.g:830:4: (otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) ) )*
+                    loop19:
                     do {
-                        int alt17=2;
-                        int LA17_0 = input.LA(1);
+                        int alt19=2;
+                        int LA19_0 = input.LA(1);
 
-                        if ( (LA17_0==24) ) {
-                            alt17=1;
+                        if ( (LA19_0==24) ) {
+                            alt19=1;
                         }
 
 
-                        switch (alt17) {
+                        switch (alt19) {
                     	case 1 :
-                    	    // InternalGraphQL.g:793:5: otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) )
+                    	    // InternalGraphQL.g:831:5: otherlv_6= '|' ( (lv_memberTypes_7_0= ruleType ) )
                     	    {
                     	    otherlv_6=(Token)match(input,24,FOLLOW_13); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getUnionTypeDefinitionAccess().getVerticalLineKeyword_3_3_0());
                     	    				
-                    	    // InternalGraphQL.g:797:5: ( (lv_memberTypes_7_0= ruleType ) )
-                    	    // InternalGraphQL.g:798:6: (lv_memberTypes_7_0= ruleType )
+                    	    // InternalGraphQL.g:835:5: ( (lv_memberTypes_7_0= ruleType ) )
+                    	    // InternalGraphQL.g:836:6: (lv_memberTypes_7_0= ruleType )
                     	    {
-                    	    // InternalGraphQL.g:798:6: (lv_memberTypes_7_0= ruleType )
-                    	    // InternalGraphQL.g:799:7: lv_memberTypes_7_0= ruleType
+                    	    // InternalGraphQL.g:836:6: (lv_memberTypes_7_0= ruleType )
+                    	    // InternalGraphQL.g:837:7: lv_memberTypes_7_0= ruleType
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeParserRuleCall_3_3_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_20);
+                    	    pushFollow(FOLLOW_23);
                     	    lv_memberTypes_7_0=ruleType();
 
                     	    state._fsp--;
@@ -2193,7 +2288,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop17;
+                    	    break loop19;
                         }
                     } while (true);
 
@@ -2226,7 +2321,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnumTypeDefinition"
-    // InternalGraphQL.g:822:1: entryRuleEnumTypeDefinition returns [EObject current=null] : iv_ruleEnumTypeDefinition= ruleEnumTypeDefinition EOF ;
+    // InternalGraphQL.g:860:1: entryRuleEnumTypeDefinition returns [EObject current=null] : iv_ruleEnumTypeDefinition= ruleEnumTypeDefinition EOF ;
     public final EObject entryRuleEnumTypeDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2234,8 +2329,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:822:59: (iv_ruleEnumTypeDefinition= ruleEnumTypeDefinition EOF )
-            // InternalGraphQL.g:823:2: iv_ruleEnumTypeDefinition= ruleEnumTypeDefinition EOF
+            // InternalGraphQL.g:860:59: (iv_ruleEnumTypeDefinition= ruleEnumTypeDefinition EOF )
+            // InternalGraphQL.g:861:2: iv_ruleEnumTypeDefinition= ruleEnumTypeDefinition EOF
             {
              newCompositeNode(grammarAccess.getEnumTypeDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -2262,7 +2357,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumTypeDefinition"
-    // InternalGraphQL.g:829:1: ruleEnumTypeDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) ) otherlv_5= '}' )? ) ;
+    // InternalGraphQL.g:867:1: ruleEnumTypeDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) )* otherlv_5= '}' )? ) ;
     public final EObject ruleEnumTypeDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2279,30 +2374,30 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:835:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) ) otherlv_5= '}' )? ) )
-            // InternalGraphQL.g:836:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) ) otherlv_5= '}' )? )
+            // InternalGraphQL.g:873:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) )* otherlv_5= '}' )? ) )
+            // InternalGraphQL.g:874:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) )* otherlv_5= '}' )? )
             {
-            // InternalGraphQL.g:836:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) ) otherlv_5= '}' )? )
-            // InternalGraphQL.g:837:3: ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) ) otherlv_5= '}' )?
+            // InternalGraphQL.g:874:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) )* otherlv_5= '}' )? )
+            // InternalGraphQL.g:875:3: ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) )* otherlv_5= '}' )?
             {
-            // InternalGraphQL.g:837:3: ( (lv_description_0_0= ruleStringValue ) )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalGraphQL.g:875:3: ( (lv_description_0_0= ruleStringValue ) )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( ((LA19_0>=RULE_SL_STRING_VALUE && LA19_0<=RULE_ML_STRING_VALUE)) ) {
-                alt19=1;
+            if ( ((LA21_0>=RULE_SL_STRING_VALUE && LA21_0<=RULE_ML_STRING_VALUE)) ) {
+                alt21=1;
             }
-            switch (alt19) {
+            switch (alt21) {
                 case 1 :
-                    // InternalGraphQL.g:838:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:876:4: (lv_description_0_0= ruleStringValue )
                     {
-                    // InternalGraphQL.g:838:4: (lv_description_0_0= ruleStringValue )
-                    // InternalGraphQL.g:839:5: lv_description_0_0= ruleStringValue
+                    // InternalGraphQL.g:876:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:877:5: lv_description_0_0= ruleStringValue
                     {
 
                     					newCompositeNode(grammarAccess.getEnumTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0());
                     				
-                    pushFollow(FOLLOW_21);
+                    pushFollow(FOLLOW_24);
                     lv_description_0_0=ruleStringValue();
 
                     state._fsp--;
@@ -2331,13 +2426,13 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getEnumTypeDefinitionAccess().getEnumKeyword_1());
             		
-            // InternalGraphQL.g:860:3: ( (lv_name_2_0= RULE_NAME ) )
-            // InternalGraphQL.g:861:4: (lv_name_2_0= RULE_NAME )
+            // InternalGraphQL.g:898:3: ( (lv_name_2_0= RULE_NAME ) )
+            // InternalGraphQL.g:899:4: (lv_name_2_0= RULE_NAME )
             {
-            // InternalGraphQL.g:861:4: (lv_name_2_0= RULE_NAME )
-            // InternalGraphQL.g:862:5: lv_name_2_0= RULE_NAME
+            // InternalGraphQL.g:899:4: (lv_name_2_0= RULE_NAME )
+            // InternalGraphQL.g:900:5: lv_name_2_0= RULE_NAME
             {
-            lv_name_2_0=(Token)match(input,RULE_NAME,FOLLOW_14); 
+            lv_name_2_0=(Token)match(input,RULE_NAME,FOLLOW_18); 
 
             					newLeafNode(lv_name_2_0, grammarAccess.getEnumTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0());
             				
@@ -2357,51 +2452,69 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:878:3: (otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) ) otherlv_5= '}' )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // InternalGraphQL.g:916:3: (otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) )* otherlv_5= '}' )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA20_0==15) ) {
-                alt20=1;
+            if ( (LA23_0==15) ) {
+                alt23=1;
             }
-            switch (alt20) {
+            switch (alt23) {
                 case 1 :
-                    // InternalGraphQL.g:879:4: otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) ) otherlv_5= '}'
+                    // InternalGraphQL.g:917:4: otherlv_3= '{' ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) )* otherlv_5= '}'
                     {
-                    otherlv_3=(Token)match(input,15,FOLLOW_22); 
+                    otherlv_3=(Token)match(input,15,FOLLOW_15); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getEnumTypeDefinitionAccess().getLeftCurlyBracketKeyword_3_0());
                     			
-                    // InternalGraphQL.g:883:4: ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) )
-                    // InternalGraphQL.g:884:5: (lv_valueDefinitions_4_0= ruleEnumValueDefinition )
-                    {
-                    // InternalGraphQL.g:884:5: (lv_valueDefinitions_4_0= ruleEnumValueDefinition )
-                    // InternalGraphQL.g:885:6: lv_valueDefinitions_4_0= ruleEnumValueDefinition
-                    {
+                    // InternalGraphQL.g:921:4: ( (lv_valueDefinitions_4_0= ruleEnumValueDefinition ) )*
+                    loop22:
+                    do {
+                        int alt22=2;
+                        int LA22_0 = input.LA(1);
 
-                    						newCompositeNode(grammarAccess.getEnumTypeDefinitionAccess().getValueDefinitionsEnumValueDefinitionParserRuleCall_3_1_0());
-                    					
-                    pushFollow(FOLLOW_23);
-                    lv_valueDefinitions_4_0=ruleEnumValueDefinition();
-
-                    state._fsp--;
+                        if ( (LA22_0==RULE_NAME||(LA22_0>=RULE_SL_STRING_VALUE && LA22_0<=RULE_ML_STRING_VALUE)) ) {
+                            alt22=1;
+                        }
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getEnumTypeDefinitionRule());
-                    						}
-                    						add(
-                    							current,
-                    							"valueDefinitions",
-                    							lv_valueDefinitions_4_0,
-                    							"io.github.katmatt.graphql.GraphQL.EnumValueDefinition");
-                    						afterParserOrEnumRuleCall();
-                    					
+                        switch (alt22) {
+                    	case 1 :
+                    	    // InternalGraphQL.g:922:5: (lv_valueDefinitions_4_0= ruleEnumValueDefinition )
+                    	    {
+                    	    // InternalGraphQL.g:922:5: (lv_valueDefinitions_4_0= ruleEnumValueDefinition )
+                    	    // InternalGraphQL.g:923:6: lv_valueDefinitions_4_0= ruleEnumValueDefinition
+                    	    {
 
-                    }
+                    	    						newCompositeNode(grammarAccess.getEnumTypeDefinitionAccess().getValueDefinitionsEnumValueDefinitionParserRuleCall_3_1_0());
+                    	    					
+                    	    pushFollow(FOLLOW_15);
+                    	    lv_valueDefinitions_4_0=ruleEnumValueDefinition();
+
+                    	    state._fsp--;
 
 
-                    }
+                    	    						if (current==null) {
+                    	    							current = createModelElementForParent(grammarAccess.getEnumTypeDefinitionRule());
+                    	    						}
+                    	    						add(
+                    	    							current,
+                    	    							"valueDefinitions",
+                    	    							lv_valueDefinitions_4_0,
+                    	    							"io.github.katmatt.graphql.GraphQL.EnumValueDefinition");
+                    	    						afterParserOrEnumRuleCall();
+                    	    					
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop22;
+                        }
+                    } while (true);
 
                     otherlv_5=(Token)match(input,16,FOLLOW_2); 
 
@@ -2436,7 +2549,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnumValueDefinition"
-    // InternalGraphQL.g:911:1: entryRuleEnumValueDefinition returns [EObject current=null] : iv_ruleEnumValueDefinition= ruleEnumValueDefinition EOF ;
+    // InternalGraphQL.g:949:1: entryRuleEnumValueDefinition returns [EObject current=null] : iv_ruleEnumValueDefinition= ruleEnumValueDefinition EOF ;
     public final EObject entryRuleEnumValueDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2444,8 +2557,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:911:60: (iv_ruleEnumValueDefinition= ruleEnumValueDefinition EOF )
-            // InternalGraphQL.g:912:2: iv_ruleEnumValueDefinition= ruleEnumValueDefinition EOF
+            // InternalGraphQL.g:949:60: (iv_ruleEnumValueDefinition= ruleEnumValueDefinition EOF )
+            // InternalGraphQL.g:950:2: iv_ruleEnumValueDefinition= ruleEnumValueDefinition EOF
             {
              newCompositeNode(grammarAccess.getEnumValueDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -2472,7 +2585,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumValueDefinition"
-    // InternalGraphQL.g:918:1: ruleEnumValueDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) ) ;
+    // InternalGraphQL.g:956:1: ruleEnumValueDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) ) ;
     public final EObject ruleEnumValueDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2484,25 +2597,25 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:924:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) ) )
-            // InternalGraphQL.g:925:2: ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) )
+            // InternalGraphQL.g:962:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) ) )
+            // InternalGraphQL.g:963:2: ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) )
             {
-            // InternalGraphQL.g:925:2: ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) )
-            // InternalGraphQL.g:926:3: ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) )
+            // InternalGraphQL.g:963:2: ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) )
+            // InternalGraphQL.g:964:3: ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) )
             {
-            // InternalGraphQL.g:926:3: ( (lv_description_0_0= ruleStringValue ) )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // InternalGraphQL.g:964:3: ( (lv_description_0_0= ruleStringValue ) )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( ((LA21_0>=RULE_SL_STRING_VALUE && LA21_0<=RULE_ML_STRING_VALUE)) ) {
-                alt21=1;
+            if ( ((LA24_0>=RULE_SL_STRING_VALUE && LA24_0<=RULE_ML_STRING_VALUE)) ) {
+                alt24=1;
             }
-            switch (alt21) {
+            switch (alt24) {
                 case 1 :
-                    // InternalGraphQL.g:927:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:965:4: (lv_description_0_0= ruleStringValue )
                     {
-                    // InternalGraphQL.g:927:4: (lv_description_0_0= ruleStringValue )
-                    // InternalGraphQL.g:928:5: lv_description_0_0= ruleStringValue
+                    // InternalGraphQL.g:965:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:966:5: lv_description_0_0= ruleStringValue
                     {
 
                     					newCompositeNode(grammarAccess.getEnumValueDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0());
@@ -2532,11 +2645,11 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:945:3: ( (lv_name_1_0= RULE_NAME ) )
-            // InternalGraphQL.g:946:4: (lv_name_1_0= RULE_NAME )
+            // InternalGraphQL.g:983:3: ( (lv_name_1_0= RULE_NAME ) )
+            // InternalGraphQL.g:984:4: (lv_name_1_0= RULE_NAME )
             {
-            // InternalGraphQL.g:946:4: (lv_name_1_0= RULE_NAME )
-            // InternalGraphQL.g:947:5: lv_name_1_0= RULE_NAME
+            // InternalGraphQL.g:984:4: (lv_name_1_0= RULE_NAME )
+            // InternalGraphQL.g:985:5: lv_name_1_0= RULE_NAME
             {
             lv_name_1_0=(Token)match(input,RULE_NAME,FOLLOW_2); 
 
@@ -2581,7 +2694,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInputObjectTypeDefinition"
-    // InternalGraphQL.g:967:1: entryRuleInputObjectTypeDefinition returns [EObject current=null] : iv_ruleInputObjectTypeDefinition= ruleInputObjectTypeDefinition EOF ;
+    // InternalGraphQL.g:1005:1: entryRuleInputObjectTypeDefinition returns [EObject current=null] : iv_ruleInputObjectTypeDefinition= ruleInputObjectTypeDefinition EOF ;
     public final EObject entryRuleInputObjectTypeDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2589,8 +2702,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:967:66: (iv_ruleInputObjectTypeDefinition= ruleInputObjectTypeDefinition EOF )
-            // InternalGraphQL.g:968:2: iv_ruleInputObjectTypeDefinition= ruleInputObjectTypeDefinition EOF
+            // InternalGraphQL.g:1005:66: (iv_ruleInputObjectTypeDefinition= ruleInputObjectTypeDefinition EOF )
+            // InternalGraphQL.g:1006:2: iv_ruleInputObjectTypeDefinition= ruleInputObjectTypeDefinition EOF
             {
              newCompositeNode(grammarAccess.getInputObjectTypeDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -2617,7 +2730,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInputObjectTypeDefinition"
-    // InternalGraphQL.g:974:1: ruleInputObjectTypeDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'input' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}' )? ) ;
+    // InternalGraphQL.g:1012:1: ruleInputObjectTypeDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'input' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}' )? ) ;
     public final EObject ruleInputObjectTypeDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2634,30 +2747,30 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:980:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'input' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}' )? ) )
-            // InternalGraphQL.g:981:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'input' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}' )? )
+            // InternalGraphQL.g:1018:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'input' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}' )? ) )
+            // InternalGraphQL.g:1019:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'input' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}' )? )
             {
-            // InternalGraphQL.g:981:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'input' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}' )? )
-            // InternalGraphQL.g:982:3: ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'input' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}' )?
+            // InternalGraphQL.g:1019:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'input' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}' )? )
+            // InternalGraphQL.g:1020:3: ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'input' ( (lv_name_2_0= RULE_NAME ) ) (otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}' )?
             {
-            // InternalGraphQL.g:982:3: ( (lv_description_0_0= ruleStringValue ) )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // InternalGraphQL.g:1020:3: ( (lv_description_0_0= ruleStringValue ) )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( ((LA22_0>=RULE_SL_STRING_VALUE && LA22_0<=RULE_ML_STRING_VALUE)) ) {
-                alt22=1;
+            if ( ((LA25_0>=RULE_SL_STRING_VALUE && LA25_0<=RULE_ML_STRING_VALUE)) ) {
+                alt25=1;
             }
-            switch (alt22) {
+            switch (alt25) {
                 case 1 :
-                    // InternalGraphQL.g:983:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:1021:4: (lv_description_0_0= ruleStringValue )
                     {
-                    // InternalGraphQL.g:983:4: (lv_description_0_0= ruleStringValue )
-                    // InternalGraphQL.g:984:5: lv_description_0_0= ruleStringValue
+                    // InternalGraphQL.g:1021:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:1022:5: lv_description_0_0= ruleStringValue
                     {
 
                     					newCompositeNode(grammarAccess.getInputObjectTypeDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0());
                     				
-                    pushFollow(FOLLOW_24);
+                    pushFollow(FOLLOW_25);
                     lv_description_0_0=ruleStringValue();
 
                     state._fsp--;
@@ -2686,13 +2799,13 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getInputObjectTypeDefinitionAccess().getInputKeyword_1());
             		
-            // InternalGraphQL.g:1005:3: ( (lv_name_2_0= RULE_NAME ) )
-            // InternalGraphQL.g:1006:4: (lv_name_2_0= RULE_NAME )
+            // InternalGraphQL.g:1043:3: ( (lv_name_2_0= RULE_NAME ) )
+            // InternalGraphQL.g:1044:4: (lv_name_2_0= RULE_NAME )
             {
-            // InternalGraphQL.g:1006:4: (lv_name_2_0= RULE_NAME )
-            // InternalGraphQL.g:1007:5: lv_name_2_0= RULE_NAME
+            // InternalGraphQL.g:1044:4: (lv_name_2_0= RULE_NAME )
+            // InternalGraphQL.g:1045:5: lv_name_2_0= RULE_NAME
             {
-            lv_name_2_0=(Token)match(input,RULE_NAME,FOLLOW_14); 
+            lv_name_2_0=(Token)match(input,RULE_NAME,FOLLOW_18); 
 
             					newLeafNode(lv_name_2_0, grammarAccess.getInputObjectTypeDefinitionAccess().getNameNAMETerminalRuleCall_2_0());
             				
@@ -2712,38 +2825,38 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:1023:3: (otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}' )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // InternalGraphQL.g:1061:3: (otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}' )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA24_0==15) ) {
-                alt24=1;
+            if ( (LA27_0==15) ) {
+                alt27=1;
             }
-            switch (alt24) {
+            switch (alt27) {
                 case 1 :
-                    // InternalGraphQL.g:1024:4: otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}'
+                    // InternalGraphQL.g:1062:4: otherlv_3= '{' ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )* otherlv_5= '}'
                     {
                     otherlv_3=(Token)match(input,15,FOLLOW_15); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getInputObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_3_0());
                     			
-                    // InternalGraphQL.g:1028:4: ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )*
-                    loop23:
+                    // InternalGraphQL.g:1066:4: ( (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition ) )*
+                    loop26:
                     do {
-                        int alt23=2;
-                        int LA23_0 = input.LA(1);
+                        int alt26=2;
+                        int LA26_0 = input.LA(1);
 
-                        if ( (LA23_0==RULE_NAME||(LA23_0>=RULE_SL_STRING_VALUE && LA23_0<=RULE_ML_STRING_VALUE)) ) {
-                            alt23=1;
+                        if ( (LA26_0==RULE_NAME||(LA26_0>=RULE_SL_STRING_VALUE && LA26_0<=RULE_ML_STRING_VALUE)) ) {
+                            alt26=1;
                         }
 
 
-                        switch (alt23) {
+                        switch (alt26) {
                     	case 1 :
-                    	    // InternalGraphQL.g:1029:5: (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition )
+                    	    // InternalGraphQL.g:1067:5: (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition )
                     	    {
-                    	    // InternalGraphQL.g:1029:5: (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition )
-                    	    // InternalGraphQL.g:1030:6: lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition
+                    	    // InternalGraphQL.g:1067:5: (lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition )
+                    	    // InternalGraphQL.g:1068:6: lv_inputsFieldDefinitions_4_0= ruleInputValueDefinition
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getInputObjectTypeDefinitionAccess().getInputsFieldDefinitionsInputValueDefinitionParserRuleCall_3_1_0());
@@ -2772,7 +2885,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop23;
+                    	    break loop26;
                         }
                     } while (true);
 
@@ -2809,7 +2922,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInputValueDefinition"
-    // InternalGraphQL.g:1056:1: entryRuleInputValueDefinition returns [EObject current=null] : iv_ruleInputValueDefinition= ruleInputValueDefinition EOF ;
+    // InternalGraphQL.g:1094:1: entryRuleInputValueDefinition returns [EObject current=null] : iv_ruleInputValueDefinition= ruleInputValueDefinition EOF ;
     public final EObject entryRuleInputValueDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2817,8 +2930,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1056:61: (iv_ruleInputValueDefinition= ruleInputValueDefinition EOF )
-            // InternalGraphQL.g:1057:2: iv_ruleInputValueDefinition= ruleInputValueDefinition EOF
+            // InternalGraphQL.g:1094:61: (iv_ruleInputValueDefinition= ruleInputValueDefinition EOF )
+            // InternalGraphQL.g:1095:2: iv_ruleInputValueDefinition= ruleInputValueDefinition EOF
             {
              newCompositeNode(grammarAccess.getInputValueDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -2845,7 +2958,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInputValueDefinition"
-    // InternalGraphQL.g:1063:1: ruleInputValueDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) ) )? ) ;
+    // InternalGraphQL.g:1101:1: ruleInputValueDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) ) )? ) ;
     public final EObject ruleInputValueDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2863,25 +2976,25 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1069:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) ) )? ) )
-            // InternalGraphQL.g:1070:2: ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) ) )? )
+            // InternalGraphQL.g:1107:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) ) )? ) )
+            // InternalGraphQL.g:1108:2: ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) ) )? )
             {
-            // InternalGraphQL.g:1070:2: ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) ) )? )
-            // InternalGraphQL.g:1071:3: ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) ) )?
+            // InternalGraphQL.g:1108:2: ( ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) ) )? )
+            // InternalGraphQL.g:1109:3: ( (lv_description_0_0= ruleStringValue ) )? ( (lv_name_1_0= RULE_NAME ) ) otherlv_2= ':' ( (lv_type_3_0= ruleType ) ) (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) ) )?
             {
-            // InternalGraphQL.g:1071:3: ( (lv_description_0_0= ruleStringValue ) )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // InternalGraphQL.g:1109:3: ( (lv_description_0_0= ruleStringValue ) )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( ((LA25_0>=RULE_SL_STRING_VALUE && LA25_0<=RULE_ML_STRING_VALUE)) ) {
-                alt25=1;
+            if ( ((LA28_0>=RULE_SL_STRING_VALUE && LA28_0<=RULE_ML_STRING_VALUE)) ) {
+                alt28=1;
             }
-            switch (alt25) {
+            switch (alt28) {
                 case 1 :
-                    // InternalGraphQL.g:1072:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:1110:4: (lv_description_0_0= ruleStringValue )
                     {
-                    // InternalGraphQL.g:1072:4: (lv_description_0_0= ruleStringValue )
-                    // InternalGraphQL.g:1073:5: lv_description_0_0= ruleStringValue
+                    // InternalGraphQL.g:1110:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:1111:5: lv_description_0_0= ruleStringValue
                     {
 
                     					newCompositeNode(grammarAccess.getInputValueDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0());
@@ -2911,11 +3024,11 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:1090:3: ( (lv_name_1_0= RULE_NAME ) )
-            // InternalGraphQL.g:1091:4: (lv_name_1_0= RULE_NAME )
+            // InternalGraphQL.g:1128:3: ( (lv_name_1_0= RULE_NAME ) )
+            // InternalGraphQL.g:1129:4: (lv_name_1_0= RULE_NAME )
             {
-            // InternalGraphQL.g:1091:4: (lv_name_1_0= RULE_NAME )
-            // InternalGraphQL.g:1092:5: lv_name_1_0= RULE_NAME
+            // InternalGraphQL.g:1129:4: (lv_name_1_0= RULE_NAME )
+            // InternalGraphQL.g:1130:5: lv_name_1_0= RULE_NAME
             {
             lv_name_1_0=(Token)match(input,RULE_NAME,FOLLOW_8); 
 
@@ -2941,16 +3054,16 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getInputValueDefinitionAccess().getColonKeyword_2());
             		
-            // InternalGraphQL.g:1112:3: ( (lv_type_3_0= ruleType ) )
-            // InternalGraphQL.g:1113:4: (lv_type_3_0= ruleType )
+            // InternalGraphQL.g:1150:3: ( (lv_type_3_0= ruleType ) )
+            // InternalGraphQL.g:1151:4: (lv_type_3_0= ruleType )
             {
-            // InternalGraphQL.g:1113:4: (lv_type_3_0= ruleType )
-            // InternalGraphQL.g:1114:5: lv_type_3_0= ruleType
+            // InternalGraphQL.g:1151:4: (lv_type_3_0= ruleType )
+            // InternalGraphQL.g:1152:5: lv_type_3_0= ruleType
             {
 
             					newCompositeNode(grammarAccess.getInputValueDefinitionAccess().getTypeTypeParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_21);
             lv_type_3_0=ruleType();
 
             state._fsp--;
@@ -2972,26 +3085,26 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:1131:3: (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) ) )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // InternalGraphQL.g:1169:3: (otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) ) )?
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA26_0==23) ) {
-                alt26=1;
+            if ( (LA29_0==23) ) {
+                alt29=1;
             }
-            switch (alt26) {
+            switch (alt29) {
                 case 1 :
-                    // InternalGraphQL.g:1132:4: otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) )
+                    // InternalGraphQL.g:1170:4: otherlv_4= '=' ( (lv_defaultValue_5_0= ruleConstValue ) )
                     {
-                    otherlv_4=(Token)match(input,23,FOLLOW_25); 
+                    otherlv_4=(Token)match(input,23,FOLLOW_26); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getInputValueDefinitionAccess().getEqualsSignKeyword_4_0());
                     			
-                    // InternalGraphQL.g:1136:4: ( (lv_defaultValue_5_0= ruleConstValue ) )
-                    // InternalGraphQL.g:1137:5: (lv_defaultValue_5_0= ruleConstValue )
+                    // InternalGraphQL.g:1174:4: ( (lv_defaultValue_5_0= ruleConstValue ) )
+                    // InternalGraphQL.g:1175:5: (lv_defaultValue_5_0= ruleConstValue )
                     {
-                    // InternalGraphQL.g:1137:5: (lv_defaultValue_5_0= ruleConstValue )
-                    // InternalGraphQL.g:1138:6: lv_defaultValue_5_0= ruleConstValue
+                    // InternalGraphQL.g:1175:5: (lv_defaultValue_5_0= ruleConstValue )
+                    // InternalGraphQL.g:1176:6: lv_defaultValue_5_0= ruleConstValue
                     {
 
                     						newCompositeNode(grammarAccess.getInputValueDefinitionAccess().getDefaultValueConstValueParserRuleCall_4_1_0());
@@ -3047,7 +3160,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntersectionType"
-    // InternalGraphQL.g:1160:1: entryRuleIntersectionType returns [EObject current=null] : iv_ruleIntersectionType= ruleIntersectionType EOF ;
+    // InternalGraphQL.g:1198:1: entryRuleIntersectionType returns [EObject current=null] : iv_ruleIntersectionType= ruleIntersectionType EOF ;
     public final EObject entryRuleIntersectionType() throws RecognitionException {
         EObject current = null;
 
@@ -3055,8 +3168,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1160:57: (iv_ruleIntersectionType= ruleIntersectionType EOF )
-            // InternalGraphQL.g:1161:2: iv_ruleIntersectionType= ruleIntersectionType EOF
+            // InternalGraphQL.g:1198:57: (iv_ruleIntersectionType= ruleIntersectionType EOF )
+            // InternalGraphQL.g:1199:2: iv_ruleIntersectionType= ruleIntersectionType EOF
             {
              newCompositeNode(grammarAccess.getIntersectionTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -3083,7 +3196,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntersectionType"
-    // InternalGraphQL.g:1167:1: ruleIntersectionType returns [EObject current=null] : ( (otherlv_0= '&' )? ( (lv_memberTypes_1_0= ruleType ) ) (otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) ) )* ) ;
+    // InternalGraphQL.g:1205:1: ruleIntersectionType returns [EObject current=null] : ( (otherlv_0= '&' )? ( (lv_memberTypes_1_0= ruleType ) ) (otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) ) )* ) ;
     public final EObject ruleIntersectionType() throws RecognitionException {
         EObject current = null;
 
@@ -3098,22 +3211,22 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1173:2: ( ( (otherlv_0= '&' )? ( (lv_memberTypes_1_0= ruleType ) ) (otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) ) )* ) )
-            // InternalGraphQL.g:1174:2: ( (otherlv_0= '&' )? ( (lv_memberTypes_1_0= ruleType ) ) (otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) ) )* )
+            // InternalGraphQL.g:1211:2: ( ( (otherlv_0= '&' )? ( (lv_memberTypes_1_0= ruleType ) ) (otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) ) )* ) )
+            // InternalGraphQL.g:1212:2: ( (otherlv_0= '&' )? ( (lv_memberTypes_1_0= ruleType ) ) (otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) ) )* )
             {
-            // InternalGraphQL.g:1174:2: ( (otherlv_0= '&' )? ( (lv_memberTypes_1_0= ruleType ) ) (otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) ) )* )
-            // InternalGraphQL.g:1175:3: (otherlv_0= '&' )? ( (lv_memberTypes_1_0= ruleType ) ) (otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) ) )*
+            // InternalGraphQL.g:1212:2: ( (otherlv_0= '&' )? ( (lv_memberTypes_1_0= ruleType ) ) (otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) ) )* )
+            // InternalGraphQL.g:1213:3: (otherlv_0= '&' )? ( (lv_memberTypes_1_0= ruleType ) ) (otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) ) )*
             {
-            // InternalGraphQL.g:1175:3: (otherlv_0= '&' )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // InternalGraphQL.g:1213:3: (otherlv_0= '&' )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA27_0==27) ) {
-                alt27=1;
+            if ( (LA30_0==27) ) {
+                alt30=1;
             }
-            switch (alt27) {
+            switch (alt30) {
                 case 1 :
-                    // InternalGraphQL.g:1176:4: otherlv_0= '&'
+                    // InternalGraphQL.g:1214:4: otherlv_0= '&'
                     {
                     otherlv_0=(Token)match(input,27,FOLLOW_13); 
 
@@ -3125,16 +3238,16 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:1181:3: ( (lv_memberTypes_1_0= ruleType ) )
-            // InternalGraphQL.g:1182:4: (lv_memberTypes_1_0= ruleType )
+            // InternalGraphQL.g:1219:3: ( (lv_memberTypes_1_0= ruleType ) )
+            // InternalGraphQL.g:1220:4: (lv_memberTypes_1_0= ruleType )
             {
-            // InternalGraphQL.g:1182:4: (lv_memberTypes_1_0= ruleType )
-            // InternalGraphQL.g:1183:5: lv_memberTypes_1_0= ruleType
+            // InternalGraphQL.g:1220:4: (lv_memberTypes_1_0= ruleType )
+            // InternalGraphQL.g:1221:5: lv_memberTypes_1_0= ruleType
             {
 
             					newCompositeNode(grammarAccess.getIntersectionTypeAccess().getMemberTypesTypeParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_27);
             lv_memberTypes_1_0=ruleType();
 
             state._fsp--;
@@ -3156,35 +3269,35 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:1200:3: (otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) ) )*
-            loop28:
+            // InternalGraphQL.g:1238:3: (otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) ) )*
+            loop31:
             do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( (LA28_0==27) ) {
-                    alt28=1;
+                if ( (LA31_0==27) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt28) {
+                switch (alt31) {
             	case 1 :
-            	    // InternalGraphQL.g:1201:4: otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) )
+            	    // InternalGraphQL.g:1239:4: otherlv_2= '&' ( (lv_memberTypes_3_0= ruleType ) )
             	    {
             	    otherlv_2=(Token)match(input,27,FOLLOW_13); 
 
             	    				newLeafNode(otherlv_2, grammarAccess.getIntersectionTypeAccess().getAmpersandKeyword_2_0());
             	    			
-            	    // InternalGraphQL.g:1205:4: ( (lv_memberTypes_3_0= ruleType ) )
-            	    // InternalGraphQL.g:1206:5: (lv_memberTypes_3_0= ruleType )
+            	    // InternalGraphQL.g:1243:4: ( (lv_memberTypes_3_0= ruleType ) )
+            	    // InternalGraphQL.g:1244:5: (lv_memberTypes_3_0= ruleType )
             	    {
-            	    // InternalGraphQL.g:1206:5: (lv_memberTypes_3_0= ruleType )
-            	    // InternalGraphQL.g:1207:6: lv_memberTypes_3_0= ruleType
+            	    // InternalGraphQL.g:1244:5: (lv_memberTypes_3_0= ruleType )
+            	    // InternalGraphQL.g:1245:6: lv_memberTypes_3_0= ruleType
             	    {
 
             	    						newCompositeNode(grammarAccess.getIntersectionTypeAccess().getMemberTypesTypeParserRuleCall_2_1_0());
             	    					
-            	    pushFollow(FOLLOW_26);
+            	    pushFollow(FOLLOW_27);
             	    lv_memberTypes_3_0=ruleType();
 
             	    state._fsp--;
@@ -3211,7 +3324,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop28;
+            	    break loop31;
                 }
             } while (true);
 
@@ -3238,7 +3351,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleType"
-    // InternalGraphQL.g:1229:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
+    // InternalGraphQL.g:1267:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
     public final EObject entryRuleType() throws RecognitionException {
         EObject current = null;
 
@@ -3246,8 +3359,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1229:45: (iv_ruleType= ruleType EOF )
-            // InternalGraphQL.g:1230:2: iv_ruleType= ruleType EOF
+            // InternalGraphQL.g:1267:45: (iv_ruleType= ruleType EOF )
+            // InternalGraphQL.g:1268:2: iv_ruleType= ruleType EOF
             {
              newCompositeNode(grammarAccess.getTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -3274,7 +3387,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleType"
-    // InternalGraphQL.g:1236:1: ruleType returns [EObject current=null] : (this_NamedType_0= ruleNamedType | this_ListType_1= ruleListType ) ;
+    // InternalGraphQL.g:1274:1: ruleType returns [EObject current=null] : (this_NamedType_0= ruleNamedType | this_ListType_1= ruleListType ) ;
     public final EObject ruleType() throws RecognitionException {
         EObject current = null;
 
@@ -3287,28 +3400,28 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1242:2: ( (this_NamedType_0= ruleNamedType | this_ListType_1= ruleListType ) )
-            // InternalGraphQL.g:1243:2: (this_NamedType_0= ruleNamedType | this_ListType_1= ruleListType )
+            // InternalGraphQL.g:1280:2: ( (this_NamedType_0= ruleNamedType | this_ListType_1= ruleListType ) )
+            // InternalGraphQL.g:1281:2: (this_NamedType_0= ruleNamedType | this_ListType_1= ruleListType )
             {
-            // InternalGraphQL.g:1243:2: (this_NamedType_0= ruleNamedType | this_ListType_1= ruleListType )
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // InternalGraphQL.g:1281:2: (this_NamedType_0= ruleNamedType | this_ListType_1= ruleListType )
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA29_0==RULE_NAME) ) {
-                alt29=1;
+            if ( (LA32_0==RULE_NAME) ) {
+                alt32=1;
             }
-            else if ( (LA29_0==29) ) {
-                alt29=2;
+            else if ( (LA32_0==29) ) {
+                alt32=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 29, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
-            switch (alt29) {
+            switch (alt32) {
                 case 1 :
-                    // InternalGraphQL.g:1244:3: this_NamedType_0= ruleNamedType
+                    // InternalGraphQL.g:1282:3: this_NamedType_0= ruleNamedType
                     {
 
                     			newCompositeNode(grammarAccess.getTypeAccess().getNamedTypeParserRuleCall_0());
@@ -3326,7 +3439,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGraphQL.g:1253:3: this_ListType_1= ruleListType
+                    // InternalGraphQL.g:1291:3: this_ListType_1= ruleListType
                     {
 
                     			newCompositeNode(grammarAccess.getTypeAccess().getListTypeParserRuleCall_1());
@@ -3366,7 +3479,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNamedType"
-    // InternalGraphQL.g:1265:1: entryRuleNamedType returns [EObject current=null] : iv_ruleNamedType= ruleNamedType EOF ;
+    // InternalGraphQL.g:1303:1: entryRuleNamedType returns [EObject current=null] : iv_ruleNamedType= ruleNamedType EOF ;
     public final EObject entryRuleNamedType() throws RecognitionException {
         EObject current = null;
 
@@ -3374,8 +3487,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1265:50: (iv_ruleNamedType= ruleNamedType EOF )
-            // InternalGraphQL.g:1266:2: iv_ruleNamedType= ruleNamedType EOF
+            // InternalGraphQL.g:1303:50: (iv_ruleNamedType= ruleNamedType EOF )
+            // InternalGraphQL.g:1304:2: iv_ruleNamedType= ruleNamedType EOF
             {
              newCompositeNode(grammarAccess.getNamedTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -3402,7 +3515,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNamedType"
-    // InternalGraphQL.g:1272:1: ruleNamedType returns [EObject current=null] : ( ( (otherlv_0= RULE_NAME ) ) ( (lv_nonNull_1_0= '!' ) )? ) ;
+    // InternalGraphQL.g:1310:1: ruleNamedType returns [EObject current=null] : ( ( (otherlv_0= RULE_NAME ) ) ( (lv_nonNull_1_0= '!' ) )? ) ;
     public final EObject ruleNamedType() throws RecognitionException {
         EObject current = null;
 
@@ -3413,24 +3526,24 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1278:2: ( ( ( (otherlv_0= RULE_NAME ) ) ( (lv_nonNull_1_0= '!' ) )? ) )
-            // InternalGraphQL.g:1279:2: ( ( (otherlv_0= RULE_NAME ) ) ( (lv_nonNull_1_0= '!' ) )? )
+            // InternalGraphQL.g:1316:2: ( ( ( (otherlv_0= RULE_NAME ) ) ( (lv_nonNull_1_0= '!' ) )? ) )
+            // InternalGraphQL.g:1317:2: ( ( (otherlv_0= RULE_NAME ) ) ( (lv_nonNull_1_0= '!' ) )? )
             {
-            // InternalGraphQL.g:1279:2: ( ( (otherlv_0= RULE_NAME ) ) ( (lv_nonNull_1_0= '!' ) )? )
-            // InternalGraphQL.g:1280:3: ( (otherlv_0= RULE_NAME ) ) ( (lv_nonNull_1_0= '!' ) )?
+            // InternalGraphQL.g:1317:2: ( ( (otherlv_0= RULE_NAME ) ) ( (lv_nonNull_1_0= '!' ) )? )
+            // InternalGraphQL.g:1318:3: ( (otherlv_0= RULE_NAME ) ) ( (lv_nonNull_1_0= '!' ) )?
             {
-            // InternalGraphQL.g:1280:3: ( (otherlv_0= RULE_NAME ) )
-            // InternalGraphQL.g:1281:4: (otherlv_0= RULE_NAME )
+            // InternalGraphQL.g:1318:3: ( (otherlv_0= RULE_NAME ) )
+            // InternalGraphQL.g:1319:4: (otherlv_0= RULE_NAME )
             {
-            // InternalGraphQL.g:1281:4: (otherlv_0= RULE_NAME )
-            // InternalGraphQL.g:1282:5: otherlv_0= RULE_NAME
+            // InternalGraphQL.g:1319:4: (otherlv_0= RULE_NAME )
+            // InternalGraphQL.g:1320:5: otherlv_0= RULE_NAME
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getNamedTypeRule());
             					}
             				
-            otherlv_0=(Token)match(input,RULE_NAME,FOLLOW_27); 
+            otherlv_0=(Token)match(input,RULE_NAME,FOLLOW_28); 
 
             					newLeafNode(otherlv_0, grammarAccess.getNamedTypeAccess().getTypeDefinitionTypeDefinitionCrossReference_0_0());
             				
@@ -3440,19 +3553,19 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:1293:3: ( (lv_nonNull_1_0= '!' ) )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // InternalGraphQL.g:1331:3: ( (lv_nonNull_1_0= '!' ) )?
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( (LA30_0==28) ) {
-                alt30=1;
+            if ( (LA33_0==28) ) {
+                alt33=1;
             }
-            switch (alt30) {
+            switch (alt33) {
                 case 1 :
-                    // InternalGraphQL.g:1294:4: (lv_nonNull_1_0= '!' )
+                    // InternalGraphQL.g:1332:4: (lv_nonNull_1_0= '!' )
                     {
-                    // InternalGraphQL.g:1294:4: (lv_nonNull_1_0= '!' )
-                    // InternalGraphQL.g:1295:5: lv_nonNull_1_0= '!'
+                    // InternalGraphQL.g:1332:4: (lv_nonNull_1_0= '!' )
+                    // InternalGraphQL.g:1333:5: lv_nonNull_1_0= '!'
                     {
                     lv_nonNull_1_0=(Token)match(input,28,FOLLOW_2); 
 
@@ -3496,7 +3609,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleListType"
-    // InternalGraphQL.g:1311:1: entryRuleListType returns [EObject current=null] : iv_ruleListType= ruleListType EOF ;
+    // InternalGraphQL.g:1349:1: entryRuleListType returns [EObject current=null] : iv_ruleListType= ruleListType EOF ;
     public final EObject entryRuleListType() throws RecognitionException {
         EObject current = null;
 
@@ -3504,8 +3617,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1311:49: (iv_ruleListType= ruleListType EOF )
-            // InternalGraphQL.g:1312:2: iv_ruleListType= ruleListType EOF
+            // InternalGraphQL.g:1349:49: (iv_ruleListType= ruleListType EOF )
+            // InternalGraphQL.g:1350:2: iv_ruleListType= ruleListType EOF
             {
              newCompositeNode(grammarAccess.getListTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -3532,7 +3645,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleListType"
-    // InternalGraphQL.g:1318:1: ruleListType returns [EObject current=null] : (otherlv_0= '[' ( (lv_type_1_0= ruleType ) ) otherlv_2= ']' ( (lv_nonNull_3_0= '!' ) )? ) ;
+    // InternalGraphQL.g:1356:1: ruleListType returns [EObject current=null] : (otherlv_0= '[' ( (lv_type_1_0= ruleType ) ) otherlv_2= ']' ( (lv_nonNull_3_0= '!' ) )? ) ;
     public final EObject ruleListType() throws RecognitionException {
         EObject current = null;
 
@@ -3546,26 +3659,26 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1324:2: ( (otherlv_0= '[' ( (lv_type_1_0= ruleType ) ) otherlv_2= ']' ( (lv_nonNull_3_0= '!' ) )? ) )
-            // InternalGraphQL.g:1325:2: (otherlv_0= '[' ( (lv_type_1_0= ruleType ) ) otherlv_2= ']' ( (lv_nonNull_3_0= '!' ) )? )
+            // InternalGraphQL.g:1362:2: ( (otherlv_0= '[' ( (lv_type_1_0= ruleType ) ) otherlv_2= ']' ( (lv_nonNull_3_0= '!' ) )? ) )
+            // InternalGraphQL.g:1363:2: (otherlv_0= '[' ( (lv_type_1_0= ruleType ) ) otherlv_2= ']' ( (lv_nonNull_3_0= '!' ) )? )
             {
-            // InternalGraphQL.g:1325:2: (otherlv_0= '[' ( (lv_type_1_0= ruleType ) ) otherlv_2= ']' ( (lv_nonNull_3_0= '!' ) )? )
-            // InternalGraphQL.g:1326:3: otherlv_0= '[' ( (lv_type_1_0= ruleType ) ) otherlv_2= ']' ( (lv_nonNull_3_0= '!' ) )?
+            // InternalGraphQL.g:1363:2: (otherlv_0= '[' ( (lv_type_1_0= ruleType ) ) otherlv_2= ']' ( (lv_nonNull_3_0= '!' ) )? )
+            // InternalGraphQL.g:1364:3: otherlv_0= '[' ( (lv_type_1_0= ruleType ) ) otherlv_2= ']' ( (lv_nonNull_3_0= '!' ) )?
             {
             otherlv_0=(Token)match(input,29,FOLLOW_13); 
 
             			newLeafNode(otherlv_0, grammarAccess.getListTypeAccess().getLeftSquareBracketKeyword_0());
             		
-            // InternalGraphQL.g:1330:3: ( (lv_type_1_0= ruleType ) )
-            // InternalGraphQL.g:1331:4: (lv_type_1_0= ruleType )
+            // InternalGraphQL.g:1368:3: ( (lv_type_1_0= ruleType ) )
+            // InternalGraphQL.g:1369:4: (lv_type_1_0= ruleType )
             {
-            // InternalGraphQL.g:1331:4: (lv_type_1_0= ruleType )
-            // InternalGraphQL.g:1332:5: lv_type_1_0= ruleType
+            // InternalGraphQL.g:1369:4: (lv_type_1_0= ruleType )
+            // InternalGraphQL.g:1370:5: lv_type_1_0= ruleType
             {
 
             					newCompositeNode(grammarAccess.getListTypeAccess().getTypeTypeParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_29);
             lv_type_1_0=ruleType();
 
             state._fsp--;
@@ -3587,23 +3700,23 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,30,FOLLOW_27); 
+            otherlv_2=(Token)match(input,30,FOLLOW_28); 
 
             			newLeafNode(otherlv_2, grammarAccess.getListTypeAccess().getRightSquareBracketKeyword_2());
             		
-            // InternalGraphQL.g:1353:3: ( (lv_nonNull_3_0= '!' ) )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // InternalGraphQL.g:1391:3: ( (lv_nonNull_3_0= '!' ) )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA31_0==28) ) {
-                alt31=1;
+            if ( (LA34_0==28) ) {
+                alt34=1;
             }
-            switch (alt31) {
+            switch (alt34) {
                 case 1 :
-                    // InternalGraphQL.g:1354:4: (lv_nonNull_3_0= '!' )
+                    // InternalGraphQL.g:1392:4: (lv_nonNull_3_0= '!' )
                     {
-                    // InternalGraphQL.g:1354:4: (lv_nonNull_3_0= '!' )
-                    // InternalGraphQL.g:1355:5: lv_nonNull_3_0= '!'
+                    // InternalGraphQL.g:1392:4: (lv_nonNull_3_0= '!' )
+                    // InternalGraphQL.g:1393:5: lv_nonNull_3_0= '!'
                     {
                     lv_nonNull_3_0=(Token)match(input,28,FOLLOW_2); 
 
@@ -3647,7 +3760,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntValue"
-    // InternalGraphQL.g:1371:1: entryRuleIntValue returns [EObject current=null] : iv_ruleIntValue= ruleIntValue EOF ;
+    // InternalGraphQL.g:1409:1: entryRuleIntValue returns [EObject current=null] : iv_ruleIntValue= ruleIntValue EOF ;
     public final EObject entryRuleIntValue() throws RecognitionException {
         EObject current = null;
 
@@ -3655,8 +3768,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1371:49: (iv_ruleIntValue= ruleIntValue EOF )
-            // InternalGraphQL.g:1372:2: iv_ruleIntValue= ruleIntValue EOF
+            // InternalGraphQL.g:1409:49: (iv_ruleIntValue= ruleIntValue EOF )
+            // InternalGraphQL.g:1410:2: iv_ruleIntValue= ruleIntValue EOF
             {
              newCompositeNode(grammarAccess.getIntValueRule()); 
             pushFollow(FOLLOW_1);
@@ -3683,7 +3796,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntValue"
-    // InternalGraphQL.g:1378:1: ruleIntValue returns [EObject current=null] : ( (lv_value_0_0= RULE_INT_VALUE ) ) ;
+    // InternalGraphQL.g:1416:1: ruleIntValue returns [EObject current=null] : ( (lv_value_0_0= RULE_INT_VALUE ) ) ;
     public final EObject ruleIntValue() throws RecognitionException {
         EObject current = null;
 
@@ -3693,14 +3806,14 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1384:2: ( ( (lv_value_0_0= RULE_INT_VALUE ) ) )
-            // InternalGraphQL.g:1385:2: ( (lv_value_0_0= RULE_INT_VALUE ) )
+            // InternalGraphQL.g:1422:2: ( ( (lv_value_0_0= RULE_INT_VALUE ) ) )
+            // InternalGraphQL.g:1423:2: ( (lv_value_0_0= RULE_INT_VALUE ) )
             {
-            // InternalGraphQL.g:1385:2: ( (lv_value_0_0= RULE_INT_VALUE ) )
-            // InternalGraphQL.g:1386:3: (lv_value_0_0= RULE_INT_VALUE )
+            // InternalGraphQL.g:1423:2: ( (lv_value_0_0= RULE_INT_VALUE ) )
+            // InternalGraphQL.g:1424:3: (lv_value_0_0= RULE_INT_VALUE )
             {
-            // InternalGraphQL.g:1386:3: (lv_value_0_0= RULE_INT_VALUE )
-            // InternalGraphQL.g:1387:4: lv_value_0_0= RULE_INT_VALUE
+            // InternalGraphQL.g:1424:3: (lv_value_0_0= RULE_INT_VALUE )
+            // InternalGraphQL.g:1425:4: lv_value_0_0= RULE_INT_VALUE
             {
             lv_value_0_0=(Token)match(input,RULE_INT_VALUE,FOLLOW_2); 
 
@@ -3742,7 +3855,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFloatValue"
-    // InternalGraphQL.g:1406:1: entryRuleFloatValue returns [EObject current=null] : iv_ruleFloatValue= ruleFloatValue EOF ;
+    // InternalGraphQL.g:1444:1: entryRuleFloatValue returns [EObject current=null] : iv_ruleFloatValue= ruleFloatValue EOF ;
     public final EObject entryRuleFloatValue() throws RecognitionException {
         EObject current = null;
 
@@ -3750,8 +3863,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1406:51: (iv_ruleFloatValue= ruleFloatValue EOF )
-            // InternalGraphQL.g:1407:2: iv_ruleFloatValue= ruleFloatValue EOF
+            // InternalGraphQL.g:1444:51: (iv_ruleFloatValue= ruleFloatValue EOF )
+            // InternalGraphQL.g:1445:2: iv_ruleFloatValue= ruleFloatValue EOF
             {
              newCompositeNode(grammarAccess.getFloatValueRule()); 
             pushFollow(FOLLOW_1);
@@ -3778,7 +3891,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFloatValue"
-    // InternalGraphQL.g:1413:1: ruleFloatValue returns [EObject current=null] : ( (lv_value_0_0= RULE_FLOAT_VALUE ) ) ;
+    // InternalGraphQL.g:1451:1: ruleFloatValue returns [EObject current=null] : ( (lv_value_0_0= RULE_FLOAT_VALUE ) ) ;
     public final EObject ruleFloatValue() throws RecognitionException {
         EObject current = null;
 
@@ -3788,14 +3901,14 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1419:2: ( ( (lv_value_0_0= RULE_FLOAT_VALUE ) ) )
-            // InternalGraphQL.g:1420:2: ( (lv_value_0_0= RULE_FLOAT_VALUE ) )
+            // InternalGraphQL.g:1457:2: ( ( (lv_value_0_0= RULE_FLOAT_VALUE ) ) )
+            // InternalGraphQL.g:1458:2: ( (lv_value_0_0= RULE_FLOAT_VALUE ) )
             {
-            // InternalGraphQL.g:1420:2: ( (lv_value_0_0= RULE_FLOAT_VALUE ) )
-            // InternalGraphQL.g:1421:3: (lv_value_0_0= RULE_FLOAT_VALUE )
+            // InternalGraphQL.g:1458:2: ( (lv_value_0_0= RULE_FLOAT_VALUE ) )
+            // InternalGraphQL.g:1459:3: (lv_value_0_0= RULE_FLOAT_VALUE )
             {
-            // InternalGraphQL.g:1421:3: (lv_value_0_0= RULE_FLOAT_VALUE )
-            // InternalGraphQL.g:1422:4: lv_value_0_0= RULE_FLOAT_VALUE
+            // InternalGraphQL.g:1459:3: (lv_value_0_0= RULE_FLOAT_VALUE )
+            // InternalGraphQL.g:1460:4: lv_value_0_0= RULE_FLOAT_VALUE
             {
             lv_value_0_0=(Token)match(input,RULE_FLOAT_VALUE,FOLLOW_2); 
 
@@ -3837,7 +3950,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNullValue"
-    // InternalGraphQL.g:1441:1: entryRuleNullValue returns [EObject current=null] : iv_ruleNullValue= ruleNullValue EOF ;
+    // InternalGraphQL.g:1479:1: entryRuleNullValue returns [EObject current=null] : iv_ruleNullValue= ruleNullValue EOF ;
     public final EObject entryRuleNullValue() throws RecognitionException {
         EObject current = null;
 
@@ -3845,8 +3958,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1441:50: (iv_ruleNullValue= ruleNullValue EOF )
-            // InternalGraphQL.g:1442:2: iv_ruleNullValue= ruleNullValue EOF
+            // InternalGraphQL.g:1479:50: (iv_ruleNullValue= ruleNullValue EOF )
+            // InternalGraphQL.g:1480:2: iv_ruleNullValue= ruleNullValue EOF
             {
              newCompositeNode(grammarAccess.getNullValueRule()); 
             pushFollow(FOLLOW_1);
@@ -3873,7 +3986,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNullValue"
-    // InternalGraphQL.g:1448:1: ruleNullValue returns [EObject current=null] : ( (lv_value_0_0= 'null' ) ) ;
+    // InternalGraphQL.g:1486:1: ruleNullValue returns [EObject current=null] : ( (lv_value_0_0= 'null' ) ) ;
     public final EObject ruleNullValue() throws RecognitionException {
         EObject current = null;
 
@@ -3883,14 +3996,14 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1454:2: ( ( (lv_value_0_0= 'null' ) ) )
-            // InternalGraphQL.g:1455:2: ( (lv_value_0_0= 'null' ) )
+            // InternalGraphQL.g:1492:2: ( ( (lv_value_0_0= 'null' ) ) )
+            // InternalGraphQL.g:1493:2: ( (lv_value_0_0= 'null' ) )
             {
-            // InternalGraphQL.g:1455:2: ( (lv_value_0_0= 'null' ) )
-            // InternalGraphQL.g:1456:3: (lv_value_0_0= 'null' )
+            // InternalGraphQL.g:1493:2: ( (lv_value_0_0= 'null' ) )
+            // InternalGraphQL.g:1494:3: (lv_value_0_0= 'null' )
             {
-            // InternalGraphQL.g:1456:3: (lv_value_0_0= 'null' )
-            // InternalGraphQL.g:1457:4: lv_value_0_0= 'null'
+            // InternalGraphQL.g:1494:3: (lv_value_0_0= 'null' )
+            // InternalGraphQL.g:1495:4: lv_value_0_0= 'null'
             {
             lv_value_0_0=(Token)match(input,31,FOLLOW_2); 
 
@@ -3928,7 +4041,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringValue"
-    // InternalGraphQL.g:1472:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
+    // InternalGraphQL.g:1510:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
     public final EObject entryRuleStringValue() throws RecognitionException {
         EObject current = null;
 
@@ -3936,8 +4049,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1472:52: (iv_ruleStringValue= ruleStringValue EOF )
-            // InternalGraphQL.g:1473:2: iv_ruleStringValue= ruleStringValue EOF
+            // InternalGraphQL.g:1510:52: (iv_ruleStringValue= ruleStringValue EOF )
+            // InternalGraphQL.g:1511:2: iv_ruleStringValue= ruleStringValue EOF
             {
              newCompositeNode(grammarAccess.getStringValueRule()); 
             pushFollow(FOLLOW_1);
@@ -3964,7 +4077,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringValue"
-    // InternalGraphQL.g:1479:1: ruleStringValue returns [EObject current=null] : ( ( (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE ) ) ) ;
+    // InternalGraphQL.g:1517:1: ruleStringValue returns [EObject current=null] : ( ( (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE ) ) ) ;
     public final EObject ruleStringValue() throws RecognitionException {
         EObject current = null;
 
@@ -3975,34 +4088,34 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1485:2: ( ( ( (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE ) ) ) )
-            // InternalGraphQL.g:1486:2: ( ( (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE ) ) )
+            // InternalGraphQL.g:1523:2: ( ( ( (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE ) ) ) )
+            // InternalGraphQL.g:1524:2: ( ( (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE ) ) )
             {
-            // InternalGraphQL.g:1486:2: ( ( (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE ) ) )
-            // InternalGraphQL.g:1487:3: ( (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE ) )
+            // InternalGraphQL.g:1524:2: ( ( (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE ) ) )
+            // InternalGraphQL.g:1525:3: ( (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE ) )
             {
-            // InternalGraphQL.g:1487:3: ( (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE ) )
-            // InternalGraphQL.g:1488:4: (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE )
+            // InternalGraphQL.g:1525:3: ( (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE ) )
+            // InternalGraphQL.g:1526:4: (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE )
             {
-            // InternalGraphQL.g:1488:4: (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE )
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // InternalGraphQL.g:1526:4: (lv_value_0_1= RULE_SL_STRING_VALUE | lv_value_0_2= RULE_ML_STRING_VALUE )
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( (LA32_0==RULE_SL_STRING_VALUE) ) {
-                alt32=1;
+            if ( (LA35_0==RULE_SL_STRING_VALUE) ) {
+                alt35=1;
             }
-            else if ( (LA32_0==RULE_ML_STRING_VALUE) ) {
-                alt32=2;
+            else if ( (LA35_0==RULE_ML_STRING_VALUE) ) {
+                alt35=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 35, 0, input);
 
                 throw nvae;
             }
-            switch (alt32) {
+            switch (alt35) {
                 case 1 :
-                    // InternalGraphQL.g:1489:5: lv_value_0_1= RULE_SL_STRING_VALUE
+                    // InternalGraphQL.g:1527:5: lv_value_0_1= RULE_SL_STRING_VALUE
                     {
                     lv_value_0_1=(Token)match(input,RULE_SL_STRING_VALUE,FOLLOW_2); 
 
@@ -4022,7 +4135,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGraphQL.g:1504:5: lv_value_0_2= RULE_ML_STRING_VALUE
+                    // InternalGraphQL.g:1542:5: lv_value_0_2= RULE_ML_STRING_VALUE
                     {
                     lv_value_0_2=(Token)match(input,RULE_ML_STRING_VALUE,FOLLOW_2); 
 
@@ -4070,7 +4183,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanValue"
-    // InternalGraphQL.g:1524:1: entryRuleBooleanValue returns [EObject current=null] : iv_ruleBooleanValue= ruleBooleanValue EOF ;
+    // InternalGraphQL.g:1562:1: entryRuleBooleanValue returns [EObject current=null] : iv_ruleBooleanValue= ruleBooleanValue EOF ;
     public final EObject entryRuleBooleanValue() throws RecognitionException {
         EObject current = null;
 
@@ -4078,8 +4191,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1524:53: (iv_ruleBooleanValue= ruleBooleanValue EOF )
-            // InternalGraphQL.g:1525:2: iv_ruleBooleanValue= ruleBooleanValue EOF
+            // InternalGraphQL.g:1562:53: (iv_ruleBooleanValue= ruleBooleanValue EOF )
+            // InternalGraphQL.g:1563:2: iv_ruleBooleanValue= ruleBooleanValue EOF
             {
              newCompositeNode(grammarAccess.getBooleanValueRule()); 
             pushFollow(FOLLOW_1);
@@ -4106,7 +4219,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanValue"
-    // InternalGraphQL.g:1531:1: ruleBooleanValue returns [EObject current=null] : ( ( (lv_value_0_1= 'true' | lv_value_0_2= 'false' ) ) ) ;
+    // InternalGraphQL.g:1569:1: ruleBooleanValue returns [EObject current=null] : ( ( (lv_value_0_1= 'true' | lv_value_0_2= 'false' ) ) ) ;
     public final EObject ruleBooleanValue() throws RecognitionException {
         EObject current = null;
 
@@ -4117,34 +4230,34 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1537:2: ( ( ( (lv_value_0_1= 'true' | lv_value_0_2= 'false' ) ) ) )
-            // InternalGraphQL.g:1538:2: ( ( (lv_value_0_1= 'true' | lv_value_0_2= 'false' ) ) )
+            // InternalGraphQL.g:1575:2: ( ( ( (lv_value_0_1= 'true' | lv_value_0_2= 'false' ) ) ) )
+            // InternalGraphQL.g:1576:2: ( ( (lv_value_0_1= 'true' | lv_value_0_2= 'false' ) ) )
             {
-            // InternalGraphQL.g:1538:2: ( ( (lv_value_0_1= 'true' | lv_value_0_2= 'false' ) ) )
-            // InternalGraphQL.g:1539:3: ( (lv_value_0_1= 'true' | lv_value_0_2= 'false' ) )
+            // InternalGraphQL.g:1576:2: ( ( (lv_value_0_1= 'true' | lv_value_0_2= 'false' ) ) )
+            // InternalGraphQL.g:1577:3: ( (lv_value_0_1= 'true' | lv_value_0_2= 'false' ) )
             {
-            // InternalGraphQL.g:1539:3: ( (lv_value_0_1= 'true' | lv_value_0_2= 'false' ) )
-            // InternalGraphQL.g:1540:4: (lv_value_0_1= 'true' | lv_value_0_2= 'false' )
+            // InternalGraphQL.g:1577:3: ( (lv_value_0_1= 'true' | lv_value_0_2= 'false' ) )
+            // InternalGraphQL.g:1578:4: (lv_value_0_1= 'true' | lv_value_0_2= 'false' )
             {
-            // InternalGraphQL.g:1540:4: (lv_value_0_1= 'true' | lv_value_0_2= 'false' )
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // InternalGraphQL.g:1578:4: (lv_value_0_1= 'true' | lv_value_0_2= 'false' )
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA33_0==32) ) {
-                alt33=1;
+            if ( (LA36_0==32) ) {
+                alt36=1;
             }
-            else if ( (LA33_0==33) ) {
-                alt33=2;
+            else if ( (LA36_0==33) ) {
+                alt36=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 36, 0, input);
 
                 throw nvae;
             }
-            switch (alt33) {
+            switch (alt36) {
                 case 1 :
-                    // InternalGraphQL.g:1541:5: lv_value_0_1= 'true'
+                    // InternalGraphQL.g:1579:5: lv_value_0_1= 'true'
                     {
                     lv_value_0_1=(Token)match(input,32,FOLLOW_2); 
 
@@ -4160,7 +4273,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGraphQL.g:1552:5: lv_value_0_2= 'false'
+                    // InternalGraphQL.g:1590:5: lv_value_0_2= 'false'
                     {
                     lv_value_0_2=(Token)match(input,33,FOLLOW_2); 
 
@@ -4204,7 +4317,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnumValue"
-    // InternalGraphQL.g:1568:1: entryRuleEnumValue returns [EObject current=null] : iv_ruleEnumValue= ruleEnumValue EOF ;
+    // InternalGraphQL.g:1606:1: entryRuleEnumValue returns [EObject current=null] : iv_ruleEnumValue= ruleEnumValue EOF ;
     public final EObject entryRuleEnumValue() throws RecognitionException {
         EObject current = null;
 
@@ -4212,8 +4325,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1568:50: (iv_ruleEnumValue= ruleEnumValue EOF )
-            // InternalGraphQL.g:1569:2: iv_ruleEnumValue= ruleEnumValue EOF
+            // InternalGraphQL.g:1606:50: (iv_ruleEnumValue= ruleEnumValue EOF )
+            // InternalGraphQL.g:1607:2: iv_ruleEnumValue= ruleEnumValue EOF
             {
              newCompositeNode(grammarAccess.getEnumValueRule()); 
             pushFollow(FOLLOW_1);
@@ -4240,7 +4353,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumValue"
-    // InternalGraphQL.g:1575:1: ruleEnumValue returns [EObject current=null] : ( (otherlv_0= RULE_NAME ) ) ;
+    // InternalGraphQL.g:1613:1: ruleEnumValue returns [EObject current=null] : ( (otherlv_0= RULE_NAME ) ) ;
     public final EObject ruleEnumValue() throws RecognitionException {
         EObject current = null;
 
@@ -4250,14 +4363,14 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1581:2: ( ( (otherlv_0= RULE_NAME ) ) )
-            // InternalGraphQL.g:1582:2: ( (otherlv_0= RULE_NAME ) )
+            // InternalGraphQL.g:1619:2: ( ( (otherlv_0= RULE_NAME ) ) )
+            // InternalGraphQL.g:1620:2: ( (otherlv_0= RULE_NAME ) )
             {
-            // InternalGraphQL.g:1582:2: ( (otherlv_0= RULE_NAME ) )
-            // InternalGraphQL.g:1583:3: (otherlv_0= RULE_NAME )
+            // InternalGraphQL.g:1620:2: ( (otherlv_0= RULE_NAME ) )
+            // InternalGraphQL.g:1621:3: (otherlv_0= RULE_NAME )
             {
-            // InternalGraphQL.g:1583:3: (otherlv_0= RULE_NAME )
-            // InternalGraphQL.g:1584:4: otherlv_0= RULE_NAME
+            // InternalGraphQL.g:1621:3: (otherlv_0= RULE_NAME )
+            // InternalGraphQL.g:1622:4: otherlv_0= RULE_NAME
             {
 
             				if (current==null) {
@@ -4294,7 +4407,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleObjectValue"
-    // InternalGraphQL.g:1598:1: entryRuleObjectValue returns [EObject current=null] : iv_ruleObjectValue= ruleObjectValue EOF ;
+    // InternalGraphQL.g:1636:1: entryRuleObjectValue returns [EObject current=null] : iv_ruleObjectValue= ruleObjectValue EOF ;
     public final EObject entryRuleObjectValue() throws RecognitionException {
         EObject current = null;
 
@@ -4302,8 +4415,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1598:52: (iv_ruleObjectValue= ruleObjectValue EOF )
-            // InternalGraphQL.g:1599:2: iv_ruleObjectValue= ruleObjectValue EOF
+            // InternalGraphQL.g:1636:52: (iv_ruleObjectValue= ruleObjectValue EOF )
+            // InternalGraphQL.g:1637:2: iv_ruleObjectValue= ruleObjectValue EOF
             {
              newCompositeNode(grammarAccess.getObjectValueRule()); 
             pushFollow(FOLLOW_1);
@@ -4330,7 +4443,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleObjectValue"
-    // InternalGraphQL.g:1605:1: ruleObjectValue returns [EObject current=null] : ( () otherlv_1= '{' ( (lv_fields_2_0= ruleObjectField ) )* otherlv_3= '}' ) ;
+    // InternalGraphQL.g:1643:1: ruleObjectValue returns [EObject current=null] : ( () otherlv_1= '{' ( (lv_fields_2_0= ruleObjectField ) )* otherlv_3= '}' ) ;
     public final EObject ruleObjectValue() throws RecognitionException {
         EObject current = null;
 
@@ -4343,14 +4456,14 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1611:2: ( ( () otherlv_1= '{' ( (lv_fields_2_0= ruleObjectField ) )* otherlv_3= '}' ) )
-            // InternalGraphQL.g:1612:2: ( () otherlv_1= '{' ( (lv_fields_2_0= ruleObjectField ) )* otherlv_3= '}' )
+            // InternalGraphQL.g:1649:2: ( ( () otherlv_1= '{' ( (lv_fields_2_0= ruleObjectField ) )* otherlv_3= '}' ) )
+            // InternalGraphQL.g:1650:2: ( () otherlv_1= '{' ( (lv_fields_2_0= ruleObjectField ) )* otherlv_3= '}' )
             {
-            // InternalGraphQL.g:1612:2: ( () otherlv_1= '{' ( (lv_fields_2_0= ruleObjectField ) )* otherlv_3= '}' )
-            // InternalGraphQL.g:1613:3: () otherlv_1= '{' ( (lv_fields_2_0= ruleObjectField ) )* otherlv_3= '}'
+            // InternalGraphQL.g:1650:2: ( () otherlv_1= '{' ( (lv_fields_2_0= ruleObjectField ) )* otherlv_3= '}' )
+            // InternalGraphQL.g:1651:3: () otherlv_1= '{' ( (lv_fields_2_0= ruleObjectField ) )* otherlv_3= '}'
             {
-            // InternalGraphQL.g:1613:3: ()
-            // InternalGraphQL.g:1614:4: 
+            // InternalGraphQL.g:1651:3: ()
+            // InternalGraphQL.g:1652:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4360,32 +4473,32 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,15,FOLLOW_29); 
+            otherlv_1=(Token)match(input,15,FOLLOW_30); 
 
             			newLeafNode(otherlv_1, grammarAccess.getObjectValueAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalGraphQL.g:1624:3: ( (lv_fields_2_0= ruleObjectField ) )*
-            loop34:
+            // InternalGraphQL.g:1662:3: ( (lv_fields_2_0= ruleObjectField ) )*
+            loop37:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt37=2;
+                int LA37_0 = input.LA(1);
 
-                if ( (LA34_0==RULE_NAME) ) {
-                    alt34=1;
+                if ( (LA37_0==RULE_NAME) ) {
+                    alt37=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt37) {
             	case 1 :
-            	    // InternalGraphQL.g:1625:4: (lv_fields_2_0= ruleObjectField )
+            	    // InternalGraphQL.g:1663:4: (lv_fields_2_0= ruleObjectField )
             	    {
-            	    // InternalGraphQL.g:1625:4: (lv_fields_2_0= ruleObjectField )
-            	    // InternalGraphQL.g:1626:5: lv_fields_2_0= ruleObjectField
+            	    // InternalGraphQL.g:1663:4: (lv_fields_2_0= ruleObjectField )
+            	    // InternalGraphQL.g:1664:5: lv_fields_2_0= ruleObjectField
             	    {
 
             	    					newCompositeNode(grammarAccess.getObjectValueAccess().getFieldsObjectFieldParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_29);
+            	    pushFollow(FOLLOW_30);
             	    lv_fields_2_0=ruleObjectField();
 
             	    state._fsp--;
@@ -4409,7 +4522,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop34;
+            	    break loop37;
                 }
             } while (true);
 
@@ -4440,7 +4553,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleObjectField"
-    // InternalGraphQL.g:1651:1: entryRuleObjectField returns [EObject current=null] : iv_ruleObjectField= ruleObjectField EOF ;
+    // InternalGraphQL.g:1689:1: entryRuleObjectField returns [EObject current=null] : iv_ruleObjectField= ruleObjectField EOF ;
     public final EObject entryRuleObjectField() throws RecognitionException {
         EObject current = null;
 
@@ -4448,8 +4561,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1651:52: (iv_ruleObjectField= ruleObjectField EOF )
-            // InternalGraphQL.g:1652:2: iv_ruleObjectField= ruleObjectField EOF
+            // InternalGraphQL.g:1689:52: (iv_ruleObjectField= ruleObjectField EOF )
+            // InternalGraphQL.g:1690:2: iv_ruleObjectField= ruleObjectField EOF
             {
              newCompositeNode(grammarAccess.getObjectFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -4476,7 +4589,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleObjectField"
-    // InternalGraphQL.g:1658:1: ruleObjectField returns [EObject current=null] : ( ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) ) ) ;
+    // InternalGraphQL.g:1696:1: ruleObjectField returns [EObject current=null] : ( ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) ) ) ;
     public final EObject ruleObjectField() throws RecognitionException {
         EObject current = null;
 
@@ -4489,17 +4602,17 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1664:2: ( ( ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) ) ) )
-            // InternalGraphQL.g:1665:2: ( ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) ) )
+            // InternalGraphQL.g:1702:2: ( ( ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) ) ) )
+            // InternalGraphQL.g:1703:2: ( ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) ) )
             {
-            // InternalGraphQL.g:1665:2: ( ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) ) )
-            // InternalGraphQL.g:1666:3: ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) )
+            // InternalGraphQL.g:1703:2: ( ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) ) )
+            // InternalGraphQL.g:1704:3: ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) )
             {
-            // InternalGraphQL.g:1666:3: ( (otherlv_0= RULE_NAME ) )
-            // InternalGraphQL.g:1667:4: (otherlv_0= RULE_NAME )
+            // InternalGraphQL.g:1704:3: ( (otherlv_0= RULE_NAME ) )
+            // InternalGraphQL.g:1705:4: (otherlv_0= RULE_NAME )
             {
-            // InternalGraphQL.g:1667:4: (otherlv_0= RULE_NAME )
-            // InternalGraphQL.g:1668:5: otherlv_0= RULE_NAME
+            // InternalGraphQL.g:1705:4: (otherlv_0= RULE_NAME )
+            // InternalGraphQL.g:1706:5: otherlv_0= RULE_NAME
             {
 
             					if (current==null) {
@@ -4516,15 +4629,15 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,17,FOLLOW_25); 
+            otherlv_1=(Token)match(input,17,FOLLOW_26); 
 
             			newLeafNode(otherlv_1, grammarAccess.getObjectFieldAccess().getColonKeyword_1());
             		
-            // InternalGraphQL.g:1683:3: ( (lv_value_2_0= ruleConstValue ) )
-            // InternalGraphQL.g:1684:4: (lv_value_2_0= ruleConstValue )
+            // InternalGraphQL.g:1721:3: ( (lv_value_2_0= ruleConstValue ) )
+            // InternalGraphQL.g:1722:4: (lv_value_2_0= ruleConstValue )
             {
-            // InternalGraphQL.g:1684:4: (lv_value_2_0= ruleConstValue )
-            // InternalGraphQL.g:1685:5: lv_value_2_0= ruleConstValue
+            // InternalGraphQL.g:1722:4: (lv_value_2_0= ruleConstValue )
+            // InternalGraphQL.g:1723:5: lv_value_2_0= ruleConstValue
             {
 
             					newCompositeNode(grammarAccess.getObjectFieldAccess().getValueConstValueParserRuleCall_2_0());
@@ -4574,7 +4687,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConstValue"
-    // InternalGraphQL.g:1706:1: entryRuleConstValue returns [EObject current=null] : iv_ruleConstValue= ruleConstValue EOF ;
+    // InternalGraphQL.g:1744:1: entryRuleConstValue returns [EObject current=null] : iv_ruleConstValue= ruleConstValue EOF ;
     public final EObject entryRuleConstValue() throws RecognitionException {
         EObject current = null;
 
@@ -4582,8 +4695,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1706:51: (iv_ruleConstValue= ruleConstValue EOF )
-            // InternalGraphQL.g:1707:2: iv_ruleConstValue= ruleConstValue EOF
+            // InternalGraphQL.g:1744:51: (iv_ruleConstValue= ruleConstValue EOF )
+            // InternalGraphQL.g:1745:2: iv_ruleConstValue= ruleConstValue EOF
             {
              newCompositeNode(grammarAccess.getConstValueRule()); 
             pushFollow(FOLLOW_1);
@@ -4610,7 +4723,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstValue"
-    // InternalGraphQL.g:1713:1: ruleConstValue returns [EObject current=null] : (this_IntValue_0= ruleIntValue | this_FloatValue_1= ruleFloatValue | this_BooleanValue_2= ruleBooleanValue | this_NullValue_3= ruleNullValue | this_EnumValue_4= ruleEnumValue | this_ListValue_5= ruleListValue | this_ObjectValue_6= ruleObjectValue ) ;
+    // InternalGraphQL.g:1751:1: ruleConstValue returns [EObject current=null] : (this_IntValue_0= ruleIntValue | this_FloatValue_1= ruleFloatValue | this_BooleanValue_2= ruleBooleanValue | this_NullValue_3= ruleNullValue | this_StringValue_4= ruleStringValue | this_EnumValue_5= ruleEnumValue | this_ListValue_6= ruleListValue | this_ObjectValue_7= ruleObjectValue ) ;
     public final EObject ruleConstValue() throws RecognitionException {
         EObject current = null;
 
@@ -4622,69 +4735,77 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
         EObject this_NullValue_3 = null;
 
-        EObject this_EnumValue_4 = null;
+        EObject this_StringValue_4 = null;
 
-        EObject this_ListValue_5 = null;
+        EObject this_EnumValue_5 = null;
 
-        EObject this_ObjectValue_6 = null;
+        EObject this_ListValue_6 = null;
+
+        EObject this_ObjectValue_7 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1719:2: ( (this_IntValue_0= ruleIntValue | this_FloatValue_1= ruleFloatValue | this_BooleanValue_2= ruleBooleanValue | this_NullValue_3= ruleNullValue | this_EnumValue_4= ruleEnumValue | this_ListValue_5= ruleListValue | this_ObjectValue_6= ruleObjectValue ) )
-            // InternalGraphQL.g:1720:2: (this_IntValue_0= ruleIntValue | this_FloatValue_1= ruleFloatValue | this_BooleanValue_2= ruleBooleanValue | this_NullValue_3= ruleNullValue | this_EnumValue_4= ruleEnumValue | this_ListValue_5= ruleListValue | this_ObjectValue_6= ruleObjectValue )
+            // InternalGraphQL.g:1757:2: ( (this_IntValue_0= ruleIntValue | this_FloatValue_1= ruleFloatValue | this_BooleanValue_2= ruleBooleanValue | this_NullValue_3= ruleNullValue | this_StringValue_4= ruleStringValue | this_EnumValue_5= ruleEnumValue | this_ListValue_6= ruleListValue | this_ObjectValue_7= ruleObjectValue ) )
+            // InternalGraphQL.g:1758:2: (this_IntValue_0= ruleIntValue | this_FloatValue_1= ruleFloatValue | this_BooleanValue_2= ruleBooleanValue | this_NullValue_3= ruleNullValue | this_StringValue_4= ruleStringValue | this_EnumValue_5= ruleEnumValue | this_ListValue_6= ruleListValue | this_ObjectValue_7= ruleObjectValue )
             {
-            // InternalGraphQL.g:1720:2: (this_IntValue_0= ruleIntValue | this_FloatValue_1= ruleFloatValue | this_BooleanValue_2= ruleBooleanValue | this_NullValue_3= ruleNullValue | this_EnumValue_4= ruleEnumValue | this_ListValue_5= ruleListValue | this_ObjectValue_6= ruleObjectValue )
-            int alt35=7;
+            // InternalGraphQL.g:1758:2: (this_IntValue_0= ruleIntValue | this_FloatValue_1= ruleFloatValue | this_BooleanValue_2= ruleBooleanValue | this_NullValue_3= ruleNullValue | this_StringValue_4= ruleStringValue | this_EnumValue_5= ruleEnumValue | this_ListValue_6= ruleListValue | this_ObjectValue_7= ruleObjectValue )
+            int alt38=8;
             switch ( input.LA(1) ) {
             case RULE_INT_VALUE:
                 {
-                alt35=1;
+                alt38=1;
                 }
                 break;
             case RULE_FLOAT_VALUE:
                 {
-                alt35=2;
+                alt38=2;
                 }
                 break;
             case 32:
             case 33:
                 {
-                alt35=3;
+                alt38=3;
                 }
                 break;
             case 31:
                 {
-                alt35=4;
+                alt38=4;
+                }
+                break;
+            case RULE_SL_STRING_VALUE:
+            case RULE_ML_STRING_VALUE:
+                {
+                alt38=5;
                 }
                 break;
             case RULE_NAME:
                 {
-                alt35=5;
+                alt38=6;
                 }
                 break;
             case 29:
                 {
-                alt35=6;
+                alt38=7;
                 }
                 break;
             case 15:
                 {
-                alt35=7;
+                alt38=8;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 35, 0, input);
+                    new NoViableAltException("", 38, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt35) {
+            switch (alt38) {
                 case 1 :
-                    // InternalGraphQL.g:1721:3: this_IntValue_0= ruleIntValue
+                    // InternalGraphQL.g:1759:3: this_IntValue_0= ruleIntValue
                     {
 
                     			newCompositeNode(grammarAccess.getConstValueAccess().getIntValueParserRuleCall_0());
@@ -4702,7 +4823,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGraphQL.g:1730:3: this_FloatValue_1= ruleFloatValue
+                    // InternalGraphQL.g:1768:3: this_FloatValue_1= ruleFloatValue
                     {
 
                     			newCompositeNode(grammarAccess.getConstValueAccess().getFloatValueParserRuleCall_1());
@@ -4720,7 +4841,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalGraphQL.g:1739:3: this_BooleanValue_2= ruleBooleanValue
+                    // InternalGraphQL.g:1777:3: this_BooleanValue_2= ruleBooleanValue
                     {
 
                     			newCompositeNode(grammarAccess.getConstValueAccess().getBooleanValueParserRuleCall_2());
@@ -4738,7 +4859,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalGraphQL.g:1748:3: this_NullValue_3= ruleNullValue
+                    // InternalGraphQL.g:1786:3: this_NullValue_3= ruleNullValue
                     {
 
                     			newCompositeNode(grammarAccess.getConstValueAccess().getNullValueParserRuleCall_3());
@@ -4756,54 +4877,72 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalGraphQL.g:1757:3: this_EnumValue_4= ruleEnumValue
+                    // InternalGraphQL.g:1795:3: this_StringValue_4= ruleStringValue
                     {
 
-                    			newCompositeNode(grammarAccess.getConstValueAccess().getEnumValueParserRuleCall_4());
+                    			newCompositeNode(grammarAccess.getConstValueAccess().getStringValueParserRuleCall_4());
                     		
                     pushFollow(FOLLOW_2);
-                    this_EnumValue_4=ruleEnumValue();
+                    this_StringValue_4=ruleStringValue();
 
                     state._fsp--;
 
 
-                    			current = this_EnumValue_4;
+                    			current = this_StringValue_4;
                     			afterParserOrEnumRuleCall();
                     		
 
                     }
                     break;
                 case 6 :
-                    // InternalGraphQL.g:1766:3: this_ListValue_5= ruleListValue
+                    // InternalGraphQL.g:1804:3: this_EnumValue_5= ruleEnumValue
                     {
 
-                    			newCompositeNode(grammarAccess.getConstValueAccess().getListValueParserRuleCall_5());
+                    			newCompositeNode(grammarAccess.getConstValueAccess().getEnumValueParserRuleCall_5());
                     		
                     pushFollow(FOLLOW_2);
-                    this_ListValue_5=ruleListValue();
+                    this_EnumValue_5=ruleEnumValue();
 
                     state._fsp--;
 
 
-                    			current = this_ListValue_5;
+                    			current = this_EnumValue_5;
                     			afterParserOrEnumRuleCall();
                     		
 
                     }
                     break;
                 case 7 :
-                    // InternalGraphQL.g:1775:3: this_ObjectValue_6= ruleObjectValue
+                    // InternalGraphQL.g:1813:3: this_ListValue_6= ruleListValue
                     {
 
-                    			newCompositeNode(grammarAccess.getConstValueAccess().getObjectValueParserRuleCall_6());
+                    			newCompositeNode(grammarAccess.getConstValueAccess().getListValueParserRuleCall_6());
                     		
                     pushFollow(FOLLOW_2);
-                    this_ObjectValue_6=ruleObjectValue();
+                    this_ListValue_6=ruleListValue();
 
                     state._fsp--;
 
 
-                    			current = this_ObjectValue_6;
+                    			current = this_ListValue_6;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 8 :
+                    // InternalGraphQL.g:1822:3: this_ObjectValue_7= ruleObjectValue
+                    {
+
+                    			newCompositeNode(grammarAccess.getConstValueAccess().getObjectValueParserRuleCall_7());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_ObjectValue_7=ruleObjectValue();
+
+                    state._fsp--;
+
+
+                    			current = this_ObjectValue_7;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -4832,7 +4971,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleListValue"
-    // InternalGraphQL.g:1787:1: entryRuleListValue returns [EObject current=null] : iv_ruleListValue= ruleListValue EOF ;
+    // InternalGraphQL.g:1834:1: entryRuleListValue returns [EObject current=null] : iv_ruleListValue= ruleListValue EOF ;
     public final EObject entryRuleListValue() throws RecognitionException {
         EObject current = null;
 
@@ -4840,8 +4979,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1787:50: (iv_ruleListValue= ruleListValue EOF )
-            // InternalGraphQL.g:1788:2: iv_ruleListValue= ruleListValue EOF
+            // InternalGraphQL.g:1834:50: (iv_ruleListValue= ruleListValue EOF )
+            // InternalGraphQL.g:1835:2: iv_ruleListValue= ruleListValue EOF
             {
              newCompositeNode(grammarAccess.getListValueRule()); 
             pushFollow(FOLLOW_1);
@@ -4868,7 +5007,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleListValue"
-    // InternalGraphQL.g:1794:1: ruleListValue returns [EObject current=null] : ( () otherlv_1= '[' ( (lv_values_2_0= ruleConstValue ) )* otherlv_3= ']' ) ;
+    // InternalGraphQL.g:1841:1: ruleListValue returns [EObject current=null] : ( () otherlv_1= '[' ( (lv_values_2_0= ruleConstValue ) )* otherlv_3= ']' ) ;
     public final EObject ruleListValue() throws RecognitionException {
         EObject current = null;
 
@@ -4881,14 +5020,14 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1800:2: ( ( () otherlv_1= '[' ( (lv_values_2_0= ruleConstValue ) )* otherlv_3= ']' ) )
-            // InternalGraphQL.g:1801:2: ( () otherlv_1= '[' ( (lv_values_2_0= ruleConstValue ) )* otherlv_3= ']' )
+            // InternalGraphQL.g:1847:2: ( ( () otherlv_1= '[' ( (lv_values_2_0= ruleConstValue ) )* otherlv_3= ']' ) )
+            // InternalGraphQL.g:1848:2: ( () otherlv_1= '[' ( (lv_values_2_0= ruleConstValue ) )* otherlv_3= ']' )
             {
-            // InternalGraphQL.g:1801:2: ( () otherlv_1= '[' ( (lv_values_2_0= ruleConstValue ) )* otherlv_3= ']' )
-            // InternalGraphQL.g:1802:3: () otherlv_1= '[' ( (lv_values_2_0= ruleConstValue ) )* otherlv_3= ']'
+            // InternalGraphQL.g:1848:2: ( () otherlv_1= '[' ( (lv_values_2_0= ruleConstValue ) )* otherlv_3= ']' )
+            // InternalGraphQL.g:1849:3: () otherlv_1= '[' ( (lv_values_2_0= ruleConstValue ) )* otherlv_3= ']'
             {
-            // InternalGraphQL.g:1802:3: ()
-            // InternalGraphQL.g:1803:4: 
+            // InternalGraphQL.g:1849:3: ()
+            // InternalGraphQL.g:1850:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4898,32 +5037,32 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,29,FOLLOW_30); 
+            otherlv_1=(Token)match(input,29,FOLLOW_31); 
 
             			newLeafNode(otherlv_1, grammarAccess.getListValueAccess().getLeftSquareBracketKeyword_1());
             		
-            // InternalGraphQL.g:1813:3: ( (lv_values_2_0= ruleConstValue ) )*
-            loop36:
+            // InternalGraphQL.g:1860:3: ( (lv_values_2_0= ruleConstValue ) )*
+            loop39:
             do {
-                int alt36=2;
-                int LA36_0 = input.LA(1);
+                int alt39=2;
+                int LA39_0 = input.LA(1);
 
-                if ( ((LA36_0>=RULE_NAME && LA36_0<=RULE_FLOAT_VALUE)||LA36_0==15||LA36_0==29||(LA36_0>=31 && LA36_0<=33)) ) {
-                    alt36=1;
+                if ( ((LA39_0>=RULE_NAME && LA39_0<=RULE_ML_STRING_VALUE)||LA39_0==15||LA39_0==29||(LA39_0>=31 && LA39_0<=33)) ) {
+                    alt39=1;
                 }
 
 
-                switch (alt36) {
+                switch (alt39) {
             	case 1 :
-            	    // InternalGraphQL.g:1814:4: (lv_values_2_0= ruleConstValue )
+            	    // InternalGraphQL.g:1861:4: (lv_values_2_0= ruleConstValue )
             	    {
-            	    // InternalGraphQL.g:1814:4: (lv_values_2_0= ruleConstValue )
-            	    // InternalGraphQL.g:1815:5: lv_values_2_0= ruleConstValue
+            	    // InternalGraphQL.g:1861:4: (lv_values_2_0= ruleConstValue )
+            	    // InternalGraphQL.g:1862:5: lv_values_2_0= ruleConstValue
             	    {
 
             	    					newCompositeNode(grammarAccess.getListValueAccess().getValuesConstValueParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_30);
+            	    pushFollow(FOLLOW_31);
             	    lv_values_2_0=ruleConstValue();
 
             	    state._fsp--;
@@ -4947,7 +5086,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop36;
+            	    break loop39;
                 }
             } while (true);
 
@@ -4978,7 +5117,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDirectiveDefinition"
-    // InternalGraphQL.g:1840:1: entryRuleDirectiveDefinition returns [EObject current=null] : iv_ruleDirectiveDefinition= ruleDirectiveDefinition EOF ;
+    // InternalGraphQL.g:1887:1: entryRuleDirectiveDefinition returns [EObject current=null] : iv_ruleDirectiveDefinition= ruleDirectiveDefinition EOF ;
     public final EObject entryRuleDirectiveDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -4986,8 +5125,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1840:60: (iv_ruleDirectiveDefinition= ruleDirectiveDefinition EOF )
-            // InternalGraphQL.g:1841:2: iv_ruleDirectiveDefinition= ruleDirectiveDefinition EOF
+            // InternalGraphQL.g:1887:60: (iv_ruleDirectiveDefinition= ruleDirectiveDefinition EOF )
+            // InternalGraphQL.g:1888:2: iv_ruleDirectiveDefinition= ruleDirectiveDefinition EOF
             {
              newCompositeNode(grammarAccess.getDirectiveDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -5014,7 +5153,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDirectiveDefinition"
-    // InternalGraphQL.g:1847:1: ruleDirectiveDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'directive' ( (lv_name_2_0= RULE_DIRECTIVE_NAME ) ) ( (lv_argumentDefinitions_3_0= ruleArgumentsDefinition ) )? ( (lv_repeatable_4_0= 'repeatable' ) )? otherlv_5= 'on' ( (lv_directiveLocations_6_0= ruleDirectiveLocations ) ) ) ;
+    // InternalGraphQL.g:1894:1: ruleDirectiveDefinition returns [EObject current=null] : ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'directive' ( (lv_name_2_0= RULE_DIRECTIVE_NAME ) ) ( (lv_argumentDefinitions_3_0= ruleArgumentsDefinition ) )? ( (lv_repeatable_4_0= 'repeatable' ) )? otherlv_5= 'on' ( (lv_directiveLocations_6_0= ruleDirectiveLocations ) ) ) ;
     public final EObject ruleDirectiveDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -5033,30 +5172,30 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1853:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'directive' ( (lv_name_2_0= RULE_DIRECTIVE_NAME ) ) ( (lv_argumentDefinitions_3_0= ruleArgumentsDefinition ) )? ( (lv_repeatable_4_0= 'repeatable' ) )? otherlv_5= 'on' ( (lv_directiveLocations_6_0= ruleDirectiveLocations ) ) ) )
-            // InternalGraphQL.g:1854:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'directive' ( (lv_name_2_0= RULE_DIRECTIVE_NAME ) ) ( (lv_argumentDefinitions_3_0= ruleArgumentsDefinition ) )? ( (lv_repeatable_4_0= 'repeatable' ) )? otherlv_5= 'on' ( (lv_directiveLocations_6_0= ruleDirectiveLocations ) ) )
+            // InternalGraphQL.g:1900:2: ( ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'directive' ( (lv_name_2_0= RULE_DIRECTIVE_NAME ) ) ( (lv_argumentDefinitions_3_0= ruleArgumentsDefinition ) )? ( (lv_repeatable_4_0= 'repeatable' ) )? otherlv_5= 'on' ( (lv_directiveLocations_6_0= ruleDirectiveLocations ) ) ) )
+            // InternalGraphQL.g:1901:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'directive' ( (lv_name_2_0= RULE_DIRECTIVE_NAME ) ) ( (lv_argumentDefinitions_3_0= ruleArgumentsDefinition ) )? ( (lv_repeatable_4_0= 'repeatable' ) )? otherlv_5= 'on' ( (lv_directiveLocations_6_0= ruleDirectiveLocations ) ) )
             {
-            // InternalGraphQL.g:1854:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'directive' ( (lv_name_2_0= RULE_DIRECTIVE_NAME ) ) ( (lv_argumentDefinitions_3_0= ruleArgumentsDefinition ) )? ( (lv_repeatable_4_0= 'repeatable' ) )? otherlv_5= 'on' ( (lv_directiveLocations_6_0= ruleDirectiveLocations ) ) )
-            // InternalGraphQL.g:1855:3: ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'directive' ( (lv_name_2_0= RULE_DIRECTIVE_NAME ) ) ( (lv_argumentDefinitions_3_0= ruleArgumentsDefinition ) )? ( (lv_repeatable_4_0= 'repeatable' ) )? otherlv_5= 'on' ( (lv_directiveLocations_6_0= ruleDirectiveLocations ) )
+            // InternalGraphQL.g:1901:2: ( ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'directive' ( (lv_name_2_0= RULE_DIRECTIVE_NAME ) ) ( (lv_argumentDefinitions_3_0= ruleArgumentsDefinition ) )? ( (lv_repeatable_4_0= 'repeatable' ) )? otherlv_5= 'on' ( (lv_directiveLocations_6_0= ruleDirectiveLocations ) ) )
+            // InternalGraphQL.g:1902:3: ( (lv_description_0_0= ruleStringValue ) )? otherlv_1= 'directive' ( (lv_name_2_0= RULE_DIRECTIVE_NAME ) ) ( (lv_argumentDefinitions_3_0= ruleArgumentsDefinition ) )? ( (lv_repeatable_4_0= 'repeatable' ) )? otherlv_5= 'on' ( (lv_directiveLocations_6_0= ruleDirectiveLocations ) )
             {
-            // InternalGraphQL.g:1855:3: ( (lv_description_0_0= ruleStringValue ) )?
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // InternalGraphQL.g:1902:3: ( (lv_description_0_0= ruleStringValue ) )?
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( ((LA37_0>=RULE_SL_STRING_VALUE && LA37_0<=RULE_ML_STRING_VALUE)) ) {
-                alt37=1;
+            if ( ((LA40_0>=RULE_SL_STRING_VALUE && LA40_0<=RULE_ML_STRING_VALUE)) ) {
+                alt40=1;
             }
-            switch (alt37) {
+            switch (alt40) {
                 case 1 :
-                    // InternalGraphQL.g:1856:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:1903:4: (lv_description_0_0= ruleStringValue )
                     {
-                    // InternalGraphQL.g:1856:4: (lv_description_0_0= ruleStringValue )
-                    // InternalGraphQL.g:1857:5: lv_description_0_0= ruleStringValue
+                    // InternalGraphQL.g:1903:4: (lv_description_0_0= ruleStringValue )
+                    // InternalGraphQL.g:1904:5: lv_description_0_0= ruleStringValue
                     {
 
                     					newCompositeNode(grammarAccess.getDirectiveDefinitionAccess().getDescriptionStringValueParserRuleCall_0_0());
                     				
-                    pushFollow(FOLLOW_31);
+                    pushFollow(FOLLOW_32);
                     lv_description_0_0=ruleStringValue();
 
                     state._fsp--;
@@ -5081,17 +5220,17 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,34,FOLLOW_32); 
+            otherlv_1=(Token)match(input,34,FOLLOW_33); 
 
             			newLeafNode(otherlv_1, grammarAccess.getDirectiveDefinitionAccess().getDirectiveKeyword_1());
             		
-            // InternalGraphQL.g:1878:3: ( (lv_name_2_0= RULE_DIRECTIVE_NAME ) )
-            // InternalGraphQL.g:1879:4: (lv_name_2_0= RULE_DIRECTIVE_NAME )
+            // InternalGraphQL.g:1925:3: ( (lv_name_2_0= RULE_DIRECTIVE_NAME ) )
+            // InternalGraphQL.g:1926:4: (lv_name_2_0= RULE_DIRECTIVE_NAME )
             {
-            // InternalGraphQL.g:1879:4: (lv_name_2_0= RULE_DIRECTIVE_NAME )
-            // InternalGraphQL.g:1880:5: lv_name_2_0= RULE_DIRECTIVE_NAME
+            // InternalGraphQL.g:1926:4: (lv_name_2_0= RULE_DIRECTIVE_NAME )
+            // InternalGraphQL.g:1927:5: lv_name_2_0= RULE_DIRECTIVE_NAME
             {
-            lv_name_2_0=(Token)match(input,RULE_DIRECTIVE_NAME,FOLLOW_33); 
+            lv_name_2_0=(Token)match(input,RULE_DIRECTIVE_NAME,FOLLOW_34); 
 
             					newLeafNode(lv_name_2_0, grammarAccess.getDirectiveDefinitionAccess().getNameDIRECTIVE_NAMETerminalRuleCall_2_0());
             				
@@ -5111,24 +5250,24 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:1896:3: ( (lv_argumentDefinitions_3_0= ruleArgumentsDefinition ) )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            // InternalGraphQL.g:1943:3: ( (lv_argumentDefinitions_3_0= ruleArgumentsDefinition ) )?
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA38_0==37) ) {
-                alt38=1;
+            if ( (LA41_0==37) ) {
+                alt41=1;
             }
-            switch (alt38) {
+            switch (alt41) {
                 case 1 :
-                    // InternalGraphQL.g:1897:4: (lv_argumentDefinitions_3_0= ruleArgumentsDefinition )
+                    // InternalGraphQL.g:1944:4: (lv_argumentDefinitions_3_0= ruleArgumentsDefinition )
                     {
-                    // InternalGraphQL.g:1897:4: (lv_argumentDefinitions_3_0= ruleArgumentsDefinition )
-                    // InternalGraphQL.g:1898:5: lv_argumentDefinitions_3_0= ruleArgumentsDefinition
+                    // InternalGraphQL.g:1944:4: (lv_argumentDefinitions_3_0= ruleArgumentsDefinition )
+                    // InternalGraphQL.g:1945:5: lv_argumentDefinitions_3_0= ruleArgumentsDefinition
                     {
 
                     					newCompositeNode(grammarAccess.getDirectiveDefinitionAccess().getArgumentDefinitionsArgumentsDefinitionParserRuleCall_3_0());
                     				
-                    pushFollow(FOLLOW_34);
+                    pushFollow(FOLLOW_35);
                     lv_argumentDefinitions_3_0=ruleArgumentsDefinition();
 
                     state._fsp--;
@@ -5153,21 +5292,21 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:1915:3: ( (lv_repeatable_4_0= 'repeatable' ) )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalGraphQL.g:1962:3: ( (lv_repeatable_4_0= 'repeatable' ) )?
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA39_0==35) ) {
-                alt39=1;
+            if ( (LA42_0==35) ) {
+                alt42=1;
             }
-            switch (alt39) {
+            switch (alt42) {
                 case 1 :
-                    // InternalGraphQL.g:1916:4: (lv_repeatable_4_0= 'repeatable' )
+                    // InternalGraphQL.g:1963:4: (lv_repeatable_4_0= 'repeatable' )
                     {
-                    // InternalGraphQL.g:1916:4: (lv_repeatable_4_0= 'repeatable' )
-                    // InternalGraphQL.g:1917:5: lv_repeatable_4_0= 'repeatable'
+                    // InternalGraphQL.g:1963:4: (lv_repeatable_4_0= 'repeatable' )
+                    // InternalGraphQL.g:1964:5: lv_repeatable_4_0= 'repeatable'
                     {
-                    lv_repeatable_4_0=(Token)match(input,35,FOLLOW_35); 
+                    lv_repeatable_4_0=(Token)match(input,35,FOLLOW_36); 
 
                     					newLeafNode(lv_repeatable_4_0, grammarAccess.getDirectiveDefinitionAccess().getRepeatableRepeatableKeyword_4_0());
                     				
@@ -5186,15 +5325,15 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,36,FOLLOW_36); 
+            otherlv_5=(Token)match(input,36,FOLLOW_37); 
 
             			newLeafNode(otherlv_5, grammarAccess.getDirectiveDefinitionAccess().getOnKeyword_5());
             		
-            // InternalGraphQL.g:1933:3: ( (lv_directiveLocations_6_0= ruleDirectiveLocations ) )
-            // InternalGraphQL.g:1934:4: (lv_directiveLocations_6_0= ruleDirectiveLocations )
+            // InternalGraphQL.g:1980:3: ( (lv_directiveLocations_6_0= ruleDirectiveLocations ) )
+            // InternalGraphQL.g:1981:4: (lv_directiveLocations_6_0= ruleDirectiveLocations )
             {
-            // InternalGraphQL.g:1934:4: (lv_directiveLocations_6_0= ruleDirectiveLocations )
-            // InternalGraphQL.g:1935:5: lv_directiveLocations_6_0= ruleDirectiveLocations
+            // InternalGraphQL.g:1981:4: (lv_directiveLocations_6_0= ruleDirectiveLocations )
+            // InternalGraphQL.g:1982:5: lv_directiveLocations_6_0= ruleDirectiveLocations
             {
 
             					newCompositeNode(grammarAccess.getDirectiveDefinitionAccess().getDirectiveLocationsDirectiveLocationsParserRuleCall_6_0());
@@ -5243,8 +5382,433 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleDirectiveDefinition"
 
 
+    // $ANTLR start "entryRuleDirective"
+    // InternalGraphQL.g:2003:1: entryRuleDirective returns [EObject current=null] : iv_ruleDirective= ruleDirective EOF ;
+    public final EObject entryRuleDirective() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleDirective = null;
+
+
+        try {
+            // InternalGraphQL.g:2003:50: (iv_ruleDirective= ruleDirective EOF )
+            // InternalGraphQL.g:2004:2: iv_ruleDirective= ruleDirective EOF
+            {
+             newCompositeNode(grammarAccess.getDirectiveRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleDirective=ruleDirective();
+
+            state._fsp--;
+
+             current =iv_ruleDirective; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDirective"
+
+
+    // $ANTLR start "ruleDirective"
+    // InternalGraphQL.g:2010:1: ruleDirective returns [EObject current=null] : ( ( (lv_name_0_0= RULE_DIRECTIVE_NAME ) ) ( (lv_arguments_1_0= ruleArguments ) )? ) ;
+    public final EObject ruleDirective() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_name_0_0=null;
+        EObject lv_arguments_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalGraphQL.g:2016:2: ( ( ( (lv_name_0_0= RULE_DIRECTIVE_NAME ) ) ( (lv_arguments_1_0= ruleArguments ) )? ) )
+            // InternalGraphQL.g:2017:2: ( ( (lv_name_0_0= RULE_DIRECTIVE_NAME ) ) ( (lv_arguments_1_0= ruleArguments ) )? )
+            {
+            // InternalGraphQL.g:2017:2: ( ( (lv_name_0_0= RULE_DIRECTIVE_NAME ) ) ( (lv_arguments_1_0= ruleArguments ) )? )
+            // InternalGraphQL.g:2018:3: ( (lv_name_0_0= RULE_DIRECTIVE_NAME ) ) ( (lv_arguments_1_0= ruleArguments ) )?
+            {
+            // InternalGraphQL.g:2018:3: ( (lv_name_0_0= RULE_DIRECTIVE_NAME ) )
+            // InternalGraphQL.g:2019:4: (lv_name_0_0= RULE_DIRECTIVE_NAME )
+            {
+            // InternalGraphQL.g:2019:4: (lv_name_0_0= RULE_DIRECTIVE_NAME )
+            // InternalGraphQL.g:2020:5: lv_name_0_0= RULE_DIRECTIVE_NAME
+            {
+            lv_name_0_0=(Token)match(input,RULE_DIRECTIVE_NAME,FOLLOW_38); 
+
+            					newLeafNode(lv_name_0_0, grammarAccess.getDirectiveAccess().getNameDIRECTIVE_NAMETerminalRuleCall_0_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getDirectiveRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_0_0,
+            						"io.github.katmatt.graphql.GraphQL.DIRECTIVE_NAME");
+            				
+
+            }
+
+
+            }
+
+            // InternalGraphQL.g:2036:3: ( (lv_arguments_1_0= ruleArguments ) )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
+
+            if ( (LA43_0==37) ) {
+                alt43=1;
+            }
+            switch (alt43) {
+                case 1 :
+                    // InternalGraphQL.g:2037:4: (lv_arguments_1_0= ruleArguments )
+                    {
+                    // InternalGraphQL.g:2037:4: (lv_arguments_1_0= ruleArguments )
+                    // InternalGraphQL.g:2038:5: lv_arguments_1_0= ruleArguments
+                    {
+
+                    					newCompositeNode(grammarAccess.getDirectiveAccess().getArgumentsArgumentsParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_arguments_1_0=ruleArguments();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getDirectiveRule());
+                    					}
+                    					set(
+                    						current,
+                    						"arguments",
+                    						lv_arguments_1_0,
+                    						"io.github.katmatt.graphql.GraphQL.Arguments");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDirective"
+
+
+    // $ANTLR start "entryRuleArguments"
+    // InternalGraphQL.g:2059:1: entryRuleArguments returns [EObject current=null] : iv_ruleArguments= ruleArguments EOF ;
+    public final EObject entryRuleArguments() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleArguments = null;
+
+
+        try {
+            // InternalGraphQL.g:2059:50: (iv_ruleArguments= ruleArguments EOF )
+            // InternalGraphQL.g:2060:2: iv_ruleArguments= ruleArguments EOF
+            {
+             newCompositeNode(grammarAccess.getArgumentsRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleArguments=ruleArguments();
+
+            state._fsp--;
+
+             current =iv_ruleArguments; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleArguments"
+
+
+    // $ANTLR start "ruleArguments"
+    // InternalGraphQL.g:2066:1: ruleArguments returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_arguments_2_0= ruleArgument ) )* otherlv_3= ')' ) ;
+    public final EObject ruleArguments() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        EObject lv_arguments_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalGraphQL.g:2072:2: ( ( () otherlv_1= '(' ( (lv_arguments_2_0= ruleArgument ) )* otherlv_3= ')' ) )
+            // InternalGraphQL.g:2073:2: ( () otherlv_1= '(' ( (lv_arguments_2_0= ruleArgument ) )* otherlv_3= ')' )
+            {
+            // InternalGraphQL.g:2073:2: ( () otherlv_1= '(' ( (lv_arguments_2_0= ruleArgument ) )* otherlv_3= ')' )
+            // InternalGraphQL.g:2074:3: () otherlv_1= '(' ( (lv_arguments_2_0= ruleArgument ) )* otherlv_3= ')'
+            {
+            // InternalGraphQL.g:2074:3: ()
+            // InternalGraphQL.g:2075:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getArgumentsAccess().getArgumentsAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,37,FOLLOW_39); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getArgumentsAccess().getLeftParenthesisKeyword_1());
+            		
+            // InternalGraphQL.g:2085:3: ( (lv_arguments_2_0= ruleArgument ) )*
+            loop44:
+            do {
+                int alt44=2;
+                int LA44_0 = input.LA(1);
+
+                if ( (LA44_0==RULE_NAME) ) {
+                    alt44=1;
+                }
+
+
+                switch (alt44) {
+            	case 1 :
+            	    // InternalGraphQL.g:2086:4: (lv_arguments_2_0= ruleArgument )
+            	    {
+            	    // InternalGraphQL.g:2086:4: (lv_arguments_2_0= ruleArgument )
+            	    // InternalGraphQL.g:2087:5: lv_arguments_2_0= ruleArgument
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getArgumentsAccess().getArgumentsArgumentParserRuleCall_2_0());
+            	    				
+            	    pushFollow(FOLLOW_39);
+            	    lv_arguments_2_0=ruleArgument();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getArgumentsRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"arguments",
+            	    						lv_arguments_2_0,
+            	    						"io.github.katmatt.graphql.GraphQL.Argument");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop44;
+                }
+            } while (true);
+
+            otherlv_3=(Token)match(input,38,FOLLOW_2); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getArgumentsAccess().getRightParenthesisKeyword_3());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleArguments"
+
+
+    // $ANTLR start "entryRuleArgument"
+    // InternalGraphQL.g:2112:1: entryRuleArgument returns [EObject current=null] : iv_ruleArgument= ruleArgument EOF ;
+    public final EObject entryRuleArgument() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleArgument = null;
+
+
+        try {
+            // InternalGraphQL.g:2112:49: (iv_ruleArgument= ruleArgument EOF )
+            // InternalGraphQL.g:2113:2: iv_ruleArgument= ruleArgument EOF
+            {
+             newCompositeNode(grammarAccess.getArgumentRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleArgument=ruleArgument();
+
+            state._fsp--;
+
+             current =iv_ruleArgument; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleArgument"
+
+
+    // $ANTLR start "ruleArgument"
+    // InternalGraphQL.g:2119:1: ruleArgument returns [EObject current=null] : ( ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) ) ) ;
+    public final EObject ruleArgument() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        EObject lv_value_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalGraphQL.g:2125:2: ( ( ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) ) ) )
+            // InternalGraphQL.g:2126:2: ( ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) ) )
+            {
+            // InternalGraphQL.g:2126:2: ( ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) ) )
+            // InternalGraphQL.g:2127:3: ( (otherlv_0= RULE_NAME ) ) otherlv_1= ':' ( (lv_value_2_0= ruleConstValue ) )
+            {
+            // InternalGraphQL.g:2127:3: ( (otherlv_0= RULE_NAME ) )
+            // InternalGraphQL.g:2128:4: (otherlv_0= RULE_NAME )
+            {
+            // InternalGraphQL.g:2128:4: (otherlv_0= RULE_NAME )
+            // InternalGraphQL.g:2129:5: otherlv_0= RULE_NAME
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getArgumentRule());
+            					}
+            				
+            otherlv_0=(Token)match(input,RULE_NAME,FOLLOW_8); 
+
+            					newLeafNode(otherlv_0, grammarAccess.getArgumentAccess().getArgumentDefinitionInputValueDefinitionCrossReference_0_0());
+            				
+
+            }
+
+
+            }
+
+            otherlv_1=(Token)match(input,17,FOLLOW_26); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getArgumentAccess().getColonKeyword_1());
+            		
+            // InternalGraphQL.g:2144:3: ( (lv_value_2_0= ruleConstValue ) )
+            // InternalGraphQL.g:2145:4: (lv_value_2_0= ruleConstValue )
+            {
+            // InternalGraphQL.g:2145:4: (lv_value_2_0= ruleConstValue )
+            // InternalGraphQL.g:2146:5: lv_value_2_0= ruleConstValue
+            {
+
+            					newCompositeNode(grammarAccess.getArgumentAccess().getValueConstValueParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_value_2_0=ruleConstValue();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getArgumentRule());
+            					}
+            					set(
+            						current,
+            						"value",
+            						lv_value_2_0,
+            						"io.github.katmatt.graphql.GraphQL.ConstValue");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleArgument"
+
+
     // $ANTLR start "entryRuleArgumentsDefinition"
-    // InternalGraphQL.g:1956:1: entryRuleArgumentsDefinition returns [EObject current=null] : iv_ruleArgumentsDefinition= ruleArgumentsDefinition EOF ;
+    // InternalGraphQL.g:2167:1: entryRuleArgumentsDefinition returns [EObject current=null] : iv_ruleArgumentsDefinition= ruleArgumentsDefinition EOF ;
     public final EObject entryRuleArgumentsDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -5252,8 +5816,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:1956:60: (iv_ruleArgumentsDefinition= ruleArgumentsDefinition EOF )
-            // InternalGraphQL.g:1957:2: iv_ruleArgumentsDefinition= ruleArgumentsDefinition EOF
+            // InternalGraphQL.g:2167:60: (iv_ruleArgumentsDefinition= ruleArgumentsDefinition EOF )
+            // InternalGraphQL.g:2168:2: iv_ruleArgumentsDefinition= ruleArgumentsDefinition EOF
             {
              newCompositeNode(grammarAccess.getArgumentsDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -5280,27 +5844,27 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArgumentsDefinition"
-    // InternalGraphQL.g:1963:1: ruleArgumentsDefinition returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_arguments_2_0= ruleInputValueDefinition ) )* otherlv_3= ')' ) ;
+    // InternalGraphQL.g:2174:1: ruleArgumentsDefinition returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_argumentDefinitions_2_0= ruleInputValueDefinition ) )* otherlv_3= ')' ) ;
     public final EObject ruleArgumentsDefinition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
-        EObject lv_arguments_2_0 = null;
+        EObject lv_argumentDefinitions_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalGraphQL.g:1969:2: ( ( () otherlv_1= '(' ( (lv_arguments_2_0= ruleInputValueDefinition ) )* otherlv_3= ')' ) )
-            // InternalGraphQL.g:1970:2: ( () otherlv_1= '(' ( (lv_arguments_2_0= ruleInputValueDefinition ) )* otherlv_3= ')' )
+            // InternalGraphQL.g:2180:2: ( ( () otherlv_1= '(' ( (lv_argumentDefinitions_2_0= ruleInputValueDefinition ) )* otherlv_3= ')' ) )
+            // InternalGraphQL.g:2181:2: ( () otherlv_1= '(' ( (lv_argumentDefinitions_2_0= ruleInputValueDefinition ) )* otherlv_3= ')' )
             {
-            // InternalGraphQL.g:1970:2: ( () otherlv_1= '(' ( (lv_arguments_2_0= ruleInputValueDefinition ) )* otherlv_3= ')' )
-            // InternalGraphQL.g:1971:3: () otherlv_1= '(' ( (lv_arguments_2_0= ruleInputValueDefinition ) )* otherlv_3= ')'
+            // InternalGraphQL.g:2181:2: ( () otherlv_1= '(' ( (lv_argumentDefinitions_2_0= ruleInputValueDefinition ) )* otherlv_3= ')' )
+            // InternalGraphQL.g:2182:3: () otherlv_1= '(' ( (lv_argumentDefinitions_2_0= ruleInputValueDefinition ) )* otherlv_3= ')'
             {
-            // InternalGraphQL.g:1971:3: ()
-            // InternalGraphQL.g:1972:4: 
+            // InternalGraphQL.g:2182:3: ()
+            // InternalGraphQL.g:2183:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5310,33 +5874,33 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,37,FOLLOW_37); 
+            otherlv_1=(Token)match(input,37,FOLLOW_40); 
 
             			newLeafNode(otherlv_1, grammarAccess.getArgumentsDefinitionAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalGraphQL.g:1982:3: ( (lv_arguments_2_0= ruleInputValueDefinition ) )*
-            loop40:
+            // InternalGraphQL.g:2193:3: ( (lv_argumentDefinitions_2_0= ruleInputValueDefinition ) )*
+            loop45:
             do {
-                int alt40=2;
-                int LA40_0 = input.LA(1);
+                int alt45=2;
+                int LA45_0 = input.LA(1);
 
-                if ( (LA40_0==RULE_NAME||(LA40_0>=RULE_SL_STRING_VALUE && LA40_0<=RULE_ML_STRING_VALUE)) ) {
-                    alt40=1;
+                if ( (LA45_0==RULE_NAME||(LA45_0>=RULE_SL_STRING_VALUE && LA45_0<=RULE_ML_STRING_VALUE)) ) {
+                    alt45=1;
                 }
 
 
-                switch (alt40) {
+                switch (alt45) {
             	case 1 :
-            	    // InternalGraphQL.g:1983:4: (lv_arguments_2_0= ruleInputValueDefinition )
+            	    // InternalGraphQL.g:2194:4: (lv_argumentDefinitions_2_0= ruleInputValueDefinition )
             	    {
-            	    // InternalGraphQL.g:1983:4: (lv_arguments_2_0= ruleInputValueDefinition )
-            	    // InternalGraphQL.g:1984:5: lv_arguments_2_0= ruleInputValueDefinition
+            	    // InternalGraphQL.g:2194:4: (lv_argumentDefinitions_2_0= ruleInputValueDefinition )
+            	    // InternalGraphQL.g:2195:5: lv_argumentDefinitions_2_0= ruleInputValueDefinition
             	    {
 
-            	    					newCompositeNode(grammarAccess.getArgumentsDefinitionAccess().getArgumentsInputValueDefinitionParserRuleCall_2_0());
+            	    					newCompositeNode(grammarAccess.getArgumentsDefinitionAccess().getArgumentDefinitionsInputValueDefinitionParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_37);
-            	    lv_arguments_2_0=ruleInputValueDefinition();
+            	    pushFollow(FOLLOW_40);
+            	    lv_argumentDefinitions_2_0=ruleInputValueDefinition();
 
             	    state._fsp--;
 
@@ -5346,8 +5910,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
             	    					}
             	    					add(
             	    						current,
-            	    						"arguments",
-            	    						lv_arguments_2_0,
+            	    						"argumentDefinitions",
+            	    						lv_argumentDefinitions_2_0,
             	    						"io.github.katmatt.graphql.GraphQL.InputValueDefinition");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -5359,7 +5923,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop40;
+            	    break loop45;
                 }
             } while (true);
 
@@ -5390,7 +5954,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDirectiveLocations"
-    // InternalGraphQL.g:2009:1: entryRuleDirectiveLocations returns [EObject current=null] : iv_ruleDirectiveLocations= ruleDirectiveLocations EOF ;
+    // InternalGraphQL.g:2220:1: entryRuleDirectiveLocations returns [EObject current=null] : iv_ruleDirectiveLocations= ruleDirectiveLocations EOF ;
     public final EObject entryRuleDirectiveLocations() throws RecognitionException {
         EObject current = null;
 
@@ -5398,8 +5962,8 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGraphQL.g:2009:59: (iv_ruleDirectiveLocations= ruleDirectiveLocations EOF )
-            // InternalGraphQL.g:2010:2: iv_ruleDirectiveLocations= ruleDirectiveLocations EOF
+            // InternalGraphQL.g:2220:59: (iv_ruleDirectiveLocations= ruleDirectiveLocations EOF )
+            // InternalGraphQL.g:2221:2: iv_ruleDirectiveLocations= ruleDirectiveLocations EOF
             {
              newCompositeNode(grammarAccess.getDirectiveLocationsRule()); 
             pushFollow(FOLLOW_1);
@@ -5426,7 +5990,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDirectiveLocations"
-    // InternalGraphQL.g:2016:1: ruleDirectiveLocations returns [EObject current=null] : ( (otherlv_0= '|' )? ( (lv_directiveLocations_1_0= ruleDirectiveLocation ) ) (otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) ) )* ) ;
+    // InternalGraphQL.g:2227:1: ruleDirectiveLocations returns [EObject current=null] : ( (otherlv_0= '|' )? ( (lv_directiveLocations_1_0= ruleDirectiveLocation ) ) (otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) ) )* ) ;
     public final EObject ruleDirectiveLocations() throws RecognitionException {
         EObject current = null;
 
@@ -5441,24 +6005,24 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:2022:2: ( ( (otherlv_0= '|' )? ( (lv_directiveLocations_1_0= ruleDirectiveLocation ) ) (otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) ) )* ) )
-            // InternalGraphQL.g:2023:2: ( (otherlv_0= '|' )? ( (lv_directiveLocations_1_0= ruleDirectiveLocation ) ) (otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) ) )* )
+            // InternalGraphQL.g:2233:2: ( ( (otherlv_0= '|' )? ( (lv_directiveLocations_1_0= ruleDirectiveLocation ) ) (otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) ) )* ) )
+            // InternalGraphQL.g:2234:2: ( (otherlv_0= '|' )? ( (lv_directiveLocations_1_0= ruleDirectiveLocation ) ) (otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) ) )* )
             {
-            // InternalGraphQL.g:2023:2: ( (otherlv_0= '|' )? ( (lv_directiveLocations_1_0= ruleDirectiveLocation ) ) (otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) ) )* )
-            // InternalGraphQL.g:2024:3: (otherlv_0= '|' )? ( (lv_directiveLocations_1_0= ruleDirectiveLocation ) ) (otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) ) )*
+            // InternalGraphQL.g:2234:2: ( (otherlv_0= '|' )? ( (lv_directiveLocations_1_0= ruleDirectiveLocation ) ) (otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) ) )* )
+            // InternalGraphQL.g:2235:3: (otherlv_0= '|' )? ( (lv_directiveLocations_1_0= ruleDirectiveLocation ) ) (otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) ) )*
             {
-            // InternalGraphQL.g:2024:3: (otherlv_0= '|' )?
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // InternalGraphQL.g:2235:3: (otherlv_0= '|' )?
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA41_0==24) ) {
-                alt41=1;
+            if ( (LA46_0==24) ) {
+                alt46=1;
             }
-            switch (alt41) {
+            switch (alt46) {
                 case 1 :
-                    // InternalGraphQL.g:2025:4: otherlv_0= '|'
+                    // InternalGraphQL.g:2236:4: otherlv_0= '|'
                     {
-                    otherlv_0=(Token)match(input,24,FOLLOW_36); 
+                    otherlv_0=(Token)match(input,24,FOLLOW_37); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getDirectiveLocationsAccess().getVerticalLineKeyword_0());
                     			
@@ -5468,16 +6032,16 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:2030:3: ( (lv_directiveLocations_1_0= ruleDirectiveLocation ) )
-            // InternalGraphQL.g:2031:4: (lv_directiveLocations_1_0= ruleDirectiveLocation )
+            // InternalGraphQL.g:2241:3: ( (lv_directiveLocations_1_0= ruleDirectiveLocation ) )
+            // InternalGraphQL.g:2242:4: (lv_directiveLocations_1_0= ruleDirectiveLocation )
             {
-            // InternalGraphQL.g:2031:4: (lv_directiveLocations_1_0= ruleDirectiveLocation )
-            // InternalGraphQL.g:2032:5: lv_directiveLocations_1_0= ruleDirectiveLocation
+            // InternalGraphQL.g:2242:4: (lv_directiveLocations_1_0= ruleDirectiveLocation )
+            // InternalGraphQL.g:2243:5: lv_directiveLocations_1_0= ruleDirectiveLocation
             {
 
             					newCompositeNode(grammarAccess.getDirectiveLocationsAccess().getDirectiveLocationsDirectiveLocationEnumRuleCall_1_0());
             				
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_23);
             lv_directiveLocations_1_0=ruleDirectiveLocation();
 
             state._fsp--;
@@ -5499,35 +6063,35 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGraphQL.g:2049:3: (otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) ) )*
-            loop42:
+            // InternalGraphQL.g:2260:3: (otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) ) )*
+            loop47:
             do {
-                int alt42=2;
-                int LA42_0 = input.LA(1);
+                int alt47=2;
+                int LA47_0 = input.LA(1);
 
-                if ( (LA42_0==24) ) {
-                    alt42=1;
+                if ( (LA47_0==24) ) {
+                    alt47=1;
                 }
 
 
-                switch (alt42) {
+                switch (alt47) {
             	case 1 :
-            	    // InternalGraphQL.g:2050:4: otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) )
+            	    // InternalGraphQL.g:2261:4: otherlv_2= '|' ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) )
             	    {
-            	    otherlv_2=(Token)match(input,24,FOLLOW_36); 
+            	    otherlv_2=(Token)match(input,24,FOLLOW_37); 
 
             	    				newLeafNode(otherlv_2, grammarAccess.getDirectiveLocationsAccess().getVerticalLineKeyword_2_0());
             	    			
-            	    // InternalGraphQL.g:2054:4: ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) )
-            	    // InternalGraphQL.g:2055:5: (lv_directiveLocations_3_0= ruleDirectiveLocation )
+            	    // InternalGraphQL.g:2265:4: ( (lv_directiveLocations_3_0= ruleDirectiveLocation ) )
+            	    // InternalGraphQL.g:2266:5: (lv_directiveLocations_3_0= ruleDirectiveLocation )
             	    {
-            	    // InternalGraphQL.g:2055:5: (lv_directiveLocations_3_0= ruleDirectiveLocation )
-            	    // InternalGraphQL.g:2056:6: lv_directiveLocations_3_0= ruleDirectiveLocation
+            	    // InternalGraphQL.g:2266:5: (lv_directiveLocations_3_0= ruleDirectiveLocation )
+            	    // InternalGraphQL.g:2267:6: lv_directiveLocations_3_0= ruleDirectiveLocation
             	    {
 
             	    						newCompositeNode(grammarAccess.getDirectiveLocationsAccess().getDirectiveLocationsDirectiveLocationEnumRuleCall_2_1_0());
             	    					
-            	    pushFollow(FOLLOW_20);
+            	    pushFollow(FOLLOW_23);
             	    lv_directiveLocations_3_0=ruleDirectiveLocation();
 
             	    state._fsp--;
@@ -5554,7 +6118,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop42;
+            	    break loop47;
                 }
             } while (true);
 
@@ -5581,7 +6145,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDirectiveLocation"
-    // InternalGraphQL.g:2078:1: ruleDirectiveLocation returns [Enumerator current=null] : ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'MUTATION' ) | (enumLiteral_2= 'SUBSCRIPTION' ) | (enumLiteral_3= 'FIELD' ) | (enumLiteral_4= 'FRAGMENT_DEFINITION' ) | (enumLiteral_5= 'FRAGMENT_SPREAD' ) | (enumLiteral_6= 'INLINE_FRAGMENT' ) | (enumLiteral_7= 'VARIABLE_DEFINITION' ) | (enumLiteral_8= 'SCHEMA' ) | (enumLiteral_9= 'SCALAR' ) | (enumLiteral_10= 'OBJECT' ) | (enumLiteral_11= 'FIELD_DEFINITION' ) | (enumLiteral_12= 'ARGUMENT_DEFINITION' ) | (enumLiteral_13= 'INTERFACE' ) | (enumLiteral_14= 'UNION' ) | (enumLiteral_15= 'ENUM' ) | (enumLiteral_16= 'ENUM_VALUE' ) | (enumLiteral_17= 'INPUT_OBJECT' ) | (enumLiteral_18= 'INPUT_FIELD_DEFINITION' ) ) ;
+    // InternalGraphQL.g:2289:1: ruleDirectiveLocation returns [Enumerator current=null] : ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'MUTATION' ) | (enumLiteral_2= 'SUBSCRIPTION' ) | (enumLiteral_3= 'FIELD' ) | (enumLiteral_4= 'FRAGMENT_DEFINITION' ) | (enumLiteral_5= 'FRAGMENT_SPREAD' ) | (enumLiteral_6= 'INLINE_FRAGMENT' ) | (enumLiteral_7= 'VARIABLE_DEFINITION' ) | (enumLiteral_8= 'SCHEMA' ) | (enumLiteral_9= 'SCALAR' ) | (enumLiteral_10= 'OBJECT' ) | (enumLiteral_11= 'FIELD_DEFINITION' ) | (enumLiteral_12= 'ARGUMENT_DEFINITION' ) | (enumLiteral_13= 'INTERFACE' ) | (enumLiteral_14= 'UNION' ) | (enumLiteral_15= 'ENUM' ) | (enumLiteral_16= 'ENUM_VALUE' ) | (enumLiteral_17= 'INPUT_OBJECT' ) | (enumLiteral_18= 'INPUT_FIELD_DEFINITION' ) ) ;
     public final Enumerator ruleDirectiveLocation() throws RecognitionException {
         Enumerator current = null;
 
@@ -5609,120 +6173,120 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:2084:2: ( ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'MUTATION' ) | (enumLiteral_2= 'SUBSCRIPTION' ) | (enumLiteral_3= 'FIELD' ) | (enumLiteral_4= 'FRAGMENT_DEFINITION' ) | (enumLiteral_5= 'FRAGMENT_SPREAD' ) | (enumLiteral_6= 'INLINE_FRAGMENT' ) | (enumLiteral_7= 'VARIABLE_DEFINITION' ) | (enumLiteral_8= 'SCHEMA' ) | (enumLiteral_9= 'SCALAR' ) | (enumLiteral_10= 'OBJECT' ) | (enumLiteral_11= 'FIELD_DEFINITION' ) | (enumLiteral_12= 'ARGUMENT_DEFINITION' ) | (enumLiteral_13= 'INTERFACE' ) | (enumLiteral_14= 'UNION' ) | (enumLiteral_15= 'ENUM' ) | (enumLiteral_16= 'ENUM_VALUE' ) | (enumLiteral_17= 'INPUT_OBJECT' ) | (enumLiteral_18= 'INPUT_FIELD_DEFINITION' ) ) )
-            // InternalGraphQL.g:2085:2: ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'MUTATION' ) | (enumLiteral_2= 'SUBSCRIPTION' ) | (enumLiteral_3= 'FIELD' ) | (enumLiteral_4= 'FRAGMENT_DEFINITION' ) | (enumLiteral_5= 'FRAGMENT_SPREAD' ) | (enumLiteral_6= 'INLINE_FRAGMENT' ) | (enumLiteral_7= 'VARIABLE_DEFINITION' ) | (enumLiteral_8= 'SCHEMA' ) | (enumLiteral_9= 'SCALAR' ) | (enumLiteral_10= 'OBJECT' ) | (enumLiteral_11= 'FIELD_DEFINITION' ) | (enumLiteral_12= 'ARGUMENT_DEFINITION' ) | (enumLiteral_13= 'INTERFACE' ) | (enumLiteral_14= 'UNION' ) | (enumLiteral_15= 'ENUM' ) | (enumLiteral_16= 'ENUM_VALUE' ) | (enumLiteral_17= 'INPUT_OBJECT' ) | (enumLiteral_18= 'INPUT_FIELD_DEFINITION' ) )
+            // InternalGraphQL.g:2295:2: ( ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'MUTATION' ) | (enumLiteral_2= 'SUBSCRIPTION' ) | (enumLiteral_3= 'FIELD' ) | (enumLiteral_4= 'FRAGMENT_DEFINITION' ) | (enumLiteral_5= 'FRAGMENT_SPREAD' ) | (enumLiteral_6= 'INLINE_FRAGMENT' ) | (enumLiteral_7= 'VARIABLE_DEFINITION' ) | (enumLiteral_8= 'SCHEMA' ) | (enumLiteral_9= 'SCALAR' ) | (enumLiteral_10= 'OBJECT' ) | (enumLiteral_11= 'FIELD_DEFINITION' ) | (enumLiteral_12= 'ARGUMENT_DEFINITION' ) | (enumLiteral_13= 'INTERFACE' ) | (enumLiteral_14= 'UNION' ) | (enumLiteral_15= 'ENUM' ) | (enumLiteral_16= 'ENUM_VALUE' ) | (enumLiteral_17= 'INPUT_OBJECT' ) | (enumLiteral_18= 'INPUT_FIELD_DEFINITION' ) ) )
+            // InternalGraphQL.g:2296:2: ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'MUTATION' ) | (enumLiteral_2= 'SUBSCRIPTION' ) | (enumLiteral_3= 'FIELD' ) | (enumLiteral_4= 'FRAGMENT_DEFINITION' ) | (enumLiteral_5= 'FRAGMENT_SPREAD' ) | (enumLiteral_6= 'INLINE_FRAGMENT' ) | (enumLiteral_7= 'VARIABLE_DEFINITION' ) | (enumLiteral_8= 'SCHEMA' ) | (enumLiteral_9= 'SCALAR' ) | (enumLiteral_10= 'OBJECT' ) | (enumLiteral_11= 'FIELD_DEFINITION' ) | (enumLiteral_12= 'ARGUMENT_DEFINITION' ) | (enumLiteral_13= 'INTERFACE' ) | (enumLiteral_14= 'UNION' ) | (enumLiteral_15= 'ENUM' ) | (enumLiteral_16= 'ENUM_VALUE' ) | (enumLiteral_17= 'INPUT_OBJECT' ) | (enumLiteral_18= 'INPUT_FIELD_DEFINITION' ) )
             {
-            // InternalGraphQL.g:2085:2: ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'MUTATION' ) | (enumLiteral_2= 'SUBSCRIPTION' ) | (enumLiteral_3= 'FIELD' ) | (enumLiteral_4= 'FRAGMENT_DEFINITION' ) | (enumLiteral_5= 'FRAGMENT_SPREAD' ) | (enumLiteral_6= 'INLINE_FRAGMENT' ) | (enumLiteral_7= 'VARIABLE_DEFINITION' ) | (enumLiteral_8= 'SCHEMA' ) | (enumLiteral_9= 'SCALAR' ) | (enumLiteral_10= 'OBJECT' ) | (enumLiteral_11= 'FIELD_DEFINITION' ) | (enumLiteral_12= 'ARGUMENT_DEFINITION' ) | (enumLiteral_13= 'INTERFACE' ) | (enumLiteral_14= 'UNION' ) | (enumLiteral_15= 'ENUM' ) | (enumLiteral_16= 'ENUM_VALUE' ) | (enumLiteral_17= 'INPUT_OBJECT' ) | (enumLiteral_18= 'INPUT_FIELD_DEFINITION' ) )
-            int alt43=19;
+            // InternalGraphQL.g:2296:2: ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'MUTATION' ) | (enumLiteral_2= 'SUBSCRIPTION' ) | (enumLiteral_3= 'FIELD' ) | (enumLiteral_4= 'FRAGMENT_DEFINITION' ) | (enumLiteral_5= 'FRAGMENT_SPREAD' ) | (enumLiteral_6= 'INLINE_FRAGMENT' ) | (enumLiteral_7= 'VARIABLE_DEFINITION' ) | (enumLiteral_8= 'SCHEMA' ) | (enumLiteral_9= 'SCALAR' ) | (enumLiteral_10= 'OBJECT' ) | (enumLiteral_11= 'FIELD_DEFINITION' ) | (enumLiteral_12= 'ARGUMENT_DEFINITION' ) | (enumLiteral_13= 'INTERFACE' ) | (enumLiteral_14= 'UNION' ) | (enumLiteral_15= 'ENUM' ) | (enumLiteral_16= 'ENUM_VALUE' ) | (enumLiteral_17= 'INPUT_OBJECT' ) | (enumLiteral_18= 'INPUT_FIELD_DEFINITION' ) )
+            int alt48=19;
             switch ( input.LA(1) ) {
             case 39:
                 {
-                alt43=1;
+                alt48=1;
                 }
                 break;
             case 40:
                 {
-                alt43=2;
+                alt48=2;
                 }
                 break;
             case 41:
                 {
-                alt43=3;
+                alt48=3;
                 }
                 break;
             case 42:
                 {
-                alt43=4;
+                alt48=4;
                 }
                 break;
             case 43:
                 {
-                alt43=5;
+                alt48=5;
                 }
                 break;
             case 44:
                 {
-                alt43=6;
+                alt48=6;
                 }
                 break;
             case 45:
                 {
-                alt43=7;
+                alt48=7;
                 }
                 break;
             case 46:
                 {
-                alt43=8;
+                alt48=8;
                 }
                 break;
             case 47:
                 {
-                alt43=9;
+                alt48=9;
                 }
                 break;
             case 48:
                 {
-                alt43=10;
+                alt48=10;
                 }
                 break;
             case 49:
                 {
-                alt43=11;
+                alt48=11;
                 }
                 break;
             case 50:
                 {
-                alt43=12;
+                alt48=12;
                 }
                 break;
             case 51:
                 {
-                alt43=13;
+                alt48=13;
                 }
                 break;
             case 52:
                 {
-                alt43=14;
+                alt48=14;
                 }
                 break;
             case 53:
                 {
-                alt43=15;
+                alt48=15;
                 }
                 break;
             case 54:
                 {
-                alt43=16;
+                alt48=16;
                 }
                 break;
             case 55:
                 {
-                alt43=17;
+                alt48=17;
                 }
                 break;
             case 56:
                 {
-                alt43=18;
+                alt48=18;
                 }
                 break;
             case 57:
                 {
-                alt43=19;
+                alt48=19;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 43, 0, input);
+                    new NoViableAltException("", 48, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt43) {
+            switch (alt48) {
                 case 1 :
-                    // InternalGraphQL.g:2086:3: (enumLiteral_0= 'QUERY' )
+                    // InternalGraphQL.g:2297:3: (enumLiteral_0= 'QUERY' )
                     {
-                    // InternalGraphQL.g:2086:3: (enumLiteral_0= 'QUERY' )
-                    // InternalGraphQL.g:2087:4: enumLiteral_0= 'QUERY'
+                    // InternalGraphQL.g:2297:3: (enumLiteral_0= 'QUERY' )
+                    // InternalGraphQL.g:2298:4: enumLiteral_0= 'QUERY'
                     {
                     enumLiteral_0=(Token)match(input,39,FOLLOW_2); 
 
@@ -5736,10 +6300,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGraphQL.g:2094:3: (enumLiteral_1= 'MUTATION' )
+                    // InternalGraphQL.g:2305:3: (enumLiteral_1= 'MUTATION' )
                     {
-                    // InternalGraphQL.g:2094:3: (enumLiteral_1= 'MUTATION' )
-                    // InternalGraphQL.g:2095:4: enumLiteral_1= 'MUTATION'
+                    // InternalGraphQL.g:2305:3: (enumLiteral_1= 'MUTATION' )
+                    // InternalGraphQL.g:2306:4: enumLiteral_1= 'MUTATION'
                     {
                     enumLiteral_1=(Token)match(input,40,FOLLOW_2); 
 
@@ -5753,10 +6317,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalGraphQL.g:2102:3: (enumLiteral_2= 'SUBSCRIPTION' )
+                    // InternalGraphQL.g:2313:3: (enumLiteral_2= 'SUBSCRIPTION' )
                     {
-                    // InternalGraphQL.g:2102:3: (enumLiteral_2= 'SUBSCRIPTION' )
-                    // InternalGraphQL.g:2103:4: enumLiteral_2= 'SUBSCRIPTION'
+                    // InternalGraphQL.g:2313:3: (enumLiteral_2= 'SUBSCRIPTION' )
+                    // InternalGraphQL.g:2314:4: enumLiteral_2= 'SUBSCRIPTION'
                     {
                     enumLiteral_2=(Token)match(input,41,FOLLOW_2); 
 
@@ -5770,10 +6334,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalGraphQL.g:2110:3: (enumLiteral_3= 'FIELD' )
+                    // InternalGraphQL.g:2321:3: (enumLiteral_3= 'FIELD' )
                     {
-                    // InternalGraphQL.g:2110:3: (enumLiteral_3= 'FIELD' )
-                    // InternalGraphQL.g:2111:4: enumLiteral_3= 'FIELD'
+                    // InternalGraphQL.g:2321:3: (enumLiteral_3= 'FIELD' )
+                    // InternalGraphQL.g:2322:4: enumLiteral_3= 'FIELD'
                     {
                     enumLiteral_3=(Token)match(input,42,FOLLOW_2); 
 
@@ -5787,10 +6351,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalGraphQL.g:2118:3: (enumLiteral_4= 'FRAGMENT_DEFINITION' )
+                    // InternalGraphQL.g:2329:3: (enumLiteral_4= 'FRAGMENT_DEFINITION' )
                     {
-                    // InternalGraphQL.g:2118:3: (enumLiteral_4= 'FRAGMENT_DEFINITION' )
-                    // InternalGraphQL.g:2119:4: enumLiteral_4= 'FRAGMENT_DEFINITION'
+                    // InternalGraphQL.g:2329:3: (enumLiteral_4= 'FRAGMENT_DEFINITION' )
+                    // InternalGraphQL.g:2330:4: enumLiteral_4= 'FRAGMENT_DEFINITION'
                     {
                     enumLiteral_4=(Token)match(input,43,FOLLOW_2); 
 
@@ -5804,10 +6368,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalGraphQL.g:2126:3: (enumLiteral_5= 'FRAGMENT_SPREAD' )
+                    // InternalGraphQL.g:2337:3: (enumLiteral_5= 'FRAGMENT_SPREAD' )
                     {
-                    // InternalGraphQL.g:2126:3: (enumLiteral_5= 'FRAGMENT_SPREAD' )
-                    // InternalGraphQL.g:2127:4: enumLiteral_5= 'FRAGMENT_SPREAD'
+                    // InternalGraphQL.g:2337:3: (enumLiteral_5= 'FRAGMENT_SPREAD' )
+                    // InternalGraphQL.g:2338:4: enumLiteral_5= 'FRAGMENT_SPREAD'
                     {
                     enumLiteral_5=(Token)match(input,44,FOLLOW_2); 
 
@@ -5821,10 +6385,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalGraphQL.g:2134:3: (enumLiteral_6= 'INLINE_FRAGMENT' )
+                    // InternalGraphQL.g:2345:3: (enumLiteral_6= 'INLINE_FRAGMENT' )
                     {
-                    // InternalGraphQL.g:2134:3: (enumLiteral_6= 'INLINE_FRAGMENT' )
-                    // InternalGraphQL.g:2135:4: enumLiteral_6= 'INLINE_FRAGMENT'
+                    // InternalGraphQL.g:2345:3: (enumLiteral_6= 'INLINE_FRAGMENT' )
+                    // InternalGraphQL.g:2346:4: enumLiteral_6= 'INLINE_FRAGMENT'
                     {
                     enumLiteral_6=(Token)match(input,45,FOLLOW_2); 
 
@@ -5838,10 +6402,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalGraphQL.g:2142:3: (enumLiteral_7= 'VARIABLE_DEFINITION' )
+                    // InternalGraphQL.g:2353:3: (enumLiteral_7= 'VARIABLE_DEFINITION' )
                     {
-                    // InternalGraphQL.g:2142:3: (enumLiteral_7= 'VARIABLE_DEFINITION' )
-                    // InternalGraphQL.g:2143:4: enumLiteral_7= 'VARIABLE_DEFINITION'
+                    // InternalGraphQL.g:2353:3: (enumLiteral_7= 'VARIABLE_DEFINITION' )
+                    // InternalGraphQL.g:2354:4: enumLiteral_7= 'VARIABLE_DEFINITION'
                     {
                     enumLiteral_7=(Token)match(input,46,FOLLOW_2); 
 
@@ -5855,10 +6419,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalGraphQL.g:2150:3: (enumLiteral_8= 'SCHEMA' )
+                    // InternalGraphQL.g:2361:3: (enumLiteral_8= 'SCHEMA' )
                     {
-                    // InternalGraphQL.g:2150:3: (enumLiteral_8= 'SCHEMA' )
-                    // InternalGraphQL.g:2151:4: enumLiteral_8= 'SCHEMA'
+                    // InternalGraphQL.g:2361:3: (enumLiteral_8= 'SCHEMA' )
+                    // InternalGraphQL.g:2362:4: enumLiteral_8= 'SCHEMA'
                     {
                     enumLiteral_8=(Token)match(input,47,FOLLOW_2); 
 
@@ -5872,10 +6436,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalGraphQL.g:2158:3: (enumLiteral_9= 'SCALAR' )
+                    // InternalGraphQL.g:2369:3: (enumLiteral_9= 'SCALAR' )
                     {
-                    // InternalGraphQL.g:2158:3: (enumLiteral_9= 'SCALAR' )
-                    // InternalGraphQL.g:2159:4: enumLiteral_9= 'SCALAR'
+                    // InternalGraphQL.g:2369:3: (enumLiteral_9= 'SCALAR' )
+                    // InternalGraphQL.g:2370:4: enumLiteral_9= 'SCALAR'
                     {
                     enumLiteral_9=(Token)match(input,48,FOLLOW_2); 
 
@@ -5889,10 +6453,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalGraphQL.g:2166:3: (enumLiteral_10= 'OBJECT' )
+                    // InternalGraphQL.g:2377:3: (enumLiteral_10= 'OBJECT' )
                     {
-                    // InternalGraphQL.g:2166:3: (enumLiteral_10= 'OBJECT' )
-                    // InternalGraphQL.g:2167:4: enumLiteral_10= 'OBJECT'
+                    // InternalGraphQL.g:2377:3: (enumLiteral_10= 'OBJECT' )
+                    // InternalGraphQL.g:2378:4: enumLiteral_10= 'OBJECT'
                     {
                     enumLiteral_10=(Token)match(input,49,FOLLOW_2); 
 
@@ -5906,10 +6470,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalGraphQL.g:2174:3: (enumLiteral_11= 'FIELD_DEFINITION' )
+                    // InternalGraphQL.g:2385:3: (enumLiteral_11= 'FIELD_DEFINITION' )
                     {
-                    // InternalGraphQL.g:2174:3: (enumLiteral_11= 'FIELD_DEFINITION' )
-                    // InternalGraphQL.g:2175:4: enumLiteral_11= 'FIELD_DEFINITION'
+                    // InternalGraphQL.g:2385:3: (enumLiteral_11= 'FIELD_DEFINITION' )
+                    // InternalGraphQL.g:2386:4: enumLiteral_11= 'FIELD_DEFINITION'
                     {
                     enumLiteral_11=(Token)match(input,50,FOLLOW_2); 
 
@@ -5923,10 +6487,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalGraphQL.g:2182:3: (enumLiteral_12= 'ARGUMENT_DEFINITION' )
+                    // InternalGraphQL.g:2393:3: (enumLiteral_12= 'ARGUMENT_DEFINITION' )
                     {
-                    // InternalGraphQL.g:2182:3: (enumLiteral_12= 'ARGUMENT_DEFINITION' )
-                    // InternalGraphQL.g:2183:4: enumLiteral_12= 'ARGUMENT_DEFINITION'
+                    // InternalGraphQL.g:2393:3: (enumLiteral_12= 'ARGUMENT_DEFINITION' )
+                    // InternalGraphQL.g:2394:4: enumLiteral_12= 'ARGUMENT_DEFINITION'
                     {
                     enumLiteral_12=(Token)match(input,51,FOLLOW_2); 
 
@@ -5940,10 +6504,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalGraphQL.g:2190:3: (enumLiteral_13= 'INTERFACE' )
+                    // InternalGraphQL.g:2401:3: (enumLiteral_13= 'INTERFACE' )
                     {
-                    // InternalGraphQL.g:2190:3: (enumLiteral_13= 'INTERFACE' )
-                    // InternalGraphQL.g:2191:4: enumLiteral_13= 'INTERFACE'
+                    // InternalGraphQL.g:2401:3: (enumLiteral_13= 'INTERFACE' )
+                    // InternalGraphQL.g:2402:4: enumLiteral_13= 'INTERFACE'
                     {
                     enumLiteral_13=(Token)match(input,52,FOLLOW_2); 
 
@@ -5957,10 +6521,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalGraphQL.g:2198:3: (enumLiteral_14= 'UNION' )
+                    // InternalGraphQL.g:2409:3: (enumLiteral_14= 'UNION' )
                     {
-                    // InternalGraphQL.g:2198:3: (enumLiteral_14= 'UNION' )
-                    // InternalGraphQL.g:2199:4: enumLiteral_14= 'UNION'
+                    // InternalGraphQL.g:2409:3: (enumLiteral_14= 'UNION' )
+                    // InternalGraphQL.g:2410:4: enumLiteral_14= 'UNION'
                     {
                     enumLiteral_14=(Token)match(input,53,FOLLOW_2); 
 
@@ -5974,10 +6538,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // InternalGraphQL.g:2206:3: (enumLiteral_15= 'ENUM' )
+                    // InternalGraphQL.g:2417:3: (enumLiteral_15= 'ENUM' )
                     {
-                    // InternalGraphQL.g:2206:3: (enumLiteral_15= 'ENUM' )
-                    // InternalGraphQL.g:2207:4: enumLiteral_15= 'ENUM'
+                    // InternalGraphQL.g:2417:3: (enumLiteral_15= 'ENUM' )
+                    // InternalGraphQL.g:2418:4: enumLiteral_15= 'ENUM'
                     {
                     enumLiteral_15=(Token)match(input,54,FOLLOW_2); 
 
@@ -5991,10 +6555,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalGraphQL.g:2214:3: (enumLiteral_16= 'ENUM_VALUE' )
+                    // InternalGraphQL.g:2425:3: (enumLiteral_16= 'ENUM_VALUE' )
                     {
-                    // InternalGraphQL.g:2214:3: (enumLiteral_16= 'ENUM_VALUE' )
-                    // InternalGraphQL.g:2215:4: enumLiteral_16= 'ENUM_VALUE'
+                    // InternalGraphQL.g:2425:3: (enumLiteral_16= 'ENUM_VALUE' )
+                    // InternalGraphQL.g:2426:4: enumLiteral_16= 'ENUM_VALUE'
                     {
                     enumLiteral_16=(Token)match(input,55,FOLLOW_2); 
 
@@ -6008,10 +6572,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // InternalGraphQL.g:2222:3: (enumLiteral_17= 'INPUT_OBJECT' )
+                    // InternalGraphQL.g:2433:3: (enumLiteral_17= 'INPUT_OBJECT' )
                     {
-                    // InternalGraphQL.g:2222:3: (enumLiteral_17= 'INPUT_OBJECT' )
-                    // InternalGraphQL.g:2223:4: enumLiteral_17= 'INPUT_OBJECT'
+                    // InternalGraphQL.g:2433:3: (enumLiteral_17= 'INPUT_OBJECT' )
+                    // InternalGraphQL.g:2434:4: enumLiteral_17= 'INPUT_OBJECT'
                     {
                     enumLiteral_17=(Token)match(input,56,FOLLOW_2); 
 
@@ -6025,10 +6589,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // InternalGraphQL.g:2230:3: (enumLiteral_18= 'INPUT_FIELD_DEFINITION' )
+                    // InternalGraphQL.g:2441:3: (enumLiteral_18= 'INPUT_FIELD_DEFINITION' )
                     {
-                    // InternalGraphQL.g:2230:3: (enumLiteral_18= 'INPUT_FIELD_DEFINITION' )
-                    // InternalGraphQL.g:2231:4: enumLiteral_18= 'INPUT_FIELD_DEFINITION'
+                    // InternalGraphQL.g:2441:3: (enumLiteral_18= 'INPUT_FIELD_DEFINITION' )
+                    // InternalGraphQL.g:2442:4: enumLiteral_18= 'INPUT_FIELD_DEFINITION'
                     {
                     enumLiteral_18=(Token)match(input,57,FOLLOW_2); 
 
@@ -6064,7 +6628,7 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperationType"
-    // InternalGraphQL.g:2241:1: ruleOperationType returns [Enumerator current=null] : ( (enumLiteral_0= 'query' ) | (enumLiteral_1= 'mutation' ) | (enumLiteral_2= 'subscription' ) ) ;
+    // InternalGraphQL.g:2452:1: ruleOperationType returns [Enumerator current=null] : ( (enumLiteral_0= 'query' ) | (enumLiteral_1= 'mutation' ) | (enumLiteral_2= 'subscription' ) ) ;
     public final Enumerator ruleOperationType() throws RecognitionException {
         Enumerator current = null;
 
@@ -6076,40 +6640,40 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGraphQL.g:2247:2: ( ( (enumLiteral_0= 'query' ) | (enumLiteral_1= 'mutation' ) | (enumLiteral_2= 'subscription' ) ) )
-            // InternalGraphQL.g:2248:2: ( (enumLiteral_0= 'query' ) | (enumLiteral_1= 'mutation' ) | (enumLiteral_2= 'subscription' ) )
+            // InternalGraphQL.g:2458:2: ( ( (enumLiteral_0= 'query' ) | (enumLiteral_1= 'mutation' ) | (enumLiteral_2= 'subscription' ) ) )
+            // InternalGraphQL.g:2459:2: ( (enumLiteral_0= 'query' ) | (enumLiteral_1= 'mutation' ) | (enumLiteral_2= 'subscription' ) )
             {
-            // InternalGraphQL.g:2248:2: ( (enumLiteral_0= 'query' ) | (enumLiteral_1= 'mutation' ) | (enumLiteral_2= 'subscription' ) )
-            int alt44=3;
+            // InternalGraphQL.g:2459:2: ( (enumLiteral_0= 'query' ) | (enumLiteral_1= 'mutation' ) | (enumLiteral_2= 'subscription' ) )
+            int alt49=3;
             switch ( input.LA(1) ) {
             case 58:
                 {
-                alt44=1;
+                alt49=1;
                 }
                 break;
             case 59:
                 {
-                alt44=2;
+                alt49=2;
                 }
                 break;
             case 60:
                 {
-                alt44=3;
+                alt49=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 44, 0, input);
+                    new NoViableAltException("", 49, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt44) {
+            switch (alt49) {
                 case 1 :
-                    // InternalGraphQL.g:2249:3: (enumLiteral_0= 'query' )
+                    // InternalGraphQL.g:2460:3: (enumLiteral_0= 'query' )
                     {
-                    // InternalGraphQL.g:2249:3: (enumLiteral_0= 'query' )
-                    // InternalGraphQL.g:2250:4: enumLiteral_0= 'query'
+                    // InternalGraphQL.g:2460:3: (enumLiteral_0= 'query' )
+                    // InternalGraphQL.g:2461:4: enumLiteral_0= 'query'
                     {
                     enumLiteral_0=(Token)match(input,58,FOLLOW_2); 
 
@@ -6123,10 +6687,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGraphQL.g:2257:3: (enumLiteral_1= 'mutation' )
+                    // InternalGraphQL.g:2468:3: (enumLiteral_1= 'mutation' )
                     {
-                    // InternalGraphQL.g:2257:3: (enumLiteral_1= 'mutation' )
-                    // InternalGraphQL.g:2258:4: enumLiteral_1= 'mutation'
+                    // InternalGraphQL.g:2468:3: (enumLiteral_1= 'mutation' )
+                    // InternalGraphQL.g:2469:4: enumLiteral_1= 'mutation'
                     {
                     enumLiteral_1=(Token)match(input,59,FOLLOW_2); 
 
@@ -6140,10 +6704,10 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalGraphQL.g:2265:3: (enumLiteral_2= 'subscription' )
+                    // InternalGraphQL.g:2476:3: (enumLiteral_2= 'subscription' )
                     {
-                    // InternalGraphQL.g:2265:3: (enumLiteral_2= 'subscription' )
-                    // InternalGraphQL.g:2266:4: enumLiteral_2= 'subscription'
+                    // InternalGraphQL.g:2476:3: (enumLiteral_2= 'subscription' )
+                    // InternalGraphQL.g:2477:4: enumLiteral_2= 'subscription'
                     {
                     enumLiteral_2=(Token)match(input,60,FOLLOW_2); 
 
@@ -6193,31 +6757,34 @@ public class InternalGraphQLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000108002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000108202L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000028000010L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000008202L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000010190L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000029000010L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000190L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x00000003A0008070L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000010010L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x00000003E0008070L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000003800000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000001800000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x03FFFF8001000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000004000000190L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000108002L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000002000020000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000029000010L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x00000003A00081F0L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000010010L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x00000003E00081F0L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000003800000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000001800000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x03FFFF8001000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000002000000002L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000004000000010L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000004000000190L});
 
 }

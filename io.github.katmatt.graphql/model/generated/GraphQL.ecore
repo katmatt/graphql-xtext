@@ -29,6 +29,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ObjectTypeDefinition" eSuperTypes="#//TypeDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="implements" eType="#//IntersectionType"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="directives" upperBound="-1"
+        eType="#//Directive" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fieldDefinitions" upperBound="-1"
         eType="#//FieldDefinition" containment="true"/>
   </eClassifiers>
@@ -42,6 +44,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//StringValue"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" eType="#//ArgumentsDefinition"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnionTypeDefinition" eSuperTypes="#//TypeDefinition">
@@ -91,7 +95,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="NullValue" eSuperTypes="#//ConstValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StringValue">
+  <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="#//ConstValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanValue" eSuperTypes="#//ConstValue">
@@ -124,8 +128,22 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="directiveLocations" upperBound="-1"
         eType="#//DirectiveLocations" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArgumentsDefinition">
+  <eClassifiers xsi:type="ecore:EClass" name="Directive">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" eType="#//Arguments"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arguments">
     <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+        eType="#//Argument" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Argument">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentDefinition" eType="#//InputValueDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ConstValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentsDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentDefinitions" upperBound="-1"
         eType="#//InputValueDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DirectiveLocations">

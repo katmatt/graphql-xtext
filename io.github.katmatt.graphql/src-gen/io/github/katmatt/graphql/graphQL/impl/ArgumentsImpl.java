@@ -3,9 +3,9 @@
  */
 package io.github.katmatt.graphql.graphQL.impl;
 
-import io.github.katmatt.graphql.graphQL.ArgumentsDefinition;
+import io.github.katmatt.graphql.graphQL.Argument;
+import io.github.katmatt.graphql.graphQL.Arguments;
 import io.github.katmatt.graphql.graphQL.GraphQLPackage;
-import io.github.katmatt.graphql.graphQL.InputValueDefinition;
 
 import java.util.Collection;
 
@@ -23,35 +23,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Arguments Definition</b></em>'.
+ * An implementation of the model object '<em><b>Arguments</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link io.github.katmatt.graphql.graphQL.impl.ArgumentsDefinitionImpl#getArgumentDefinitions <em>Argument Definitions</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.impl.ArgumentsImpl#getArguments <em>Arguments</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ArgumentsDefinitionImpl extends MinimalEObjectImpl.Container implements ArgumentsDefinition
+public class ArgumentsImpl extends MinimalEObjectImpl.Container implements Arguments
 {
   /**
-   * The cached value of the '{@link #getArgumentDefinitions() <em>Argument Definitions</em>}' containment reference list.
+   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArgumentDefinitions()
+   * @see #getArguments()
    * @generated
    * @ordered
    */
-  protected EList<InputValueDefinition> argumentDefinitions;
+  protected EList<Argument> arguments;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ArgumentsDefinitionImpl()
+  protected ArgumentsImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class ArgumentsDefinitionImpl extends MinimalEObjectImpl.Container implem
   @Override
   protected EClass eStaticClass()
   {
-    return GraphQLPackage.Literals.ARGUMENTS_DEFINITION;
+    return GraphQLPackage.Literals.ARGUMENTS;
   }
 
   /**
@@ -73,13 +73,13 @@ public class ArgumentsDefinitionImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
-  public EList<InputValueDefinition> getArgumentDefinitions()
+  public EList<Argument> getArguments()
   {
-    if (argumentDefinitions == null)
+    if (arguments == null)
     {
-      argumentDefinitions = new EObjectContainmentEList<InputValueDefinition>(InputValueDefinition.class, this, GraphQLPackage.ARGUMENTS_DEFINITION__ARGUMENT_DEFINITIONS);
+      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, GraphQLPackage.ARGUMENTS__ARGUMENTS);
     }
-    return argumentDefinitions;
+    return arguments;
   }
 
   /**
@@ -92,8 +92,8 @@ public class ArgumentsDefinitionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case GraphQLPackage.ARGUMENTS_DEFINITION__ARGUMENT_DEFINITIONS:
-        return ((InternalEList<?>)getArgumentDefinitions()).basicRemove(otherEnd, msgs);
+      case GraphQLPackage.ARGUMENTS__ARGUMENTS:
+        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class ArgumentsDefinitionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case GraphQLPackage.ARGUMENTS_DEFINITION__ARGUMENT_DEFINITIONS:
-        return getArgumentDefinitions();
+      case GraphQLPackage.ARGUMENTS__ARGUMENTS:
+        return getArguments();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class ArgumentsDefinitionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case GraphQLPackage.ARGUMENTS_DEFINITION__ARGUMENT_DEFINITIONS:
-        getArgumentDefinitions().clear();
-        getArgumentDefinitions().addAll((Collection<? extends InputValueDefinition>)newValue);
+      case GraphQLPackage.ARGUMENTS__ARGUMENTS:
+        getArguments().clear();
+        getArguments().addAll((Collection<? extends Argument>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class ArgumentsDefinitionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case GraphQLPackage.ARGUMENTS_DEFINITION__ARGUMENT_DEFINITIONS:
-        getArgumentDefinitions().clear();
+      case GraphQLPackage.ARGUMENTS__ARGUMENTS:
+        getArguments().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,10 +160,10 @@ public class ArgumentsDefinitionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case GraphQLPackage.ARGUMENTS_DEFINITION__ARGUMENT_DEFINITIONS:
-        return argumentDefinitions != null && !argumentDefinitions.isEmpty();
+      case GraphQLPackage.ARGUMENTS__ARGUMENTS:
+        return arguments != null && !arguments.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ArgumentsDefinitionImpl
+} //ArgumentsImpl

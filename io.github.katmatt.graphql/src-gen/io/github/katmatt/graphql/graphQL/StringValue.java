@@ -3,7 +3,6 @@
  */
 package io.github.katmatt.graphql.graphQL;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface StringValue extends EObject
+public interface StringValue extends ConstValue
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

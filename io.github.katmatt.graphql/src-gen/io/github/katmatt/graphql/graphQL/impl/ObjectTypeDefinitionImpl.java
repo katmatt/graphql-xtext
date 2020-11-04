@@ -3,6 +3,7 @@
  */
 package io.github.katmatt.graphql.graphQL.impl;
 
+import io.github.katmatt.graphql.graphQL.Directive;
 import io.github.katmatt.graphql.graphQL.FieldDefinition;
 import io.github.katmatt.graphql.graphQL.GraphQLPackage;
 import io.github.katmatt.graphql.graphQL.IntersectionType;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.ObjectTypeDefinitionImpl#getImplements <em>Implements</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.impl.ObjectTypeDefinitionImpl#getDirectives <em>Directives</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.ObjectTypeDefinitionImpl#getFieldDefinitions <em>Field Definitions</em>}</li>
  * </ul>
  *
@@ -48,6 +50,16 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
    * @ordered
    */
   protected IntersectionType implements_;
+
+  /**
+   * The cached value of the '{@link #getDirectives() <em>Directives</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirectives()
+   * @generated
+   * @ordered
+   */
+  protected EList<Directive> directives;
 
   /**
    * The cached value of the '{@link #getFieldDefinitions() <em>Field Definitions</em>}' containment reference list.
@@ -136,6 +148,21 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
    * @generated
    */
   @Override
+  public EList<Directive> getDirectives()
+  {
+    if (directives == null)
+    {
+      directives = new EObjectContainmentEList<Directive>(Directive.class, this, GraphQLPackage.OBJECT_TYPE_DEFINITION__DIRECTIVES);
+    }
+    return directives;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<FieldDefinition> getFieldDefinitions()
   {
     if (fieldDefinitions == null)
@@ -157,6 +184,8 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
     {
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS:
         return basicSetImplements(null, msgs);
+      case GraphQLPackage.OBJECT_TYPE_DEFINITION__DIRECTIVES:
+        return ((InternalEList<?>)getDirectives()).basicRemove(otherEnd, msgs);
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
         return ((InternalEList<?>)getFieldDefinitions()).basicRemove(otherEnd, msgs);
     }
@@ -175,6 +204,8 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
     {
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS:
         return getImplements();
+      case GraphQLPackage.OBJECT_TYPE_DEFINITION__DIRECTIVES:
+        return getDirectives();
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
         return getFieldDefinitions();
     }
@@ -194,6 +225,10 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
     {
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS:
         setImplements((IntersectionType)newValue);
+        return;
+      case GraphQLPackage.OBJECT_TYPE_DEFINITION__DIRECTIVES:
+        getDirectives().clear();
+        getDirectives().addAll((Collection<? extends Directive>)newValue);
         return;
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
         getFieldDefinitions().clear();
@@ -216,6 +251,9 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS:
         setImplements((IntersectionType)null);
         return;
+      case GraphQLPackage.OBJECT_TYPE_DEFINITION__DIRECTIVES:
+        getDirectives().clear();
+        return;
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
         getFieldDefinitions().clear();
         return;
@@ -235,6 +273,8 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
     {
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS:
         return implements_ != null;
+      case GraphQLPackage.OBJECT_TYPE_DEFINITION__DIRECTIVES:
+        return directives != null && !directives.isEmpty();
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
         return fieldDefinitions != null && !fieldDefinitions.isEmpty();
     }

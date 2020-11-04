@@ -276,6 +276,33 @@ public interface GraphQLFactory extends EFactory
   DirectiveDefinition createDirectiveDefinition();
 
   /**
+   * Returns a new object of class '<em>Directive</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Directive</em>'.
+   * @generated
+   */
+  Directive createDirective();
+
+  /**
+   * Returns a new object of class '<em>Arguments</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Arguments</em>'.
+   * @generated
+   */
+  Arguments createArguments();
+
+  /**
+   * Returns a new object of class '<em>Argument</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Argument</em>'.
+   * @generated
+   */
+  Argument createArgument();
+
+  /**
    * Returns a new object of class '<em>Arguments Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

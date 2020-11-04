@@ -1065,8 +1065,8 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_DIRECTIVE_NAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2275:21: ( '@' RULE_NAME )
-            // InternalGraphQL.g:2275:23: '@' RULE_NAME
+            // InternalGraphQL.g:2486:21: ( '@' RULE_NAME )
+            // InternalGraphQL.g:2486:23: '@' RULE_NAME
             {
             match('@'); 
             mRULE_NAME(); 
@@ -1086,8 +1086,8 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_NAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2277:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalGraphQL.g:2277:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalGraphQL.g:2488:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalGraphQL.g:2488:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1098,7 +1098,7 @@ public class InternalGraphQLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalGraphQL.g:2277:37: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalGraphQL.g:2488:37: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -1147,10 +1147,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_INT_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2279:16: ( ( '-' )? '1' .. '9' ( '0' .. '9' )* )
-            // InternalGraphQL.g:2279:18: ( '-' )? '1' .. '9' ( '0' .. '9' )*
+            // InternalGraphQL.g:2490:16: ( ( '-' )? '1' .. '9' ( '0' .. '9' )* )
+            // InternalGraphQL.g:2490:18: ( '-' )? '1' .. '9' ( '0' .. '9' )*
             {
-            // InternalGraphQL.g:2279:18: ( '-' )?
+            // InternalGraphQL.g:2490:18: ( '-' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1159,7 +1159,7 @@ public class InternalGraphQLLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalGraphQL.g:2279:18: '-'
+                    // InternalGraphQL.g:2490:18: '-'
                     {
                     match('-'); 
 
@@ -1169,7 +1169,7 @@ public class InternalGraphQLLexer extends Lexer {
             }
 
             matchRange('1','9'); 
-            // InternalGraphQL.g:2279:32: ( '0' .. '9' )*
+            // InternalGraphQL.g:2490:32: ( '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -1182,7 +1182,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalGraphQL.g:2279:33: '0' .. '9'
+            	    // InternalGraphQL.g:2490:33: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1210,10 +1210,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_FLOAT_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2281:18: ( ( '-' )? ( '0' | ( '1' .. '9' )* ) '.' ( '0' .. '9' )* ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )* )
-            // InternalGraphQL.g:2281:20: ( '-' )? ( '0' | ( '1' .. '9' )* ) '.' ( '0' .. '9' )* ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )*
+            // InternalGraphQL.g:2492:18: ( ( '-' )? ( '0' | ( '1' .. '9' )* ) '.' ( '0' .. '9' )* ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )* )
+            // InternalGraphQL.g:2492:20: ( '-' )? ( '0' | ( '1' .. '9' )* ) '.' ( '0' .. '9' )* ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )*
             {
-            // InternalGraphQL.g:2281:20: ( '-' )?
+            // InternalGraphQL.g:2492:20: ( '-' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1222,7 +1222,7 @@ public class InternalGraphQLLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalGraphQL.g:2281:20: '-'
+                    // InternalGraphQL.g:2492:20: '-'
                     {
                     match('-'); 
 
@@ -1231,7 +1231,7 @@ public class InternalGraphQLLexer extends Lexer {
 
             }
 
-            // InternalGraphQL.g:2281:25: ( '0' | ( '1' .. '9' )* )
+            // InternalGraphQL.g:2492:25: ( '0' | ( '1' .. '9' )* )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1249,16 +1249,16 @@ public class InternalGraphQLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalGraphQL.g:2281:26: '0'
+                    // InternalGraphQL.g:2492:26: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // InternalGraphQL.g:2281:30: ( '1' .. '9' )*
+                    // InternalGraphQL.g:2492:30: ( '1' .. '9' )*
                     {
-                    // InternalGraphQL.g:2281:30: ( '1' .. '9' )*
+                    // InternalGraphQL.g:2492:30: ( '1' .. '9' )*
                     loop5:
                     do {
                         int alt5=2;
@@ -1271,7 +1271,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalGraphQL.g:2281:31: '1' .. '9'
+                    	    // InternalGraphQL.g:2492:31: '1' .. '9'
                     	    {
                     	    matchRange('1','9'); 
 
@@ -1290,7 +1290,7 @@ public class InternalGraphQLLexer extends Lexer {
             }
 
             match('.'); 
-            // InternalGraphQL.g:2281:47: ( '0' .. '9' )*
+            // InternalGraphQL.g:2492:47: ( '0' .. '9' )*
             loop7:
             do {
                 int alt7=2;
@@ -1303,7 +1303,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalGraphQL.g:2281:48: '0' .. '9'
+            	    // InternalGraphQL.g:2492:48: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1324,7 +1324,7 @@ public class InternalGraphQLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalGraphQL.g:2281:69: ( '+' | '-' )?
+            // InternalGraphQL.g:2492:69: ( '+' | '-' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1350,7 +1350,7 @@ public class InternalGraphQLLexer extends Lexer {
 
             }
 
-            // InternalGraphQL.g:2281:80: ( '0' .. '9' )*
+            // InternalGraphQL.g:2492:80: ( '0' .. '9' )*
             loop9:
             do {
                 int alt9=2;
@@ -1363,7 +1363,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalGraphQL.g:2281:81: '0' .. '9'
+            	    // InternalGraphQL.g:2492:81: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1391,10 +1391,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2283:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalGraphQL.g:2283:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalGraphQL.g:2494:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalGraphQL.g:2494:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalGraphQL.g:2283:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalGraphQL.g:2494:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt10=0;
             loop10:
             do {
@@ -1448,11 +1448,11 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2285:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalGraphQL.g:2285:19: '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalGraphQL.g:2496:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalGraphQL.g:2496:19: '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match('#'); 
-            // InternalGraphQL.g:2285:23: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalGraphQL.g:2496:23: (~ ( ( '\\n' | '\\r' ) ) )*
             loop11:
             do {
                 int alt11=2;
@@ -1465,7 +1465,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalGraphQL.g:2285:23: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalGraphQL.g:2496:23: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1485,7 +1485,7 @@ public class InternalGraphQLLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalGraphQL.g:2285:39: ( ( '\\r' )? '\\n' )?
+            // InternalGraphQL.g:2496:39: ( ( '\\r' )? '\\n' )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1494,9 +1494,9 @@ public class InternalGraphQLLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalGraphQL.g:2285:40: ( '\\r' )? '\\n'
+                    // InternalGraphQL.g:2496:40: ( '\\r' )? '\\n'
                     {
-                    // InternalGraphQL.g:2285:40: ( '\\r' )?
+                    // InternalGraphQL.g:2496:40: ( '\\r' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -1505,7 +1505,7 @@ public class InternalGraphQLLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // InternalGraphQL.g:2285:40: '\\r'
+                            // InternalGraphQL.g:2496:40: '\\r'
                             {
                             match('\r'); 
 
@@ -1537,8 +1537,8 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2287:12: ( ',' )
-            // InternalGraphQL.g:2287:14: ','
+            // InternalGraphQL.g:2498:12: ( ',' )
+            // InternalGraphQL.g:2498:14: ','
             {
             match(','); 
 
@@ -1557,11 +1557,11 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_SL_STRING_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2289:22: ( '\"' ( RULE_STRING_CHARACTER )* '\"' )
-            // InternalGraphQL.g:2289:24: '\"' ( RULE_STRING_CHARACTER )* '\"'
+            // InternalGraphQL.g:2500:22: ( '\"' ( RULE_STRING_CHARACTER )* '\"' )
+            // InternalGraphQL.g:2500:24: '\"' ( RULE_STRING_CHARACTER )* '\"'
             {
             match('\"'); 
-            // InternalGraphQL.g:2289:28: ( RULE_STRING_CHARACTER )*
+            // InternalGraphQL.g:2500:28: ( RULE_STRING_CHARACTER )*
             loop14:
             do {
                 int alt14=2;
@@ -1574,7 +1574,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalGraphQL.g:2289:28: RULE_STRING_CHARACTER
+            	    // InternalGraphQL.g:2500:28: RULE_STRING_CHARACTER
             	    {
             	    mRULE_STRING_CHARACTER(); 
 
@@ -1603,12 +1603,12 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_ML_STRING_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2291:22: ( '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"' )
-            // InternalGraphQL.g:2291:24: '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"'
+            // InternalGraphQL.g:2502:22: ( '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"' )
+            // InternalGraphQL.g:2502:24: '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"'
             {
             match("\"\"\""); 
 
-            // InternalGraphQL.g:2291:30: ( options {greedy=false; } : . )*
+            // InternalGraphQL.g:2502:30: ( options {greedy=false; } : . )*
             loop15:
             do {
                 int alt15=2;
@@ -1642,7 +1642,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalGraphQL.g:2291:58: .
+            	    // InternalGraphQL.g:2502:58: .
             	    {
             	    matchAny(); 
 
@@ -1670,8 +1670,8 @@ public class InternalGraphQLLexer extends Lexer {
     // $ANTLR start "RULE_STRING_CHARACTER"
     public final void mRULE_STRING_CHARACTER() throws RecognitionException {
         try {
-            // InternalGraphQL.g:2293:32: (~ ( ( '\\n' | '\\r' | '\"' | '\\\\' ) ) )
-            // InternalGraphQL.g:2293:34: ~ ( ( '\\n' | '\\r' | '\"' | '\\\\' ) )
+            // InternalGraphQL.g:2504:32: (~ ( ( '\\n' | '\\r' | '\"' | '\\\\' ) ) )
+            // InternalGraphQL.g:2504:34: ~ ( ( '\\n' | '\\r' | '\"' | '\\\\' ) )
             {
             if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                 input.consume();

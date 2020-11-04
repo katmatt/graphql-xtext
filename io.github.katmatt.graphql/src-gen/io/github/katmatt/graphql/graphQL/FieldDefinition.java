@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getName <em>Name</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getArguments <em>Arguments</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getType <em>Type</em>}</li>
  * </ul>
  *
@@ -68,6 +69,28 @@ public interface FieldDefinition extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Arguments</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Arguments</em>' containment reference.
+   * @see #setArguments(ArgumentsDefinition)
+   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getFieldDefinition_Arguments()
+   * @model containment="true"
+   * @generated
+   */
+  ArgumentsDefinition getArguments();
+
+  /**
+   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getArguments <em>Arguments</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Arguments</em>' containment reference.
+   * @see #getArguments()
+   * @generated
+   */
+  void setArguments(ArgumentsDefinition value);
 
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.

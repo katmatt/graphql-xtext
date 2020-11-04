@@ -94,6 +94,9 @@ public class GraphQLFactoryImpl extends EFactoryImpl implements GraphQLFactory
       case GraphQLPackage.CONST_VALUE: return createConstValue();
       case GraphQLPackage.LIST_VALUE: return createListValue();
       case GraphQLPackage.DIRECTIVE_DEFINITION: return createDirectiveDefinition();
+      case GraphQLPackage.DIRECTIVE: return createDirective();
+      case GraphQLPackage.ARGUMENTS: return createArguments();
+      case GraphQLPackage.ARGUMENT: return createArgument();
       case GraphQLPackage.ARGUMENTS_DEFINITION: return createArgumentsDefinition();
       case GraphQLPackage.DIRECTIVE_LOCATIONS: return createDirectiveLocations();
       default:
@@ -473,6 +476,42 @@ public class GraphQLFactoryImpl extends EFactoryImpl implements GraphQLFactory
   {
     DirectiveDefinitionImpl directiveDefinition = new DirectiveDefinitionImpl();
     return directiveDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Directive createDirective()
+  {
+    DirectiveImpl directive = new DirectiveImpl();
+    return directive;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Arguments createArguments()
+  {
+    ArgumentsImpl arguments = new ArgumentsImpl();
+    return arguments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Argument createArgument()
+  {
+    ArgumentImpl argument = new ArgumentImpl();
+    return argument;
   }
 
   /**

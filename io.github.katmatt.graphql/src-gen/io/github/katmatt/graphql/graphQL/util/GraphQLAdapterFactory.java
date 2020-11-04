@@ -216,6 +216,21 @@ public class GraphQLAdapterFactory extends AdapterFactoryImpl
         return createDirectiveDefinitionAdapter();
       }
       @Override
+      public Adapter caseDirective(Directive object)
+      {
+        return createDirectiveAdapter();
+      }
+      @Override
+      public Adapter caseArguments(Arguments object)
+      {
+        return createArgumentsAdapter();
+      }
+      @Override
+      public Adapter caseArgument(Argument object)
+      {
+        return createArgumentAdapter();
+      }
+      @Override
       public Adapter caseArgumentsDefinition(ArgumentsDefinition object)
       {
         return createArgumentsDefinitionAdapter();
@@ -663,6 +678,51 @@ public class GraphQLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDirectiveDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.Directive <em>Directive</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.Directive
+   * @generated
+   */
+  public Adapter createDirectiveAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.Arguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.Arguments
+   * @generated
+   */
+  public Adapter createArgumentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.Argument <em>Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.katmatt.graphql.graphQL.Argument
+   * @generated
+   */
+  public Adapter createArgumentAdapter()
   {
     return null;
   }

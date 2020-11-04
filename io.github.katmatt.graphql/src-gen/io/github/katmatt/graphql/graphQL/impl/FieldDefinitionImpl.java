@@ -3,6 +3,7 @@
  */
 package io.github.katmatt.graphql.graphQL.impl;
 
+import io.github.katmatt.graphql.graphQL.ArgumentsDefinition;
 import io.github.katmatt.graphql.graphQL.FieldDefinition;
 import io.github.katmatt.graphql.graphQL.GraphQLPackage;
 import io.github.katmatt.graphql.graphQL.StringValue;
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.FieldDefinitionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.FieldDefinitionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.impl.FieldDefinitionImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.FieldDefinitionImpl#getType <em>Type</em>}</li>
  * </ul>
  *
@@ -63,6 +65,16 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArguments()
+   * @generated
+   * @ordered
+   */
+  protected ArgumentsDefinition arguments;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -176,6 +188,56 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
+  public ArgumentsDefinition getArguments()
+  {
+    return arguments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetArguments(ArgumentsDefinition newArguments, NotificationChain msgs)
+  {
+    ArgumentsDefinition oldArguments = arguments;
+    arguments = newArguments;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphQLPackage.FIELD_DEFINITION__ARGUMENTS, oldArguments, newArguments);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setArguments(ArgumentsDefinition newArguments)
+  {
+    if (newArguments != arguments)
+    {
+      NotificationChain msgs = null;
+      if (arguments != null)
+        msgs = ((InternalEObject)arguments).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.FIELD_DEFINITION__ARGUMENTS, null, msgs);
+      if (newArguments != null)
+        msgs = ((InternalEObject)newArguments).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.FIELD_DEFINITION__ARGUMENTS, null, msgs);
+      msgs = basicSetArguments(newArguments, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GraphQLPackage.FIELD_DEFINITION__ARGUMENTS, newArguments, newArguments));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Type getType()
   {
     return type;
@@ -232,6 +294,8 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
     {
       case GraphQLPackage.FIELD_DEFINITION__DESCRIPTION:
         return basicSetDescription(null, msgs);
+      case GraphQLPackage.FIELD_DEFINITION__ARGUMENTS:
+        return basicSetArguments(null, msgs);
       case GraphQLPackage.FIELD_DEFINITION__TYPE:
         return basicSetType(null, msgs);
     }
@@ -252,6 +316,8 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
         return getDescription();
       case GraphQLPackage.FIELD_DEFINITION__NAME:
         return getName();
+      case GraphQLPackage.FIELD_DEFINITION__ARGUMENTS:
+        return getArguments();
       case GraphQLPackage.FIELD_DEFINITION__TYPE:
         return getType();
     }
@@ -273,6 +339,9 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
         return;
       case GraphQLPackage.FIELD_DEFINITION__NAME:
         setName((String)newValue);
+        return;
+      case GraphQLPackage.FIELD_DEFINITION__ARGUMENTS:
+        setArguments((ArgumentsDefinition)newValue);
         return;
       case GraphQLPackage.FIELD_DEFINITION__TYPE:
         setType((Type)newValue);
@@ -297,6 +366,9 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
       case GraphQLPackage.FIELD_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case GraphQLPackage.FIELD_DEFINITION__ARGUMENTS:
+        setArguments((ArgumentsDefinition)null);
+        return;
       case GraphQLPackage.FIELD_DEFINITION__TYPE:
         setType((Type)null);
         return;
@@ -318,6 +390,8 @@ public class FieldDefinitionImpl extends MinimalEObjectImpl.Container implements
         return description != null;
       case GraphQLPackage.FIELD_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case GraphQLPackage.FIELD_DEFINITION__ARGUMENTS:
+        return arguments != null;
       case GraphQLPackage.FIELD_DEFINITION__TYPE:
         return type != null;
     }

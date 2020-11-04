@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link io.github.katmatt.graphql.graphQL.ArgumentsDefinition#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.ArgumentsDefinition#getArgumentDefinitions <em>Argument Definitions</em>}</li>
  * </ul>
  *
  * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getArgumentsDefinition()
@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface ArgumentsDefinition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Arguments</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Argument Definitions</b></em>' containment reference list.
    * The list contents are of type {@link io.github.katmatt.graphql.graphQL.InputValueDefinition}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Arguments</em>' containment reference list.
-   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getArgumentsDefinition_Arguments()
+   * @return the value of the '<em>Argument Definitions</em>' containment reference list.
+   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getArgumentsDefinition_ArgumentDefinitions()
    * @model containment="true"
    * @generated
    */
-  EList<InputValueDefinition> getArguments();
+  EList<InputValueDefinition> getArgumentDefinitions();
 
 } // ArgumentsDefinition
