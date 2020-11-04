@@ -4,14 +4,11 @@
 package io.github.katmatt.graphql.graphQL.impl;
 
 import io.github.katmatt.graphql.graphQL.Argument;
-import io.github.katmatt.graphql.graphQL.Arguments;
-import io.github.katmatt.graphql.graphQL.ArgumentsDefinition;
 import io.github.katmatt.graphql.graphQL.BooleanValue;
 import io.github.katmatt.graphql.graphQL.ConstValue;
 import io.github.katmatt.graphql.graphQL.Directive;
 import io.github.katmatt.graphql.graphQL.DirectiveDefinition;
 import io.github.katmatt.graphql.graphQL.DirectiveLocation;
-import io.github.katmatt.graphql.graphQL.DirectiveLocations;
 import io.github.katmatt.graphql.graphQL.EnumTypeDefinition;
 import io.github.katmatt.graphql.graphQL.EnumValue;
 import io.github.katmatt.graphql.graphQL.EnumValueDefinition;
@@ -23,7 +20,6 @@ import io.github.katmatt.graphql.graphQL.InputObjectTypeDefinition;
 import io.github.katmatt.graphql.graphQL.InputValueDefinition;
 import io.github.katmatt.graphql.graphQL.IntValue;
 import io.github.katmatt.graphql.graphQL.InterfaceDefinition;
-import io.github.katmatt.graphql.graphQL.IntersectionType;
 import io.github.katmatt.graphql.graphQL.ListType;
 import io.github.katmatt.graphql.graphQL.ListValue;
 import io.github.katmatt.graphql.graphQL.NamedType;
@@ -153,13 +149,6 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass intersectionTypeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass typeEClass = null;
 
   /**
@@ -265,28 +254,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass argumentsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass argumentEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass argumentsDefinitionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass directiveLocationsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -514,6 +482,17 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
+  public EReference getTypeDefinition_Directives()
+  {
+    return (EReference)typeDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getScalarTypeDefinition()
   {
     return scalarTypeDefinitionEClass;
@@ -536,7 +515,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getObjectTypeDefinition_Implements()
+  public EReference getObjectTypeDefinition_ImplementsInterfaces()
   {
     return (EReference)objectTypeDefinitionEClass.getEStructuralFeatures().get(0);
   }
@@ -547,20 +526,9 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getObjectTypeDefinition_Directives()
-  {
-    return (EReference)objectTypeDefinitionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getObjectTypeDefinition_FieldDefinitions()
   {
-    return (EReference)objectTypeDefinitionEClass.getEStructuralFeatures().get(2);
+    return (EReference)objectTypeDefinitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -580,7 +548,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getInterfaceDefinition_Implements()
+  public EReference getInterfaceDefinition_ImplementsInterfaces()
   {
     return (EReference)interfaceDefinitionEClass.getEStructuralFeatures().get(0);
   }
@@ -635,7 +603,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getFieldDefinition_Arguments()
+  public EReference getFieldDefinition_ArgumentsDefinition()
   {
     return (EReference)fieldDefinitionEClass.getEStructuralFeatures().get(2);
   }
@@ -690,7 +658,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getEnumTypeDefinition_ValueDefinitions()
+  public EReference getEnumTypeDefinition_EnumValuesDefinition()
   {
     return (EReference)enumTypeDefinitionEClass.getEStructuralFeatures().get(0);
   }
@@ -745,7 +713,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getInputObjectTypeDefinition_InputsFieldDefinitions()
+  public EReference getInputObjectTypeDefinition_InputFieldsDefinition()
   {
     return (EReference)inputObjectTypeDefinitionEClass.getEStructuralFeatures().get(0);
   }
@@ -803,28 +771,6 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
   public EReference getInputValueDefinition_DefaultValue()
   {
     return (EReference)inputValueDefinitionEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getIntersectionType()
-  {
-    return intersectionTypeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getIntersectionType_MemberTypes()
-  {
-    return (EReference)intersectionTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1064,7 +1010,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getObjectField_Name()
+  public EReference getObjectField_FieldDefinition()
   {
     return (EReference)objectFieldEClass.getEStructuralFeatures().get(0);
   }
@@ -1152,7 +1098,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getDirectiveDefinition_ArgumentDefinitions()
+  public EReference getDirectiveDefinition_ArgumentsDefinition()
   {
     return (EReference)directiveDefinitionEClass.getEStructuralFeatures().get(2);
   }
@@ -1174,9 +1120,9 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EReference getDirectiveDefinition_DirectiveLocations()
+  public EAttribute getDirectiveDefinition_DirectiveLocations()
   {
-    return (EReference)directiveDefinitionEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)directiveDefinitionEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1196,9 +1142,9 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
    * @generated
    */
   @Override
-  public EAttribute getDirective_Name()
+  public EReference getDirective_Directive()
   {
-    return (EAttribute)directiveEClass.getEStructuralFeatures().get(0);
+    return (EReference)directiveEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1210,28 +1156,6 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
   public EReference getDirective_Arguments()
   {
     return (EReference)directiveEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getArguments()
-  {
-    return argumentsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getArguments_Arguments()
-  {
-    return (EReference)argumentsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1265,50 +1189,6 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
   public EReference getArgument_Value()
   {
     return (EReference)argumentEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getArgumentsDefinition()
-  {
-    return argumentsDefinitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getArgumentsDefinition_ArgumentDefinitions()
-  {
-    return (EReference)argumentsDefinitionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getDirectiveLocations()
-  {
-    return directiveLocationsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDirectiveLocations_DirectiveLocations()
-  {
-    return (EAttribute)directiveLocationsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1380,45 +1260,42 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     typeDefinitionEClass = createEClass(TYPE_DEFINITION);
     createEReference(typeDefinitionEClass, TYPE_DEFINITION__DESCRIPTION);
     createEAttribute(typeDefinitionEClass, TYPE_DEFINITION__NAME);
+    createEReference(typeDefinitionEClass, TYPE_DEFINITION__DIRECTIVES);
 
     scalarTypeDefinitionEClass = createEClass(SCALAR_TYPE_DEFINITION);
 
     objectTypeDefinitionEClass = createEClass(OBJECT_TYPE_DEFINITION);
-    createEReference(objectTypeDefinitionEClass, OBJECT_TYPE_DEFINITION__IMPLEMENTS);
-    createEReference(objectTypeDefinitionEClass, OBJECT_TYPE_DEFINITION__DIRECTIVES);
+    createEReference(objectTypeDefinitionEClass, OBJECT_TYPE_DEFINITION__IMPLEMENTS_INTERFACES);
     createEReference(objectTypeDefinitionEClass, OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS);
 
     interfaceDefinitionEClass = createEClass(INTERFACE_DEFINITION);
-    createEReference(interfaceDefinitionEClass, INTERFACE_DEFINITION__IMPLEMENTS);
+    createEReference(interfaceDefinitionEClass, INTERFACE_DEFINITION__IMPLEMENTS_INTERFACES);
     createEReference(interfaceDefinitionEClass, INTERFACE_DEFINITION__FIELD_DEFINITIONS);
 
     fieldDefinitionEClass = createEClass(FIELD_DEFINITION);
     createEReference(fieldDefinitionEClass, FIELD_DEFINITION__DESCRIPTION);
     createEAttribute(fieldDefinitionEClass, FIELD_DEFINITION__NAME);
-    createEReference(fieldDefinitionEClass, FIELD_DEFINITION__ARGUMENTS);
+    createEReference(fieldDefinitionEClass, FIELD_DEFINITION__ARGUMENTS_DEFINITION);
     createEReference(fieldDefinitionEClass, FIELD_DEFINITION__TYPE);
 
     unionTypeDefinitionEClass = createEClass(UNION_TYPE_DEFINITION);
     createEReference(unionTypeDefinitionEClass, UNION_TYPE_DEFINITION__MEMBER_TYPES);
 
     enumTypeDefinitionEClass = createEClass(ENUM_TYPE_DEFINITION);
-    createEReference(enumTypeDefinitionEClass, ENUM_TYPE_DEFINITION__VALUE_DEFINITIONS);
+    createEReference(enumTypeDefinitionEClass, ENUM_TYPE_DEFINITION__ENUM_VALUES_DEFINITION);
 
     enumValueDefinitionEClass = createEClass(ENUM_VALUE_DEFINITION);
     createEReference(enumValueDefinitionEClass, ENUM_VALUE_DEFINITION__DESCRIPTION);
     createEAttribute(enumValueDefinitionEClass, ENUM_VALUE_DEFINITION__NAME);
 
     inputObjectTypeDefinitionEClass = createEClass(INPUT_OBJECT_TYPE_DEFINITION);
-    createEReference(inputObjectTypeDefinitionEClass, INPUT_OBJECT_TYPE_DEFINITION__INPUTS_FIELD_DEFINITIONS);
+    createEReference(inputObjectTypeDefinitionEClass, INPUT_OBJECT_TYPE_DEFINITION__INPUT_FIELDS_DEFINITION);
 
     inputValueDefinitionEClass = createEClass(INPUT_VALUE_DEFINITION);
     createEReference(inputValueDefinitionEClass, INPUT_VALUE_DEFINITION__DESCRIPTION);
     createEAttribute(inputValueDefinitionEClass, INPUT_VALUE_DEFINITION__NAME);
     createEReference(inputValueDefinitionEClass, INPUT_VALUE_DEFINITION__TYPE);
     createEReference(inputValueDefinitionEClass, INPUT_VALUE_DEFINITION__DEFAULT_VALUE);
-
-    intersectionTypeEClass = createEClass(INTERSECTION_TYPE);
-    createEReference(intersectionTypeEClass, INTERSECTION_TYPE__MEMBER_TYPES);
 
     typeEClass = createEClass(TYPE);
     createEAttribute(typeEClass, TYPE__NON_NULL);
@@ -1451,7 +1328,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     createEReference(objectValueEClass, OBJECT_VALUE__FIELDS);
 
     objectFieldEClass = createEClass(OBJECT_FIELD);
-    createEReference(objectFieldEClass, OBJECT_FIELD__NAME);
+    createEReference(objectFieldEClass, OBJECT_FIELD__FIELD_DEFINITION);
     createEReference(objectFieldEClass, OBJECT_FIELD__VALUE);
 
     constValueEClass = createEClass(CONST_VALUE);
@@ -1462,26 +1339,17 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     directiveDefinitionEClass = createEClass(DIRECTIVE_DEFINITION);
     createEReference(directiveDefinitionEClass, DIRECTIVE_DEFINITION__DESCRIPTION);
     createEAttribute(directiveDefinitionEClass, DIRECTIVE_DEFINITION__NAME);
-    createEReference(directiveDefinitionEClass, DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS);
+    createEReference(directiveDefinitionEClass, DIRECTIVE_DEFINITION__ARGUMENTS_DEFINITION);
     createEAttribute(directiveDefinitionEClass, DIRECTIVE_DEFINITION__REPEATABLE);
-    createEReference(directiveDefinitionEClass, DIRECTIVE_DEFINITION__DIRECTIVE_LOCATIONS);
+    createEAttribute(directiveDefinitionEClass, DIRECTIVE_DEFINITION__DIRECTIVE_LOCATIONS);
 
     directiveEClass = createEClass(DIRECTIVE);
-    createEAttribute(directiveEClass, DIRECTIVE__NAME);
+    createEReference(directiveEClass, DIRECTIVE__DIRECTIVE);
     createEReference(directiveEClass, DIRECTIVE__ARGUMENTS);
-
-    argumentsEClass = createEClass(ARGUMENTS);
-    createEReference(argumentsEClass, ARGUMENTS__ARGUMENTS);
 
     argumentEClass = createEClass(ARGUMENT);
     createEReference(argumentEClass, ARGUMENT__ARGUMENT_DEFINITION);
     createEReference(argumentEClass, ARGUMENT__VALUE);
-
-    argumentsDefinitionEClass = createEClass(ARGUMENTS_DEFINITION);
-    createEReference(argumentsDefinitionEClass, ARGUMENTS_DEFINITION__ARGUMENT_DEFINITIONS);
-
-    directiveLocationsEClass = createEClass(DIRECTIVE_LOCATIONS);
-    createEAttribute(directiveLocationsEClass, DIRECTIVE_LOCATIONS__DIRECTIVE_LOCATIONS);
 
     // Create enums
     directiveLocationEEnum = createEEnum(DIRECTIVE_LOCATION);
@@ -1551,45 +1419,42 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     initEClass(typeDefinitionEClass, TypeDefinition.class, "TypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTypeDefinition_Description(), this.getStringValue(), null, "description", null, 0, 1, TypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTypeDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, TypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeDefinition_Directives(), this.getDirective(), null, "directives", null, 0, -1, TypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scalarTypeDefinitionEClass, ScalarTypeDefinition.class, "ScalarTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(objectTypeDefinitionEClass, ObjectTypeDefinition.class, "ObjectTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getObjectTypeDefinition_Implements(), this.getIntersectionType(), null, "implements", null, 0, 1, ObjectTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getObjectTypeDefinition_Directives(), this.getDirective(), null, "directives", null, 0, -1, ObjectTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObjectTypeDefinition_ImplementsInterfaces(), this.getInterfaceDefinition(), null, "implementsInterfaces", null, 0, -1, ObjectTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getObjectTypeDefinition_FieldDefinitions(), this.getFieldDefinition(), null, "fieldDefinitions", null, 0, -1, ObjectTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(interfaceDefinitionEClass, InterfaceDefinition.class, "InterfaceDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInterfaceDefinition_Implements(), this.getIntersectionType(), null, "implements", null, 0, 1, InterfaceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInterfaceDefinition_ImplementsInterfaces(), this.getInterfaceDefinition(), null, "implementsInterfaces", null, 0, -1, InterfaceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInterfaceDefinition_FieldDefinitions(), this.getFieldDefinition(), null, "fieldDefinitions", null, 0, -1, InterfaceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fieldDefinitionEClass, FieldDefinition.class, "FieldDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFieldDefinition_Description(), this.getStringValue(), null, "description", null, 0, 1, FieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFieldDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, FieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFieldDefinition_Arguments(), this.getArgumentsDefinition(), null, "arguments", null, 0, 1, FieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFieldDefinition_ArgumentsDefinition(), this.getInputValueDefinition(), null, "argumentsDefinition", null, 0, -1, FieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFieldDefinition_Type(), this.getType(), null, "type", null, 0, 1, FieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unionTypeDefinitionEClass, UnionTypeDefinition.class, "UnionTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getUnionTypeDefinition_MemberTypes(), this.getType(), null, "memberTypes", null, 0, -1, UnionTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(enumTypeDefinitionEClass, EnumTypeDefinition.class, "EnumTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEnumTypeDefinition_ValueDefinitions(), this.getEnumValueDefinition(), null, "valueDefinitions", null, 0, -1, EnumTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEnumTypeDefinition_EnumValuesDefinition(), this.getEnumValueDefinition(), null, "enumValuesDefinition", null, 0, -1, EnumTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(enumValueDefinitionEClass, EnumValueDefinition.class, "EnumValueDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEnumValueDefinition_Description(), this.getStringValue(), null, "description", null, 0, 1, EnumValueDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEnumValueDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumValueDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inputObjectTypeDefinitionEClass, InputObjectTypeDefinition.class, "InputObjectTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInputObjectTypeDefinition_InputsFieldDefinitions(), this.getInputValueDefinition(), null, "inputsFieldDefinitions", null, 0, -1, InputObjectTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInputObjectTypeDefinition_InputFieldsDefinition(), this.getInputValueDefinition(), null, "inputFieldsDefinition", null, 0, -1, InputObjectTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inputValueDefinitionEClass, InputValueDefinition.class, "InputValueDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInputValueDefinition_Description(), this.getStringValue(), null, "description", null, 0, 1, InputValueDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInputValueDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, InputValueDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInputValueDefinition_Type(), this.getType(), null, "type", null, 0, 1, InputValueDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInputValueDefinition_DefaultValue(), this.getConstValue(), null, "defaultValue", null, 0, 1, InputValueDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(intersectionTypeEClass, IntersectionType.class, "IntersectionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIntersectionType_MemberTypes(), this.getType(), null, "memberTypes", null, 0, -1, IntersectionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getType_NonNull(), ecorePackage.getEBoolean(), "nonNull", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1622,7 +1487,7 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     initEReference(getObjectValue_Fields(), this.getObjectField(), null, "fields", null, 0, -1, ObjectValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectFieldEClass, ObjectField.class, "ObjectField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getObjectField_Name(), this.getFieldDefinition(), null, "name", null, 0, 1, ObjectField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObjectField_FieldDefinition(), this.getFieldDefinition(), null, "fieldDefinition", null, 0, 1, ObjectField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getObjectField_Value(), this.getConstValue(), null, "value", null, 0, 1, ObjectField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constValueEClass, ConstValue.class, "ConstValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1633,26 +1498,17 @@ public class GraphQLPackageImpl extends EPackageImpl implements GraphQLPackage
     initEClass(directiveDefinitionEClass, DirectiveDefinition.class, "DirectiveDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDirectiveDefinition_Description(), this.getStringValue(), null, "description", null, 0, 1, DirectiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDirectiveDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, DirectiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDirectiveDefinition_ArgumentDefinitions(), this.getArgumentsDefinition(), null, "argumentDefinitions", null, 0, 1, DirectiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirectiveDefinition_ArgumentsDefinition(), this.getInputValueDefinition(), null, "argumentsDefinition", null, 0, -1, DirectiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDirectiveDefinition_Repeatable(), ecorePackage.getEBoolean(), "repeatable", null, 0, 1, DirectiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDirectiveDefinition_DirectiveLocations(), this.getDirectiveLocations(), null, "directiveLocations", null, 0, -1, DirectiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDirectiveDefinition_DirectiveLocations(), this.getDirectiveLocation(), "directiveLocations", null, 0, -1, DirectiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(directiveEClass, Directive.class, "Directive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDirective_Name(), ecorePackage.getEString(), "name", null, 0, 1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDirective_Arguments(), this.getArguments(), null, "arguments", null, 0, 1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(argumentsEClass, Arguments.class, "Arguments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getArguments_Arguments(), this.getArgument(), null, "arguments", null, 0, -1, Arguments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_Directive(), this.getDirectiveDefinition(), null, "directive", null, 0, 1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_Arguments(), this.getArgument(), null, "arguments", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(argumentEClass, Argument.class, "Argument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArgument_ArgumentDefinition(), this.getInputValueDefinition(), null, "argumentDefinition", null, 0, 1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getArgument_Value(), this.getConstValue(), null, "value", null, 0, 1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(argumentsDefinitionEClass, ArgumentsDefinition.class, "ArgumentsDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getArgumentsDefinition_ArgumentDefinitions(), this.getInputValueDefinition(), null, "argumentDefinitions", null, 0, -1, ArgumentsDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(directiveLocationsEClass, DirectiveLocations.class, "DirectiveLocations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDirectiveLocations_DirectiveLocations(), this.getDirectiveLocation(), "directiveLocations", null, 0, -1, DirectiveLocations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(directiveLocationEEnum, DirectiveLocation.class, "DirectiveLocation");

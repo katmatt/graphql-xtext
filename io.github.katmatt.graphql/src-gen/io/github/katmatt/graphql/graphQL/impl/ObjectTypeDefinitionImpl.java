@@ -3,15 +3,13 @@
  */
 package io.github.katmatt.graphql.graphQL.impl;
 
-import io.github.katmatt.graphql.graphQL.Directive;
 import io.github.katmatt.graphql.graphQL.FieldDefinition;
 import io.github.katmatt.graphql.graphQL.GraphQLPackage;
-import io.github.katmatt.graphql.graphQL.IntersectionType;
+import io.github.katmatt.graphql.graphQL.InterfaceDefinition;
 import io.github.katmatt.graphql.graphQL.ObjectTypeDefinition;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -19,9 +17,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -32,8 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link io.github.katmatt.graphql.graphQL.impl.ObjectTypeDefinitionImpl#getImplements <em>Implements</em>}</li>
- *   <li>{@link io.github.katmatt.graphql.graphQL.impl.ObjectTypeDefinitionImpl#getDirectives <em>Directives</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.impl.ObjectTypeDefinitionImpl#getImplementsInterfaces <em>Implements Interfaces</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.ObjectTypeDefinitionImpl#getFieldDefinitions <em>Field Definitions</em>}</li>
  * </ul>
  *
@@ -42,24 +38,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements ObjectTypeDefinition
 {
   /**
-   * The cached value of the '{@link #getImplements() <em>Implements</em>}' containment reference.
+   * The cached value of the '{@link #getImplementsInterfaces() <em>Implements Interfaces</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImplements()
+   * @see #getImplementsInterfaces()
    * @generated
    * @ordered
    */
-  protected IntersectionType implements_;
-
-  /**
-   * The cached value of the '{@link #getDirectives() <em>Directives</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDirectives()
-   * @generated
-   * @ordered
-   */
-  protected EList<Directive> directives;
+  protected EList<InterfaceDefinition> implementsInterfaces;
 
   /**
    * The cached value of the '{@link #getFieldDefinitions() <em>Field Definitions</em>}' containment reference list.
@@ -98,63 +84,13 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
    * @generated
    */
   @Override
-  public IntersectionType getImplements()
+  public EList<InterfaceDefinition> getImplementsInterfaces()
   {
-    return implements_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetImplements(IntersectionType newImplements, NotificationChain msgs)
-  {
-    IntersectionType oldImplements = implements_;
-    implements_ = newImplements;
-    if (eNotificationRequired())
+    if (implementsInterfaces == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS, oldImplements, newImplements);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      implementsInterfaces = new EObjectResolvingEList<InterfaceDefinition>(InterfaceDefinition.class, this, GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS_INTERFACES);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setImplements(IntersectionType newImplements)
-  {
-    if (newImplements != implements_)
-    {
-      NotificationChain msgs = null;
-      if (implements_ != null)
-        msgs = ((InternalEObject)implements_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS, null, msgs);
-      if (newImplements != null)
-        msgs = ((InternalEObject)newImplements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS, null, msgs);
-      msgs = basicSetImplements(newImplements, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS, newImplements, newImplements));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Directive> getDirectives()
-  {
-    if (directives == null)
-    {
-      directives = new EObjectContainmentEList<Directive>(Directive.class, this, GraphQLPackage.OBJECT_TYPE_DEFINITION__DIRECTIVES);
-    }
-    return directives;
+    return implementsInterfaces;
   }
 
   /**
@@ -182,10 +118,6 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
   {
     switch (featureID)
     {
-      case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS:
-        return basicSetImplements(null, msgs);
-      case GraphQLPackage.OBJECT_TYPE_DEFINITION__DIRECTIVES:
-        return ((InternalEList<?>)getDirectives()).basicRemove(otherEnd, msgs);
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
         return ((InternalEList<?>)getFieldDefinitions()).basicRemove(otherEnd, msgs);
     }
@@ -202,10 +134,8 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
   {
     switch (featureID)
     {
-      case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS:
-        return getImplements();
-      case GraphQLPackage.OBJECT_TYPE_DEFINITION__DIRECTIVES:
-        return getDirectives();
+      case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS_INTERFACES:
+        return getImplementsInterfaces();
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
         return getFieldDefinitions();
     }
@@ -223,12 +153,9 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
   {
     switch (featureID)
     {
-      case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS:
-        setImplements((IntersectionType)newValue);
-        return;
-      case GraphQLPackage.OBJECT_TYPE_DEFINITION__DIRECTIVES:
-        getDirectives().clear();
-        getDirectives().addAll((Collection<? extends Directive>)newValue);
+      case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS_INTERFACES:
+        getImplementsInterfaces().clear();
+        getImplementsInterfaces().addAll((Collection<? extends InterfaceDefinition>)newValue);
         return;
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
         getFieldDefinitions().clear();
@@ -248,11 +175,8 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
   {
     switch (featureID)
     {
-      case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS:
-        setImplements((IntersectionType)null);
-        return;
-      case GraphQLPackage.OBJECT_TYPE_DEFINITION__DIRECTIVES:
-        getDirectives().clear();
+      case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS_INTERFACES:
+        getImplementsInterfaces().clear();
         return;
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
         getFieldDefinitions().clear();
@@ -271,10 +195,8 @@ public class ObjectTypeDefinitionImpl extends TypeDefinitionImpl implements Obje
   {
     switch (featureID)
     {
-      case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS:
-        return implements_ != null;
-      case GraphQLPackage.OBJECT_TYPE_DEFINITION__DIRECTIVES:
-        return directives != null && !directives.isEmpty();
+      case GraphQLPackage.OBJECT_TYPE_DEFINITION__IMPLEMENTS_INTERFACES:
+        return implementsInterfaces != null && !implementsInterfaces.isEmpty();
       case GraphQLPackage.OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS:
         return fieldDefinitions != null && !fieldDefinitions.isEmpty();
     }

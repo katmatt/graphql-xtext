@@ -14,8 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link io.github.katmatt.graphql.graphQL.ObjectTypeDefinition#getImplements <em>Implements</em>}</li>
- *   <li>{@link io.github.katmatt.graphql.graphQL.ObjectTypeDefinition#getDirectives <em>Directives</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.ObjectTypeDefinition#getImplementsInterfaces <em>Implements Interfaces</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.ObjectTypeDefinition#getFieldDefinitions <em>Field Definitions</em>}</li>
  * </ul>
  *
@@ -26,38 +25,16 @@ import org.eclipse.emf.common.util.EList;
 public interface ObjectTypeDefinition extends TypeDefinition
 {
   /**
-   * Returns the value of the '<em><b>Implements</b></em>' containment reference.
+   * Returns the value of the '<em><b>Implements Interfaces</b></em>' reference list.
+   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.InterfaceDefinition}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Implements</em>' containment reference.
-   * @see #setImplements(IntersectionType)
-   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getObjectTypeDefinition_Implements()
-   * @model containment="true"
+   * @return the value of the '<em>Implements Interfaces</em>' reference list.
+   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getObjectTypeDefinition_ImplementsInterfaces()
+   * @model
    * @generated
    */
-  IntersectionType getImplements();
-
-  /**
-   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.ObjectTypeDefinition#getImplements <em>Implements</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Implements</em>' containment reference.
-   * @see #getImplements()
-   * @generated
-   */
-  void setImplements(IntersectionType value);
-
-  /**
-   * Returns the value of the '<em><b>Directives</b></em>' containment reference list.
-   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.Directive}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Directives</em>' containment reference list.
-   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getObjectTypeDefinition_Directives()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Directive> getDirectives();
+  EList<InterfaceDefinition> getImplementsInterfaces();
 
   /**
    * Returns the value of the '<em><b>Field Definitions</b></em>' containment reference list.

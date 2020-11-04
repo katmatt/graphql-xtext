@@ -3,18 +3,26 @@
  */
 package io.github.katmatt.graphql.graphQL.impl;
 
-import io.github.katmatt.graphql.graphQL.Arguments;
+import io.github.katmatt.graphql.graphQL.Argument;
 import io.github.katmatt.graphql.graphQL.Directive;
+import io.github.katmatt.graphql.graphQL.DirectiveDefinition;
 import io.github.katmatt.graphql.graphQL.GraphQLPackage;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link io.github.katmatt.graphql.graphQL.impl.DirectiveImpl#getName <em>Name</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.impl.DirectiveImpl#getDirective <em>Directive</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.DirectiveImpl#getArguments <em>Arguments</em>}</li>
  * </ul>
  *
@@ -33,34 +41,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class DirectiveImpl extends MinimalEObjectImpl.Container implements Directive
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getDirective() <em>Directive</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getDirective()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected DirectiveDefinition directive;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference.
+   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getArguments()
    * @generated
    * @ordered
    */
-  protected Arguments arguments;
+  protected EList<Argument> arguments;
 
   /**
    * <!-- begin-user-doc -->
@@ -89,9 +87,29 @@ public class DirectiveImpl extends MinimalEObjectImpl.Container implements Direc
    * @generated
    */
   @Override
-  public String getName()
+  public DirectiveDefinition getDirective()
   {
-    return name;
+    if (directive != null && directive.eIsProxy())
+    {
+      InternalEObject oldDirective = (InternalEObject)directive;
+      directive = (DirectiveDefinition)eResolveProxy(oldDirective);
+      if (directive != oldDirective)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, GraphQLPackage.DIRECTIVE__DIRECTIVE, oldDirective, directive));
+      }
+    }
+    return directive;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DirectiveDefinition basicGetDirective()
+  {
+    return directive;
   }
 
   /**
@@ -100,12 +118,12 @@ public class DirectiveImpl extends MinimalEObjectImpl.Container implements Direc
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setDirective(DirectiveDefinition newDirective)
   {
-    String oldName = name;
-    name = newName;
+    DirectiveDefinition oldDirective = directive;
+    directive = newDirective;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GraphQLPackage.DIRECTIVE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, GraphQLPackage.DIRECTIVE__DIRECTIVE, oldDirective, directive));
   }
 
   /**
@@ -114,48 +132,13 @@ public class DirectiveImpl extends MinimalEObjectImpl.Container implements Direc
    * @generated
    */
   @Override
-  public Arguments getArguments()
+  public EList<Argument> getArguments()
   {
+    if (arguments == null)
+    {
+      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, GraphQLPackage.DIRECTIVE__ARGUMENTS);
+    }
     return arguments;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetArguments(Arguments newArguments, NotificationChain msgs)
-  {
-    Arguments oldArguments = arguments;
-    arguments = newArguments;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphQLPackage.DIRECTIVE__ARGUMENTS, oldArguments, newArguments);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setArguments(Arguments newArguments)
-  {
-    if (newArguments != arguments)
-    {
-      NotificationChain msgs = null;
-      if (arguments != null)
-        msgs = ((InternalEObject)arguments).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.DIRECTIVE__ARGUMENTS, null, msgs);
-      if (newArguments != null)
-        msgs = ((InternalEObject)newArguments).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.DIRECTIVE__ARGUMENTS, null, msgs);
-      msgs = basicSetArguments(newArguments, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GraphQLPackage.DIRECTIVE__ARGUMENTS, newArguments, newArguments));
   }
 
   /**
@@ -169,7 +152,7 @@ public class DirectiveImpl extends MinimalEObjectImpl.Container implements Direc
     switch (featureID)
     {
       case GraphQLPackage.DIRECTIVE__ARGUMENTS:
-        return basicSetArguments(null, msgs);
+        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -184,8 +167,9 @@ public class DirectiveImpl extends MinimalEObjectImpl.Container implements Direc
   {
     switch (featureID)
     {
-      case GraphQLPackage.DIRECTIVE__NAME:
-        return getName();
+      case GraphQLPackage.DIRECTIVE__DIRECTIVE:
+        if (resolve) return getDirective();
+        return basicGetDirective();
       case GraphQLPackage.DIRECTIVE__ARGUMENTS:
         return getArguments();
     }
@@ -197,16 +181,18 @@ public class DirectiveImpl extends MinimalEObjectImpl.Container implements Direc
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GraphQLPackage.DIRECTIVE__NAME:
-        setName((String)newValue);
+      case GraphQLPackage.DIRECTIVE__DIRECTIVE:
+        setDirective((DirectiveDefinition)newValue);
         return;
       case GraphQLPackage.DIRECTIVE__ARGUMENTS:
-        setArguments((Arguments)newValue);
+        getArguments().clear();
+        getArguments().addAll((Collection<? extends Argument>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -222,11 +208,11 @@ public class DirectiveImpl extends MinimalEObjectImpl.Container implements Direc
   {
     switch (featureID)
     {
-      case GraphQLPackage.DIRECTIVE__NAME:
-        setName(NAME_EDEFAULT);
+      case GraphQLPackage.DIRECTIVE__DIRECTIVE:
+        setDirective((DirectiveDefinition)null);
         return;
       case GraphQLPackage.DIRECTIVE__ARGUMENTS:
-        setArguments((Arguments)null);
+        getArguments().clear();
         return;
     }
     super.eUnset(featureID);
@@ -242,29 +228,12 @@ public class DirectiveImpl extends MinimalEObjectImpl.Container implements Direc
   {
     switch (featureID)
     {
-      case GraphQLPackage.DIRECTIVE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case GraphQLPackage.DIRECTIVE__DIRECTIVE:
+        return directive != null;
       case GraphQLPackage.DIRECTIVE__ARGUMENTS:
-        return arguments != null;
+        return arguments != null && !arguments.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //DirectiveImpl

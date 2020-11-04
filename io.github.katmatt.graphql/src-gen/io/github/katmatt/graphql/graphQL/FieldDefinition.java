@@ -3,6 +3,8 @@
  */
 package io.github.katmatt.graphql.graphQL;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getName <em>Name</em>}</li>
- *   <li>{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getArgumentsDefinition <em>Arguments Definition</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getType <em>Type</em>}</li>
  * </ul>
  *
@@ -71,26 +73,16 @@ public interface FieldDefinition extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Arguments</b></em>' containment reference.
+   * Returns the value of the '<em><b>Arguments Definition</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.InputValueDefinition}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Arguments</em>' containment reference.
-   * @see #setArguments(ArgumentsDefinition)
-   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getFieldDefinition_Arguments()
+   * @return the value of the '<em>Arguments Definition</em>' containment reference list.
+   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getFieldDefinition_ArgumentsDefinition()
    * @model containment="true"
    * @generated
    */
-  ArgumentsDefinition getArguments();
-
-  /**
-   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getArguments <em>Arguments</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Arguments</em>' containment reference.
-   * @see #getArguments()
-   * @generated
-   */
-  void setArguments(ArgumentsDefinition value);
+  EList<InputValueDefinition> getArgumentsDefinition();
 
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.

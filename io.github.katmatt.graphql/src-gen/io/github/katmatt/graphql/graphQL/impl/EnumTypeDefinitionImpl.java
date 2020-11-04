@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link io.github.katmatt.graphql.graphQL.impl.EnumTypeDefinitionImpl#getValueDefinitions <em>Value Definitions</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.impl.EnumTypeDefinitionImpl#getEnumValuesDefinition <em>Enum Values Definition</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +35,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class EnumTypeDefinitionImpl extends TypeDefinitionImpl implements EnumTypeDefinition
 {
   /**
-   * The cached value of the '{@link #getValueDefinitions() <em>Value Definitions</em>}' containment reference list.
+   * The cached value of the '{@link #getEnumValuesDefinition() <em>Enum Values Definition</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValueDefinitions()
+   * @see #getEnumValuesDefinition()
    * @generated
    * @ordered
    */
-  protected EList<EnumValueDefinition> valueDefinitions;
+  protected EList<EnumValueDefinition> enumValuesDefinition;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +71,13 @@ public class EnumTypeDefinitionImpl extends TypeDefinitionImpl implements EnumTy
    * @generated
    */
   @Override
-  public EList<EnumValueDefinition> getValueDefinitions()
+  public EList<EnumValueDefinition> getEnumValuesDefinition()
   {
-    if (valueDefinitions == null)
+    if (enumValuesDefinition == null)
     {
-      valueDefinitions = new EObjectContainmentEList<EnumValueDefinition>(EnumValueDefinition.class, this, GraphQLPackage.ENUM_TYPE_DEFINITION__VALUE_DEFINITIONS);
+      enumValuesDefinition = new EObjectContainmentEList<EnumValueDefinition>(EnumValueDefinition.class, this, GraphQLPackage.ENUM_TYPE_DEFINITION__ENUM_VALUES_DEFINITION);
     }
-    return valueDefinitions;
+    return enumValuesDefinition;
   }
 
   /**
@@ -90,8 +90,8 @@ public class EnumTypeDefinitionImpl extends TypeDefinitionImpl implements EnumTy
   {
     switch (featureID)
     {
-      case GraphQLPackage.ENUM_TYPE_DEFINITION__VALUE_DEFINITIONS:
-        return ((InternalEList<?>)getValueDefinitions()).basicRemove(otherEnd, msgs);
+      case GraphQLPackage.ENUM_TYPE_DEFINITION__ENUM_VALUES_DEFINITION:
+        return ((InternalEList<?>)getEnumValuesDefinition()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class EnumTypeDefinitionImpl extends TypeDefinitionImpl implements EnumTy
   {
     switch (featureID)
     {
-      case GraphQLPackage.ENUM_TYPE_DEFINITION__VALUE_DEFINITIONS:
-        return getValueDefinitions();
+      case GraphQLPackage.ENUM_TYPE_DEFINITION__ENUM_VALUES_DEFINITION:
+        return getEnumValuesDefinition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class EnumTypeDefinitionImpl extends TypeDefinitionImpl implements EnumTy
   {
     switch (featureID)
     {
-      case GraphQLPackage.ENUM_TYPE_DEFINITION__VALUE_DEFINITIONS:
-        getValueDefinitions().clear();
-        getValueDefinitions().addAll((Collection<? extends EnumValueDefinition>)newValue);
+      case GraphQLPackage.ENUM_TYPE_DEFINITION__ENUM_VALUES_DEFINITION:
+        getEnumValuesDefinition().clear();
+        getEnumValuesDefinition().addAll((Collection<? extends EnumValueDefinition>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class EnumTypeDefinitionImpl extends TypeDefinitionImpl implements EnumTy
   {
     switch (featureID)
     {
-      case GraphQLPackage.ENUM_TYPE_DEFINITION__VALUE_DEFINITIONS:
-        getValueDefinitions().clear();
+      case GraphQLPackage.ENUM_TYPE_DEFINITION__ENUM_VALUES_DEFINITION:
+        getEnumValuesDefinition().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +158,8 @@ public class EnumTypeDefinitionImpl extends TypeDefinitionImpl implements EnumTy
   {
     switch (featureID)
     {
-      case GraphQLPackage.ENUM_TYPE_DEFINITION__VALUE_DEFINITIONS:
-        return valueDefinitions != null && !valueDefinitions.isEmpty();
+      case GraphQLPackage.ENUM_TYPE_DEFINITION__ENUM_VALUES_DEFINITION:
+        return enumValuesDefinition != null && !enumValuesDefinition.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -392,6 +392,25 @@ ruleScalarTypeDefinition returns [EObject current=null]
 				}
 			)
 		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getScalarTypeDefinitionAccess().getDirectivesDirectiveParserRuleCall_3_0());
+				}
+				lv_directives_3_0=ruleDirective
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getScalarTypeDefinitionRule());
+					}
+					add(
+						$current,
+						"directives",
+						lv_directives_3_0,
+						"io.github.katmatt.graphql.GraphQL.Directive");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
 	)
 ;
 
@@ -458,31 +477,50 @@ ruleObjectTypeDefinition returns [EObject current=null]
 				newLeafNode(otherlv_3, grammarAccess.getObjectTypeDefinitionAccess().getImplementsKeyword_3_0());
 			}
 			(
+				otherlv_4='&'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getObjectTypeDefinitionAccess().getAmpersandKeyword_3_1());
+				}
+			)?
+			(
 				(
 					{
-						newCompositeNode(grammarAccess.getObjectTypeDefinitionAccess().getImplementsIntersectionTypeParserRuleCall_3_1_0());
-					}
-					lv_implements_4_0=ruleIntersectionType
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getObjectTypeDefinitionRule());
+							$current = createModelElement(grammarAccess.getObjectTypeDefinitionRule());
 						}
-						set(
-							$current,
-							"implements",
-							lv_implements_4_0,
-							"io.github.katmatt.graphql.GraphQL.IntersectionType");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_5=RULE_NAME
+					{
+						newLeafNode(otherlv_5, grammarAccess.getObjectTypeDefinitionAccess().getImplementsInterfacesInterfaceDefinitionCrossReference_3_2_0());
 					}
 				)
 			)
+			(
+				otherlv_6='&'
+				{
+					newLeafNode(otherlv_6, grammarAccess.getObjectTypeDefinitionAccess().getAmpersandKeyword_3_3_0());
+				}
+				(
+					(
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getObjectTypeDefinitionRule());
+							}
+						}
+						otherlv_7=RULE_NAME
+						{
+							newLeafNode(otherlv_7, grammarAccess.getObjectTypeDefinitionAccess().getImplementsInterfacesInterfaceDefinitionCrossReference_3_3_1_0());
+						}
+					)
+				)
+			)*
 		)?
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getObjectTypeDefinitionAccess().getDirectivesDirectiveParserRuleCall_4_0());
 				}
-				lv_directives_5_0=ruleDirective
+				lv_directives_8_0=ruleDirective
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getObjectTypeDefinitionRule());
@@ -490,23 +528,23 @@ ruleObjectTypeDefinition returns [EObject current=null]
 					add(
 						$current,
 						"directives",
-						lv_directives_5_0,
+						lv_directives_8_0,
 						"io.github.katmatt.graphql.GraphQL.Directive");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
 		(
-			otherlv_6='{'
+			otherlv_9='{'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_5_0());
+				newLeafNode(otherlv_9, grammarAccess.getObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_5_0());
 			}
 			(
 				(
 					{
 						newCompositeNode(grammarAccess.getObjectTypeDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_5_1_0());
 					}
-					lv_fieldDefinitions_7_0=ruleFieldDefinition
+					lv_fieldDefinitions_10_0=ruleFieldDefinition
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getObjectTypeDefinitionRule());
@@ -514,15 +552,15 @@ ruleObjectTypeDefinition returns [EObject current=null]
 						add(
 							$current,
 							"fieldDefinitions",
-							lv_fieldDefinitions_7_0,
+							lv_fieldDefinitions_10_0,
 							"io.github.katmatt.graphql.GraphQL.FieldDefinition");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_8='}'
+			otherlv_11='}'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_5_2());
+				newLeafNode(otherlv_11, grammarAccess.getObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_5_2());
 			}
 		)?
 	)
@@ -591,36 +629,74 @@ ruleInterfaceDefinition returns [EObject current=null]
 				newLeafNode(otherlv_3, grammarAccess.getInterfaceDefinitionAccess().getImplementsKeyword_3_0());
 			}
 			(
+				otherlv_4='&'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getInterfaceDefinitionAccess().getAmpersandKeyword_3_1());
+				}
+			)?
+			(
 				(
 					{
-						newCompositeNode(grammarAccess.getInterfaceDefinitionAccess().getImplementsIntersectionTypeParserRuleCall_3_1_0());
-					}
-					lv_implements_4_0=ruleIntersectionType
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getInterfaceDefinitionRule());
+							$current = createModelElement(grammarAccess.getInterfaceDefinitionRule());
 						}
-						set(
-							$current,
-							"implements",
-							lv_implements_4_0,
-							"io.github.katmatt.graphql.GraphQL.IntersectionType");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_5=RULE_NAME
+					{
+						newLeafNode(otherlv_5, grammarAccess.getInterfaceDefinitionAccess().getImplementsInterfacesInterfaceDefinitionCrossReference_3_2_0());
 					}
 				)
 			)
+			(
+				otherlv_6='&'
+				{
+					newLeafNode(otherlv_6, grammarAccess.getInterfaceDefinitionAccess().getAmpersandKeyword_3_3_0());
+				}
+				(
+					(
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getInterfaceDefinitionRule());
+							}
+						}
+						otherlv_7=RULE_NAME
+						{
+							newLeafNode(otherlv_7, grammarAccess.getInterfaceDefinitionAccess().getImplementsInterfacesInterfaceDefinitionCrossReference_3_3_1_0());
+						}
+					)
+				)
+			)*
 		)?
 		(
-			otherlv_5='{'
+			(
+				{
+					newCompositeNode(grammarAccess.getInterfaceDefinitionAccess().getDirectivesDirectiveParserRuleCall_4_0());
+				}
+				lv_directives_8_0=ruleDirective
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getInterfaceDefinitionRule());
+					}
+					add(
+						$current,
+						"directives",
+						lv_directives_8_0,
+						"io.github.katmatt.graphql.GraphQL.Directive");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			otherlv_9='{'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getInterfaceDefinitionAccess().getLeftCurlyBracketKeyword_4_0());
+				newLeafNode(otherlv_9, grammarAccess.getInterfaceDefinitionAccess().getLeftCurlyBracketKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getInterfaceDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getInterfaceDefinitionAccess().getFieldDefinitionsFieldDefinitionParserRuleCall_5_1_0());
 					}
-					lv_fieldDefinitions_6_0=ruleFieldDefinition
+					lv_fieldDefinitions_10_0=ruleFieldDefinition
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getInterfaceDefinitionRule());
@@ -628,15 +704,15 @@ ruleInterfaceDefinition returns [EObject current=null]
 						add(
 							$current,
 							"fieldDefinitions",
-							lv_fieldDefinitions_6_0,
+							lv_fieldDefinitions_10_0,
 							"io.github.katmatt.graphql.GraphQL.FieldDefinition");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_7='}'
+			otherlv_11='}'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getInterfaceDefinitionAccess().getRightCurlyBracketKeyword_4_2());
+				newLeafNode(otherlv_11, grammarAccess.getInterfaceDefinitionAccess().getRightCurlyBracketKeyword_5_2());
 			}
 		)?
 	)
@@ -696,34 +772,44 @@ ruleFieldDefinition returns [EObject current=null]
 			)
 		)
 		(
+			otherlv_2='('
+			{
+				newLeafNode(otherlv_2, grammarAccess.getFieldDefinitionAccess().getLeftParenthesisKeyword_2_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getFieldDefinitionAccess().getArgumentsArgumentsDefinitionParserRuleCall_2_0());
-				}
-				lv_arguments_2_0=ruleArgumentsDefinition
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFieldDefinitionRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getFieldDefinitionAccess().getArgumentsDefinitionInputValueDefinitionParserRuleCall_2_1_0());
 					}
-					set(
-						$current,
-						"arguments",
-						lv_arguments_2_0,
-						"io.github.katmatt.graphql.GraphQL.ArgumentsDefinition");
-					afterParserOrEnumRuleCall();
-				}
-			)
+					lv_argumentsDefinition_3_0=ruleInputValueDefinition
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFieldDefinitionRule());
+						}
+						add(
+							$current,
+							"argumentsDefinition",
+							lv_argumentsDefinition_3_0,
+							"io.github.katmatt.graphql.GraphQL.InputValueDefinition");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_4=')'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getFieldDefinitionAccess().getRightParenthesisKeyword_2_2());
+			}
 		)?
-		otherlv_3=':'
+		otherlv_5=':'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getFieldDefinitionAccess().getColonKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getFieldDefinitionAccess().getColonKeyword_3());
 		}
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getFieldDefinitionAccess().getTypeTypeParserRuleCall_4_0());
 				}
-				lv_type_4_0=ruleType
+				lv_type_6_0=ruleType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFieldDefinitionRule());
@@ -731,7 +817,7 @@ ruleFieldDefinition returns [EObject current=null]
 					set(
 						$current,
 						"type",
-						lv_type_4_0,
+						lv_type_6_0,
 						"io.github.katmatt.graphql.GraphQL.Type");
 					afterParserOrEnumRuleCall();
 				}
@@ -798,22 +884,41 @@ ruleUnionTypeDefinition returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='='
+			(
+				{
+					newCompositeNode(grammarAccess.getUnionTypeDefinitionAccess().getDirectivesDirectiveParserRuleCall_3_0());
+				}
+				lv_directives_3_0=ruleDirective
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getUnionTypeDefinitionRule());
+					}
+					add(
+						$current,
+						"directives",
+						lv_directives_3_0,
+						"io.github.katmatt.graphql.GraphQL.Directive");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			otherlv_4='='
 			{
-				newLeafNode(otherlv_3, grammarAccess.getUnionTypeDefinitionAccess().getEqualsSignKeyword_3_0());
+				newLeafNode(otherlv_4, grammarAccess.getUnionTypeDefinitionAccess().getEqualsSignKeyword_4_0());
 			}
 			(
-				otherlv_4='|'
+				otherlv_5='|'
 				{
-					newLeafNode(otherlv_4, grammarAccess.getUnionTypeDefinitionAccess().getVerticalLineKeyword_3_1());
+					newLeafNode(otherlv_5, grammarAccess.getUnionTypeDefinitionAccess().getVerticalLineKeyword_4_1());
 				}
 			)?
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeParserRuleCall_3_2_0());
+						newCompositeNode(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeParserRuleCall_4_2_0());
 					}
-					lv_memberTypes_5_0=ruleType
+					lv_memberTypes_6_0=ruleType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUnionTypeDefinitionRule());
@@ -821,23 +926,23 @@ ruleUnionTypeDefinition returns [EObject current=null]
 						add(
 							$current,
 							"memberTypes",
-							lv_memberTypes_5_0,
+							lv_memberTypes_6_0,
 							"io.github.katmatt.graphql.GraphQL.Type");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_6='|'
+				otherlv_7='|'
 				{
-					newLeafNode(otherlv_6, grammarAccess.getUnionTypeDefinitionAccess().getVerticalLineKeyword_3_3_0());
+					newLeafNode(otherlv_7, grammarAccess.getUnionTypeDefinitionAccess().getVerticalLineKeyword_4_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeParserRuleCall_3_3_1_0());
+							newCompositeNode(grammarAccess.getUnionTypeDefinitionAccess().getMemberTypesTypeParserRuleCall_4_3_1_0());
 						}
-						lv_memberTypes_7_0=ruleType
+						lv_memberTypes_8_0=ruleType
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getUnionTypeDefinitionRule());
@@ -845,7 +950,7 @@ ruleUnionTypeDefinition returns [EObject current=null]
 							add(
 								$current,
 								"memberTypes",
-								lv_memberTypes_7_0,
+								lv_memberTypes_8_0,
 								"io.github.katmatt.graphql.GraphQL.Type");
 							afterParserOrEnumRuleCall();
 						}
@@ -914,32 +1019,51 @@ ruleEnumTypeDefinition returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='{'
+			(
+				{
+					newCompositeNode(grammarAccess.getEnumTypeDefinitionAccess().getDirectivesDirectiveParserRuleCall_3_0());
+				}
+				lv_directives_3_0=ruleDirective
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEnumTypeDefinitionRule());
+					}
+					add(
+						$current,
+						"directives",
+						lv_directives_3_0,
+						"io.github.katmatt.graphql.GraphQL.Directive");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			otherlv_4='{'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getEnumTypeDefinitionAccess().getLeftCurlyBracketKeyword_3_0());
+				newLeafNode(otherlv_4, grammarAccess.getEnumTypeDefinitionAccess().getLeftCurlyBracketKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumTypeDefinitionAccess().getValueDefinitionsEnumValueDefinitionParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getEnumTypeDefinitionAccess().getEnumValuesDefinitionEnumValueDefinitionParserRuleCall_4_1_0());
 					}
-					lv_valueDefinitions_4_0=ruleEnumValueDefinition
+					lv_enumValuesDefinition_5_0=ruleEnumValueDefinition
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumTypeDefinitionRule());
 						}
 						add(
 							$current,
-							"valueDefinitions",
-							lv_valueDefinitions_4_0,
+							"enumValuesDefinition",
+							lv_enumValuesDefinition_5_0,
 							"io.github.katmatt.graphql.GraphQL.EnumValueDefinition");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_5='}'
+			otherlv_6='}'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getEnumTypeDefinitionAccess().getRightCurlyBracketKeyword_3_2());
+				newLeafNode(otherlv_6, grammarAccess.getEnumTypeDefinitionAccess().getRightCurlyBracketKeyword_4_2());
 			}
 		)?
 	)
@@ -1059,32 +1183,51 @@ ruleInputObjectTypeDefinition returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='{'
+			(
+				{
+					newCompositeNode(grammarAccess.getInputObjectTypeDefinitionAccess().getDirectivesDirectiveParserRuleCall_3_0());
+				}
+				lv_directives_3_0=ruleDirective
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getInputObjectTypeDefinitionRule());
+					}
+					add(
+						$current,
+						"directives",
+						lv_directives_3_0,
+						"io.github.katmatt.graphql.GraphQL.Directive");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			otherlv_4='{'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getInputObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_3_0());
+				newLeafNode(otherlv_4, grammarAccess.getInputObjectTypeDefinitionAccess().getLeftCurlyBracketKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getInputObjectTypeDefinitionAccess().getInputsFieldDefinitionsInputValueDefinitionParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getInputObjectTypeDefinitionAccess().getInputFieldsDefinitionInputValueDefinitionParserRuleCall_4_1_0());
 					}
-					lv_inputsFieldDefinitions_4_0=ruleInputValueDefinition
+					lv_inputFieldsDefinition_5_0=ruleInputValueDefinition
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getInputObjectTypeDefinitionRule());
 						}
 						add(
 							$current,
-							"inputsFieldDefinitions",
-							lv_inputsFieldDefinitions_4_0,
+							"inputFieldsDefinition",
+							lv_inputFieldsDefinition_5_0,
 							"io.github.katmatt.graphql.GraphQL.InputValueDefinition");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_5='}'
+			otherlv_6='}'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getInputObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_3_2());
+				newLeafNode(otherlv_6, grammarAccess.getInputObjectTypeDefinitionAccess().getRightCurlyBracketKeyword_4_2());
 			}
 		)?
 	)
@@ -1191,75 +1334,6 @@ ruleInputValueDefinition returns [EObject current=null]
 				)
 			)
 		)?
-	)
-;
-
-// Entry rule entryRuleIntersectionType
-entryRuleIntersectionType returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getIntersectionTypeRule()); }
-	iv_ruleIntersectionType=ruleIntersectionType
-	{ $current=$iv_ruleIntersectionType.current; }
-	EOF;
-
-// Rule IntersectionType
-ruleIntersectionType returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			otherlv_0='&'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getIntersectionTypeAccess().getAmpersandKeyword_0());
-			}
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getIntersectionTypeAccess().getMemberTypesTypeParserRuleCall_1_0());
-				}
-				lv_memberTypes_1_0=ruleType
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getIntersectionTypeRule());
-					}
-					add(
-						$current,
-						"memberTypes",
-						lv_memberTypes_1_0,
-						"io.github.katmatt.graphql.GraphQL.Type");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_2='&'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getIntersectionTypeAccess().getAmpersandKeyword_2_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getIntersectionTypeAccess().getMemberTypesTypeParserRuleCall_2_1_0());
-					}
-					lv_memberTypes_3_0=ruleType
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getIntersectionTypeRule());
-						}
-						add(
-							$current,
-							"memberTypes",
-							lv_memberTypes_3_0,
-							"io.github.katmatt.graphql.GraphQL.Type");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
 	)
 ;
 
@@ -1710,7 +1784,7 @@ ruleObjectField returns [EObject current=null]
 				}
 				otherlv_0=RULE_NAME
 				{
-					newLeafNode(otherlv_0, grammarAccess.getObjectFieldAccess().getNameFieldDefinitionCrossReference_0_0());
+					newLeafNode(otherlv_0, grammarAccess.getObjectFieldAccess().getFieldDefinitionFieldDefinitionCrossReference_0_0());
 				}
 			)
 		)
@@ -1941,48 +2015,64 @@ ruleDirectiveDefinition returns [EObject current=null]
 			)
 		)
 		(
+			otherlv_3='('
+			{
+				newLeafNode(otherlv_3, grammarAccess.getDirectiveDefinitionAccess().getLeftParenthesisKeyword_3_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getDirectiveDefinitionAccess().getArgumentDefinitionsArgumentsDefinitionParserRuleCall_3_0());
-				}
-				lv_argumentDefinitions_3_0=ruleArgumentsDefinition
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDirectiveDefinitionRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getDirectiveDefinitionAccess().getArgumentsDefinitionInputValueDefinitionParserRuleCall_3_1_0());
 					}
-					set(
-						$current,
-						"argumentDefinitions",
-						lv_argumentDefinitions_3_0,
-						"io.github.katmatt.graphql.GraphQL.ArgumentsDefinition");
-					afterParserOrEnumRuleCall();
-				}
-			)
+					lv_argumentsDefinition_4_0=ruleInputValueDefinition
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDirectiveDefinitionRule());
+						}
+						add(
+							$current,
+							"argumentsDefinition",
+							lv_argumentsDefinition_4_0,
+							"io.github.katmatt.graphql.GraphQL.InputValueDefinition");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_5=')'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getDirectiveDefinitionAccess().getRightParenthesisKeyword_3_2());
+			}
 		)?
 		(
 			(
-				lv_repeatable_4_0='repeatable'
+				lv_repeatable_6_0='repeatable'
 				{
-					newLeafNode(lv_repeatable_4_0, grammarAccess.getDirectiveDefinitionAccess().getRepeatableRepeatableKeyword_4_0());
+					newLeafNode(lv_repeatable_6_0, grammarAccess.getDirectiveDefinitionAccess().getRepeatableRepeatableKeyword_4_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getDirectiveDefinitionRule());
 					}
-					setWithLastConsumed($current, "repeatable", lv_repeatable_4_0 != null, "repeatable");
+					setWithLastConsumed($current, "repeatable", lv_repeatable_6_0 != null, "repeatable");
 				}
 			)
 		)?
-		otherlv_5='on'
+		otherlv_7='on'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getDirectiveDefinitionAccess().getOnKeyword_5());
+			newLeafNode(otherlv_7, grammarAccess.getDirectiveDefinitionAccess().getOnKeyword_5());
 		}
+		(
+			otherlv_8='|'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getDirectiveDefinitionAccess().getVerticalLineKeyword_6());
+			}
+		)?
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getDirectiveDefinitionAccess().getDirectiveLocationsDirectiveLocationsParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getDirectiveDefinitionAccess().getDirectiveLocationsDirectiveLocationEnumRuleCall_7_0());
 				}
-				lv_directiveLocations_6_0=ruleDirectiveLocations
+				lv_directiveLocations_9_0=ruleDirectiveLocation
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getDirectiveDefinitionRule());
@@ -1990,12 +2080,37 @@ ruleDirectiveDefinition returns [EObject current=null]
 					add(
 						$current,
 						"directiveLocations",
-						lv_directiveLocations_6_0,
-						"io.github.katmatt.graphql.GraphQL.DirectiveLocations");
+						lv_directiveLocations_9_0,
+						"io.github.katmatt.graphql.GraphQL.DirectiveLocation");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		(
+			otherlv_10='|'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getDirectiveDefinitionAccess().getVerticalLineKeyword_8_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDirectiveDefinitionAccess().getDirectiveLocationsDirectiveLocationEnumRuleCall_8_1_0());
+					}
+					lv_directiveLocations_11_0=ruleDirectiveLocation
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDirectiveDefinitionRule());
+						}
+						add(
+							$current,
+							"directiveLocations",
+							lv_directiveLocations_11_0,
+							"io.github.katmatt.graphql.GraphQL.DirectiveLocation");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
 	)
 ;
 
@@ -2017,94 +2132,46 @@ ruleDirective returns [EObject current=null]
 	(
 		(
 			(
-				lv_name_0_0=RULE_DIRECTIVE_NAME
-				{
-					newLeafNode(lv_name_0_0, grammarAccess.getDirectiveAccess().getNameDIRECTIVE_NAMETerminalRuleCall_0_0());
-				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getDirectiveRule());
 					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_0_0,
-						"io.github.katmatt.graphql.GraphQL.DIRECTIVE_NAME");
+				}
+				otherlv_0=RULE_DIRECTIVE_NAME
+				{
+					newLeafNode(otherlv_0, grammarAccess.getDirectiveAccess().getDirectiveDirectiveDefinitionCrossReference_0_0());
 				}
 			)
 		)
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getDirectiveAccess().getArgumentsArgumentsParserRuleCall_1_0());
-				}
-				lv_arguments_1_0=ruleArguments
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
-					}
-					set(
-						$current,
-						"arguments",
-						lv_arguments_1_0,
-						"io.github.katmatt.graphql.GraphQL.Arguments");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-	)
-;
-
-// Entry rule entryRuleArguments
-entryRuleArguments returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getArgumentsRule()); }
-	iv_ruleArguments=ruleArguments
-	{ $current=$iv_ruleArguments.current; }
-	EOF;
-
-// Rule Arguments
-ruleArguments returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
+			otherlv_1='('
 			{
-				$current = forceCreateModelElement(
-					grammarAccess.getArgumentsAccess().getArgumentsAction_0(),
-					$current);
+				newLeafNode(otherlv_1, grammarAccess.getDirectiveAccess().getLeftParenthesisKeyword_1_0());
 			}
-		)
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getArgumentsAccess().getLeftParenthesisKeyword_1());
-		}
-		(
 			(
-				{
-					newCompositeNode(grammarAccess.getArgumentsAccess().getArgumentsArgumentParserRuleCall_2_0());
-				}
-				lv_arguments_2_0=ruleArgument
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getArgumentsRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getDirectiveAccess().getArgumentsArgumentParserRuleCall_1_1_0());
 					}
-					add(
-						$current,
-						"arguments",
-						lv_arguments_2_0,
-						"io.github.katmatt.graphql.GraphQL.Argument");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_3=')'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getArgumentsAccess().getRightParenthesisKeyword_3());
-		}
+					lv_arguments_2_0=ruleArgument
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+						}
+						add(
+							$current,
+							"arguments",
+							lv_arguments_2_0,
+							"io.github.katmatt.graphql.GraphQL.Argument");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_3=')'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getDirectiveAccess().getRightParenthesisKeyword_1_2());
+			}
+		)?
 	)
 ;
 
@@ -2160,128 +2227,6 @@ ruleArgument returns [EObject current=null]
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleArgumentsDefinition
-entryRuleArgumentsDefinition returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getArgumentsDefinitionRule()); }
-	iv_ruleArgumentsDefinition=ruleArgumentsDefinition
-	{ $current=$iv_ruleArgumentsDefinition.current; }
-	EOF;
-
-// Rule ArgumentsDefinition
-ruleArgumentsDefinition returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getArgumentsDefinitionAccess().getArgumentsDefinitionAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getArgumentsDefinitionAccess().getLeftParenthesisKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getArgumentsDefinitionAccess().getArgumentDefinitionsInputValueDefinitionParserRuleCall_2_0());
-				}
-				lv_argumentDefinitions_2_0=ruleInputValueDefinition
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getArgumentsDefinitionRule());
-					}
-					add(
-						$current,
-						"argumentDefinitions",
-						lv_argumentDefinitions_2_0,
-						"io.github.katmatt.graphql.GraphQL.InputValueDefinition");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_3=')'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getArgumentsDefinitionAccess().getRightParenthesisKeyword_3());
-		}
-	)
-;
-
-// Entry rule entryRuleDirectiveLocations
-entryRuleDirectiveLocations returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDirectiveLocationsRule()); }
-	iv_ruleDirectiveLocations=ruleDirectiveLocations
-	{ $current=$iv_ruleDirectiveLocations.current; }
-	EOF;
-
-// Rule DirectiveLocations
-ruleDirectiveLocations returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			otherlv_0='|'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getDirectiveLocationsAccess().getVerticalLineKeyword_0());
-			}
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getDirectiveLocationsAccess().getDirectiveLocationsDirectiveLocationEnumRuleCall_1_0());
-				}
-				lv_directiveLocations_1_0=ruleDirectiveLocation
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDirectiveLocationsRule());
-					}
-					add(
-						$current,
-						"directiveLocations",
-						lv_directiveLocations_1_0,
-						"io.github.katmatt.graphql.GraphQL.DirectiveLocation");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_2='|'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getDirectiveLocationsAccess().getVerticalLineKeyword_2_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getDirectiveLocationsAccess().getDirectiveLocationsDirectiveLocationEnumRuleCall_2_1_0());
-					}
-					lv_directiveLocations_3_0=ruleDirectiveLocation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getDirectiveLocationsRule());
-						}
-						add(
-							$current,
-							"directiveLocations",
-							lv_directiveLocations_3_0,
-							"io.github.katmatt.graphql.GraphQL.DirectiveLocation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
 	)
 ;
 

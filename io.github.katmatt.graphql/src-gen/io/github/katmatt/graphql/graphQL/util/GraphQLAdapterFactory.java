@@ -141,11 +141,6 @@ public class GraphQLAdapterFactory extends AdapterFactoryImpl
         return createInputValueDefinitionAdapter();
       }
       @Override
-      public Adapter caseIntersectionType(IntersectionType object)
-      {
-        return createIntersectionTypeAdapter();
-      }
-      @Override
       public Adapter caseType(Type object)
       {
         return createTypeAdapter();
@@ -221,24 +216,9 @@ public class GraphQLAdapterFactory extends AdapterFactoryImpl
         return createDirectiveAdapter();
       }
       @Override
-      public Adapter caseArguments(Arguments object)
-      {
-        return createArgumentsAdapter();
-      }
-      @Override
       public Adapter caseArgument(Argument object)
       {
         return createArgumentAdapter();
-      }
-      @Override
-      public Adapter caseArgumentsDefinition(ArgumentsDefinition object)
-      {
-        return createArgumentsDefinitionAdapter();
-      }
-      @Override
-      public Adapter caseDirectiveLocations(DirectiveLocations object)
-      {
-        return createDirectiveLocationsAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -453,21 +433,6 @@ public class GraphQLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInputValueDefinitionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.IntersectionType <em>Intersection Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.katmatt.graphql.graphQL.IntersectionType
-   * @generated
-   */
-  public Adapter createIntersectionTypeAdapter()
   {
     return null;
   }
@@ -698,21 +663,6 @@ public class GraphQLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.Arguments <em>Arguments</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.katmatt.graphql.graphQL.Arguments
-   * @generated
-   */
-  public Adapter createArgumentsAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.Argument <em>Argument</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -723,36 +673,6 @@ public class GraphQLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createArgumentAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.ArgumentsDefinition <em>Arguments Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.katmatt.graphql.graphQL.ArgumentsDefinition
-   * @generated
-   */
-  public Adapter createArgumentsDefinitionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link io.github.katmatt.graphql.graphQL.DirectiveLocations <em>Directive Locations</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.katmatt.graphql.graphQL.DirectiveLocations
-   * @generated
-   */
-  public Adapter createDirectiveLocationsAdapter()
   {
     return null;
   }

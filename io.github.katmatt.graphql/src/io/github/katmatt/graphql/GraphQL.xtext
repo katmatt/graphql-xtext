@@ -36,20 +36,20 @@ ScalarTypeDefinition:
 
 ObjectTypeDefinition: 
 	description=StringValue? "type" name=NAME 
-		('implements' implements=IntersectionType)? 
+		('implements' '&'? implementsInterfaces+=[InterfaceDefinition|NAME] ('&' implementsInterfaces+=[InterfaceDefinition|NAME])*)?
 		directives+=Directive*
 	("{" fieldDefinitions+=FieldDefinition* "}")?
 ;
 
 InterfaceDefinition: 
 	description=StringValue? "interface" name=NAME
-		('implements' implements=IntersectionType)?
+		('implements' '&'? implementsInterfaces+=[InterfaceDefinition|NAME] ('&' implementsInterfaces+=[InterfaceDefinition|NAME])*)?
 		directives+=Directive*
 	("{" fieldDefinitions+=FieldDefinition* "}")?
 ;
 
 FieldDefinition: 
-	description=StringValue? name=NAME arguments=ArgumentsDefinition? ":" type=Type
+	description=StringValue? name=NAME ('(' argumentsDefinition+=InputValueDefinition* ')')? ":" type=Type
 ;
 
 UnionTypeDefinition: 
@@ -61,7 +61,7 @@ UnionTypeDefinition:
 EnumTypeDefinition: 
 	description=StringValue? "enum" name=NAME 
 		directives+=Directive*
-		("{" valueDefinitions+=EnumValueDefinition* "}")?
+		("{" enumValuesDefinition+=EnumValueDefinition* "}")?
 ;
 
 EnumValueDefinition: 
@@ -71,15 +71,11 @@ EnumValueDefinition:
 InputObjectTypeDefinition: 
 	description=StringValue? "input" name=NAME 
 		directives+=Directive*
-		("{" inputsFieldDefinitions+=InputValueDefinition* "}")?
+		("{" inputFieldsDefinition+=InputValueDefinition* "}")?
 ;
 
 InputValueDefinition:
 	description=StringValue? name=NAME ":" type=Type ('=' defaultValue=ConstValue)?
-;
-
-IntersectionType: 
-	'&'? memberTypes+=Type ('&' memberTypes+=Type)*
 ;
 
 Type: 
@@ -124,7 +120,7 @@ ObjectValue:
 ;
 
 ObjectField:
-	name=[FieldDefinition|NAME] ':' value=ConstValue	
+	fieldDefinition=[FieldDefinition|NAME] ':' value=ConstValue	
 ;
 
 ConstValue:
@@ -144,28 +140,16 @@ ListValue:
 
 DirectiveDefinition:
 	description=StringValue? 'directive' name=DIRECTIVE_NAME 
-		argumentDefinitions=ArgumentsDefinition? 
-	repeatable?='repeatable'? 'on' directiveLocations+=DirectiveLocations
+		('(' argumentsDefinition+=InputValueDefinition* ')')? 
+	repeatable?='repeatable'? 'on' '|'? directiveLocations+=DirectiveLocation ('|' directiveLocations+=DirectiveLocation)*
 ;
 
 Directive:
-	name=DIRECTIVE_NAME arguments=Arguments?
-;
-
-Arguments:
-	{Arguments} '(' arguments+=Argument* ')'
+	directive=[DirectiveDefinition|DIRECTIVE_NAME] ('(' arguments+=Argument* ')')?
 ;
 
 Argument:
 	argumentDefinition=[InputValueDefinition|NAME] ':' value=ConstValue	
-;
-
-ArgumentsDefinition:
-	{ArgumentsDefinition} '(' argumentDefinitions+=InputValueDefinition* ')'
-;
-
-DirectiveLocations:
-	'|'? directiveLocations+=DirectiveLocation ('|' directiveLocations+=DirectiveLocation)*
 ;
 
 enum DirectiveLocation: 

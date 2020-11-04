@@ -3,6 +3,8 @@
  */
 package io.github.katmatt.graphql.graphQL;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link io.github.katmatt.graphql.graphQL.TypeDefinition#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.TypeDefinition#getName <em>Name</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.TypeDefinition#getDirectives <em>Directives</em>}</li>
  * </ul>
  *
  * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getTypeDefinition()
@@ -67,5 +70,17 @@ public interface TypeDefinition extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Directives</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.Directive}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Directives</em>' containment reference list.
+   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getTypeDefinition_Directives()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Directive> getDirectives();
 
 } // TypeDefinition

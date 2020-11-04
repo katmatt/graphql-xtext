@@ -5,12 +5,9 @@ package io.github.katmatt.graphql.serializer;
 
 import com.google.inject.Inject;
 import io.github.katmatt.graphql.graphQL.Argument;
-import io.github.katmatt.graphql.graphQL.Arguments;
-import io.github.katmatt.graphql.graphQL.ArgumentsDefinition;
 import io.github.katmatt.graphql.graphQL.BooleanValue;
 import io.github.katmatt.graphql.graphQL.Directive;
 import io.github.katmatt.graphql.graphQL.DirectiveDefinition;
-import io.github.katmatt.graphql.graphQL.DirectiveLocations;
 import io.github.katmatt.graphql.graphQL.EnumTypeDefinition;
 import io.github.katmatt.graphql.graphQL.EnumValue;
 import io.github.katmatt.graphql.graphQL.EnumValueDefinition;
@@ -21,7 +18,6 @@ import io.github.katmatt.graphql.graphQL.InputObjectTypeDefinition;
 import io.github.katmatt.graphql.graphQL.InputValueDefinition;
 import io.github.katmatt.graphql.graphQL.IntValue;
 import io.github.katmatt.graphql.graphQL.InterfaceDefinition;
-import io.github.katmatt.graphql.graphQL.IntersectionType;
 import io.github.katmatt.graphql.graphQL.ListType;
 import io.github.katmatt.graphql.graphQL.ListValue;
 import io.github.katmatt.graphql.graphQL.NamedType;
@@ -64,12 +60,6 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case GraphQLPackage.ARGUMENT:
 				sequence_Argument(context, (Argument) semanticObject); 
 				return; 
-			case GraphQLPackage.ARGUMENTS:
-				sequence_Arguments(context, (Arguments) semanticObject); 
-				return; 
-			case GraphQLPackage.ARGUMENTS_DEFINITION:
-				sequence_ArgumentsDefinition(context, (ArgumentsDefinition) semanticObject); 
-				return; 
 			case GraphQLPackage.BOOLEAN_VALUE:
 				sequence_BooleanValue(context, (BooleanValue) semanticObject); 
 				return; 
@@ -78,9 +68,6 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case GraphQLPackage.DIRECTIVE_DEFINITION:
 				sequence_DirectiveDefinition(context, (DirectiveDefinition) semanticObject); 
-				return; 
-			case GraphQLPackage.DIRECTIVE_LOCATIONS:
-				sequence_DirectiveLocations(context, (DirectiveLocations) semanticObject); 
 				return; 
 			case GraphQLPackage.ENUM_TYPE_DEFINITION:
 				sequence_EnumTypeDefinition(context, (EnumTypeDefinition) semanticObject); 
@@ -108,9 +95,6 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case GraphQLPackage.INTERFACE_DEFINITION:
 				sequence_InterfaceDefinition(context, (InterfaceDefinition) semanticObject); 
-				return; 
-			case GraphQLPackage.INTERSECTION_TYPE:
-				sequence_IntersectionType(context, (IntersectionType) semanticObject); 
 				return; 
 			case GraphQLPackage.LIST_TYPE:
 				sequence_ListType(context, (ListType) semanticObject); 
@@ -179,30 +163,6 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     ArgumentsDefinition returns ArgumentsDefinition
-	 *
-	 * Constraint:
-	 *     argumentDefinitions+=InputValueDefinition*
-	 */
-	protected void sequence_ArgumentsDefinition(ISerializationContext context, ArgumentsDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Arguments returns Arguments
-	 *
-	 * Constraint:
-	 *     arguments+=Argument*
-	 */
-	protected void sequence_Arguments(ISerializationContext context, Arguments semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     BooleanValue returns BooleanValue
 	 *     ConstValue returns BooleanValue
 	 *
@@ -222,9 +182,10 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         description=StringValue? 
 	 *         name=DIRECTIVE_NAME 
-	 *         argumentDefinitions=ArgumentsDefinition? 
+	 *         argumentsDefinition+=InputValueDefinition* 
 	 *         repeatable?='repeatable'? 
-	 *         directiveLocations+=DirectiveLocations
+	 *         directiveLocations+=DirectiveLocation 
+	 *         directiveLocations+=DirectiveLocation*
 	 *     )
 	 */
 	protected void sequence_DirectiveDefinition(ISerializationContext context, DirectiveDefinition semanticObject) {
@@ -234,22 +195,10 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     DirectiveLocations returns DirectiveLocations
-	 *
-	 * Constraint:
-	 *     (directiveLocations+=DirectiveLocation directiveLocations+=DirectiveLocation*)
-	 */
-	protected void sequence_DirectiveLocations(ISerializationContext context, DirectiveLocations semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Directive returns Directive
 	 *
 	 * Constraint:
-	 *     (name=DIRECTIVE_NAME arguments=Arguments?)
+	 *     (directive=[DirectiveDefinition|DIRECTIVE_NAME] arguments+=Argument*)
 	 */
 	protected void sequence_Directive(ISerializationContext context, Directive semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -262,7 +211,7 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     EnumTypeDefinition returns EnumTypeDefinition
 	 *
 	 * Constraint:
-	 *     (description=StringValue? name=NAME valueDefinitions+=EnumValueDefinition*)
+	 *     (description=StringValue? name=NAME directives+=Directive* enumValuesDefinition+=EnumValueDefinition*)
 	 */
 	protected void sequence_EnumTypeDefinition(ISerializationContext context, EnumTypeDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -305,7 +254,7 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     FieldDefinition returns FieldDefinition
 	 *
 	 * Constraint:
-	 *     (description=StringValue? name=NAME arguments=ArgumentsDefinition? type=Type)
+	 *     (description=StringValue? name=NAME argumentsDefinition+=InputValueDefinition* type=Type)
 	 */
 	protected void sequence_FieldDefinition(ISerializationContext context, FieldDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -337,7 +286,7 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     InputObjectTypeDefinition returns InputObjectTypeDefinition
 	 *
 	 * Constraint:
-	 *     (description=StringValue? name=NAME inputsFieldDefinitions+=InputValueDefinition*)
+	 *     (description=StringValue? name=NAME directives+=Directive* inputFieldsDefinition+=InputValueDefinition*)
 	 */
 	protected void sequence_InputObjectTypeDefinition(ISerializationContext context, InputObjectTypeDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -381,21 +330,15 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     InterfaceDefinition returns InterfaceDefinition
 	 *
 	 * Constraint:
-	 *     (description=StringValue? name=NAME implements=IntersectionType? fieldDefinitions+=FieldDefinition*)
+	 *     (
+	 *         description=StringValue? 
+	 *         name=NAME 
+	 *         (implementsInterfaces+=[InterfaceDefinition|NAME] implementsInterfaces+=[InterfaceDefinition|NAME]*)? 
+	 *         directives+=Directive* 
+	 *         fieldDefinitions+=FieldDefinition*
+	 *     )
 	 */
 	protected void sequence_InterfaceDefinition(ISerializationContext context, InterfaceDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     IntersectionType returns IntersectionType
-	 *
-	 * Constraint:
-	 *     (memberTypes+=Type memberTypes+=Type*)
-	 */
-	protected void sequence_IntersectionType(ISerializationContext context, IntersectionType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -463,17 +406,17 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ObjectField returns ObjectField
 	 *
 	 * Constraint:
-	 *     (name=[FieldDefinition|NAME] value=ConstValue)
+	 *     (fieldDefinition=[FieldDefinition|NAME] value=ConstValue)
 	 */
 	protected void sequence_ObjectField(ISerializationContext context, ObjectField semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GraphQLPackage.Literals.OBJECT_FIELD__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphQLPackage.Literals.OBJECT_FIELD__NAME));
+			if (transientValues.isValueTransient(semanticObject, GraphQLPackage.Literals.OBJECT_FIELD__FIELD_DEFINITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphQLPackage.Literals.OBJECT_FIELD__FIELD_DEFINITION));
 			if (transientValues.isValueTransient(semanticObject, GraphQLPackage.Literals.OBJECT_FIELD__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphQLPackage.Literals.OBJECT_FIELD__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getObjectFieldAccess().getNameFieldDefinitionNAMETerminalRuleCall_0_0_1(), semanticObject.eGet(GraphQLPackage.Literals.OBJECT_FIELD__NAME, false));
+		feeder.accept(grammarAccess.getObjectFieldAccess().getFieldDefinitionFieldDefinitionNAMETerminalRuleCall_0_0_1(), semanticObject.eGet(GraphQLPackage.Literals.OBJECT_FIELD__FIELD_DEFINITION, false));
 		feeder.accept(grammarAccess.getObjectFieldAccess().getValueConstValueParserRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
@@ -485,7 +428,13 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ObjectTypeDefinition returns ObjectTypeDefinition
 	 *
 	 * Constraint:
-	 *     (description=StringValue? name=NAME implements=IntersectionType? directives+=Directive* fieldDefinitions+=FieldDefinition*)
+	 *     (
+	 *         description=StringValue? 
+	 *         name=NAME 
+	 *         (implementsInterfaces+=[InterfaceDefinition|NAME] implementsInterfaces+=[InterfaceDefinition|NAME]*)? 
+	 *         directives+=Directive* 
+	 *         fieldDefinitions+=FieldDefinition*
+	 *     )
 	 */
 	protected void sequence_ObjectTypeDefinition(ISerializationContext context, ObjectTypeDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -532,7 +481,7 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ScalarTypeDefinition returns ScalarTypeDefinition
 	 *
 	 * Constraint:
-	 *     (description=StringValue? name=NAME)
+	 *     (description=StringValue? name=NAME directives+=Directive*)
 	 */
 	protected void sequence_ScalarTypeDefinition(ISerializationContext context, ScalarTypeDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -582,7 +531,7 @@ public class GraphQLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     UnionTypeDefinition returns UnionTypeDefinition
 	 *
 	 * Constraint:
-	 *     (description=StringValue? name=NAME (memberTypes+=Type memberTypes+=Type*)?)
+	 *     (description=StringValue? name=NAME directives+=Directive* (memberTypes+=Type memberTypes+=Type*)?)
 	 */
 	protected void sequence_UnionTypeDefinition(ISerializationContext context, UnionTypeDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

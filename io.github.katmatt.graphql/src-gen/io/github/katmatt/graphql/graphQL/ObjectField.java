@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link io.github.katmatt.graphql.graphQL.ObjectField#getName <em>Name</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.ObjectField#getFieldDefinition <em>Field Definition</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.ObjectField#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -25,26 +25,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface ObjectField extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' reference.
+   * Returns the value of the '<em><b>Field Definition</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' reference.
-   * @see #setName(FieldDefinition)
-   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getObjectField_Name()
+   * @return the value of the '<em>Field Definition</em>' reference.
+   * @see #setFieldDefinition(FieldDefinition)
+   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getObjectField_FieldDefinition()
    * @model
    * @generated
    */
-  FieldDefinition getName();
+  FieldDefinition getFieldDefinition();
 
   /**
-   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.ObjectField#getName <em>Name</em>}' reference.
+   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.ObjectField#getFieldDefinition <em>Field Definition</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' reference.
-   * @see #getName()
+   * @param value the new value of the '<em>Field Definition</em>' reference.
+   * @see #getFieldDefinition()
    * @generated
    */
-  void setName(FieldDefinition value);
+  void setFieldDefinition(FieldDefinition value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.

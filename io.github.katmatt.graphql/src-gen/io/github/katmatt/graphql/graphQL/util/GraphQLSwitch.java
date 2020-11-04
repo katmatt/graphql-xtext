@@ -170,13 +170,6 @@ public class GraphQLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GraphQLPackage.INTERSECTION_TYPE:
-      {
-        IntersectionType intersectionType = (IntersectionType)theEObject;
-        T result = caseIntersectionType(intersectionType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case GraphQLPackage.TYPE:
       {
         Type type = (Type)theEObject;
@@ -292,31 +285,10 @@ public class GraphQLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GraphQLPackage.ARGUMENTS:
-      {
-        Arguments arguments = (Arguments)theEObject;
-        T result = caseArguments(arguments);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case GraphQLPackage.ARGUMENT:
       {
         Argument argument = (Argument)theEObject;
         T result = caseArgument(argument);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case GraphQLPackage.ARGUMENTS_DEFINITION:
-      {
-        ArgumentsDefinition argumentsDefinition = (ArgumentsDefinition)theEObject;
-        T result = caseArgumentsDefinition(argumentsDefinition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case GraphQLPackage.DIRECTIVE_LOCATIONS:
-      {
-        DirectiveLocations directiveLocations = (DirectiveLocations)theEObject;
-        T result = caseDirectiveLocations(directiveLocations);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -528,22 +500,6 @@ public class GraphQLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseInputValueDefinition(InputValueDefinition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Intersection Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Intersection Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseIntersectionType(IntersectionType object)
   {
     return null;
   }
@@ -789,22 +745,6 @@ public class GraphQLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Arguments</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Arguments</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseArguments(Arguments object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Argument</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -816,38 +756,6 @@ public class GraphQLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseArgument(Argument object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Arguments Definition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Arguments Definition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseArgumentsDefinition(ArgumentsDefinition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Directive Locations</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Directive Locations</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDirectiveLocations(DirectiveLocations object)
   {
     return null;
   }

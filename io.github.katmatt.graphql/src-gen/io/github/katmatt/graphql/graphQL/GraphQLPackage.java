@@ -207,13 +207,22 @@ public interface GraphQLPackage extends EPackage
   int TYPE_DEFINITION__NAME = 1;
 
   /**
+   * The feature id for the '<em><b>Directives</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_DEFINITION__DIRECTIVES = 2;
+
+  /**
    * The number of structural features of the '<em>Type Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_DEFINITION_FEATURE_COUNT = 2;
+  int TYPE_DEFINITION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link io.github.katmatt.graphql.graphQL.impl.ScalarTypeDefinitionImpl <em>Scalar Type Definition</em>}' class.
@@ -242,6 +251,15 @@ public interface GraphQLPackage extends EPackage
    * @ordered
    */
   int SCALAR_TYPE_DEFINITION__NAME = TYPE_DEFINITION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Directives</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALAR_TYPE_DEFINITION__DIRECTIVES = TYPE_DEFINITION__DIRECTIVES;
 
   /**
    * The number of structural features of the '<em>Scalar Type Definition</em>' class.
@@ -281,22 +299,22 @@ public interface GraphQLPackage extends EPackage
   int OBJECT_TYPE_DEFINITION__NAME = TYPE_DEFINITION__NAME;
 
   /**
-   * The feature id for the '<em><b>Implements</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_TYPE_DEFINITION__IMPLEMENTS = TYPE_DEFINITION_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Directives</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBJECT_TYPE_DEFINITION__DIRECTIVES = TYPE_DEFINITION_FEATURE_COUNT + 1;
+  int OBJECT_TYPE_DEFINITION__DIRECTIVES = TYPE_DEFINITION__DIRECTIVES;
+
+  /**
+   * The feature id for the '<em><b>Implements Interfaces</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_TYPE_DEFINITION__IMPLEMENTS_INTERFACES = TYPE_DEFINITION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Field Definitions</b></em>' containment reference list.
@@ -305,7 +323,7 @@ public interface GraphQLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS = TYPE_DEFINITION_FEATURE_COUNT + 2;
+  int OBJECT_TYPE_DEFINITION__FIELD_DEFINITIONS = TYPE_DEFINITION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Object Type Definition</em>' class.
@@ -314,7 +332,7 @@ public interface GraphQLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_TYPE_DEFINITION_FEATURE_COUNT = TYPE_DEFINITION_FEATURE_COUNT + 3;
+  int OBJECT_TYPE_DEFINITION_FEATURE_COUNT = TYPE_DEFINITION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link io.github.katmatt.graphql.graphQL.impl.InterfaceDefinitionImpl <em>Interface Definition</em>}' class.
@@ -345,13 +363,22 @@ public interface GraphQLPackage extends EPackage
   int INTERFACE_DEFINITION__NAME = TYPE_DEFINITION__NAME;
 
   /**
-   * The feature id for the '<em><b>Implements</b></em>' containment reference.
+   * The feature id for the '<em><b>Directives</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERFACE_DEFINITION__IMPLEMENTS = TYPE_DEFINITION_FEATURE_COUNT + 0;
+  int INTERFACE_DEFINITION__DIRECTIVES = TYPE_DEFINITION__DIRECTIVES;
+
+  /**
+   * The feature id for the '<em><b>Implements Interfaces</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERFACE_DEFINITION__IMPLEMENTS_INTERFACES = TYPE_DEFINITION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Field Definitions</b></em>' containment reference list.
@@ -400,13 +427,13 @@ public interface GraphQLPackage extends EPackage
   int FIELD_DEFINITION__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Arguments</b></em>' containment reference.
+   * The feature id for the '<em><b>Arguments Definition</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FIELD_DEFINITION__ARGUMENTS = 2;
+  int FIELD_DEFINITION__ARGUMENTS_DEFINITION = 2;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -455,6 +482,15 @@ public interface GraphQLPackage extends EPackage
   int UNION_TYPE_DEFINITION__NAME = TYPE_DEFINITION__NAME;
 
   /**
+   * The feature id for the '<em><b>Directives</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNION_TYPE_DEFINITION__DIRECTIVES = TYPE_DEFINITION__DIRECTIVES;
+
+  /**
    * The feature id for the '<em><b>Member Types</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -501,13 +537,22 @@ public interface GraphQLPackage extends EPackage
   int ENUM_TYPE_DEFINITION__NAME = TYPE_DEFINITION__NAME;
 
   /**
-   * The feature id for the '<em><b>Value Definitions</b></em>' containment reference list.
+   * The feature id for the '<em><b>Directives</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENUM_TYPE_DEFINITION__VALUE_DEFINITIONS = TYPE_DEFINITION_FEATURE_COUNT + 0;
+  int ENUM_TYPE_DEFINITION__DIRECTIVES = TYPE_DEFINITION__DIRECTIVES;
+
+  /**
+   * The feature id for the '<em><b>Enum Values Definition</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_TYPE_DEFINITION__ENUM_VALUES_DEFINITION = TYPE_DEFINITION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Enum Type Definition</em>' class.
@@ -584,13 +629,22 @@ public interface GraphQLPackage extends EPackage
   int INPUT_OBJECT_TYPE_DEFINITION__NAME = TYPE_DEFINITION__NAME;
 
   /**
-   * The feature id for the '<em><b>Inputs Field Definitions</b></em>' containment reference list.
+   * The feature id for the '<em><b>Directives</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT_OBJECT_TYPE_DEFINITION__INPUTS_FIELD_DEFINITIONS = TYPE_DEFINITION_FEATURE_COUNT + 0;
+  int INPUT_OBJECT_TYPE_DEFINITION__DIRECTIVES = TYPE_DEFINITION__DIRECTIVES;
+
+  /**
+   * The feature id for the '<em><b>Input Fields Definition</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INPUT_OBJECT_TYPE_DEFINITION__INPUT_FIELDS_DEFINITION = TYPE_DEFINITION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Input Object Type Definition</em>' class.
@@ -657,34 +711,6 @@ public interface GraphQLPackage extends EPackage
   int INPUT_VALUE_DEFINITION_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link io.github.katmatt.graphql.graphQL.impl.IntersectionTypeImpl <em>Intersection Type</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see io.github.katmatt.graphql.graphQL.impl.IntersectionTypeImpl
-   * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getIntersectionType()
-   * @generated
-   */
-  int INTERSECTION_TYPE = 13;
-
-  /**
-   * The feature id for the '<em><b>Member Types</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERSECTION_TYPE__MEMBER_TYPES = 0;
-
-  /**
-   * The number of structural features of the '<em>Intersection Type</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERSECTION_TYPE_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link io.github.katmatt.graphql.graphQL.impl.TypeImpl <em>Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -692,7 +718,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getType()
    * @generated
    */
-  int TYPE = 14;
+  int TYPE = 13;
 
   /**
    * The feature id for the '<em><b>Non Null</b></em>' attribute.
@@ -720,7 +746,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getNamedType()
    * @generated
    */
-  int NAMED_TYPE = 15;
+  int NAMED_TYPE = 14;
 
   /**
    * The feature id for the '<em><b>Non Null</b></em>' attribute.
@@ -757,7 +783,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getListType()
    * @generated
    */
-  int LIST_TYPE = 16;
+  int LIST_TYPE = 15;
 
   /**
    * The feature id for the '<em><b>Non Null</b></em>' attribute.
@@ -794,7 +820,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getConstValue()
    * @generated
    */
-  int CONST_VALUE = 25;
+  int CONST_VALUE = 24;
 
   /**
    * The number of structural features of the '<em>Const Value</em>' class.
@@ -813,7 +839,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getIntValue()
    * @generated
    */
-  int INT_VALUE = 17;
+  int INT_VALUE = 16;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -841,7 +867,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getFloatValue()
    * @generated
    */
-  int FLOAT_VALUE = 18;
+  int FLOAT_VALUE = 17;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -869,7 +895,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getNullValue()
    * @generated
    */
-  int NULL_VALUE = 19;
+  int NULL_VALUE = 18;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -897,7 +923,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getStringValue()
    * @generated
    */
-  int STRING_VALUE = 20;
+  int STRING_VALUE = 19;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -925,7 +951,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 21;
+  int BOOLEAN_VALUE = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -953,7 +979,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getEnumValue()
    * @generated
    */
-  int ENUM_VALUE = 22;
+  int ENUM_VALUE = 21;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' reference.
@@ -981,7 +1007,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getObjectValue()
    * @generated
    */
-  int OBJECT_VALUE = 23;
+  int OBJECT_VALUE = 22;
 
   /**
    * The feature id for the '<em><b>Fields</b></em>' containment reference list.
@@ -1009,16 +1035,16 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getObjectField()
    * @generated
    */
-  int OBJECT_FIELD = 24;
+  int OBJECT_FIELD = 23;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
+   * The feature id for the '<em><b>Field Definition</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBJECT_FIELD__NAME = 0;
+  int OBJECT_FIELD__FIELD_DEFINITION = 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1046,7 +1072,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getListValue()
    * @generated
    */
-  int LIST_VALUE = 26;
+  int LIST_VALUE = 25;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -1074,7 +1100,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getDirectiveDefinition()
    * @generated
    */
-  int DIRECTIVE_DEFINITION = 27;
+  int DIRECTIVE_DEFINITION = 26;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -1095,13 +1121,13 @@ public interface GraphQLPackage extends EPackage
   int DIRECTIVE_DEFINITION__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Argument Definitions</b></em>' containment reference.
+   * The feature id for the '<em><b>Arguments Definition</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS = 2;
+  int DIRECTIVE_DEFINITION__ARGUMENTS_DEFINITION = 2;
 
   /**
    * The feature id for the '<em><b>Repeatable</b></em>' attribute.
@@ -1113,7 +1139,7 @@ public interface GraphQLPackage extends EPackage
   int DIRECTIVE_DEFINITION__REPEATABLE = 3;
 
   /**
-   * The feature id for the '<em><b>Directive Locations</b></em>' containment reference list.
+   * The feature id for the '<em><b>Directive Locations</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1138,19 +1164,19 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getDirective()
    * @generated
    */
-  int DIRECTIVE = 28;
+  int DIRECTIVE = 27;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Directive</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIRECTIVE__NAME = 0;
+  int DIRECTIVE__DIRECTIVE = 0;
 
   /**
-   * The feature id for the '<em><b>Arguments</b></em>' containment reference.
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1168,34 +1194,6 @@ public interface GraphQLPackage extends EPackage
   int DIRECTIVE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link io.github.katmatt.graphql.graphQL.impl.ArgumentsImpl <em>Arguments</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see io.github.katmatt.graphql.graphQL.impl.ArgumentsImpl
-   * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getArguments()
-   * @generated
-   */
-  int ARGUMENTS = 29;
-
-  /**
-   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGUMENTS__ARGUMENTS = 0;
-
-  /**
-   * The number of structural features of the '<em>Arguments</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGUMENTS_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link io.github.katmatt.graphql.graphQL.impl.ArgumentImpl <em>Argument</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1203,7 +1201,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getArgument()
    * @generated
    */
-  int ARGUMENT = 30;
+  int ARGUMENT = 28;
 
   /**
    * The feature id for the '<em><b>Argument Definition</b></em>' reference.
@@ -1233,62 +1231,6 @@ public interface GraphQLPackage extends EPackage
   int ARGUMENT_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link io.github.katmatt.graphql.graphQL.impl.ArgumentsDefinitionImpl <em>Arguments Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see io.github.katmatt.graphql.graphQL.impl.ArgumentsDefinitionImpl
-   * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getArgumentsDefinition()
-   * @generated
-   */
-  int ARGUMENTS_DEFINITION = 31;
-
-  /**
-   * The feature id for the '<em><b>Argument Definitions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGUMENTS_DEFINITION__ARGUMENT_DEFINITIONS = 0;
-
-  /**
-   * The number of structural features of the '<em>Arguments Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGUMENTS_DEFINITION_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link io.github.katmatt.graphql.graphQL.impl.DirectiveLocationsImpl <em>Directive Locations</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see io.github.katmatt.graphql.graphQL.impl.DirectiveLocationsImpl
-   * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getDirectiveLocations()
-   * @generated
-   */
-  int DIRECTIVE_LOCATIONS = 32;
-
-  /**
-   * The feature id for the '<em><b>Directive Locations</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIRECTIVE_LOCATIONS__DIRECTIVE_LOCATIONS = 0;
-
-  /**
-   * The number of structural features of the '<em>Directive Locations</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIRECTIVE_LOCATIONS_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link io.github.katmatt.graphql.graphQL.DirectiveLocation <em>Directive Location</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1296,7 +1238,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getDirectiveLocation()
    * @generated
    */
-  int DIRECTIVE_LOCATION = 33;
+  int DIRECTIVE_LOCATION = 29;
 
   /**
    * The meta object id for the '{@link io.github.katmatt.graphql.graphQL.OperationType <em>Operation Type</em>}' enum.
@@ -1306,7 +1248,7 @@ public interface GraphQLPackage extends EPackage
    * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getOperationType()
    * @generated
    */
-  int OPERATION_TYPE = 34;
+  int OPERATION_TYPE = 30;
 
 
   /**
@@ -1449,6 +1391,17 @@ public interface GraphQLPackage extends EPackage
   EAttribute getTypeDefinition_Name();
 
   /**
+   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.TypeDefinition#getDirectives <em>Directives</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Directives</em>'.
+   * @see io.github.katmatt.graphql.graphQL.TypeDefinition#getDirectives()
+   * @see #getTypeDefinition()
+   * @generated
+   */
+  EReference getTypeDefinition_Directives();
+
+  /**
    * Returns the meta object for class '{@link io.github.katmatt.graphql.graphQL.ScalarTypeDefinition <em>Scalar Type Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1469,26 +1422,15 @@ public interface GraphQLPackage extends EPackage
   EClass getObjectTypeDefinition();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.katmatt.graphql.graphQL.ObjectTypeDefinition#getImplements <em>Implements</em>}'.
+   * Returns the meta object for the reference list '{@link io.github.katmatt.graphql.graphQL.ObjectTypeDefinition#getImplementsInterfaces <em>Implements Interfaces</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Implements</em>'.
-   * @see io.github.katmatt.graphql.graphQL.ObjectTypeDefinition#getImplements()
+   * @return the meta object for the reference list '<em>Implements Interfaces</em>'.
+   * @see io.github.katmatt.graphql.graphQL.ObjectTypeDefinition#getImplementsInterfaces()
    * @see #getObjectTypeDefinition()
    * @generated
    */
-  EReference getObjectTypeDefinition_Implements();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.ObjectTypeDefinition#getDirectives <em>Directives</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Directives</em>'.
-   * @see io.github.katmatt.graphql.graphQL.ObjectTypeDefinition#getDirectives()
-   * @see #getObjectTypeDefinition()
-   * @generated
-   */
-  EReference getObjectTypeDefinition_Directives();
+  EReference getObjectTypeDefinition_ImplementsInterfaces();
 
   /**
    * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.ObjectTypeDefinition#getFieldDefinitions <em>Field Definitions</em>}'.
@@ -1512,15 +1454,15 @@ public interface GraphQLPackage extends EPackage
   EClass getInterfaceDefinition();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.katmatt.graphql.graphQL.InterfaceDefinition#getImplements <em>Implements</em>}'.
+   * Returns the meta object for the reference list '{@link io.github.katmatt.graphql.graphQL.InterfaceDefinition#getImplementsInterfaces <em>Implements Interfaces</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Implements</em>'.
-   * @see io.github.katmatt.graphql.graphQL.InterfaceDefinition#getImplements()
+   * @return the meta object for the reference list '<em>Implements Interfaces</em>'.
+   * @see io.github.katmatt.graphql.graphQL.InterfaceDefinition#getImplementsInterfaces()
    * @see #getInterfaceDefinition()
    * @generated
    */
-  EReference getInterfaceDefinition_Implements();
+  EReference getInterfaceDefinition_ImplementsInterfaces();
 
   /**
    * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.InterfaceDefinition#getFieldDefinitions <em>Field Definitions</em>}'.
@@ -1566,15 +1508,15 @@ public interface GraphQLPackage extends EPackage
   EAttribute getFieldDefinition_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getArguments <em>Arguments</em>}'.
+   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getArgumentsDefinition <em>Arguments Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Arguments</em>'.
-   * @see io.github.katmatt.graphql.graphQL.FieldDefinition#getArguments()
+   * @return the meta object for the containment reference list '<em>Arguments Definition</em>'.
+   * @see io.github.katmatt.graphql.graphQL.FieldDefinition#getArgumentsDefinition()
    * @see #getFieldDefinition()
    * @generated
    */
-  EReference getFieldDefinition_Arguments();
+  EReference getFieldDefinition_ArgumentsDefinition();
 
   /**
    * Returns the meta object for the containment reference '{@link io.github.katmatt.graphql.graphQL.FieldDefinition#getType <em>Type</em>}'.
@@ -1619,15 +1561,15 @@ public interface GraphQLPackage extends EPackage
   EClass getEnumTypeDefinition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.EnumTypeDefinition#getValueDefinitions <em>Value Definitions</em>}'.
+   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.EnumTypeDefinition#getEnumValuesDefinition <em>Enum Values Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Value Definitions</em>'.
-   * @see io.github.katmatt.graphql.graphQL.EnumTypeDefinition#getValueDefinitions()
+   * @return the meta object for the containment reference list '<em>Enum Values Definition</em>'.
+   * @see io.github.katmatt.graphql.graphQL.EnumTypeDefinition#getEnumValuesDefinition()
    * @see #getEnumTypeDefinition()
    * @generated
    */
-  EReference getEnumTypeDefinition_ValueDefinitions();
+  EReference getEnumTypeDefinition_EnumValuesDefinition();
 
   /**
    * Returns the meta object for class '{@link io.github.katmatt.graphql.graphQL.EnumValueDefinition <em>Enum Value Definition</em>}'.
@@ -1672,15 +1614,15 @@ public interface GraphQLPackage extends EPackage
   EClass getInputObjectTypeDefinition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.InputObjectTypeDefinition#getInputsFieldDefinitions <em>Inputs Field Definitions</em>}'.
+   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.InputObjectTypeDefinition#getInputFieldsDefinition <em>Input Fields Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Inputs Field Definitions</em>'.
-   * @see io.github.katmatt.graphql.graphQL.InputObjectTypeDefinition#getInputsFieldDefinitions()
+   * @return the meta object for the containment reference list '<em>Input Fields Definition</em>'.
+   * @see io.github.katmatt.graphql.graphQL.InputObjectTypeDefinition#getInputFieldsDefinition()
    * @see #getInputObjectTypeDefinition()
    * @generated
    */
-  EReference getInputObjectTypeDefinition_InputsFieldDefinitions();
+  EReference getInputObjectTypeDefinition_InputFieldsDefinition();
 
   /**
    * Returns the meta object for class '{@link io.github.katmatt.graphql.graphQL.InputValueDefinition <em>Input Value Definition</em>}'.
@@ -1735,27 +1677,6 @@ public interface GraphQLPackage extends EPackage
    * @generated
    */
   EReference getInputValueDefinition_DefaultValue();
-
-  /**
-   * Returns the meta object for class '{@link io.github.katmatt.graphql.graphQL.IntersectionType <em>Intersection Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Intersection Type</em>'.
-   * @see io.github.katmatt.graphql.graphQL.IntersectionType
-   * @generated
-   */
-  EClass getIntersectionType();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.IntersectionType#getMemberTypes <em>Member Types</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Member Types</em>'.
-   * @see io.github.katmatt.graphql.graphQL.IntersectionType#getMemberTypes()
-   * @see #getIntersectionType()
-   * @generated
-   */
-  EReference getIntersectionType_MemberTypes();
 
   /**
    * Returns the meta object for class '{@link io.github.katmatt.graphql.graphQL.Type <em>Type</em>}'.
@@ -1978,15 +1899,15 @@ public interface GraphQLPackage extends EPackage
   EClass getObjectField();
 
   /**
-   * Returns the meta object for the reference '{@link io.github.katmatt.graphql.graphQL.ObjectField#getName <em>Name</em>}'.
+   * Returns the meta object for the reference '{@link io.github.katmatt.graphql.graphQL.ObjectField#getFieldDefinition <em>Field Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Name</em>'.
-   * @see io.github.katmatt.graphql.graphQL.ObjectField#getName()
+   * @return the meta object for the reference '<em>Field Definition</em>'.
+   * @see io.github.katmatt.graphql.graphQL.ObjectField#getFieldDefinition()
    * @see #getObjectField()
    * @generated
    */
-  EReference getObjectField_Name();
+  EReference getObjectField_FieldDefinition();
 
   /**
    * Returns the meta object for the containment reference '{@link io.github.katmatt.graphql.graphQL.ObjectField#getValue <em>Value</em>}'.
@@ -2063,15 +1984,15 @@ public interface GraphQLPackage extends EPackage
   EAttribute getDirectiveDefinition_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition#getArgumentDefinitions <em>Argument Definitions</em>}'.
+   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition#getArgumentsDefinition <em>Arguments Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Argument Definitions</em>'.
-   * @see io.github.katmatt.graphql.graphQL.DirectiveDefinition#getArgumentDefinitions()
+   * @return the meta object for the containment reference list '<em>Arguments Definition</em>'.
+   * @see io.github.katmatt.graphql.graphQL.DirectiveDefinition#getArgumentsDefinition()
    * @see #getDirectiveDefinition()
    * @generated
    */
-  EReference getDirectiveDefinition_ArgumentDefinitions();
+  EReference getDirectiveDefinition_ArgumentsDefinition();
 
   /**
    * Returns the meta object for the attribute '{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition#isRepeatable <em>Repeatable</em>}'.
@@ -2085,15 +2006,15 @@ public interface GraphQLPackage extends EPackage
   EAttribute getDirectiveDefinition_Repeatable();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition#getDirectiveLocations <em>Directive Locations</em>}'.
+   * Returns the meta object for the attribute list '{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition#getDirectiveLocations <em>Directive Locations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Directive Locations</em>'.
+   * @return the meta object for the attribute list '<em>Directive Locations</em>'.
    * @see io.github.katmatt.graphql.graphQL.DirectiveDefinition#getDirectiveLocations()
    * @see #getDirectiveDefinition()
    * @generated
    */
-  EReference getDirectiveDefinition_DirectiveLocations();
+  EAttribute getDirectiveDefinition_DirectiveLocations();
 
   /**
    * Returns the meta object for class '{@link io.github.katmatt.graphql.graphQL.Directive <em>Directive</em>}'.
@@ -2106,47 +2027,26 @@ public interface GraphQLPackage extends EPackage
   EClass getDirective();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.katmatt.graphql.graphQL.Directive#getName <em>Name</em>}'.
+   * Returns the meta object for the reference '{@link io.github.katmatt.graphql.graphQL.Directive#getDirective <em>Directive</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.katmatt.graphql.graphQL.Directive#getName()
+   * @return the meta object for the reference '<em>Directive</em>'.
+   * @see io.github.katmatt.graphql.graphQL.Directive#getDirective()
    * @see #getDirective()
    * @generated
    */
-  EAttribute getDirective_Name();
+  EReference getDirective_Directive();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.katmatt.graphql.graphQL.Directive#getArguments <em>Arguments</em>}'.
+   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.Directive#getArguments <em>Arguments</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Arguments</em>'.
+   * @return the meta object for the containment reference list '<em>Arguments</em>'.
    * @see io.github.katmatt.graphql.graphQL.Directive#getArguments()
    * @see #getDirective()
    * @generated
    */
   EReference getDirective_Arguments();
-
-  /**
-   * Returns the meta object for class '{@link io.github.katmatt.graphql.graphQL.Arguments <em>Arguments</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Arguments</em>'.
-   * @see io.github.katmatt.graphql.graphQL.Arguments
-   * @generated
-   */
-  EClass getArguments();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.Arguments#getArguments <em>Arguments</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Arguments</em>'.
-   * @see io.github.katmatt.graphql.graphQL.Arguments#getArguments()
-   * @see #getArguments()
-   * @generated
-   */
-  EReference getArguments_Arguments();
 
   /**
    * Returns the meta object for class '{@link io.github.katmatt.graphql.graphQL.Argument <em>Argument</em>}'.
@@ -2179,48 +2079,6 @@ public interface GraphQLPackage extends EPackage
    * @generated
    */
   EReference getArgument_Value();
-
-  /**
-   * Returns the meta object for class '{@link io.github.katmatt.graphql.graphQL.ArgumentsDefinition <em>Arguments Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Arguments Definition</em>'.
-   * @see io.github.katmatt.graphql.graphQL.ArgumentsDefinition
-   * @generated
-   */
-  EClass getArgumentsDefinition();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link io.github.katmatt.graphql.graphQL.ArgumentsDefinition#getArgumentDefinitions <em>Argument Definitions</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Argument Definitions</em>'.
-   * @see io.github.katmatt.graphql.graphQL.ArgumentsDefinition#getArgumentDefinitions()
-   * @see #getArgumentsDefinition()
-   * @generated
-   */
-  EReference getArgumentsDefinition_ArgumentDefinitions();
-
-  /**
-   * Returns the meta object for class '{@link io.github.katmatt.graphql.graphQL.DirectiveLocations <em>Directive Locations</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Directive Locations</em>'.
-   * @see io.github.katmatt.graphql.graphQL.DirectiveLocations
-   * @generated
-   */
-  EClass getDirectiveLocations();
-
-  /**
-   * Returns the meta object for the attribute list '{@link io.github.katmatt.graphql.graphQL.DirectiveLocations#getDirectiveLocations <em>Directive Locations</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Directive Locations</em>'.
-   * @see io.github.katmatt.graphql.graphQL.DirectiveLocations#getDirectiveLocations()
-   * @see #getDirectiveLocations()
-   * @generated
-   */
-  EAttribute getDirectiveLocations_DirectiveLocations();
 
   /**
    * Returns the meta object for enum '{@link io.github.katmatt.graphql.graphQL.DirectiveLocation <em>Directive Location</em>}'.
@@ -2378,6 +2236,14 @@ public interface GraphQLPackage extends EPackage
     EAttribute TYPE_DEFINITION__NAME = eINSTANCE.getTypeDefinition_Name();
 
     /**
+     * The meta object literal for the '<em><b>Directives</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_DEFINITION__DIRECTIVES = eINSTANCE.getTypeDefinition_Directives();
+
+    /**
      * The meta object literal for the '{@link io.github.katmatt.graphql.graphQL.impl.ScalarTypeDefinitionImpl <em>Scalar Type Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2398,20 +2264,12 @@ public interface GraphQLPackage extends EPackage
     EClass OBJECT_TYPE_DEFINITION = eINSTANCE.getObjectTypeDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Implements</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Implements Interfaces</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OBJECT_TYPE_DEFINITION__IMPLEMENTS = eINSTANCE.getObjectTypeDefinition_Implements();
-
-    /**
-     * The meta object literal for the '<em><b>Directives</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OBJECT_TYPE_DEFINITION__DIRECTIVES = eINSTANCE.getObjectTypeDefinition_Directives();
+    EReference OBJECT_TYPE_DEFINITION__IMPLEMENTS_INTERFACES = eINSTANCE.getObjectTypeDefinition_ImplementsInterfaces();
 
     /**
      * The meta object literal for the '<em><b>Field Definitions</b></em>' containment reference list feature.
@@ -2432,12 +2290,12 @@ public interface GraphQLPackage extends EPackage
     EClass INTERFACE_DEFINITION = eINSTANCE.getInterfaceDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Implements</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Implements Interfaces</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INTERFACE_DEFINITION__IMPLEMENTS = eINSTANCE.getInterfaceDefinition_Implements();
+    EReference INTERFACE_DEFINITION__IMPLEMENTS_INTERFACES = eINSTANCE.getInterfaceDefinition_ImplementsInterfaces();
 
     /**
      * The meta object literal for the '<em><b>Field Definitions</b></em>' containment reference list feature.
@@ -2474,12 +2332,12 @@ public interface GraphQLPackage extends EPackage
     EAttribute FIELD_DEFINITION__NAME = eINSTANCE.getFieldDefinition_Name();
 
     /**
-     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Arguments Definition</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FIELD_DEFINITION__ARGUMENTS = eINSTANCE.getFieldDefinition_Arguments();
+    EReference FIELD_DEFINITION__ARGUMENTS_DEFINITION = eINSTANCE.getFieldDefinition_ArgumentsDefinition();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
@@ -2518,12 +2376,12 @@ public interface GraphQLPackage extends EPackage
     EClass ENUM_TYPE_DEFINITION = eINSTANCE.getEnumTypeDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Value Definitions</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Enum Values Definition</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ENUM_TYPE_DEFINITION__VALUE_DEFINITIONS = eINSTANCE.getEnumTypeDefinition_ValueDefinitions();
+    EReference ENUM_TYPE_DEFINITION__ENUM_VALUES_DEFINITION = eINSTANCE.getEnumTypeDefinition_EnumValuesDefinition();
 
     /**
      * The meta object literal for the '{@link io.github.katmatt.graphql.graphQL.impl.EnumValueDefinitionImpl <em>Enum Value Definition</em>}' class.
@@ -2562,12 +2420,12 @@ public interface GraphQLPackage extends EPackage
     EClass INPUT_OBJECT_TYPE_DEFINITION = eINSTANCE.getInputObjectTypeDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Inputs Field Definitions</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Input Fields Definition</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INPUT_OBJECT_TYPE_DEFINITION__INPUTS_FIELD_DEFINITIONS = eINSTANCE.getInputObjectTypeDefinition_InputsFieldDefinitions();
+    EReference INPUT_OBJECT_TYPE_DEFINITION__INPUT_FIELDS_DEFINITION = eINSTANCE.getInputObjectTypeDefinition_InputFieldsDefinition();
 
     /**
      * The meta object literal for the '{@link io.github.katmatt.graphql.graphQL.impl.InputValueDefinitionImpl <em>Input Value Definition</em>}' class.
@@ -2610,24 +2468,6 @@ public interface GraphQLPackage extends EPackage
      * @generated
      */
     EReference INPUT_VALUE_DEFINITION__DEFAULT_VALUE = eINSTANCE.getInputValueDefinition_DefaultValue();
-
-    /**
-     * The meta object literal for the '{@link io.github.katmatt.graphql.graphQL.impl.IntersectionTypeImpl <em>Intersection Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see io.github.katmatt.graphql.graphQL.impl.IntersectionTypeImpl
-     * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getIntersectionType()
-     * @generated
-     */
-    EClass INTERSECTION_TYPE = eINSTANCE.getIntersectionType();
-
-    /**
-     * The meta object literal for the '<em><b>Member Types</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERSECTION_TYPE__MEMBER_TYPES = eINSTANCE.getIntersectionType_MemberTypes();
 
     /**
      * The meta object literal for the '{@link io.github.katmatt.graphql.graphQL.impl.TypeImpl <em>Type</em>}' class.
@@ -2820,12 +2660,12 @@ public interface GraphQLPackage extends EPackage
     EClass OBJECT_FIELD = eINSTANCE.getObjectField();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Field Definition</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OBJECT_FIELD__NAME = eINSTANCE.getObjectField_Name();
+    EReference OBJECT_FIELD__FIELD_DEFINITION = eINSTANCE.getObjectField_FieldDefinition();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
@@ -2890,12 +2730,12 @@ public interface GraphQLPackage extends EPackage
     EAttribute DIRECTIVE_DEFINITION__NAME = eINSTANCE.getDirectiveDefinition_Name();
 
     /**
-     * The meta object literal for the '<em><b>Argument Definitions</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Arguments Definition</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS = eINSTANCE.getDirectiveDefinition_ArgumentDefinitions();
+    EReference DIRECTIVE_DEFINITION__ARGUMENTS_DEFINITION = eINSTANCE.getDirectiveDefinition_ArgumentsDefinition();
 
     /**
      * The meta object literal for the '<em><b>Repeatable</b></em>' attribute feature.
@@ -2906,12 +2746,12 @@ public interface GraphQLPackage extends EPackage
     EAttribute DIRECTIVE_DEFINITION__REPEATABLE = eINSTANCE.getDirectiveDefinition_Repeatable();
 
     /**
-     * The meta object literal for the '<em><b>Directive Locations</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Directive Locations</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DIRECTIVE_DEFINITION__DIRECTIVE_LOCATIONS = eINSTANCE.getDirectiveDefinition_DirectiveLocations();
+    EAttribute DIRECTIVE_DEFINITION__DIRECTIVE_LOCATIONS = eINSTANCE.getDirectiveDefinition_DirectiveLocations();
 
     /**
      * The meta object literal for the '{@link io.github.katmatt.graphql.graphQL.impl.DirectiveImpl <em>Directive</em>}' class.
@@ -2924,30 +2764,12 @@ public interface GraphQLPackage extends EPackage
     EClass DIRECTIVE = eINSTANCE.getDirective();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Directive</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DIRECTIVE__NAME = eINSTANCE.getDirective_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DIRECTIVE__ARGUMENTS = eINSTANCE.getDirective_Arguments();
-
-    /**
-     * The meta object literal for the '{@link io.github.katmatt.graphql.graphQL.impl.ArgumentsImpl <em>Arguments</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see io.github.katmatt.graphql.graphQL.impl.ArgumentsImpl
-     * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getArguments()
-     * @generated
-     */
-    EClass ARGUMENTS = eINSTANCE.getArguments();
+    EReference DIRECTIVE__DIRECTIVE = eINSTANCE.getDirective_Directive();
 
     /**
      * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
@@ -2955,7 +2777,7 @@ public interface GraphQLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ARGUMENTS__ARGUMENTS = eINSTANCE.getArguments_Arguments();
+    EReference DIRECTIVE__ARGUMENTS = eINSTANCE.getDirective_Arguments();
 
     /**
      * The meta object literal for the '{@link io.github.katmatt.graphql.graphQL.impl.ArgumentImpl <em>Argument</em>}' class.
@@ -2982,42 +2804,6 @@ public interface GraphQLPackage extends EPackage
      * @generated
      */
     EReference ARGUMENT__VALUE = eINSTANCE.getArgument_Value();
-
-    /**
-     * The meta object literal for the '{@link io.github.katmatt.graphql.graphQL.impl.ArgumentsDefinitionImpl <em>Arguments Definition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see io.github.katmatt.graphql.graphQL.impl.ArgumentsDefinitionImpl
-     * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getArgumentsDefinition()
-     * @generated
-     */
-    EClass ARGUMENTS_DEFINITION = eINSTANCE.getArgumentsDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Argument Definitions</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARGUMENTS_DEFINITION__ARGUMENT_DEFINITIONS = eINSTANCE.getArgumentsDefinition_ArgumentDefinitions();
-
-    /**
-     * The meta object literal for the '{@link io.github.katmatt.graphql.graphQL.impl.DirectiveLocationsImpl <em>Directive Locations</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see io.github.katmatt.graphql.graphQL.impl.DirectiveLocationsImpl
-     * @see io.github.katmatt.graphql.graphQL.impl.GraphQLPackageImpl#getDirectiveLocations()
-     * @generated
-     */
-    EClass DIRECTIVE_LOCATIONS = eINSTANCE.getDirectiveLocations();
-
-    /**
-     * The meta object literal for the '<em><b>Directive Locations</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DIRECTIVE_LOCATIONS__DIRECTIVE_LOCATIONS = eINSTANCE.getDirectiveLocations_DirectiveLocations();
 
     /**
      * The meta object literal for the '{@link io.github.katmatt.graphql.graphQL.DirectiveLocation <em>Directive Location</em>}' enum.

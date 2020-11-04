@@ -141,15 +141,6 @@ public interface GraphQLFactory extends EFactory
   InputValueDefinition createInputValueDefinition();
 
   /**
-   * Returns a new object of class '<em>Intersection Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Intersection Type</em>'.
-   * @generated
-   */
-  IntersectionType createIntersectionType();
-
-  /**
    * Returns a new object of class '<em>Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -285,15 +276,6 @@ public interface GraphQLFactory extends EFactory
   Directive createDirective();
 
   /**
-   * Returns a new object of class '<em>Arguments</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Arguments</em>'.
-   * @generated
-   */
-  Arguments createArguments();
-
-  /**
    * Returns a new object of class '<em>Argument</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -301,24 +283,6 @@ public interface GraphQLFactory extends EFactory
    * @generated
    */
   Argument createArgument();
-
-  /**
-   * Returns a new object of class '<em>Arguments Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Arguments Definition</em>'.
-   * @generated
-   */
-  ArgumentsDefinition createArgumentsDefinition();
-
-  /**
-   * Returns a new object of class '<em>Directive Locations</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Directive Locations</em>'.
-   * @generated
-   */
-  DirectiveLocations createDirectiveLocations();
 
   /**
    * Returns the package supported by this factory.

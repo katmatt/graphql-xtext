@@ -3,6 +3,8 @@
  */
 package io.github.katmatt.graphql.graphQL;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link io.github.katmatt.graphql.graphQL.Directive#getName <em>Name</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.Directive#getDirective <em>Directive</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.Directive#getArguments <em>Arguments</em>}</li>
  * </ul>
  *
@@ -25,47 +27,37 @@ import org.eclipse.emf.ecore.EObject;
 public interface Directive extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Directive</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getDirective_Name()
+   * @return the value of the '<em>Directive</em>' reference.
+   * @see #setDirective(DirectiveDefinition)
+   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getDirective_Directive()
    * @model
    * @generated
    */
-  String getName();
+  DirectiveDefinition getDirective();
 
   /**
-   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.Directive#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.Directive#getDirective <em>Directive</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Directive</em>' reference.
+   * @see #getDirective()
    * @generated
    */
-  void setName(String value);
+  void setDirective(DirectiveDefinition value);
 
   /**
-   * Returns the value of the '<em><b>Arguments</b></em>' containment reference.
+   * Returns the value of the '<em><b>Arguments</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.Argument}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Arguments</em>' containment reference.
-   * @see #setArguments(Arguments)
+   * @return the value of the '<em>Arguments</em>' containment reference list.
    * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getDirective_Arguments()
    * @model containment="true"
    * @generated
    */
-  Arguments getArguments();
-
-  /**
-   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.Directive#getArguments <em>Arguments</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Arguments</em>' containment reference.
-   * @see #getArguments()
-   * @generated
-   */
-  void setArguments(Arguments value);
+  EList<Argument> getArguments();
 
 } // Directive

@@ -79,7 +79,6 @@ public class GraphQLFactoryImpl extends EFactoryImpl implements GraphQLFactory
       case GraphQLPackage.ENUM_VALUE_DEFINITION: return createEnumValueDefinition();
       case GraphQLPackage.INPUT_OBJECT_TYPE_DEFINITION: return createInputObjectTypeDefinition();
       case GraphQLPackage.INPUT_VALUE_DEFINITION: return createInputValueDefinition();
-      case GraphQLPackage.INTERSECTION_TYPE: return createIntersectionType();
       case GraphQLPackage.TYPE: return createType();
       case GraphQLPackage.NAMED_TYPE: return createNamedType();
       case GraphQLPackage.LIST_TYPE: return createListType();
@@ -95,10 +94,7 @@ public class GraphQLFactoryImpl extends EFactoryImpl implements GraphQLFactory
       case GraphQLPackage.LIST_VALUE: return createListValue();
       case GraphQLPackage.DIRECTIVE_DEFINITION: return createDirectiveDefinition();
       case GraphQLPackage.DIRECTIVE: return createDirective();
-      case GraphQLPackage.ARGUMENTS: return createArguments();
       case GraphQLPackage.ARGUMENT: return createArgument();
-      case GraphQLPackage.ARGUMENTS_DEFINITION: return createArgumentsDefinition();
-      case GraphQLPackage.DIRECTIVE_LOCATIONS: return createDirectiveLocations();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -304,18 +300,6 @@ public class GraphQLFactoryImpl extends EFactoryImpl implements GraphQLFactory
    * @generated
    */
   @Override
-  public IntersectionType createIntersectionType()
-  {
-    IntersectionTypeImpl intersectionType = new IntersectionTypeImpl();
-    return intersectionType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Type createType()
   {
     TypeImpl type = new TypeImpl();
@@ -496,46 +480,10 @@ public class GraphQLFactoryImpl extends EFactoryImpl implements GraphQLFactory
    * @generated
    */
   @Override
-  public Arguments createArguments()
-  {
-    ArgumentsImpl arguments = new ArgumentsImpl();
-    return arguments;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Argument createArgument()
   {
     ArgumentImpl argument = new ArgumentImpl();
     return argument;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ArgumentsDefinition createArgumentsDefinition()
-  {
-    ArgumentsDefinitionImpl argumentsDefinition = new ArgumentsDefinitionImpl();
-    return argumentsDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public DirectiveLocations createDirectiveLocations()
-  {
-    DirectiveLocationsImpl directiveLocations = new DirectiveLocationsImpl();
-    return directiveLocations;
   }
 
   /**

@@ -233,11 +233,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:18:7: ( 'interface' )
-            // InternalGraphQL.g:18:9: 'interface'
+            // InternalGraphQL.g:18:7: ( '&' )
+            // InternalGraphQL.g:18:9: '&'
             {
-            match("interface"); 
-
+            match('&'); 
 
             }
 
@@ -254,10 +253,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:19:7: ( 'union' )
-            // InternalGraphQL.g:19:9: 'union'
+            // InternalGraphQL.g:19:7: ( 'interface' )
+            // InternalGraphQL.g:19:9: 'interface'
             {
-            match("union"); 
+            match("interface"); 
 
 
             }
@@ -275,10 +274,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:20:7: ( '=' )
-            // InternalGraphQL.g:20:9: '='
+            // InternalGraphQL.g:20:7: ( '(' )
+            // InternalGraphQL.g:20:9: '('
             {
-            match('='); 
+            match('('); 
 
             }
 
@@ -295,10 +294,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:21:7: ( '|' )
-            // InternalGraphQL.g:21:9: '|'
+            // InternalGraphQL.g:21:7: ( ')' )
+            // InternalGraphQL.g:21:9: ')'
             {
-            match('|'); 
+            match(')'); 
 
             }
 
@@ -315,10 +314,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:22:7: ( 'enum' )
-            // InternalGraphQL.g:22:9: 'enum'
+            // InternalGraphQL.g:22:7: ( 'union' )
+            // InternalGraphQL.g:22:9: 'union'
             {
-            match("enum"); 
+            match("union"); 
 
 
             }
@@ -336,11 +335,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:23:7: ( 'input' )
-            // InternalGraphQL.g:23:9: 'input'
+            // InternalGraphQL.g:23:7: ( '=' )
+            // InternalGraphQL.g:23:9: '='
             {
-            match("input"); 
-
+            match('='); 
 
             }
 
@@ -357,10 +355,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:24:7: ( '&' )
-            // InternalGraphQL.g:24:9: '&'
+            // InternalGraphQL.g:24:7: ( '|' )
+            // InternalGraphQL.g:24:9: '|'
             {
-            match('&'); 
+            match('|'); 
 
             }
 
@@ -377,10 +375,11 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:25:7: ( '!' )
-            // InternalGraphQL.g:25:9: '!'
+            // InternalGraphQL.g:25:7: ( 'enum' )
+            // InternalGraphQL.g:25:9: 'enum'
             {
-            match('!'); 
+            match("enum"); 
+
 
             }
 
@@ -397,10 +396,11 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:26:7: ( '[' )
-            // InternalGraphQL.g:26:9: '['
+            // InternalGraphQL.g:26:7: ( 'input' )
+            // InternalGraphQL.g:26:9: 'input'
             {
-            match('['); 
+            match("input"); 
+
 
             }
 
@@ -417,10 +417,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:27:7: ( ']' )
-            // InternalGraphQL.g:27:9: ']'
+            // InternalGraphQL.g:27:7: ( '!' )
+            // InternalGraphQL.g:27:9: '!'
             {
-            match(']'); 
+            match('!'); 
 
             }
 
@@ -437,11 +437,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:28:7: ( 'null' )
-            // InternalGraphQL.g:28:9: 'null'
+            // InternalGraphQL.g:28:7: ( '[' )
+            // InternalGraphQL.g:28:9: '['
             {
-            match("null"); 
-
+            match('['); 
 
             }
 
@@ -458,11 +457,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:29:7: ( 'true' )
-            // InternalGraphQL.g:29:9: 'true'
+            // InternalGraphQL.g:29:7: ( ']' )
+            // InternalGraphQL.g:29:9: ']'
             {
-            match("true"); 
-
+            match(']'); 
 
             }
 
@@ -479,10 +477,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:30:7: ( 'false' )
-            // InternalGraphQL.g:30:9: 'false'
+            // InternalGraphQL.g:30:7: ( 'null' )
+            // InternalGraphQL.g:30:9: 'null'
             {
-            match("false"); 
+            match("null"); 
 
 
             }
@@ -500,10 +498,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:31:7: ( 'directive' )
-            // InternalGraphQL.g:31:9: 'directive'
+            // InternalGraphQL.g:31:7: ( 'true' )
+            // InternalGraphQL.g:31:9: 'true'
             {
-            match("directive"); 
+            match("true"); 
 
 
             }
@@ -521,10 +519,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:32:7: ( 'repeatable' )
-            // InternalGraphQL.g:32:9: 'repeatable'
+            // InternalGraphQL.g:32:7: ( 'false' )
+            // InternalGraphQL.g:32:9: 'false'
             {
-            match("repeatable"); 
+            match("false"); 
 
 
             }
@@ -542,10 +540,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:33:7: ( 'on' )
-            // InternalGraphQL.g:33:9: 'on'
+            // InternalGraphQL.g:33:7: ( 'directive' )
+            // InternalGraphQL.g:33:9: 'directive'
             {
-            match("on"); 
+            match("directive"); 
 
 
             }
@@ -563,10 +561,11 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:34:7: ( '(' )
-            // InternalGraphQL.g:34:9: '('
+            // InternalGraphQL.g:34:7: ( 'repeatable' )
+            // InternalGraphQL.g:34:9: 'repeatable'
             {
-            match('('); 
+            match("repeatable"); 
+
 
             }
 
@@ -583,10 +582,11 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:35:7: ( ')' )
-            // InternalGraphQL.g:35:9: ')'
+            // InternalGraphQL.g:35:7: ( 'on' )
+            // InternalGraphQL.g:35:9: 'on'
             {
-            match(')'); 
+            match("on"); 
+
 
             }
 
@@ -1065,8 +1065,8 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_DIRECTIVE_NAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2486:21: ( '@' RULE_NAME )
-            // InternalGraphQL.g:2486:23: '@' RULE_NAME
+            // InternalGraphQL.g:2431:21: ( '@' RULE_NAME )
+            // InternalGraphQL.g:2431:23: '@' RULE_NAME
             {
             match('@'); 
             mRULE_NAME(); 
@@ -1086,8 +1086,8 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_NAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2488:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalGraphQL.g:2488:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalGraphQL.g:2433:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalGraphQL.g:2433:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1098,7 +1098,7 @@ public class InternalGraphQLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalGraphQL.g:2488:37: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalGraphQL.g:2433:37: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -1147,10 +1147,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_INT_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2490:16: ( ( '-' )? '1' .. '9' ( '0' .. '9' )* )
-            // InternalGraphQL.g:2490:18: ( '-' )? '1' .. '9' ( '0' .. '9' )*
+            // InternalGraphQL.g:2435:16: ( ( '-' )? '1' .. '9' ( '0' .. '9' )* )
+            // InternalGraphQL.g:2435:18: ( '-' )? '1' .. '9' ( '0' .. '9' )*
             {
-            // InternalGraphQL.g:2490:18: ( '-' )?
+            // InternalGraphQL.g:2435:18: ( '-' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1159,7 +1159,7 @@ public class InternalGraphQLLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalGraphQL.g:2490:18: '-'
+                    // InternalGraphQL.g:2435:18: '-'
                     {
                     match('-'); 
 
@@ -1169,7 +1169,7 @@ public class InternalGraphQLLexer extends Lexer {
             }
 
             matchRange('1','9'); 
-            // InternalGraphQL.g:2490:32: ( '0' .. '9' )*
+            // InternalGraphQL.g:2435:32: ( '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -1182,7 +1182,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalGraphQL.g:2490:33: '0' .. '9'
+            	    // InternalGraphQL.g:2435:33: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1210,10 +1210,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_FLOAT_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2492:18: ( ( '-' )? ( '0' | ( '1' .. '9' )* ) '.' ( '0' .. '9' )* ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )* )
-            // InternalGraphQL.g:2492:20: ( '-' )? ( '0' | ( '1' .. '9' )* ) '.' ( '0' .. '9' )* ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )*
+            // InternalGraphQL.g:2437:18: ( ( '-' )? ( '0' | ( '1' .. '9' )* ) '.' ( '0' .. '9' )* ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )* )
+            // InternalGraphQL.g:2437:20: ( '-' )? ( '0' | ( '1' .. '9' )* ) '.' ( '0' .. '9' )* ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )*
             {
-            // InternalGraphQL.g:2492:20: ( '-' )?
+            // InternalGraphQL.g:2437:20: ( '-' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1222,7 +1222,7 @@ public class InternalGraphQLLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalGraphQL.g:2492:20: '-'
+                    // InternalGraphQL.g:2437:20: '-'
                     {
                     match('-'); 
 
@@ -1231,7 +1231,7 @@ public class InternalGraphQLLexer extends Lexer {
 
             }
 
-            // InternalGraphQL.g:2492:25: ( '0' | ( '1' .. '9' )* )
+            // InternalGraphQL.g:2437:25: ( '0' | ( '1' .. '9' )* )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1249,16 +1249,16 @@ public class InternalGraphQLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalGraphQL.g:2492:26: '0'
+                    // InternalGraphQL.g:2437:26: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // InternalGraphQL.g:2492:30: ( '1' .. '9' )*
+                    // InternalGraphQL.g:2437:30: ( '1' .. '9' )*
                     {
-                    // InternalGraphQL.g:2492:30: ( '1' .. '9' )*
+                    // InternalGraphQL.g:2437:30: ( '1' .. '9' )*
                     loop5:
                     do {
                         int alt5=2;
@@ -1271,7 +1271,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalGraphQL.g:2492:31: '1' .. '9'
+                    	    // InternalGraphQL.g:2437:31: '1' .. '9'
                     	    {
                     	    matchRange('1','9'); 
 
@@ -1290,7 +1290,7 @@ public class InternalGraphQLLexer extends Lexer {
             }
 
             match('.'); 
-            // InternalGraphQL.g:2492:47: ( '0' .. '9' )*
+            // InternalGraphQL.g:2437:47: ( '0' .. '9' )*
             loop7:
             do {
                 int alt7=2;
@@ -1303,7 +1303,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalGraphQL.g:2492:48: '0' .. '9'
+            	    // InternalGraphQL.g:2437:48: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1324,7 +1324,7 @@ public class InternalGraphQLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalGraphQL.g:2492:69: ( '+' | '-' )?
+            // InternalGraphQL.g:2437:69: ( '+' | '-' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1350,7 +1350,7 @@ public class InternalGraphQLLexer extends Lexer {
 
             }
 
-            // InternalGraphQL.g:2492:80: ( '0' .. '9' )*
+            // InternalGraphQL.g:2437:80: ( '0' .. '9' )*
             loop9:
             do {
                 int alt9=2;
@@ -1363,7 +1363,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalGraphQL.g:2492:81: '0' .. '9'
+            	    // InternalGraphQL.g:2437:81: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1391,10 +1391,10 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2494:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalGraphQL.g:2494:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalGraphQL.g:2439:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalGraphQL.g:2439:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalGraphQL.g:2494:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalGraphQL.g:2439:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt10=0;
             loop10:
             do {
@@ -1448,11 +1448,11 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2496:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalGraphQL.g:2496:19: '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalGraphQL.g:2441:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalGraphQL.g:2441:19: '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match('#'); 
-            // InternalGraphQL.g:2496:23: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalGraphQL.g:2441:23: (~ ( ( '\\n' | '\\r' ) ) )*
             loop11:
             do {
                 int alt11=2;
@@ -1465,7 +1465,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalGraphQL.g:2496:23: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalGraphQL.g:2441:23: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1485,7 +1485,7 @@ public class InternalGraphQLLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalGraphQL.g:2496:39: ( ( '\\r' )? '\\n' )?
+            // InternalGraphQL.g:2441:39: ( ( '\\r' )? '\\n' )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1494,9 +1494,9 @@ public class InternalGraphQLLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalGraphQL.g:2496:40: ( '\\r' )? '\\n'
+                    // InternalGraphQL.g:2441:40: ( '\\r' )? '\\n'
                     {
-                    // InternalGraphQL.g:2496:40: ( '\\r' )?
+                    // InternalGraphQL.g:2441:40: ( '\\r' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -1505,7 +1505,7 @@ public class InternalGraphQLLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // InternalGraphQL.g:2496:40: '\\r'
+                            // InternalGraphQL.g:2441:40: '\\r'
                             {
                             match('\r'); 
 
@@ -1537,8 +1537,8 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2498:12: ( ',' )
-            // InternalGraphQL.g:2498:14: ','
+            // InternalGraphQL.g:2443:12: ( ',' )
+            // InternalGraphQL.g:2443:14: ','
             {
             match(','); 
 
@@ -1557,11 +1557,11 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_SL_STRING_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2500:22: ( '\"' ( RULE_STRING_CHARACTER )* '\"' )
-            // InternalGraphQL.g:2500:24: '\"' ( RULE_STRING_CHARACTER )* '\"'
+            // InternalGraphQL.g:2445:22: ( '\"' ( RULE_STRING_CHARACTER )* '\"' )
+            // InternalGraphQL.g:2445:24: '\"' ( RULE_STRING_CHARACTER )* '\"'
             {
             match('\"'); 
-            // InternalGraphQL.g:2500:28: ( RULE_STRING_CHARACTER )*
+            // InternalGraphQL.g:2445:28: ( RULE_STRING_CHARACTER )*
             loop14:
             do {
                 int alt14=2;
@@ -1574,7 +1574,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalGraphQL.g:2500:28: RULE_STRING_CHARACTER
+            	    // InternalGraphQL.g:2445:28: RULE_STRING_CHARACTER
             	    {
             	    mRULE_STRING_CHARACTER(); 
 
@@ -1603,12 +1603,12 @@ public class InternalGraphQLLexer extends Lexer {
         try {
             int _type = RULE_ML_STRING_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGraphQL.g:2502:22: ( '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"' )
-            // InternalGraphQL.g:2502:24: '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"'
+            // InternalGraphQL.g:2447:22: ( '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"' )
+            // InternalGraphQL.g:2447:24: '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"'
             {
             match("\"\"\""); 
 
-            // InternalGraphQL.g:2502:30: ( options {greedy=false; } : . )*
+            // InternalGraphQL.g:2447:30: ( options {greedy=false; } : . )*
             loop15:
             do {
                 int alt15=2;
@@ -1642,7 +1642,7 @@ public class InternalGraphQLLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalGraphQL.g:2502:58: .
+            	    // InternalGraphQL.g:2447:58: .
             	    {
             	    matchAny(); 
 
@@ -1670,8 +1670,8 @@ public class InternalGraphQLLexer extends Lexer {
     // $ANTLR start "RULE_STRING_CHARACTER"
     public final void mRULE_STRING_CHARACTER() throws RecognitionException {
         try {
-            // InternalGraphQL.g:2504:32: (~ ( ( '\\n' | '\\r' | '\"' | '\\\\' ) ) )
-            // InternalGraphQL.g:2504:34: ~ ( ( '\\n' | '\\r' | '\"' | '\\\\' ) )
+            // InternalGraphQL.g:2449:32: (~ ( ( '\\n' | '\\r' | '\"' | '\\\\' ) ) )
+            // InternalGraphQL.g:2449:34: ~ ( ( '\\n' | '\\r' | '\"' | '\\\\' ) )
             {
             if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                 input.consume();
@@ -2096,30 +2096,32 @@ public class InternalGraphQLLexer extends Lexer {
 
     protected DFA16 dfa16 = new DFA16(this);
     static final String DFA16_eotS =
-        "\1\uffff\1\43\3\uffff\3\43\2\uffff\1\43\4\uffff\5\43\2\uffff\14\43\3\uffff\1\107\5\uffff\14\43\1\130\16\43\1\107\1\uffff\1\111\1\uffff\16\43\1\uffff\21\43\1\uffff\3\43\1\u008d\1\u008e\4\43\1\u0093\1\u0094\21\43\1\u00a7\5\43\2\uffff\2\43\1\u00af\1\u00b0\2\uffff\1\u00b1\2\43\1\u00b4\4\43\1\u00ba\7\43\1\u00c2\1\43\1\uffff\1\u00c4\1\43\1\u00c6\1\u00c7\3\43\3\uffff\2\43\1\uffff\2\43\1\u00cf\1\u00d0\1\43\1\uffff\5\43\1\u00d8\1\43\1\uffff\1\43\1\uffff\1\43\2\uffff\7\43\2\uffff\7\43\1\uffff\10\43\1\u00f2\12\43\1\u00fd\2\43\1\u0100\1\u0101\1\43\1\uffff\4\43\1\u0108\5\43\1\uffff\1\43\1\u010f\2\uffff\1\u0110\5\43\1\uffff\4\43\1\u011a\1\43\2\uffff\11\43\1\uffff\1\u0125\1\u0126\4\43\1\u012b\3\43\2\uffff\4\43\1\uffff\14\43\1\u013f\1\u0140\3\43\1\u0144\1\43\2\uffff\3\43\1\uffff\10\43\1\u0151\1\43\1\u0153\1\u0154\1\uffff\1\43\2\uffff\1\43\1\u0157\1\uffff";
+        "\1\uffff\1\43\3\uffff\2\43\3\uffff\1\43\2\uffff\1\43\3\uffff\21\43\3\uffff\1\107\5\uffff\14\43\1\130\16\43\1\107\1\uffff\1\111\1\uffff\16\43\1\uffff\21\43\1\uffff\3\43\1\u008d\1\u008e\4\43\1\u0093\1\u0094\21\43\1\u00a7\5\43\2\uffff\2\43\1\u00af\1\u00b0\2\uffff\1\u00b1\2\43\1\u00b4\4\43\1\u00ba\7\43\1\u00c2\1\43\1\uffff\1\u00c4\1\43\1\u00c6\1\u00c7\3\43\3\uffff\2\43\1\uffff\2\43\1\u00cf\1\u00d0\1\43\1\uffff\5\43\1\u00d8\1\43\1\uffff\1\43\1\uffff\1\43\2\uffff\7\43\2\uffff\7\43\1\uffff\10\43\1\u00f2\12\43\1\u00fd\2\43\1\u0100\1\u0101\1\43\1\uffff\4\43\1\u0108\5\43\1\uffff\1\43\1\u010f\2\uffff\1\u0110\5\43\1\uffff\4\43\1\u011a\1\43\2\uffff\11\43\1\uffff\1\u0125\1\u0126\4\43\1\u012b\3\43\2\uffff\4\43\1\uffff\14\43\1\u013f\1\u0140\3\43\1\u0144\1\43\2\uffff\3\43\1\uffff\10\43\1\u0151\1\43\1\u0153\1\u0154\1\uffff\1\43\2\uffff\1\43\1\u0157\1\uffff";
     static final String DFA16_eofS =
         "\u0158\uffff";
     static final String DFA16_minS =
-        "\1\11\1\143\3\uffff\1\162\1\155\1\156\2\uffff\1\156\4\uffff\1\165\1\141\1\151\1\145\1\156\2\uffff\2\125\1\103\1\111\1\116\1\101\1\102\1\122\2\116\2\165\2\uffff\2\56\4\uffff\1\0\1\141\1\142\1\160\1\165\2\160\1\151\1\165\2\154\1\162\1\160\1\60\1\105\1\124\1\102\1\101\1\105\1\101\1\114\1\122\1\112\1\107\1\111\1\125\1\145\1\164\1\56\1\uffff\1\42\1\uffff\1\145\1\154\1\163\2\145\1\154\1\145\1\165\1\157\1\155\1\154\1\163\2\145\1\uffff\1\122\1\101\1\123\1\105\2\114\1\107\1\111\1\105\1\125\1\111\1\105\1\125\1\117\1\115\1\162\1\141\1\uffff\1\155\1\141\1\143\2\60\1\145\1\162\1\164\1\156\2\60\1\145\1\143\1\141\1\131\1\124\1\103\1\115\1\101\1\104\1\115\1\116\1\122\1\124\1\101\1\103\1\115\1\116\1\60\1\171\1\164\1\141\2\162\2\uffff\1\155\1\146\2\60\2\uffff\1\60\2\164\1\60\1\111\1\122\1\101\1\122\1\60\2\105\1\106\1\137\1\102\1\124\1\105\1\60\1\126\1\uffff\1\60\1\151\2\60\1\151\1\145\1\141\3\uffff\1\151\1\141\1\uffff\1\117\1\111\2\60\1\104\1\uffff\1\116\1\137\1\101\1\106\1\114\1\60\1\116\1\uffff\1\101\1\uffff\1\157\2\uffff\1\160\1\156\1\143\1\166\1\142\1\116\1\120\2\uffff\1\105\1\124\1\106\1\103\1\102\1\111\1\105\1\uffff\1\124\1\114\1\156\2\164\2\145\1\154\1\60\1\124\1\106\1\137\1\122\1\105\1\112\1\105\2\137\1\125\1\60\1\151\1\163\2\60\1\145\1\uffff\2\111\1\104\1\101\1\60\1\105\1\114\2\104\1\105\1\uffff\1\157\1\60\2\uffff\1\60\1\117\1\116\1\105\1\120\1\107\1\uffff\1\103\1\104\2\105\1\60\1\156\2\uffff\1\116\1\111\1\106\1\122\1\115\1\124\1\137\2\106\1\uffff\2\60\1\124\1\111\2\105\1\60\1\104\2\111\2\uffff\1\111\1\116\1\101\1\116\1\uffff\1\105\2\116\1\117\1\111\1\104\1\124\1\106\2\111\1\116\1\124\2\60\1\111\2\124\1\60\1\111\2\uffff\1\116\2\111\1\uffff\1\117\1\111\2\117\1\116\1\124\2\116\1\60\1\111\2\60\1\uffff\1\117\2\uffff\1\116\1\60\1\uffff";
+        "\1\11\1\143\3\uffff\1\162\1\155\3\uffff\1\156\2\uffff\1\156\3\uffff\1\165\1\141\1\151\1\145\1\156\2\125\1\103\1\111\1\116\1\101\1\102\1\122\2\116\2\165\2\uffff\2\56\4\uffff\1\0\1\141\1\142\1\160\1\165\2\160\1\151\1\165\2\154\1\162\1\160\1\60\1\105\1\124\1\102\1\101\1\105\1\101\1\114\1\122\1\112\1\107\1\111\1\125\1\145\1\164\1\56\1\uffff\1\42\1\uffff\1\145\1\154\1\163\2\145\1\154\1\145\1\165\1\157\1\155\1\154\1\163\2\145\1\uffff\1\122\1\101\1\123\1\105\2\114\1\107\1\111\1\105\1\125\1\111\1\105\1\125\1\117\1\115\1\162\1\141\1\uffff\1\155\1\141\1\143\2\60\1\145\1\162\1\164\1\156\2\60\1\145\1\143\1\141\1\131\1\124\1\103\1\115\1\101\1\104\1\115\1\116\1\122\1\124\1\101\1\103\1\115\1\116\1\60\1\171\1\164\1\141\2\162\2\uffff\1\155\1\146\2\60\2\uffff\1\60\2\164\1\60\1\111\1\122\1\101\1\122\1\60\2\105\1\106\1\137\1\102\1\124\1\105\1\60\1\126\1\uffff\1\60\1\151\2\60\1\151\1\145\1\141\3\uffff\1\151\1\141\1\uffff\1\117\1\111\2\60\1\104\1\uffff\1\116\1\137\1\101\1\106\1\114\1\60\1\116\1\uffff\1\101\1\uffff\1\157\2\uffff\1\160\1\156\1\143\1\166\1\142\1\116\1\120\2\uffff\1\105\1\124\1\106\1\103\1\102\1\111\1\105\1\uffff\1\124\1\114\1\156\2\164\2\145\1\154\1\60\1\124\1\106\1\137\1\122\1\105\1\112\1\105\2\137\1\125\1\60\1\151\1\163\2\60\1\145\1\uffff\2\111\1\104\1\101\1\60\1\105\1\114\2\104\1\105\1\uffff\1\157\1\60\2\uffff\1\60\1\117\1\116\1\105\1\120\1\107\1\uffff\1\103\1\104\2\105\1\60\1\156\2\uffff\1\116\1\111\1\106\1\122\1\115\1\124\1\137\2\106\1\uffff\2\60\1\124\1\111\2\105\1\60\1\104\2\111\2\uffff\1\111\1\116\1\101\1\116\1\uffff\1\105\2\116\1\117\1\111\1\104\1\124\1\106\2\111\1\116\1\124\2\60\1\111\2\124\1\60\1\111\2\uffff\1\116\2\111\1\uffff\1\117\1\111\2\117\1\116\1\124\2\116\1\60\1\111\2\60\1\uffff\1\117\2\uffff\1\116\1\60\1\uffff";
     static final String DFA16_maxS =
-        "\1\175\1\165\3\uffff\1\171\2\156\2\uffff\1\156\4\uffff\1\165\1\141\1\151\1\145\1\156\2\uffff\3\125\1\122\1\116\1\101\1\102\1\122\2\116\2\165\2\uffff\2\71\4\uffff\1\uffff\1\150\1\142\1\160\1\165\1\160\1\164\1\151\1\165\2\154\1\162\1\160\1\172\1\105\1\124\1\102\1\110\1\105\1\101\1\124\1\122\1\112\1\107\1\111\1\125\1\145\1\164\1\71\1\uffff\1\42\1\uffff\1\145\1\154\1\163\2\145\1\154\1\145\1\165\1\157\1\155\1\154\1\163\2\145\1\uffff\1\122\1\101\1\123\1\105\2\114\1\107\1\111\1\105\1\125\1\111\1\105\1\125\1\117\1\115\1\162\1\141\1\uffff\1\155\1\141\1\143\2\172\1\145\1\162\1\164\1\156\2\172\1\145\1\143\1\141\1\131\1\124\1\103\1\115\1\101\1\104\1\115\1\116\1\122\1\124\1\101\1\103\1\115\1\116\1\172\1\171\1\164\1\141\2\162\2\uffff\1\155\1\146\2\172\2\uffff\1\172\2\164\1\172\1\111\1\122\1\101\1\122\1\172\2\105\1\106\1\137\1\102\1\124\1\105\1\172\1\126\1\uffff\1\172\1\151\2\172\1\151\1\145\1\141\3\uffff\1\151\1\141\1\uffff\1\117\1\111\2\172\1\104\1\uffff\1\116\1\137\1\101\1\117\1\114\1\172\1\116\1\uffff\1\101\1\uffff\1\157\2\uffff\1\160\1\156\1\143\1\166\1\142\1\116\1\120\2\uffff\1\105\1\124\1\106\1\103\1\102\1\111\1\105\1\uffff\1\124\1\114\1\156\2\164\2\145\1\154\1\172\1\124\1\106\1\137\1\122\1\105\1\112\1\105\2\137\1\125\1\172\1\151\1\163\2\172\1\145\1\uffff\2\111\1\123\1\101\1\172\1\105\1\114\2\104\1\105\1\uffff\1\157\1\172\2\uffff\1\172\1\117\1\116\1\105\1\120\1\107\1\uffff\1\103\1\104\2\105\1\172\1\156\2\uffff\1\116\1\111\1\106\1\122\1\115\1\124\1\137\2\106\1\uffff\2\172\1\124\1\111\2\105\1\172\1\104\2\111\2\uffff\1\111\1\116\1\101\1\116\1\uffff\1\105\2\116\1\117\1\111\1\104\1\124\1\106\2\111\1\116\1\124\2\172\1\111\2\124\1\172\1\111\2\uffff\1\116\2\111\1\uffff\1\117\1\111\2\117\1\116\1\124\2\116\1\172\1\111\2\172\1\uffff\1\117\2\uffff\1\116\1\172\1\uffff";
+        "\1\175\1\165\3\uffff\1\171\1\156\3\uffff\1\156\2\uffff\1\156\3\uffff\1\165\1\141\1\151\1\145\1\156\3\125\1\122\1\116\1\101\1\102\1\122\2\116\2\165\2\uffff\2\71\4\uffff\1\uffff\1\150\1\142\1\160\1\165\1\160\1\164\1\151\1\165\2\154\1\162\1\160\1\172\1\105\1\124\1\102\1\110\1\105\1\101\1\124\1\122\1\112\1\107\1\111\1\125\1\145\1\164\1\71\1\uffff\1\42\1\uffff\1\145\1\154\1\163\2\145\1\154\1\145\1\165\1\157\1\155\1\154\1\163\2\145\1\uffff\1\122\1\101\1\123\1\105\2\114\1\107\1\111\1\105\1\125\1\111\1\105\1\125\1\117\1\115\1\162\1\141\1\uffff\1\155\1\141\1\143\2\172\1\145\1\162\1\164\1\156\2\172\1\145\1\143\1\141\1\131\1\124\1\103\1\115\1\101\1\104\1\115\1\116\1\122\1\124\1\101\1\103\1\115\1\116\1\172\1\171\1\164\1\141\2\162\2\uffff\1\155\1\146\2\172\2\uffff\1\172\2\164\1\172\1\111\1\122\1\101\1\122\1\172\2\105\1\106\1\137\1\102\1\124\1\105\1\172\1\126\1\uffff\1\172\1\151\2\172\1\151\1\145\1\141\3\uffff\1\151\1\141\1\uffff\1\117\1\111\2\172\1\104\1\uffff\1\116\1\137\1\101\1\117\1\114\1\172\1\116\1\uffff\1\101\1\uffff\1\157\2\uffff\1\160\1\156\1\143\1\166\1\142\1\116\1\120\2\uffff\1\105\1\124\1\106\1\103\1\102\1\111\1\105\1\uffff\1\124\1\114\1\156\2\164\2\145\1\154\1\172\1\124\1\106\1\137\1\122\1\105\1\112\1\105\2\137\1\125\1\172\1\151\1\163\2\172\1\145\1\uffff\2\111\1\123\1\101\1\172\1\105\1\114\2\104\1\105\1\uffff\1\157\1\172\2\uffff\1\172\1\117\1\116\1\105\1\120\1\107\1\uffff\1\103\1\104\2\105\1\172\1\156\2\uffff\1\116\1\111\1\106\1\122\1\115\1\124\1\137\2\106\1\uffff\2\172\1\124\1\111\2\105\1\172\1\104\2\111\2\uffff\1\111\1\116\1\101\1\116\1\uffff\1\105\2\116\1\117\1\111\1\104\1\124\1\106\2\111\1\116\1\124\2\172\1\111\2\124\1\172\1\111\2\uffff\1\116\2\111\1\uffff\1\117\1\111\2\117\1\116\1\124\2\116\1\172\1\111\2\172\1\uffff\1\117\2\uffff\1\116\1\172\1\uffff";
     static final String DFA16_acceptS =
-        "\2\uffff\1\2\1\3\1\4\3\uffff\1\12\1\13\1\uffff\1\16\1\17\1\20\1\21\5\uffff\1\30\1\31\14\uffff\1\60\1\61\2\uffff\1\63\1\64\1\65\1\66\35\uffff\1\62\1\uffff\1\67\16\uffff\1\27\21\uffff\1\70\42\uffff\1\6\1\23\4\uffff\1\14\1\22\22\uffff\1\51\7\uffff\1\15\1\11\1\24\2\uffff\1\32\5\uffff\1\35\7\uffff\1\50\1\uffff\1\55\1\uffff\1\1\1\5\7\uffff\1\42\1\43\7\uffff\1\44\31\uffff\1\33\12\uffff\1\56\2\uffff\1\10\1\25\6\uffff\1\47\6\uffff\1\7\1\26\11\uffff\1\52\12\uffff\1\57\1\34\4\uffff\1\53\23\uffff\1\37\1\40\3\uffff\1\45\14\uffff\1\36\1\uffff\1\41\1\46\2\uffff\1\54";
+        "\2\uffff\1\2\1\3\1\4\2\uffff\1\10\1\12\1\13\1\uffff\1\15\1\16\1\uffff\1\21\1\22\1\23\21\uffff\1\60\1\61\2\uffff\1\63\1\64\1\65\1\66\35\uffff\1\62\1\uffff\1\67\16\uffff\1\31\21\uffff\1\70\42\uffff\1\6\1\25\4\uffff\1\17\1\24\22\uffff\1\51\7\uffff\1\20\1\14\1\26\2\uffff\1\32\5\uffff\1\35\7\uffff\1\50\1\uffff\1\55\1\uffff\1\1\1\5\7\uffff\1\42\1\43\7\uffff\1\44\31\uffff\1\33\12\uffff\1\56\2\uffff\1\11\1\27\6\uffff\1\47\6\uffff\1\7\1\30\11\uffff\1\52\12\uffff\1\57\1\34\4\uffff\1\53\23\uffff\1\37\1\40\3\uffff\1\45\14\uffff\1\36\1\uffff\1\41\1\46\2\uffff\1\54";
     static final String DFA16_specialS =
         "\52\uffff\1\0\u012d\uffff}>";
     static final String[] DFA16_transitionS = {
-            "\2\47\2\uffff\1\47\22\uffff\1\47\1\14\1\52\1\50\2\uffff\1\13\1\uffff\1\24\1\25\2\uffff\1\51\1\44\1\46\1\uffff\1\46\11\45\1\4\2\uffff\1\10\2\uffff\1\42\1\35\3\43\1\37\1\31\2\43\1\32\3\43\1\27\1\43\1\34\1\43\1\26\1\43\1\30\1\43\1\36\1\33\4\43\1\15\1\uffff\1\16\1\uffff\1\43\1\uffff\3\43\1\21\1\12\1\20\2\43\1\6\3\43\1\41\1\17\1\23\1\43\1\40\1\22\1\1\1\5\1\7\5\43\1\2\1\11\1\3",
+            "\2\47\2\uffff\1\47\22\uffff\1\47\1\16\1\52\1\50\2\uffff\1\7\1\uffff\1\10\1\11\2\uffff\1\51\1\44\1\46\1\uffff\1\46\11\45\1\4\2\uffff\1\13\2\uffff\1\42\1\35\3\43\1\37\1\31\2\43\1\32\3\43\1\27\1\43\1\34\1\43\1\26\1\43\1\30\1\43\1\36\1\33\4\43\1\17\1\uffff\1\20\1\uffff\1\43\1\uffff\3\43\1\23\1\15\1\22\2\43\1\6\3\43\1\41\1\21\1\25\1\43\1\40\1\24\1\1\1\5\1\12\5\43\1\2\1\14\1\3",
             "\1\53\21\uffff\1\54",
             "",
             "",
             "",
             "\1\56\6\uffff\1\55",
             "\1\57\1\60",
+            "",
+            "",
+            "",
             "\1\61",
             "",
             "",
             "\1\62",
-            "",
             "",
             "",
             "",
@@ -2128,8 +2130,6 @@ public class InternalGraphQLLexer extends Lexer {
             "\1\65",
             "\1\66",
             "\1\67",
-            "",
-            "",
             "\1\70",
             "\1\71",
             "\1\73\21\uffff\1\72",

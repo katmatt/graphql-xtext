@@ -3,10 +3,10 @@
  */
 package io.github.katmatt.graphql.graphQL.impl;
 
-import io.github.katmatt.graphql.graphQL.ArgumentsDefinition;
 import io.github.katmatt.graphql.graphQL.DirectiveDefinition;
-import io.github.katmatt.graphql.graphQL.DirectiveLocations;
+import io.github.katmatt.graphql.graphQL.DirectiveLocation;
 import io.github.katmatt.graphql.graphQL.GraphQLPackage;
+import io.github.katmatt.graphql.graphQL.InputValueDefinition;
 import io.github.katmatt.graphql.graphQL.StringValue;
 
 import java.util.Collection;
@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -35,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.DirectiveDefinitionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.DirectiveDefinitionImpl#getName <em>Name</em>}</li>
- *   <li>{@link io.github.katmatt.graphql.graphQL.impl.DirectiveDefinitionImpl#getArgumentDefinitions <em>Argument Definitions</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.impl.DirectiveDefinitionImpl#getArgumentsDefinition <em>Arguments Definition</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.DirectiveDefinitionImpl#isRepeatable <em>Repeatable</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.DirectiveDefinitionImpl#getDirectiveLocations <em>Directive Locations</em>}</li>
  * </ul>
@@ -75,14 +76,14 @@ public class DirectiveDefinitionImpl extends MinimalEObjectImpl.Container implem
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getArgumentDefinitions() <em>Argument Definitions</em>}' containment reference.
+   * The cached value of the '{@link #getArgumentsDefinition() <em>Arguments Definition</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArgumentDefinitions()
+   * @see #getArgumentsDefinition()
    * @generated
    * @ordered
    */
-  protected ArgumentsDefinition argumentDefinitions;
+  protected EList<InputValueDefinition> argumentsDefinition;
 
   /**
    * The default value of the '{@link #isRepeatable() <em>Repeatable</em>}' attribute.
@@ -105,14 +106,14 @@ public class DirectiveDefinitionImpl extends MinimalEObjectImpl.Container implem
   protected boolean repeatable = REPEATABLE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getDirectiveLocations() <em>Directive Locations</em>}' containment reference list.
+   * The cached value of the '{@link #getDirectiveLocations() <em>Directive Locations</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDirectiveLocations()
    * @generated
    * @ordered
    */
-  protected EList<DirectiveLocations> directiveLocations;
+  protected EList<DirectiveLocation> directiveLocations;
 
   /**
    * <!-- begin-user-doc -->
@@ -216,48 +217,13 @@ public class DirectiveDefinitionImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
-  public ArgumentsDefinition getArgumentDefinitions()
+  public EList<InputValueDefinition> getArgumentsDefinition()
   {
-    return argumentDefinitions;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetArgumentDefinitions(ArgumentsDefinition newArgumentDefinitions, NotificationChain msgs)
-  {
-    ArgumentsDefinition oldArgumentDefinitions = argumentDefinitions;
-    argumentDefinitions = newArgumentDefinitions;
-    if (eNotificationRequired())
+    if (argumentsDefinition == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS, oldArgumentDefinitions, newArgumentDefinitions);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      argumentsDefinition = new EObjectContainmentEList<InputValueDefinition>(InputValueDefinition.class, this, GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENTS_DEFINITION);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setArgumentDefinitions(ArgumentsDefinition newArgumentDefinitions)
-  {
-    if (newArgumentDefinitions != argumentDefinitions)
-    {
-      NotificationChain msgs = null;
-      if (argumentDefinitions != null)
-        msgs = ((InternalEObject)argumentDefinitions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS, null, msgs);
-      if (newArgumentDefinitions != null)
-        msgs = ((InternalEObject)newArgumentDefinitions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS, null, msgs);
-      msgs = basicSetArgumentDefinitions(newArgumentDefinitions, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS, newArgumentDefinitions, newArgumentDefinitions));
+    return argumentsDefinition;
   }
 
   /**
@@ -291,11 +257,11 @@ public class DirectiveDefinitionImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
-  public EList<DirectiveLocations> getDirectiveLocations()
+  public EList<DirectiveLocation> getDirectiveLocations()
   {
     if (directiveLocations == null)
     {
-      directiveLocations = new EObjectContainmentEList<DirectiveLocations>(DirectiveLocations.class, this, GraphQLPackage.DIRECTIVE_DEFINITION__DIRECTIVE_LOCATIONS);
+      directiveLocations = new EDataTypeEList<DirectiveLocation>(DirectiveLocation.class, this, GraphQLPackage.DIRECTIVE_DEFINITION__DIRECTIVE_LOCATIONS);
     }
     return directiveLocations;
   }
@@ -312,10 +278,8 @@ public class DirectiveDefinitionImpl extends MinimalEObjectImpl.Container implem
     {
       case GraphQLPackage.DIRECTIVE_DEFINITION__DESCRIPTION:
         return basicSetDescription(null, msgs);
-      case GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS:
-        return basicSetArgumentDefinitions(null, msgs);
-      case GraphQLPackage.DIRECTIVE_DEFINITION__DIRECTIVE_LOCATIONS:
-        return ((InternalEList<?>)getDirectiveLocations()).basicRemove(otherEnd, msgs);
+      case GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENTS_DEFINITION:
+        return ((InternalEList<?>)getArgumentsDefinition()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -334,8 +298,8 @@ public class DirectiveDefinitionImpl extends MinimalEObjectImpl.Container implem
         return getDescription();
       case GraphQLPackage.DIRECTIVE_DEFINITION__NAME:
         return getName();
-      case GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS:
-        return getArgumentDefinitions();
+      case GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENTS_DEFINITION:
+        return getArgumentsDefinition();
       case GraphQLPackage.DIRECTIVE_DEFINITION__REPEATABLE:
         return isRepeatable();
       case GraphQLPackage.DIRECTIVE_DEFINITION__DIRECTIVE_LOCATIONS:
@@ -361,15 +325,16 @@ public class DirectiveDefinitionImpl extends MinimalEObjectImpl.Container implem
       case GraphQLPackage.DIRECTIVE_DEFINITION__NAME:
         setName((String)newValue);
         return;
-      case GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS:
-        setArgumentDefinitions((ArgumentsDefinition)newValue);
+      case GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENTS_DEFINITION:
+        getArgumentsDefinition().clear();
+        getArgumentsDefinition().addAll((Collection<? extends InputValueDefinition>)newValue);
         return;
       case GraphQLPackage.DIRECTIVE_DEFINITION__REPEATABLE:
         setRepeatable((Boolean)newValue);
         return;
       case GraphQLPackage.DIRECTIVE_DEFINITION__DIRECTIVE_LOCATIONS:
         getDirectiveLocations().clear();
-        getDirectiveLocations().addAll((Collection<? extends DirectiveLocations>)newValue);
+        getDirectiveLocations().addAll((Collection<? extends DirectiveLocation>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -391,8 +356,8 @@ public class DirectiveDefinitionImpl extends MinimalEObjectImpl.Container implem
       case GraphQLPackage.DIRECTIVE_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS:
-        setArgumentDefinitions((ArgumentsDefinition)null);
+      case GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENTS_DEFINITION:
+        getArgumentsDefinition().clear();
         return;
       case GraphQLPackage.DIRECTIVE_DEFINITION__REPEATABLE:
         setRepeatable(REPEATABLE_EDEFAULT);
@@ -418,8 +383,8 @@ public class DirectiveDefinitionImpl extends MinimalEObjectImpl.Container implem
         return description != null;
       case GraphQLPackage.DIRECTIVE_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENT_DEFINITIONS:
-        return argumentDefinitions != null;
+      case GraphQLPackage.DIRECTIVE_DEFINITION__ARGUMENTS_DEFINITION:
+        return argumentsDefinition != null && !argumentsDefinition.isEmpty();
       case GraphQLPackage.DIRECTIVE_DEFINITION__REPEATABLE:
         return repeatable != REPEATABLE_EDEFAULT;
       case GraphQLPackage.DIRECTIVE_DEFINITION__DIRECTIVE_LOCATIONS:
@@ -443,6 +408,8 @@ public class DirectiveDefinitionImpl extends MinimalEObjectImpl.Container implem
     result.append(name);
     result.append(", repeatable: ");
     result.append(repeatable);
+    result.append(", directiveLocations: ");
+    result.append(directiveLocations);
     result.append(')');
     return result.toString();
   }

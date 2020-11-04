@@ -24,19 +24,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//StringValue"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="directives" upperBound="-1"
+        eType="#//Directive" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScalarTypeDefinition" eSuperTypes="#//TypeDefinition"/>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectTypeDefinition" eSuperTypes="#//TypeDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" eType="#//IntersectionType"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="directives" upperBound="-1"
-        eType="#//Directive" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementsInterfaces" unique="false"
+        upperBound="-1" eType="#//InterfaceDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fieldDefinitions" upperBound="-1"
         eType="#//FieldDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceDefinition" eSuperTypes="#//TypeDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" eType="#//IntersectionType"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementsInterfaces" unique="false"
+        upperBound="-1" eType="#//InterfaceDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fieldDefinitions" upperBound="-1"
         eType="#//FieldDefinition" containment="true"/>
   </eClassifiers>
@@ -44,8 +44,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//StringValue"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" eType="#//ArgumentsDefinition"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentsDefinition" upperBound="-1"
+        eType="#//InputValueDefinition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnionTypeDefinition" eSuperTypes="#//TypeDefinition">
@@ -53,7 +53,7 @@
         eType="#//Type" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumTypeDefinition" eSuperTypes="#//TypeDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="valueDefinitions" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumValuesDefinition" upperBound="-1"
         eType="#//EnumValueDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumValueDefinition">
@@ -62,7 +62,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InputObjectTypeDefinition" eSuperTypes="#//TypeDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inputsFieldDefinitions"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputFieldsDefinition"
         upperBound="-1" eType="#//InputValueDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InputValueDefinition">
@@ -72,10 +72,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultValue" eType="#//ConstValue"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IntersectionType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="memberTypes" upperBound="-1"
-        eType="#//Type" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Type">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nonNull" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -109,7 +105,7 @@
         eType="#//ObjectField" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectField">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//FieldDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fieldDefinition" eType="#//FieldDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ConstValue"
         containment="true"/>
   </eClassifiers>
@@ -122,18 +118,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//StringValue"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentDefinitions" eType="#//ArgumentsDefinition"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentsDefinition" upperBound="-1"
+        eType="#//InputValueDefinition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeatable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="directiveLocations" upperBound="-1"
-        eType="#//DirectiveLocations" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="directiveLocations" unique="false"
+        upperBound="-1" eType="#//DirectiveLocation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Directive">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" eType="#//Arguments"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Arguments">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="directive" eType="#//DirectiveDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
         eType="#//Argument" containment="true"/>
   </eClassifiers>
@@ -141,14 +133,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="argumentDefinition" eType="#//InputValueDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ConstValue"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArgumentsDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentDefinitions" upperBound="-1"
-        eType="#//InputValueDefinition" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DirectiveLocations">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="directiveLocations" unique="false"
-        upperBound="-1" eType="#//DirectiveLocation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DirectiveLocation">
     <eLiterals name="QUERY" literal="QUERY"/>

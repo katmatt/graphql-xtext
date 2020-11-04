@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link io.github.katmatt.graphql.graphQL.impl.ObjectFieldImpl#getName <em>Name</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.impl.ObjectFieldImpl#getFieldDefinition <em>Field Definition</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.impl.ObjectFieldImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -34,14 +34,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ObjectFieldImpl extends MinimalEObjectImpl.Container implements ObjectField
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
+   * The cached value of the '{@link #getFieldDefinition() <em>Field Definition</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getFieldDefinition()
    * @generated
    * @ordered
    */
-  protected FieldDefinition name;
+  protected FieldDefinition fieldDefinition;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -80,19 +80,19 @@ public class ObjectFieldImpl extends MinimalEObjectImpl.Container implements Obj
    * @generated
    */
   @Override
-  public FieldDefinition getName()
+  public FieldDefinition getFieldDefinition()
   {
-    if (name != null && name.eIsProxy())
+    if (fieldDefinition != null && fieldDefinition.eIsProxy())
     {
-      InternalEObject oldName = (InternalEObject)name;
-      name = (FieldDefinition)eResolveProxy(oldName);
-      if (name != oldName)
+      InternalEObject oldFieldDefinition = (InternalEObject)fieldDefinition;
+      fieldDefinition = (FieldDefinition)eResolveProxy(oldFieldDefinition);
+      if (fieldDefinition != oldFieldDefinition)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, GraphQLPackage.OBJECT_FIELD__NAME, oldName, name));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, GraphQLPackage.OBJECT_FIELD__FIELD_DEFINITION, oldFieldDefinition, fieldDefinition));
       }
     }
-    return name;
+    return fieldDefinition;
   }
 
   /**
@@ -100,9 +100,9 @@ public class ObjectFieldImpl extends MinimalEObjectImpl.Container implements Obj
    * <!-- end-user-doc -->
    * @generated
    */
-  public FieldDefinition basicGetName()
+  public FieldDefinition basicGetFieldDefinition()
   {
-    return name;
+    return fieldDefinition;
   }
 
   /**
@@ -111,12 +111,12 @@ public class ObjectFieldImpl extends MinimalEObjectImpl.Container implements Obj
    * @generated
    */
   @Override
-  public void setName(FieldDefinition newName)
+  public void setFieldDefinition(FieldDefinition newFieldDefinition)
   {
-    FieldDefinition oldName = name;
-    name = newName;
+    FieldDefinition oldFieldDefinition = fieldDefinition;
+    fieldDefinition = newFieldDefinition;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GraphQLPackage.OBJECT_FIELD__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, GraphQLPackage.OBJECT_FIELD__FIELD_DEFINITION, oldFieldDefinition, fieldDefinition));
   }
 
   /**
@@ -195,9 +195,9 @@ public class ObjectFieldImpl extends MinimalEObjectImpl.Container implements Obj
   {
     switch (featureID)
     {
-      case GraphQLPackage.OBJECT_FIELD__NAME:
-        if (resolve) return getName();
-        return basicGetName();
+      case GraphQLPackage.OBJECT_FIELD__FIELD_DEFINITION:
+        if (resolve) return getFieldDefinition();
+        return basicGetFieldDefinition();
       case GraphQLPackage.OBJECT_FIELD__VALUE:
         return getValue();
     }
@@ -214,8 +214,8 @@ public class ObjectFieldImpl extends MinimalEObjectImpl.Container implements Obj
   {
     switch (featureID)
     {
-      case GraphQLPackage.OBJECT_FIELD__NAME:
-        setName((FieldDefinition)newValue);
+      case GraphQLPackage.OBJECT_FIELD__FIELD_DEFINITION:
+        setFieldDefinition((FieldDefinition)newValue);
         return;
       case GraphQLPackage.OBJECT_FIELD__VALUE:
         setValue((ConstValue)newValue);
@@ -234,8 +234,8 @@ public class ObjectFieldImpl extends MinimalEObjectImpl.Container implements Obj
   {
     switch (featureID)
     {
-      case GraphQLPackage.OBJECT_FIELD__NAME:
-        setName((FieldDefinition)null);
+      case GraphQLPackage.OBJECT_FIELD__FIELD_DEFINITION:
+        setFieldDefinition((FieldDefinition)null);
         return;
       case GraphQLPackage.OBJECT_FIELD__VALUE:
         setValue((ConstValue)null);
@@ -254,8 +254,8 @@ public class ObjectFieldImpl extends MinimalEObjectImpl.Container implements Obj
   {
     switch (featureID)
     {
-      case GraphQLPackage.OBJECT_FIELD__NAME:
-        return name != null;
+      case GraphQLPackage.OBJECT_FIELD__FIELD_DEFINITION:
+        return fieldDefinition != null;
       case GraphQLPackage.OBJECT_FIELD__VALUE:
         return value != null;
     }

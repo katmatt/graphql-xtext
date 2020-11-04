@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition#getName <em>Name</em>}</li>
- *   <li>{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition#getArgumentDefinitions <em>Argument Definitions</em>}</li>
+ *   <li>{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition#getArgumentsDefinition <em>Arguments Definition</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition#isRepeatable <em>Repeatable</em>}</li>
  *   <li>{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition#getDirectiveLocations <em>Directive Locations</em>}</li>
  * </ul>
@@ -74,26 +74,16 @@ public interface DirectiveDefinition extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Argument Definitions</b></em>' containment reference.
+   * Returns the value of the '<em><b>Arguments Definition</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.InputValueDefinition}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Argument Definitions</em>' containment reference.
-   * @see #setArgumentDefinitions(ArgumentsDefinition)
-   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getDirectiveDefinition_ArgumentDefinitions()
+   * @return the value of the '<em>Arguments Definition</em>' containment reference list.
+   * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getDirectiveDefinition_ArgumentsDefinition()
    * @model containment="true"
    * @generated
    */
-  ArgumentsDefinition getArgumentDefinitions();
-
-  /**
-   * Sets the value of the '{@link io.github.katmatt.graphql.graphQL.DirectiveDefinition#getArgumentDefinitions <em>Argument Definitions</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Argument Definitions</em>' containment reference.
-   * @see #getArgumentDefinitions()
-   * @generated
-   */
-  void setArgumentDefinitions(ArgumentsDefinition value);
+  EList<InputValueDefinition> getArgumentsDefinition();
 
   /**
    * Returns the value of the '<em><b>Repeatable</b></em>' attribute.
@@ -118,15 +108,17 @@ public interface DirectiveDefinition extends EObject
   void setRepeatable(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Directive Locations</b></em>' containment reference list.
-   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.DirectiveLocations}.
+   * Returns the value of the '<em><b>Directive Locations</b></em>' attribute list.
+   * The list contents are of type {@link io.github.katmatt.graphql.graphQL.DirectiveLocation}.
+   * The literals are from the enumeration {@link io.github.katmatt.graphql.graphQL.DirectiveLocation}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Directive Locations</em>' containment reference list.
+   * @return the value of the '<em>Directive Locations</em>' attribute list.
+   * @see io.github.katmatt.graphql.graphQL.DirectiveLocation
    * @see io.github.katmatt.graphql.graphQL.GraphQLPackage#getDirectiveDefinition_DirectiveLocations()
-   * @model containment="true"
+   * @model unique="false"
    * @generated
    */
-  EList<DirectiveLocations> getDirectiveLocations();
+  EList<DirectiveLocation> getDirectiveLocations();
 
 } // DirectiveDefinition

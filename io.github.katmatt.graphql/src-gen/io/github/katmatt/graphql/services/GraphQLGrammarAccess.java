@@ -179,12 +179,15 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cScalarKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameNAMETerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cDirectivesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDirectivesDirectiveParserRuleCall_3_0 = (RuleCall)cDirectivesAssignment_3.eContents().get(0);
 		
 		//ScalarTypeDefinition:
-		//	description=StringValue? "scalar" name=NAME;
+		//	description=StringValue? "scalar" name=NAME
+		//	directives+=Directive*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//description=StringValue? "scalar" name=NAME
+		//description=StringValue? "scalar" name=NAME directives+=Directive*
 		public Group getGroup() { return cGroup; }
 		
 		//description=StringValue?
@@ -201,6 +204,12 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//NAME
 		public RuleCall getNameNAMETerminalRuleCall_2_0() { return cNameNAMETerminalRuleCall_2_0; }
+		
+		//directives+=Directive*
+		public Assignment getDirectivesAssignment_3() { return cDirectivesAssignment_3; }
+		
+		//Directive
+		public RuleCall getDirectivesDirectiveParserRuleCall_3_0() { return cDirectivesDirectiveParserRuleCall_3_0; }
 	}
 	public class ObjectTypeDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.ObjectTypeDefinition");
@@ -212,8 +221,15 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cNameNAMETerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cImplementsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cImplementsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cImplementsIntersectionTypeParserRuleCall_3_1_0 = (RuleCall)cImplementsAssignment_3_1.eContents().get(0);
+		private final Keyword cAmpersandKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cImplementsInterfacesAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final CrossReference cImplementsInterfacesInterfaceDefinitionCrossReference_3_2_0 = (CrossReference)cImplementsInterfacesAssignment_3_2.eContents().get(0);
+		private final RuleCall cImplementsInterfacesInterfaceDefinitionNAMETerminalRuleCall_3_2_0_1 = (RuleCall)cImplementsInterfacesInterfaceDefinitionCrossReference_3_2_0.eContents().get(1);
+		private final Group cGroup_3_3 = (Group)cGroup_3.eContents().get(3);
+		private final Keyword cAmpersandKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
+		private final Assignment cImplementsInterfacesAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
+		private final CrossReference cImplementsInterfacesInterfaceDefinitionCrossReference_3_3_1_0 = (CrossReference)cImplementsInterfacesAssignment_3_3_1.eContents().get(0);
+		private final RuleCall cImplementsInterfacesInterfaceDefinitionNAMETerminalRuleCall_3_3_1_0_1 = (RuleCall)cImplementsInterfacesInterfaceDefinitionCrossReference_3_3_1_0.eContents().get(1);
 		private final Assignment cDirectivesAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cDirectivesDirectiveParserRuleCall_4_0 = (RuleCall)cDirectivesAssignment_4.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
@@ -223,12 +239,14 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
 		
 		//ObjectTypeDefinition:
-		//	description=StringValue? "type" name=NAME ('implements' implements=IntersectionType)?
+		//	description=StringValue? "type" name=NAME ('implements' '&'? implementsInterfaces+=[InterfaceDefinition|NAME] ('&'
+		//	implementsInterfaces+=[InterfaceDefinition|NAME])*)?
 		//	directives+=Directive* ("{" fieldDefinitions+=FieldDefinition* "}")?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//description=StringValue? "type" name=NAME ('implements' implements=IntersectionType)? directives+=Directive* ("{"
-		//fieldDefinitions+=FieldDefinition* "}")?
+		//description=StringValue? "type" name=NAME ('implements' '&'? implementsInterfaces+=[InterfaceDefinition|NAME] ('&'
+		//implementsInterfaces+=[InterfaceDefinition|NAME])*)? directives+=Directive* ("{" fieldDefinitions+=FieldDefinition*
+		//"}")?
 		public Group getGroup() { return cGroup; }
 		
 		//description=StringValue?
@@ -246,17 +264,39 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//NAME
 		public RuleCall getNameNAMETerminalRuleCall_2_0() { return cNameNAMETerminalRuleCall_2_0; }
 		
-		//('implements' implements=IntersectionType)?
+		//('implements' '&'? implementsInterfaces+=[InterfaceDefinition|NAME] ('&'
+		//implementsInterfaces+=[InterfaceDefinition|NAME])*)?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'implements'
 		public Keyword getImplementsKeyword_3_0() { return cImplementsKeyword_3_0; }
 		
-		//implements=IntersectionType
-		public Assignment getImplementsAssignment_3_1() { return cImplementsAssignment_3_1; }
+		//'&'?
+		public Keyword getAmpersandKeyword_3_1() { return cAmpersandKeyword_3_1; }
 		
-		//IntersectionType
-		public RuleCall getImplementsIntersectionTypeParserRuleCall_3_1_0() { return cImplementsIntersectionTypeParserRuleCall_3_1_0; }
+		//implementsInterfaces+=[InterfaceDefinition|NAME]
+		public Assignment getImplementsInterfacesAssignment_3_2() { return cImplementsInterfacesAssignment_3_2; }
+		
+		//[InterfaceDefinition|NAME]
+		public CrossReference getImplementsInterfacesInterfaceDefinitionCrossReference_3_2_0() { return cImplementsInterfacesInterfaceDefinitionCrossReference_3_2_0; }
+		
+		//NAME
+		public RuleCall getImplementsInterfacesInterfaceDefinitionNAMETerminalRuleCall_3_2_0_1() { return cImplementsInterfacesInterfaceDefinitionNAMETerminalRuleCall_3_2_0_1; }
+		
+		//('&' implementsInterfaces+=[InterfaceDefinition|NAME])*
+		public Group getGroup_3_3() { return cGroup_3_3; }
+		
+		//'&'
+		public Keyword getAmpersandKeyword_3_3_0() { return cAmpersandKeyword_3_3_0; }
+		
+		//implementsInterfaces+=[InterfaceDefinition|NAME]
+		public Assignment getImplementsInterfacesAssignment_3_3_1() { return cImplementsInterfacesAssignment_3_3_1; }
+		
+		//[InterfaceDefinition|NAME]
+		public CrossReference getImplementsInterfacesInterfaceDefinitionCrossReference_3_3_1_0() { return cImplementsInterfacesInterfaceDefinitionCrossReference_3_3_1_0; }
+		
+		//NAME
+		public RuleCall getImplementsInterfacesInterfaceDefinitionNAMETerminalRuleCall_3_3_1_0_1() { return cImplementsInterfacesInterfaceDefinitionNAMETerminalRuleCall_3_3_1_0_1; }
 		
 		//directives+=Directive*
 		public Assignment getDirectivesAssignment_4() { return cDirectivesAssignment_4; }
@@ -289,21 +329,32 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cNameNAMETerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cImplementsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cImplementsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cImplementsIntersectionTypeParserRuleCall_3_1_0 = (RuleCall)cImplementsAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cLeftCurlyBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cFieldDefinitionsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cFieldDefinitionsFieldDefinitionParserRuleCall_4_1_0 = (RuleCall)cFieldDefinitionsAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		private final Keyword cAmpersandKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cImplementsInterfacesAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final CrossReference cImplementsInterfacesInterfaceDefinitionCrossReference_3_2_0 = (CrossReference)cImplementsInterfacesAssignment_3_2.eContents().get(0);
+		private final RuleCall cImplementsInterfacesInterfaceDefinitionNAMETerminalRuleCall_3_2_0_1 = (RuleCall)cImplementsInterfacesInterfaceDefinitionCrossReference_3_2_0.eContents().get(1);
+		private final Group cGroup_3_3 = (Group)cGroup_3.eContents().get(3);
+		private final Keyword cAmpersandKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
+		private final Assignment cImplementsInterfacesAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
+		private final CrossReference cImplementsInterfacesInterfaceDefinitionCrossReference_3_3_1_0 = (CrossReference)cImplementsInterfacesAssignment_3_3_1.eContents().get(0);
+		private final RuleCall cImplementsInterfacesInterfaceDefinitionNAMETerminalRuleCall_3_3_1_0_1 = (RuleCall)cImplementsInterfacesInterfaceDefinitionCrossReference_3_3_1_0.eContents().get(1);
+		private final Assignment cDirectivesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDirectivesDirectiveParserRuleCall_4_0 = (RuleCall)cDirectivesAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cLeftCurlyBracketKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cFieldDefinitionsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cFieldDefinitionsFieldDefinitionParserRuleCall_5_1_0 = (RuleCall)cFieldDefinitionsAssignment_5_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
 		
 		//InterfaceDefinition:
-		//	description=StringValue? "interface" name=NAME ('implements' implements=IntersectionType)? ("{"
-		//	fieldDefinitions+=FieldDefinition* "}")?;
+		//	description=StringValue? "interface" name=NAME ('implements' '&'? implementsInterfaces+=[InterfaceDefinition|NAME]
+		//	('&' implementsInterfaces+=[InterfaceDefinition|NAME])*)?
+		//	directives+=Directive* ("{" fieldDefinitions+=FieldDefinition* "}")?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//description=StringValue? "interface" name=NAME ('implements' implements=IntersectionType)? ("{"
-		//fieldDefinitions+=FieldDefinition* "}")?
+		//description=StringValue? "interface" name=NAME ('implements' '&'? implementsInterfaces+=[InterfaceDefinition|NAME] ('&'
+		//implementsInterfaces+=[InterfaceDefinition|NAME])*)? directives+=Directive* ("{" fieldDefinitions+=FieldDefinition*
+		//"}")?
 		public Group getGroup() { return cGroup; }
 		
 		//description=StringValue?
@@ -321,32 +372,60 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//NAME
 		public RuleCall getNameNAMETerminalRuleCall_2_0() { return cNameNAMETerminalRuleCall_2_0; }
 		
-		//('implements' implements=IntersectionType)?
+		//('implements' '&'? implementsInterfaces+=[InterfaceDefinition|NAME] ('&'
+		//implementsInterfaces+=[InterfaceDefinition|NAME])*)?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'implements'
 		public Keyword getImplementsKeyword_3_0() { return cImplementsKeyword_3_0; }
 		
-		//implements=IntersectionType
-		public Assignment getImplementsAssignment_3_1() { return cImplementsAssignment_3_1; }
+		//'&'?
+		public Keyword getAmpersandKeyword_3_1() { return cAmpersandKeyword_3_1; }
 		
-		//IntersectionType
-		public RuleCall getImplementsIntersectionTypeParserRuleCall_3_1_0() { return cImplementsIntersectionTypeParserRuleCall_3_1_0; }
+		//implementsInterfaces+=[InterfaceDefinition|NAME]
+		public Assignment getImplementsInterfacesAssignment_3_2() { return cImplementsInterfacesAssignment_3_2; }
+		
+		//[InterfaceDefinition|NAME]
+		public CrossReference getImplementsInterfacesInterfaceDefinitionCrossReference_3_2_0() { return cImplementsInterfacesInterfaceDefinitionCrossReference_3_2_0; }
+		
+		//NAME
+		public RuleCall getImplementsInterfacesInterfaceDefinitionNAMETerminalRuleCall_3_2_0_1() { return cImplementsInterfacesInterfaceDefinitionNAMETerminalRuleCall_3_2_0_1; }
+		
+		//('&' implementsInterfaces+=[InterfaceDefinition|NAME])*
+		public Group getGroup_3_3() { return cGroup_3_3; }
+		
+		//'&'
+		public Keyword getAmpersandKeyword_3_3_0() { return cAmpersandKeyword_3_3_0; }
+		
+		//implementsInterfaces+=[InterfaceDefinition|NAME]
+		public Assignment getImplementsInterfacesAssignment_3_3_1() { return cImplementsInterfacesAssignment_3_3_1; }
+		
+		//[InterfaceDefinition|NAME]
+		public CrossReference getImplementsInterfacesInterfaceDefinitionCrossReference_3_3_1_0() { return cImplementsInterfacesInterfaceDefinitionCrossReference_3_3_1_0; }
+		
+		//NAME
+		public RuleCall getImplementsInterfacesInterfaceDefinitionNAMETerminalRuleCall_3_3_1_0_1() { return cImplementsInterfacesInterfaceDefinitionNAMETerminalRuleCall_3_3_1_0_1; }
+		
+		//directives+=Directive*
+		public Assignment getDirectivesAssignment_4() { return cDirectivesAssignment_4; }
+		
+		//Directive
+		public RuleCall getDirectivesDirectiveParserRuleCall_4_0() { return cDirectivesDirectiveParserRuleCall_4_0; }
 		
 		//("{" fieldDefinitions+=FieldDefinition* "}")?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_5() { return cGroup_5; }
 		
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4_0() { return cLeftCurlyBracketKeyword_4_0; }
+		public Keyword getLeftCurlyBracketKeyword_5_0() { return cLeftCurlyBracketKeyword_5_0; }
 		
 		//fieldDefinitions+=FieldDefinition*
-		public Assignment getFieldDefinitionsAssignment_4_1() { return cFieldDefinitionsAssignment_4_1; }
+		public Assignment getFieldDefinitionsAssignment_5_1() { return cFieldDefinitionsAssignment_5_1; }
 		
 		//FieldDefinition
-		public RuleCall getFieldDefinitionsFieldDefinitionParserRuleCall_4_1_0() { return cFieldDefinitionsFieldDefinitionParserRuleCall_4_1_0; }
+		public RuleCall getFieldDefinitionsFieldDefinitionParserRuleCall_5_1_0() { return cFieldDefinitionsFieldDefinitionParserRuleCall_5_1_0; }
 		
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_4_2() { return cRightCurlyBracketKeyword_4_2; }
+		public Keyword getRightCurlyBracketKeyword_5_2() { return cRightCurlyBracketKeyword_5_2; }
 	}
 	public class FieldDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.FieldDefinition");
@@ -355,17 +434,20 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cDescriptionStringValueParserRuleCall_0_0 = (RuleCall)cDescriptionAssignment_0.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameNAMETerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cArgumentsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cArgumentsArgumentsDefinitionParserRuleCall_2_0 = (RuleCall)cArgumentsAssignment_2.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cArgumentsDefinitionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cArgumentsDefinitionInputValueDefinitionParserRuleCall_2_1_0 = (RuleCall)cArgumentsDefinitionAssignment_2_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cTypeTypeParserRuleCall_4_0 = (RuleCall)cTypeAssignment_4.eContents().get(0);
 		
 		//FieldDefinition:
-		//	description=StringValue? name=NAME arguments=ArgumentsDefinition? ":" type=Type;
+		//	description=StringValue? name=NAME ('(' argumentsDefinition+=InputValueDefinition* ')')? ":" type=Type;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//description=StringValue? name=NAME arguments=ArgumentsDefinition? ":" type=Type
+		//description=StringValue? name=NAME ('(' argumentsDefinition+=InputValueDefinition* ')')? ":" type=Type
 		public Group getGroup() { return cGroup; }
 		
 		//description=StringValue?
@@ -380,11 +462,20 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//NAME
 		public RuleCall getNameNAMETerminalRuleCall_1_0() { return cNameNAMETerminalRuleCall_1_0; }
 		
-		//arguments=ArgumentsDefinition?
-		public Assignment getArgumentsAssignment_2() { return cArgumentsAssignment_2; }
+		//('(' argumentsDefinition+=InputValueDefinition* ')')?
+		public Group getGroup_2() { return cGroup_2; }
 		
-		//ArgumentsDefinition
-		public RuleCall getArgumentsArgumentsDefinitionParserRuleCall_2_0() { return cArgumentsArgumentsDefinitionParserRuleCall_2_0; }
+		//'('
+		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
+		
+		//argumentsDefinition+=InputValueDefinition*
+		public Assignment getArgumentsDefinitionAssignment_2_1() { return cArgumentsDefinitionAssignment_2_1; }
+		
+		//InputValueDefinition
+		public RuleCall getArgumentsDefinitionInputValueDefinitionParserRuleCall_2_1_0() { return cArgumentsDefinitionInputValueDefinitionParserRuleCall_2_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 		
 		//":"
 		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
@@ -403,21 +494,24 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cUnionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameNAMETerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cEqualsSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cVerticalLineKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cMemberTypesAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cMemberTypesTypeParserRuleCall_3_2_0 = (RuleCall)cMemberTypesAssignment_3_2.eContents().get(0);
-		private final Group cGroup_3_3 = (Group)cGroup_3.eContents().get(3);
-		private final Keyword cVerticalLineKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
-		private final Assignment cMemberTypesAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
-		private final RuleCall cMemberTypesTypeParserRuleCall_3_3_1_0 = (RuleCall)cMemberTypesAssignment_3_3_1.eContents().get(0);
+		private final Assignment cDirectivesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDirectivesDirectiveParserRuleCall_3_0 = (RuleCall)cDirectivesAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cEqualsSignKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cVerticalLineKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cMemberTypesAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cMemberTypesTypeParserRuleCall_4_2_0 = (RuleCall)cMemberTypesAssignment_4_2.eContents().get(0);
+		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
+		private final Keyword cVerticalLineKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
+		private final Assignment cMemberTypesAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
+		private final RuleCall cMemberTypesTypeParserRuleCall_4_3_1_0 = (RuleCall)cMemberTypesAssignment_4_3_1.eContents().get(0);
 		
 		//UnionTypeDefinition:
-		//	description=StringValue? "union" name=NAME ("=" "|"? memberTypes+=Type ("|" memberTypes+=Type)*)?;
+		//	description=StringValue? "union" name=NAME
+		//	directives+=Directive* ("=" "|"? memberTypes+=Type ("|" memberTypes+=Type)*)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//description=StringValue? "union" name=NAME ("=" "|"? memberTypes+=Type ("|" memberTypes+=Type)*)?
+		//description=StringValue? "union" name=NAME directives+=Directive* ("=" "|"? memberTypes+=Type ("|" memberTypes+=Type)*)?
 		public Group getGroup() { return cGroup; }
 		
 		//description=StringValue?
@@ -435,32 +529,38 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//NAME
 		public RuleCall getNameNAMETerminalRuleCall_2_0() { return cNameNAMETerminalRuleCall_2_0; }
 		
+		//directives+=Directive*
+		public Assignment getDirectivesAssignment_3() { return cDirectivesAssignment_3; }
+		
+		//Directive
+		public RuleCall getDirectivesDirectiveParserRuleCall_3_0() { return cDirectivesDirectiveParserRuleCall_3_0; }
+		
 		//("=" "|"? memberTypes+=Type ("|" memberTypes+=Type)*)?
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//"="
-		public Keyword getEqualsSignKeyword_3_0() { return cEqualsSignKeyword_3_0; }
+		public Keyword getEqualsSignKeyword_4_0() { return cEqualsSignKeyword_4_0; }
 		
 		//"|"?
-		public Keyword getVerticalLineKeyword_3_1() { return cVerticalLineKeyword_3_1; }
+		public Keyword getVerticalLineKeyword_4_1() { return cVerticalLineKeyword_4_1; }
 		
 		//memberTypes+=Type
-		public Assignment getMemberTypesAssignment_3_2() { return cMemberTypesAssignment_3_2; }
+		public Assignment getMemberTypesAssignment_4_2() { return cMemberTypesAssignment_4_2; }
 		
 		//Type
-		public RuleCall getMemberTypesTypeParserRuleCall_3_2_0() { return cMemberTypesTypeParserRuleCall_3_2_0; }
+		public RuleCall getMemberTypesTypeParserRuleCall_4_2_0() { return cMemberTypesTypeParserRuleCall_4_2_0; }
 		
 		//("|" memberTypes+=Type)*
-		public Group getGroup_3_3() { return cGroup_3_3; }
+		public Group getGroup_4_3() { return cGroup_4_3; }
 		
 		//"|"
-		public Keyword getVerticalLineKeyword_3_3_0() { return cVerticalLineKeyword_3_3_0; }
+		public Keyword getVerticalLineKeyword_4_3_0() { return cVerticalLineKeyword_4_3_0; }
 		
 		//memberTypes+=Type
-		public Assignment getMemberTypesAssignment_3_3_1() { return cMemberTypesAssignment_3_3_1; }
+		public Assignment getMemberTypesAssignment_4_3_1() { return cMemberTypesAssignment_4_3_1; }
 		
 		//Type
-		public RuleCall getMemberTypesTypeParserRuleCall_3_3_1_0() { return cMemberTypesTypeParserRuleCall_3_3_1_0; }
+		public RuleCall getMemberTypesTypeParserRuleCall_4_3_1_0() { return cMemberTypesTypeParserRuleCall_4_3_1_0; }
 	}
 	public class EnumTypeDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.EnumTypeDefinition");
@@ -470,17 +570,20 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cEnumKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameNAMETerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cValueDefinitionsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cValueDefinitionsEnumValueDefinitionParserRuleCall_3_1_0 = (RuleCall)cValueDefinitionsAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Assignment cDirectivesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDirectivesDirectiveParserRuleCall_3_0 = (RuleCall)cDirectivesAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cEnumValuesDefinitionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cEnumValuesDefinitionEnumValueDefinitionParserRuleCall_4_1_0 = (RuleCall)cEnumValuesDefinitionAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//EnumTypeDefinition:
-		//	description=StringValue? "enum" name=NAME ("{" valueDefinitions+=EnumValueDefinition* "}")?;
+		//	description=StringValue? "enum" name=NAME
+		//	directives+=Directive* ("{" enumValuesDefinition+=EnumValueDefinition* "}")?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//description=StringValue? "enum" name=NAME ("{" valueDefinitions+=EnumValueDefinition* "}")?
+		//description=StringValue? "enum" name=NAME directives+=Directive* ("{" enumValuesDefinition+=EnumValueDefinition* "}")?
 		public Group getGroup() { return cGroup; }
 		
 		//description=StringValue?
@@ -498,20 +601,26 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//NAME
 		public RuleCall getNameNAMETerminalRuleCall_2_0() { return cNameNAMETerminalRuleCall_2_0; }
 		
-		//("{" valueDefinitions+=EnumValueDefinition* "}")?
-		public Group getGroup_3() { return cGroup_3; }
+		//directives+=Directive*
+		public Assignment getDirectivesAssignment_3() { return cDirectivesAssignment_3; }
+		
+		//Directive
+		public RuleCall getDirectivesDirectiveParserRuleCall_3_0() { return cDirectivesDirectiveParserRuleCall_3_0; }
+		
+		//("{" enumValuesDefinition+=EnumValueDefinition* "}")?
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
+		public Keyword getLeftCurlyBracketKeyword_4_0() { return cLeftCurlyBracketKeyword_4_0; }
 		
-		//valueDefinitions+=EnumValueDefinition*
-		public Assignment getValueDefinitionsAssignment_3_1() { return cValueDefinitionsAssignment_3_1; }
+		//enumValuesDefinition+=EnumValueDefinition*
+		public Assignment getEnumValuesDefinitionAssignment_4_1() { return cEnumValuesDefinitionAssignment_4_1; }
 		
 		//EnumValueDefinition
-		public RuleCall getValueDefinitionsEnumValueDefinitionParserRuleCall_3_1_0() { return cValueDefinitionsEnumValueDefinitionParserRuleCall_3_1_0; }
+		public RuleCall getEnumValuesDefinitionEnumValueDefinitionParserRuleCall_4_1_0() { return cEnumValuesDefinitionEnumValueDefinitionParserRuleCall_4_1_0; }
 		
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
+		public Keyword getRightCurlyBracketKeyword_4_2() { return cRightCurlyBracketKeyword_4_2; }
 	}
 	public class EnumValueDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.EnumValueDefinition");
@@ -548,17 +657,21 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cInputKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameNAMETerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cInputsFieldDefinitionsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cInputsFieldDefinitionsInputValueDefinitionParserRuleCall_3_1_0 = (RuleCall)cInputsFieldDefinitionsAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Assignment cDirectivesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDirectivesDirectiveParserRuleCall_3_0 = (RuleCall)cDirectivesAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cInputFieldsDefinitionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cInputFieldsDefinitionInputValueDefinitionParserRuleCall_4_1_0 = (RuleCall)cInputFieldsDefinitionAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//InputObjectTypeDefinition:
-		//	description=StringValue? "input" name=NAME ("{" inputsFieldDefinitions+=InputValueDefinition* "}")?;
+		//	description=StringValue? "input" name=NAME
+		//	directives+=Directive* ("{" inputFieldsDefinition+=InputValueDefinition* "}")?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//description=StringValue? "input" name=NAME ("{" inputsFieldDefinitions+=InputValueDefinition* "}")?
+		//description=StringValue? "input" name=NAME directives+=Directive* ("{" inputFieldsDefinition+=InputValueDefinition*
+		//"}")?
 		public Group getGroup() { return cGroup; }
 		
 		//description=StringValue?
@@ -576,20 +689,26 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//NAME
 		public RuleCall getNameNAMETerminalRuleCall_2_0() { return cNameNAMETerminalRuleCall_2_0; }
 		
-		//("{" inputsFieldDefinitions+=InputValueDefinition* "}")?
-		public Group getGroup_3() { return cGroup_3; }
+		//directives+=Directive*
+		public Assignment getDirectivesAssignment_3() { return cDirectivesAssignment_3; }
+		
+		//Directive
+		public RuleCall getDirectivesDirectiveParserRuleCall_3_0() { return cDirectivesDirectiveParserRuleCall_3_0; }
+		
+		//("{" inputFieldsDefinition+=InputValueDefinition* "}")?
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
+		public Keyword getLeftCurlyBracketKeyword_4_0() { return cLeftCurlyBracketKeyword_4_0; }
 		
-		//inputsFieldDefinitions+=InputValueDefinition*
-		public Assignment getInputsFieldDefinitionsAssignment_3_1() { return cInputsFieldDefinitionsAssignment_3_1; }
+		//inputFieldsDefinition+=InputValueDefinition*
+		public Assignment getInputFieldsDefinitionAssignment_4_1() { return cInputFieldsDefinitionAssignment_4_1; }
 		
 		//InputValueDefinition
-		public RuleCall getInputsFieldDefinitionsInputValueDefinitionParserRuleCall_3_1_0() { return cInputsFieldDefinitionsInputValueDefinitionParserRuleCall_3_1_0; }
+		public RuleCall getInputFieldsDefinitionInputValueDefinitionParserRuleCall_4_1_0() { return cInputFieldsDefinitionInputValueDefinitionParserRuleCall_4_1_0; }
 		
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
+		public Keyword getRightCurlyBracketKeyword_4_2() { return cRightCurlyBracketKeyword_4_2; }
 	}
 	public class InputValueDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.InputValueDefinition");
@@ -645,45 +764,6 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//ConstValue
 		public RuleCall getDefaultValueConstValueParserRuleCall_4_1_0() { return cDefaultValueConstValueParserRuleCall_4_1_0; }
-	}
-	public class IntersectionTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.IntersectionType");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAmpersandKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cMemberTypesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cMemberTypesTypeParserRuleCall_1_0 = (RuleCall)cMemberTypesAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cAmpersandKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cMemberTypesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cMemberTypesTypeParserRuleCall_2_1_0 = (RuleCall)cMemberTypesAssignment_2_1.eContents().get(0);
-		
-		//IntersectionType:
-		//	'&'? memberTypes+=Type ('&' memberTypes+=Type)*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'&'? memberTypes+=Type ('&' memberTypes+=Type)*
-		public Group getGroup() { return cGroup; }
-		
-		//'&'?
-		public Keyword getAmpersandKeyword_0() { return cAmpersandKeyword_0; }
-		
-		//memberTypes+=Type
-		public Assignment getMemberTypesAssignment_1() { return cMemberTypesAssignment_1; }
-		
-		//Type
-		public RuleCall getMemberTypesTypeParserRuleCall_1_0() { return cMemberTypesTypeParserRuleCall_1_0; }
-		
-		//('&' memberTypes+=Type)*
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'&'
-		public Keyword getAmpersandKeyword_2_0() { return cAmpersandKeyword_2_0; }
-		
-		//memberTypes+=Type
-		public Assignment getMemberTypesAssignment_2_1() { return cMemberTypesAssignment_2_1; }
-		
-		//Type
-		public RuleCall getMemberTypesTypeParserRuleCall_2_1_0() { return cMemberTypesTypeParserRuleCall_2_1_0; }
 	}
 	public class TypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.Type");
@@ -914,28 +994,28 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	public class ObjectFieldElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.ObjectField");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cNameFieldDefinitionCrossReference_0_0 = (CrossReference)cNameAssignment_0.eContents().get(0);
-		private final RuleCall cNameFieldDefinitionNAMETerminalRuleCall_0_0_1 = (RuleCall)cNameFieldDefinitionCrossReference_0_0.eContents().get(1);
+		private final Assignment cFieldDefinitionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cFieldDefinitionFieldDefinitionCrossReference_0_0 = (CrossReference)cFieldDefinitionAssignment_0.eContents().get(0);
+		private final RuleCall cFieldDefinitionFieldDefinitionNAMETerminalRuleCall_0_0_1 = (RuleCall)cFieldDefinitionFieldDefinitionCrossReference_0_0.eContents().get(1);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueConstValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//ObjectField:
-		//	name=[FieldDefinition|NAME] ':' value=ConstValue;
+		//	fieldDefinition=[FieldDefinition|NAME] ':' value=ConstValue;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=[FieldDefinition|NAME] ':' value=ConstValue
+		//fieldDefinition=[FieldDefinition|NAME] ':' value=ConstValue
 		public Group getGroup() { return cGroup; }
 		
-		//name=[FieldDefinition|NAME]
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		//fieldDefinition=[FieldDefinition|NAME]
+		public Assignment getFieldDefinitionAssignment_0() { return cFieldDefinitionAssignment_0; }
 		
 		//[FieldDefinition|NAME]
-		public CrossReference getNameFieldDefinitionCrossReference_0_0() { return cNameFieldDefinitionCrossReference_0_0; }
+		public CrossReference getFieldDefinitionFieldDefinitionCrossReference_0_0() { return cFieldDefinitionFieldDefinitionCrossReference_0_0; }
 		
 		//NAME
-		public RuleCall getNameFieldDefinitionNAMETerminalRuleCall_0_0_1() { return cNameFieldDefinitionNAMETerminalRuleCall_0_0_1; }
+		public RuleCall getFieldDefinitionFieldDefinitionNAMETerminalRuleCall_0_0_1() { return cFieldDefinitionFieldDefinitionNAMETerminalRuleCall_0_0_1; }
 		
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -1028,22 +1108,30 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cDirectiveKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameDIRECTIVE_NAMETerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Assignment cArgumentDefinitionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cArgumentDefinitionsArgumentsDefinitionParserRuleCall_3_0 = (RuleCall)cArgumentDefinitionsAssignment_3.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cArgumentsDefinitionAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cArgumentsDefinitionInputValueDefinitionParserRuleCall_3_1_0 = (RuleCall)cArgumentsDefinitionAssignment_3_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		private final Assignment cRepeatableAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final Keyword cRepeatableRepeatableKeyword_4_0 = (Keyword)cRepeatableAssignment_4.eContents().get(0);
 		private final Keyword cOnKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cDirectiveLocationsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cDirectiveLocationsDirectiveLocationsParserRuleCall_6_0 = (RuleCall)cDirectiveLocationsAssignment_6.eContents().get(0);
+		private final Keyword cVerticalLineKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cDirectiveLocationsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cDirectiveLocationsDirectiveLocationEnumRuleCall_7_0 = (RuleCall)cDirectiveLocationsAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cVerticalLineKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cDirectiveLocationsAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cDirectiveLocationsDirectiveLocationEnumRuleCall_8_1_0 = (RuleCall)cDirectiveLocationsAssignment_8_1.eContents().get(0);
 		
 		//DirectiveDefinition:
-		//	description=StringValue? 'directive' name=DIRECTIVE_NAME
-		//	argumentDefinitions=ArgumentsDefinition?
-		//	repeatable?='repeatable'? 'on' directiveLocations+=DirectiveLocations;
+		//	description=StringValue? 'directive' name=DIRECTIVE_NAME ('(' argumentsDefinition+=InputValueDefinition* ')')?
+		//	repeatable?='repeatable'? 'on' '|'? directiveLocations+=DirectiveLocation ('|'
+		//	directiveLocations+=DirectiveLocation)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//description=StringValue? 'directive' name=DIRECTIVE_NAME argumentDefinitions=ArgumentsDefinition?
-		//repeatable?='repeatable'? 'on' directiveLocations+=DirectiveLocations
+		//description=StringValue? 'directive' name=DIRECTIVE_NAME ('(' argumentsDefinition+=InputValueDefinition* ')')?
+		//repeatable?='repeatable'? 'on' '|'? directiveLocations+=DirectiveLocation ('|' directiveLocations+=DirectiveLocation)*
 		public Group getGroup() { return cGroup; }
 		
 		//description=StringValue?
@@ -1061,11 +1149,20 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//DIRECTIVE_NAME
 		public RuleCall getNameDIRECTIVE_NAMETerminalRuleCall_2_0() { return cNameDIRECTIVE_NAMETerminalRuleCall_2_0; }
 		
-		//argumentDefinitions=ArgumentsDefinition?
-		public Assignment getArgumentDefinitionsAssignment_3() { return cArgumentDefinitionsAssignment_3; }
+		//('(' argumentsDefinition+=InputValueDefinition* ')')?
+		public Group getGroup_3() { return cGroup_3; }
 		
-		//ArgumentsDefinition
-		public RuleCall getArgumentDefinitionsArgumentsDefinitionParserRuleCall_3_0() { return cArgumentDefinitionsArgumentsDefinitionParserRuleCall_3_0; }
+		//'('
+		public Keyword getLeftParenthesisKeyword_3_0() { return cLeftParenthesisKeyword_3_0; }
+		
+		//argumentsDefinition+=InputValueDefinition*
+		public Assignment getArgumentsDefinitionAssignment_3_1() { return cArgumentsDefinitionAssignment_3_1; }
+		
+		//InputValueDefinition
+		public RuleCall getArgumentsDefinitionInputValueDefinitionParserRuleCall_3_1_0() { return cArgumentsDefinitionInputValueDefinitionParserRuleCall_3_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3_2() { return cRightParenthesisKeyword_3_2; }
 		
 		//repeatable?='repeatable'?
 		public Assignment getRepeatableAssignment_4() { return cRepeatableAssignment_4; }
@@ -1076,69 +1173,69 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'on'
 		public Keyword getOnKeyword_5() { return cOnKeyword_5; }
 		
-		//directiveLocations+=DirectiveLocations
-		public Assignment getDirectiveLocationsAssignment_6() { return cDirectiveLocationsAssignment_6; }
+		//'|'?
+		public Keyword getVerticalLineKeyword_6() { return cVerticalLineKeyword_6; }
 		
-		//DirectiveLocations
-		public RuleCall getDirectiveLocationsDirectiveLocationsParserRuleCall_6_0() { return cDirectiveLocationsDirectiveLocationsParserRuleCall_6_0; }
+		//directiveLocations+=DirectiveLocation
+		public Assignment getDirectiveLocationsAssignment_7() { return cDirectiveLocationsAssignment_7; }
+		
+		//DirectiveLocation
+		public RuleCall getDirectiveLocationsDirectiveLocationEnumRuleCall_7_0() { return cDirectiveLocationsDirectiveLocationEnumRuleCall_7_0; }
+		
+		//('|' directiveLocations+=DirectiveLocation)*
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'|'
+		public Keyword getVerticalLineKeyword_8_0() { return cVerticalLineKeyword_8_0; }
+		
+		//directiveLocations+=DirectiveLocation
+		public Assignment getDirectiveLocationsAssignment_8_1() { return cDirectiveLocationsAssignment_8_1; }
+		
+		//DirectiveLocation
+		public RuleCall getDirectiveLocationsDirectiveLocationEnumRuleCall_8_1_0() { return cDirectiveLocationsDirectiveLocationEnumRuleCall_8_1_0; }
 	}
 	public class DirectiveElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.Directive");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameDIRECTIVE_NAMETerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Assignment cArgumentsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cArgumentsArgumentsParserRuleCall_1_0 = (RuleCall)cArgumentsAssignment_1.eContents().get(0);
+		private final Assignment cDirectiveAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cDirectiveDirectiveDefinitionCrossReference_0_0 = (CrossReference)cDirectiveAssignment_0.eContents().get(0);
+		private final RuleCall cDirectiveDirectiveDefinitionDIRECTIVE_NAMETerminalRuleCall_0_0_1 = (RuleCall)cDirectiveDirectiveDefinitionCrossReference_0_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cArgumentsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cArgumentsArgumentParserRuleCall_1_1_0 = (RuleCall)cArgumentsAssignment_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//Directive:
-		//	name=DIRECTIVE_NAME arguments=Arguments?;
+		//	directive=[DirectiveDefinition|DIRECTIVE_NAME] ('(' arguments+=Argument* ')')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=DIRECTIVE_NAME arguments=Arguments?
+		//directive=[DirectiveDefinition|DIRECTIVE_NAME] ('(' arguments+=Argument* ')')?
 		public Group getGroup() { return cGroup; }
 		
-		//name=DIRECTIVE_NAME
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		//directive=[DirectiveDefinition|DIRECTIVE_NAME]
+		public Assignment getDirectiveAssignment_0() { return cDirectiveAssignment_0; }
+		
+		//[DirectiveDefinition|DIRECTIVE_NAME]
+		public CrossReference getDirectiveDirectiveDefinitionCrossReference_0_0() { return cDirectiveDirectiveDefinitionCrossReference_0_0; }
 		
 		//DIRECTIVE_NAME
-		public RuleCall getNameDIRECTIVE_NAMETerminalRuleCall_0_0() { return cNameDIRECTIVE_NAMETerminalRuleCall_0_0; }
+		public RuleCall getDirectiveDirectiveDefinitionDIRECTIVE_NAMETerminalRuleCall_0_0_1() { return cDirectiveDirectiveDefinitionDIRECTIVE_NAMETerminalRuleCall_0_0_1; }
 		
-		//arguments=Arguments?
-		public Assignment getArgumentsAssignment_1() { return cArgumentsAssignment_1; }
-		
-		//Arguments
-		public RuleCall getArgumentsArgumentsParserRuleCall_1_0() { return cArgumentsArgumentsParserRuleCall_1_0; }
-	}
-	public class ArgumentsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.Arguments");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cArgumentsAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cArgumentsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cArgumentsArgumentParserRuleCall_2_0 = (RuleCall)cArgumentsAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//Arguments:
-		//	{Arguments} '(' arguments+=Argument* ')';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{Arguments} '(' arguments+=Argument* ')'
-		public Group getGroup() { return cGroup; }
-		
-		//{Arguments}
-		public Action getArgumentsAction_0() { return cArgumentsAction_0; }
+		//('(' arguments+=Argument* ')')?
+		public Group getGroup_1() { return cGroup_1; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
 		
 		//arguments+=Argument*
-		public Assignment getArgumentsAssignment_2() { return cArgumentsAssignment_2; }
+		public Assignment getArgumentsAssignment_1_1() { return cArgumentsAssignment_1_1; }
 		
 		//Argument
-		public RuleCall getArgumentsArgumentParserRuleCall_2_0() { return cArgumentsArgumentParserRuleCall_2_0; }
+		public RuleCall getArgumentsArgumentParserRuleCall_1_1_0() { return cArgumentsArgumentParserRuleCall_1_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
 	}
 	public class ArgumentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.Argument");
@@ -1174,76 +1271,6 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//ConstValue
 		public RuleCall getValueConstValueParserRuleCall_2_0() { return cValueConstValueParserRuleCall_2_0; }
-	}
-	public class ArgumentsDefinitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.ArgumentsDefinition");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cArgumentsDefinitionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cArgumentDefinitionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cArgumentDefinitionsInputValueDefinitionParserRuleCall_2_0 = (RuleCall)cArgumentDefinitionsAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//ArgumentsDefinition:
-		//	{ArgumentsDefinition} '(' argumentDefinitions+=InputValueDefinition* ')';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{ArgumentsDefinition} '(' argumentDefinitions+=InputValueDefinition* ')'
-		public Group getGroup() { return cGroup; }
-		
-		//{ArgumentsDefinition}
-		public Action getArgumentsDefinitionAction_0() { return cArgumentsDefinitionAction_0; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
-		//argumentDefinitions+=InputValueDefinition*
-		public Assignment getArgumentDefinitionsAssignment_2() { return cArgumentDefinitionsAssignment_2; }
-		
-		//InputValueDefinition
-		public RuleCall getArgumentDefinitionsInputValueDefinitionParserRuleCall_2_0() { return cArgumentDefinitionsInputValueDefinitionParserRuleCall_2_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
-	}
-	public class DirectiveLocationsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.DirectiveLocations");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cVerticalLineKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cDirectiveLocationsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cDirectiveLocationsDirectiveLocationEnumRuleCall_1_0 = (RuleCall)cDirectiveLocationsAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cVerticalLineKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cDirectiveLocationsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cDirectiveLocationsDirectiveLocationEnumRuleCall_2_1_0 = (RuleCall)cDirectiveLocationsAssignment_2_1.eContents().get(0);
-		
-		//DirectiveLocations:
-		//	'|'? directiveLocations+=DirectiveLocation ('|' directiveLocations+=DirectiveLocation)*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'|'? directiveLocations+=DirectiveLocation ('|' directiveLocations+=DirectiveLocation)*
-		public Group getGroup() { return cGroup; }
-		
-		//'|'?
-		public Keyword getVerticalLineKeyword_0() { return cVerticalLineKeyword_0; }
-		
-		//directiveLocations+=DirectiveLocation
-		public Assignment getDirectiveLocationsAssignment_1() { return cDirectiveLocationsAssignment_1; }
-		
-		//DirectiveLocation
-		public RuleCall getDirectiveLocationsDirectiveLocationEnumRuleCall_1_0() { return cDirectiveLocationsDirectiveLocationEnumRuleCall_1_0; }
-		
-		//('|' directiveLocations+=DirectiveLocation)*
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'|'
-		public Keyword getVerticalLineKeyword_2_0() { return cVerticalLineKeyword_2_0; }
-		
-		//directiveLocations+=DirectiveLocation
-		public Assignment getDirectiveLocationsAssignment_2_1() { return cDirectiveLocationsAssignment_2_1; }
-		
-		//DirectiveLocation
-		public RuleCall getDirectiveLocationsDirectiveLocationEnumRuleCall_2_1_0() { return cDirectiveLocationsDirectiveLocationEnumRuleCall_2_1_0; }
 	}
 	
 	public class DirectiveLocationElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
@@ -1480,7 +1507,6 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final EnumValueDefinitionElements pEnumValueDefinition;
 	private final InputObjectTypeDefinitionElements pInputObjectTypeDefinition;
 	private final InputValueDefinitionElements pInputValueDefinition;
-	private final IntersectionTypeElements pIntersectionType;
 	private final TypeElements pType;
 	private final NamedTypeElements pNamedType;
 	private final ListTypeElements pListType;
@@ -1496,10 +1522,7 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final ListValueElements pListValue;
 	private final DirectiveDefinitionElements pDirectiveDefinition;
 	private final DirectiveElements pDirective;
-	private final ArgumentsElements pArguments;
 	private final ArgumentElements pArgument;
-	private final ArgumentsDefinitionElements pArgumentsDefinition;
-	private final DirectiveLocationsElements pDirectiveLocations;
 	private final DirectiveLocationElements eDirectiveLocation;
 	private final OperationTypeElements eOperationType;
 	private final TerminalRule tDIRECTIVE_NAME;
@@ -1531,7 +1554,6 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pEnumValueDefinition = new EnumValueDefinitionElements();
 		this.pInputObjectTypeDefinition = new InputObjectTypeDefinitionElements();
 		this.pInputValueDefinition = new InputValueDefinitionElements();
-		this.pIntersectionType = new IntersectionTypeElements();
 		this.pType = new TypeElements();
 		this.pNamedType = new NamedTypeElements();
 		this.pListType = new ListTypeElements();
@@ -1547,10 +1569,7 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pListValue = new ListValueElements();
 		this.pDirectiveDefinition = new DirectiveDefinitionElements();
 		this.pDirective = new DirectiveElements();
-		this.pArguments = new ArgumentsElements();
 		this.pArgument = new ArgumentElements();
-		this.pArgumentsDefinition = new ArgumentsDefinitionElements();
-		this.pDirectiveLocations = new DirectiveLocationsElements();
 		this.eDirectiveLocation = new DirectiveLocationElements();
 		this.eOperationType = new OperationTypeElements();
 		this.tDIRECTIVE_NAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.katmatt.graphql.GraphQL.DIRECTIVE_NAME");
@@ -1630,7 +1649,8 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//ScalarTypeDefinition:
-	//	description=StringValue? "scalar" name=NAME;
+	//	description=StringValue? "scalar" name=NAME
+	//	directives+=Directive*;
 	public ScalarTypeDefinitionElements getScalarTypeDefinitionAccess() {
 		return pScalarTypeDefinition;
 	}
@@ -1640,7 +1660,8 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//ObjectTypeDefinition:
-	//	description=StringValue? "type" name=NAME ('implements' implements=IntersectionType)?
+	//	description=StringValue? "type" name=NAME ('implements' '&'? implementsInterfaces+=[InterfaceDefinition|NAME] ('&'
+	//	implementsInterfaces+=[InterfaceDefinition|NAME])*)?
 	//	directives+=Directive* ("{" fieldDefinitions+=FieldDefinition* "}")?;
 	public ObjectTypeDefinitionElements getObjectTypeDefinitionAccess() {
 		return pObjectTypeDefinition;
@@ -1651,8 +1672,9 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//InterfaceDefinition:
-	//	description=StringValue? "interface" name=NAME ('implements' implements=IntersectionType)? ("{"
-	//	fieldDefinitions+=FieldDefinition* "}")?;
+	//	description=StringValue? "interface" name=NAME ('implements' '&'? implementsInterfaces+=[InterfaceDefinition|NAME]
+	//	('&' implementsInterfaces+=[InterfaceDefinition|NAME])*)?
+	//	directives+=Directive* ("{" fieldDefinitions+=FieldDefinition* "}")?;
 	public InterfaceDefinitionElements getInterfaceDefinitionAccess() {
 		return pInterfaceDefinition;
 	}
@@ -1662,7 +1684,7 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//FieldDefinition:
-	//	description=StringValue? name=NAME arguments=ArgumentsDefinition? ":" type=Type;
+	//	description=StringValue? name=NAME ('(' argumentsDefinition+=InputValueDefinition* ')')? ":" type=Type;
 	public FieldDefinitionElements getFieldDefinitionAccess() {
 		return pFieldDefinition;
 	}
@@ -1672,7 +1694,8 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//UnionTypeDefinition:
-	//	description=StringValue? "union" name=NAME ("=" "|"? memberTypes+=Type ("|" memberTypes+=Type)*)?;
+	//	description=StringValue? "union" name=NAME
+	//	directives+=Directive* ("=" "|"? memberTypes+=Type ("|" memberTypes+=Type)*)?;
 	public UnionTypeDefinitionElements getUnionTypeDefinitionAccess() {
 		return pUnionTypeDefinition;
 	}
@@ -1682,7 +1705,8 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//EnumTypeDefinition:
-	//	description=StringValue? "enum" name=NAME ("{" valueDefinitions+=EnumValueDefinition* "}")?;
+	//	description=StringValue? "enum" name=NAME
+	//	directives+=Directive* ("{" enumValuesDefinition+=EnumValueDefinition* "}")?;
 	public EnumTypeDefinitionElements getEnumTypeDefinitionAccess() {
 		return pEnumTypeDefinition;
 	}
@@ -1702,7 +1726,8 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//InputObjectTypeDefinition:
-	//	description=StringValue? "input" name=NAME ("{" inputsFieldDefinitions+=InputValueDefinition* "}")?;
+	//	description=StringValue? "input" name=NAME
+	//	directives+=Directive* ("{" inputFieldsDefinition+=InputValueDefinition* "}")?;
 	public InputObjectTypeDefinitionElements getInputObjectTypeDefinitionAccess() {
 		return pInputObjectTypeDefinition;
 	}
@@ -1719,16 +1744,6 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getInputValueDefinitionRule() {
 		return getInputValueDefinitionAccess().getRule();
-	}
-	
-	//IntersectionType:
-	//	'&'? memberTypes+=Type ('&' memberTypes+=Type)*;
-	public IntersectionTypeElements getIntersectionTypeAccess() {
-		return pIntersectionType;
-	}
-	
-	public ParserRule getIntersectionTypeRule() {
-		return getIntersectionTypeAccess().getRule();
 	}
 	
 	//Type:
@@ -1832,7 +1847,7 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//ObjectField:
-	//	name=[FieldDefinition|NAME] ':' value=ConstValue;
+	//	fieldDefinition=[FieldDefinition|NAME] ':' value=ConstValue;
 	public ObjectFieldElements getObjectFieldAccess() {
 		return pObjectField;
 	}
@@ -1862,9 +1877,9 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//DirectiveDefinition:
-	//	description=StringValue? 'directive' name=DIRECTIVE_NAME
-	//	argumentDefinitions=ArgumentsDefinition?
-	//	repeatable?='repeatable'? 'on' directiveLocations+=DirectiveLocations;
+	//	description=StringValue? 'directive' name=DIRECTIVE_NAME ('(' argumentsDefinition+=InputValueDefinition* ')')?
+	//	repeatable?='repeatable'? 'on' '|'? directiveLocations+=DirectiveLocation ('|'
+	//	directiveLocations+=DirectiveLocation)*;
 	public DirectiveDefinitionElements getDirectiveDefinitionAccess() {
 		return pDirectiveDefinition;
 	}
@@ -1874,23 +1889,13 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Directive:
-	//	name=DIRECTIVE_NAME arguments=Arguments?;
+	//	directive=[DirectiveDefinition|DIRECTIVE_NAME] ('(' arguments+=Argument* ')')?;
 	public DirectiveElements getDirectiveAccess() {
 		return pDirective;
 	}
 	
 	public ParserRule getDirectiveRule() {
 		return getDirectiveAccess().getRule();
-	}
-	
-	//Arguments:
-	//	{Arguments} '(' arguments+=Argument* ')';
-	public ArgumentsElements getArgumentsAccess() {
-		return pArguments;
-	}
-	
-	public ParserRule getArgumentsRule() {
-		return getArgumentsAccess().getRule();
 	}
 	
 	//Argument:
@@ -1901,26 +1906,6 @@ public class GraphQLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getArgumentRule() {
 		return getArgumentAccess().getRule();
-	}
-	
-	//ArgumentsDefinition:
-	//	{ArgumentsDefinition} '(' argumentDefinitions+=InputValueDefinition* ')';
-	public ArgumentsDefinitionElements getArgumentsDefinitionAccess() {
-		return pArgumentsDefinition;
-	}
-	
-	public ParserRule getArgumentsDefinitionRule() {
-		return getArgumentsDefinitionAccess().getRule();
-	}
-	
-	//DirectiveLocations:
-	//	'|'? directiveLocations+=DirectiveLocation ('|' directiveLocations+=DirectiveLocation)*;
-	public DirectiveLocationsElements getDirectiveLocationsAccess() {
-		return pDirectiveLocations;
-	}
-	
-	public ParserRule getDirectiveLocationsRule() {
-		return getDirectiveLocationsAccess().getRule();
 	}
 	
 	//enum DirectiveLocation:
